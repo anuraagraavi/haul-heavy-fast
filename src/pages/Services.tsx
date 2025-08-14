@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -42,6 +43,11 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Towing Services - Light, Medium & Heavy-Duty | Heavy Haulers San Francisco</title>
+        <meta name="description" content="Complete towing services in San Francisco Bay Area: light-duty car towing, medium-duty truck recovery, heavy-duty equipment transport. Professional fleet with 24/7 availability." />
+        <link rel="canonical" href="https://heavytowpro.com/services" />
+      </Helmet>
       <Header />
       <main>
         {/* Hero Section */}

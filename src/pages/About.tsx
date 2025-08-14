@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -29,6 +30,11 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>About Heavy Haulers - Professional Towing Company | San Francisco Bay Area</title>
+        <meta name="description" content="Learn about Heavy Haulers' mission, values, and commitment to professional towing services. Trusted Bay Area towing company with transparent pricing and 24/7 availability." />
+        <link rel="canonical" href="https://heavytowpro.com/about" />
+      </Helmet>
       <Header />
       <main>
         {/* Hero Section */}

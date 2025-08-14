@@ -51,17 +51,21 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-            <Button variant="hero" size="xl">
+            <Button 
+              variant="hero" 
+              size="xl"
+              onClick={() => window.location.href = 'tel:650-881-2400'}
+            >
               <Phone className="w-5 h-5 mr-2" />
               Call 650-881-2400
             </Button>
-            <Button variant="outline" size="xl">
+            <Button 
+              variant="outline" 
+              size="xl"
+              onClick={() => window.location.href = '/get-a-quote'}
+            >
               <FileText className="w-5 h-5 mr-2" />
               Get Free Quote
-            </Button>
-            <Button variant="secondary" size="lg">
-              <MessageCircle className="w-5 h-5 mr-2" />
-              WhatsApp
             </Button>
           </div>
 

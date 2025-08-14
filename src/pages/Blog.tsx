@@ -149,38 +149,40 @@ const BlogNew = () => {
             <h2 className="text-3xl font-bold text-center mb-12">Latest Articles</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {articles.map((article) => (
-                <Card key={article.id} className="group hover:shadow-elevated transition-all duration-300">
-                  <div className="relative overflow-hidden">
-                    <img 
-                      src={article.image} 
-                      alt={article.title}
-                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <Badge className="absolute top-4 left-4 bg-primary text-primary-foreground">
-                      {article.category}
-                    </Badge>
-                  </div>
-                  <CardHeader>
-                    <h3 className="text-xl font-semibold line-clamp-2 group-hover:text-primary transition-colors">
-                      {article.title}
-                    </h3>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground mb-4 line-clamp-3">
-                      {article.excerpt}
-                    </p>
-                    <div className="flex items-center justify-between text-sm text-muted-foreground mb-4">
-                      <span>{article.author}</span>
-                      <div className="flex items-center gap-2">
-                        <Clock className="h-4 w-4" />
-                        <span>{article.readTime}</span>
-                      </div>
+                <Link key={article.id} to={`/blog/${article.id}`} className="block">
+                  <Card className="group hover:shadow-elevated transition-all duration-300 animate-fade-in">
+                    <div className="relative overflow-hidden">
+                      <img 
+                        src={article.image} 
+                        alt={article.title}
+                        className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <Badge className="absolute top-4 left-4 bg-primary text-primary-foreground">
+                        {article.category}
+                      </Badge>
                     </div>
-                    <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                      Read More <ChevronRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </CardContent>
-                </Card>
+                    <CardHeader>
+                      <h3 className="text-xl font-semibold line-clamp-2 group-hover:text-primary transition-colors">
+                        {article.title}
+                      </h3>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground mb-4 line-clamp-3">
+                        {article.excerpt}
+                      </p>
+                      <div className="flex items-center justify-between text-sm text-muted-foreground mb-4">
+                        <span>{article.author}</span>
+                        <div className="flex items-center gap-2">
+                          <Clock className="h-4 w-4" />
+                          <span>{article.readTime}</span>
+                        </div>
+                      </div>
+                      <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                        Read More <ChevronRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </Link>
               ))}
             </div>
           </div>

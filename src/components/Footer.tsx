@@ -21,13 +21,13 @@ const Footer = () => {
               Available 24/7 for all your hauling needs.
             </p>
             <div className="flex space-x-4">
-              <Button variant="hero" size="sm">
+              <Button 
+                variant="hero" 
+                size="sm"
+                onClick={() => window.location.href = 'tel:650-881-2400'}
+              >
                 <Phone className="w-4 h-4 mr-2" />
                 Call Now
-              </Button>
-              <Button variant="secondary" size="sm">
-                <MessageCircle className="w-4 h-4 mr-2" />
-                WhatsApp
               </Button>
             </div>
           </div>

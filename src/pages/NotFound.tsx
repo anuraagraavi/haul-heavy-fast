@@ -60,19 +60,10 @@ const NotFound = () => {
                       size="lg" 
                       variant="hero" 
                       className="text-lg px-8"
-                      onClick={() => window.location.href = 'tel:+14155558697'}
+                      onClick={() => window.location.href = 'tel:650-881-2400'}
                     >
                       <Phone className="mr-2 h-5 w-5" />
                       Call 650-881-2400
-                    </Button>
-                    <Button 
-                      size="lg" 
-                      variant="outline" 
-                      className="text-lg px-8 bg-white/10 text-white border-white/20 hover:bg-white/20"
-                      onClick={() => window.location.href = 'https://wa.me/14155558697'}
-                    >
-                      <MessageCircle className="mr-2 h-5 w-5" />
-                      WhatsApp
                     </Button>
                   </div>
                 </CardContent>
