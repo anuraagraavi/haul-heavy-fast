@@ -8,7 +8,7 @@ const Locations = () => {
     {
       id: "san-francisco",
       name: "San Francisco County",
-      phone: "(415) 555-HAUL",
+      phone: "650-881-2400",
       description: "Serving all San Francisco districts with priority dispatch from our main hub.",
       districts: [
         "Mission District", "SOMA (South of Market)", "Financial District", "North Beach",
@@ -24,7 +24,7 @@ const Locations = () => {
     {
       id: "san-mateo", 
       name: "San Mateo County",
-      phone: "(650) 555-HAUL",
+      phone: "650-881-2400",
       description: "Comprehensive coverage throughout San Mateo County with specialized equipment for all vehicle types.",
       districts: [
         "San Mateo", "Redwood City", "Daly City", "South San Francisco",
@@ -40,7 +40,7 @@ const Locations = () => {
     {
       id: "alameda",
       name: "Alameda County", 
-      phone: "(510) 555-HAUL",
+      phone: "650-881-2400",
       description: "Fast response across Alameda County including Oakland, Berkeley, and all East Bay communities.",
       districts: [
         "Oakland", "Hayward", "Berkeley", "Fremont", "San Leandro",
@@ -55,7 +55,7 @@ const Locations = () => {
     {
       id: "santa-clara",
       name: "Santa Clara County",
-      phone: "(408) 555-HAUL", 
+      phone: "650-881-2400", 
       description: "Serving Silicon Valley and South Bay with 24/7 dispatch and specialized tech industry vehicle handling.",
       districts: [
         "San Jose", "Santa Clara", "Sunnyvale", "Mountain View", "Palo Alto",

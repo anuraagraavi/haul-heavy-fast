@@ -63,7 +63,7 @@ const NotFound = () => {
                       onClick={() => window.location.href = 'tel:+14155558697'}
                     >
                       <Phone className="mr-2 h-5 w-5" />
-                      Call (415) 555-TOWS
+                      Call 650-881-2400
                     </Button>
                     <Button 
                       size="lg" 

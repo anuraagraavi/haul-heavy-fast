@@ -165,7 +165,7 @@ const Sitemap = () => {
                     href="tel:+14155558697" 
                     className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors"
                   >
-                    Call (415) 555-TOWS
+                    Call 650-881-2400
                   </a>
                 </div>
               </div>

@@ -262,7 +262,7 @@ const GetQuote = () => {
                   <div className="space-y-3">
                     <Button variant="outline" className="w-full bg-white text-primary border-white hover:bg-gray-100">
                       <Phone className="w-4 h-4 mr-2" />
-                      (415) 555-HAUL
+                      650-881-2400
                     </Button>
                     <Button variant="secondary" className="w-full">
                       <MessageCircle className="w-4 h-4 mr-2" />

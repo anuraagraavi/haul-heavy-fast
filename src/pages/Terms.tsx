@@ -204,8 +204,8 @@ const Terms = () => {
                     <div className="space-y-2 text-muted-foreground">
                       <p>Heavy Haulers San Francisco</p>
                       <p>Email: legal@heavyhaulerssf.com</p>
-                      <p>Phone: (415) 555-TOWS</p>
-                      <p>Address: 123 Towing Street, San Francisco, CA 94102</p>
+                      <p>Phone: 650-881-2400</p>
+                      <p>Address: 400 Tunnel Ave, Brisbane, CA 94005</p>
                     </div>
                   </CardContent>
                 </Card>
