@@ -1,0 +1,101 @@
+import { Button } from "@/components/ui/button";
+import { MapPin, Phone } from "lucide-react";
+
+const ServiceAreas = () => {
+  const counties = [
+    {
+      name: "San Francisco County",
+      areas: ["Mission", "SOMA", "Financial District", "Richmond", "Pacific Heights", "Sunset"],
+      phone: "(415) 555-HAUL"
+    },
+    {
+      name: "San Mateo County", 
+      areas: ["San Mateo", "Redwood City", "Daly City", "South San Francisco", "Menlo Park"],
+      phone: "(650) 555-HAUL"
+    },
+    {
+      name: "Alameda County",
+      areas: ["Oakland", "Hayward", "Berkeley", "Fremont", "San Leandro"],
+      phone: "(510) 555-HAUL"
+    },
+    {
+      name: "Santa Clara County",
+      areas: ["San Jose", "Santa Clara", "Sunnyvale", "Mountain View", "Palo Alto"],
+      phone: "(408) 555-HAUL"
+    }
+  ];
+
+  return (
+    <section className="py-20 bg-gradient-subtle">
+      <div className="container mx-auto px-4">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Serving the Entire
+            <span className="bg-gradient-primary bg-clip-text text-transparent ml-2">
+              Bay Area
+            </span>
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            24/7 emergency towing and recovery services across 4 counties. 
+            Local dispatch means faster response times for you.
+          </p>
+        </div>
+
+        {/* Counties Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {counties.map((county, index) => (
+            <div 
+              key={index}
+              className="bg-card border border-border rounded-lg p-6 hover:shadow-elevated transition-all duration-300 group"
+            >
+              <div className="flex items-center space-x-2 mb-4">
+                <MapPin className="w-5 h-5 text-primary" />
+                <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                  {county.name}
+                </h3>
+              </div>
+              
+              <div className="space-y-2 mb-4">
+                {county.areas.map((area, areaIndex) => (
+                  <span 
+                    key={areaIndex}
+                    className="inline-block text-sm text-muted-foreground bg-muted rounded-full px-3 py-1 mr-2 mb-1"
+                  >
+                    {area}
+                  </span>
+                ))}
+              </div>
+
+              <Button variant="outline" size="sm" className="w-full">
+                <Phone className="w-4 h-4 mr-2" />
+                {county.phone}
+              </Button>
+            </div>
+          ))}
+        </div>
+
+        {/* CTA Section */}
+        <div className="text-center bg-card border border-border rounded-2xl p-8">
+          <h3 className="text-2xl font-bold text-foreground mb-4">
+            Not sure if we serve your area?
+          </h3>
+          <p className="text-muted-foreground mb-6">
+            We're constantly expanding our coverage. Give us a call and we'll let you know if we can help.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+            <Button variant="hero" size="lg">
+              <Phone className="w-5 h-5 mr-2" />
+              Call (415) 555-HAUL
+            </Button>
+            <Button variant="outline" size="lg">
+              View Full Coverage Map
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ServiceAreas;
