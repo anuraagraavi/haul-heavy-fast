@@ -47,7 +47,7 @@ const ServiceAreas = () => {
           {counties.map((county, index) => (
             <div 
               key={index}
-              className="bg-card border border-border rounded-lg p-6 hover:shadow-elevated transition-all duration-300 group"
+              className="bg-card border border-border rounded-lg p-6 hover:shadow-elevated transition-all duration-300 group flex flex-col h-full"
             >
               <div className="flex items-center space-x-2 mb-4">
                 <MapPin className="w-5 h-5 text-primary" />
@@ -56,7 +56,7 @@ const ServiceAreas = () => {
                 </h3>
               </div>
               
-              <div className="space-y-2 mb-4">
+              <div className="space-y-2 mb-4 flex-grow">
                 {county.areas.map((area, areaIndex) => (
                   <span 
                     key={areaIndex}
@@ -67,7 +67,7 @@ const ServiceAreas = () => {
                 ))}
               </div>
 
-              <Button variant="outline" size="sm" className="w-full">
+              <Button variant="outline" size="sm" className="w-full mt-auto">
                 <Phone className="w-4 h-4 mr-2" />
                 {county.phone}
               </Button>
