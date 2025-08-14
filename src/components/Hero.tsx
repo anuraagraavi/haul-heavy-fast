@@ -1,17 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, FileText, Clock, Shield, Truck } from "lucide-react";
 import heroImage from "@/assets/hero-tow-truck.jpg";
-
 const Hero = () => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
-        <img 
-          src={heroImage} 
-          alt="Heavy Haulers Professional Towing Service"
-          className="w-full h-full object-cover"
-        />
+        <img src={heroImage} alt="Heavy Haulers Professional Towing Service" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black/70"></div>
       </div>
 
@@ -25,7 +19,7 @@ const Hero = () => {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 px-0 py-[37px]">
             <span className="bg-gradient-hero bg-clip-text text-transparent">
               Heavy Haulers
             </span>
@@ -75,24 +69,15 @@ const Hero = () => {
           <div className="mt-12 max-w-2xl mx-auto">
             <p className="text-gray-300 mb-4">What do you need to tow?</p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <a 
-                href="/services/light-duty" 
-                className="bg-card/30 backdrop-blur-sm border border-border/50 rounded-lg p-4 hover:bg-card/50 transition-all duration-300 group"
-              >
+              <a href="/services/light-duty" className="bg-card/30 backdrop-blur-sm border border-border/50 rounded-lg p-4 hover:bg-card/50 transition-all duration-300 group">
                 <h3 className="font-semibold text-foreground group-hover:text-primary">Light-Duty</h3>
                 <p className="text-sm text-muted-foreground">Cars, SUVs, Motorcycles</p>
               </a>
-              <a 
-                href="/services/medium-duty" 
-                className="bg-card/30 backdrop-blur-sm border border-border/50 rounded-lg p-4 hover:bg-card/50 transition-all duration-300 group"
-              >
+              <a href="/services/medium-duty" className="bg-card/30 backdrop-blur-sm border border-border/50 rounded-lg p-4 hover:bg-card/50 transition-all duration-300 group">
                 <h3 className="font-semibold text-foreground group-hover:text-primary">Medium-Duty</h3>
                 <p className="text-sm text-muted-foreground">Vans, Box Trucks, RVs</p>
               </a>
-              <a 
-                href="/services/heavy-duty" 
-                className="bg-card/30 backdrop-blur-sm border border-border/50 rounded-lg p-4 hover:bg-card/50 transition-all duration-300 group"
-              >
+              <a href="/services/heavy-duty" className="bg-card/30 backdrop-blur-sm border border-border/50 rounded-lg p-4 hover:bg-card/50 transition-all duration-300 group">
                 <h3 className="font-semibold text-foreground group-hover:text-primary">Heavy-Duty</h3>
                 <p className="text-sm text-muted-foreground">Semi-trucks, Buses, Equipment</p>
               </a>
@@ -100,8 +85,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
