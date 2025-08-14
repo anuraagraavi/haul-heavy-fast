@@ -86,7 +86,7 @@ const MediumDuty = () => {
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
                 <Button variant="hero" size="lg">
                   <Phone className="w-5 h-5 mr-2" />
-                  Emergency Dispatch
+                  Call 650-881-2400
                 </Button>
                 <Button variant="secondary" size="lg">
                   <MessageCircle className="w-5 h-5 mr-2" />
@@ -272,7 +272,7 @@ const MediumDuty = () => {
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
                 <Button variant="hero" size="xl">
                   <Phone className="w-5 h-5 mr-2" />
-                  Priority Dispatch
+                  Call 650-881-2400
                 </Button>
                 <Button variant="outline" size="xl" asChild>
                   <a href="/get-a-quote">Fleet Quote</a>

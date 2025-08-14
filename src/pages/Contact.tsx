@@ -30,7 +30,7 @@ const Contact = () => {
       icon: Phone,
       title: "Emergency Dispatch",
       description: "24/7 emergency towing and recovery",
-      action: "(415) 555-HAUL",
+      action: "650-881-2400",
       urgent: true
     },
     {
@@ -121,7 +121,7 @@ const Contact = () => {
               </p>
               <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-gray-100">
                 <Phone className="w-5 h-5 mr-2" />
-                Call (415) 555-HAUL
+                Call 650-881-2400
               </Button>
             </div>
           </div>

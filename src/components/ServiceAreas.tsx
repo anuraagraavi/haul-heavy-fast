@@ -6,22 +6,22 @@ const ServiceAreas = () => {
     {
       name: "San Francisco County",
       areas: ["Mission", "SOMA", "Financial District", "Richmond", "Pacific Heights", "Sunset"],
-      phone: "(415) 555-HAUL"
+      phone: "650-881-2400"
     },
     {
       name: "San Mateo County", 
       areas: ["San Mateo", "Redwood City", "Daly City", "South San Francisco", "Menlo Park"],
-      phone: "(650) 555-HAUL"
+      phone: "650-881-2400"
     },
     {
       name: "Alameda County",
       areas: ["Oakland", "Hayward", "Berkeley", "Fremont", "San Leandro"],
-      phone: "(510) 555-HAUL"
+      phone: "650-881-2400"
     },
     {
       name: "Santa Clara County",
       areas: ["San Jose", "Santa Clara", "Sunnyvale", "Mountain View", "Palo Alto"],
-      phone: "(408) 555-HAUL"
+      phone: "650-881-2400"
     }
   ];
 
@@ -86,7 +86,7 @@ const ServiceAreas = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
             <Button variant="hero" size="lg">
               <Phone className="w-5 h-5 mr-2" />
-              Call (415) 555-HAUL
+              Call 650-881-2400
             </Button>
             <Button variant="outline" size="lg">
               View Full Coverage Map

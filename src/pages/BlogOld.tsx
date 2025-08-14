@@ -4,73 +4,79 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Clock, User, ArrowRight, Phone } from "lucide-react";
+import { Calendar, Clock, User, ArrowRight } from "lucide-react";
 
-const BlogNew = () => {
+const Blog = () => {
   const categories = [
-    { name: "Emergency Guides", count: 15, color: "bg-warning" },
-    { name: "Vehicle Transport", count: 12, color: "bg-success" },
-    { name: "Fleet Management", count: 8, color: "bg-primary" },
-    { name: "Industry Insights", count: 10, color: "bg-accent" },
-    { name: "Safety Tips", count: 6, color: "bg-secondary" }
+    { name: "Emergency Know-How", count: 8, color: "bg-warning" },
+    { name: "Vehicle Care", count: 12, color: "bg-success" },
+    { name: "Fleet Advice", count: 6, color: "bg-primary" },
+    { name: "Local Insights", count: 4, color: "bg-accent" }
   ];
 
   const featuredPosts = [
     {
-      title: "Complete Guide to Emergency Towing: What Every Bay Area Driver Needs to Know",
-      excerpt: "A comprehensive guide covering everything from what to do when your car breaks down to understanding your insurance coverage and choosing the right towing service in the Bay Area.",
-      category: "Emergency Guides",
+      title: "What to Do When Your Heavy Equipment Breaks Down on the Highway",
+      excerpt: "Essential steps to ensure safety and get professional help fast when your construction equipment fails.",
+      category: "Emergency Know-How",
       author: "Mike Rodriguez",
-      date: "2024-02-15",
-      readTime: "12 min read",
-      image: "/lovable-uploads/a43ad238-af3b-47a8-962f-32c9da2fc727.png",
-      featured: true
-    },
-    {
-      title: "Heavy Equipment Transport: Specialized Handling for Construction and Industrial Machinery",
-      excerpt: "Learn about the complexities of transporting heavy construction equipment, including permits, route planning, and specialized equipment required for safe transport.",
-      category: "Vehicle Transport",
-      author: "Sarah Chen",
-      date: "2024-02-12",
-      readTime: "10 min read", 
+      date: "2024-01-15",
+      readTime: "5 min read",
       image: "/lovable-uploads/a43ad238-af3b-47a8-962f-32c9da2fc727.png"
     },
     {
-      title: "Fleet Management Best Practices: Reducing Downtime and Towing Costs",
-      excerpt: "Discover proven strategies for managing commercial vehicle fleets, preventing breakdowns, and establishing cost-effective partnerships with professional towing services.",
-      category: "Fleet Management",
-      author: "David Kim",
-      date: "2024-02-10",
-      readTime: "8 min read",
+      title: "Fleet Maintenance: Preventing Costly Breakdowns",
+      excerpt: "Proactive maintenance strategies that save thousands in emergency towing and repair costs.",
+      category: "Fleet Advice", 
+      author: "Sarah Chen",
+      date: "2024-01-12",
+      readTime: "7 min read",
+      image: "/lovable-uploads/a43ad238-af3b-47a8-962f-32c9da2fc727.png"
+    },
+    {
+      title: "San Francisco's Most Challenging Towing Locations",
+      excerpt: "How Heavy Haulers navigates steep hills, narrow streets, and complex parking situations.",
+      category: "Local Insights",
+      author: "Tony Martinez",
+      date: "2024-01-10",
+      readTime: "4 min read",
       image: "/lovable-uploads/a43ad238-af3b-47a8-962f-32c9da2fc727.png"
     }
   ];
 
   const recentPosts = [
     {
-      title: "San Francisco's Unique Towing Challenges: Hills, Traffic, and Parking Restrictions",
-      excerpt: "Navigate the complexities of towing in San Francisco, from steep grades to permit requirements and traffic considerations that affect response times.",
-      category: "Industry Insights",
-      author: "Tony Martinez",
-      date: "2024-02-08",
-      readTime: "7 min read"
+      title: "Winter Towing Safety: What Every Driver Should Know",
+      category: "Emergency Know-How",
+      date: "2024-01-08",
+      readTime: "6 min read"
     },
     {
-      title: "Luxury and Exotic Car Transport: Protecting High-Value Vehicles During Towing",
-      excerpt: "Specialized techniques and equipment used for transporting luxury vehicles, including soft-tie systems, enclosed trailers, and insurance considerations.",
-      category: "Vehicle Transport", 
-      author: "Jennifer Walsh",
-      date: "2024-02-05",
-      readTime: "9 min read"
+      title: "Luxury Car Transport: Special Handling for Exotic Vehicles",
+      category: "Vehicle Care",
+      date: "2024-01-05",
+      readTime: "5 min read"
+    },
+    {
+      title: "Commercial Vehicle Regulations in California",
+      category: "Fleet Advice",
+      date: "2024-01-03",
+      readTime: "8 min read"
+    },
+    {
+      title: "Oakland Port Area: Heavy Hauling Challenges",
+      category: "Local Insights",
+      date: "2024-01-01",
+      readTime: "4 min read"
     }
   ];
 
   return (
     <>
       <Helmet>
-        <title>Towing Blog & Expert Guides | Heavy Haulers San Francisco</title>
-        <meta name="description" content="Expert towing advice, emergency guides, and fleet management tips from Heavy Haulers San Francisco. Stay informed with professional insights and local Bay Area knowledge." />
-        <meta name="keywords" content="towing blog, emergency guides, vehicle transport, fleet management, San Francisco towing, Bay Area towing tips" />
+        <title>Towing Blog & Guides | Heavy Haulers San Francisco</title>
+        <meta name="description" content="Expert towing advice, emergency guides, and fleet management tips from Heavy Haulers. Stay informed with our professional insights and local knowledge." />
+        <meta name="keywords" content="towing blog, emergency guides, vehicle care, fleet advice, San Francisco towing tips" />
         <link rel="canonical" href="/blog" />
       </Helmet>
 
@@ -83,11 +89,10 @@ const BlogNew = () => {
             <div className="container mx-auto px-4">
               <div className="max-w-4xl mx-auto text-center">
                 <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                  Professional Towing <span className="text-warning">Knowledge Hub</span>
+                  Towing <span className="text-warning">Knowledge</span> Hub
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8">
-                  Expert insights, emergency guides, and industry expertise from Bay Area's most trusted heavy haulers. 
-                  Stay informed and prepared with our comprehensive towing knowledge base.
+                  Expert advice, emergency guides, and industry insights from San Francisco's most trusted heavy haulers.
                 </p>
                 
                 {/* Category Pills */}
@@ -103,13 +108,13 @@ const BlogNew = () => {
           </section>
 
           {/* Featured Posts */}
-          <section className="py-20">
+          <section className="py-16">
             <div className="container mx-auto px-4">
               <h2 className="text-3xl font-bold mb-12 text-center">Featured Articles</h2>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {featuredPosts.map((post, index) => (
-                  <Card key={index} className={`bg-card hover:shadow-orange transition-all duration-300 group cursor-pointer ${post.featured ? 'md:col-span-2 lg:col-span-2' : ''}`}>
+                  <Card key={index} className="bg-card hover:shadow-orange transition-all duration-300 group cursor-pointer">
                     <div className="aspect-video bg-muted rounded-t-lg mb-4 overflow-hidden">
                       <img 
                         src={post.image} 
@@ -122,9 +127,8 @@ const BlogNew = () => {
                         <Badge variant="outline" className="text-xs">
                           {post.category}
                         </Badge>
-                        {post.featured && <Badge className="text-xs bg-warning text-white">Featured</Badge>}
                       </div>
-                      <CardTitle className={`group-hover:text-warning transition-colors ${post.featured ? 'text-2xl' : 'text-xl'}`}>
+                      <CardTitle className="text-xl group-hover:text-warning transition-colors">
                         {post.title}
                       </CardTitle>
                       <CardDescription className="text-muted-foreground">
@@ -156,10 +160,10 @@ const BlogNew = () => {
           </section>
 
           {/* Recent Posts */}
-          <section className="py-20 bg-muted/30">
+          <section className="py-16 bg-muted/30">
             <div className="container mx-auto px-4">
               <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl font-bold mb-12 text-center">Latest Articles</h2>
+                <h2 className="text-3xl font-bold mb-12 text-center">Recent Posts</h2>
                 
                 <div className="space-y-6">
                   {recentPosts.map((post, index) => (
@@ -175,14 +179,7 @@ const BlogNew = () => {
                             <h3 className="text-xl font-semibold group-hover:text-warning transition-colors mb-2">
                               {post.title}
                             </h3>
-                            <p className="text-muted-foreground mb-4 leading-relaxed">
-                              {post.excerpt}
-                            </p>
                             <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                              <div className="flex items-center gap-1">
-                                <User className="w-4 h-4" />
-                                {post.author}
-                              </div>
                               <div className="flex items-center gap-1">
                                 <Calendar className="w-4 h-4" />
                                 {new Date(post.date).toLocaleDateString()}
@@ -193,7 +190,7 @@ const BlogNew = () => {
                               </div>
                             </div>
                           </div>
-                          <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-warning transition-colors ml-4" />
+                          <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-warning transition-colors" />
                         </div>
                       </CardContent>
                     </Card>
@@ -203,40 +200,18 @@ const BlogNew = () => {
             </div>
           </section>
 
-          {/* Newsletter Signup */}
-          <section className="py-20">
-            <div className="container mx-auto px-4">
-              <div className="max-w-2xl mx-auto text-center">
-                <h2 className="text-3xl font-bold mb-6">Stay Informed</h2>
-                <p className="text-xl text-muted-foreground mb-8">
-                  Get the latest towing tips, emergency guides, and industry insights delivered to your inbox.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-                  <input 
-                    type="email" 
-                    placeholder="Enter your email"
-                    className="flex-1 px-4 py-3 rounded-lg border border-border bg-background text-foreground"
-                  />
-                  <Button>Subscribe</Button>
-                </div>
-              </div>
-            </div>
-          </section>
-
           {/* CTA Section */}
           <section className="py-16 bg-gradient-primary">
             <div className="container mx-auto px-4 text-center">
               <h2 className="text-3xl font-bold mb-6 text-white">
-                Need Professional Towing Services?
+                Need Emergency Towing?
               </h2>
               <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-                Don't wait when you need help. Our 24/7 dispatch team is ready with fast, 
-                professional towing services across the entire Bay Area.
+                Don't wait - our 24/7 dispatch team is ready to help with fast, professional towing services.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" variant="hero" className="text-lg px-8">
-                  <Phone className="w-5 h-5 mr-2" />
-                  Call 650-881-2400
+                  Call (415) 555-TOWS
                 </Button>
                 <Button size="lg" variant="outline" className="text-lg px-8 bg-white/10 text-white border-white/20 hover:bg-white/20">
                   Get Instant Quote
@@ -252,4 +227,4 @@ const BlogNew = () => {
   );
 };
 
-export default BlogNew;
+export default Blog;

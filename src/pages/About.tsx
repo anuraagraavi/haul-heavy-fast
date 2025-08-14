@@ -167,52 +167,168 @@ const About = () => {
           </div>
         </section>
 
-        {/* Team & Licensing */}
+        {/* Team Training & Professional Communication */}
         <section className="py-20 bg-gradient-subtle">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <div>
-                <h2 className="text-3xl font-bold text-foreground mb-6">Professional Team</h2>
+                <h2 className="text-3xl font-bold text-foreground mb-6">Team Training & Professional Communication</h2>
                 <p className="text-muted-foreground mb-6">
                   Every Heavy Haulers operator undergoes comprehensive training in vehicle handling, 
                   safety protocols, and customer service. Our dispatchers are available 24/7 and 
                   trained to handle emergency situations with calm professionalism.
                 </p>
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <Award className="w-6 h-6 text-primary" />
-                    <span className="text-foreground">Certified Heavy Vehicle Operations</span>
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-3">Continuous Training Programs</h4>
+                    <ul className="space-y-2 text-muted-foreground">
+                      <li>• Monthly safety and equipment certification updates</li>
+                      <li>• Advanced rigging and recovery technique workshops</li>
+                      <li>• Customer service excellence training</li>
+                      <li>• Emergency response protocol drills</li>
+                    </ul>
                   </div>
-                  <div className="flex items-center space-x-3">
-                    <Shield className="w-6 h-6 text-secondary" />
-                    <span className="text-foreground">Fully Licensed & Insured</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Users className="w-6 h-6 text-warning" />
-                    <span className="text-foreground">Customer Service Training</span>
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-3">Communication Standards</h4>
+                    <ul className="space-y-2 text-muted-foreground">
+                      <li>• Real-time updates during service calls</li>
+                      <li>• Clear, professional communication at all times</li>
+                      <li>• Multilingual dispatch capabilities</li>
+                      <li>• Transparent pricing discussions before work begins</li>
+                    </ul>
                   </div>
                 </div>
               </div>
               <div className="bg-card border border-border rounded-2xl p-8">
-                <h3 className="text-2xl font-bold text-foreground mb-6">Licensing & Training</h3>
+                <h3 className="text-2xl font-bold text-foreground mb-6">Licensing & Certifications</h3>
                 <div className="space-y-4">
                   <div className="bg-muted/50 rounded-lg p-4">
                     <h4 className="font-semibold text-foreground mb-2">State Licensing</h4>
                     <p className="text-sm text-muted-foreground">
-                      Full California commercial towing licenses and permits
+                      Full California commercial towing licenses and permits for all vehicle classes
                     </p>
                   </div>
                   <div className="bg-muted/50 rounded-lg p-4">
                     <h4 className="font-semibold text-foreground mb-2">Insurance Coverage</h4>
                     <p className="text-sm text-muted-foreground">
-                      Comprehensive liability and cargo protection
+                      Comprehensive liability and cargo protection with specialized coverage for high-value vehicles
                     </p>
                   </div>
                   <div className="bg-muted/50 rounded-lg p-4">
                     <h4 className="font-semibold text-foreground mb-2">Safety Certifications</h4>
                     <p className="text-sm text-muted-foreground">
-                      DOT compliance and safety training programs
+                      DOT compliance, OSHA safety training, and specialized heavy equipment certifications
                     </p>
+                  </div>
+                  <div className="bg-muted/50 rounded-lg p-4">
+                    <h4 className="font-semibold text-foreground mb-2">Professional Associations</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Members of California Tow Truck Association and International Towing & Recovery Association
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Customer Centricity Philosophy */}
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                  Our Philosophy of Customer Centricity
+                </h2>
+                <p className="text-xl text-muted-foreground">
+                  Everything we do is designed around one principle: putting our customers' needs first, 
+                  every single time.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-12">
+                <div>
+                  <h3 className="text-2xl font-bold text-foreground mb-6">Customer-First Approach</h3>
+                  <div className="space-y-4">
+                    <p className="text-muted-foreground leading-relaxed">
+                      We believe that being stranded or having vehicle trouble is stressful enough. That's why 
+                      every interaction with Heavy Haulers is designed to reduce your stress, not add to it.
+                    </p>
+                    <p className="text-muted-foreground leading-relaxed">
+                      From the moment you call our dispatch to the completion of your service, our team focuses 
+                      on clear communication, transparent pricing, and professional service that exceeds expectations.
+                    </p>
+                  </div>
+                </div>
+                <div className="bg-card border border-border rounded-2xl p-8">
+                  <h4 className="text-xl font-semibold text-foreground mb-6">Our Customer Commitments</h4>
+                  <div className="space-y-4">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <span className="text-white text-xs font-bold">1</span>
+                      </div>
+                      <div>
+                        <h5 className="font-semibold text-foreground">Honest Communication</h5>
+                        <p className="text-sm text-muted-foreground">No surprises, no hidden fees, no misleading estimates</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-6 h-6 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <span className="text-white text-xs font-bold">2</span>
+                      </div>
+                      <div>
+                        <h5 className="font-semibold text-foreground">Rapid Response</h5>
+                        <p className="text-sm text-muted-foreground">Fast dispatch because we know your time matters</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-6 h-6 bg-warning rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <span className="text-white text-xs font-bold">3</span>
+                      </div>
+                      <div>
+                        <h5 className="font-semibold text-foreground">Professional Care</h5>
+                        <p className="text-sm text-muted-foreground">Treating your vehicle like it's our own</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-6 h-6 bg-success rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <span className="text-white text-xs font-bold">4</span>
+                      </div>
+                      <div>
+                        <h5 className="font-semibold text-foreground">Continuous Improvement</h5>
+                        <p className="text-sm text-muted-foreground">Always learning and improving from customer feedback</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Customer Feedback Integration */}
+              <div className="bg-gradient-subtle rounded-2xl p-8">
+                <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
+                  Feedback-Driven Excellence
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <Users className="w-8 h-8 text-white" />
+                    </div>
+                    <h4 className="font-semibold text-foreground mb-2">Customer Surveys</h4>
+                    <p className="text-sm text-muted-foreground">Post-service feedback to continuously improve our processes</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <Shield className="w-8 h-8 text-white" />
+                    </div>
+                    <h4 className="font-semibold text-foreground mb-2">Quality Assurance</h4>
+                    <p className="text-sm text-muted-foreground">Regular service quality reviews and performance monitoring</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <Award className="w-8 h-8 text-white" />
+                    </div>
+                    <h4 className="font-semibold text-foreground mb-2">Recognition Programs</h4>
+                    <p className="text-sm text-muted-foreground">Rewarding team members who consistently exceed customer expectations</p>
                   </div>
                 </div>
               </div>

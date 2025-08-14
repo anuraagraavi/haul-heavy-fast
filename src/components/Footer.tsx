@@ -70,7 +70,7 @@ const Footer = () => {
             <div className="space-y-2">
               <div className="flex items-center space-x-2">
                 <Phone className="w-3 h-3 text-primary" />
-                <span className="text-muted-foreground text-sm">(415) 555-HAUL</span>
+                <span className="text-muted-foreground text-sm">650-881-2400</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Clock className="w-3 h-3 text-primary" />
@@ -86,7 +86,7 @@ const Footer = () => {
           <p className="text-white/90 mb-4">Don't wait - our dispatch team is standing by 24/7</p>
           <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-gray-100">
             <Phone className="w-5 h-5 mr-2" />
-            Call (415) 555-HAUL
+            Call 650-881-2400
           </Button>
         </div>
       </div>
