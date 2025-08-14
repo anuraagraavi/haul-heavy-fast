@@ -98,7 +98,7 @@ const Header = () => {
                           </div>
                         </div>
                       </div>
-                      <Button variant="hero" className="w-full">
+                      <Button variant="hero" className="w-full" onClick={() => window.location.href = `tel:${businessPhone}`}>
                         <Phone className="w-4 h-4 mr-2" />
                         Call Now
                       </Button>
@@ -107,34 +107,82 @@ const Header = () => {
                 </div>}
             </div>
 
-            {/* Locations Dropdown */}
+            {/* Locations Mega Menu */}
             <div className="relative group" onMouseEnter={() => setIsLocationsOpen(true)} onMouseLeave={() => setIsLocationsOpen(false)}>
               <button className="flex items-center text-foreground hover:text-primary transition-colors">
                 Locations
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
-              {isLocationsOpen && <div className="absolute top-full left-0 w-64 bg-card border border-border rounded-lg shadow-elevated mt-2 z-50">
-                  <div className="p-4 space-y-3">
-                    <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center">
-                      <MapPin className="w-4 h-4 mr-2 text-primary" />
-                      Service Areas
-                    </h4>
-                    <a href="/locations#san-francisco" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
-                      San Francisco County
-                    </a>
-                    <a href="/locations#san-mateo" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
-                      San Mateo County
-                    </a>
-                    <a href="/locations#alameda" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
-                      Alameda County
-                    </a>
-                    <a href="/locations#santa-clara" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
-                      Santa Clara County
-                    </a>
-                    <div className="border-t border-border pt-3 mt-3">
-                      <a href="/locations" className="block text-sm font-medium text-primary hover:text-primary/80 transition-colors">
-                        View All Locations →
-                      </a>
+              {isLocationsOpen && <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-screen max-w-4xl bg-card border border-border rounded-lg shadow-elevated mt-2 z-50">
+                  <div className="grid grid-cols-12 gap-6 p-8">
+                    {/* Left Column - San Francisco County */}
+                    <div className="col-span-3 space-y-4">
+                      <h3 className="text-lg font-semibold text-foreground mb-4">San Francisco County</h3>
+                      <div className="space-y-2">
+                        <a href="/locations#san-francisco" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
+                          San Francisco
+                        </a>
+                        <a href="/locations#daly-city" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
+                          Daly City
+                        </a>
+                        <a href="/locations#south-sf" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
+                          South San Francisco
+                        </a>
+                      </div>
+                    </div>
+
+                    {/* Second Column - San Mateo County */}
+                    <div className="col-span-3 space-y-4">
+                      <h3 className="text-lg font-semibold text-foreground mb-4">San Mateo County</h3>
+                      <div className="space-y-2">
+                        <a href="/locations#san-mateo" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
+                          San Mateo
+                        </a>
+                        <a href="/locations#redwood-city" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
+                          Redwood City
+                        </a>
+                        <a href="/locations#palo-alto" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
+                          Palo Alto
+                        </a>
+                        <a href="/locations#fremont" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
+                          Fremont
+                        </a>
+                      </div>
+                    </div>
+
+                    {/* Third Column - Alameda County */}
+                    <div className="col-span-3 space-y-4">
+                      <h3 className="text-lg font-semibold text-foreground mb-4">Alameda County</h3>
+                      <div className="space-y-2">
+                        <a href="/locations#oakland" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
+                          Oakland
+                        </a>
+                        <a href="/locations#berkeley" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
+                          Berkeley
+                        </a>
+                        <a href="/locations#hayward" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
+                          Hayward
+                        </a>
+                      </div>
+                    </div>
+
+                    {/* Right Column - Contact Info */}
+                    <div className="col-span-3 space-y-4">
+                      <h3 className="text-lg font-semibold text-foreground mb-4">Need Help Now?</h3>
+                      <div className="bg-gradient-primary p-4 rounded-lg text-black">
+                        <div className="space-y-2">
+                          <p className="font-semibold">24/7 Bay Area Coverage</p>
+                          <p className="text-sm">{businessAddress}</p>
+                          <div className="flex items-center space-x-2 mt-3">
+                            <Phone className="h-4 w-4" />
+                            <span className="font-medium">{businessPhone}</span>
+                          </div>
+                        </div>
+                      </div>
+                      <Button variant="hero" className="w-full" onClick={() => window.location.href = `tel:${businessPhone}`}>
+                        <Phone className="w-4 h-4 mr-2" />
+                        Call Now
+                      </Button>
                     </div>
                   </div>
                 </div>}
