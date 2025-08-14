@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, FileText, Clock, Shield, Truck } from "lucide-react";
 import heroImage from "@/assets/hero-tow-truck.jpg";
@@ -25,13 +24,11 @@ const Hero = () => {
             <span className="text-sm font-medium text-foreground">24/7 Emergency Dispatch</span>
           </div>
 
-          {/* Main Heading with Logo */}
+          {/* Main Heading */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-            <img 
-              src="/lovable-uploads/a43ad238-af3b-47a8-962f-32c9da2fc727.png" 
-              alt="Heavy Haulers Transport Co." 
-              className="h-16 md:h-24 lg:h-32 w-auto mx-auto mb-4"
-            />
+            <span className="bg-gradient-hero bg-clip-text text-transparent">
+              Heavy Haulers
+            </span>
             <br />
             Professional Towing
           </h1>
