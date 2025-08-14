@@ -2,25 +2,17 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Phone, Menu, MapPin, ChevronDown } from "lucide-react";
 import { useState } from "react";
-
 const Header = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isLocationsOpen, setIsLocationsOpen] = useState(false);
-
   const businessPhone = "650-881-2400";
   const businessAddress = "308 Industrial Way Brisbane, CA 94005";
-
-  return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+  return <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <img 
-              src="/lovable-uploads/a43ad238-af3b-47a8-962f-32c9da2fc727.png" 
-              alt="Heavy Haulers Transport Co." 
-              className="h-10 w-auto"
-            />
+            <img src="/lovable-uploads/a43ad238-af3b-47a8-962f-32c9da2fc727.png" alt="Heavy Haulers Transport Co." className="h-10 w-auto" />
           </div>
 
           {/* Desktop Navigation */}
@@ -33,17 +25,12 @@ const Header = () => {
             </a>
 
             {/* Services Mega Menu */}
-            <div 
-              className="relative group"
-              onMouseEnter={() => setIsServicesOpen(true)}
-              onMouseLeave={() => setIsServicesOpen(false)}
-            >
+            <div className="relative group" onMouseEnter={() => setIsServicesOpen(true)} onMouseLeave={() => setIsServicesOpen(false)}>
               <button className="flex items-center text-foreground hover:text-primary transition-colors">
                 Services
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
-              {isServicesOpen && (
-                <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-screen max-w-4xl bg-card border border-border rounded-lg shadow-elevated mt-2 z-50">
+              {isServicesOpen && <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-screen max-w-4xl bg-card border border-border rounded-lg shadow-elevated mt-2 z-50">
                   <div className="grid grid-cols-12 gap-6 p-8">
                     {/* Left Column - Main Services */}
                     <div className="col-span-4 space-y-4">
@@ -117,22 +104,16 @@ const Header = () => {
                       </Button>
                     </div>
                   </div>
-                </div>
-              )}
+                </div>}
             </div>
 
             {/* Locations Dropdown */}
-            <div 
-              className="relative group"
-              onMouseEnter={() => setIsLocationsOpen(true)}
-              onMouseLeave={() => setIsLocationsOpen(false)}
-            >
+            <div className="relative group" onMouseEnter={() => setIsLocationsOpen(true)} onMouseLeave={() => setIsLocationsOpen(false)}>
               <button className="flex items-center text-foreground hover:text-primary transition-colors">
                 Locations
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
-              {isLocationsOpen && (
-                <div className="absolute top-full left-0 w-64 bg-card border border-border rounded-lg shadow-elevated mt-2 z-50">
+              {isLocationsOpen && <div className="absolute top-full left-0 w-64 bg-card border border-border rounded-lg shadow-elevated mt-2 z-50">
                   <div className="p-4 space-y-3">
                     <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center">
                       <MapPin className="w-4 h-4 mr-2 text-primary" />
@@ -156,8 +137,7 @@ const Header = () => {
                       </a>
                     </div>
                   </div>
-                </div>
-              )}
+                </div>}
             </div>
 
             <a href="/blog" className="text-foreground hover:text-primary transition-colors">
@@ -191,12 +171,8 @@ const Header = () => {
             <SheetContent side="left" className="w-80 p-0">
               <SheetHeader className="p-6 border-b border-border">
                 <SheetTitle className="flex items-center space-x-3">
-                  <img 
-                    src="/lovable-uploads/a43ad238-af3b-47a8-962f-32c9da2fc727.png" 
-                    alt="Heavy Haulers Transport Co." 
-                    className="h-8 w-auto"
-                  />
-                  <span className="text-lg font-bold">Heavy Haulers</span>
+                  <img src="/lovable-uploads/a43ad238-af3b-47a8-962f-32c9da2fc727.png" alt="Heavy Haulers Transport Co." className="h-8 w-auto" />
+                  
                 </SheetTitle>
               </SheetHeader>
               
@@ -275,8 +251,6 @@ const Header = () => {
           </Sheet>
         </div>
       </div>
-    </header>
-  );
+    </header>;
 };
-
 export default Header;
