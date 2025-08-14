@@ -247,23 +247,35 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div>
-                  <h3 className="text-2xl font-bold text-foreground mb-6">Fleet Inquiries</h3>
-                  <div className="bg-card border border-border rounded-xl p-6">
-                    <p className="text-muted-foreground mb-4">
-                      Looking for fleet contracts or commercial towing agreements? We offer:
-                    </p>
-                    <ul className="text-sm text-muted-foreground space-y-2">
-                      <li>• Priority dispatch for business vehicles</li>
-                      <li>• Volume pricing for fleet operations</li>
-                      <li>• Service level agreements (SLAs)</li>
-                      <li>• Dedicated account management</li>
-                    </ul>
-                    <Button variant="outline" className="w-full mt-4">
-                      <Mail className="w-4 h-4 mr-2" />
-                      fleet@heavyhaulerssf.com
-                    </Button>
-                  </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Fleet Inquiries - Full Width Section */}
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold text-foreground mb-6 text-center">Fleet Inquiries</h2>
+              <div className="bg-card border border-border rounded-xl p-8">
+                <p className="text-muted-foreground mb-6 text-center">
+                  Looking for fleet contracts or commercial towing agreements? We offer:
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                  <ul className="text-muted-foreground space-y-2">
+                    <li>• Priority dispatch for business vehicles</li>
+                    <li>• Volume pricing for fleet operations</li>
+                  </ul>
+                  <ul className="text-muted-foreground space-y-2">
+                    <li>• Service level agreements (SLAs)</li>
+                    <li>• Dedicated account management</li>
+                  </ul>
+                </div>
+                <div className="text-center">
+                  <Button variant="outline" size="lg">
+                    <Mail className="w-4 h-4 mr-2" />
+                    fleet@heavyhaulerssf.com
+                  </Button>
                 </div>
               </div>
             </div>
