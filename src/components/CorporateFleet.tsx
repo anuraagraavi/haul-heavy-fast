@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Building, Clock, DollarSign, Shield, Users, Truck, Phone, Mail } from "lucide-react";
@@ -143,15 +144,6 @@ const CorporateFleet = () => {
               <Mail className="w-5 h-5 mr-2" />
               fleet@heavyhaulerssf.com
             </Button>
-          </div>
-
-          {/* Business Address */}
-          <div className="mt-8 pt-8 border-t border-border text-center">
-            <p className="text-muted-foreground">
-              <strong className="text-foreground">Heavy Haulers Transport Co.</strong><br />
-              308 Industrial Way, Brisbane, CA 94005<br />
-              Licensed & Insured • CA DOT Compliant
-            </p>
           </div>
         </div>
       </div>
