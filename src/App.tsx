@@ -16,6 +16,12 @@ import Blog from "./pages/Blog";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Sitemap from "./pages/Sitemap";
+import ThankYou from "./pages/ThankYou";
+import EmergencyTowingGuide from "./pages/blog/emergency-towing-guide";
+import HeavyEquipmentTransport from "./pages/blog/heavy-equipment-transport";
+import FleetManagementTowing from "./pages/blog/fleet-management-towing";
+import SfTowingChallenges from "./pages/blog/sf-towing-challenges";
+import LuxuryTransportGuide from "./pages/blog/luxury-transport-guide";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -37,6 +43,12 @@ const App = () => (
           <Route path="/get-a-quote" element={<GetQuote />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/emergency-towing-guide" element={<EmergencyTowingGuide />} />
+          <Route path="/blog/heavy-equipment-transport" element={<HeavyEquipmentTransport />} />
+          <Route path="/blog/fleet-management-towing" element={<FleetManagementTowing />} />
+          <Route path="/blog/sf-towing-challenges" element={<SfTowingChallenges />} />
+          <Route path="/blog/luxury-transport-guide" element={<LuxuryTransportGuide />} />
+          <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/privacy-policy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/sitemap" element={<Sitemap />} />

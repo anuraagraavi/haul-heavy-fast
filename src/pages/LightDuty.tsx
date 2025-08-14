@@ -85,9 +85,11 @@ const LightDuty = () => {
                   <Phone className="w-5 h-5 mr-2" />
                   Call 650-881-2400
                 </Button>
-                <Button variant="secondary" size="lg">
-                  <MessageCircle className="w-5 h-5 mr-2" />
-                  WhatsApp
+                <Button variant="secondary" size="lg" asChild>
+                  <a href="/get-a-quote">
+                    <MessageCircle className="w-5 h-5 mr-2" />
+                    Get Free Quote
+                  </a>
                 </Button>
               </div>
             </div>
@@ -136,8 +138,12 @@ const LightDuty = () => {
                         </Button>
                       </div>
                       <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
-                        <div className="bg-card border border-border rounded-2xl p-8 h-64 flex items-center justify-center">
-                          <IconComponent className="w-32 h-32 text-muted-foreground/20" />
+                        <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                          <img 
+                            src="/src/assets/light-duty-service.jpg" 
+                            alt={service.title}
+                            className="w-full h-64 object-cover"
+                          />
                         </div>
                       </div>
                     </div>

@@ -6,6 +6,9 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, MessageCircle, Mail, MapPin, Clock, Send } from "lucide-react";
 import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
+import { submitContactForm } from "@/lib/formSubmission";
+import { useNavigate } from "react-router-dom";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -15,14 +18,34 @@ const Contact = () => {
     subject: "",
     message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+  const navigate = useNavigate();
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Contact form submitted:", formData);
+    setIsSubmitting(true);
+
+    try {
+      await submitContactForm(formData);
+      toast({
+        title: "Message Sent!",
+        description: "We'll get back to you as soon as possible.",
+      });
+      navigate('/thank-you?type=contact');
+    } catch (error) {
+      toast({
+        title: "Submission Failed",
+        description: "Please try again or call us directly at 650-881-2400.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactMethods = [
@@ -35,9 +58,9 @@ const Contact = () => {
     },
     {
       icon: MessageCircle,
-      title: "WhatsApp Chat",
+      title: "Contact Form",
       description: "Quick responses for non-emergency inquiries",
-      action: "Start Chat",
+      action: "Send Message",
       urgent: false
     },
     {
@@ -199,9 +222,9 @@ const Contact = () => {
                     />
                   </div>
 
-                  <Button type="submit" variant="hero" size="lg" className="w-full">
+                  <Button type="submit" variant="hero" size="lg" className="w-full" disabled={isSubmitting}>
                     <Send className="w-5 h-5 mr-2" />
-                    Send Message
+                    {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
                 </form>
               </div>

@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, MapPin, Clock, Star, CheckCircle } from "lucide-react";
+import { Helmet } from "react-helmet";
 
 const Locations = () => {
   const counties = [
@@ -70,37 +71,67 @@ const Locations = () => {
   ];
 
   const stats = [
-    { number: "4", label: "Counties Served" },
-    { number: "15min", label: "Avg Response Time" },
-    { number: "24/7", label: "Emergency Dispatch" },
-    { number: "50+", label: "Cities & Districts" }
+    { value: "4", label: "Counties Served" },
+    { value: "15min", label: "Avg Response Time" },
+    { value: "24/7", label: "Emergency Dispatch" },
+    { value: "50+", label: "Cities & Districts" }
   ];
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Bay Area Towing Coverage - Heavy Haulers | 4 Counties Served</title>
+        <meta name="description" content="Professional towing services across San Francisco, San Mateo, Alameda, and Santa Clara counties. 24/7 emergency dispatch with 15-minute average response time." />
+      </Helmet>
       <Header />
       <main>
         {/* Hero Section */}
         <section className="pt-24 pb-16 bg-gradient-subtle">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                Service Areas Across the
-                <span className="bg-gradient-primary bg-clip-text text-transparent ml-2">
-                  Bay Area
-                </span>
-              </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-                Heavy Haulers provides 24/7 emergency towing and recovery services across 4 California counties. 
-                Local dispatch means faster response times and better service for your community.
-              </p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
-                {stats.map((stat, index) => (
-                  <div key={index} className="text-center">
-                    <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{stat.number}</div>
-                    <div className="text-sm text-muted-foreground">{stat.label}</div>
+            <div className="max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                  <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+                    Bay Area
+                    <span className="bg-gradient-primary bg-clip-text text-transparent ml-2">
+                      Coverage
+                    </span>
+                  </h1>
+                  <p className="text-xl text-muted-foreground leading-relaxed mb-8">
+                    Professional towing and recovery services across all major Bay Area counties. 
+                    Local dispatch, rapid response, and comprehensive coverage from San Francisco to Silicon Valley.
+                  </p>
+                  
+                  {/* Quick Stats */}
+                  <div className="grid grid-cols-2 gap-4 mb-8">
+                    {stats.map((stat, index) => (
+                      <div key={index} className="bg-card/60 backdrop-blur-sm border border-border rounded-xl p-4 text-center">
+                        <div className="text-2xl font-bold text-primary">{stat.value}</div>
+                        <div className="text-sm text-muted-foreground">{stat.label}</div>
+                      </div>
+                    ))}
                   </div>
-                ))}
+
+                  <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <Button variant="hero" size="lg" asChild>
+                      <a href="tel:650-881-2400">
+                        <Phone className="w-5 h-5 mr-2" />
+                        Call 650-881-2400
+                      </a>
+                    </Button>
+                    <Button variant="secondary" size="lg" asChild>
+                      <a href="/get-a-quote">Get Coverage Quote</a>
+                    </Button>
+                  </div>
+                </div>
+
+                <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                  <img 
+                    src="/src/assets/bay-area-coverage.jpg" 
+                    alt="Bay Area coverage map showing all service areas"
+                    className="w-full h-96 object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -111,66 +142,62 @@ const Locations = () => {
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Complete Bay Area Coverage
+                County-by-County Coverage
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                From San Francisco to San Jose, from Berkeley to Daly City - we're your local 
-                towing professionals with deep knowledge of Bay Area roads and communities.
+                Dedicated local dispatch for each county ensures faster response times and 
+                better service. Our operators know the local roads, traffic patterns, and best routes.
               </p>
             </div>
 
             <div className="space-y-16">
               {counties.map((county, index) => (
-                <div key={index} id={county.id} className="scroll-mt-24">
+                <div key={county.id} className="scroll-mt-24" id={county.id}>
                   <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-start ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
                     <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                      <div className="flex items-center space-x-3 mb-6">
-                        <MapPin className="w-8 h-8 text-primary" />
-                        <h3 className="text-3xl font-bold text-foreground">{county.name}</h3>
+                      <div className="flex items-center space-x-4 mb-6">
+                        <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center">
+                          <MapPin className="w-6 h-6 text-white" />
+                        </div>
+                        <div>
+                          <h3 className="text-2xl md:text-3xl font-bold text-foreground">{county.name}</h3>
+                          <p className="text-primary font-medium">{county.phone}</p>
+                        </div>
                       </div>
+                      
                       <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                         {county.description}
                       </p>
-                      
-                      <div className="mb-6">
-                        <h4 className="text-lg font-semibold text-foreground mb-3">Areas We Serve:</h4>
-                        <div className="grid grid-cols-2 gap-2">
-                          {county.districts.map((district, districtIndex) => (
-                            <div key={districtIndex} className="flex items-center space-x-2">
-                              <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                              <span className="text-sm text-muted-foreground">{district}</span>
-                            </div>
+
+                      {/* Testimonial */}
+                      <div className="bg-card border border-border rounded-xl p-6 mb-6">
+                        <div className="flex items-center space-x-1 mb-3">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="w-4 h-4 fill-warning text-warning" />
                           ))}
                         </div>
+                        <p className="text-foreground italic mb-3">"{county.testimonial.text}"</p>
+                        <p className="text-sm text-muted-foreground">— {county.testimonial.author}</p>
                       </div>
 
-                      <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                        <Button variant="hero">
-                          <Phone className="w-4 h-4 mr-2" />
-                          {county.phone}
-                        </Button>
-                        <Button variant="outline">
-                          <MessageCircle className="w-4 h-4 mr-2" />
-                          WhatsApp
-                        </Button>
-                      </div>
+                      <Button variant="outline" asChild>
+                        <a href="/get-a-quote">Get Quote for {county.name}</a>
+                      </Button>
                     </div>
 
                     <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
-                      <div className="bg-card border border-border rounded-2xl p-8">
-                        <div className="flex items-center space-x-2 mb-4">
-                          <Star className="w-5 h-5 text-warning fill-current" />
-                          <Star className="w-5 h-5 text-warning fill-current" />
-                          <Star className="w-5 h-5 text-warning fill-current" />
-                          <Star className="w-5 h-5 text-warning fill-current" />
-                          <Star className="w-5 h-5 text-warning fill-current" />
+                      <div className="bg-card border border-border rounded-xl p-6">
+                        <h4 className="text-lg font-semibold text-foreground mb-4">
+                          Areas We Serve in {county.name}
+                        </h4>
+                        <div className="grid grid-cols-2 gap-2">
+                          {county.districts.map((district, districtIndex) => (
+                            <div key={districtIndex} className="flex items-center space-x-2 text-sm">
+                              <CheckCircle className="w-3 h-3 text-success flex-shrink-0" />
+                              <span className="text-muted-foreground">{district}</span>
+                            </div>
+                          ))}
                         </div>
-                        <blockquote className="text-lg text-foreground mb-4 italic">
-                          "{county.testimonial.text}"
-                        </blockquote>
-                        <cite className="text-muted-foreground font-medium">
-                          — {county.testimonial.author}
-                        </cite>
                       </div>
                     </div>
                   </div>
@@ -189,7 +216,7 @@ const Locations = () => {
                   Why Local Coverage Matters
                 </h2>
                 <p className="text-xl text-muted-foreground">
-                  Our extensive Bay Area presence means better service for you.
+                  Our county-based dispatch system delivers faster, more reliable service than regional competitors.
                 </p>
               </div>
 
@@ -197,17 +224,23 @@ const Locations = () => {
                 <div className="text-center">
                   <Clock className="w-12 h-12 text-primary mx-auto mb-4" />
                   <h3 className="text-xl font-semibold text-foreground mb-3">Faster Response</h3>
-                  <p className="text-muted-foreground">Local dispatch means we're always closer to your emergency situation.</p>
+                  <p className="text-muted-foreground">
+                    Local operators know shortcuts and can navigate traffic patterns for quicker arrival times.
+                  </p>
                 </div>
                 <div className="text-center">
                   <MapPin className="w-12 h-12 text-secondary mx-auto mb-4" />
                   <h3 className="text-xl font-semibold text-foreground mb-3">Local Knowledge</h3>
-                  <p className="text-muted-foreground">Our operators know Bay Area roads, traffic patterns, and best routes.</p>
+                  <p className="text-muted-foreground">
+                    Our operators understand local roads, parking restrictions, and area-specific challenges.
+                  </p>
                 </div>
                 <div className="text-center">
-                  <CheckCircle className="w-12 h-12 text-success mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold text-foreground mb-3">Community Trust</h3>
-                  <p className="text-muted-foreground">We're part of your community with a reputation built on reliable service.</p>
+                  <Phone className="w-12 h-12 text-warning mx-auto mb-4" />
+                  <h3 className="text-xl font-semibold text-foreground mb-3">Direct Dispatch</h3>
+                  <p className="text-muted-foreground">
+                    County-specific phone routing connects you directly to the nearest available team.
+                  </p>
                 </div>
               </div>
             </div>
@@ -218,45 +251,52 @@ const Locations = () => {
         <section className="py-20 bg-gradient-primary">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl font-bold text-white mb-6">
-                Emergency Towing Available Now
+              <h2 className="text-3xl font-bold text-white mb-4">
+                Need Towing Anywhere in the Bay Area?
               </h2>
               <p className="text-xl text-white/90 mb-8">
-                No matter where you are in the Bay Area, Heavy Haulers has local dispatch 
-                ready to respond to your emergency.
+                Don't worry about which county you're in - our unified dispatch system 
+                will route you to the closest available team automatically.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-gray-100">
-                  <Phone className="w-5 h-5 mr-2" />
-                  Call Emergency Dispatch
+                <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-gray-100" asChild>
+                  <a href="tel:650-881-2400">
+                    <Phone className="w-5 h-5 mr-2" />
+                    Emergency: 650-881-2400
+                  </a>
                 </Button>
-                <Button variant="secondary" size="lg">
-                  <MessageCircle className="w-5 h-5 mr-2" />
-                  WhatsApp Now
+                <Button variant="secondary" size="lg" asChild>
+                  <a href="/get-a-quote">
+                    <MessageCircle className="w-5 h-5 mr-2" />
+                    Get Coverage Quote
+                  </a>
                 </Button>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Coverage Map CTA */}
+        {/* Check Coverage */}
         <section className="py-20">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
+            <div className="max-w-2xl mx-auto text-center">
               <h2 className="text-3xl font-bold text-foreground mb-6">
-                Not Sure If We Serve Your Area?
+                Not Sure If We Cover Your Area?
               </h2>
-              <p className="text-xl text-muted-foreground mb-8">
-                We're constantly expanding our coverage. Call us and we'll let you know 
-                if we can help with your specific location.
+              <p className="text-lg text-muted-foreground mb-8">
+                Heavy Haulers serves over 50 cities and districts across the Bay Area. 
+                If you're unsure about coverage in your specific location, just give us a call.
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <Button variant="hero" size="lg">
-                  <Phone className="w-5 h-5 mr-2" />
-                  Check Coverage
-                </Button>
-                <Button variant="outline" size="lg" asChild>
-                  <a href="/get-a-quote">Get Area Quote</a>
+              <div className="bg-card border border-border rounded-xl p-8">
+                <h3 className="text-xl font-semibold text-foreground mb-4">Quick Coverage Check</h3>
+                <p className="text-muted-foreground mb-6">
+                  Call our dispatch line and we'll confirm coverage and provide an estimated response time for your location.
+                </p>
+                <Button variant="hero" size="lg" asChild>
+                  <a href="tel:650-881-2400">
+                    <Phone className="w-5 h-5 mr-2" />
+                    Check Coverage: 650-881-2400
+                  </a>
                 </Button>
               </div>
             </div>

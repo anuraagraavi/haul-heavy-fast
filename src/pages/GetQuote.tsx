@@ -7,6 +7,9 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Phone, MessageCircle, FileText, Upload, Clock, Shield, DollarSign } from "lucide-react";
 import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
+import { submitQuoteForm } from "@/lib/formSubmission";
+import { useNavigate } from "react-router-dom";
 
 const GetQuote = () => {
   const [formData, setFormData] = useState({
@@ -20,15 +23,34 @@ const GetQuote = () => {
     notes: "",
     urgency: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+  const navigate = useNavigate();
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Quote request submitted:", formData);
+    setIsSubmitting(true);
+
+    try {
+      await submitQuoteForm(formData);
+      toast({
+        title: "Quote Request Submitted!",
+        description: "We'll get back to you within 15 minutes with your quote.",
+      });
+      navigate('/thank-you?type=quote');
+    } catch (error) {
+      toast({
+        title: "Submission Failed",
+        description: "Please try again or call us directly at 650-881-2400.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const benefits = [
@@ -238,9 +260,9 @@ const GetQuote = () => {
 
                     {/* Submit Buttons */}
                     <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                      <Button type="submit" variant="hero" size="lg" className="flex-1">
+                    <Button type="submit" variant="hero" size="lg" className="flex-1" disabled={isSubmitting}>
                         <FileText className="w-5 h-5 mr-2" />
-                        Get My Quote
+                        {isSubmitting ? "Submitting..." : "Get My Quote"}
                       </Button>
                       <Button type="button" variant="outline" size="lg">
                         <Phone className="w-5 h-5 mr-2" />
@@ -264,9 +286,11 @@ const GetQuote = () => {
                       <Phone className="w-4 h-4 mr-2" />
                       650-881-2400
                     </Button>
-                    <Button variant="secondary" className="w-full">
-                      <MessageCircle className="w-4 h-4 mr-2" />
-                      WhatsApp Chat
+                    <Button variant="secondary" className="w-full" asChild>
+                      <a href="/contact">
+                        <MessageCircle className="w-4 h-4 mr-2" />
+                        Contact Form
+                      </a>
                     </Button>
                   </div>
                 </div>
