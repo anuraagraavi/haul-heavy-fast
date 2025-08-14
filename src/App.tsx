@@ -12,6 +12,10 @@ import HeavyDuty from "./pages/HeavyDuty";
 import Locations from "./pages/Locations";
 import GetQuote from "./pages/GetQuote";
 import Contact from "./pages/Contact";
+import Blog from "./pages/Blog";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
+import Sitemap from "./pages/Sitemap";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,6 +36,10 @@ const App = () => (
           <Route path="/locations" element={<Locations />} />
           <Route path="/get-a-quote" element={<GetQuote />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/privacy-policy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/sitemap" element={<Sitemap />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
