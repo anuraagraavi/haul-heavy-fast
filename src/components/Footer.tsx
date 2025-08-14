@@ -8,9 +8,9 @@ const Footer = () => {
     <footer className="bg-card border-t border-border">
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Company Info */}
-          <div className="space-y-4">
+          <div className="space-y-4 lg:col-span-2">
             <img 
               src="/lovable-uploads/a43ad238-af3b-47a8-962f-32c9da2fc727.png" 
               alt="Heavy Haulers Transport Co." 
@@ -32,7 +32,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Services */}
           <div>
             <h3 className="font-semibold text-foreground mb-4">Services</h3>
             <ul className="space-y-2 text-muted-foreground">
@@ -56,25 +56,25 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Resources & Contact */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Contact</h3>
-            <div className="space-y-3">
+            <h3 className="font-semibold text-foreground mb-4">Resources</h3>
+            <ul className="space-y-2 text-muted-foreground mb-6">
+              <li><a href="/about" className="hover:text-primary transition-colors">About Us</a></li>
+              <li><a href="/blog" className="hover:text-primary transition-colors">Blog & Guides</a></li>
+              <li><a href="/get-a-quote" className="hover:text-primary transition-colors">Get a Quote</a></li>
+              <li><a href="/contact" className="hover:text-primary transition-colors">Contact Us</a></li>
+            </ul>
+            
+            <h4 className="font-semibold text-foreground mb-3 text-sm">Quick Contact</h4>
+            <div className="space-y-2">
               <div className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-primary" />
-                <span className="text-muted-foreground">(415) 555-HAUL</span>
+                <Phone className="w-3 h-3 text-primary" />
+                <span className="text-muted-foreground text-sm">(415) 555-HAUL</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Mail className="w-4 h-4 text-primary" />
-                <span className="text-muted-foreground">dispatch@heavyhaulerssf.com</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <MapPin className="w-4 h-4 text-primary" />
-                <span className="text-muted-foreground">San Francisco Bay Area</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Clock className="w-4 h-4 text-primary" />
-                <span className="text-muted-foreground">24/7 Emergency Dispatch</span>
+                <Clock className="w-3 h-3 text-primary" />
+                <span className="text-muted-foreground text-sm">24/7 Dispatch</span>
               </div>
             </div>
           </div>
