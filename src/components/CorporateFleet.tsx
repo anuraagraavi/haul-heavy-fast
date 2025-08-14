@@ -142,7 +142,7 @@ const CorporateFleet = () => {
             </Button>
             <Button variant="outline" size="lg">
               <Mail className="w-5 h-5 mr-2" />
-              fleet@heavyhaulerssf.com
+              dispatch@heavytowpro.com
             </Button>
           </div>
         </div>

@@ -32,7 +32,7 @@ const ServicesOverview = () => {
   return (
     <section className="py-20">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in-down">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Our Towing
             <span className="bg-gradient-primary bg-clip-text text-transparent ml-2">
@@ -45,7 +45,7 @@ const ServicesOverview = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 animate-scale-in">
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (

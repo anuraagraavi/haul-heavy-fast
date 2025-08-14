@@ -67,7 +67,7 @@ const Contact = () => {
       icon: Mail,
       title: "Email Support",
       description: "General inquiries and fleet contracts",
-      action: "dispatch@heavyhaulerssf.com",
+      action: "dispatch@heavytowpro.com",
       urgent: false
     }
   ];
@@ -108,7 +108,7 @@ const Contact = () => {
         {/* Contact Methods */}
         <section className="py-20">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
+            <div className="text-center mb-16 animate-fade-in-down">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 Get In Touch
               </h2>
@@ -118,11 +118,11 @@ const Contact = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 animate-scale-in">
               {contactMethods.map((method, index) => {
                 const IconComponent = method.icon;
                 return (
-                  <div key={index} className={`bg-card border rounded-2xl p-8 text-center hover:shadow-elevated transition-all duration-300 ${method.urgent ? 'border-primary bg-primary/5' : 'border-border'}`}>
+                  <div key={index} className={`bg-card border rounded-2xl p-8 text-center hover:shadow-elevated hover:scale-105 transition-all duration-300 ${method.urgent ? 'border-primary bg-primary/5' : 'border-border'}`}>
                     <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 ${method.urgent ? 'bg-gradient-primary' : 'bg-secondary'}`}>
                       <IconComponent className="w-8 h-8 text-white" />
                     </div>
@@ -137,7 +137,7 @@ const Contact = () => {
             </div>
 
             {/* Quick Emergency Banner */}
-            <div className="bg-gradient-primary rounded-2xl p-8 text-center text-white mb-16">
+            <div className="bg-gradient-primary rounded-2xl p-8 text-center text-white mb-16 animate-glow">
               <h3 className="text-2xl font-bold mb-4">Emergency Towing Right Now?</h3>
               <p className="text-white/90 mb-6">
                 Don't wait - if you're stranded or in an emergency situation, call immediately for priority dispatch.
@@ -153,7 +153,7 @@ const Contact = () => {
         {/* Contact Form & Office Info */}
         <section className="py-20 bg-muted/20">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 animate-fade-in-up">
               {/* Contact Form */}
               <div>
                 <h2 className="text-3xl font-bold text-foreground mb-6">Send Us a Message</h2>
@@ -297,7 +297,7 @@ const Contact = () => {
                 <div className="text-center">
                   <Button variant="outline" size="lg">
                     <Mail className="w-4 h-4 mr-2" />
-                    fleet@heavyhaulerssf.com
+                    dispatch@heavytowpro.com
                   </Button>
                 </div>
               </div>

@@ -154,7 +154,7 @@ const Privacy = () => {
                     </p>
                     <div className="space-y-2 text-muted-foreground">
                       <p>Heavy Haulers San Francisco</p>
-                      <p>Email: privacy@heavyhaulerssf.com</p>
+                      <p>Email: dispatch@heavytowpro.com</p>
                       <p>Phone: 650-881-2400</p>
                       <p>Address: 308 Industrial Way, Brisbane, CA 94005</p>
                     </div>

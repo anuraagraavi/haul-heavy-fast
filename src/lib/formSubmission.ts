@@ -23,7 +23,7 @@ export interface ContactFormData {
 export const submitQuoteForm = async (formData: QuoteFormData): Promise<void> => {
   try {
     const emailData = {
-      recipient: "dispatch@heavyhaulerssf.com",
+      recipient: "dispatch@heavytowpro.com",
       sender: {
         name: formData.name,
         email: formData.email,
@@ -69,7 +69,7 @@ ${formData.notes || 'No additional notes provided'}
 export const submitContactForm = async (formData: ContactFormData): Promise<void> => {
   try {
     const emailData = {
-      recipient: "dispatch@heavyhaulerssf.com",
+      recipient: "dispatch@heavytowpro.com",
       sender: {
         name: formData.name,
         email: formData.email,

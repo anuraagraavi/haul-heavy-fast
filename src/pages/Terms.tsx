@@ -203,7 +203,7 @@ const Terms = () => {
                     </p>
                     <div className="space-y-2 text-muted-foreground">
                       <p>Heavy Haulers San Francisco</p>
-                      <p>Email: legal@heavyhaulerssf.com</p>
+                      <p>Email: dispatch@heavytowpro.com</p>
                       <p>Phone: 650-881-2400</p>
                       <p>Address: 400 Tunnel Ave, Brisbane, CA 94005</p>
                     </div>

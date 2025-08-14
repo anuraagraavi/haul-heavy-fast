@@ -22,22 +22,22 @@ const Index = () => {
         <div className="animate-fade-in">
           <Hero />
         </div>
-        <div className="animate-fade-in">
+        <div className="animate-fade-in-up">
           <ServicesOverview />
         </div>
-        <div className="animate-fade-in">
+        <div className="animate-scale-in">
           <WhyChooseUs />
         </div>
-        <div className="animate-fade-in">
+        <div className="animate-slide-in-right">
           <ServiceAreas />
         </div>
-        <div className="animate-fade-in">
+        <div className="animate-fade-in-up">
           <Testimonials />
         </div>
-        <div className="animate-fade-in">
+        <div className="animate-scale-in">
           <FAQ />
         </div>
-        <div className="animate-fade-in">
+        <div className="animate-fade-in-down">
           <CorporateFleet />
         </div>
       </main>
