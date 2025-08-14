@@ -28,7 +28,7 @@ const Hero = () => {
           </h1>
 
           {/* Subheading */}
-          <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto px-[10px]">
             Fast, transparent, and professional towing services across the San Francisco Bay Area. 
             From light-duty to heavy-duty hauling - we handle it all.
           </p>
