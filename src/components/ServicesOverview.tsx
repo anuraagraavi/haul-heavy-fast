@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Car, Truck, TruckIcon, Phone, ArrowRight } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const ServicesOverview = () => {
+  const { ref: sectionRef, isVisible } = useScrollAnimation();
+  
   const services = [
     {
       icon: Car,
@@ -30,9 +33,9 @@ const ServicesOverview = () => {
   ];
 
   return (
-    <section className="py-20">
+    <section ref={sectionRef} className="py-20">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in-down">
+        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Our Towing
             <span className="bg-gradient-primary bg-clip-text text-transparent ml-2">
@@ -45,13 +48,16 @@ const ServicesOverview = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 animate-scale-in">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
               <div 
                 key={index}
-                className="bg-card border border-border rounded-2xl p-8 hover:shadow-elevated transition-all duration-300 group"
+                className={`bg-card border border-border rounded-2xl p-8 hover:shadow-elevated transition-all duration-500 group hover-scale hover-glow ${
+                  isVisible ? 'animate-scale-in' : 'opacity-0'
+                }`}
+                style={{ animationDelay: `${index * 200 + 300}ms` }}
               >
                 <div className={`w-16 h-16 bg-gradient-to-r ${service.gradient} rounded-2xl flex items-center justify-center mb-6`}>
                   <IconComponent className="w-8 h-8 text-white" />
@@ -74,7 +80,12 @@ const ServicesOverview = () => {
                   ))}
                 </ul>
 
-                <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-white transition-colors" asChild>
+                <Button 
+                  variant="outline" 
+                  className="w-full group-hover:bg-primary group-hover:text-white transition-colors" 
+                  onClick={() => window.location.href = service.link}
+                  asChild
+                >
                   <a href={service.link}>
                     Learn More
                     <ArrowRight className="w-4 h-4 ml-2" />
@@ -91,7 +102,12 @@ const ServicesOverview = () => {
           <p className="text-white/90 mb-6 max-w-2xl mx-auto">
             Don't wait - our 24/7 dispatch team is ready to help with fast, professional service across the Bay Area.
           </p>
-          <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-gray-100">
+          <Button 
+            variant="outline" 
+            size="lg" 
+            className="bg-white text-primary border-white hover:bg-gray-100"
+            onClick={() => window.location.href = 'tel:650-881-2400'}
+          >
             <Phone className="w-5 h-5 mr-2" />
             Call 650-881-2400
           </Button>

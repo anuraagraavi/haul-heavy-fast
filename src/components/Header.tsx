@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Phone, Menu, MapPin, ChevronDown } from "lucide-react";
 import { useState } from "react";
+import { useHoverDelay } from "@/hooks/useHoverDelay";
 const Header = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isLocationsOpen, setIsLocationsOpen] = useState(false);
@@ -25,12 +26,16 @@ const Header = () => {
             </a>
 
             {/* Services Mega Menu */}
-            <div className="relative group" onMouseEnter={() => setIsServicesOpen(true)} onMouseLeave={() => setIsServicesOpen(false)}>
+            <div className="relative group" {...useHoverDelay(
+              () => setIsServicesOpen(true),
+              () => setIsServicesOpen(false),
+              { leaveDelay: 300 }
+            )}>
               <button className="flex items-center text-foreground hover:text-primary transition-colors">
                 Services
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
-              {isServicesOpen && <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-screen max-w-4xl bg-card border border-border rounded-lg shadow-elevated mt-2 z-50">
+              {isServicesOpen && <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-screen max-w-4xl bg-card border border-border rounded-lg shadow-elevated mt-2 z-50 animate-fade-in">
                   <div className="grid grid-cols-12 gap-6 p-8">
                     {/* Left Column - Main Services */}
                     <div className="col-span-4 space-y-4">
@@ -108,12 +113,16 @@ const Header = () => {
             </div>
 
             {/* Locations Mega Menu */}
-            <div className="relative group" onMouseEnter={() => setIsLocationsOpen(true)} onMouseLeave={() => setIsLocationsOpen(false)}>
+            <div className="relative group" {...useHoverDelay(
+              () => setIsLocationsOpen(true),
+              () => setIsLocationsOpen(false),
+              { leaveDelay: 300 }
+            )}>
               <button className="flex items-center text-foreground hover:text-primary transition-colors">
                 Locations
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
-              {isLocationsOpen && <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-screen max-w-4xl bg-card border border-border rounded-lg shadow-elevated mt-2 z-50">
+              {isLocationsOpen && <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-screen max-w-4xl bg-card border border-border rounded-lg shadow-elevated mt-2 z-50 animate-fade-in">
                   <div className="grid grid-cols-12 gap-6 p-8">
                     {/* Left Column - San Francisco County */}
                     <div className="col-span-3 space-y-4">

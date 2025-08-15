@@ -2,8 +2,12 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Building, Clock, DollarSign, Shield, Users, Truck, Phone, Mail } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import corporateFleetBanner from "@/assets/corporate-fleet-banner.jpg";
 
 const CorporateFleet = () => {
+  const { ref: sectionRef, isVisible } = useScrollAnimation();
+  
   const benefits = [
     {
       icon: Clock,
@@ -39,9 +43,9 @@ const CorporateFleet = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-subtle">
+    <section ref={sectionRef} className="py-20 bg-gradient-subtle">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Corporate Fleet
             <span className="bg-gradient-primary bg-clip-text text-transparent ml-2">
@@ -54,12 +58,33 @@ const CorporateFleet = () => {
           </p>
         </div>
 
+        {/* Corporate Fleet Banner */}
+        <div className={`relative mb-16 rounded-2xl overflow-hidden transition-all duration-1000 delay-300 ${isVisible ? 'animate-scale-in' : 'opacity-0'}`}>
+          <img 
+            src={corporateFleetBanner} 
+            alt="Corporate Fleet Towing Services" 
+            className="w-full h-64 md:h-80 object-cover"
+          />
+          <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+            <div className="text-center text-white">
+              <h3 className="text-2xl md:text-3xl font-bold mb-2">Professional Fleet Solutions</h3>
+              <p className="text-lg opacity-90">Serving businesses across the Bay Area</p>
+            </div>
+          </div>
+        </div>
+
         {/* Benefits Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {benefits.map((benefit, index) => {
             const IconComponent = benefit.icon;
             return (
-              <Card key={index} className="bg-card border border-border text-center hover:shadow-elevated transition-all duration-300">
+              <Card 
+                key={index} 
+                className={`bg-card border border-border text-center hover:shadow-elevated transition-all duration-500 hover-scale ${
+                  isVisible ? 'animate-fade-in' : 'opacity-0'
+                }`}
+                style={{ animationDelay: `${index * 150 + 600}ms` }}
+              >
                 <CardHeader>
                   <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
                     <IconComponent className="w-8 h-8 text-white" />
@@ -136,11 +161,19 @@ const CorporateFleet = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-            <Button variant="hero" size="lg">
+            <Button 
+              variant="hero" 
+              size="lg"
+              onClick={() => window.location.href = 'tel:650-881-2400'}
+            >
               <Phone className="w-5 h-5 mr-2" />
               Call 650-881-2400
             </Button>
-            <Button variant="outline" size="lg">
+            <Button 
+              variant="outline" 
+              size="lg"
+              onClick={() => window.location.href = 'mailto:dispatch@heavytowpro.com'}
+            >
               <Mail className="w-5 h-5 mr-2" />
               dispatch@heavytowpro.com
             </Button>

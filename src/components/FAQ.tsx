@@ -1,9 +1,12 @@
-import { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const FAQ = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
   const faqs = [
     {
       question: "How quickly can you respond to emergency calls?",
@@ -55,37 +58,26 @@ const FAQ = () => {
             </p>
           </div>
 
-          <div className="space-y-4">
+          <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
-              <div 
-                key={index} 
+              <AccordionItem
+                key={index}
+                value={`item-${index}`}
                 className="bg-card border border-border rounded-lg overflow-hidden"
               >
-                <button
-                  className="w-full text-left p-6 hover:bg-muted/20 transition-colors focus:outline-none focus:ring-2 focus:ring-primary/20"
-                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                >
-                  <div className="flex justify-between items-center">
-                    <h3 className="text-lg font-semibold text-foreground pr-4">
-                      {faq.question}
-                    </h3>
-                    {openIndex === index ? (
-                      <ChevronUp className="w-5 h-5 text-primary flex-shrink-0" />
-                    ) : (
-                      <ChevronDown className="w-5 h-5 text-muted-foreground flex-shrink-0" />
-                    )}
-                  </div>
-                </button>
-                {openIndex === index && (
-                  <div className="px-6 pb-6">
-                    <p className="text-muted-foreground leading-relaxed">
-                      {faq.answer}
-                    </p>
-                  </div>
-                )}
-              </div>
+                <AccordionTrigger className="text-left p-6 hover:bg-muted/20 transition-colors [&[data-state=open]>svg]:rotate-180">
+                  <h3 className="text-lg font-semibold text-foreground pr-4">
+                    {faq.question}
+                  </h3>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-6">
+                  <p className="text-muted-foreground leading-relaxed">
+                    {faq.answer}
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
             ))}
-          </div>
+          </Accordion>
         </div>
       </div>
     </section>

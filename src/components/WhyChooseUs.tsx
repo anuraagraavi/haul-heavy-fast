@@ -1,6 +1,9 @@
 import { Clock, DollarSign, Users, Truck, Shield, Award } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const WhyChooseUs = () => {
+  const { ref: sectionRef, isVisible } = useScrollAnimation();
+  
   const features = [
     {
       icon: Clock,
@@ -41,10 +44,10 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <section ref={sectionRef} className="py-20 bg-background">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Why Choose
             <span className="bg-gradient-primary bg-clip-text text-transparent ml-2">
@@ -64,7 +67,10 @@ const WhyChooseUs = () => {
             return (
               <div 
                 key={index}
-                className="group bg-card border border-border rounded-xl p-6 hover:shadow-elevated transition-all duration-300 hover:-translate-y-1"
+                className={`group bg-card border border-border rounded-xl p-6 hover:shadow-elevated transition-all duration-500 hover:-translate-y-1 hover-scale hover-glow ${
+                  isVisible ? 'animate-fade-in-up' : 'opacity-0'
+                }`}
+                style={{ animationDelay: `${index * 150 + 300}ms` }}
               >
                 {/* Icon with gradient background */}
                 <div className={`w-12 h-12 bg-gradient-to-r ${feature.gradient} rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
