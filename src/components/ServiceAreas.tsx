@@ -67,7 +67,12 @@ const ServiceAreas = () => {
                 ))}
               </div>
 
-              <Button variant="outline" size="sm" className="w-full mt-auto">
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="w-full mt-auto"
+                onClick={() => window.location.href = `tel:${county.phone}`}
+              >
                 <Phone className="w-4 h-4 mr-2" />
                 {county.phone}
               </Button>
@@ -84,11 +89,19 @@ const ServiceAreas = () => {
             We're constantly expanding our coverage. Give us a call and we'll let you know if we can help.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <Button variant="hero" size="lg">
+            <Button 
+              variant="hero" 
+              size="lg"
+              onClick={() => window.location.href = 'tel:650-881-2400'}
+            >
               <Phone className="w-5 h-5 mr-2" />
               Call 650-881-2400
             </Button>
-            <Button variant="outline" size="lg">
+            <Button 
+              variant="outline" 
+              size="lg"
+              onClick={() => window.location.href = '/locations'}
+            >
               View Full Coverage Map
             </Button>
           </div>

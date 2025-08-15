@@ -29,7 +29,7 @@ const Header = () => {
             <div className="relative group" {...useHoverDelay(
               () => setIsServicesOpen(true),
               () => setIsServicesOpen(false),
-              { leaveDelay: 300 }
+              { enterDelay: 300, leaveDelay: 300 }
             )}>
               <button className="flex items-center text-foreground hover:text-primary transition-colors">
                 Services
@@ -116,7 +116,7 @@ const Header = () => {
             <div className="relative group" {...useHoverDelay(
               () => setIsLocationsOpen(true),
               () => setIsLocationsOpen(false),
-              { leaveDelay: 300 }
+              { enterDelay: 300, leaveDelay: 300 }
             )}>
               <button className="flex items-center text-foreground hover:text-primary transition-colors">
                 Locations
