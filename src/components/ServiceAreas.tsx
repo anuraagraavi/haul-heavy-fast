@@ -1,34 +1,25 @@
-
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone } from "lucide-react";
 import bayAreaCoverage from "@/assets/bay-area-coverage.jpg";
-
 const ServiceAreas = () => {
-  const counties = [
-    {
-      name: "San Francisco County",
-      areas: ["Mission", "SOMA", "Financial District", "Richmond", "Pacific Heights", "Sunset"],
-      phone: "650-881-2400"
-    },
-    {
-      name: "San Mateo County", 
-      areas: ["San Mateo", "Redwood City", "Daly City", "South San Francisco", "Menlo Park"],
-      phone: "650-881-2400"
-    },
-    {
-      name: "Alameda County",
-      areas: ["Oakland", "Hayward", "Berkeley", "Fremont", "San Leandro"],
-      phone: "650-881-2400"
-    },
-    {
-      name: "Santa Clara County",
-      areas: ["San Jose", "Santa Clara", "Sunnyvale", "Mountain View", "Palo Alto"],
-      phone: "650-881-2400"
-    }
-  ];
-
-  return (
-    <section className="py-20 bg-gradient-subtle">
+  const counties = [{
+    name: "San Francisco County",
+    areas: ["Mission", "SOMA", "Financial District", "Richmond", "Pacific Heights", "Sunset"],
+    phone: "650-881-2400"
+  }, {
+    name: "San Mateo County",
+    areas: ["San Mateo", "Redwood City", "Daly City", "South San Francisco", "Menlo Park"],
+    phone: "650-881-2400"
+  }, {
+    name: "Alameda County",
+    areas: ["Oakland", "Hayward", "Berkeley", "Fremont", "San Leandro"],
+    phone: "650-881-2400"
+  }, {
+    name: "Santa Clara County",
+    areas: ["San Jose", "Santa Clara", "Sunnyvale", "Mountain View", "Palo Alto"],
+    phone: "650-881-2400"
+  }];
+  return <section className="py-20 bg-gradient-subtle">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
@@ -45,27 +36,16 @@ const ServiceAreas = () => {
 
           {/* Banner Image */}
           <div className="relative mb-16 rounded-2xl overflow-hidden shadow-elevated">
-            <img 
-              src={bayAreaCoverage} 
-              alt="Heavy Haulers Bay Area Service Coverage Map" 
-              className="w-full h-64 md:h-80 object-cover"
-            />
+            <img src={bayAreaCoverage} alt="Heavy Haulers Bay Area Service Coverage Map" className="w-full h-64 md:h-80 object-cover" />
             <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-              <div className="text-center text-white">
-                <h3 className="text-2xl md:text-3xl font-bold mb-2">Complete Bay Area Coverage</h3>
-                <p className="text-lg text-white/90">Fast response times across all 4 counties</p>
-              </div>
+              
             </div>
           </div>
         </div>
 
         {/* Counties Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {counties.map((county, index) => (
-            <div 
-              key={index}
-              className="bg-card border border-border rounded-lg p-6 hover:shadow-elevated transition-all duration-300 group flex flex-col h-full"
-            >
+          {counties.map((county, index) => <div key={index} className="bg-card border border-border rounded-lg p-6 hover:shadow-elevated transition-all duration-300 group flex flex-col h-full">
               <div className="flex items-center space-x-2 mb-4">
                 <MapPin className="w-5 h-5 text-primary" />
                 <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">
@@ -74,27 +54,16 @@ const ServiceAreas = () => {
               </div>
               
               <div className="space-y-2 mb-4 flex-grow">
-                {county.areas.map((area, areaIndex) => (
-                  <span 
-                    key={areaIndex}
-                    className="inline-block text-sm text-muted-foreground bg-muted rounded-full px-3 py-1 mr-2 mb-1"
-                  >
+                {county.areas.map((area, areaIndex) => <span key={areaIndex} className="inline-block text-sm text-muted-foreground bg-muted rounded-full px-3 py-1 mr-2 mb-1">
                     {area}
-                  </span>
-                ))}
+                  </span>)}
               </div>
 
-              <Button 
-                variant="outline" 
-                size="sm" 
-                className="w-full mt-auto"
-                onClick={() => window.location.href = `tel:${county.phone}`}
-              >
+              <Button variant="outline" size="sm" className="w-full mt-auto" onClick={() => window.location.href = `tel:${county.phone}`}>
                 <Phone className="w-4 h-4 mr-2" />
                 {county.phone}
               </Button>
-            </div>
-          ))}
+            </div>)}
         </div>
 
         {/* CTA Section */}
@@ -106,26 +75,16 @@ const ServiceAreas = () => {
             We're constantly expanding our coverage. Give us a call and we'll let you know if we can help.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <Button 
-              variant="hero" 
-              size="lg"
-              onClick={() => window.location.href = 'tel:650-881-2400'}
-            >
+            <Button variant="hero" size="lg" onClick={() => window.location.href = 'tel:650-881-2400'}>
               <Phone className="w-5 h-5 mr-2" />
               Call 650-881-2400
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              onClick={() => window.location.href = '/locations'}
-            >
+            <Button variant="outline" size="lg" onClick={() => window.location.href = '/locations'}>
               View Full Coverage Map
             </Button>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ServiceAreas;
