@@ -131,14 +131,18 @@ const CorporateFleet = () => {
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-            <Button variant="hero" size="lg" onClick={() => window.location.href = 'tel:650-881-2400'}>
-              <Phone className="w-5 h-5 mr-2" />
-              Call 650-881-2400
+          <div className='flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6'>
+            <Button variant='hero' size='lg' asChild>
+              <a href='tel:650-881-2400'>
+                <Phone className='w-5 h-5 mr-2' />
+                Call 650-881-2400
+              </a>
             </Button>
-            <Button variant="outline" size="lg" onClick={() => window.location.href = 'mailto:dispatch@heavytowpro.com'}>
-              <Mail className="w-5 h-5 mr-2" />
-              dispatch@heavytowpro.com
+            <Button variant='outline' size='lg' asChild>
+              <a href='mailto:dispatch@heavytowpro.com'>
+                <Mail className='w-5 h-5 mr-2' />
+                dispatch@heavytowpro.com
+              </a>
             </Button>
           </div>
         </div>
