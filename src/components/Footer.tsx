@@ -21,13 +21,9 @@ const Footer = () => {
               Available 24/7 for all your hauling needs.
             </p>
             <div className="flex space-x-4">
-              <Button 
-                variant="hero" 
-                size="sm"
-                asChild
-              >
+              <Button variant='hero' size='sm' asChild>
                 <a href='tel:650-881-2400'>
-                  <Phone className="w-4 h-4 mr-2" />
+                  <Phone className='w-4 h-4 mr-2' />
                   Call Now
                 </a>
               </Button>
@@ -86,11 +82,9 @@ const Footer = () => {
         <div className="mt-12 bg-gradient-primary rounded-xl p-6 text-center">
           <h3 className="text-xl font-bold text-white mb-2">Need Emergency Towing Right Now?</h3>
           <p className="text-white/90 mb-4">Don't wait - our dispatch team is standing by 24/7</p>
-          <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-gray-100" asChild>
-            <a href='tel:650-881-2400'>
-              <Phone className="w-5 h-5 mr-2" />
-              Call 650-881-2400
-            </a>
+          <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-gray-100">
+            <Phone className="w-5 h-5 mr-2" />
+            Call 650-881-2400
           </Button>
         </div>
       </div>
