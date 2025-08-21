@@ -24,10 +24,12 @@ const Footer = () => {
               <Button 
                 variant="hero" 
                 size="sm"
-                onClick={() => window.location.href = 'tel:650-881-2400'}
+                asChild
               >
-                <Phone className="w-4 h-4 mr-2" />
-                Call Now
+                <a href='tel:650-881-2400'>
+                  <Phone className="w-4 h-4 mr-2" />
+                  Call Now
+                </a>
               </Button>
             </div>
           </div>
@@ -84,9 +86,11 @@ const Footer = () => {
         <div className="mt-12 bg-gradient-primary rounded-xl p-6 text-center">
           <h3 className="text-xl font-bold text-white mb-2">Need Emergency Towing Right Now?</h3>
           <p className="text-white/90 mb-4">Don't wait - our dispatch team is standing by 24/7</p>
-          <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-gray-100">
-            <Phone className="w-5 h-5 mr-2" />
-            Call 650-881-2400
+          <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-gray-100" asChild>
+            <a href='tel:650-881-2400'>
+              <Phone className="w-5 h-5 mr-2" />
+              Call 650-881-2400
+            </a>
           </Button>
         </div>
       </div>
