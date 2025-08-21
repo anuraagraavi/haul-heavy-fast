@@ -106,10 +106,12 @@ const ServicesOverview = () => {
             variant="outline" 
             size="lg" 
             className="bg-white text-primary border-white hover:bg-gray-100"
-            onClick={() => window.location.href = 'tel:650-881-2400'}
+            asChild
           >
-            <Phone className="w-5 h-5 mr-2" />
-            Call 650-881-2400
+            <a href='tel:650-881-2400'>
+              <Phone className='w-5 h-5 mr-2' />
+              Call 650-881-2400
+            </a>
           </Button>
         </div>
       </div>
