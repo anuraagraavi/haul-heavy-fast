@@ -35,81 +35,85 @@ const Header = () => {
                 Services
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
-              {isServicesOpen && <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-screen max-w-4xl bg-card border border-border rounded-lg shadow-elevated mt-2 z-50 animate-fade-in">
-                  <div className="grid grid-cols-12 gap-6 p-8">
-                    {/* Left Column - Main Services */}
-                    <div className="col-span-4 space-y-4">
-                      <h3 className="text-lg font-semibold text-foreground mb-4">Service Categories</h3>
-                      <div className="space-y-3">
-                        <a href="/services/light-duty" className="group flex items-start space-x-3 p-3 hover:bg-accent rounded-lg transition-colors">
-                          <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                          <div>
-                            <h4 className="font-medium text-foreground group-hover:text-primary">Light-Duty Towing</h4>
-                            <p className="text-sm text-muted-foreground">Cars, motorcycles, luxury vehicles</p>
-                          </div>
-                        </a>
-                        <a href="/services/medium-duty" className="group flex items-start space-x-3 p-3 hover:bg-accent rounded-lg transition-colors">
-                          <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
-                          <div>
-                            <h4 className="font-medium text-foreground group-hover:text-primary">Medium-Duty Towing</h4>
-                            <p className="text-sm text-muted-foreground">Vans, box trucks, small RVs</p>
-                          </div>
-                        </a>
-                        <a href="/services/heavy-duty" className="group flex items-start space-x-3 p-3 hover:bg-accent rounded-lg transition-colors">
-                          <div className="w-2 h-2 bg-warning rounded-full mt-2 flex-shrink-0"></div>
-                          <div>
-                            <h4 className="font-medium text-foreground group-hover:text-primary">Heavy-Duty Hauling</h4>
-                            <p className="text-sm text-muted-foreground">Commercial trucks, equipment, recovery</p>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-
-                    {/* Middle Column - Specific Services */}
-                    <div className="col-span-4 space-y-4">
-                      <h3 className="text-lg font-semibold text-foreground mb-4">Specialized Services</h3>
-                      <div className="space-y-2">
-                        <a href="/services/light-duty#flatbed" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
-                          Flatbed Tow Service
-                        </a>
-                        <a href="/services/light-duty#motorcycle" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
-                          Motorcycle Towing
-                        </a>
-                        <a href="/services/light-duty#exotic" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
-                          Luxury & Exotic Transport
-                        </a>
-                        <a href="/services/light-duty#private-property" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
-                          Private Property Removal
-                        </a>
-                        <a href="/services/heavy-duty#equipment" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
-                          Equipment & Machinery
-                        </a>
-                        <a href="/services/heavy-duty#fleet" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
-                          Fleet & Commercial Accounts
-                        </a>
-                      </div>
-                    </div>
-
-                    {/* Right Column - Contact Info */}
-                    <div className="col-span-4 space-y-4">
-                      <h3 className="text-lg font-semibold text-foreground mb-4">Get Help Now</h3>
-                      <div className="bg-gradient-primary p-4 rounded-lg text-black">
-                        <div className="space-y-2">
-                          <p className="font-semibold">24/7 Emergency Service</p>
-                          <p className="text-sm">{businessAddress}</p>
-                          <div className="flex items-center space-x-2 mt-3">
-                            <Phone className="h-4 w-4" />
-                            <span className="font-medium">{businessPhone}</span>
-                          </div>
+              {isServicesOpen && (
+                <div className='absolute top-full left-1/2 transform -translate-x-1/2 mt-2 z-50'>
+                  <div className='w-screen max-w-4xl bg-card border border-border rounded-lg shadow-elevated animate-fade-in'>
+                    <div className="grid grid-cols-12 gap-6 p-8">
+                      {/* Left Column - Main Services */}
+                      <div className="col-span-4 space-y-4">
+                        <h3 className="text-lg font-semibold text-foreground mb-4">Service Categories</h3>
+                        <div className="space-y-3">
+                          <a href="/services/light-duty" className="group flex items-start space-x-3 p-3 hover:bg-accent rounded-lg transition-colors">
+                            <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                            <div>
+                              <h4 className="font-medium text-foreground group-hover:text-primary">Light-Duty Towing</h4>
+                              <p className="text-sm text-muted-foreground">Cars, motorcycles, luxury vehicles</p>
+                            </div>
+                          </a>
+                          <a href="/services/medium-duty" className="group flex items-start space-x-3 p-3 hover:bg-accent rounded-lg transition-colors">
+                            <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
+                            <div>
+                              <h4 className="font-medium text-foreground group-hover:text-primary">Medium-Duty Towing</h4>
+                              <p className="text-sm text-muted-foreground">Vans, box trucks, small RVs</p>
+                            </div>
+                          </a>
+                          <a href="/services/heavy-duty" className="group flex items-start space-x-3 p-3 hover:bg-accent rounded-lg transition-colors">
+                            <div className="w-2 h-2 bg-warning rounded-full mt-2 flex-shrink-0"></div>
+                            <div>
+                              <h4 className="font-medium text-foreground group-hover:text-primary">Heavy-Duty Hauling</h4>
+                              <p className="text-sm text-muted-foreground">Commercial trucks, equipment, recovery</p>
+                            </div>
+                          </a>
                         </div>
                       </div>
-                      <Button variant="hero" className="w-full" onClick={() => window.location.href = `tel:${businessPhone}`}>
-                        <Phone className="w-4 h-4 mr-2" />
-                        Call Now
-                      </Button>
+  
+                      {/* Middle Column - Specific Services */}
+                      <div className="col-span-4 space-y-4">
+                        <h3 className="text-lg font-semibold text-foreground mb-4">Specialized Services</h3>
+                        <div className="space-y-2">
+                          <a href="/services/light-duty#flatbed" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
+                            Flatbed Tow Service
+                          </a>
+                          <a href="/services/light-duty#motorcycle" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
+                            Motorcycle Towing
+                          </a>
+                          <a href="/services/light-duty#exotic" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
+                            Luxury & Exotic Transport
+                          </a>
+                          <a href="/services/light-duty#private-property" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
+                            Private Property Removal
+                          </a>
+                          <a href="/services/heavy-duty#equipment" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
+                            Equipment & Machinery
+                          </a>
+                          <a href="/services/heavy-duty#fleet" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
+                            Fleet & Commercial Accounts
+                          </a>
+                        </div>
+                      </div>
+  
+                      {/* Right Column - Contact Info */}
+                      <div className="col-span-4 space-y-4">
+                        <h3 className="text-lg font-semibold text-foreground mb-4">Get Help Now</h3>
+                        <div className="bg-gradient-primary p-4 rounded-lg text-black">
+                          <div className="space-y-2">
+                            <p className="font-semibold">24/7 Emergency Service</p>
+                            <p className="text-sm">{businessAddress}</p>
+                            <div className="flex items-center space-x-2 mt-3">
+                              <Phone className="h-4 w-4" />
+                              <span className="font-medium">{businessPhone}</span>
+                            </div>
+                          </div>
+                        </div>
+                        <Button variant="hero" className="w-full" onClick={() => window.location.href = `tel:${businessPhone}`}>
+                          <Phone className="w-4 h-4 mr-2" />
+                          Call Now
+                        </Button>
+                      </div>
                     </div>
                   </div>
-                </div>}
+                </div>
+              )}
             </div>
 
             {/* Locations Mega Menu */}
@@ -122,79 +126,83 @@ const Header = () => {
                 Locations
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
-              {isLocationsOpen && <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-screen max-w-4xl bg-card border border-border rounded-lg shadow-elevated mt-2 z-50 animate-fade-in">
-                  <div className="grid grid-cols-12 gap-6 p-8">
-                    {/* Left Column - San Francisco County */}
-                    <div className="col-span-3 space-y-4">
-                      <h3 className="text-lg font-semibold text-foreground mb-4">San Francisco County</h3>
-                      <div className="space-y-2">
-                        <a href="/locations#san-francisco" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
-                          San Francisco
-                        </a>
-                        <a href="/locations#daly-city" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
-                          Daly City
-                        </a>
-                        <a href="/locations#south-sf" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
-                          South San Francisco
-                        </a>
-                      </div>
-                    </div>
-
-                    {/* Second Column - San Mateo County */}
-                    <div className="col-span-3 space-y-4">
-                      <h3 className="text-lg font-semibold text-foreground mb-4">San Mateo County</h3>
-                      <div className="space-y-2">
-                        <a href="/locations#san-mateo" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
-                          San Mateo
-                        </a>
-                        <a href="/locations#redwood-city" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
-                          Redwood City
-                        </a>
-                        <a href="/locations#palo-alto" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
-                          Palo Alto
-                        </a>
-                        <a href="/locations#fremont" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
-                          Fremont
-                        </a>
-                      </div>
-                    </div>
-
-                    {/* Third Column - Alameda County */}
-                    <div className="col-span-3 space-y-4">
-                      <h3 className="text-lg font-semibold text-foreground mb-4">Alameda County</h3>
-                      <div className="space-y-2">
-                        <a href="/locations#oakland" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
-                          Oakland
-                        </a>
-                        <a href="/locations#berkeley" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
-                          Berkeley
-                        </a>
-                        <a href="/locations#hayward" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
-                          Hayward
-                        </a>
-                      </div>
-                    </div>
-
-                    {/* Right Column - Contact Info */}
-                    <div className="col-span-3 space-y-4">
-                      <h3 className="text-lg font-semibold text-foreground mb-4">Need Help Now?</h3>
-                      <div className="bg-gradient-primary p-4 rounded-lg text-black">
+              {isLocationsOpen && (
+                <div className='absolute top-full left-1/2 transform -translate-x-1/2 mt-2 z-50'>
+                  <div className='w-screen max-w-4xl bg-card border border-border rounded-lg shadow-elevated animate-fade-in'>
+                    <div className="grid grid-cols-12 gap-6 p-8">
+                      {/* Left Column - San Francisco County */}
+                      <div className="col-span-3 space-y-4">
+                        <h3 className="text-lg font-semibold text-foreground mb-4">San Francisco County</h3>
                         <div className="space-y-2">
-                          <p className="font-semibold">24/7 Bay Area Coverage</p>
-                          <p className="text-sm">{businessAddress}</p>
-                          <div className="flex items-center space-x-2 mt-3">
-                            <Phone className="h-4 w-4" />
-                            <span className="font-medium">{businessPhone}</span>
-                          </div>
+                          <a href="/locations#san-francisco" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
+                            San Francisco
+                          </a>
+                          <a href="/locations#daly-city" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
+                            Daly City
+                          </a>
+                          <a href="/locations#south-sf" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
+                            South San Francisco
+                          </a>
                         </div>
                       </div>
-                      <Button variant="hero" className="w-full" onClick={() => window.location.href = `tel:${businessPhone}`}>
-                        <Phone className="w-4 h-4 mr-2" />
-                        Call Now
-                      </Button>
+  
+                      {/* Second Column - San Mateo County */}
+                      <div className="col-span-3 space-y-4">
+                        <h3 className="text-lg font-semibold text-foreground mb-4">San Mateo County</h3>
+                        <div className="space-y-2">
+                          <a href="/locations#san-mateo" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
+                            San Mateo
+                          </a>
+                          <a href="/locations#redwood-city" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
+                            Redwood City
+                          </a>
+                          <a href="/locations#palo-alto" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
+                            Palo Alto
+                          </a>
+                          <a href="/locations#fremont" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
+                            Fremont
+                          </a>
+                        </div>
+                      </div>
+  
+                      {/* Third Column - Alameda County */}
+                      <div className="col-span-3 space-y-4">
+                        <h3 className="text-lg font-semibold text-foreground mb-4">Alameda County</h3>
+                        <div className="space-y-2">
+                          <a href="/locations#oakland" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
+                            Oakland
+                          </a>
+                          <a href="/locations#berkeley" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
+                            Berkeley
+                          </a>
+                          <a href="/locations#hayward" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
+                            Hayward
+                          </a>
+                        </div>
+                      </div>
+  
+                      {/* Right Column - Contact Info */}
+                      <div className="col-span-3 space-y-4">
+                        <h3 className="text-lg font-semibold text-foreground mb-4">Need Help Now?</h3>
+                        <div className="bg-gradient-primary p-4 rounded-lg text-black">
+                          <div className="space-y-2">
+                            <p className="font-semibold">24/7 Bay Area Coverage</p>
+                            <p className="text-sm">{businessAddress}</p>
+                            <div className="flex items-center space-x-2 mt-3">
+                              <Phone className="h-4 w-4" />
+                              <span className="font-medium">{businessPhone}</span>
+                            </div>
+                          </div>
+                        </div>
+                        <Button variant="hero" className="w-full" onClick={() => window.location.href = `tel:${businessPhone}`}>
+                          <Phone className="w-4 h-4 mr-2" />
+                          Call Now
+                        </Button>
+                      </div>
                     </div>
                   </div>
-                </div>}
+                </div>
+              )}
             </div>
 
             <a href="/blog" className="text-foreground hover:text-primary transition-colors">
