@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, MapPin, Clock, Star, CheckCircle } from "lucide-react";
 import { Helmet } from "react-helmet";
+import { getMediaUrl } from "@/lib/utils";
 
 const Locations = () => {
   const counties = [
@@ -127,7 +128,7 @@ const Locations = () => {
 
                 <div className="bg-card border border-border rounded-2xl overflow-hidden">
                   <img 
-                    src="/src/assets/bay-area-coverage.jpg" 
+                    src={getMediaUrl("media", "Locations Page.jpg")} 
                     alt="Bay Area coverage map showing all service areas"
                     className="w-full h-96 object-cover"
                   />
