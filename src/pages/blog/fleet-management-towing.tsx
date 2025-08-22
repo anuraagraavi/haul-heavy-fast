@@ -364,9 +364,11 @@ const FleetManagementTowing = () => {
                   Heavy Haulers offers comprehensive fleet towing solutions with corporate contracts, 
                   SLA guarantees, and priority dispatch across the Bay Area.
                 </p>
-                <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-gray-100">
-                  <Phone className="w-5 h-5 mr-2" />
-                  Discuss Fleet Partnership
+                <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-gray-100" asChild>
+                  <a href='tel:650-881-2400'>
+                    <Phone className="w-5 h-5 mr-2" />
+                    Discuss Fleet Partnership
+                  </a>
                 </Button>
               </div>
             </div>
