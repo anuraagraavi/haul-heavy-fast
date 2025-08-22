@@ -1,4 +1,7 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
+import { Resend } from "npm:resend@2.0.0";
+
+const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -34,14 +37,11 @@ const handler = async (req: Request): Promise<Response> => {
     const emailData: EmailRequest = await req.json();
     console.log("Email data received:", { ...emailData, message: "[REDACTED]" });
 
-    const smtpHost = Deno.env.get("SMTP_HOST");
-    const smtpUsername = Deno.env.get("SMTP_USERNAME");
-    const smtpPassword = Deno.env.get("SMTP_PASSWORD");
-
-    if (!smtpHost || !smtpUsername || !smtpPassword) {
-      console.error("Missing SMTP configuration");
+    const resendApiKey = Deno.env.get("RESEND_API_KEY");
+    if (!resendApiKey) {
+      console.error("Missing Resend API key");
       return new Response(
-        JSON.stringify({ error: "SMTP configuration missing" }),
+        JSON.stringify({ error: "Email service not configured" }),
         {
           status: 500,
           headers: { "Content-Type": "application/json", ...corsHeaders },
@@ -103,71 +103,18 @@ Sent from Heavy Haulers website newsletter signup
         break;
     }
 
-    // Create email message
-    const emailMessage = [
-      `From: Heavy Haulers <info@updates.heavytowpro.com>`,
-      `To: dispatch@heavytowpro.com`,
-      `Subject: ${emailSubject}`,
-      `Content-Type: text/plain; charset=utf-8`,
-      "",
-      emailContent
-    ].join("\r\n");
-
-    // Send email via SMTP
+    // Send email via Resend
     try {
-      console.log("Connecting to SMTP server:", smtpHost);
+      console.log("Sending email via Resend API");
       
-      const conn = await Deno.connect({
-        hostname: smtpHost,
-        port: 465,
-        transport: "tcp",
+      const emailResponse = await resend.emails.send({
+        from: "Heavy Haulers <onboarding@resend.dev>",
+        to: ["dispatch@heavytowpro.com"],
+        subject: emailSubject,
+        text: emailContent,
       });
 
-      const encoder = new TextEncoder();
-      const decoder = new TextDecoder();
-
-      // Simple SMTP implementation
-      const writeLine = async (line: string) => {
-        await conn.write(encoder.encode(line + "\r\n"));
-      };
-
-      const readResponse = async () => {
-        const buffer = new Uint8Array(1024);
-        const n = await conn.read(buffer);
-        return n ? decoder.decode(buffer.subarray(0, n)) : "";
-      };
-
-      // SMTP conversation
-      await readResponse(); // Server greeting
-      await writeLine(`EHLO heavytowpro.com`);
-      await readResponse();
-      
-      await writeLine(`AUTH LOGIN`);
-      await readResponse();
-      
-      await writeLine(btoa(smtpUsername));
-      await readResponse();
-      
-      await writeLine(btoa(smtpPassword));
-      await readResponse();
-      
-      await writeLine(`MAIL FROM:<${smtpUsername}>`);
-      await readResponse();
-      
-      await writeLine(`RCPT TO:<dispatch@heavytowpro.com>`);
-      await readResponse();
-      
-      await writeLine(`DATA`);
-      await readResponse();
-      
-      await writeLine(emailMessage);
-      await writeLine(".");
-      await readResponse();
-      
-      await writeLine(`QUIT`);
-      conn.close();
-
-      console.log("Email sent successfully");
+      console.log("Email sent successfully:", emailResponse);
 
       return new Response(
         JSON.stringify({ success: true, message: "Email sent successfully" }),
@@ -177,10 +124,10 @@ Sent from Heavy Haulers website newsletter signup
         }
       );
 
-    } catch (smtpError) {
-      console.error("SMTP Error:", smtpError);
+    } catch (emailError) {
+      console.error("Email sending error:", emailError);
       return new Response(
-        JSON.stringify({ error: "Failed to send email", details: smtpError.message }),
+        JSON.stringify({ error: "Failed to send email", details: emailError.message }),
         {
           status: 500,
           headers: { "Content-Type": "application/json", ...corsHeaders },
