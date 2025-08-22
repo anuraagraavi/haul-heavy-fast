@@ -23,12 +23,10 @@ export interface ContactFormData {
 export const submitQuoteForm = async (formData: QuoteFormData): Promise<void> => {
   try {
     const emailData = {
-      recipient: "dispatch@heavytowpro.com",
-      sender: {
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-      },
+      to: "dispatch@heavytowpro.com",
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
       subject: `New Quote Request - ${formData.serviceType}`,
       message: `
 **Quote Request Details**
@@ -69,12 +67,10 @@ ${formData.notes || 'No additional notes provided'}
 export const submitContactForm = async (formData: ContactFormData): Promise<void> => {
   try {
     const emailData = {
-      recipient: "dispatch@heavytowpro.com",
-      sender: {
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-      },
+      to: "dispatch@heavytowpro.com",
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
       subject: `Contact Form: ${formData.subject}`,
       message: `
 **Contact Form Submission**

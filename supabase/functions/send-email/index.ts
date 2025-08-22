@@ -9,7 +9,7 @@ const corsHeaders = {
 };
 
 interface EmailRequest {
-  to: string;
+  to: string | string[];
   subject: string;
   name: string;
   email: string;
@@ -109,7 +109,7 @@ Sent from Heavy Haulers website newsletter signup
       
       const emailResponse = await resend.emails.send({
         from: "Heavy Haulers <onboarding@resend.dev>",
-        to: ["anuraagraavi@gmail.com"],
+        to: emailData.to,
         subject: emailSubject,
         text: emailContent,
       });
