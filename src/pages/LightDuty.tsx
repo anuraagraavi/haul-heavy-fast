@@ -139,8 +139,10 @@ const LightDuty = () => {
                             </div>
                           ))}
                         </div>
-                        <Button variant="outline">
-                          Request This Service
+                        <Button variant="outline" asChild>
+                           <a href="/get-a-quote">
+                              Request This Service
+                           </a>
                         </Button>
                       </div>
                       <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
