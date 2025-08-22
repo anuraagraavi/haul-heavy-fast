@@ -2,7 +2,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, Truck, Building2, Caravan, CheckCircle, Clock, Shield, Wrench } from "lucide-react";
-import { getMediaUrl } from "@/lib/utils";
 
 const MediumDuty = () => {
   const vehicleTypes = [
@@ -209,7 +208,7 @@ const MediumDuty = () => {
                 </div>
                 <div className="bg-card border border-border rounded-2xl overflow-hidden">
                   <img 
-                    src={getMediaUrl("media", "Medium duty tow.jpg")}
+                    src="/src/assets/medium-duty-service.jpg" 
                     alt="Medium-duty towing process"
                     className="w-full h-80 object-cover"
                   />
@@ -277,9 +276,11 @@ const MediumDuty = () => {
                 Commercial breakdowns can't wait. Our priority dispatch understands that your business vehicle downtime costs money.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <Button variant="hero" size="xl">
-                  <Phone className="w-5 h-5 mr-2" />
-                  Call 650-881-2400
+                <Button variant="hero" size="xl" asChild>
+                  <a href='tel:650-881-2400'>
+                    <Phone className="w-5 h-5 mr-2" />
+                    Call 650-881-2400
+                  </a>
                 </Button>
                 <Button variant="outline" size="xl" asChild>
                   <a href="/get-a-quote">Fleet Quote</a>
