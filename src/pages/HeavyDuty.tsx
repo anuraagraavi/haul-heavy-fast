@@ -159,8 +159,10 @@ const HeavyDuty = () => {
                             </div>
                           ))}
                         </div>
-                        <Button variant="outline">
-                          Request Service Quote
+                        <Button variant="outline" asChild>
+                          <a href="/get-a-quote">
+                              Request This Service
+                           </a>
                         </Button>
                       </div>
                       <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
