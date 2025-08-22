@@ -62,7 +62,7 @@ const Contact = () => {
       title: "Contact Form",
       description: "Quick responses for non-emergency inquiries",
       action: "#send-message",
-      label: "Send Message"
+      label: "Send Message",
       urgent: false
     },
     {
