@@ -164,9 +164,11 @@ const About = () => {
                   </div>
                 </div>
 
-                <Button variant="hero" size="lg">
-                  <Phone className="w-5 h-5 mr-2" />
-                  See What We Can Do For You
+                <Button variant="hero" size="lg" asChild>
+                  <a href='tel:650-881-2400'>
+                    <Phone className="w-5 h-5 mr-2" />
+                    See What We Can Do For You
+                  </a>
                 </Button>
               </div>
             </div>
