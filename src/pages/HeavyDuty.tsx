@@ -3,7 +3,6 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, TruckIcon, Settings, Building, Users, CheckCircle, Clock, Shield, Award, Wrench } from "lucide-react";
 import { getMediaUrl } from "@/lib/utils";
-
 const HeavyDuty = () => {
   const services = [
     {
