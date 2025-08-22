@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, Truck, Building2, Caravan, CheckCircle, Clock, Shield, Wrench } from "lucide-react";
-
+import { getMediaUrl } from "@/lib/utils";
 const MediumDuty = () => {
   const vehicleTypes = [
     {
@@ -208,7 +208,7 @@ const MediumDuty = () => {
                 </div>
                 <div className="bg-card border border-border rounded-2xl overflow-hidden">
                   <img 
-                    src="/src/assets/medium-duty-service.jpg" 
+                    src={getMediaUrl("media", "Medium duty tow.jpg")}
                     alt="Medium-duty towing process"
                     className="w-full h-80 object-cover"
                   />
