@@ -53,21 +53,24 @@ const Contact = () => {
       icon: Phone,
       title: "Emergency Dispatch",
       description: "24/7 emergency towing and recovery",
-      action: "650-881-2400",
+      action: "tel:650-881-2400",
+      label: "650-881-2400",
       urgent: true
     },
     {
       icon: MessageCircle,
       title: "Contact Form",
       description: "Quick responses for non-emergency inquiries",
-      action: "Send Message",
+      action: "#send-message",
+      label: "Send Message"
       urgent: false
     },
     {
       icon: Mail,
       title: "Email Support",
       description: "General inquiries and fleet contracts",
-      action: "dispatch@heavytowpro.com",
+      action: "mailto:dispatch@heavytowpro.com",
+      label: "dispatch@heavytowpro.com",
       urgent: false
     }
   ];
@@ -128,8 +131,10 @@ const Contact = () => {
                     </div>
                     <h3 className="text-xl font-semibold text-foreground mb-3">{method.title}</h3>
                     <p className="text-muted-foreground mb-6">{method.description}</p>
-                    <Button variant={method.urgent ? "hero" : "outline"} className="w-full">
-                      {method.action}
+                    <Button variant={method.urgent ? "hero" : "outline"} className="w-full" asChild>
+                      <a href={method.action}>
+                      {method.label}
+                      </a>
                     </Button>
                   </div>
                 );
