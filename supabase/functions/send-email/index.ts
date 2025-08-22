@@ -105,7 +105,7 @@ Sent from Heavy Haulers website newsletter signup
 
     // Create email message
     const emailMessage = [
-      `From: ${smtpUsername}`,
+      `From: Heavy Haulers <info@updates.heavytowpro.com>`,
       `To: dispatch@heavytowpro.com`,
       `Subject: ${emailSubject}`,
       `Content-Type: text/plain; charset=utf-8`,
