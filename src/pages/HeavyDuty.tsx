@@ -268,9 +268,11 @@ const HeavyDuty = () => {
                 </div>
               </div>
 
-              <Button variant="hero" size="lg">
-                <Building className="w-5 h-5 mr-2" />
-                Request Fleet Partnership
+              <Button variant="hero" size="lg" asChild>
+                <a href="/contact">
+                  <Building className="w-5 h-5 mr-2" />
+                  Request Fleet Partnership
+                </a>
               </Button>
             </div>
           </div>
