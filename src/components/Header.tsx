@@ -31,10 +31,10 @@ const Header = () => {
               () => setIsServicesOpen(false),
               { leaveDelay: 200 }
             )}>
-              <button className="flex items-center text-foreground hover:text-primary transition-colors">
+              <a href="/services" className="flex items-center text-foreground hover:text-primary transition-colors">
                 Services
                 <ChevronDown className="ml-1 h-4 w-4" />
-              </button>
+              </a>
               {isServicesOpen && (
                 <div className='absolute top-full left-1/2 transform -translate-x-1/2 mt-2 z-50'>
                   <div className='w-screen max-w-4xl bg-card border border-border rounded-lg shadow-elevated animate-fade-in'>
