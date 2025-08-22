@@ -110,7 +110,6 @@ Sent from Heavy Haulers website newsletter signup
       const emailResponse = await resend.emails.send({
         from: "Heavy Haulers <onboarding@resend.dev>",
         to: ["anuraagraavi@gmail.com"],
-        bcc: ["sdhundhalva@gmail.com"],
         subject: emailSubject,
         text: emailContent,
       });
