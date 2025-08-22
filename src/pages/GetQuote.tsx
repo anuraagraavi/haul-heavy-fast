@@ -264,9 +264,11 @@ const GetQuote = () => {
                         <FileText className="w-5 h-5 mr-2" />
                         {isSubmitting ? "Submitting..." : "Get My Quote"}
                       </Button>
-                      <Button type="button" variant="outline" size="lg">
-                        <Phone className="w-5 h-5 mr-2" />
-                        Call Instead
+                      <Button type="button" variant="outline" size="lg" asChild>
+                        <a href='tel:650-881-2400'>
+                          <Phone className="w-5 h-5 mr-2" />
+                          Call Instead
+                        </a>
                       </Button>
                     </div>
                   </form>
