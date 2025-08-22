@@ -2,12 +2,13 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, Car, Bike, Crown, Building, CheckCircle, Clock, Shield, Star } from "lucide-react";
-
+import { getMediaUrl } from "@/lib/utils";
 const LightDuty = () => {
   const services = [
     {
       id: "flatbed",
       icon: Car,
+      image: getMediaUrl("media", "Light Duty -Flatbed.jpg"),
       title: "Flatbed Tow Service",
       description: "Secure flatbed transport for vehicles that can't be towed traditionally or need extra protection during transport.",
       benefits: ["No wheel lift damage", "Secure tie-down points", "Weather protection", "Safe for low-clearance vehicles"]
@@ -15,6 +16,7 @@ const LightDuty = () => {
     {
       id: "motorcycle", 
       icon: Bike,
+      image: getMediaUrl("media", "Light Duty - Motorcycle tow.jpg"),
       title: "Motorcycle Towing",
       description: "Specialized motorcycle transport with proper tie-down equipment and experienced operators who understand bike handling.",
       benefits: ["Specialized bike restraints", "Experienced operators", "No scratches or damage", "Quick pickup times"]
@@ -22,6 +24,7 @@ const LightDuty = () => {
     {
       id: "exotic",
       icon: Crown,
+      image: getMediaUrl("media", "Light Duty - Exotic Cars.jpg"),
       title: "Luxury & Exotic Car Transport",
       description: "Premium handling for high-value vehicles with soft-tie systems and specialized equipment for low-clearance supercars.",
       benefits: ["Soft-tie protection", "Low-clearance expertise", "Premium insurance", "White-glove service"]
@@ -29,6 +32,7 @@ const LightDuty = () => {
     {
       id: "private-property",
       icon: Building,
+      image: getMediaUrl("media", "Light Duty - Private Property tow.jpg"),
       title: "Private Property Vehicle Removal", 
       description: "Professional removal services for property managers, HOAs, and business owners dealing with unauthorized parking.",
       benefits: ["Legal compliance", "Property manager contracts", "Quick response", "Professional documentation"]
@@ -142,7 +146,7 @@ const LightDuty = () => {
                       <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
                         <div className="bg-card border border-border rounded-2xl overflow-hidden">
                           <img 
-                            src="/src/assets/light-duty-service.jpg" 
+                            src={service.image} 
                             alt={service.title}
                             className="w-full h-64 object-cover"
                           />
