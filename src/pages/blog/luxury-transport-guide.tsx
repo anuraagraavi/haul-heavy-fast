@@ -380,9 +380,11 @@ const LuxuryTransportGuide = () => {
                   Heavy Haulers provides white-glove luxury vehicle transport with specialized equipment, 
                   comprehensive insurance, and the expertise your valuable vehicles deserve.
                 </p>
-                <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-gray-100">
-                  <Phone className="w-5 h-5 mr-2" />
-                  Schedule Luxury Transport
+                <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-gray-100" asChild>
+                  <a href='tel:650-881-2400'>
+                    <Phone className="w-5 h-5 mr-2" />
+                    Schedule Luxury Transport
+                  </a>
                 </Button>
               </div>
             </div>
