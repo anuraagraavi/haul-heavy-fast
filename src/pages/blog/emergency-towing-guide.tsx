@@ -248,9 +248,11 @@ const EmergencyTowingGuide = () => {
                 <p className="text-white/90 mb-6">
                   Heavy Haulers provides 24/7 emergency towing across the Bay Area with average 15-minute response times.
                 </p>
-                <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-gray-100">
-                  <Phone className="w-5 h-5 mr-2" />
-                  Call 650-881-2400
+                <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-gray-100" asChild>
+                  <a href='tel:650-881-2400'>
+                    <Phone className="w-5 h-5 mr-2" />
+                    Call 650-881-2400
+                  </a>
                 </Button>
               </div>
             </div>
