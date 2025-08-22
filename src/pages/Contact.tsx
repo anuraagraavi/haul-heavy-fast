@@ -142,7 +142,7 @@ const Contact = () => {
             </div>
 
             {/* Quick Emergency Banner */}
-            <div className="bg-gradient-primary rounded-2xl p-8 text-center text-white mb-16 animate-glow">
+            {/* <div className="bg-gradient-primary rounded-2xl p-8 text-center text-white mb-16 animate-glow">
               <h3 className="text-2xl font-bold mb-4">Emergency Towing Right Now?</h3>
               <p className="text-white/90 mb-6">
                 Don't wait - if you're stranded or in an emergency situation, call immediately for priority dispatch.
@@ -153,7 +153,7 @@ const Contact = () => {
                   Call 650-881-2400
                 </a>
               </Button>
-            </div>
+            </div> */}
           </div>
         </section>
 
