@@ -10,6 +10,7 @@ import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { submitQuoteForm } from "@/lib/formSubmission";
 import { useNavigate } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
 
 const GetQuote = () => {
   const [formData, setFormData] = useState({
@@ -24,6 +25,8 @@ const GetQuote = () => {
     urgency: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
+  const [fileUrls, setFileUrls] = useState<string[]>([]);
   const { toast } = useToast();
   const navigate = useNavigate();
 
@@ -31,12 +34,49 @@ const GetQuote = () => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
+  const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const files = Array.from(event.target.files || []);
+    setUploadedFiles(files);
+    
+    if (files.length === 0) return;
+
+    try {
+      const uploadPromises = files.map(async (file) => {
+        const fileExt = file.name.split('.').pop();
+        const fileName = `${Date.now()}-${Math.random().toString(36).substring(2)}.${fileExt}`;
+        const filePath = `quote-attachments/${fileName}`;
+
+        const { error } = await supabase.storage
+          .from('media')
+          .upload(filePath, file);
+
+        if (error) throw error;
+
+        const { data } = supabase.storage
+          .from('media')
+          .getPublicUrl(filePath);
+
+        return data.publicUrl;
+      });
+
+      const urls = await Promise.all(uploadPromises);
+      setFileUrls(urls);
+    } catch (error) {
+      console.error('Error uploading files:', error);
+      toast({
+        title: "Upload Failed",
+        description: "Failed to upload files. Please try again.",
+        variant: "destructive",
+      });
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      await submitQuoteForm(formData);
+      await submitQuoteForm({ ...formData, attachments: fileUrls });
       toast({
         title: "Quote Request Submitted!",
         description: "We'll get back to you within 15 minutes with your quote.",
@@ -252,9 +292,31 @@ const GetQuote = () => {
                         <p className="text-sm text-muted-foreground mb-2">
                           Upload photos of your vehicle or situation to help us provide a more accurate quote
                         </p>
-                        <Button variant="outline" size="sm" type="button">
-                          Choose Files
+                        <input
+                          type="file"
+                          multiple
+                          accept="image/*,.pdf,.doc,.docx"
+                          onChange={handleFileUpload}
+                          className="hidden"
+                          id="file-upload"
+                        />
+                        <Button variant="outline" size="sm" type="button" asChild>
+                          <label htmlFor="file-upload" className="cursor-pointer">
+                            Choose Files
+                          </label>
                         </Button>
+                        {uploadedFiles.length > 0 && (
+                          <div className="mt-3 text-left">
+                            <p className="text-sm text-muted-foreground mb-2">Uploaded files:</p>
+                            <ul className="text-xs space-y-1">
+                              {uploadedFiles.map((file, index) => (
+                                <li key={index} className="text-foreground">
+                                  {file.name} ({(file.size / 1024 / 1024).toFixed(2)} MB)
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
                       </div>
                     </div>
 

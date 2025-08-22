@@ -16,6 +16,7 @@ interface EmailRequest {
   phone?: string;
   message: string;
   type: 'contact' | 'quote' | 'newsletter';
+  attachments?: string[];
 }
 
 const handler = async (req: Request): Promise<Response> => {
@@ -103,16 +104,42 @@ Sent from Heavy Haulers website newsletter signup
         break;
     }
 
+    // Process attachments if present
+    const attachments = [];
+    if (emailData.attachments && emailData.attachments.length > 0) {
+      for (const url of emailData.attachments) {
+        try {
+          const response = await fetch(url);
+          if (response.ok) {
+            const buffer = await response.arrayBuffer();
+            const filename = url.split('/').pop() || 'attachment';
+            attachments.push({
+              filename,
+              content: new Uint8Array(buffer),
+            });
+          }
+        } catch (attachmentError) {
+          console.error('Error processing attachment:', url, attachmentError);
+        }
+      }
+    }
+
     // Send email via Resend
     try {
       console.log("Sending email via Resend API");
       
-      const emailResponse = await resend.emails.send({
+      const emailPayload: any = {
         from: "Heavy Haulers <onboarding@resend.dev>",
-        to: emailData.to,
+        to: "anuraagraavi@gmail.com",
         subject: emailSubject,
         text: emailContent,
-      });
+      };
+
+      if (attachments.length > 0) {
+        emailPayload.attachments = attachments;
+      }
+
+      const emailResponse = await resend.emails.send(emailPayload);
 
       console.log("Email sent successfully:", emailResponse);
 
