@@ -55,7 +55,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     switch (emailData.type) {
       case 'contact':
-        emailSubject = `Contact Form: ${emailData.subject}`;
+        emailSubject = emailData.subject;
         emailContent = `
 New contact form submission:
 
@@ -73,7 +73,7 @@ Sent from Heavy Haulers website contact form
         break;
       
       case 'quote':
-        emailSubject = `Quote Request from ${emailData.name}`;
+        emailSubject = emailData.subject;
         emailContent = `
 New quote request:
 
