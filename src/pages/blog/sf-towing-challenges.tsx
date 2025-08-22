@@ -353,9 +353,11 @@ const SFTowingChallenges = () => {
                   Heavy Haulers has been navigating SF's challenging streets for years. Our specialized 
                   equipment and local expertise ensure safe, efficient towing no matter the situation.
                 </p>
-                <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-gray-100">
-                  <Phone className="w-5 h-5 mr-2" />
-                  Call SF Emergency Line
+                <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-gray-100" asChild>
+                  <a href='tel:650-881-2400'>
+                    <Phone className="w-5 h-5 mr-2" />
+                    Call SF Emergency Line
+                  </a>
                 </Button>
               </div>
             </div>
