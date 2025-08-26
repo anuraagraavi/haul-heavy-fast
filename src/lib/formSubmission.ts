@@ -47,8 +47,6 @@ export const submitQuoteForm = async (formData: QuoteFormData): Promise<void> =>
 **Additional Notes:**
 ${formData.notes || 'No additional notes provided'}
 
-**Attachments:** ${formData.attachments && formData.attachments.length > 0 ? formData.attachments.length + ' file(s) attached' : 'No attachments'}
-
 **Request Time:** ${new Date().toLocaleString()}
       `,
       type: "quote"
