@@ -107,21 +107,29 @@ Sent from Heavy Haulers website newsletter signup
     // Process attachments if present
     const attachments = [];
     if (emailData.attachments && emailData.attachments.length > 0) {
+      console.log("Processing attachments:", emailData.attachments);
       for (const url of emailData.attachments) {
         try {
+          console.log("Fetching attachment from URL:", url);
           const response = await fetch(url);
+          console.log("Fetch response status:", response.status, response.statusText);
+          
           if (response.ok) {
             const buffer = await response.arrayBuffer();
-            const filename = url.split('/').pop() || 'attachment';
+            const filename = url.split('/').pop()?.split('?')[0] || 'attachment';
+            console.log("Successfully processed attachment:", filename, "Size:", buffer.byteLength);
             attachments.push({
               filename,
               content: new Uint8Array(buffer),
             });
+          } else {
+            console.error('Failed to fetch attachment:', url, response.status, response.statusText);
           }
         } catch (attachmentError) {
           console.error('Error processing attachment:', url, attachmentError);
         }
       }
+      console.log("Total attachments processed:", attachments.length);
     }
 
     // Send email via Resend
