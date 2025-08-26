@@ -130,7 +130,8 @@ Sent from Heavy Haulers website newsletter signup
       
       const emailPayload: any = {
         from: "Heavy Haulers <onboarding@resend.dev>",
-        to: "anuraagraavi@gmail.com",
+        // to: "anuraagraavi@gmail.com",
+        to: emailData.to,
         subject: emailSubject,
         text: emailContent,
       };
