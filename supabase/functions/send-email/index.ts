@@ -146,6 +146,7 @@ Sent from Heavy Haulers website newsletter signup
 
       if (attachments.length > 0) {
         emailPayload.attachments = attachments;
+        console.log("Adding attachments to email:", attachments.map(a => ({ filename: a.filename, size: a.content.length })));
       }
 
       const emailResponse = await resend.emails.send(emailPayload);
