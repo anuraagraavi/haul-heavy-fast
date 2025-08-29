@@ -22,7 +22,7 @@ const GetQuote = () => {
     vehicleType: "",
     serviceType: "",
     notes: "",
-    urgency: ""
+    urgency: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
