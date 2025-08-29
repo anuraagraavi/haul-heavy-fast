@@ -25,7 +25,8 @@ export const submitQuoteForm = async (formData: QuoteFormData): Promise<void> =>
   try {
     const emailData = {
       // to: ["heavyhaulers.ca@gmail.com","dispatch@heavytowpro.com"],
-      to: "anuraagraavi@gmail.com",
+      // to: "anuraagraavi@gmail.com",
+      //to: "sdhundhalva@gmail.com"
       name: formData.name,
       email: formData.email,
       phone: formData.phone,
