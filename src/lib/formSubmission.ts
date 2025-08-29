@@ -47,14 +47,18 @@ export const submitQuoteForm = async (formData: QuoteFormData): Promise<void> =>
 **Additional Notes:**
 ${formData.notes || 'No additional notes provided'}
 
+${formData?.attachments && formData?.attachments?.length > 0 ? `
+Attachments:
+${formData.attachments.map(url => url).join('\n')}
+` : ''}
+
 **Request Time:** ${new Date().toLocaleString()}
       `,
-      attachments: formData.attachments,
       type: "quote"
     };
 
     const { error } = await supabase.functions.invoke('send-email', {
-      body: emailData
+      body: { ...emailData, attachments: formData.attachments }
     });
 
     if (error) {
