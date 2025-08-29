@@ -10,5 +10,13 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OpenAI-SearchBot
+Allow: /
+
 User-agent: *
 Allow: /
+
+Sitemap: https://heavytowpro.com/site-map.xml

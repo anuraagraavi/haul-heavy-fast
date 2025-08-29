@@ -23,6 +23,7 @@ import FleetManagementTowing from "./pages/blog/fleet-management-towing";
 import SfTowingChallenges from "./pages/blog/sf-towing-challenges";
 import LuxuryTransportGuide from "./pages/blog/luxury-transport-guide";
 import NotFound from "./pages/NotFound";
+import XmlSitemap from "./pages/XmlSitemap";
 
 const queryClient = new QueryClient();
 
@@ -52,6 +53,7 @@ const App = () => (
           <Route path="/privacy-policy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/sitemap" element={<Sitemap />} />
+          <Route path="/site-map.xml" element={<XmlSitemap />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
