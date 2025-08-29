@@ -49,11 +49,12 @@ ${formData.notes || 'No additional notes provided'}
 
 **Request Time:** ${new Date().toLocaleString()}
       `,
+      attachments: formData.attachments,
       type: "quote"
     };
 
     const { error } = await supabase.functions.invoke('send-email', {
-      body: { ...emailData, attachments: formData.attachments }
+      body: emailData
     });
 
     if (error) {
