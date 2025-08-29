@@ -2,50 +2,47 @@ import { useEffect } from 'react';
 
 const XmlSitemap = () => {
   useEffect(() => {
+    const siteUrl = "https://heavytowpro.com";
+    
+    const urls = [
+      // Main Pages
+      { loc: "/", priority: "1.0", changefreq: "weekly" },
+      { loc: "/about", priority: "0.8", changefreq: "monthly" },
+      { loc: "/get-a-quote", priority: "0.9", changefreq: "weekly" },
+      { loc: "/contact", priority: "0.8", changefreq: "monthly" },
+      
+      // Services
+      { loc: "/services", priority: "0.9", changefreq: "weekly" },
+      { loc: "/services/light-duty", priority: "0.8", changefreq: "weekly" },
+      { loc: "/services/medium-duty", priority: "0.8", changefreq: "weekly" },
+      { loc: "/services/heavy-duty", priority: "0.8", changefreq: "weekly" },
+      
+      // Service Areas
+      { loc: "/locations", priority: "0.8", changefreq: "monthly" },
+      
+      // Blog
+      { loc: "/blog", priority: "0.7", changefreq: "weekly" },
+      { loc: "/blog/emergency-towing-guide", priority: "0.6", changefreq: "monthly" },
+      { loc: "/blog/heavy-equipment-transport", priority: "0.6", changefreq: "monthly" },
+      { loc: "/blog/fleet-management-reducing-downtime", priority: "0.6", changefreq: "monthly" },
+      { loc: "/blog/san-francisco-towing-challenges", priority: "0.6", changefreq: "monthly" },
+      { loc: "/blog/luxury-vehicle-transport", priority: "0.6", changefreq: "monthly" },
+      
+      // Legal
+      { loc: "/privacy-policy", priority: "0.3", changefreq: "yearly" },
+      { loc: "/terms", priority: "0.3", changefreq: "yearly" },
+      { loc: "/sitemap", priority: "0.4", changefreq: "monthly" },
+      { loc: "/thank-you", priority: "0.2", changefreq: "yearly" }
+    ];
+
     const xmlContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- Main Pages -->
-  <url><loc>https://heavytowpro.com/</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://heavytowpro.com/about</loc><changefreq>monthly</changefreq></url>
-  <url><loc>https://heavytowpro.com/get-a-quote</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://heavytowpro.com/contact</loc><changefreq>monthly</changefreq></url>
-
-  <!-- Services -->
-  <url><loc>https://heavytowpro.com/services</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://heavytowpro.com/services/light-duty</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://heavytowpro.com/services/medium-duty</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://heavytowpro.com/services/heavy-duty</loc><changefreq>weekly</changefreq></url>
-
-  <!-- Service Areas -->
-  <url><loc>https://heavytowpro.com/locations</loc><changefreq>monthly</changefreq></url>
-  <url><loc>https://heavytowpro.com/locations#san-francisco</loc><changefreq>monthly</changefreq></url>
-  <url><loc>https://heavytowpro.com/locations#san-mateo</loc><changefreq>monthly</changefreq></url>
-  <url><loc>https://heavytowpro.com/locations#alameda</loc><changefreq>monthly</changefreq></url>
-  <url><loc>https://heavytowpro.com/locations#santa-clara</loc><changefreq>monthly</changefreq></url>
-
-  <!-- Specialized Services -->
-  <url><loc>https://heavytowpro.com/services/light-duty#flatbed</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://heavytowpro.com/services/light-duty#motorcycle</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://heavytowpro.com/services/light-duty#exotic</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://heavytowpro.com/services/light-duty#private-property</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://heavytowpro.com/services/heavy-duty#equipment</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://heavytowpro.com/services/heavy-duty#recovery</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://heavytowpro.com/services/heavy-duty#fleet</loc><changefreq>weekly</changefreq></url>
-
-  <!-- Resources -->
-  <url><loc>https://heavytowpro.com/blog</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://heavytowpro.com/blog/emergency-towing-guide</loc><changefreq>monthly</changefreq></url>
-  <url><loc>https://heavytowpro.com/blog/heavy-equipment-transport</loc><changefreq>monthly</changefreq></url>
-  <url><loc>https://heavytowpro.com/blog/fleet-management-downtime-costs</loc><changefreq>monthly</changefreq></url>
-  <url><loc>https://heavytowpro.com/blog/sf-towing-challenges</loc><changefreq>monthly</changefreq></url>
-  <url><loc>https://heavytowpro.com/blog/luxury-vehicle-transport</loc><changefreq>monthly</changefreq></url>
-
-  <!-- Legal -->
-  <url><loc>https://heavytowpro.com/privacy-policy</loc><changefreq>yearly</changefreq></url>
-  <url><loc>https://heavytowpro.com/terms</loc><changefreq>yearly</changefreq></url>
-  <url><loc>https://heavytowpro.com/sitemap</loc><changefreq>monthly</changefreq></url>
-
+${urls.map(url => `  <url>
+    <loc>${siteUrl}${url.loc}</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>${url.changefreq}</changefreq>
+    <priority>${url.priority}</priority>
+  </url>`).join('\n')}
 </urlset>`;
 
     // Override document content
