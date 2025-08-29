@@ -346,7 +346,7 @@ const GetQuote = () => {
                     For immediate assistance or emergency situations, skip the form and call us directly.
                   </p>
                   <div className="space-y-3">
-                    <Button variant="outline" className="w-full bg-white text-primary border-white hover:bg-gray-100" asChild>
+                    <Button variant="outline" className="w-full bg-white text-primary border-white hover:bg-gray-100 min-h-[40px]" asChild>
                       <a href='tel:650-881-2400'>
                         <Phone className='w-4 h-4 mr-2' />
                         650-881-2400
