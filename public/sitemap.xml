@@ -1,8 +1,4 @@
-import { useEffect } from 'react';
-
-const XmlSitemap = () => {
-  useEffect(() => {
-    const xmlContent = `<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- Main Pages -->
@@ -37,8 +33,8 @@ const XmlSitemap = () => {
   <url><loc>https://heavytowpro.com/blog</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://heavytowpro.com/blog/emergency-towing-guide</loc><changefreq>monthly</changefreq></url>
   <url><loc>https://heavytowpro.com/blog/heavy-equipment-transport</loc><changefreq>monthly</changefreq></url>
-  <url><loc>https://heavytowpro.com/blog/fleet-management-downtime-costs</loc><changefreq>monthly</changefreq></url>
-  <url><loc>https://heavytowpro.com/blog/sf-towing-challenges</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://heavytowpro.com/blog/fleet-management-reducing-downtime</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://heavytowpro.com/blog/san-francisco-towing-challenges</loc><changefreq>monthly</changefreq></url>
   <url><loc>https://heavytowpro.com/blog/luxury-vehicle-transport</loc><changefreq>monthly</changefreq></url>
 
   <!-- Legal -->
@@ -46,15 +42,4 @@ const XmlSitemap = () => {
   <url><loc>https://heavytowpro.com/terms</loc><changefreq>yearly</changefreq></url>
   <url><loc>https://heavytowpro.com/sitemap</loc><changefreq>monthly</changefreq></url>
 
-</urlset>`;
-
-    // Override document content
-    document.open();
-    document.write(xmlContent);
-    document.close();
-  }, []);
-
-  return null;
-};
-
-export default XmlSitemap;
+</urlset>
