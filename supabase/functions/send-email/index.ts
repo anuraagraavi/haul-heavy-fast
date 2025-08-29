@@ -58,14 +58,6 @@ const handler = async (req: Request): Promise<Response> => {
       case 'contact':
         emailSubject = emailData.subject;
         emailContent = `
-New contact form submission:
-
-Name: ${emailData.name}
-Email: ${emailData.email}
-Phone: ${emailData.phone || 'Not provided'}
-Subject: ${emailData.subject}
-
-Message:
 ${emailData.message}
 
 ---
