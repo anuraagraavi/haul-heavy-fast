@@ -70,10 +70,6 @@ Sent from Heavy Haulers website contact form
         emailContent = `
 ${emailData.message}
 
-${emailData.attachments && emailData.attachments.length > 0 ? `
-Attachments:
-${emailData.attachments.map(url => url).join('\n')}
-` : ''}
 ---
 Sent from Heavy Haulers website quote form
         `;
