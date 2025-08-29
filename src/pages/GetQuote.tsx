@@ -322,7 +322,7 @@ const GetQuote = () => {
 
                     {/* Submit Buttons */}
                     <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    <Button type="submit" variant="hero" className="flex-1 h-12 sm:h-14 text-base sm:text-lg font-bold px-6 sm:px-8" disabled={isSubmitting}>
+                    <Button type="submit" variant="hero" className="flex-1 h-12 text-base sm:text-lg font-bold px-6 sm:px-8" disabled={isSubmitting}>
                         <FileText className="w-5 h-5 mr-2" />
                         {isSubmitting ? "Submitting..." : "Get My Quote"}
                       </Button>
