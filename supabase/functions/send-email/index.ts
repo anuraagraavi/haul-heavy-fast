@@ -76,13 +76,6 @@ Sent from Heavy Haulers website contact form
       case 'quote':
         emailSubject = emailData.subject;
         emailContent = `
-New quote request:
-
-Name: ${emailData.name}
-Email: ${emailData.email}
-Phone: ${emailData.phone || 'Not provided'}
-
-Details:
 ${emailData.message}
 
 ${emailData.attachments && emailData.attachments.length > 0 ? `
