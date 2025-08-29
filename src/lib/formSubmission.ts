@@ -11,6 +11,7 @@ export interface QuoteFormData {
   notes: string;
   urgency: string;
   attachments?: string[];
+  website?: string; // honeypot field
 }
 
 export interface ContactFormData {
@@ -19,12 +20,13 @@ export interface ContactFormData {
   phone: string;
   subject: string;
   message: string;
+  website?: string; // honeypot field
 }
 
 export const submitQuoteForm = async (formData: QuoteFormData): Promise<void> => {
   try {
     const emailData = {
-      to: ["anuraagraavi@gmail.com"],
+      to: ["anuraagraavi@gmail.com", "heavyhaulers.ca@gmail.com", "dispatch@heavytowpro.com"],
       name: formData.name,
       email: formData.email,
       phone: formData.phone,
@@ -58,7 +60,7 @@ ${formData.attachments.map(url => url).join('\n')}
     };
 
     const { error } = await supabase.functions.invoke('send-email', {
-      body: { ...emailData, attachments: formData?.attachments }
+      body: { ...emailData, attachments: formData?.attachments, honeypot: formData?.website }
     });
 
     if (error) {
@@ -73,7 +75,7 @@ ${formData.attachments.map(url => url).join('\n')}
 export const submitContactForm = async (formData: ContactFormData): Promise<void> => {
   try {
     const emailData = {
-      to: ["anuraagraavi@gmail.com"],
+      to: ["anuraagraavi@gmail.com", "heavyhaulers.ca@gmail.com", "dispatch@heavytowpro.com"],
       name: formData.name,
       email: formData.email,
       phone: formData.phone,
@@ -97,7 +99,7 @@ ${formData.message}
     };
 
     const { error } = await supabase.functions.invoke('send-email', {
-      body: emailData
+      body: { ...emailData, honeypot: formData?.website }
     });
 
     if (error) {

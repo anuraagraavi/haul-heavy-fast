@@ -23,6 +23,7 @@ const GetQuote = () => {
     serviceType: "",
     notes: "",
     urgency: "",
+    website: "", // honeypot field
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
@@ -79,7 +80,7 @@ const GetQuote = () => {
       await submitQuoteForm({ ...formData, attachments: fileUrls });
       toast({
         title: "Quote Request Submitted!",
-        description: "We'll get back to you within 15 minutes with your quote.",
+        description: "We'll get back to you within 15 minutes. Check your email for confirmation.",
       });
       navigate('/thank-you?type=quote');
     } catch (error) {
@@ -318,6 +319,19 @@ const GetQuote = () => {
                           </div>
                         )}
                       </div>
+                    </div>
+
+                    {/* Honeypot field - hidden from users */}
+                    <div style={{ position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }}>
+                      <Label htmlFor="website">Website (leave blank)</Label>
+                      <Input
+                        id="website"
+                        type="text"
+                        value={formData.website}
+                        onChange={(e) => handleInputChange("website", e.target.value)}
+                        tabIndex={-1}
+                        autoComplete="off"
+                      />
                     </div>
 
                     {/* Submit Buttons */}

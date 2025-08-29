@@ -16,7 +16,8 @@ const Contact = () => {
     email: "",
     phone: "",
     subject: "",
-    message: ""
+    message: "",
+    website: "" // honeypot field
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
@@ -34,7 +35,7 @@ const Contact = () => {
       await submitContactForm(formData);
       toast({
         title: "Message Sent!",
-        description: "We'll get back to you as soon as possible.",
+        description: "We'll get back to you as soon as possible. Check your email for confirmation.",
       });
       navigate('/thank-you?type=contact');
     } catch (error) {
@@ -226,6 +227,19 @@ const Contact = () => {
                       placeholder="Tell us more about your inquiry..."
                       rows={6}
                       required
+                    />
+                  </div>
+
+                  {/* Honeypot field - hidden from users */}
+                  <div style={{ position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }}>
+                    <Label htmlFor="website">Website (leave blank)</Label>
+                    <Input
+                      id="website"
+                      type="text"
+                      value={formData.website}
+                      onChange={(e) => handleInputChange("website", e.target.value)}
+                      tabIndex={-1}
+                      autoComplete="off"
                     />
                   </div>
 
