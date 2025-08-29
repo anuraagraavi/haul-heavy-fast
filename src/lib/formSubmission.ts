@@ -58,7 +58,7 @@ ${formData.attachments.map(url => url).join('\n')}
     };
 
     const { error } = await supabase.functions.invoke('send-email', {
-      body: { ...emailData, attachments: formData.attachments }
+      body: { ...emailData, attachments: formData?.attachments }
     });
 
     if (error) {
