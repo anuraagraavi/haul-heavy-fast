@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -85,6 +86,68 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Contact Heavy Haulers - 24/7 Towing Services San Francisco Bay Area | 650-881-2400</title>
+        <meta name="description" content="Contact Heavy Haulers San Francisco for 24/7 emergency towing, fleet services, and professional vehicle recovery. Call 650-881-2400 or send a message. Bay Area's trusted towing company." />
+        <meta name="keywords" content="contact towing company San Francisco, emergency towing dispatch, Bay Area towing contact, professional towing services, fleet towing San Francisco, 24/7 towing contact" />
+        <link rel="canonical" href="https://heavytowpro.com/contact" />
+        
+        {/* Open Graph tags */}
+        <meta property="og:title" content="Contact Heavy Haulers - 24/7 Towing Services San Francisco" />
+        <meta property="og:description" content="Contact Heavy Haulers for professional towing services in San Francisco Bay Area. 24/7 emergency dispatch, fleet contracts, and transparent pricing." />
+        <meta property="og:url" content="https://heavytowpro.com/contact" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_US" />
+        
+        {/* Twitter Card tags */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Contact Heavy Haulers - 24/7 Towing Services San Francisco" />
+        <meta name="twitter:description" content="Contact Heavy Haulers for professional towing services in San Francisco Bay Area. 24/7 emergency dispatch available." />
+        
+        {/* Local business geo-targeting */}
+        <meta name="geo.region" content="US-CA" />
+        <meta name="geo.placename" content="San Francisco, CA" />
+        <meta name="geo.position" content="37.7749;-122.4194" />
+        <meta name="ICBM" content="37.7749, -122.4194" />
+        
+        {/* Schema.org JSON-LD for Contact Page */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            "mainEntity": {
+              "@type": "LocalBusiness",
+              "name": "Heavy Haulers San Francisco",
+              "description": "Professional towing and recovery services in San Francisco Bay Area",
+              "url": "https://heavytowpro.com",
+              "telephone": "+1-650-881-2400",
+              "email": "dispatch@heavytowpro.com",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "San Francisco",
+                "addressRegion": "CA",
+                "addressCountry": "US"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "37.7749",
+                "longitude": "-122.4194"
+              },
+              "areaServed": [
+                "San Francisco County",
+                "San Mateo County", 
+                "Alameda County",
+                "Santa Clara County"
+              ],
+              "serviceType": ["Emergency Towing", "Heavy Duty Towing", "Fleet Services", "Vehicle Recovery"],
+              "openingHours": "Mo-Su 00:00-24:00",
+              "sameAs": [
+                "https://heavytowpro.com"
+              ]
+            }
+          })}
+        </script>
+      </Helmet>
       <Header />
       <main>
         {/* Hero Section */}

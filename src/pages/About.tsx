@@ -31,9 +31,21 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>About Heavy Haulers - Professional Towing Company | San Francisco Bay Area</title>
-        <meta name="description" content="Learn about Heavy Haulers' mission, values, and commitment to professional towing services. Trusted Bay Area towing company with transparent pricing and 24/7 availability." />
+        <title>About Heavy Haulers - Professional Towing Company San Francisco | Bay Area Experts</title>
+        <meta name="description" content="Learn about Heavy Haulers' mission, values, and commitment to professional towing services. Trusted San Francisco Bay Area towing company with transparent pricing and 24/7 availability since inception." />
+        <meta name="keywords" content="about Heavy Haulers, professional towing company San Francisco, Bay Area towing experts, transparent towing pricing, reliable towing service, 24/7 towing company" />
         <link rel="canonical" href="https://heavytowpro.com/about" />
+        
+        {/* Open Graph tags */}
+        <meta property="og:title" content="About Heavy Haulers - Professional Towing Company San Francisco" />
+        <meta property="og:description" content="Trusted Bay Area towing company with transparent pricing, professional service, and 24/7 availability. Learn about our mission and values." />
+        <meta property="og:url" content="https://heavytowpro.com/about" />
+        <meta property="og:type" content="website" />
+        
+        {/* Local business geo-targeting */}
+        <meta name="geo.region" content="US-CA" />
+        <meta name="geo.placename" content="San Francisco, CA" />
+        <meta name="geo.position" content="37.7749;-122.4194" />
       </Helmet>
       <Header />
       <main>

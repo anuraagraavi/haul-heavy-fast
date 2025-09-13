@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -67,6 +68,67 @@ const MediumDuty = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Commercial Truck Towing San Francisco - Medium Duty Vehicle Recovery | Bay Area</title>
+        <meta name="description" content="Professional medium-duty towing San Francisco. Box trucks, delivery vehicles, RVs, commercial fleet towing. Priority response for business vehicles in Bay Area." />
+        <meta name="keywords" content="commercial truck towing San Francisco, medium duty towing Bay Area, box truck towing, delivery vehicle recovery, RV towing San Francisco, business vehicle towing" />
+        <link rel="canonical" href="https://heavytowpro.com/services/medium-duty" />
+        
+        {/* Open Graph tags */}
+        <meta property="og:title" content="Commercial Truck Towing San Francisco - Medium Duty Vehicle Recovery" />
+        <meta property="og:description" content="Professional medium-duty towing in San Francisco Bay Area. Box trucks, delivery vehicles, RVs, and commercial fleet services." />
+        <meta property="og:url" content="https://heavytowpro.com/services/medium-duty" />
+        <meta property="og:type" content="website" />
+        
+        {/* Twitter Card tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Commercial Truck Towing San Francisco - Medium Duty Services" />
+        <meta name="twitter:description" content="Professional medium-duty towing for commercial vehicles, RVs, and delivery trucks in San Francisco Bay Area." />
+        
+        {/* Local business geo-targeting */}
+        <meta name="geo.region" content="US-CA" />
+        <meta name="geo.placename" content="San Francisco, CA" />
+        <meta name="geo.position" content="37.7749;-122.4194" />
+        
+        {/* Schema.org JSON-LD for Medium Duty Service */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Medium Duty Commercial Vehicle Towing",
+            "description": "Professional medium-duty towing for commercial vehicles, box trucks, and RVs in San Francisco Bay Area",
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "Heavy Haulers San Francisco", 
+              "telephone": "+1-650-881-2400",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "San Francisco",
+                "addressRegion": "CA",
+                "addressCountry": "US"
+              }
+            },
+            "serviceType": ["Medium Duty Towing", "Commercial Vehicle Recovery", "Box Truck Towing", "RV Towing"],
+            "areaServed": [
+              "San Francisco County, CA",
+              "San Mateo County, CA",
+              "Alameda County, CA", 
+              "Santa Clara County, CA"
+            ],
+            "availableChannel": {
+              "@type": "ServiceChannel",
+              "servicePhone": "+1-650-881-2400",
+              "availableLanguage": "English"
+            },
+            "hoursAvailable": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+              "opens": "00:00",
+              "closes": "23:59"
+            }
+          })}
+        </script>
+      </Helmet>
       <Header />
       <main>
         {/* Hero Section */}

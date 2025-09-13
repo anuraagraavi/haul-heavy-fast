@@ -10,8 +10,36 @@ const HeavyEquipmentTransport = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Heavy Equipment Transport: Professional Hauling Solutions | Heavy Haulers</title>
-        <meta name="description" content="Professional heavy equipment transport services. Learn about specialized hauling for construction equipment, machinery, and industrial vehicles across the Bay Area." />
+        <title>Heavy Equipment Transport San Francisco: Professional Hauling Solutions | Heavy Haulers Bay Area</title>
+        <meta name="description" content="Professional heavy equipment transport services in San Francisco Bay Area. Learn about specialized hauling for construction equipment, machinery, and industrial vehicles. Expert permits and routing." />
+        <meta name="keywords" content="heavy equipment transport San Francisco, construction equipment moving Bay Area, machinery hauling SF, industrial vehicle transport, oversized load permits California" />
+        <link rel="canonical" href="https://heavytowpro.com/blog/heavy-equipment-transport" />
+        
+        {/* Schema.org JSON-LD for Article */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Heavy Equipment Transport: Professional Hauling Solutions",
+            "description": "Professional heavy equipment transport services in San Francisco Bay Area",
+            "image": "https://heavytowpro.com/src/assets/blog-heavy-equipment.jpg",
+            "author": {
+              "@type": "Organization",
+              "name": "Heavy Haulers Team"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Heavy Haulers San Francisco",
+              "url": "https://heavytowpro.com"
+            },
+            "datePublished": "2024-01-12",
+            "dateModified": "2024-01-12",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://heavytowpro.com/blog/heavy-equipment-transport"
+            }
+          })}
+        </script>
       </Helmet>
       <Header />
       <main>

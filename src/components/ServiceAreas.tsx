@@ -38,7 +38,7 @@ const ServiceAreas = () => {
           <div className="relative mb-16 rounded-2xl overflow-hidden shadow-elevated">
             <img
               src={getMediaUrl("media", "Home _ Service Areas.jpg")}
-              alt='Heavy Haulers Bay Area Service Coverage Map'
+              alt='Heavy Haulers towing service coverage map San Francisco Bay Area counties including SF, San Mateo, Alameda, Santa Clara'
               className='w-full h-64 md:h-[38rem] object-cover'
             />
             <div className="absolute inset-0 bg-black/20 flex items-center justify-center">

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -67,6 +68,67 @@ const LightDuty = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Car Towing San Francisco - Light Duty Vehicle Towing Services | Bay Area</title>
+        <meta name="description" content="Professional car towing San Francisco Bay Area. Flatbed service, motorcycle transport, luxury vehicle towing, roadside assistance. Fast 15-30 minute response for light-duty vehicles." />
+        <meta name="keywords" content="car towing San Francisco, light duty towing Bay Area, flatbed towing, motorcycle towing San Francisco, luxury car transport, emergency roadside assistance" />
+        <link rel="canonical" href="https://heavytowpro.com/services/light-duty" />
+        
+        {/* Open Graph tags */}
+        <meta property="og:title" content="Car Towing San Francisco - Light Duty Vehicle Towing Services" />
+        <meta property="og:description" content="Professional light-duty towing in San Francisco Bay Area. Cars, SUVs, motorcycles, luxury vehicles. Fast response, careful handling." />
+        <meta property="og:url" content="https://heavytowpro.com/services/light-duty" />
+        <meta property="og:type" content="website" />
+        
+        {/* Twitter Card tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Car Towing San Francisco - Light Duty Towing Services" />
+        <meta name="twitter:description" content="Professional car towing and light-duty vehicle services in San Francisco Bay Area. Fast response, professional service." />
+        
+        {/* Local business geo-targeting */}
+        <meta name="geo.region" content="US-CA" />
+        <meta name="geo.placename" content="San Francisco, CA" />
+        <meta name="geo.position" content="37.7749;-122.4194" />
+        
+        {/* Schema.org JSON-LD for Light Duty Service */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Light Duty Vehicle Towing",
+            "description": "Professional car towing and light-duty vehicle services in San Francisco Bay Area",
+            "provider": {
+              "@type": "LocalBusiness", 
+              "name": "Heavy Haulers San Francisco",
+              "telephone": "+1-650-881-2400",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "San Francisco",
+                "addressRegion": "CA",
+                "addressCountry": "US"
+              }
+            },
+            "serviceType": ["Car Towing", "Flatbed Service", "Motorcycle Towing", "Luxury Vehicle Transport"],
+            "areaServed": [
+              "San Francisco County, CA",
+              "San Mateo County, CA", 
+              "Alameda County, CA",
+              "Santa Clara County, CA"
+            ],
+            "availableChannel": {
+              "@type": "ServiceChannel",
+              "servicePhone": "+1-650-881-2400",
+              "availableLanguage": "English"
+            },
+            "hoursAvailable": {
+              "@type": "OpeningHoursSpecification", 
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+              "opens": "00:00",
+              "closes": "23:59"
+            }
+          })}
+        </script>
+      </Helmet>
       <Header />
       <main>
         {/* Hero Section */}

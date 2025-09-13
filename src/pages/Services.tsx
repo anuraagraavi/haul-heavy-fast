@@ -44,9 +44,21 @@ const Services = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Towing Services - Light, Medium & Heavy-Duty | Heavy Haulers San Francisco</title>
-        <meta name="description" content="Complete towing services in San Francisco Bay Area: light-duty car towing, medium-duty truck recovery, heavy-duty equipment transport. Professional fleet with 24/7 availability." />
+        <title>Professional Towing Services San Francisco - Light, Medium & Heavy-Duty | Bay Area</title>
+        <meta name="description" content="Complete towing services in San Francisco Bay Area: light-duty car towing, medium-duty truck recovery, heavy-duty equipment transport. Professional fleet with 24/7 availability. Call 650-881-2400." />
+        <meta name="keywords" content="towing services San Francisco, light duty towing, medium duty towing, heavy duty towing, car towing Bay Area, commercial towing services, emergency towing SF" />
         <link rel="canonical" href="https://heavytowpro.com/services" />
+        
+        {/* Open Graph tags */}
+        <meta property="og:title" content="Professional Towing Services San Francisco - Light, Medium & Heavy-Duty" />
+        <meta property="og:description" content="Complete towing services in San Francisco Bay Area. Professional fleet covering all vehicle types with 24/7 availability." />
+        <meta property="og:url" content="https://heavytowpro.com/services" />
+        <meta property="og:type" content="website" />
+        
+        {/* Local business geo-targeting */}
+        <meta name="geo.region" content="US-CA" />
+        <meta name="geo.placename" content="San Francisco, CA" />
+        <meta name="geo.position" content="37.7749;-122.4194" />
       </Helmet>
       <Header />
       <main>

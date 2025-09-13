@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -114,6 +115,62 @@ const GetQuote = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Free Towing Quote San Francisco - Instant Pricing | Heavy Haulers Bay Area</title>
+        <meta name="description" content="Get a free, transparent towing quote in San Francisco Bay Area. No hidden fees, fast response within 15 minutes. Light, medium, and heavy-duty towing quotes available 24/7." />
+        <meta name="keywords" content="free towing quote San Francisco, towing price estimate Bay Area, transparent towing pricing, emergency towing quote, heavy duty towing quote, commercial towing estimate" />
+        <link rel="canonical" href="https://heavytowpro.com/get-a-quote" />
+        
+        {/* Open Graph tags */}
+        <meta property="og:title" content="Free Towing Quote San Francisco - Instant Pricing | Heavy Haulers" />
+        <meta property="og:description" content="Get transparent, upfront towing pricing in San Francisco Bay Area. No hidden fees, fast quotes, professional service." />
+        <meta property="og:url" content="https://heavytowpro.com/get-a-quote" />
+        <meta property="og:type" content="website" />
+        
+        {/* Twitter Card tags */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Free Towing Quote San Francisco - Instant Pricing" />
+        <meta name="twitter:description" content="Get transparent towing quotes in San Francisco Bay Area. No hidden fees, professional service." />
+        
+        {/* Local business geo-targeting */}
+        <meta name="geo.region" content="US-CA" />
+        <meta name="geo.placename" content="San Francisco, CA" />
+        <meta name="geo.position" content="37.7749;-122.4194" />
+        
+        {/* Schema.org JSON-LD for Service Pricing */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Towing Quote Request",
+            "description": "Free, transparent towing quotes for San Francisco Bay Area",
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "Heavy Haulers San Francisco",
+              "telephone": "+1-650-881-2400",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "San Francisco",
+                "addressRegion": "CA",
+                "addressCountry": "US"
+              }
+            },
+            "areaServed": [
+              "San Francisco County, CA",
+              "San Mateo County, CA",
+              "Alameda County, CA", 
+              "Santa Clara County, CA"
+            ],
+            "serviceType": "Vehicle Towing Quote",
+            "offers": {
+              "@type": "Offer",
+              "name": "Free Towing Quote",
+              "description": "Transparent pricing with no hidden fees",
+              "availability": "https://schema.org/InStock"
+            }
+          })}
+        </script>
+      </Helmet>
       <Header />
       <main>
         {/* Hero Section */}

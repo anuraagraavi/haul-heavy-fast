@@ -10,8 +10,43 @@ const FleetManagementTowing = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Fleet Management Towing Solutions: Business Vehicle Services | Heavy Haulers</title>
-        <meta name="description" content="Comprehensive fleet towing solutions for businesses. Learn about corporate contracts, priority dispatch, and cost-effective fleet management services." />
+        <title>Fleet Management Towing Solutions San Francisco: Business Vehicle Services | Heavy Haulers Bay Area</title>
+        <meta name="description" content="Comprehensive fleet towing solutions for San Francisco Bay Area businesses. Learn about corporate contracts, priority dispatch, and cost-effective fleet management services for commercial vehicles." />
+        <meta name="keywords" content="fleet management towing San Francisco, business vehicle services Bay Area, corporate towing contracts, commercial fleet towing, priority dispatch towing SF" />
+        <link rel="canonical" href="https://heavytowpro.com/blog/fleet-management-towing" />
+        
+        {/* Open Graph tags */}
+        <meta property="og:title" content="Fleet Management Towing Solutions: Business Vehicle Services | Heavy Haulers" />
+        <meta property="og:description" content="Comprehensive fleet towing solutions for San Francisco Bay Area businesses. Corporate contracts and priority dispatch services." />
+        <meta property="og:url" content="https://heavytowpro.com/blog/fleet-management-towing" />
+        <meta property="og:type" content="article" />
+        <meta property="og:image" content="https://heavytowpro.com/src/assets/blog-fleet-management.jpg" />
+        
+        {/* Schema.org JSON-LD for Article */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Fleet Management Towing: Keeping Business Vehicles Moving",
+            "description": "Comprehensive fleet towing solutions for San Francisco Bay Area businesses",
+            "image": "https://heavytowpro.com/src/assets/blog-fleet-management.jpg",
+            "author": {
+              "@type": "Organization",
+              "name": "Heavy Haulers Team"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Heavy Haulers San Francisco",
+              "url": "https://heavytowpro.com"
+            },
+            "datePublished": "2024-03-10",
+            "dateModified": "2024-03-10",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://heavytowpro.com/blog/fleet-management-towing"
+            }
+          })}
+        </script>
       </Helmet>
       <Header />
       <main>

@@ -114,9 +114,33 @@ const BlogNew = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Heavy Haulers Blog - Towing Industry Insights | San Francisco Bay Area</title>
-        <meta name="description" content="Expert insights on towing, heavy hauling, and fleet management. Stay informed with the latest industry news, safety tips, and best practices from Heavy Haulers." />
+        <title>Heavy Haulers Blog - Towing Industry Insights & Expert Guides | San Francisco Bay Area</title>
+        <meta name="description" content="Expert insights on towing, heavy hauling, and fleet management. Stay informed with the latest industry news, safety tips, and best practices from Heavy Haulers San Francisco." />
+        <meta name="keywords" content="towing blog San Francisco, heavy hauling insights, fleet management tips, towing industry news, emergency towing guides, Bay Area towing experts" />
         <link rel="canonical" href="https://heavytowpro.com/blog" />
+        
+        {/* Open Graph tags */}
+        <meta property="og:title" content="Heavy Haulers Blog - Towing Industry Insights | San Francisco" />
+        <meta property="og:description" content="Expert insights on towing, heavy hauling, and fleet management from San Francisco Bay Area professionals." />
+        <meta property="og:url" content="https://heavytowpro.com/blog" />
+        <meta property="og:type" content="blog" />
+        
+        {/* Schema.org JSON-LD for Blog */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            "name": "Heavy Haulers Towing Blog",
+            "description": "Expert towing insights, guides, and industry news from San Francisco Bay Area professionals",
+            "url": "https://heavytowpro.com/blog",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Heavy Haulers San Francisco",
+              "url": "https://heavytowpro.com"
+            },
+            "inLanguage": "en-US"
+          })}
+        </script>
       </Helmet>
       
       <Header />

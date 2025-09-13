@@ -13,7 +13,7 @@ const Footer = () => {
           <div className="space-y-4 lg:col-span-2">
             <img 
               src="/lovable-uploads/a43ad238-af3b-47a8-962f-32c9da2fc727.png" 
-              alt="Heavy Haulers Transport Co." 
+              alt="Heavy Haulers San Francisco Bay Area towing company logo" 
               className="h-12 w-auto"
             />
             <p className="text-muted-foreground">

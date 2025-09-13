@@ -43,7 +43,7 @@ const CorporateFleet = () => {
 
         {/* Corporate Fleet Banner */}
         <div className={`relative mb-16 rounded-2xl overflow-hidden transition-all duration-1000 delay-300 ${isVisible ? 'animate-scale-in' : 'opacity-0'}`}>
-          <img src={corporateFleetBanner} alt="Corporate Fleet Towing Services" className="w-full h-64 md:h-80 object-cover" />
+          <img src={corporateFleetBanner} alt="Corporate fleet towing services San Francisco - commercial vehicle contracts and priority dispatch" className="w-full h-64 md:h-80 object-cover" />
           <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
             <div className="text-center text-white">
               

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -89,6 +90,67 @@ const HeavyDuty = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Heavy Duty Towing San Francisco - Semi Trucks, Equipment Transport | Bay Area</title>
+        <meta name="description" content="Professional heavy-duty towing San Francisco. Semi-truck recovery, construction equipment transport, rotator fleet services. 24/7 commercial towing for Bay Area businesses and fleets." />
+        <meta name="keywords" content="heavy duty towing San Francisco, semi truck towing Bay Area, rotator towing, construction equipment transport, commercial fleet towing, heavy equipment recovery San Francisco" />
+        <link rel="canonical" href="https://heavytowpro.com/services/heavy-duty" />
+        
+        {/* Open Graph tags */}
+        <meta property="og:title" content="Heavy Duty Towing San Francisco - Semi Trucks & Equipment Transport" />
+        <meta property="og:description" content="Professional heavy-duty towing and recovery in San Francisco Bay Area. Semi-trucks, construction equipment, commercial fleet services." />
+        <meta property="og:url" content="https://heavytowpro.com/services/heavy-duty" />
+        <meta property="og:type" content="website" />
+        
+        {/* Twitter Card tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Heavy Duty Towing San Francisco - Semi Trucks & Equipment" />
+        <meta name="twitter:description" content="Professional heavy-duty towing and recovery services in San Francisco Bay Area. Rotator fleet for complex operations." />
+        
+        {/* Local business geo-targeting */}
+        <meta name="geo.region" content="US-CA" />
+        <meta name="geo.placename" content="San Francisco, CA" />
+        <meta name="geo.position" content="37.7749;-122.4194" />
+        
+        {/* Schema.org JSON-LD for Heavy Duty Service */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Heavy Duty Towing and Recovery",
+            "description": "Professional heavy-duty towing for semi-trucks, construction equipment, and commercial vehicles in San Francisco Bay Area",
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "Heavy Haulers San Francisco",
+              "telephone": "+1-650-881-2400",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "San Francisco",
+                "addressRegion": "CA",
+                "addressCountry": "US"
+              }
+            },
+            "serviceType": ["Heavy Duty Towing", "Semi Truck Recovery", "Equipment Transport", "Commercial Fleet Services"],
+            "areaServed": [
+              "San Francisco County, CA",
+              "San Mateo County, CA",
+              "Alameda County, CA",
+              "Santa Clara County, CA"
+            ],
+            "availableChannel": {
+              "@type": "ServiceChannel",
+              "servicePhone": "+1-650-881-2400",
+              "availableLanguage": "English"
+            },
+            "hoursAvailable": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+              "opens": "00:00",
+              "closes": "23:59"
+            }
+          })}
+        </script>
+      </Helmet>
       <Header />
       <main>
         {/* Hero Section */}

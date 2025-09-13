@@ -10,8 +10,43 @@ const EmergencyTowingGuide = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Emergency Towing Guide: What to Do When Stranded | Heavy Haulers</title>
-        <meta name="description" content="Complete guide to emergency towing procedures. Learn what to do when your vehicle breaks down, safety tips, and how to get professional help fast." />
+        <title>Emergency Towing Guide San Francisco: What to Do When Stranded | Heavy Haulers Bay Area</title>
+        <meta name="description" content="Complete emergency towing guide for San Francisco Bay Area drivers. Learn what to do when your vehicle breaks down, safety tips, and how to get professional help fast. Expert advice from Heavy Haulers." />
+        <meta name="keywords" content="emergency towing guide San Francisco, what to do when stranded, vehicle breakdown Bay Area, emergency roadside assistance, towing safety tips SF" />
+        <link rel="canonical" href="https://heavytowpro.com/blog/emergency-towing-guide" />
+        
+        {/* Open Graph tags */}
+        <meta property="og:title" content="Emergency Towing Guide: What to Do When Stranded | Heavy Haulers" />
+        <meta property="og:description" content="Complete guide to emergency towing procedures for San Francisco Bay Area drivers. Safety tips and professional help." />
+        <meta property="og:url" content="https://heavytowpro.com/blog/emergency-towing-guide" />
+        <meta property="og:type" content="article" />
+        <meta property="og:image" content="https://heavytowpro.com/src/assets/blog-emergency-guide.jpg" />
+        
+        {/* Schema.org JSON-LD for Article */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Emergency Towing Guide: What to Do When Stranded",
+            "description": "Complete guide to emergency towing procedures for San Francisco Bay Area drivers",
+            "image": "https://heavytowpro.com/src/assets/blog-emergency-guide.jpg",
+            "author": {
+              "@type": "Organization",
+              "name": "Heavy Haulers Team"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Heavy Haulers San Francisco",
+              "url": "https://heavytowpro.com"
+            },
+            "datePublished": "2024-03-15",
+            "dateModified": "2024-03-15",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://heavytowpro.com/blog/emergency-towing-guide"
+            }
+          })}
+        </script>
       </Helmet>
       <Header />
       <main>
