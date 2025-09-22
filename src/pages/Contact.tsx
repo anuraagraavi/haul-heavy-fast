@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEOBreadcrumbs from "@/components/SEOBreadcrumbs";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -87,9 +88,9 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Contact Heavy Haulers - 24/7 Towing Services San Francisco Bay Area | 650-881-2400</title>
-        <meta name="description" content="Contact Heavy Haulers San Francisco for 24/7 emergency towing, fleet services, and professional vehicle recovery. Call 650-881-2400 or send a message. Bay Area's trusted towing company." />
-        <meta name="keywords" content="contact towing company San Francisco, emergency towing dispatch, Bay Area towing contact, professional towing services, fleet towing San Francisco, 24/7 towing contact" />
+        <title>Contact Heavy Haulers - 24/7 Emergency Towing San Francisco Bay Area | Call (650) 881-2400</title>
+        <meta name="description" content="Contact Heavy Haulers San Francisco for immediate 24/7 emergency towing, commercial fleet services, and professional vehicle recovery throughout San Francisco, San Mateo, Alameda, and Santa Clara counties. Call (650) 881-2400 for fastest response." />
+        <meta name="keywords" content="contact emergency towing San Francisco, 24/7 towing dispatch Bay Area, Heavy Haulers contact information, professional towing company San Francisco, fleet towing contracts, emergency roadside assistance contact" />
         <link rel="canonical" href="https://heavytowpro.com/contact" />
         
         {/* Open Graph tags */}
@@ -110,7 +111,7 @@ const Contact = () => {
         <meta name="geo.position" content="37.7749;-122.4194" />
         <meta name="ICBM" content="37.7749, -122.4194" />
         
-        {/* Schema.org JSON-LD for Contact Page */}
+        {/* Enhanced Schema.org JSON-LD for Contact Page with Multiple Types */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -118,7 +119,7 @@ const Contact = () => {
             "mainEntity": {
               "@type": "LocalBusiness",
               "name": "Heavy Haulers San Francisco",
-              "description": "Professional towing and recovery services in San Francisco Bay Area",
+              "description": "Professional 24/7 emergency towing and recovery services in San Francisco Bay Area",
               "url": "https://heavytowpro.com",
               "telephone": "+1-650-881-2400",
               "email": "dispatch@heavytowpro.com",
@@ -134,21 +135,67 @@ const Contact = () => {
                 "longitude": "-122.4194"
               },
               "areaServed": [
-                "San Francisco County",
-                "San Mateo County", 
-                "Alameda County",
-                "Santa Clara County"
+                {
+                  "@type": "Place",
+                  "name": "San Francisco County, CA"
+                },
+                {
+                  "@type": "Place", 
+                  "name": "San Mateo County, CA"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Alameda County, CA" 
+                },
+                {
+                  "@type": "Place",
+                  "name": "Santa Clara County, CA"
+                }
               ],
-              "serviceType": ["Emergency Towing", "Heavy Duty Towing", "Fleet Services", "Vehicle Recovery"],
+              "serviceType": ["Emergency Towing", "Heavy Duty Towing", "Light Duty Towing", "Medium Duty Towing", "Fleet Services", "Vehicle Recovery"],
               "openingHours": "Mo-Su 00:00-24:00",
+              "paymentAccepted": ["Cash", "Credit Card", "Insurance", "Fleet Contract"],
+              "priceRange": "$$",
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "reviewCount": "150"
+              },
               "sameAs": [
                 "https://heavytowpro.com"
               ]
             }
           })}
         </script>
+
+        {/* BreadcrumbList Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                  "@id": "https://heavytowpro.com",
+                  "name": "Heavy Haulers San Francisco"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                  "@id": "https://heavytowpro.com/contact",
+                  "name": "Contact Us"
+                }
+              }
+            ]
+          })}
+        </script>
       </Helmet>
       <Header />
+      <SEOBreadcrumbs />
       <main>
         {/* Hero Section */}
         <section className="pt-24 pb-16 bg-gradient-subtle">

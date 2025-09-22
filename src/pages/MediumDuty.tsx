@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEOBreadcrumbs from "@/components/SEOBreadcrumbs";
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, Truck, Building2, Caravan, CheckCircle, Clock, Shield, Wrench } from "lucide-react";
 import { getMediaUrl } from "@/lib/utils";
@@ -130,6 +131,7 @@ const MediumDuty = () => {
         </script>
       </Helmet>
       <Header />
+      <SEOBreadcrumbs />
       <main>
         {/* Hero Section */}
         <section className="pt-24 pb-16 bg-gradient-subtle">

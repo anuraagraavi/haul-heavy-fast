@@ -7,9 +7,15 @@ import ServiceAreas from "@/components/ServiceAreas";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import CorporateFleet from "@/components/CorporateFleet";
+import BlogWidget from "@/components/BlogWidget";
+import CustomerServicePopup from "@/components/CustomerServicePopup";
+import MobileOptimizedCTA from "@/components/MobileOptimizedCTA";
 import Footer from "@/components/Footer";
+import { useCustomerServicePopup } from "@/hooks/useCustomerServicePopup";
 
 const Index = () => {
+  const { showPopup, closePopup } = useCustomerServicePopup();
+
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
@@ -198,8 +204,17 @@ const Index = () => {
         <div className="animate-fade-in-down">
           <CorporateFleet />
         </div>
+        <div className="animate-fade-in-up">
+          <BlogWidget />
+        </div>
       </main>
       <Footer />
+      
+      {/* Global Customer Service Popup */}
+      {showPopup && <CustomerServicePopup onClose={closePopup} />}
+      
+      {/* Mobile Optimized CTA */}
+      <MobileOptimizedCTA />
     </div>
   );
 };

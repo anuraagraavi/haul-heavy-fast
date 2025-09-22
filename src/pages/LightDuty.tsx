@@ -1,9 +1,11 @@
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEOBreadcrumbs from "@/components/SEOBreadcrumbs";
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, Car, Bike, Crown, Building, CheckCircle, Clock, Shield, Star } from "lucide-react";
 import { getMediaUrl } from "@/lib/utils";
+import InternalLinkOptimizer from "@/components/InternalLinkOptimizer";
 const LightDuty = () => {
   const services = [
     {
@@ -130,6 +132,7 @@ const LightDuty = () => {
         </script>
       </Helmet>
       <Header />
+      <SEOBreadcrumbs />
       <main>
         {/* Hero Section */}
         <section className="pt-24 pb-16 bg-gradient-subtle">
@@ -342,6 +345,9 @@ const LightDuty = () => {
             </Button>
           </div>
         </section>
+
+        {/* Internal Link Optimization */}
+        <InternalLinkOptimizer currentPage="/services/light-duty" category="mixed" limit={4} />
       </main>
       <Footer />
     </div>
