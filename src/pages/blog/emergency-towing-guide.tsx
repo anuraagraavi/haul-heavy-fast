@@ -293,6 +293,8 @@ const EmergencyTowingGuide = () => {
             </div>
           </div>
         </section>
+
+        <RelatedPosts currentPostId="emergency-towing-guide" category="Emergency Services" />
       </main>
       <Footer />
     </div>

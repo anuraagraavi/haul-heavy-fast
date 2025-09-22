@@ -22,6 +22,11 @@ import HeavyEquipmentTransport from "./pages/blog/heavy-equipment-transport";
 import FleetManagementTowing from "./pages/blog/fleet-management-towing";
 import SfTowingChallenges from "./pages/blog/sf-towing-challenges";
 import LuxuryTransportGuide from "./pages/blog/luxury-transport-guide";
+import WinterTowingPreparedness from "./pages/blog/winter-towing-preparedness";
+import MotorcycleTowingGuide from "./pages/blog/motorcycle-towing-guide";
+import ElectricVehicleTowingGuide from "./pages/blog/electric-vehicle-towing-guide";
+import RoadsideAssistanceVsTowing from "./pages/blog/roadside-assistance-vs-towing";
+import CommercialVehicleUrbanRecovery from "./pages/blog/commercial-vehicle-urban-recovery";
 import NotFound from "./pages/NotFound";
 
 
@@ -49,6 +54,11 @@ const App = () => (
           <Route path="/blog/fleet-management-reducing-downtime" element={<FleetManagementTowing />} />
           <Route path="/blog/san-francisco-towing-challenges" element={<SfTowingChallenges />} />
           <Route path="/blog/luxury-vehicle-transport" element={<LuxuryTransportGuide />} />
+          <Route path="/blog/winter-towing-preparedness" element={<WinterTowingPreparedness />} />
+          <Route path="/blog/motorcycle-towing-guide" element={<MotorcycleTowingGuide />} />
+          <Route path="/blog/electric-vehicle-towing-guide" element={<ElectricVehicleTowingGuide />} />
+          <Route path="/blog/roadside-assistance-vs-towing" element={<RoadsideAssistanceVsTowing />} />
+          <Route path="/blog/commercial-vehicle-urban-recovery" element={<CommercialVehicleUrbanRecovery />} />
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/privacy-policy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
