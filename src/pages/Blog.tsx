@@ -16,6 +16,11 @@ import heavyEquipmentImage from "@/assets/blog-heavy-equipment.jpg";
 import fleetManagementImage from "@/assets/blog-fleet-management.jpg";
 import sfChallengesImage from "@/assets/blog-sf-challenges.jpg";
 import luxuryTransportImage from "@/assets/blog-luxury-transport.jpg";
+import winterTowingImage from "@/assets/blog-winter-towing.jpg";
+import motorcycleTowingImage from "@/assets/blog-motorcycle-towing.jpg";
+import evTowingImage from "@/assets/blog-ev-towing.jpg";
+import roadsideVsTowingImage from "@/assets/blog-roadside-vs-towing.jpg";
+import commercialRecoveryImage from "@/assets/blog-commercial-recovery.jpg";
 
 const BlogNew = () => {
   const [email, setEmail] = useState("");
@@ -81,7 +86,7 @@ const BlogNew = () => {
       id: "winter-towing-preparedness",
       title: "Winter Towing Preparedness: Bay Area Weather Challenges",
       excerpt: "Preparing for rain, fog, and seasonal challenges in Bay Area driving conditions with expert safety tips.",
-      image: "/src/assets/blog-winter-towing.jpg",
+      image: winterTowingImage,
       author: "Heavy Haulers Team", 
       date: "March 20, 2024",
       readTime: "8 min read",
@@ -91,7 +96,7 @@ const BlogNew = () => {
       id: "motorcycle-towing-guide",
       title: "Motorcycle Towing Guide: Safe Transport for Two-Wheelers", 
       excerpt: "Specialized towing solutions and safety protocols for motorcycle transport in the Bay Area.",
-      image: "/src/assets/blog-motorcycle-towing.jpg",
+      image: motorcycleTowingImage,
       author: "Heavy Haulers Team",
       date: "March 22, 2024", 
       readTime: "9 min read",
@@ -101,7 +106,7 @@ const BlogNew = () => {
       id: "electric-vehicle-towing-guide",
       title: "Electric Vehicle Towing: Special Considerations for EVs",
       excerpt: "Understanding EV-specific safety requirements and specialized towing equipment for Tesla and other electric vehicles.", 
-      image: "/src/assets/blog-ev-towing.jpg",
+      image: evTowingImage,
       author: "Heavy Haulers Team",
       date: "March 25, 2024",
       readTime: "8 min read", 
@@ -111,7 +116,7 @@ const BlogNew = () => {
       id: "roadside-assistance-vs-towing",
       title: "Roadside Assistance vs. Towing: When to Choose What",
       excerpt: "Decision guide for choosing between roadside assistance and full towing services for your situation.",
-      image: "/src/assets/blog-roadside-vs-towing.jpg", 
+      image: roadsideVsTowingImage, 
       author: "Heavy Haulers Team",
       date: "March 28, 2024",
       readTime: "9 min read",
@@ -121,7 +126,7 @@ const BlogNew = () => {
       id: "commercial-vehicle-urban-recovery",
       title: "Commercial Vehicle Breakdown Recovery in Urban Areas",
       excerpt: "Specialized recovery strategies for commercial vehicles in busy city environments and traffic management.",
-      image: "/src/assets/blog-commercial-recovery.jpg",
+      image: commercialRecoveryImage,
       author: "Heavy Haulers Team", 
       date: "March 30, 2024",
       readTime: "10 min read",

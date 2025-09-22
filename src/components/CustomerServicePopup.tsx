@@ -51,13 +51,13 @@ export default function CustomerServicePopup({ onClose }: CustomerServicePopupPr
           {/* Header */}
           <div className="text-center mb-6">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-primary rounded-full mb-4 shadow-orange">
-              <Users className="h-8 w-8 text-primary-foreground" />
+              <Phone className="h-8 w-8 text-primary-foreground" />
             </div>
             <h2 className="text-2xl font-bold text-foreground mb-2">
-              Exceptional Customer Service
+              Bay Area's Most Trusted Towing Service
             </h2>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              We've got the best customer service that is looking to serve you. Let's understand your needs, and let's give you fair pricing and the best experience that satisfies you as the right solution that you always needed.
+              When you're stranded, every minute counts. Our professional towing experts are standing by 24/7 with the fastest response times in the Bay Area. Fair pricing, expert service, and the equipment to handle any situation.
             </p>
           </div>
 

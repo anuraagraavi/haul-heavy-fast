@@ -2,6 +2,18 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 
+// Import blog images
+import emergencyGuideImage from '@/assets/blog-emergency-guide.jpg';
+import fleetManagementImage from '@/assets/blog-fleet-management.jpg';
+import heavyEquipmentImage from '@/assets/blog-heavy-equipment.jpg';
+import luxuryTransportImage from '@/assets/blog-luxury-transport.jpg';
+import sfChallengesImage from '@/assets/blog-sf-challenges.jpg';
+import winterTowingImage from '@/assets/blog-winter-towing.jpg';
+import motorcycleTowingImage from '@/assets/blog-motorcycle-towing.jpg';
+import evTowingImage from '@/assets/blog-ev-towing.jpg';
+import roadsideVsTowingImage from '@/assets/blog-roadside-vs-towing.jpg';
+import commercialRecoveryImage from '@/assets/blog-commercial-recovery.jpg';
+
 interface BlogPost {
   id: string;
   title: string;
@@ -22,7 +34,7 @@ const allBlogPosts: BlogPost[] = [
     id: "emergency-towing-guide",
     title: "Emergency Towing Guide: What to Do When You're Stranded",
     excerpt: "Complete guide to emergency towing procedures for San Francisco Bay Area drivers",
-    image: "/src/assets/blog-emergency-guide.jpg",
+    image: emergencyGuideImage,
     route: "/blog/emergency-towing-guide",
     readTime: "7 min read",
     category: "Emergency Services"
@@ -31,7 +43,7 @@ const allBlogPosts: BlogPost[] = [
     id: "fleet-management-reducing-downtime",
     title: "Fleet Management & Towing: Reducing Downtime for Businesses",
     excerpt: "Learn how proper fleet management and towing partnerships can minimize business disruptions",
-    image: "/src/assets/blog-fleet-management.jpg",
+    image: fleetManagementImage,
     route: "/blog/fleet-management-reducing-downtime",
     readTime: "8 min read",
     category: "Fleet Management"
@@ -40,7 +52,7 @@ const allBlogPosts: BlogPost[] = [
     id: "heavy-equipment-transport",
     title: "Heavy Equipment Transport: Moving Industrial Machinery Safely",
     excerpt: "Professional guide to transporting heavy machinery and construction equipment",
-    image: "/src/assets/blog-heavy-equipment.jpg",
+    image: heavyEquipmentImage,
     route: "/blog/heavy-equipment-transport",
     readTime: "9 min read",
     category: "Heavy Duty"
@@ -49,7 +61,7 @@ const allBlogPosts: BlogPost[] = [
     id: "luxury-vehicle-transport",
     title: "Luxury Vehicle Transport: Premium Care for High-End Cars",
     excerpt: "Specialized transport solutions for luxury and exotic vehicles in the Bay Area",
-    image: "/src/assets/blog-luxury-transport.jpg",
+    image: luxuryTransportImage,
     route: "/blog/luxury-vehicle-transport",
     readTime: "6 min read",
     category: "Specialty Services"
@@ -58,7 +70,7 @@ const allBlogPosts: BlogPost[] = [
     id: "san-francisco-towing-challenges",
     title: "Navigating San Francisco's Unique Towing Challenges",
     excerpt: "Understanding the complexities of towing in San Francisco's urban environment",
-    image: "/src/assets/blog-sf-challenges.jpg",
+    image: sfChallengesImage,
     route: "/blog/san-francisco-towing-challenges",
     readTime: "7 min read",
     category: "Local Insights"
@@ -67,7 +79,7 @@ const allBlogPosts: BlogPost[] = [
     id: "winter-towing-preparedness",
     title: "Winter Towing Preparedness: Bay Area Weather Challenges",
     excerpt: "Preparing for rain, fog, and seasonal challenges in Bay Area driving",
-    image: "/src/assets/blog-winter-towing.jpg",
+    image: winterTowingImage,
     route: "/blog/winter-towing-preparedness",
     readTime: "8 min read",
     category: "Safety Tips"
@@ -76,7 +88,7 @@ const allBlogPosts: BlogPost[] = [
     id: "motorcycle-towing-guide",
     title: "Motorcycle Towing Guide: Safe Transport for Two-Wheelers",
     excerpt: "Specialized towing solutions and safety protocols for motorcycle transport",
-    image: "/src/assets/blog-motorcycle-towing.jpg",
+    image: motorcycleTowingImage,
     route: "/blog/motorcycle-towing-guide",
     readTime: "9 min read",
     category: "Specialty Services"
@@ -85,7 +97,7 @@ const allBlogPosts: BlogPost[] = [
     id: "electric-vehicle-towing-guide",
     title: "Electric Vehicle Towing: Special Considerations for EVs",
     excerpt: "Understanding EV-specific safety requirements and specialized towing equipment",
-    image: "/src/assets/blog-ev-towing.jpg",
+    image: evTowingImage,
     route: "/blog/electric-vehicle-towing-guide",
     readTime: "8 min read",
     category: "Modern Vehicles"
@@ -94,7 +106,7 @@ const allBlogPosts: BlogPost[] = [
     id: "roadside-assistance-vs-towing",
     title: "Roadside Assistance vs. Towing: When to Choose What",
     excerpt: "Decision guide for choosing between roadside assistance and full towing services",
-    image: "/src/assets/blog-roadside-vs-towing.jpg",
+    image: roadsideVsTowingImage,
     route: "/blog/roadside-assistance-vs-towing",
     readTime: "9 min read",
     category: "Service Comparison"
@@ -103,7 +115,7 @@ const allBlogPosts: BlogPost[] = [
     id: "commercial-vehicle-urban-recovery",
     title: "Commercial Vehicle Breakdown Recovery in Urban Areas",
     excerpt: "Specialized recovery strategies for commercial vehicles in busy city environments",
-    image: "/src/assets/blog-commercial-recovery.jpg",
+    image: commercialRecoveryImage,
     route: "/blog/commercial-vehicle-urban-recovery",
     readTime: "10 min read",
     category: "Commercial Services"
