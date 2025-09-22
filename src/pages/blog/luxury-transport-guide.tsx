@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import RelatedPosts from "@/components/RelatedPosts";
 import { Button } from "@/components/ui/button";
 import { Helmet } from "react-helmet";
 import { Phone, Crown, Shield, Star, ArrowLeft, CheckCircle, Car } from "lucide-react";
@@ -390,6 +391,8 @@ const LuxuryTransportGuide = () => {
             </div>
           </div>
         </section>
+
+        <RelatedPosts currentPostId="luxury-vehicle-transport" category="Specialty Services" />
       </main>
       <Footer />
     </div>

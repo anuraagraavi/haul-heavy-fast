@@ -76,6 +76,56 @@ const BlogNew = () => {
       date: "January 5, 2024",
       readTime: "7 min read",
       category: "Heavy Hauling"
+    },
+    {
+      id: "winter-towing-preparedness",
+      title: "Winter Towing Preparedness: Bay Area Weather Challenges",
+      excerpt: "Preparing for rain, fog, and seasonal challenges in Bay Area driving conditions with expert safety tips.",
+      image: "/src/assets/blog-winter-towing.jpg",
+      author: "Heavy Haulers Team", 
+      date: "March 20, 2024",
+      readTime: "8 min read",
+      category: "Safety Tips"
+    },
+    {
+      id: "motorcycle-towing-guide",
+      title: "Motorcycle Towing Guide: Safe Transport for Two-Wheelers", 
+      excerpt: "Specialized towing solutions and safety protocols for motorcycle transport in the Bay Area.",
+      image: "/src/assets/blog-motorcycle-towing.jpg",
+      author: "Heavy Haulers Team",
+      date: "March 22, 2024", 
+      readTime: "9 min read",
+      category: "Heavy Hauling"
+    },
+    {
+      id: "electric-vehicle-towing-guide",
+      title: "Electric Vehicle Towing: Special Considerations for EVs",
+      excerpt: "Understanding EV-specific safety requirements and specialized towing equipment for Tesla and other electric vehicles.", 
+      image: "/src/assets/blog-ev-towing.jpg",
+      author: "Heavy Haulers Team",
+      date: "March 25, 2024",
+      readTime: "8 min read", 
+      category: "Emergency Towing"
+    },
+    {
+      id: "roadside-assistance-vs-towing",
+      title: "Roadside Assistance vs. Towing: When to Choose What",
+      excerpt: "Decision guide for choosing between roadside assistance and full towing services for your situation.",
+      image: "/src/assets/blog-roadside-vs-towing.jpg", 
+      author: "Heavy Haulers Team",
+      date: "March 28, 2024",
+      readTime: "9 min read",
+      category: "Safety Tips" 
+    },
+    {
+      id: "commercial-vehicle-urban-recovery",
+      title: "Commercial Vehicle Breakdown Recovery in Urban Areas",
+      excerpt: "Specialized recovery strategies for commercial vehicles in busy city environments and traffic management.",
+      image: "/src/assets/blog-commercial-recovery.jpg",
+      author: "Heavy Haulers Team", 
+      date: "March 30, 2024",
+      readTime: "10 min read",
+      category: "Fleet Management"
     }
   ];
 

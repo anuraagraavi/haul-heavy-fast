@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import RelatedPosts from "@/components/RelatedPosts";
 import { Button } from "@/components/ui/button";
 import { Helmet } from "react-helmet";
 import { Phone, Building, Truck, Clock, ArrowLeft, CheckCircle, DollarSign } from "lucide-react";
@@ -409,6 +410,8 @@ const FleetManagementTowing = () => {
             </div>
           </div>
         </section>
+
+        <RelatedPosts currentPostId="fleet-management-reducing-downtime" category="Fleet Management" />
       </main>
       <Footer />
     </div>

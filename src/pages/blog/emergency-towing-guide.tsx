@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import RelatedPosts from "@/components/RelatedPosts";
 import { Button } from "@/components/ui/button";
 import { Helmet } from "react-helmet";
 import { Phone, Clock, Shield, AlertTriangle, CheckCircle, ArrowLeft } from "lucide-react";

@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import RelatedPosts from "@/components/RelatedPosts";
 import { Button } from "@/components/ui/button";
 import { Helmet } from "react-helmet";
 import { Phone, MapPin, Clock, Car, ArrowLeft, AlertTriangle, CheckCircle } from "lucide-react";
@@ -363,6 +364,8 @@ const SFTowingChallenges = () => {
             </div>
           </div>
         </section>
+
+        <RelatedPosts currentPostId="san-francisco-towing-challenges" category="Local Insights" />
       </main>
       <Footer />
     </div>
