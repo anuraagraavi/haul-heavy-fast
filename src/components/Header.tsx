@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Phone, Menu, MapPin, ChevronDown } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useHoverDelay } from "@/hooks/useHoverDelay";
 const Header = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -13,17 +14,17 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <a href="/" title="Heavy Haulers Transport Co."><img src="/lovable-uploads/a43ad238-af3b-47a8-962f-32c9da2fc727.png" alt="Heavy Haulers San Francisco professional towing company logo" className="h-10 w-auto" /></a>
+            <Link to="/" title="Heavy Haulers Transport Co."><img src="/lovable-uploads/a43ad238-af3b-47a8-962f-32c9da2fc727.png" alt="Heavy Haulers San Francisco professional towing company logo" className="h-10 w-auto" /></Link>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6">
-            <a href="/" className="text-foreground hover:text-primary transition-colors">
+            <Link to="/" className="text-foreground hover:text-primary transition-colors">
               Home
-            </a>
-            <a href="/about" className="text-foreground hover:text-primary transition-colors">
+            </Link>
+            <Link to="/about" className="text-foreground hover:text-primary transition-colors">
               About Us
-            </a>
+            </Link>
 
             {/* Services Mega Menu */}
             <div className="relative group" {...useHoverDelay(
@@ -31,10 +32,10 @@ const Header = () => {
               () => setIsServicesOpen(false),
               { leaveDelay: 200 }
             )}>
-              <a href="/services" className="flex items-center text-foreground hover:text-primary transition-colors">
+              <Link to="/services" className="flex items-center text-foreground hover:text-primary transition-colors">
                 Services
                 <ChevronDown className="ml-1 h-4 w-4" />
-              </a>
+              </Link>
               {isServicesOpen && (
                 <div className='absolute top-full left-1/2 transform -translate-x-1/2 mt-2 z-50'>
                   <div className='w-screen max-w-4xl bg-card border border-border rounded-lg shadow-elevated animate-fade-in'>
@@ -43,27 +44,27 @@ const Header = () => {
                       <div className="col-span-4 space-y-4">
                         <h3 className="text-lg font-semibold text-foreground mb-4">Service Categories</h3>
                         <div className="space-y-3">
-                          <a href="/services/light-duty" className="group flex items-start space-x-3 p-3 hover:bg-accent rounded-lg transition-colors">
+                          <Link to="/services/light-duty" className="group flex items-start space-x-3 p-3 hover:bg-accent rounded-lg transition-colors">
                             <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                             <div>
                               <h4 className="font-medium text-foreground group-hover:text-primary">Light-Duty Towing</h4>
                               <p className="text-sm text-muted-foreground">Cars, motorcycles, luxury vehicles</p>
                             </div>
-                          </a>
-                          <a href="/services/medium-duty" className="group flex items-start space-x-3 p-3 hover:bg-accent rounded-lg transition-colors">
+                          </Link>
+                          <Link to="/services/medium-duty" className="group flex items-start space-x-3 p-3 hover:bg-accent rounded-lg transition-colors">
                             <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
                             <div>
                               <h4 className="font-medium text-foreground group-hover:text-primary">Medium-Duty Towing</h4>
                               <p className="text-sm text-muted-foreground">Vans, box trucks, small RVs</p>
                             </div>
-                          </a>
-                          <a href="/services/heavy-duty" className="group flex items-start space-x-3 p-3 hover:bg-accent rounded-lg transition-colors">
+                          </Link>
+                          <Link to="/services/heavy-duty" className="group flex items-start space-x-3 p-3 hover:bg-accent rounded-lg transition-colors">
                             <div className="w-2 h-2 bg-warning rounded-full mt-2 flex-shrink-0"></div>
                             <div>
                               <h4 className="font-medium text-foreground group-hover:text-primary">Heavy-Duty Hauling</h4>
                               <p className="text-sm text-muted-foreground">Commercial trucks, equipment, recovery</p>
                             </div>
-                          </a>
+                          </Link>
                         </div>
                       </div>
   
@@ -205,15 +206,15 @@ const Header = () => {
               )}
             </div>
 
-            <a href="/blog" className="text-foreground hover:text-primary transition-colors">
+            <Link to="/blog" className="text-foreground hover:text-primary transition-colors">
               Blog
-            </a>
-            <a href="/get-a-quote" className="text-foreground hover:text-primary transition-colors">
+            </Link>
+            <Link to="/get-a-quote" className="text-foreground hover:text-primary transition-colors">
               Get a Quote
-            </a>
-            <a href="/contact" className="text-foreground hover:text-primary transition-colors">
+            </Link>
+            <Link to="/contact" className="text-foreground hover:text-primary transition-colors">
               Contact
-            </a>
+            </Link>
           </nav>
 
           {/* CTA Buttons */}
@@ -243,34 +244,34 @@ const Header = () => {
               
               <div className="flex flex-col h-full">
                 <nav className="flex-1 px-6 py-4 space-y-4">
-                  <a href="/" className="block text-foreground hover:text-primary transition-colors py-2">
+                  <Link to="/" className="block text-foreground hover:text-primary transition-colors py-2">
                     Home
-                  </a>
-                  <a href="/about" className="block text-foreground hover:text-primary transition-colors py-2">
+                  </Link>
+                  <Link to="/about" className="block text-foreground hover:text-primary transition-colors py-2">
                     About Us
-                  </a>
+                  </Link>
                   
                   <div className="space-y-2">
-                    <a href="/services" className="block text-foreground hover:text-primary transition-colors font-medium py-2">
+                    <Link to="/services" className="block text-foreground hover:text-primary transition-colors font-medium py-2">
                       Services
-                    </a>
+                    </Link>
                     <div className="ml-4 space-y-2 pl-4 border-l border-border">
-                      <a href="/services/light-duty" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-1">
+                      <Link to="/services/light-duty" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-1">
                         Light-Duty Towing
-                      </a>
-                      <a href="/services/medium-duty" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-1">
+                      </Link>
+                      <Link to="/services/medium-duty" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-1">
                         Medium-Duty Towing
-                      </a>
-                      <a href="/services/heavy-duty" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-1">
+                      </Link>
+                      <Link to="/services/heavy-duty" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-1">
                         Heavy-Duty Hauling
-                      </a>
+                      </Link>
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <a href="/locations" className="block text-foreground hover:text-primary transition-colors font-medium py-2">
+                    <Link to="/locations" className="block text-foreground hover:text-primary transition-colors font-medium py-2">
                       Locations
-                    </a>
+                    </Link>
                     <div className="ml-4 space-y-2 pl-4 border-l border-border">
                       <a href="/locations#san-francisco" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-1">
                         San Francisco County
@@ -287,15 +288,15 @@ const Header = () => {
                     </div>
                   </div>
 
-                  <a href="/blog" className="block text-foreground hover:text-primary transition-colors py-2">
+                  <Link to="/blog" className="block text-foreground hover:text-primary transition-colors py-2">
                     Blog
-                  </a>
-                  <a href="/get-a-quote" className="block text-foreground hover:text-primary transition-colors py-2">
+                  </Link>
+                  <Link to="/get-a-quote" className="block text-foreground hover:text-primary transition-colors py-2">
                     Get a Quote
-                  </a>
-                  <a href="/contact" className="block text-foreground hover:text-primary transition-colors py-2">
+                  </Link>
+                  <Link to="/contact" className="block text-foreground hover:text-primary transition-colors py-2">
                     Contact
-                  </a>
+                  </Link>
                 </nav>
 
                 {/* Mobile Footer */}

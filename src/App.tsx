@@ -28,6 +28,7 @@ import ElectricVehicleTowingGuide from "./pages/blog/electric-vehicle-towing-gui
 import RoadsideAssistanceVsTowing from "./pages/blog/roadside-assistance-vs-towing";
 import CommercialVehicleUrbanRecovery from "./pages/blog/commercial-vehicle-urban-recovery";
 import NotFound from "./pages/NotFound";
+import ScrollToTop from "./components/ScrollToTop";
 
 
 const queryClient = new QueryClient();
@@ -38,6 +39,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
