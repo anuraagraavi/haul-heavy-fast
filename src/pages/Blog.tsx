@@ -21,116 +21,171 @@ import motorcycleTowingImage from "@/assets/blog-motorcycle-towing.jpg";
 import evTowingImage from "@/assets/blog-ev-towing.jpg";
 import roadsideVsTowingImage from "@/assets/blog-roadside-vs-towing.jpg";
 import commercialRecoveryImage from "@/assets/blog-commercial-recovery.jpg";
+import commercialTruckImage from "@/assets/blog-commercial-truck-towing.jpg";
+import accidentSceneImage from "@/assets/blog-accident-scene-management.jpg";
+import constructionEquipmentImage from "@/assets/blog-construction-equipment-hauling.jpg";
+import vehicleStorageImage from "@/assets/blog-vehicle-storage-solutions.jpg";
+import towingTechnologyImage from "@/assets/blog-towing-technology.jpg";
 
 const BlogNew = () => {
   const [email, setEmail] = useState("");
   const { toast } = useToast();
 
   const categories = [
-    "All Articles", "Emergency Towing", "Heavy Hauling", "Fleet Management", 
-    "Safety Tips", "Industry News"
+    "All Articles", "Emergency Response", "Commercial Services", "Construction Services", 
+    "Storage Services", "Technology & Innovation", "Heavy Duty", "Safety Tips", "Specialized Services"
   ];
 
   const articles = [
     {
+      id: "towing-technology-gps-fleet-management",
+      title: "Towing Technology: GPS Tracking and Modern Fleet Management",
+      excerpt: "Discover modern towing technology including GPS tracking, fleet management software, and real-time customer communication systems.",
+      image: towingTechnologyImage,
+      author: "Heavy Haulers Team",
+      date: "September 23, 2025",
+      readTime: "8 min read",
+      category: "Technology & Innovation"
+    },
+    {
+      id: "vehicle-storage-solutions",
+      title: "Vehicle Storage Solutions: Secure Towing and Long-Term Parking",
+      excerpt: "Professional vehicle storage and impound services with secure facilities, legal compliance, and easy retrieval processes.",
+      image: vehicleStorageImage,
+      author: "Heavy Haulers Team",
+      date: "September 12, 2025",
+      readTime: "9 min read",
+      category: "Storage Services"
+    },
+    {
+      id: "construction-equipment-hauling",
+      title: "Construction Equipment Hauling: Oversize Load Transportation Guide",
+      excerpt: "Expert construction equipment hauling with permit assistance, route planning, and specialized transport solutions.",
+      image: constructionEquipmentImage,
+      author: "Heavy Haulers Team",
+      date: "August 29, 2025",
+      readTime: "10 min read",
+      category: "Construction Services"
+    },
+    {
+      id: "accident-scene-management",
+      title: "Accident Scene Management: Professional Towing Response Protocols",
+      excerpt: "Expert accident scene management and multi-vehicle recovery with professional coordination and insurance support.",
+      image: accidentSceneImage,
+      author: "Heavy Haulers Team",
+      date: "August 15, 2025",
+      readTime: "8 min read",
+      category: "Emergency Response"
+    },
+    {
+      id: "commercial-truck-towing-interstate",
+      title: "Commercial Truck Towing: Interstate Highway Recovery Solutions",
+      excerpt: "Professional commercial truck towing services for interstate highways with DOT compliance and 24/7 emergency response.",
+      image: commercialTruckImage,
+      author: "Heavy Haulers Team",
+      date: "August 1, 2025",
+      readTime: "9 min read",
+      category: "Commercial Services"
+    },
+    {
       id: "emergency-towing-guide",
-      title: "Emergency Towing Guide: What Every Bay Area Driver Should Know",
-      excerpt: "Essential information for Bay Area drivers about emergency towing services, what to expect, and how to stay safe during roadside emergencies.",
+      title: "Emergency Towing Guide: What to Do When Stranded",
+      excerpt: "Complete guide to emergency towing procedures for San Francisco Bay Area drivers. Learn safety tips and how to get professional help fast.",
       image: emergencyGuideImage,
       author: "Heavy Haulers Team",
-      date: "January 15, 2024",
-      readTime: "6 min read",
-      category: "Emergency Towing"
-    },
-    {
-      id: "heavy-equipment-transport",
-      title: "Heavy Equipment Transport: Permits, Routes & Safety Protocols",
-      excerpt: "Complete overview of heavy equipment transportation requirements in California, including permit processes, route planning, and safety regulations.",
-      image: heavyEquipmentImage,
-      author: "Heavy Haulers Team",
-      date: "January 12, 2024",
-      readTime: "8 min read",
-      category: "Heavy Hauling"
-    },
-    {
-      id: "fleet-management-reducing-downtime",
-      title: "Fleet Management: Reducing Downtime & Towing Costs",
-      excerpt: "Strategic approaches to fleet management that minimize vehicle downtime and reduce emergency towing expenses through preventive maintenance and planning.",
-      image: fleetManagementImage,
-      author: "Heavy Haulers Team",
-      date: "January 10, 2024",
+      date: "March 15, 2024",
       readTime: "7 min read",
-      category: "Fleet Management"
-    },
-    {
-      id: "san-francisco-towing-challenges",
-      title: "San Francisco Towing Challenges: Hills, Traffic & Regulations",
-      excerpt: "Understanding the unique challenges of towing operations in San Francisco, from steep grades to complex traffic patterns and city regulations.",
-      image: sfChallengesImage,
-      author: "Heavy Haulers Team",
-      date: "January 8, 2024",
-      readTime: "6 min read",
-      category: "Emergency Towing"
-    },
-    {
-      id: "luxury-vehicle-transport",
-      title: "Luxury Vehicle Transport: Protecting High-Value Cars",
-      excerpt: "Specialized techniques and equipment used for transporting luxury, classic, and high-value vehicles safely and securely.",
-      image: luxuryTransportImage,
-      author: "Heavy Haulers Team",
-      date: "January 5, 2024",
-      readTime: "7 min read",
-      category: "Heavy Hauling"
+      category: "Emergency Response"
     },
     {
       id: "winter-towing-preparedness",
-      title: "Winter Towing Preparedness: Bay Area Weather Challenges",
-      excerpt: "Preparing for rain, fog, and seasonal challenges in Bay Area driving conditions with expert safety tips.",
+      title: "Winter Towing Preparedness: Bay Area Vehicle Safety",
+      excerpt: "Essential winter towing preparedness tips for Bay Area drivers. Learn about seasonal challenges and emergency planning.",
       image: winterTowingImage,
       author: "Heavy Haulers Team", 
-      date: "March 20, 2024",
-      readTime: "8 min read",
+      date: "December 1, 2024",
+      readTime: "6 min read",
       category: "Safety Tips"
     },
     {
-      id: "motorcycle-towing-guide",
-      title: "Motorcycle Towing Guide: Safe Transport for Two-Wheelers", 
-      excerpt: "Specialized towing solutions and safety protocols for motorcycle transport in the Bay Area.",
-      image: motorcycleTowingImage,
+      id: "sf-towing-challenges",
+      title: "San Francisco Towing Challenges: Urban Recovery Solutions",
+      excerpt: "Navigate San Francisco's unique towing challenges with expert insights on steep hills, narrow streets, and parking regulations.",
+      image: sfChallengesImage,
       author: "Heavy Haulers Team",
-      date: "March 22, 2024", 
-      readTime: "9 min read",
-      category: "Heavy Hauling"
+      date: "November 20, 2024", 
+      readTime: "8 min read",
+      category: "Emergency Response"
     },
     {
-      id: "electric-vehicle-towing-guide",
-      title: "Electric Vehicle Towing: Special Considerations for EVs",
-      excerpt: "Understanding EV-specific safety requirements and specialized towing equipment for Tesla and other electric vehicles.", 
-      image: evTowingImage,
+      id: "heavy-equipment-transport",
+      title: "Heavy Equipment Transport: Specialized Moving Solutions",
+      excerpt: "Professional heavy equipment transport services in the Bay Area. Specialized solutions for construction and industrial moving.",
+      image: heavyEquipmentImage,
       author: "Heavy Haulers Team",
-      date: "March 25, 2024",
-      readTime: "8 min read", 
-      category: "Emergency Towing"
+      date: "October 15, 2024",
+      readTime: "9 min read", 
+      category: "Heavy Duty"
     },
     {
       id: "roadside-assistance-vs-towing",
-      title: "Roadside Assistance vs. Towing: When to Choose What",
-      excerpt: "Decision guide for choosing between roadside assistance and full towing services for your situation.",
-      image: roadsideVsTowingImage, 
+      title: "Roadside Assistance vs Towing: When to Call Who",
+      excerpt: "Understanding the difference between roadside assistance and towing services. Know when to call for the right help.",
+      image: roadsideVsTowingImage,
       author: "Heavy Haulers Team",
-      date: "March 28, 2024",
-      readTime: "9 min read",
-      category: "Safety Tips" 
+      date: "September 30, 2024",
+      readTime: "5 min read",
+      category: "Safety Tips"
+    },
+    {
+      id: "motorcycle-towing-guide", 
+      title: "Motorcycle Towing Guide: Safe Transport for Two-Wheelers",
+      excerpt: "Comprehensive guide to motorcycle towing in the Bay Area. Safe transport techniques and specialized equipment for bikes.",
+      image: motorcycleTowingImage,
+      author: "Heavy Haulers Team",
+      date: "September 10, 2024",
+      readTime: "6 min read",
+      category: "Specialized Services"
+    },
+    {
+      id: "luxury-transport-guide",
+      title: "Luxury Vehicle Transport: Premium Care for Premium Cars", 
+      excerpt: "Specialized luxury vehicle transport services with premium care and protection for high-end automobiles in the Bay Area.",
+      image: luxuryTransportImage,
+      author: "Heavy Haulers Team",
+      date: "August 25, 2024",
+      readTime: "7 min read",
+      category: "Specialized Services"
+    },
+    {
+      id: "fleet-management-towing",
+      title: "Fleet Management Towing: Business Vehicle Solutions",
+      excerpt: "Comprehensive fleet management towing solutions for businesses. Reduce downtime and optimize your commercial vehicle operations.",
+      image: fleetManagementImage,
+      author: "Heavy Haulers Team", 
+      date: "August 10, 2024",
+      readTime: "8 min read",
+      category: "Commercial Services"
+    },
+    {
+      id: "electric-vehicle-towing-guide",
+      title: "Electric Vehicle Towing Guide: EV Transport Best Practices",
+      excerpt: "Essential guide to electric vehicle towing with specialized techniques and safety protocols for EV transport in the Bay Area.",
+      image: evTowingImage,
+      author: "Heavy Haulers Team",
+      date: "July 20, 2024", 
+      readTime: "6 min read",
+      category: "Specialized Services"
     },
     {
       id: "commercial-vehicle-urban-recovery",
-      title: "Commercial Vehicle Breakdown Recovery in Urban Areas",
-      excerpt: "Specialized recovery strategies for commercial vehicles in busy city environments and traffic management.",
+      title: "Commercial Vehicle Urban Recovery: City Towing Solutions",
+      excerpt: "Specialized commercial vehicle recovery in urban environments. Expert solutions for city-based commercial towing challenges.",
       image: commercialRecoveryImage,
-      author: "Heavy Haulers Team", 
-      date: "March 30, 2024",
-      readTime: "10 min read",
-      category: "Fleet Management"
+      author: "Heavy Haulers Team",
+      date: "July 5, 2024",
+      readTime: "9 min read", 
+      category: "Commercial Services"
     }
   ];
 

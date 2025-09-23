@@ -13,6 +13,11 @@ import motorcycleTowingImage from '@/assets/blog-motorcycle-towing.jpg';
 import evTowingImage from '@/assets/blog-ev-towing.jpg';
 import roadsideVsTowingImage from '@/assets/blog-roadside-vs-towing.jpg';
 import commercialRecoveryImage from '@/assets/blog-commercial-recovery.jpg';
+import commercialTruckImage from '@/assets/blog-commercial-truck-towing.jpg';
+import accidentSceneImage from '@/assets/blog-accident-scene-management.jpg';
+import constructionEquipmentImage from '@/assets/blog-construction-equipment-hauling.jpg';
+import vehicleStorageImage from '@/assets/blog-vehicle-storage-solutions.jpg';
+import towingTechnologyImage from '@/assets/blog-towing-technology.jpg';
 
 interface BlogPost {
   id: string;
@@ -31,22 +36,67 @@ interface RelatedPostsProps {
 
 const allBlogPosts: BlogPost[] = [
   {
+    id: "towing-technology-gps-fleet-management",
+    title: "Towing Technology: GPS Tracking and Modern Fleet Management",
+    excerpt: "Discover modern towing technology including GPS tracking and fleet management software",
+    image: towingTechnologyImage,
+    route: "/blog/towing-technology-gps-fleet-management",
+    readTime: "8 min read",
+    category: "Technology & Innovation"
+  },
+  {
+    id: "vehicle-storage-solutions",
+    title: "Vehicle Storage Solutions: Secure Towing and Long-Term Parking",
+    excerpt: "Professional vehicle storage and impound services with secure facilities",
+    image: vehicleStorageImage,
+    route: "/blog/vehicle-storage-solutions",
+    readTime: "9 min read",
+    category: "Storage Services"
+  },
+  {
+    id: "construction-equipment-hauling",
+    title: "Construction Equipment Hauling: Oversize Load Transportation Guide",
+    excerpt: "Expert construction equipment hauling with permit assistance and route planning",
+    image: constructionEquipmentImage,
+    route: "/blog/construction-equipment-hauling",
+    readTime: "10 min read",
+    category: "Construction Services"
+  },
+  {
+    id: "accident-scene-management",
+    title: "Accident Scene Management: Professional Towing Response Protocols",
+    excerpt: "Expert accident scene management and multi-vehicle recovery with professional coordination",
+    image: accidentSceneImage,
+    route: "/blog/accident-scene-management",
+    readTime: "8 min read",
+    category: "Emergency Response"
+  },
+  {
+    id: "commercial-truck-towing-interstate",
+    title: "Commercial Truck Towing: Interstate Highway Recovery Solutions",
+    excerpt: "Professional commercial truck towing services for interstate highways with DOT compliance",
+    image: commercialTruckImage,
+    route: "/blog/commercial-truck-towing-interstate",
+    readTime: "9 min read",
+    category: "Commercial Services"
+  },
+  {
     id: "emergency-towing-guide",
     title: "Emergency Towing Guide: What to Do When You're Stranded",
     excerpt: "Complete guide to emergency towing procedures for San Francisco Bay Area drivers",
     image: emergencyGuideImage,
     route: "/blog/emergency-towing-guide",
     readTime: "7 min read",
-    category: "Emergency Services"
+    category: "Emergency Response"
   },
   {
-    id: "fleet-management-reducing-downtime",
+    id: "fleet-management-towing",
     title: "Fleet Management & Towing: Reducing Downtime for Businesses",
     excerpt: "Learn how proper fleet management and towing partnerships can minimize business disruptions",
     image: fleetManagementImage,
-    route: "/blog/fleet-management-reducing-downtime",
+    route: "/blog/fleet-management-towing",
     readTime: "8 min read",
-    category: "Fleet Management"
+    category: "Commercial Services"
   },
   {
     id: "heavy-equipment-transport",
@@ -58,142 +108,143 @@ const allBlogPosts: BlogPost[] = [
     category: "Heavy Duty"
   },
   {
-    id: "luxury-vehicle-transport",
-    title: "Luxury Vehicle Transport: Premium Care for High-End Cars",
-    excerpt: "Specialized transport solutions for luxury and exotic vehicles in the Bay Area",
+    id: "luxury-transport-guide",
+    title: "Luxury Vehicle Transport: Premium Care for Premium Cars",
+    excerpt: "Specialized luxury vehicle transport services with premium care and protection",
     image: luxuryTransportImage,
-    route: "/blog/luxury-vehicle-transport",
-    readTime: "6 min read",
-    category: "Specialty Services"
+    route: "/blog/luxury-transport-guide",
+    readTime: "7 min read",
+    category: "Specialized Services"
   },
   {
-    id: "san-francisco-towing-challenges",
-    title: "Navigating San Francisco's Unique Towing Challenges",
-    excerpt: "Understanding the complexities of towing in San Francisco's urban environment",
+    id: "sf-towing-challenges",
+    title: "San Francisco Towing Challenges: Urban Recovery Solutions",
+    excerpt: "Navigate San Francisco's unique towing challenges with expert insights",
     image: sfChallengesImage,
-    route: "/blog/san-francisco-towing-challenges",
-    readTime: "7 min read",
-    category: "Local Insights"
+    route: "/blog/sf-towing-challenges",
+    readTime: "8 min read",
+    category: "Emergency Response"
   },
   {
     id: "winter-towing-preparedness",
-    title: "Winter Towing Preparedness: Bay Area Weather Challenges",
-    excerpt: "Preparing for rain, fog, and seasonal challenges in Bay Area driving",
+    title: "Winter Towing Preparedness: Bay Area Vehicle Safety",
+    excerpt: "Essential winter towing preparedness tips for Bay Area drivers",
     image: winterTowingImage,
     route: "/blog/winter-towing-preparedness",
-    readTime: "8 min read",
+    readTime: "6 min read",
     category: "Safety Tips"
   },
   {
     id: "motorcycle-towing-guide",
     title: "Motorcycle Towing Guide: Safe Transport for Two-Wheelers",
-    excerpt: "Specialized towing solutions and safety protocols for motorcycle transport",
+    excerpt: "Comprehensive guide to motorcycle towing in the Bay Area",
     image: motorcycleTowingImage,
     route: "/blog/motorcycle-towing-guide",
-    readTime: "9 min read",
-    category: "Specialty Services"
+    readTime: "6 min read",
+    category: "Specialized Services"
   },
   {
     id: "electric-vehicle-towing-guide",
-    title: "Electric Vehicle Towing: Special Considerations for EVs",
-    excerpt: "Understanding EV-specific safety requirements and specialized towing equipment",
+    title: "Electric Vehicle Towing Guide: EV Transport Best Practices",
+    excerpt: "Essential guide to electric vehicle towing with specialized techniques",
     image: evTowingImage,
     route: "/blog/electric-vehicle-towing-guide",
-    readTime: "8 min read",
-    category: "Modern Vehicles"
+    readTime: "6 min read",
+    category: "Specialized Services"
   },
   {
     id: "roadside-assistance-vs-towing",
-    title: "Roadside Assistance vs. Towing: When to Choose What",
-    excerpt: "Decision guide for choosing between roadside assistance and full towing services",
+    title: "Roadside Assistance vs Towing: When to Call Who",
+    excerpt: "Understanding the difference between roadside assistance and towing services",
     image: roadsideVsTowingImage,
     route: "/blog/roadside-assistance-vs-towing",
-    readTime: "9 min read",
-    category: "Service Comparison"
+    readTime: "5 min read",
+    category: "Safety Tips"
   },
   {
     id: "commercial-vehicle-urban-recovery",
-    title: "Commercial Vehicle Breakdown Recovery in Urban Areas",
-    excerpt: "Specialized recovery strategies for commercial vehicles in busy city environments",
+    title: "Commercial Vehicle Urban Recovery: City Towing Solutions",
+    excerpt: "Specialized commercial vehicle recovery in urban environments",
     image: commercialRecoveryImage,
     route: "/blog/commercial-vehicle-urban-recovery",
-    readTime: "10 min read",
+    readTime: "9 min read",
     category: "Commercial Services"
   }
 ];
 
-const RelatedPosts = ({ currentPostId, category }: RelatedPostsProps) => {
-  // Filter out current post and get related posts
-  let relatedPosts = allBlogPosts.filter(post => post.id !== currentPostId);
+const RelatedPosts = ({ currentPostId, category }: RelatedPostsProps): JSX.Element => {
+  // Filter out the current post
+  const otherPosts = allBlogPosts.filter(post => post.id !== currentPostId);
   
-  // Prioritize posts from the same category
+  // If category is provided, prioritize posts from the same category
+  let relatedPosts: BlogPost[];
   if (category) {
-    const sameCategoryPosts = relatedPosts.filter(post => post.category === category);
-    const otherPosts = relatedPosts.filter(post => post.category !== category);
-    relatedPosts = [...sameCategoryPosts, ...otherPosts];
+    const sameCategoryPosts = otherPosts.filter(post => post.category === category);
+    const otherCategoryPosts = otherPosts.filter(post => post.category !== category);
+    relatedPosts = [...sameCategoryPosts, ...otherCategoryPosts].slice(0, 3);
+  } else {
+    relatedPosts = otherPosts.slice(0, 3);
   }
-  
-  // Take first 3 related posts
-  const displayPosts = relatedPosts.slice(0, 3);
 
   return (
-    <section className="py-16 border-t border-border">
+    <section className="py-16 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-4">Related Articles</h2>
-            <p className="text-muted-foreground">
-              Explore more insights and guides from our towing experts
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            {displayPosts.map((post) => (
-              <article key={post.id} className="group">
-                <Link to={post.route} className="block">
-                  <div className="bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:border-primary/20">
-                    <div className="aspect-video overflow-hidden">
-                      <img 
-                        src={post.image} 
-                        alt={post.title}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                      />
-                    </div>
-                    <div className="p-6">
-                      <div className="flex items-center space-x-2 mb-3">
-                        <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full">
-                          {post.category}
-                        </span>
-                        <div className="flex items-center text-xs text-muted-foreground">
-                          <Clock className="w-3 h-3 mr-1" />
-                          {post.readTime}
-                        </div>
-                      </div>
-                      <h3 className="font-bold text-foreground mb-3 group-hover:text-primary transition-colors line-clamp-2">
-                        {post.title}
-                      </h3>
-                      <p className="text-muted-foreground text-sm line-clamp-2 mb-4">
-                        {post.excerpt}
-                      </p>
-                      <div className="flex items-center text-primary font-medium text-sm group-hover:gap-2 transition-all">
-                        Read More
-                        <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
-                      </div>
-                    </div>
-                  </div>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-foreground mb-4">Related Articles</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Explore more insights and tips from our towing and transport experts
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {relatedPosts.map((post) => (
+            <div key={post.id} className="bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="relative overflow-hidden group">
+                <img 
+                  src={post.image} 
+                  alt={post.title}
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute top-4 left-4">
+                  <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-medium">
+                    {post.category}
+                  </span>
+                </div>
+              </div>
+              
+              <div className="p-6">
+                <div className="flex items-center text-muted-foreground text-sm mb-3">
+                  <Clock className="w-4 h-4 mr-2" />
+                  {post.readTime}
+                </div>
+                
+                <h3 className="text-xl font-semibold text-foreground mb-3 line-clamp-2">
+                  {post.title}
+                </h3>
+                
+                <p className="text-muted-foreground mb-4 line-clamp-3">
+                  {post.excerpt}
+                </p>
+                
+                <Link 
+                  to={post.route}
+                  className="inline-flex items-center text-primary hover:text-primary/80 transition-colors font-medium"
+                >
+                  Read More
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
-              </article>
-            ))}
-          </div>
-          
-          <div className="text-center">
-            <Button variant="outline" asChild>
-              <Link to="/blog">
-                View All Articles
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Link>
-            </Button>
-          </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center">
+          <Button asChild size="lg" variant="outline">
+            <Link to="/blog" className="inline-flex items-center">
+              View All Articles
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>
