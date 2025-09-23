@@ -40,8 +40,8 @@ const FleetManagementTowing = () => {
               "name": "Heavy Haulers San Francisco",
               "url": "https://heavytowpro.com"
             },
-            "datePublished": "2024-03-10",
-            "dateModified": "2024-03-10",
+            "datePublished": "2025-08-09",
+            "dateModified": "2025-08-09",
             "mainEntityOfPage": {
               "@type": "WebPage",
               "@id": "https://heavytowpro.com/blog/fleet-management-towing"
@@ -63,7 +63,7 @@ const FleetManagementTowing = () => {
                 Fleet Management Towing: Keeping Business Vehicles Moving
               </h1>
               <div className="flex items-center space-x-4 text-muted-foreground mb-8">
-                <span>Published: March 10, 2024</span>
+                <span>Published: August 9, 2025</span>
                 <span>•</span>
                 <span>8 min read</span>
                 <span>•</span>

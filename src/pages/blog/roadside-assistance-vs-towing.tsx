@@ -40,8 +40,8 @@ const RoadsideAssistanceVsTowing = () => {
               "name": "Heavy Haulers San Francisco",
               "url": "https://heavytowpro.com"
             },
-            "datePublished": "2024-03-28",
-            "dateModified": "2024-03-28",
+            "datePublished": "2025-09-02",
+            "dateModified": "2025-09-02",
             "mainEntityOfPage": {
               "@type": "WebPage",
               "@id": "https://heavytowpro.com/blog/roadside-assistance-vs-towing"
@@ -63,7 +63,7 @@ const RoadsideAssistanceVsTowing = () => {
                 Roadside Assistance vs. Towing: When to Choose What
               </h1>
               <div className="flex items-center space-x-4 text-muted-foreground mb-8">
-                <span>Published: March 28, 2024</span>
+                <span>Published: September 2, 2025</span>
                 <span>•</span>
                 <span>9 min read</span>
                 <span>•</span>

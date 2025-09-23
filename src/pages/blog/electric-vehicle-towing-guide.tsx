@@ -40,8 +40,8 @@ const ElectricVehicleTowingGuide = () => {
               "name": "Heavy Haulers San Francisco",
               "url": "https://heavytowpro.com"
             },
-            "datePublished": "2024-03-25",
-            "dateModified": "2024-03-25",
+            "datePublished": "2025-08-27",
+            "dateModified": "2025-08-27",
             "mainEntityOfPage": {
               "@type": "WebPage",
               "@id": "https://heavytowpro.com/blog/electric-vehicle-towing-guide"
@@ -63,7 +63,7 @@ const ElectricVehicleTowingGuide = () => {
                 Electric Vehicle Towing: Special Considerations for EVs
               </h1>
               <div className="flex items-center space-x-4 text-muted-foreground mb-8">
-                <span>Published: March 25, 2024</span>
+                <span>Published: August 27, 2025</span>
                 <span>•</span>
                 <span>8 min read</span>
                 <span>•</span>

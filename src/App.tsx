@@ -58,9 +58,9 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/emergency-towing-guide" element={<EmergencyTowingGuide />} />
           <Route path="/blog/heavy-equipment-transport" element={<HeavyEquipmentTransport />} />
-          <Route path="/blog/fleet-management-reducing-downtime" element={<FleetManagementTowing />} />
-          <Route path="/blog/san-francisco-towing-challenges" element={<SfTowingChallenges />} />
-          <Route path="/blog/luxury-vehicle-transport" element={<LuxuryTransportGuide />} />
+          <Route path="/blog/fleet-management-towing" element={<FleetManagementTowing />} />
+          <Route path="/blog/sf-towing-challenges" element={<SfTowingChallenges />} />
+          <Route path="/blog/luxury-transport-guide" element={<LuxuryTransportGuide />} />
           <Route path="/blog/winter-towing-preparedness" element={<WinterTowingPreparedness />} />
           <Route path="/blog/motorcycle-towing-guide" element={<MotorcycleTowingGuide />} />
           <Route path="/blog/electric-vehicle-towing-guide" element={<ElectricVehicleTowingGuide />} />

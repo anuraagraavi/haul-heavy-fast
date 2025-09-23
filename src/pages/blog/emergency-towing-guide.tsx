@@ -40,8 +40,8 @@ const EmergencyTowingGuide = () => {
               "name": "Heavy Haulers San Francisco",
               "url": "https://heavytowpro.com"
             },
-            "datePublished": "2024-03-15",
-            "dateModified": "2024-03-15",
+            "datePublished": "2025-08-05",
+            "dateModified": "2025-08-05",
             "mainEntityOfPage": {
               "@type": "WebPage",
               "@id": "https://heavytowpro.com/blog/emergency-towing-guide"
@@ -63,7 +63,7 @@ const EmergencyTowingGuide = () => {
                 Emergency Towing Guide: What to Do When You're Stranded
               </h1>
               <div className="flex items-center space-x-4 text-muted-foreground mb-8">
-                <span>Published: March 15, 2024</span>
+                <span>Published: August 5, 2025</span>
                 <span>•</span>
                 <span>7 min read</span>
                 <span>•</span>

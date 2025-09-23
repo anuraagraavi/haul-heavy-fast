@@ -13,6 +13,41 @@ const SFTowingChallenges = () => {
       <Helmet>
         <title>San Francisco Towing Challenges: Navigating City Streets | Heavy Haulers</title>
         <meta name="description" content="Unique challenges of towing in San Francisco. Learn about steep hills, narrow streets, parking restrictions, and how professional towing services navigate SF's complex urban environment." />
+        <meta name="keywords" content="San Francisco towing challenges, SF steep hills towing, city street recovery, urban towing SF, SF parking enforcement, steep grade towing" />
+        <link rel="canonical" href="https://heavytowpro.com/blog/sf-towing-challenges" />
+        
+        {/* Open Graph tags */}
+        <meta property="og:title" content="San Francisco Towing Challenges: Navigating City Streets | Heavy Haulers" />
+        <meta property="og:description" content="Expert insights on SF's unique towing challenges including steep hills, narrow streets, and complex regulations." />
+        <meta property="og:url" content="https://heavytowpro.com/blog/sf-towing-challenges" />
+        <meta property="og:type" content="article" />
+        <meta property="og:image" content="https://heavytowpro.com/src/assets/blog-sf-challenges.jpg" />
+        
+        {/* Schema.org JSON-LD for Article */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "San Francisco Towing Challenges: Navigating City Streets",
+            "description": "Expert insights on SF's unique towing challenges including steep hills and narrow streets",
+            "image": "https://heavytowpro.com/src/assets/blog-sf-challenges.jpg",
+            "author": {
+              "@type": "Organization",
+              "name": "Heavy Haulers Team"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Heavy Haulers San Francisco",
+              "url": "https://heavytowpro.com"
+            },
+            "datePublished": "2025-09-10",
+            "dateModified": "2025-09-10",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://heavytowpro.com/blog/sf-towing-challenges"
+            }
+          })}
+        </script>
       </Helmet>
       <Header />
       <main>
@@ -28,7 +63,7 @@ const SFTowingChallenges = () => {
                 San Francisco Towing Challenges: Mastering City Streets
               </h1>
               <div className="flex items-center space-x-4 text-muted-foreground mb-8">
-                <span>Published: March 8, 2024</span>
+                <span>Published: September 10, 2025</span>
                 <span>•</span>
                 <span>6 min read</span>
                 <span>•</span>

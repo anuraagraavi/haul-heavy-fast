@@ -33,8 +33,8 @@ const HeavyEquipmentTransport = () => {
               "name": "Heavy Haulers San Francisco",
               "url": "https://heavytowpro.com"
             },
-            "datePublished": "2024-01-12",
-            "dateModified": "2024-01-12",
+            "datePublished": "2025-08-13",
+            "dateModified": "2025-08-13",
             "mainEntityOfPage": {
               "@type": "WebPage",
               "@id": "https://heavytowpro.com/blog/heavy-equipment-transport"
@@ -56,7 +56,7 @@ const HeavyEquipmentTransport = () => {
                 Heavy Equipment Transport: Moving Industrial Machinery Safely
               </h1>
               <div className="flex items-center space-x-4 text-muted-foreground mb-8">
-                <span>Published: March 12, 2024</span>
+                <span>Published: August 13, 2025</span>
                 <span>•</span>
                 <span>6 min read</span>
                 <span>•</span>

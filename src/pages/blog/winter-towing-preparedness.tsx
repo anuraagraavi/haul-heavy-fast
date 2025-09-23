@@ -40,8 +40,8 @@ const WinterTowingPreparedness = () => {
               "name": "Heavy Haulers San Francisco",
               "url": "https://heavytowpro.com"
             },
-            "datePublished": "2024-03-20",
-            "dateModified": "2024-03-20",
+            "datePublished": "2025-08-19",
+            "dateModified": "2025-08-19",
             "mainEntityOfPage": {
               "@type": "WebPage",
               "@id": "https://heavytowpro.com/blog/winter-towing-preparedness"
@@ -63,7 +63,7 @@ const WinterTowingPreparedness = () => {
                 Winter Towing Preparedness: Bay Area Weather Challenges
               </h1>
               <div className="flex items-center space-x-4 text-muted-foreground mb-8">
-                <span>Published: March 20, 2024</span>
+                <span>Published: August 19, 2025</span>
                 <span>•</span>
                 <span>8 min read</span>
                 <span>•</span>

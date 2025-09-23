@@ -40,8 +40,8 @@ const MotorcycleTowingGuide = () => {
               "name": "Heavy Haulers San Francisco",
               "url": "https://heavytowpro.com"
             },
-            "datePublished": "2024-03-22",
-            "dateModified": "2024-03-22",
+            "datePublished": "2025-08-23",
+            "dateModified": "2025-08-23",
             "mainEntityOfPage": {
               "@type": "WebPage",
               "@id": "https://heavytowpro.com/blog/motorcycle-towing-guide"
@@ -63,7 +63,7 @@ const MotorcycleTowingGuide = () => {
                 Motorcycle Towing Guide: Safe Transport for Two-Wheelers
               </h1>
               <div className="flex items-center space-x-4 text-muted-foreground mb-8">
-                <span>Published: March 22, 2024</span>
+                <span>Published: August 23, 2025</span>
                 <span>•</span>
                 <span>9 min read</span>
                 <span>•</span>

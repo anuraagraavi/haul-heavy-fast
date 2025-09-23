@@ -40,8 +40,8 @@ const TowingTechnologyGPSFleetManagement = () => {
               "name": "Heavy Haulers San Francisco",
               "url": "https://heavytowpro.com"
             },
-            "datePublished": "2025-09-23",
-            "dateModified": "2025-09-23",
+            "datePublished": "2025-09-30",
+            "dateModified": "2025-09-30",
             "mainEntityOfPage": {
               "@type": "WebPage",
               "@id": "https://heavytowpro.com/blog/towing-technology-gps-fleet-management"
@@ -75,7 +75,7 @@ const TowingTechnologyGPSFleetManagement = () => {
             <div className="flex items-center text-muted-foreground text-sm mb-6">
               <span>By Heavy Haulers Team</span>
               <span className="mx-2">•</span>
-              <span>September 23, 2025</span>
+              <span>September 30, 2025</span>
               <span className="mx-2">•</span>
               <span className="flex items-center">
                 <Clock className="w-4 h-4 mr-1" />

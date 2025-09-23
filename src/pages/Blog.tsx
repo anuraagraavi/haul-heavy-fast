@@ -43,7 +43,7 @@ const BlogNew = () => {
       excerpt: "Discover modern towing technology including GPS tracking, fleet management software, and real-time customer communication systems.",
       image: towingTechnologyImage,
       author: "Heavy Haulers Team",
-      date: "September 23, 2025",
+      date: "September 30, 2025",
       readTime: "8 min read",
       category: "Technology & Innovation"
     },
@@ -93,7 +93,7 @@ const BlogNew = () => {
       excerpt: "Complete guide to emergency towing procedures for San Francisco Bay Area drivers. Learn safety tips and how to get professional help fast.",
       image: emergencyGuideImage,
       author: "Heavy Haulers Team",
-      date: "March 15, 2024",
+      date: "August 5, 2025",
       readTime: "7 min read",
       category: "Emergency Response"
     },
@@ -103,7 +103,7 @@ const BlogNew = () => {
       excerpt: "Essential winter towing preparedness tips for Bay Area drivers. Learn about seasonal challenges and emergency planning.",
       image: winterTowingImage,
       author: "Heavy Haulers Team", 
-      date: "December 1, 2024",
+      date: "August 19, 2025",
       readTime: "6 min read",
       category: "Safety Tips"
     },
@@ -113,7 +113,7 @@ const BlogNew = () => {
       excerpt: "Navigate San Francisco's unique towing challenges with expert insights on steep hills, narrow streets, and parking regulations.",
       image: sfChallengesImage,
       author: "Heavy Haulers Team",
-      date: "November 20, 2024", 
+      date: "September 10, 2025", 
       readTime: "8 min read",
       category: "Emergency Response"
     },
@@ -123,7 +123,7 @@ const BlogNew = () => {
       excerpt: "Professional heavy equipment transport services in the Bay Area. Specialized solutions for construction and industrial moving.",
       image: heavyEquipmentImage,
       author: "Heavy Haulers Team",
-      date: "October 15, 2024",
+      date: "August 13, 2025",
       readTime: "9 min read", 
       category: "Heavy Duty"
     },
@@ -133,7 +133,7 @@ const BlogNew = () => {
       excerpt: "Understanding the difference between roadside assistance and towing services. Know when to call for the right help.",
       image: roadsideVsTowingImage,
       author: "Heavy Haulers Team",
-      date: "September 30, 2024",
+      date: "September 2, 2025",
       readTime: "5 min read",
       category: "Safety Tips"
     },
@@ -143,7 +143,7 @@ const BlogNew = () => {
       excerpt: "Comprehensive guide to motorcycle towing in the Bay Area. Safe transport techniques and specialized equipment for bikes.",
       image: motorcycleTowingImage,
       author: "Heavy Haulers Team",
-      date: "September 10, 2024",
+      date: "August 23, 2025",
       readTime: "6 min read",
       category: "Specialized Services"
     },
@@ -153,7 +153,7 @@ const BlogNew = () => {
       excerpt: "Specialized luxury vehicle transport services with premium care and protection for high-end automobiles in the Bay Area.",
       image: luxuryTransportImage,
       author: "Heavy Haulers Team",
-      date: "August 25, 2024",
+      date: "September 16, 2025",
       readTime: "7 min read",
       category: "Specialized Services"
     },
@@ -163,7 +163,7 @@ const BlogNew = () => {
       excerpt: "Comprehensive fleet management towing solutions for businesses. Reduce downtime and optimize your commercial vehicle operations.",
       image: fleetManagementImage,
       author: "Heavy Haulers Team", 
-      date: "August 10, 2024",
+      date: "August 9, 2025",
       readTime: "8 min read",
       category: "Commercial Services"
     },
@@ -173,7 +173,7 @@ const BlogNew = () => {
       excerpt: "Essential guide to electric vehicle towing with specialized techniques and safety protocols for EV transport in the Bay Area.",
       image: evTowingImage,
       author: "Heavy Haulers Team",
-      date: "July 20, 2024", 
+      date: "August 27, 2025", 
       readTime: "6 min read",
       category: "Specialized Services"
     },
@@ -183,7 +183,7 @@ const BlogNew = () => {
       excerpt: "Specialized commercial vehicle recovery in urban environments. Expert solutions for city-based commercial towing challenges.",
       image: commercialRecoveryImage,
       author: "Heavy Haulers Team",
-      date: "July 5, 2024",
+      date: "September 6, 2025",
       readTime: "9 min read", 
       category: "Commercial Services"
     }

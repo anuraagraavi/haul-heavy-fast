@@ -13,6 +13,41 @@ const LuxuryTransportGuide = () => {
       <Helmet>
         <title>Luxury Vehicle Transport: White-Glove Towing Services | Heavy Haulers</title>
         <meta name="description" content="Premium luxury vehicle transport and exotic car towing services. Learn about specialized handling, soft-tie systems, and white-glove service for high-value vehicles." />
+        <meta name="keywords" content="luxury vehicle transport San Francisco, exotic car towing Bay Area, white glove towing services, Ferrari towing SF, Lamborghini transport" />
+        <link rel="canonical" href="https://heavytowpro.com/blog/luxury-transport-guide" />
+        
+        {/* Open Graph tags */}
+        <meta property="og:title" content="Luxury Vehicle Transport: White-Glove Towing Services | Heavy Haulers" />
+        <meta property="og:description" content="Premium luxury vehicle transport with specialized handling and white-glove service for high-value automobiles." />
+        <meta property="og:url" content="https://heavytowpro.com/blog/luxury-transport-guide" />
+        <meta property="og:type" content="article" />
+        <meta property="og:image" content="https://heavytowpro.com/src/assets/blog-luxury-transport.jpg" />
+        
+        {/* Schema.org JSON-LD for Article */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Luxury Vehicle Transport: White-Glove Service for Premium Cars",
+            "description": "Premium luxury vehicle transport with specialized handling and white-glove service",
+            "image": "https://heavytowpro.com/src/assets/blog-luxury-transport.jpg",
+            "author": {
+              "@type": "Organization",
+              "name": "Heavy Haulers Team"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Heavy Haulers San Francisco",
+              "url": "https://heavytowpro.com"
+            },
+            "datePublished": "2025-09-16",
+            "dateModified": "2025-09-16",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://heavytowpro.com/blog/luxury-transport-guide"
+            }
+          })}
+        </script>
       </Helmet>
       <Header />
       <main>
@@ -28,7 +63,7 @@ const LuxuryTransportGuide = () => {
                 Luxury Vehicle Transport: White-Glove Service for Premium Cars
               </h1>
               <div className="flex items-center space-x-4 text-muted-foreground mb-8">
-                <span>Published: March 5, 2024</span>
+                <span>Published: September 16, 2025</span>
                 <span>•</span>
                 <span>7 min read</span>
                 <span>•</span>

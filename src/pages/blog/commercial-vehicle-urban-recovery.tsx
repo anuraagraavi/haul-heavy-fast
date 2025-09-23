@@ -40,8 +40,8 @@ const CommercialVehicleUrbanRecovery = () => {
               "name": "Heavy Haulers San Francisco",
               "url": "https://heavytowpro.com"
             },
-            "datePublished": "2024-03-30",
-            "dateModified": "2024-03-30",
+            "datePublished": "2025-09-06",
+            "dateModified": "2025-09-06",
             "mainEntityOfPage": {
               "@type": "WebPage",
               "@id": "https://heavytowpro.com/blog/commercial-vehicle-urban-recovery"
@@ -63,7 +63,7 @@ const CommercialVehicleUrbanRecovery = () => {
                 Commercial Vehicle Breakdown Recovery in Urban Areas
               </h1>
               <div className="flex items-center space-x-4 text-muted-foreground mb-8">
-                <span>Published: March 30, 2024</span>
+                <span>Published: September 6, 2025</span>
                 <span>•</span>
                 <span>10 min read</span>
                 <span>•</span>
