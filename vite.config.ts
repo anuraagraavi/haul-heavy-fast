@@ -32,14 +32,7 @@ export default defineConfig(({ mode }) => ({
       }
     },
     cssCodeSplit: true,
-    sourcemap: false,
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: mode === 'production',
-        drop_debugger: mode === 'production'
-      }
-    }
+    sourcemap: false
   },
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom', 'lucide-react']
