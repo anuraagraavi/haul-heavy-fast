@@ -3,6 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Critical resource hints for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="dns-prefetch" href="https://heavytowpro.com">
+    
+    <!-- Critical CSS for above-the-fold content -->
+    <style>
+      /* Critical layout styles to prevent CLS */
+      * { box-sizing: border-box; }
+      body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+      .header-fixed { position: fixed; top: 0; left: 0; right: 0; z-index: 50; height: 64px; }
+      .hero-section { min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+      .hero-bg { position: absolute; inset: 0; }
+      .hero-img { width: 100%; height: 100%; object-fit: cover; }
+      .hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.7); }
+      .hero-content { position: relative; z-index: 10; text-align: center; padding: 2rem; }
+      .loading-skeleton { background: #f3f4f6; animation: pulse 2s infinite; }
+      @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+    </style>
+    
+    <!-- Preload critical images -->
+    <link rel="preload" href="/src/assets/hero-tow-truck.jpg" as="image" type="image/jpeg" fetchpriority="high">
+    <link rel="preload" href="/lovable-uploads/a43ad238-af3b-47a8-962f-32c9da2fc727.png" as="image" type="image/png">
+    
     <link rel="icon" href="/lovable-uploads/a43ad238-af3b-47a8-962f-32c9da2fc727.png" type="image/png">
     <link rel="canonical" href="https://heavytowpro.com/" />
     <title>Heavy Haulers - Professional Towing Services | San Francisco Bay Area</title>
@@ -19,14 +44,23 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@heavytowpro" />
     <meta name="twitter:image" content="https://heavytowpro.com/lovable-uploads/a43ad238-af3b-47a8-962f-32c9da2fc727.png" />
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G3GGG0L104"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
     
-      gtag('config', 'G-G3GGG0L104');
+    <!-- Performance-optimized Google Analytics - deferred loading -->
+    <script>
+      // Defer analytics to improve FCP/LCP
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-G3GGG0L104';
+          document.head.appendChild(script);
+          
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-G3GGG0L104');
+        }, 1000);
+      });
     </script>
   </head>
 

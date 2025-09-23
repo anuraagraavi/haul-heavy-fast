@@ -3,9 +3,16 @@ import { Phone, MessageCircle, FileText, Clock, Shield, Truck } from "lucide-rea
 import heroImage from "@/assets/hero-tow-truck.jpg";
 const Hero = () => {
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
+      {/* Background Image with Overlay - Optimized for LCP */}
       <div className="absolute inset-0">
-        <img src={heroImage} alt="Heavy Haulers professional towing service San Francisco Bay Area - 24/7 emergency response" className="w-full h-full object-cover" />
+        <img 
+          src={heroImage} 
+          alt="Heavy Haulers professional towing service San Francisco Bay Area - 24/7 emergency response" 
+          className="w-full h-full object-cover" 
+          loading="eager"
+          fetchPriority="high"
+          decoding="sync"
+        />
         <div className="absolute inset-0 bg-black/70"></div>
       </div>
 

@@ -1,20 +1,28 @@
 import { Helmet } from "react-helmet";
+import { lazy, Suspense } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import WhyChooseUs from "@/components/WhyChooseUs";
-import ServicesOverview from "@/components/ServicesOverview";
-import ServiceAreas from "@/components/ServiceAreas";
-import Testimonials from "@/components/Testimonials";
-import FAQ from "@/components/FAQ";
-import CorporateFleet from "@/components/CorporateFleet";
-import BlogWidget from "@/components/BlogWidget";
+import LazySection from "@/components/LazySection";
 import CustomerServicePopup from "@/components/CustomerServicePopup";
 import MobileOptimizedCTA from "@/components/MobileOptimizedCTA";
 import Footer from "@/components/Footer";
 import { useCustomerServicePopup } from "@/hooks/useCustomerServicePopup";
+import usePerformanceMonitor from "@/hooks/usePerformanceMonitor";
+
+// Lazy load non-critical components
+const WhyChooseUs = lazy(() => import("@/components/WhyChooseUs"));
+const ServicesOverview = lazy(() => import("@/components/ServicesOverview"));
+const ServiceAreas = lazy(() => import("@/components/ServiceAreas"));
+const Testimonials = lazy(() => import("@/components/Testimonials"));
+const FAQ = lazy(() => import("@/components/FAQ"));
+const CorporateFleet = lazy(() => import("@/components/CorporateFleet"));
+const BlogWidget = lazy(() => import("@/components/BlogWidget"));
 
 const Index = () => {
   const { showPopup, closePopup } = useCustomerServicePopup();
+  
+  // Monitor Core Web Vitals
+  usePerformanceMonitor();
 
   return (
     <div className="min-h-screen bg-background">
@@ -183,30 +191,53 @@ const Index = () => {
       </Helmet>
       <Header />
       <main>
+        {/* Critical above-the-fold content - loaded immediately */}
         <div className="animate-fade-in">
           <Hero />
         </div>
-        <div className="animate-fade-in-up">
-          <ServicesOverview />
-        </div>
-        <div className="animate-scale-in">
-          <WhyChooseUs />
-        </div>
-        <div className="animate-slide-in-right">
-          <ServiceAreas />
-        </div>
-        <div className="animate-fade-in-up">
-          <Testimonials />
-        </div>
-        <div className="animate-scale-in">
-          <FAQ />
-        </div>
-        <div className="animate-fade-in-down">
-          <CorporateFleet />
-        </div>
-        <div className="animate-fade-in-up">
-          <BlogWidget />
-        </div>
+        
+        {/* Non-critical content - lazy loaded */}
+        <LazySection className="animate-fade-in-up">
+          <Suspense fallback={<div className="min-h-[400px] animate-pulse bg-muted" />}>
+            <ServicesOverview />
+          </Suspense>
+        </LazySection>
+        
+        <LazySection className="animate-scale-in">
+          <Suspense fallback={<div className="min-h-[400px] animate-pulse bg-muted" />}>
+            <WhyChooseUs />
+          </Suspense>
+        </LazySection>
+        
+        <LazySection className="animate-slide-in-right">
+          <Suspense fallback={<div className="min-h-[300px] animate-pulse bg-muted" />}>
+            <ServiceAreas />
+          </Suspense>
+        </LazySection>
+        
+        <LazySection className="animate-fade-in-up">
+          <Suspense fallback={<div className="min-h-[400px] animate-pulse bg-muted" />}>
+            <Testimonials />
+          </Suspense>
+        </LazySection>
+        
+        <LazySection className="animate-scale-in">
+          <Suspense fallback={<div className="min-h-[500px] animate-pulse bg-muted" />}>
+            <FAQ />
+          </Suspense>
+        </LazySection>
+        
+        <LazySection className="animate-fade-in-down">
+          <Suspense fallback={<div className="min-h-[300px] animate-pulse bg-muted" />}>
+            <CorporateFleet />
+          </Suspense>
+        </LazySection>
+        
+        <LazySection className="animate-fade-in-up">
+          <Suspense fallback={<div className="min-h-[400px] animate-pulse bg-muted" />}>
+            <BlogWidget />
+          </Suspense>
+        </LazySection>
       </main>
       <Footer />
       

@@ -14,7 +14,15 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <Link to="/" title="Heavy Haulers Transport Co."><img src="/lovable-uploads/a43ad238-af3b-47a8-962f-32c9da2fc727.png" alt="Heavy Haulers San Francisco professional towing company logo" className="h-10 w-auto" /></Link>
+            <Link to="/" title="Heavy Haulers Transport Co." aria-label="Heavy Haulers San Francisco homepage">
+              <img 
+                src="/lovable-uploads/a43ad238-af3b-47a8-962f-32c9da2fc727.png" 
+                alt="Heavy Haulers San Francisco professional towing company logo" 
+                className="h-10 w-auto" 
+                loading="eager"
+                fetchPriority="high"
+              />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -123,9 +131,14 @@ const Header = () => {
               () => setIsLocationsOpen(false),
               { leaveDelay: 300 }
             )}>
-              <button className="flex items-center text-foreground hover:text-primary transition-colors">
+              <button 
+                className="flex items-center text-foreground hover:text-primary transition-colors"
+                aria-label="View service locations"
+                aria-expanded={isLocationsOpen}
+                aria-haspopup="true"
+              >
                 Locations
-                <ChevronDown className="ml-1 h-4 w-4" />
+                <ChevronDown className="ml-1 h-4 w-4" aria-hidden="true" />
               </button>
               {isLocationsOpen && (
                 <div className='absolute top-full left-1/2 transform -translate-x-1/2 mt-2 z-50'>
@@ -220,8 +233,11 @@ const Header = () => {
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
             <Button variant="hero" size="default" asChild>
-              <a href={`tel:${businessPhone}`}>
-                <Phone className="w-4 h-4 mr-2" />
+              <a 
+                href={`tel:${businessPhone}`}
+                aria-label={`Call Heavy Haulers emergency towing at ${businessPhone}`}
+              >
+                <Phone className="w-4 h-4 mr-2" aria-hidden="true" />
                 Call Now
               </a>
             </Button>
@@ -230,8 +246,11 @@ const Header = () => {
           {/* Mobile Menu */}
           <Sheet>
             <SheetTrigger asChild>
-              <button className="lg:hidden p-2 text-foreground hover:text-primary">
-                <Menu className="w-6 h-6" />
+              <button 
+                className="lg:hidden p-2 text-foreground hover:text-primary"
+                aria-label="Open mobile navigation menu"
+              >
+                <Menu className="w-6 h-6" aria-hidden="true" />
               </button>
             </SheetTrigger>
             <SheetContent side="left" className="w-80 p-0">
