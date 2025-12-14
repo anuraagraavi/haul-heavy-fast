@@ -90,7 +90,7 @@ export interface CalloutType {
 export interface ComparisonRow {
   feature: string;
   option1: string;
-  option2: string;
+  option2?: string;
 }
 
 export interface StepItem {
