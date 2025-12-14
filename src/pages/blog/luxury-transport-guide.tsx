@@ -6,9 +6,11 @@ import BlogPostTemplate, {
   CalloutBox,
   TwoColumnGrid,
   MidArticleCTA,
+  BlogFigure
 } from '@/components/blog/BlogPostTemplate';
 import type { BlogPostData } from '@/types/blog';
 import luxuryTransportImage from "@/assets/blog-luxury-transport.jpg";
+import lightDutyService from "@/assets/light-duty-service.jpg";
 
 const blogData: BlogPostData = {
   slug: "luxury-transport-guide",
@@ -143,6 +145,14 @@ const LuxuryTransportGuide = () => {
       />
 
       <MidArticleCTA />
+
+      <BlogFigure 
+        image={{
+          src: lightDutyService,
+          alt: "Enclosed flatbed with soft-tie securing systems for luxury vehicles",
+          caption: "White-glove service with specialized equipment for premium cars"
+        }}
+      />
 
       <SectionHeading id="white-glove-difference">The White-Glove Service Difference</SectionHeading>
       

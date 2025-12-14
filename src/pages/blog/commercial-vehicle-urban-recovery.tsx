@@ -7,9 +7,12 @@ import BlogPostTemplate, {
   TwoColumnGrid,
   StepProcess,
   MidArticleCTA,
+  BlogFigure
 } from '@/components/blog/BlogPostTemplate';
 import type { BlogPostData } from '@/types/blog';
 import commercialRecoveryImage from "@/assets/blog-commercial-recovery.jpg";
+import heavyDutyService from "@/assets/heavy-duty-service.jpg";
+import mediumDutyService from "@/assets/medium-duty-service.jpg";
 
 const blogData: BlogPostData = {
   slug: "commercial-vehicle-urban-recovery",
@@ -151,6 +154,14 @@ const CommercialVehicleUrbanRecovery = () => {
 
       <MidArticleCTA />
 
+      <BlogFigure 
+        image={{
+          src: heavyDutyService,
+          alt: "Rotator tow truck for urban commercial vehicle recovery",
+          caption: "Heavy-duty recovery equipment designed for complex urban scenarios"
+        }}
+      />
+
       <SectionHeading id="permits-regulations">Permit and Regulatory Considerations</SectionHeading>
       
       <p>
@@ -232,6 +243,14 @@ const CommercialVehicleUrbanRecovery = () => {
       />
 
       <SectionHeading id="fleet-integration">Fleet Management Integration</SectionHeading>
+
+      <BlogFigure 
+        image={{
+          src: mediumDutyService,
+          alt: "Medium-duty towing for commercial fleet vehicles",
+          caption: "Fleet-integrated recovery services for business continuity"
+        }}
+      />
       
       <p>
         Many commercial vehicles are part of larger fleets with specific protocols and requirements. Understanding fleet management considerations helps streamline the recovery process and maintain business operations.

@@ -6,9 +6,12 @@ import BlogPostTemplate, {
   CalloutBox,
   TwoColumnGrid,
   MidArticleCTA,
+  BlogFigure
 } from '@/components/blog/BlogPostTemplate';
 import type { BlogPostData } from '@/types/blog';
 import heavyEquipmentImage from "@/assets/blog-heavy-equipment.jpg";
+import constructionEquipment from "@/assets/blog-construction-equipment-hauling.jpg";
+import heavyDutyService from "@/assets/heavy-duty-service.jpg";
 
 const blogData: BlogPostData = {
   slug: "heavy-equipment-transport",
@@ -143,6 +146,14 @@ const HeavyEquipmentTransport = () => {
       />
 
       <MidArticleCTA />
+
+      <BlogFigure 
+        image={{
+          src: constructionEquipment,
+          alt: "Specialized lowboy trailer loaded with heavy construction equipment",
+          caption: "Professional equipment securement for safe transport"
+        }}
+      />
 
       <SectionHeading id="permits-compliance">Permits and Legal Compliance</SectionHeading>
       

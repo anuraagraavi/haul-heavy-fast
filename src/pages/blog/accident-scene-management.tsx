@@ -7,10 +7,13 @@ import BlogPostTemplate, {
   TwoColumnGrid,
   StepProcess,
   BackToTopButton,
-  MidArticleCTA
+  MidArticleCTA,
+  BlogFigure
 } from '@/components/blog/BlogPostTemplate';
 import type { BlogPostData } from '@/types/blog';
 import accidentSceneImage from "@/assets/blog-accident-scene-management.jpg";
+import heavyDutyService from "@/assets/heavy-duty-service.jpg";
+import bayAreaCoverage from "@/assets/bay-area-coverage.jpg";
 
 const blogData: BlogPostData = {
   slug: 'accident-scene-management',
@@ -132,6 +135,14 @@ const AccidentSceneManagement = () => {
 
       <MidArticleCTA />
 
+      <BlogFigure 
+        image={{
+          src: heavyDutyService,
+          alt: "Professional accident recovery equipment and tow trucks",
+          caption: "Specialized equipment for multi-vehicle accident recovery"
+        }}
+      />
+
       <SectionHeading id="insurance-coordination">Insurance Coordination and Documentation</SectionHeading>
       
       <p>
@@ -182,6 +193,14 @@ const AccidentSceneManagement = () => {
       ]} />
 
       <BackToTopButton />
+
+      <BlogFigure 
+        image={{
+          src: bayAreaCoverage,
+          alt: "Bay Area accident response coverage map",
+          caption: "Strategically positioned equipment throughout the Bay Area"
+        }}
+      />
 
       <SectionHeading id="coverage">Bay Area Accident Response Coverage</SectionHeading>
       

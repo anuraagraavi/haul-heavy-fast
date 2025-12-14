@@ -6,9 +6,12 @@ import BlogPostTemplate, {
   CalloutBox,
   TwoColumnGrid,
   MidArticleCTA,
+  BlogFigure
 } from '@/components/blog/BlogPostTemplate';
 import type { BlogPostData } from '@/types/blog';
 import winterTowingImage from "@/assets/blog-winter-towing.jpg";
+import lightDutyService from "@/assets/light-duty-service.jpg";
+import bayAreaCoverage from "@/assets/bay-area-coverage.jpg";
 
 const blogData: BlogPostData = {
   slug: "winter-towing-preparedness",
@@ -153,6 +156,14 @@ const WinterTowingPreparedness = () => {
       />
 
       <MidArticleCTA />
+
+      <BlogFigure 
+        image={{
+          src: lightDutyService,
+          alt: "Tow truck ready for rainy weather emergency response",
+          caption: "Weather-ready fleet prepared for Bay Area winter conditions"
+        }}
+      />
 
       <SectionHeading id="fog-safety">Navigating Bay Area Fog Safely</SectionHeading>
       

@@ -7,9 +7,12 @@ import BlogPostTemplate, {
   TwoColumnGrid,
   ComparisonTable,
   MidArticleCTA,
+  BlogFigure
 } from '@/components/blog/BlogPostTemplate';
 import type { BlogPostData } from '@/types/blog';
 import roadsideVsTowingImage from "@/assets/blog-roadside-vs-towing.jpg";
+import lightDutyService from "@/assets/light-duty-service.jpg";
+import bayAreaCoverage from "@/assets/bay-area-coverage.jpg";
 
 const blogData: BlogPostData = {
   slug: "roadside-assistance-vs-towing",
@@ -164,6 +167,14 @@ const RoadsideAssistanceVsTowing = () => {
       />
 
       <MidArticleCTA />
+
+      <BlogFigure 
+        image={{
+          src: lightDutyService,
+          alt: "Professional tow truck for vehicle transport services",
+          caption: "Professional towing ensures safe vehicle transport when roadside fixes aren't possible"
+        }}
+      />
 
       <SectionHeading id="professional-towing">Professional Towing Services Explained</SectionHeading>
       
