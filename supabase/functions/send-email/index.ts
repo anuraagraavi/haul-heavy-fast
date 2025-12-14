@@ -8,6 +8,38 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
 
+// SECURITY: Allowed recipients whitelist
+const ALLOWED_RECIPIENTS = [
+  'dispatch@heavytowpro.com',
+  'anuraagraavi@gmail.com',
+  'heavyhaulers.ca@gmail.com'
+];
+
+// SECURITY: Supabase storage URL for attachment validation
+const ALLOWED_STORAGE_URL = 'https://tkesqtvmbtcxrekmflkr.supabase.co/storage/v1/object/public/media/';
+
+// SECURITY: Simple in-memory rate limiting (resets on function restart)
+const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000; // 10 minutes
+const RATE_LIMIT_MAX_REQUESTS = 5; // 5 requests per 10 minutes per IP
+
+function checkRateLimit(ip: string): boolean {
+  const now = Date.now();
+  const entry = rateLimitMap.get(ip);
+  
+  if (!entry || now > entry.resetTime) {
+    rateLimitMap.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW_MS });
+    return true;
+  }
+  
+  if (entry.count >= RATE_LIMIT_MAX_REQUESTS) {
+    return false;
+  }
+  
+  entry.count++;
+  return true;
+}
+
 interface EmailRequest {
   to: string | string[];
   subject: string;
@@ -20,8 +52,39 @@ interface EmailRequest {
   honeypot?: string;
 }
 
+// SECURITY: Input validation functions
+function validateEmail(email: string): boolean {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email) && email.length <= 255;
+}
+
+function validateName(name: string): boolean {
+  return typeof name === 'string' && name.length > 0 && name.length <= 100;
+}
+
+function validateMessage(message: string): boolean {
+  return typeof message === 'string' && message.length > 0 && message.length <= 5000;
+}
+
+function validateSubject(subject: string): boolean {
+  return typeof subject === 'string' && subject.length <= 200;
+}
+
+function validateRecipients(to: string | string[]): boolean {
+  const recipients = Array.isArray(to) ? to : [to];
+  return recipients.every(email => ALLOWED_RECIPIENTS.includes(email));
+}
+
+function validateAttachmentUrl(url: string): boolean {
+  return url.startsWith(ALLOWED_STORAGE_URL);
+}
+
 const handler = async (req: Request): Promise<Response> => {
-  console.log("Received request:", req.method);
+  const ip = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 
+             req.headers.get('cf-connecting-ip') || 
+             'unknown';
+  
+  console.log("Received request:", req.method, "from IP:", ip);
 
   // Handle CORS preflight requests
   if (req.method === "OPTIONS") {
@@ -35,15 +98,87 @@ const handler = async (req: Request): Promise<Response> => {
     });
   }
 
+  // SECURITY: Rate limiting check
+  if (!checkRateLimit(ip)) {
+    console.log("Rate limit exceeded for IP:", ip);
+    return new Response(
+      JSON.stringify({ error: "Too many requests. Please try again later." }),
+      {
+        status: 429,
+        headers: { "Content-Type": "application/json", ...corsHeaders },
+      }
+    );
+  }
+
   try {
     const emailData: EmailRequest = await req.json();
-    console.log("Email data received:", { ...emailData, message: "[REDACTED]" });
+    console.log("Email data received:", { 
+      type: emailData.type, 
+      name: emailData.name ? '[PROVIDED]' : '[MISSING]',
+      email: emailData.email ? '[PROVIDED]' : '[MISSING]',
+      hasAttachments: emailData.attachments?.length || 0,
+      timestamp: new Date().toISOString(),
+      ip
+    });
 
-    // Honeypot security check
+    // SECURITY: Honeypot check
     if (emailData.honeypot && emailData.honeypot.trim() !== '') {
-      console.log("Honeypot triggered, likely spam submission");
+      console.log("Honeypot triggered, likely spam submission from IP:", ip);
       return new Response(
         JSON.stringify({ error: "Invalid submission" }),
+        {
+          status: 400,
+          headers: { "Content-Type": "application/json", ...corsHeaders },
+        }
+      );
+    }
+
+    // SECURITY: Validate recipients
+    if (!validateRecipients(emailData.to)) {
+      console.error("Invalid recipient attempted:", emailData.to);
+      return new Response(
+        JSON.stringify({ error: "Invalid recipient" }),
+        {
+          status: 400,
+          headers: { "Content-Type": "application/json", ...corsHeaders },
+        }
+      );
+    }
+
+    // SECURITY: Input validation
+    if (emailData.type !== 'newsletter' && !validateName(emailData.name)) {
+      return new Response(
+        JSON.stringify({ error: "Invalid name (max 100 characters)" }),
+        {
+          status: 400,
+          headers: { "Content-Type": "application/json", ...corsHeaders },
+        }
+      );
+    }
+
+    if (!validateEmail(emailData.email)) {
+      return new Response(
+        JSON.stringify({ error: "Invalid email format" }),
+        {
+          status: 400,
+          headers: { "Content-Type": "application/json", ...corsHeaders },
+        }
+      );
+    }
+
+    if (emailData.type !== 'newsletter' && !validateMessage(emailData.message)) {
+      return new Response(
+        JSON.stringify({ error: "Invalid message (max 5000 characters)" }),
+        {
+          status: 400,
+          headers: { "Content-Type": "application/json", ...corsHeaders },
+        }
+      );
+    }
+
+    if (emailData.subject && !validateSubject(emailData.subject)) {
+      return new Response(
+        JSON.stringify({ error: "Invalid subject (max 200 characters)" }),
         {
           status: 400,
           headers: { "Content-Type": "application/json", ...corsHeaders },
@@ -102,18 +237,46 @@ Sent from Heavy Haulers website newsletter signup
         break;
     }
 
-    // Process attachments if present
+    // SECURITY: Process attachments with strict URL validation
     const attachments = [];
     if (emailData.attachments && emailData.attachments.length > 0) {
-      console.log("Processing attachments:", emailData.attachments);
-      for (const url of emailData.attachments) {
+      // SECURITY: Limit attachment count
+      const maxAttachments = 5;
+      const attachmentsToProcess = emailData.attachments.slice(0, maxAttachments);
+      
+      console.log("Processing attachments:", attachmentsToProcess.length);
+      
+      for (const url of attachmentsToProcess) {
+        // SECURITY: Validate attachment URL is from Supabase storage only
+        if (!validateAttachmentUrl(url)) {
+          console.error("Blocked unauthorized attachment URL:", url);
+          continue; // Skip invalid URLs instead of failing entire request
+        }
+        
         try {
-          console.log("Fetching attachment from URL:", url);
-          const response = await fetch(url);
-          console.log("Fetch response status:", response.status, response.statusText);
+          console.log("Fetching attachment from validated URL");
+          const response = await fetch(url, {
+            signal: AbortSignal.timeout(10000) // 10 second timeout
+          });
           
           if (response.ok) {
+            const contentType = response.headers.get('content-type');
+            const allowedTypes = ['image/', 'application/pdf'];
+            
+            // SECURITY: Validate content type
+            if (!allowedTypes.some(type => contentType?.startsWith(type))) {
+              console.error('Invalid content type for attachment:', contentType);
+              continue;
+            }
+            
             const buffer = await response.arrayBuffer();
+            
+            // SECURITY: Enforce size limit (10MB per attachment)
+            if (buffer.byteLength > 10 * 1024 * 1024) {
+              console.error('Attachment too large:', buffer.byteLength);
+              continue;
+            }
+            
             const filename = url.split('/').pop()?.split('?')[0] || 'attachment';
             console.log("Successfully processed attachment:", filename, "Size:", buffer.byteLength);
             attachments.push({
@@ -121,10 +284,10 @@ Sent from Heavy Haulers website newsletter signup
               content: new Uint8Array(buffer),
             });
           } else {
-            console.error('Failed to fetch attachment:', url, response.status, response.statusText);
+            console.error('Failed to fetch attachment:', response.status, response.statusText);
           }
         } catch (attachmentError) {
-          console.error('Error processing attachment:', url, attachmentError);
+          console.error('Error processing attachment:', attachmentError);
         }
       }
       console.log("Total attachments processed:", attachments.length);
