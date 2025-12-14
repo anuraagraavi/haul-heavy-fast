@@ -39,6 +39,9 @@ import TowingCostSanFrancisco from "./pages/blog/towing-cost-san-francisco";
 import BoxTruckTowingSanFrancisco from "./pages/blog/box-truck-towing-san-francisco";
 import RVTowingBayArea from "./pages/blog/rv-towing-bay-area";
 import UndergroundGarageTowingSF from "./pages/blog/underground-garage-towing-sf";
+import HeavyDutyRecoveryBayArea from "./pages/blog/heavy-duty-recovery-bay-area";
+import FreewayTowingBayArea from "./pages/blog/freeway-towing-bay-area";
+import CHPTowingCalifornia from "./pages/blog/chp-towing-california";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -85,6 +88,9 @@ const App = () => (
           <Route path="/blog/box-truck-towing-san-francisco" element={<BoxTruckTowingSanFrancisco />} />
           <Route path="/blog/rv-towing-bay-area" element={<RVTowingBayArea />} />
           <Route path="/blog/underground-garage-towing-sf" element={<UndergroundGarageTowingSF />} />
+          <Route path="/blog/heavy-duty-recovery-bay-area" element={<HeavyDutyRecoveryBayArea />} />
+          <Route path="/blog/freeway-towing-bay-area" element={<FreewayTowingBayArea />} />
+          <Route path="/blog/chp-towing-california" element={<CHPTowingCalifornia />} />
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/privacy-policy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />

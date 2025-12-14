@@ -368,6 +368,33 @@ export const allBlogPosts: RelatedPost[] = [
     route: '/blog/underground-garage-towing-sf',
     readTime: '7 min',
     category: 'Specialty'
+  },
+  {
+    id: 'heavy-duty-recovery-bay-area',
+    title: 'Heavy Duty Recovery Services in the Bay Area',
+    excerpt: 'When standard towing won\'t cut it, you need heavy duty recovery specialists with rotator cranes and specialized equipment.',
+    image: '/src/assets/heavy-duty-service.jpg',
+    route: '/blog/heavy-duty-recovery-bay-area',
+    readTime: '9 min',
+    category: 'Heavy Duty'
+  },
+  {
+    id: 'freeway-towing-bay-area',
+    title: 'Freeway Towing in the Bay Area: Fast Response',
+    excerpt: 'Stranded on a Bay Area freeway? Get fast, safe towing on I-80, I-880, I-280, 101, and all major highways.',
+    image: '/src/assets/bay-area-coverage.jpg',
+    route: '/blog/freeway-towing-bay-area',
+    readTime: '8 min',
+    category: 'Emergency'
+  },
+  {
+    id: 'chp-towing-california',
+    title: 'CHP Towing in California: What Happens When CHP Calls a Tow',
+    excerpt: 'Understand CHP towing: when police can order a tow, rotation lists, fees, storage, and your rights.',
+    image: '/src/assets/hero-tow-truck.jpg',
+    route: '/blog/chp-towing-california',
+    readTime: '8 min',
+    category: 'Legal & Regulations'
   }
 ];
 
