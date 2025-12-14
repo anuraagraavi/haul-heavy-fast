@@ -167,69 +167,112 @@ export const CalloutBox = ({ type, title, children, className }: CalloutBoxProps
   );
 };
 
-// Two column info grid
+// Two column info grid - supports both item array and left/right split patterns
 interface TwoColumnGridProps {
-  items: Array<{ title: string; content: string }>;
+  items?: Array<{ title: string; content: string }>;
+  leftTitle?: string;
+  leftItems?: string[];
+  rightTitle?: string;
+  rightItems?: string[];
   className?: string;
 }
 
-export const TwoColumnGrid = ({ items, className }: TwoColumnGridProps) => (
-  <div className={cn("grid md:grid-cols-2 gap-4 my-6", className)}>
-    {items.map((item, index) => (
-      <div 
-        key={index} 
-        className="bg-card border border-border rounded-lg p-4"
-      >
-        <h4 className="font-medium text-foreground mb-2">{item.title}</h4>
-        <p className="text-sm text-muted-foreground">{item.content}</p>
+export const TwoColumnGrid = ({ items, leftTitle, leftItems, rightTitle, rightItems, className }: TwoColumnGridProps) => {
+  // If using left/right pattern
+  if (leftTitle && rightTitle && leftItems && rightItems) {
+    return (
+      <div className={cn("grid md:grid-cols-2 gap-4 my-6", className)}>
+        <div className="bg-card border border-border rounded-lg p-4">
+          <h4 className="font-medium text-foreground mb-3">{leftTitle}</h4>
+          <ul className="space-y-2">
+            {leftItems.map((item, index) => (
+              <li key={index} className="text-sm text-muted-foreground flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="bg-card border border-border rounded-lg p-4">
+          <h4 className="font-medium text-foreground mb-3">{rightTitle}</h4>
+          <ul className="space-y-2">
+            {rightItems.map((item, index) => (
+              <li key={index} className="text-sm text-muted-foreground flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-    ))}
-  </div>
-);
+    );
+  }
 
-// Comparison table
+  // Original items pattern
+  return (
+    <div className={cn("grid md:grid-cols-2 gap-4 my-6", className)}>
+      {items?.map((item, index) => (
+        <div 
+          key={index} 
+          className="bg-card border border-border rounded-lg p-4"
+        >
+          <h4 className="font-medium text-foreground mb-2">{item.title}</h4>
+          <p className="text-sm text-muted-foreground">{item.content}</p>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+// Comparison table - supports 2 or 3 column headers
 interface ComparisonTableProps {
-  headers: [string, string, string];
+  headers: [string, string] | [string, string, string];
   rows: ComparisonRow[];
   className?: string;
 }
 
-export const ComparisonTable = ({ headers, rows, className }: ComparisonTableProps) => (
-  <div className={cn("overflow-x-auto my-6", className)}>
-    <table className="w-full border-collapse bg-card rounded-xl overflow-hidden border border-border">
-      <thead>
-        <tr className="bg-muted">
-          {headers.map((header, index) => (
-            <th 
-              key={index}
-              className="px-4 py-3 text-left text-sm font-semibold text-foreground border-b border-border"
-            >
-              {header}
-            </th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
-        {rows.map((row, index) => (
-          <tr 
-            key={index}
-            className="border-b border-border last:border-b-0 hover:bg-muted/30 transition-colors"
-          >
-            <td className="px-4 py-3 text-sm text-foreground font-medium">
-              {row.feature}
-            </td>
-            <td className="px-4 py-3 text-sm text-muted-foreground">
-              {row.option1}
-            </td>
-            <td className="px-4 py-3 text-sm text-muted-foreground">
-              {row.option2}
-            </td>
+export const ComparisonTable = ({ headers, rows, className }: ComparisonTableProps) => {
+  const isThreeColumn = headers.length === 3;
+  
+  return (
+    <div className={cn("overflow-x-auto my-6", className)}>
+      <table className="w-full border-collapse bg-card rounded-xl overflow-hidden border border-border">
+        <thead>
+          <tr className="bg-muted">
+            {headers.map((header, index) => (
+              <th 
+                key={index}
+                className="px-4 py-3 text-left text-sm font-semibold text-foreground border-b border-border"
+              >
+                {header}
+              </th>
+            ))}
           </tr>
-        ))}
-      </tbody>
-    </table>
-  </div>
-);
+        </thead>
+        <tbody>
+          {rows.map((row, index) => (
+            <tr 
+              key={index}
+              className="border-b border-border last:border-b-0 hover:bg-muted/30 transition-colors"
+            >
+              <td className="px-4 py-3 text-sm text-foreground font-medium">
+                {row.feature}
+              </td>
+              <td className="px-4 py-3 text-sm text-muted-foreground">
+                {row.option1}
+              </td>
+              {isThreeColumn && (
+                <td className="px-4 py-3 text-sm text-muted-foreground">
+                  {row.option2}
+                </td>
+              )}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
 
 // Step by step process
 interface StepProcessProps {
