@@ -85,7 +85,7 @@ const BoxTruckTowingSanFrancisco = () => {
         { text: 'Wheel-lift system for short-distance tows', checked: true },
         { text: 'Air brake equipment for air-braked trucks', checked: true }
       ]} />
-      <BlogFigure image={midImage} alt="Medium duty tow truck for box truck recovery" caption="Medium-duty wreckers are designed for commercial vehicle recovery" />
+      <BlogFigure image={{ src: midImage, alt: 'Medium duty tow truck for box truck recovery', caption: 'Medium-duty wreckers are designed for commercial vehicle recovery' }} />
 
       <CapabilitiesBox
         canDo={['Tow box trucks up to 26,000 lbs GVWR', 'Recover trucks from tight urban spaces', 'Handle loaded cargo trucks safely', 'Navigate San Francisco hills']}

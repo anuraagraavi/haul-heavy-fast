@@ -82,7 +82,7 @@ const RVTowingBayArea = () => {
         canDo={['Tow all classes of motorhomes', 'Transport travel trailers and fifth wheels', 'Recover RVs from off-road situations', 'Handle RVs with slide-outs extended', 'Provide flatbed service for total breakdown']}
         cantDo={['Tow RVs with severe structural damage', 'Transport RVs exceeding 80,000 lbs', 'Tow RVs with unsecured propane systems']}
       />
-      <BlogFigure image={midImage} alt="Heavy duty tow truck for RV recovery" caption="Heavy-duty equipment is essential for safe RV recovery" />
+      <BlogFigure image={{ src: midImage, alt: 'Heavy duty tow truck for RV recovery', caption: 'Heavy-duty equipment is essential for safe RV recovery' }} />
 
       <SectionHeading id="preparing-for-tow">Preparing Your RV for Tow</SectionHeading>
       <ChecklistBox title="RV Tow Preparation Checklist" items={[
