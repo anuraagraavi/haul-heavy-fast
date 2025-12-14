@@ -1,394 +1,216 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import RelatedPosts from "@/components/RelatedPosts";
-import { Button } from "@/components/ui/button";
-import { Helmet } from "react-helmet";
-import { Phone, Clock, Shield, AlertTriangle, CheckCircle, ArrowLeft, Users, MapPin, FileText } from "lucide-react";
-import { Link } from "react-router-dom";
+import BlogPostTemplate, {
+  SectionHeading,
+  IntroText,
+  IconBulletList,
+  ChecklistBox,
+  CalloutBox,
+  TwoColumnGrid,
+  StepProcess,
+  BackToTopButton,
+  MidArticleCTA
+} from '@/components/blog/BlogPostTemplate';
+import type { BlogPostData } from '@/types/blog';
 import accidentSceneImage from "@/assets/blog-accident-scene-management.jpg";
+
+const blogData: BlogPostData = {
+  slug: 'accident-scene-management',
+  title: 'Accident Scene Management: Professional Towing Response Protocols',
+  metaTitle: 'Accident Scene Management | Professional Recovery',
+  metaDescription: 'Expert accident scene management and multi-vehicle recovery in San Francisco Bay Area. Professional towing response protocols, insurance coordination, and emergency services. Call 650-881-2400.',
+  canonicalUrl: 'https://heavytowpro.com/blog/accident-scene-management',
+  primaryKeyword: 'accident scene management',
+  secondaryKeywords: ['collision recovery Bay Area', 'multi-vehicle accident towing', 'insurance towing services', 'emergency response SF', 'professional accident management'],
+  category: 'Emergency',
+  author: 'Heavy Haulers Team',
+  publishDate: 'August 15, 2025',
+  dateModified: '2025-08-15',
+  readTime: '8 min',
+  excerpt: 'Professional accident scene management requires coordination between emergency responders, insurance representatives, and specialized towing services for swift, safe resolution.',
+  heroImage: {
+    src: accidentSceneImage,
+    alt: 'Professional accident scene management with tow trucks coordinating multi-vehicle recovery in San Francisco Bay Area',
+    caption: 'Expert coordination ensures safe and efficient accident scene recovery'
+  },
+  atAGlance: {
+    bestUseCase: 'Multi-vehicle accidents, highway incidents, complex recovery scenarios requiring professional coordination',
+    responseWorkflow: 'Emergency call → Scene assessment → Safety zones → Coordinated recovery → Debris cleanup',
+    safetyNote: 'Stay in your vehicle with hazards on until emergency responders arrive and secure the scene',
+    dispatchNeeds: 'Location, number of vehicles involved, any injuries, and whether emergency services are on scene',
+    relatedServiceLink: { text: 'View our emergency towing services', href: '/services' }
+  },
+  tableOfContents: [
+    { id: 'first-response', title: 'Critical First Response', level: 2 },
+    { id: 'multi-vehicle', title: 'Multi-Vehicle Recovery', level: 2 },
+    { id: 'insurance-coordination', title: 'Insurance Coordination', level: 2 },
+    { id: 'traffic-management', title: 'Traffic Management', level: 2 },
+    { id: 'equipment', title: 'Specialized Equipment', level: 2 },
+    { id: 'coverage', title: 'Bay Area Coverage', level: 2 },
+    { id: 'faqs', title: 'FAQs', level: 2 },
+    { id: 'when-to-call', title: 'When to Call Heavy Haulers', level: 2 }
+  ],
+  faq: [
+    { question: 'How quickly can you respond to a highway accident?', answer: 'We typically arrive at highway accident scenes within 20-30 minutes in urban areas and 30-45 minutes in more remote Bay Area locations.' },
+    { question: 'Do you work with law enforcement at accident scenes?', answer: 'Yes, our certified operators coordinate closely with law enforcement, fire departments, and EMS to ensure safe and efficient scene management.' },
+    { question: 'Can you handle multi-vehicle accidents?', answer: 'Absolutely. We have the equipment and trained personnel to manage complex multi-vehicle incidents, including deploying multiple trucks simultaneously.' },
+    { question: 'How do you handle insurance coordination?', answer: 'We work directly with major insurance providers, providing comprehensive documentation including photos, damage assessments, and detailed service records.' },
+    { question: 'What about hazardous material spills?', answer: 'Our operators are trained in hazardous material identification and containment procedures, and we coordinate with HazMat teams when necessary.' },
+    { question: 'Do you provide traffic control during recovery?', answer: 'Yes, we follow Caltrans-approved protocols for lane closures and traffic control to protect both workers and motorists during recovery operations.' }
+  ],
+  relatedPosts: ['emergency-towing-guide', 'commercial-truck-towing', 'heavy-equipment-transport'],
+  relatedServices: [
+    { title: 'Emergency Towing', href: '/services', description: '24/7 emergency response for all vehicle types' },
+    { title: 'Heavy Duty Recovery', href: '/services/heavy-duty', description: 'Specialized recovery for severe accidents' },
+    { title: 'Medium Duty Towing', href: '/services/medium-duty', description: 'Commercial vehicle accident recovery' },
+    { title: 'Roadside Assistance', href: '/services', description: 'Comprehensive roadside support services' }
+  ],
+  serviceAreas: [
+    { name: 'San Francisco', href: '/locations' },
+    { name: 'Oakland', href: '/locations' },
+    { name: 'San Jose', href: '/locations' },
+    { name: 'Fremont', href: '/locations' },
+    { name: 'Hayward', href: '/locations' },
+    { name: 'Concord', href: '/locations' }
+  ]
+};
 
 const AccidentSceneManagement = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Helmet>
-        <title>Accident Scene Management: Professional Towing Response Protocols | Bay Area Heavy Haulers</title>
-        <meta name="description" content="Expert accident scene management and multi-vehicle recovery in San Francisco Bay Area. Professional towing response protocols, insurance coordination, and emergency services. Call (650) 881-2400." />
-        <meta name="keywords" content="accident towing San Francisco, collision recovery Bay Area, multi-vehicle accident towing, insurance towing services, emergency response SF, professional accident management" />
-        <link rel="canonical" href="https://heavytowpro.com/blog/accident-scene-management" />
-        
-        {/* Open Graph tags */}
-        <meta property="og:title" content="Accident Scene Management: Professional Towing Response Protocols | Heavy Haulers" />
-        <meta property="og:description" content="Professional accident scene management and multi-vehicle recovery services in the Bay Area with expert coordination." />
-        <meta property="og:url" content="https://heavytowpro.com/blog/accident-scene-management" />
-        <meta property="og:type" content="article" />
-        <meta property="og:image" content="https://heavytowpro.com/src/assets/blog-accident-scene-management.jpg" />
-        
-        {/* Schema.org JSON-LD for Article */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": "Accident Scene Management: Professional Towing Response Protocols",
-            "description": "Expert accident scene management and multi-vehicle recovery in San Francisco Bay Area with professional protocols",
-            "image": "https://heavytowpro.com/src/assets/blog-accident-scene-management.jpg",
-            "author": {
-              "@type": "Organization",
-              "name": "Heavy Haulers Team"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "Heavy Haulers San Francisco",
-              "url": "https://heavytowpro.com"
-            },
-            "datePublished": "2025-08-15",
-            "dateModified": "2025-08-15",
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": "https://heavytowpro.com/blog/accident-scene-management"
-            }
-          })}
-        </script>
-      </Helmet>
+    <BlogPostTemplate data={blogData}>
+      <IntroText>
+        When multi-vehicle accidents occur on busy Bay Area roadways, professional scene management becomes critical 
+        for public safety, traffic flow, and effective recovery operations. Proper accident scene protocols require 
+        coordination between emergency responders, insurance representatives, and specialized towing services to ensure 
+        swift, safe resolution of complex incidents.
+      </IntroText>
 
-      <Header />
+      <CalloutBox type="warning" title="Accident Emergency?">
+        If you're at an accident scene now, call 911 first if there are injuries. Then contact Heavy Haulers 
+        at 650-881-2400 for immediate professional recovery response.
+      </CalloutBox>
 
-      <main className="container mx-auto px-4 py-8">
-        {/* Back to Blog Link */}
-        <div className="mb-6">
-          <Link to="/blog" className="inline-flex items-center text-primary hover:text-primary/80 transition-colors">
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Blog
-          </Link>
-        </div>
+      <SectionHeading id="first-response">Critical First Response Procedures</SectionHeading>
+      
+      <p>
+        The first minutes after a multi-vehicle accident are crucial for establishing safety zones, assessing 
+        damage, and coordinating professional response. Our certified operators follow established protocols 
+        that prioritize safety while ensuring efficient vehicle recovery.
+      </p>
 
-        {/* Article Header */}
-        <article className="max-w-4xl mx-auto">
-          <header className="mb-8">
-            <div className="mb-4">
-              <span className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
-                Emergency Response
-              </span>
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
-              Accident Scene Management: Professional Towing Response Protocols
-            </h1>
-            <div className="flex items-center text-muted-foreground text-sm mb-6">
-              <span>By Heavy Haulers Team</span>
-              <span className="mx-2">•</span>
-              <span>August 15, 2025</span>
-              <span className="mx-2">•</span>
-              <span className="flex items-center">
-                <Clock className="w-4 h-4 mr-1" />
-                8 min read
-              </span>
-            </div>
-            <img 
-              src={accidentSceneImage} 
-              alt="Professional accident scene management with multiple tow trucks coordinating multi-vehicle recovery in San Francisco Bay Area"
-              className="w-full h-64 md:h-96 object-cover rounded-lg shadow-lg"
-            />
-          </header>
+      <h3 className="text-xl font-semibold text-foreground mt-6 mb-4">Scene Safety Assessment</h3>
+      
+      <p>
+        Upon arrival at any accident scene, our certified operators immediately conduct comprehensive safety 
+        assessments. This includes evaluating traffic patterns, identifying potential hazards, and establishing 
+        appropriate safety zones around damaged vehicles.
+      </p>
 
-          {/* Article Content */}
-          <div className="prose prose-lg max-w-none">
-            <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
-              When multi-vehicle accidents occur on busy Bay Area roadways, professional scene management becomes critical 
-              for public safety, traffic flow, and effective recovery operations. Proper accident scene protocols require 
-              coordination between emergency responders, insurance representatives, and specialized towing services to ensure 
-              swift, safe resolution of complex incidents.
-            </p>
+      <ChecklistBox 
+        title="Safety Assessment Checklist"
+        items={[
+          { text: 'Traffic flow analysis and lane closure requirements', checked: true },
+          { text: 'Fluid leak identification and containment needs', checked: true },
+          { text: 'Structural damage evaluation for safe lifting points', checked: true },
+          { text: 'Secondary hazard identification (broken glass, debris)', checked: true },
+          { text: 'Emergency responder coordination and communication', checked: true }
+        ]}
+      />
 
-            {/* Emergency CTA */}
-            <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-6 mb-8">
-              <div className="flex items-center mb-4">
-                <AlertTriangle className="h-6 w-6 text-destructive mr-3" />
-                <h3 className="text-lg font-semibold text-destructive">Accident Emergency? Immediate Response Available</h3>
-              </div>
-              <p className="text-sm mb-4">Heavy Haulers provides immediate accident scene response with certified operators and specialized equipment.</p>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Button asChild size="lg" className="bg-destructive hover:bg-destructive/90">
-                  <a href="tel:650-881-2400" className="flex items-center">
-                    <Phone className="mr-2 h-4 w-4" />
-                    Emergency: (650) 881-2400
-                  </a>
-                </Button>
-                <Button asChild variant="outline" size="lg">
-                  <Link to="/get-a-quote">Request Service</Link>
-                </Button>
-              </div>
-            </div>
+      <BackToTopButton />
 
-            <h2 className="text-3xl font-bold mb-6 text-foreground">Critical First Response Procedures</h2>
-            
-            <p>
-              The first minutes after a multi-vehicle accident are crucial for establishing safety zones, assessing 
-              damage, and coordinating professional response. Our <Link to="/services" className="text-primary hover:underline">emergency towing services</Link> 
-              follow established protocols that prioritize safety while ensuring efficient vehicle recovery.
-            </p>
+      <SectionHeading id="multi-vehicle">Multi-Vehicle Recovery Coordination</SectionHeading>
+      
+      <p>
+        Complex accident scenes involving multiple vehicles require strategic coordination to prevent secondary 
+        incidents and ensure efficient recovery. Our team works closely with law enforcement, fire departments, 
+        and emergency medical services to manage these challenging scenarios.
+      </p>
 
-            <h3 className="text-2xl font-semibold mb-4 text-foreground">Scene Safety Assessment</h3>
-            
-            <p>
-              Upon arrival at any accident scene, our certified operators immediately conduct comprehensive safety 
-              assessments. This includes evaluating traffic patterns, identifying potential hazards, and establishing 
-              appropriate safety zones around damaged vehicles.
-            </p>
+      <TwoColumnGrid items={[
+        { title: 'Coordination Elements', content: 'Law enforcement traffic control, fire department hazard mitigation, EMS patient care coordination, insurance adjuster communication' },
+        { title: 'Recovery Priorities', content: 'Most severely damaged vehicles first, traffic lane restoration priority, hazardous material considerations, evidence preservation needs' }
+      ]} />
 
-            <div className="bg-muted/50 rounded-lg p-6 mb-8">
-              <h4 className="text-lg font-semibold mb-4 flex items-center">
-                <Shield className="mr-3 h-5 w-5 text-primary" />
-                Safety Assessment Checklist
-              </h4>
-              <ul className="space-y-2">
-                <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
-                  Traffic flow analysis and lane closure requirements
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
-                  Fluid leak identification and containment needs
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
-                  Structural damage evaluation for safe lifting points
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
-                  Secondary hazard identification (broken glass, debris)
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
-                  Emergency responder coordination and communication
-                </li>
-              </ul>
-            </div>
+      <MidArticleCTA />
 
-            <h2 className="text-3xl font-bold mb-6 text-foreground">Multi-Vehicle Recovery Coordination</h2>
-            
-            <p>
-              Complex accident scenes involving multiple vehicles require strategic coordination to prevent secondary 
-              incidents and ensure efficient recovery. Our team works closely with law enforcement, fire departments, 
-              and emergency medical services to manage these challenging scenarios.
-            </p>
+      <SectionHeading id="insurance-coordination">Insurance Coordination and Documentation</SectionHeading>
+      
+      <p>
+        Proper documentation and insurance coordination are essential components of professional accident scene 
+        management. Our operators work directly with insurance adjusters to ensure complete documentation and 
+        streamlined claims processing.
+      </p>
 
-            <h3 className="text-2xl font-semibold mb-4 text-foreground">Strategic Recovery Planning</h3>
-            
-            <p>
-              Before beginning any recovery operation, our operators develop comprehensive plans that consider vehicle 
-              positions, traffic management needs, and optimal equipment placement. This planning phase is essential 
-              for safe, efficient multi-vehicle recovery.
-            </p>
+      <StepProcess steps={[
+        { step: 1, title: 'Pre-Recovery Photography', description: 'Complete documentation of vehicle positions and damage' },
+        { step: 2, title: 'Insurance Notification', description: 'Immediate contact with relevant insurance providers' },
+        { step: 3, title: 'Recovery Documentation', description: 'Step-by-step photography of recovery procedures' },
+        { step: 4, title: 'Property Inventory', description: 'Detailed listing of personal property and vehicle contents' },
+        { step: 5, title: 'Final Assessment', description: 'Post-recovery damage evaluation and storage arrangements' }
+      ]} />
 
-            <div className="grid md:grid-cols-2 gap-6 mb-8">
-              <div className="bg-card border rounded-lg p-6">
-                <h4 className="text-lg font-semibold mb-3 flex items-center">
-                  <Users className="mr-3 h-5 w-5 text-primary" />
-                  Coordination Elements
-                </h4>
-                <ul className="text-sm space-y-1">
-                  <li>• Law enforcement traffic control</li>
-                  <li>• Fire department hazard mitigation</li>
-                  <li>• EMS patient care coordination</li>
-                  <li>• Insurance adjuster communication</li>
-                </ul>
-              </div>
-              <div className="bg-card border rounded-lg p-6">
-                <h4 className="text-lg font-semibold mb-3 flex items-center">
-                  <MapPin className="mr-3 h-5 w-5 text-primary" />
-                  Recovery Priorities
-                </h4>
-                <ul className="text-sm space-y-1">
-                  <li>• Most severely damaged vehicles first</li>
-                  <li>• Traffic lane restoration priority</li>
-                  <li>• Hazardous material considerations</li>
-                  <li>• Evidence preservation needs</li>
-                </ul>
-              </div>
-            </div>
+      <BackToTopButton />
 
-            {/* Service CTA */}
-            <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 mb-8">
-              <h3 className="text-xl font-semibold mb-3 text-primary">Need Professional Accident Recovery?</h3>
-              <p className="mb-4">
-                Heavy Haulers provides expert accident scene management with trained operators who understand 
-                complex multi-vehicle recovery requirements and insurance coordination.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Button asChild>
-                  <Link to="/contact">Discuss Your Needs</Link>
-                </Button>
-                <Button asChild variant="outline">
-                  <Link to="/services">View All Services</Link>
-                </Button>
-              </div>
-            </div>
+      <SectionHeading id="traffic-management">Traffic Management During Recovery</SectionHeading>
+      
+      <p>
+        Effective traffic management is crucial for maintaining public safety during accident recovery operations. 
+        Our certified operators coordinate with law enforcement to establish appropriate traffic control measures 
+        while minimizing disruption to normal traffic flow.
+      </p>
 
-            <h2 className="text-3xl font-bold mb-6 text-foreground">Insurance Coordination and Documentation</h2>
-            
-            <p>
-              Proper documentation and insurance coordination are essential components of professional accident scene 
-              management. Our operators work directly with insurance adjusters to ensure complete documentation and 
-              streamlined claims processing.
-            </p>
+      <TwoColumnGrid items={[
+        { title: 'Safety First', content: 'Comprehensive safety zones protect workers and motorists throughout the recovery operation' },
+        { title: 'Coordination', content: 'Seamless coordination with emergency responders ensures efficient scene management' },
+        { title: 'Efficiency', content: 'Rapid recovery minimizes traffic disruption and restores normal flow quickly' },
+        { title: 'Compliance', content: 'All traffic control follows Caltrans-approved work zone safety protocols' }
+      ]} />
 
-            <h3 className="text-2xl font-semibold mb-4 text-foreground">Documentation Requirements</h3>
-            
-            <p>
-              Comprehensive documentation protects all parties involved in accident recovery operations. Our standard 
-              documentation process includes detailed photography, damage assessments, and coordination with insurance 
-              representatives on scene.
-            </p>
+      <SectionHeading id="equipment">Specialized Equipment for Accident Recovery</SectionHeading>
+      
+      <p>
+        Accident scene recovery often requires specialized equipment beyond standard towing capabilities. 
+        Our fleet includes heavy-duty rotator wreckers, flatbed carriers, and specialized lifting equipment 
+        designed for complex recovery scenarios.
+      </p>
 
-            <div className="bg-muted/50 rounded-lg p-6 mb-8">
-              <h4 className="text-lg font-semibold mb-4">Complete Documentation Process</h4>
-              <ol className="list-decimal list-inside space-y-3">
-                <li><strong>Pre-Recovery Photography:</strong> Complete documentation of vehicle positions and damage</li>
-                <li><strong>Insurance Notification:</strong> Immediate contact with relevant insurance providers</li>
-                <li><strong>Recovery Documentation:</strong> Step-by-step photography of recovery procedures</li>
-                <li><strong>Property Inventory:</strong> Detailed listing of personal property and vehicle contents</li>
-                <li><strong>Final Assessment:</strong> Post-recovery damage evaluation and storage arrangements</li>
-              </ol>
-            </div>
+      <IconBulletList items={[
+        { icon: 'check', text: 'Rotator wreckers with 75-ton lifting capacity' },
+        { icon: 'check', text: 'Multiple flatbed carriers for simultaneous recovery' },
+        { icon: 'check', text: 'Specialized uprighting equipment for overturned vehicles' },
+        { icon: 'check', text: 'Debris cleanup and containment equipment' },
+        { icon: 'check', text: 'Full traffic management and signage systems' }
+      ]} />
 
-            <h2 className="text-3xl font-bold mb-6 text-foreground">Traffic Management During Recovery</h2>
-            
-            <p>
-              Effective traffic management is crucial for maintaining public safety during accident recovery operations. 
-              Our certified operators coordinate with law enforcement to establish appropriate traffic control measures 
-              while minimizing disruption to normal traffic flow.
-            </p>
+      <BackToTopButton />
 
-            <h3 className="text-2xl font-semibold mb-4 text-foreground">Lane Closure Protocols</h3>
-            
-            <p>
-              Strategic lane closures protect recovery workers while maintaining maximum traffic flow. Our operators 
-              are trained in proper traffic control device placement and work zone safety protocols approved by 
-              California Department of Transportation (Caltrans).
-            </p>
+      <SectionHeading id="coverage">Bay Area Accident Response Coverage</SectionHeading>
+      
+      <p>
+        Heavy Haulers provides comprehensive accident response coverage throughout the San Francisco Bay Area, 
+        with strategically positioned equipment and certified operators ready to respond to complex multi-vehicle 
+        incidents on major highways and local roads.
+      </p>
 
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
-              <div className="bg-card border rounded-lg p-6 text-center">
-                <Shield className="h-12 w-12 text-primary mx-auto mb-4" />
-                <h4 className="text-lg font-semibold mb-2">Safety First</h4>
-                <p className="text-sm text-muted-foreground">Comprehensive safety zones protect workers and motorists</p>
-              </div>
-              <div className="bg-card border rounded-lg p-6 text-center">
-                <Users className="h-12 w-12 text-primary mx-auto mb-4" />
-                <h4 className="text-lg font-semibold mb-2">Coordination</h4>
-                <p className="text-sm text-muted-foreground">Seamless coordination with emergency responders</p>
-              </div>
-              <div className="bg-card border rounded-lg p-6 text-center">
-                <CheckCircle className="h-12 w-12 text-primary mx-auto mb-4" />
-                <h4 className="text-lg font-semibold mb-2">Efficiency</h4>
-                <p className="text-sm text-muted-foreground">Rapid recovery minimizes traffic disruption</p>
-              </div>
-            </div>
+      <TwoColumnGrid items={[
+        { title: 'Urban Response (20-30 min)', content: 'San Francisco, Oakland, San Jose, Berkeley, Fremont' },
+        { title: 'Extended Coverage (30-45 min)', content: 'Concord, Walnut Creek, Santa Rosa, Gilroy, Livermore' }
+      ]} />
 
-            <h2 className="text-3xl font-bold mb-6 text-foreground">Specialized Equipment for Accident Recovery</h2>
-            
-            <p>
-              Accident scene recovery often requires specialized equipment beyond standard towing capabilities. 
-              Our fleet includes heavy-duty rotator wreckers, flatbed carriers, and specialized lifting equipment 
-              designed for complex recovery scenarios.
-            </p>
+      <SectionHeading id="when-to-call">When to Call Heavy Haulers</SectionHeading>
+      
+      <p>
+        For professional accident scene management with certified operators, comprehensive documentation, 
+        and expert coordination with emergency responders and insurance providers, contact Heavy Haulers 
+        immediately after ensuring everyone's safety.
+      </p>
 
-            <h3 className="text-2xl font-semibold mb-4 text-foreground">Advanced Recovery Equipment</h3>
-            
-            <p>
-              Our <Link to="/services/heavy-duty" className="text-primary hover:underline">heavy-duty recovery equipment</Link> 
-              includes rotator wreckers capable of handling vehicles in any position, including overturned or 
-              severely damaged vehicles that require precise lifting and positioning.
-            </p>
+      <CalloutBox type="info">
+        Our accident response team is available 24/7 with strategically positioned equipment throughout 
+        the Bay Area. Call 650-881-2400 for immediate professional accident scene management.
+      </CalloutBox>
 
-            <p>
-              For immediate accident response, contact Heavy Haulers at 
-              <a href="tel:650-881-2400" className="text-primary hover:underline"> (650) 881-2400</a> or 
-              <Link to="/get-a-quote" className="text-primary hover:underline"> request emergency service online</Link>.
-            </p>
-
-            <h2 className="text-3xl font-bold mb-6 text-foreground">Bay Area Accident Response Coverage</h2>
-            
-            <p>
-              Heavy Haulers provides comprehensive accident response coverage throughout the San Francisco Bay Area, 
-              with strategically positioned equipment and certified operators ready to respond to complex multi-vehicle 
-              incidents on major highways and local roads.
-            </p>
-
-            <h3 className="text-2xl font-semibold mb-4 text-foreground">Response Time Commitments</h3>
-            
-            <p>
-              Our commitment to rapid response means our operators typically arrive at accident scenes within 
-              20-30 minutes in urban areas and 30-45 minutes in more remote locations throughout the Bay Area. 
-              This rapid response helps minimize traffic disruption and ensures prompt professional scene management.
-            </p>
-
-            <div className="bg-muted/50 rounded-lg p-6 mb-8">
-              <h4 className="text-lg font-semibold mb-4">Bay Area Coverage Zones</h4>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <h5 className="font-medium mb-2">Urban Response (20-30 minutes)</h5>
-                  <ul className="text-sm space-y-1">
-                    <li>• San Francisco city limits</li>
-                    <li>• Oakland and Berkeley</li>
-                    <li>• San Jose metropolitan area</li>
-                    <li>• Peninsula corridor</li>
-                  </ul>
-                </div>
-                <div>
-                  <h5 className="font-medium mb-2">Extended Coverage (30-45 minutes)</h5>
-                  <ul className="text-sm space-y-1">
-                    <li>• Marin County</li>
-                    <li>• East Bay hills</li>
-                    <li>• South Bay valleys</li>
-                    <li>• Remote highway locations</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <h2 className="text-3xl font-bold mb-6 text-foreground">Why Choose Heavy Haulers for Accident Recovery</h2>
-            
-            <p>
-              With years of experience managing complex accident scenes throughout the Bay Area, Heavy Haulers 
-              has developed proven protocols that ensure safe, efficient recovery while protecting the interests 
-              of all parties involved. Our certified operators understand the unique challenges of urban accident 
-              management and work seamlessly with emergency responders and insurance professionals.
-            </p>
-
-            <p>
-              When you need professional accident scene management, trust the team that law enforcement and 
-              insurance companies rely on. <Link to="/contact" className="text-primary hover:underline">Contact Heavy Haulers</Link> 
-              or call <a href="tel:650-881-2400" className="text-primary hover:underline">(650) 881-2400</a> 
-              for immediate accident response services.
-            </p>
-
-            {/* Final CTA */}
-            <div className="bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20 rounded-lg p-8 mb-8 text-center">
-              <h3 className="text-2xl font-bold mb-4">Professional Accident Scene Management</h3>
-              <p className="text-lg mb-6">
-                Trust Heavy Haulers for expert accident recovery with proven protocols and certified operators.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg">
-                  <Link to="/services">View Recovery Services</Link>
-                </Button>
-                <Button asChild variant="outline" size="lg">
-                  <a href="tel:650-881-2400" className="flex items-center">
-                    <Phone className="mr-2 h-4 w-4" />
-                    Emergency: (650) 881-2400
-                  </a>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        {/* Related Posts */}
-        <RelatedPosts currentPostId="accident-scene-management" category="Emergency Response" />
-      </main>
-
-      <Footer />
-    </div>
+      <BackToTopButton />
+    </BlogPostTemplate>
   );
 };
 
