@@ -6,9 +6,11 @@ import BlogPostTemplate, {
   CalloutBox,
   TwoColumnGrid,
   MidArticleCTA,
+  BlogFigure
 } from '@/components/blog/BlogPostTemplate';
 import type { BlogPostData } from '@/types/blog';
 import sfChallengesImage from "@/assets/blog-sf-challenges.jpg";
+import heavyDutyService from "@/assets/heavy-duty-service.jpg";
 
 const blogData: BlogPostData = {
   slug: "sf-towing-challenges",
@@ -147,6 +149,14 @@ const SFTowingChallenges = () => {
       />
 
       <MidArticleCTA />
+
+      <BlogFigure 
+        image={{
+          src: heavyDutyService,
+          alt: "Specialized tow truck navigating San Francisco hills",
+          caption: "Equipment designed for SF's unique terrain challenges"
+        }}
+      />
 
       <SectionHeading id="traffic-congestion">Traffic and Congestion Management</SectionHeading>
       

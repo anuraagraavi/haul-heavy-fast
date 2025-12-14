@@ -6,9 +6,11 @@ import BlogPostTemplate, {
   CalloutBox,
   TwoColumnGrid,
   MidArticleCTA,
+  BlogFigure
 } from '@/components/blog/BlogPostTemplate';
 import type { BlogPostData } from '@/types/blog';
 import motorcycleTowingImage from "@/assets/blog-motorcycle-towing.jpg";
+import lightDutyService from "@/assets/light-duty-service.jpg";
 
 const blogData: BlogPostData = {
   slug: "motorcycle-towing-guide",
@@ -148,6 +150,14 @@ const MotorcycleTowingGuide = () => {
       />
 
       <MidArticleCTA />
+
+      <BlogFigure 
+        image={{
+          src: lightDutyService,
+          alt: "Flatbed tow truck with specialized motorcycle securing equipment",
+          caption: "Professional motorcycle transport with proper tie-down techniques"
+        }}
+      />
 
       <SectionHeading id="breakdown-scenarios">Common Motorcycle Breakdown Scenarios</SectionHeading>
       

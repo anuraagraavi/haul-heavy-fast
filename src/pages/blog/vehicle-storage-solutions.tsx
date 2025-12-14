@@ -7,9 +7,11 @@ import BlogPostTemplate, {
   TwoColumnGrid,
   StepProcess,
   MidArticleCTA,
+  BlogFigure
 } from '@/components/blog/BlogPostTemplate';
 import type { BlogPostData } from '@/types/blog';
 import vehicleStorageImage from "@/assets/blog-vehicle-storage-solutions.jpg";
+import corporateFleet from "@/assets/corporate-fleet-banner.jpg";
 
 const blogData: BlogPostData = {
   slug: "vehicle-storage-solutions",
@@ -146,6 +148,14 @@ const VehicleStorageSolutions = () => {
       />
 
       <MidArticleCTA />
+
+      <BlogFigure 
+        image={{
+          src: corporateFleet,
+          alt: "Secure vehicle storage facility with organized parking",
+          caption: "Professional storage with 24/7 security and controlled access"
+        }}
+      />
 
       <SectionHeading id="legal-compliance">Legal Requirements and Compliance</SectionHeading>
       

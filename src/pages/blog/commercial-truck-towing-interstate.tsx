@@ -7,10 +7,13 @@ import BlogPostTemplate, {
   TwoColumnGrid,
   StepProcess,
   BackToTopButton,
-  MidArticleCTA
+  MidArticleCTA,
+  BlogFigure
 } from '@/components/blog/BlogPostTemplate';
 import type { BlogPostData } from '@/types/blog';
 import commercialTruckImage from "@/assets/blog-commercial-truck-towing.jpg";
+import heavyDutyService from "@/assets/heavy-duty-service.jpg";
+import corporateFleet from "@/assets/corporate-fleet-banner.jpg";
 
 const blogData: BlogPostData = {
   slug: 'commercial-truck-towing-interstate',
@@ -109,6 +112,14 @@ const CommercialTruckTowingInterstate = () => {
 
       <BackToTopButton />
 
+      <BlogFigure 
+        image={{
+          src: heavyDutyService,
+          alt: "Heavy-duty rotator wrecker for commercial truck recovery",
+          caption: "Our heavy-duty fleet includes rotator wreckers for any recovery scenario"
+        }}
+      />
+
       <SectionHeading id="bay-area-challenges">Bay Area Interstate Highway Challenges</SectionHeading>
       
       <p>
@@ -173,6 +184,14 @@ const CommercialTruckTowingInterstate = () => {
       ]} />
 
       <BackToTopButton />
+
+      <BlogFigure 
+        image={{
+          src: corporateFleet,
+          alt: "Fleet partnership services for commercial trucking companies",
+          caption: "Comprehensive fleet partnership programs for Bay Area businesses"
+        }}
+      />
 
       <SectionHeading id="fleet-programs">Fleet Partnership Programs</SectionHeading>
       

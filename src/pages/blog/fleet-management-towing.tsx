@@ -7,9 +7,12 @@ import BlogPostTemplate, {
   TwoColumnGrid,
   ComparisonTable,
   MidArticleCTA,
+  BlogFigure
 } from '@/components/blog/BlogPostTemplate';
 import type { BlogPostData } from '@/types/blog';
 import fleetManagementImage from "@/assets/blog-fleet-management.jpg";
+import corporateFleet from "@/assets/corporate-fleet-banner.jpg";
+import towingTechnology from "@/assets/blog-towing-technology.jpg";
 
 const blogData: BlogPostData = {
   slug: "fleet-management-towing",
@@ -144,6 +147,14 @@ const FleetManagementTowing = () => {
       />
 
       <MidArticleCTA />
+
+      <BlogFigure 
+        image={{
+          src: corporateFleet,
+          alt: "Fleet of commercial vehicles with dedicated towing support",
+          caption: "Comprehensive fleet management towing programs for businesses"
+        }}
+      />
 
       <SectionHeading id="service-level-agreements">Service Level Agreements (SLAs)</SectionHeading>
       

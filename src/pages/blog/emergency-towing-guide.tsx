@@ -7,9 +7,12 @@ import BlogPostTemplate, {
   TwoColumnGrid,
   StepProcess,
   MidArticleCTA,
+  BlogFigure
 } from '@/components/blog/BlogPostTemplate';
 import type { BlogPostData } from '@/types/blog';
 import emergencyGuideImage from "@/assets/blog-emergency-guide.jpg";
+import lightDutyService from "@/assets/light-duty-service.jpg";
+import bayAreaCoverage from "@/assets/bay-area-coverage.jpg";
 
 const blogData: BlogPostData = {
   slug: "emergency-towing-guide",
@@ -149,6 +152,14 @@ const EmergencyTowingGuide = () => {
       />
 
       <MidArticleCTA />
+
+      <BlogFigure 
+        image={{
+          src: lightDutyService,
+          alt: "Professional flatbed tow truck ready for emergency response",
+          caption: "24/7 emergency towing with rapid response across Bay Area"
+        }}
+      />
 
       <SectionHeading id="information-to-provide">Information to Provide When Calling</SectionHeading>
       

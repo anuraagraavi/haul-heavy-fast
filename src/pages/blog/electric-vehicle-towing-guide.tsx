@@ -7,10 +7,13 @@ import BlogPostTemplate, {
   TwoColumnGrid,
   StepProcess,
   BackToTopButton,
-  MidArticleCTA
+  MidArticleCTA,
+  BlogFigure
 } from '@/components/blog/BlogPostTemplate';
 import type { BlogPostData } from '@/types/blog';
 import evTowingImage from "@/assets/blog-ev-towing.jpg";
+import lightDutyService from "@/assets/light-duty-service.jpg";
+import bayAreaCoverage from "@/assets/bay-area-coverage.jpg";
 
 const blogData: BlogPostData = {
   slug: 'electric-vehicle-towing-guide',
@@ -102,6 +105,14 @@ const ElectricVehicleTowingGuide = () => {
 
       <BackToTopButton />
 
+      <BlogFigure 
+        image={{
+          src: lightDutyService,
+          alt: "Specialized flatbed tow truck equipped for EV transport",
+          caption: "Flatbed transport is the only safe method for electric vehicles"
+        }}
+      />
+
       <SectionHeading id="proper-methods">Proper EV Towing Methods</SectionHeading>
       
       <p>
@@ -160,6 +171,14 @@ const ElectricVehicleTowingGuide = () => {
       ]} />
 
       <BackToTopButton />
+
+      <BlogFigure 
+        image={{
+          src: bayAreaCoverage,
+          alt: "Bay Area map showing EV-certified towing coverage areas",
+          caption: "Complete EV towing coverage across San Francisco Bay Area"
+        }}
+      />
 
       <SectionHeading id="prevention">Preventing EV Breakdown Situations</SectionHeading>
       

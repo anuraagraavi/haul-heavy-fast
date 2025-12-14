@@ -7,9 +7,12 @@ import BlogPostTemplate, {
   TwoColumnGrid,
   StepProcess,
   MidArticleCTA,
+  BlogFigure
 } from '@/components/blog/BlogPostTemplate';
 import type { BlogPostData } from '@/types/blog';
 import constructionEquipmentImage from "@/assets/blog-construction-equipment-hauling.jpg";
+import heavyEquipment from "@/assets/blog-heavy-equipment.jpg";
+import heavyDutyService from "@/assets/heavy-duty-service.jpg";
 
 const blogData: BlogPostData = {
   slug: "construction-equipment-hauling",
@@ -155,6 +158,14 @@ const ConstructionEquipmentHauling = () => {
       />
 
       <MidArticleCTA />
+
+      <BlogFigure 
+        image={{
+          src: heavyEquipment,
+          alt: "Excavator being loaded onto specialized lowboy trailer",
+          caption: "Proper loading techniques for construction equipment transport"
+        }}
+      />
 
       <SectionHeading id="route-planning">Route Planning and Analysis</SectionHeading>
       

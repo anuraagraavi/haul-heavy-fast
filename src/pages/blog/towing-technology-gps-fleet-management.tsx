@@ -12,6 +12,8 @@ import BlogPostTemplate, {
 } from '@/components/blog/BlogPostTemplate';
 import type { BlogPostData } from '@/types/blog';
 import towingTechnologyImage from "@/assets/blog-towing-technology.jpg";
+import corporateFleet from "@/assets/corporate-fleet-banner.jpg";
+import fleetManagement from "@/assets/blog-fleet-management.jpg";
 
 const blogData: BlogPostData = {
   slug: 'towing-technology-gps-fleet-management',
@@ -127,6 +129,14 @@ const TowingTechnologyGPSFleetManagement = () => {
 
       <MidArticleCTA />
 
+      <BlogFigure 
+        image={{
+          src: fleetManagement,
+          alt: "Modern fleet management dashboard and GPS tracking systems",
+          caption: "Real-time fleet monitoring improves response times and service quality"
+        }}
+      />
+
       <SectionHeading id="customer-communication">Customer Communication Technology</SectionHeading>
       
       <p>
@@ -173,6 +183,14 @@ const TowingTechnologyGPSFleetManagement = () => {
       </CalloutBox>
 
       <BackToTopButton />
+
+      <BlogFigure 
+        image={{
+          src: corporateFleet,
+          alt: "Mobile application interface for towing service requests",
+          caption: "Customer-facing technology makes requesting service simple and transparent"
+        }}
+      />
 
       <SectionHeading id="mobile-apps">Mobile Applications and Customer Portals</SectionHeading>
       

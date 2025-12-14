@@ -3,13 +3,18 @@ import { ChevronRight, Home, Phone, FileText, Clock, User, Calendar } from 'luci
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import LazyImage from '@/components/LazyImage';
+import { estimateReadingTime } from '@/utils/readingTime';
 import type { BlogPostData } from '@/types/blog';
 
 interface BlogHeroSectionProps {
   data: BlogPostData;
+  wordCount?: number;
 }
 
-const BlogHeroSection = ({ data }: BlogHeroSectionProps) => {
+const BlogHeroSection = ({ data, wordCount }: BlogHeroSectionProps) => {
+  // Calculate reading time dynamically if wordCount provided, otherwise use data.readTime
+  const readTime = wordCount ? estimateReadingTime(wordCount) : data.readTime;
+
   return (
     <section className="pt-20 pb-8 bg-gradient-subtle">
       <div className="container mx-auto px-4">
@@ -73,7 +78,7 @@ const BlogHeroSection = ({ data }: BlogHeroSectionProps) => {
             </span>
             <span className="flex items-center gap-1.5">
               <Clock className="w-4 h-4" aria-hidden="true" />
-              {data.readTime} read
+              {readTime} read
             </span>
           </div>
 

@@ -52,12 +52,12 @@ const BlogPostTemplate = ({ data, children }: BlogPostTemplateProps) => {
               </aside>
               
               {/* Article Content */}
-              <article className="flex-1 max-w-3xl">
+              <article className="flex-1 max-w-3xl blog-article">
                 {/* Mobile TOC */}
                 <TableOfContentsMobile items={data.tableOfContents} />
                 
                 {/* Blog Content (children) */}
-                <div className="prose prose-lg prose-invert max-w-none 
+                <div className="blog-content prose prose-lg prose-invert max-w-none 
                   prose-headings:text-foreground prose-headings:font-bold
                   prose-p:text-muted-foreground prose-p:leading-relaxed
                   prose-a:text-primary prose-a:no-underline hover:prose-a:underline
