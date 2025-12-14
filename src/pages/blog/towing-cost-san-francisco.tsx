@@ -87,7 +87,7 @@ const TowingCostSanFrancisco = () => {
         { title: 'Heavy Duty (Semis)', content: '$450-$1,200+' },
         { title: 'Flatbed Service', content: '$175-$300' }
       ]} />
-      <BlogFigure image={midImage} alt="Heavy duty tow truck ready for service" caption="Heavy duty towing requires specialized equipment" />
+      <BlogFigure image={{ src: midImage, alt: 'Heavy duty tow truck ready for service', caption: 'Heavy duty towing requires specialized equipment' }} />
 
       <SectionHeading id="factors-affecting-cost">Factors Affecting Cost</SectionHeading>
       <PricingFactorsBox factors={[

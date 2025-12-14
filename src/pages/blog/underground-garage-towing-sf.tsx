@@ -91,7 +91,7 @@ const UndergroundGarageTowingSF = () => {
         { step: 3, title: 'Portable Winches', description: 'For extracting vehicles from extremely tight spots.' },
         { step: 4, title: 'Flatbed Dollies', description: 'Roll-on systems for non-running vehicles.' }
       ]} />
-      <BlogFigure image={midImage} alt="Light duty towing equipment for tight spaces" caption="Specialized low-profile equipment makes underground recovery possible" />
+      <BlogFigure image={{ src: midImage, alt: 'Light duty towing equipment for tight spaces', caption: 'Specialized low-profile equipment makes underground recovery possible' }} />
 
       <SectionHeading id="before-calling">Before Calling for Towing</SectionHeading>
       <DispatchInfoBox items={[
