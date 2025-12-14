@@ -332,6 +332,42 @@ export const allBlogPosts: RelatedPost[] = [
     route: '/blog/california-private-property-towing',
     readTime: '10 min',
     category: 'Commercial'
+  },
+  {
+    id: 'towing-cost-san-francisco',
+    title: 'How Much Does Towing Cost in San Francisco? 2025 Price Guide',
+    excerpt: 'Complete guide to towing costs in San Francisco covering city impounds, private towing, and hidden fees.',
+    image: '/src/assets/blog-emergency-guide.jpg',
+    route: '/blog/towing-cost-san-francisco',
+    readTime: '8 min',
+    category: 'Education'
+  },
+  {
+    id: 'box-truck-towing-san-francisco',
+    title: 'Box Truck Towing in San Francisco: Complete Guide',
+    excerpt: 'Expert box truck towing covering equipment requirements, costs, and tips for minimizing downtime.',
+    image: '/src/assets/blog-commercial-truck-towing.jpg',
+    route: '/blog/box-truck-towing-san-francisco',
+    readTime: '8 min',
+    category: 'Commercial'
+  },
+  {
+    id: 'rv-towing-bay-area',
+    title: 'RV Towing in the Bay Area: Complete Guide',
+    excerpt: 'Everything you need to know about motorhome and travel trailer towing in the Bay Area.',
+    image: '/src/assets/blog-heavy-equipment.jpg',
+    route: '/blog/rv-towing-bay-area',
+    readTime: '9 min',
+    category: 'Specialty'
+  },
+  {
+    id: 'underground-garage-towing-sf',
+    title: 'Underground Garage Towing in San Francisco',
+    excerpt: 'Low-clearance vehicle recovery from parking garages and basement levels.',
+    image: '/src/assets/blog-sf-challenges.jpg',
+    route: '/blog/underground-garage-towing-sf',
+    readTime: '7 min',
+    category: 'Specialty'
   }
 ];
 

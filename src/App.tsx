@@ -35,6 +35,10 @@ import TowingTechnologyGPSFleetManagement from "./pages/blog/towing-technology-g
 import CarTowedSanFrancisco from "./pages/blog/car-towed-san-francisco";
 import SfTowFeeDiscount from "./pages/blog/sf-tow-fee-discount";
 import CaliforniaPrivatePropertyTowing from "./pages/blog/california-private-property-towing";
+import TowingCostSanFrancisco from "./pages/blog/towing-cost-san-francisco";
+import BoxTruckTowingSanFrancisco from "./pages/blog/box-truck-towing-san-francisco";
+import RVTowingBayArea from "./pages/blog/rv-towing-bay-area";
+import UndergroundGarageTowingSF from "./pages/blog/underground-garage-towing-sf";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -77,6 +81,10 @@ const App = () => (
           <Route path="/blog/car-towed-san-francisco" element={<CarTowedSanFrancisco />} />
           <Route path="/blog/sf-tow-fee-discount" element={<SfTowFeeDiscount />} />
           <Route path="/blog/california-private-property-towing" element={<CaliforniaPrivatePropertyTowing />} />
+          <Route path="/blog/towing-cost-san-francisco" element={<TowingCostSanFrancisco />} />
+          <Route path="/blog/box-truck-towing-san-francisco" element={<BoxTruckTowingSanFrancisco />} />
+          <Route path="/blog/rv-towing-bay-area" element={<RVTowingBayArea />} />
+          <Route path="/blog/underground-garage-towing-sf" element={<UndergroundGarageTowingSF />} />
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/privacy-policy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
