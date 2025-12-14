@@ -345,3 +345,119 @@ export const BackToTopButton = () => {
     </button>
   );
 };
+
+// Dispatch Info Box - "What dispatch needs from you"
+interface DispatchInfoBoxProps {
+  items: string[];
+  title?: string;
+  className?: string;
+}
+
+export const DispatchInfoBox = ({ items, title = "What Dispatch Needs From You", className }: DispatchInfoBoxProps) => (
+  <aside 
+    className={cn(
+      "bg-primary/5 border-2 border-primary/30 rounded-xl p-6 my-6",
+      className
+    )}
+    role="note"
+  >
+    <div className="flex items-start gap-3">
+      <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+        <Info className="w-5 h-5 text-primary" aria-hidden="true" />
+      </div>
+      <div className="flex-1">
+        <h4 className="font-bold text-foreground text-lg mb-3">{title}</h4>
+        <ul className="space-y-2">
+          {items.map((item, index) => (
+            <li key={index} className="flex items-start gap-2 text-foreground">
+              <span className="font-semibold text-primary min-w-[24px]">{index + 1}.</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </aside>
+);
+
+// Pricing Factors Box - "What increases cost"
+interface PricingFactorsBoxProps {
+  factors: Array<{ factor: string; impact: string }>;
+  title?: string;
+  className?: string;
+}
+
+export const PricingFactorsBox = ({ factors, title = "Pricing Factors: What Affects Cost", className }: PricingFactorsBoxProps) => (
+  <div className={cn(
+    "bg-card border border-border rounded-xl overflow-hidden my-6",
+    className
+  )}>
+    <div className="bg-muted px-5 py-3 border-b border-border">
+      <h4 className="font-bold text-foreground flex items-center gap-2">
+        <Scale className="w-5 h-5 text-primary" aria-hidden="true" />
+        {title}
+      </h4>
+    </div>
+    <div className="p-5">
+      <div className="space-y-3">
+        {factors.map((item, index) => (
+          <div key={index} className="flex items-start gap-3">
+            <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+            <div>
+              <span className="font-medium text-foreground">{item.factor}:</span>{' '}
+              <span className="text-muted-foreground">{item.impact}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+);
+
+// Capabilities Box - "What we can do today / What we can't do"
+interface CapabilitiesBoxProps {
+  canDo: string[];
+  cantDo: string[];
+  canDoTitle?: string;
+  cantDoTitle?: string;
+  className?: string;
+}
+
+export const CapabilitiesBox = ({ 
+  canDo, 
+  cantDo, 
+  canDoTitle = "What We Can Do Today",
+  cantDoTitle = "What We Cannot Do",
+  className 
+}: CapabilitiesBoxProps) => (
+  <div className={cn("grid md:grid-cols-2 gap-4 my-6", className)}>
+    <div className="bg-green-500/5 border border-green-500/20 rounded-xl p-5">
+      <h4 className="font-bold text-foreground mb-4 flex items-center gap-2">
+        <CheckCircle className="w-5 h-5 text-green-500" aria-hidden="true" />
+        {canDoTitle}
+      </h4>
+      <ul className="space-y-2">
+        {canDo.map((item, index) => (
+          <li key={index} className="flex items-start gap-2 text-sm text-foreground">
+            <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" aria-hidden="true" />
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div className="bg-red-500/5 border border-red-500/20 rounded-xl p-5">
+      <h4 className="font-bold text-foreground mb-4 flex items-center gap-2">
+        <AlertTriangle className="w-5 h-5 text-red-500" aria-hidden="true" />
+        {cantDoTitle}
+      </h4>
+      <ul className="space-y-2">
+        {cantDo.map((item, index) => (
+          <li key={index} className="flex items-start gap-2 text-sm text-muted-foreground">
+            <span className="text-red-500">✗</span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+);

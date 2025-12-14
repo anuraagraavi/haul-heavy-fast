@@ -305,6 +305,33 @@ export const allBlogPosts: RelatedPost[] = [
     route: '/blog/towing-technology-gps-fleet-management',
     readTime: '7 min',
     category: 'Technology'
+  },
+  {
+    id: 'car-towed-san-francisco',
+    title: 'Car Towed in San Francisco? Step-by-Step Recovery Guide',
+    excerpt: 'Your car was towed in SF. Here\'s exactly what to do: find your vehicle, understand fees, get it released.',
+    image: '/src/assets/blog-sf-challenges.jpg',
+    route: '/blog/car-towed-san-francisco',
+    readTime: '8 min',
+    category: 'Local'
+  },
+  {
+    id: 'sf-tow-fee-discount',
+    title: "Can't Afford Tow and Storage Fees in SF? Discounts & Options",
+    excerpt: 'SFMTA offers reduced fees for low-income residents, first-time tows, and reimbursement programs.',
+    image: '/src/assets/blog-sf-challenges.jpg',
+    route: '/blog/sf-tow-fee-discount',
+    readTime: '7 min',
+    category: 'Local'
+  },
+  {
+    id: 'california-private-property-towing',
+    title: 'California Private Property Towing Rules: CVC 22658 Guide',
+    excerpt: 'Complete guide to California Vehicle Code 22658 for property managers and HOAs.',
+    image: '/src/assets/blog-commercial-recovery.jpg',
+    route: '/blog/california-private-property-towing',
+    readTime: '10 min',
+    category: 'Commercial'
   }
 ];
 

@@ -32,6 +32,9 @@ import AccidentSceneManagement from "./pages/blog/accident-scene-management";
 import ConstructionEquipmentHauling from "./pages/blog/construction-equipment-hauling";
 import VehicleStorageSolutions from "./pages/blog/vehicle-storage-solutions";
 import TowingTechnologyGPSFleetManagement from "./pages/blog/towing-technology-gps-fleet-management";
+import CarTowedSanFrancisco from "./pages/blog/car-towed-san-francisco";
+import SfTowFeeDiscount from "./pages/blog/sf-tow-fee-discount";
+import CaliforniaPrivatePropertyTowing from "./pages/blog/california-private-property-towing";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -71,6 +74,9 @@ const App = () => (
           <Route path="/blog/construction-equipment-hauling" element={<ConstructionEquipmentHauling />} />
           <Route path="/blog/vehicle-storage-solutions" element={<VehicleStorageSolutions />} />
           <Route path="/blog/towing-technology-gps-fleet-management" element={<TowingTechnologyGPSFleetManagement />} />
+          <Route path="/blog/car-towed-san-francisco" element={<CarTowedSanFrancisco />} />
+          <Route path="/blog/sf-tow-fee-discount" element={<SfTowFeeDiscount />} />
+          <Route path="/blog/california-private-property-towing" element={<CaliforniaPrivatePropertyTowing />} />
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/privacy-policy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
