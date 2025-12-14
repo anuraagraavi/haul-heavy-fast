@@ -392,10 +392,16 @@ Sent from Heavy Haulers website newsletter signup
         }
       );
 
-    } catch (emailError) {
-      console.error("Email sending error:", emailError);
+    } catch (emailError: any) {
+      // SECURITY: Log detailed error server-side only
+      console.error("Email sending error:", {
+        error: emailError.message,
+        stack: emailError.stack,
+        timestamp: new Date().toISOString()
+      });
+      // SECURITY: Return generic error to client
       return new Response(
-        JSON.stringify({ error: "Failed to send email", details: emailError.message }),
+        JSON.stringify({ error: "Unable to send email. Please try again or contact us directly at 650-881-2400." }),
         {
           status: 500,
           headers: { "Content-Type": "application/json", ...corsHeaders },
@@ -404,9 +410,15 @@ Sent from Heavy Haulers website newsletter signup
     }
 
   } catch (error: any) {
-    console.error("Error in send-email function:", error);
+    // SECURITY: Log detailed error server-side only
+    console.error("Handler error:", {
+      error: error.message,
+      stack: error.stack,
+      timestamp: new Date().toISOString()
+    });
+    // SECURITY: Return generic error to client
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ error: "An unexpected error occurred. Please try again or call 650-881-2400." }),
       {
         status: 500,
         headers: { "Content-Type": "application/json", ...corsHeaders },
