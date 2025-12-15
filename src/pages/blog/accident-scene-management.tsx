@@ -2,7 +2,7 @@ import BlogPostTemplate, {
   SectionHeading,
   IntroText,
   IconBulletList,
-  ChecklistBox,
+  InfoListBox,
   CalloutBox,
   TwoColumnGrid,
   StepProcess,
@@ -107,14 +107,14 @@ const AccidentSceneManagement = () => {
         appropriate safety zones around damaged vehicles.
       </p>
 
-      <ChecklistBox 
+      <InfoListBox 
         title="Safety Assessment Checklist"
         items={[
-          { text: 'Traffic flow analysis and lane closure requirements', checked: true },
-          { text: 'Fluid leak identification and containment needs', checked: true },
-          { text: 'Structural damage evaluation for safe lifting points', checked: true },
-          { text: 'Secondary hazard identification (broken glass, debris)', checked: true },
-          { text: 'Emergency responder coordination and communication', checked: true }
+          { text: 'Traffic flow analysis and lane closure requirements', included: true },
+          { text: 'Fluid leak identification and containment needs', included: true },
+          { text: 'Structural damage evaluation for safe lifting points', included: true },
+          { text: 'Secondary hazard identification (broken glass, debris)', included: true },
+          { text: 'Emergency responder coordination and communication', included: true }
         ]}
       />
 

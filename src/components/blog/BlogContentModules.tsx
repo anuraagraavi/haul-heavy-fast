@@ -467,3 +467,37 @@ export const CapabilitiesBox = ({
     </div>
   </div>
 );
+
+// Info List Box - like ChecklistBox but shows items WITHOUT strikethrough
+// Use this for fee lists, feature lists, or any informational items
+interface InfoListBoxProps {
+  title?: string;
+  items: Array<{ text: string; included?: boolean }>;
+  className?: string;
+}
+
+export const InfoListBox = ({ title, items, className }: InfoListBoxProps) => (
+  <div className={cn(
+    "bg-card border border-border rounded-xl p-6 my-6",
+    className
+  )}>
+    {title && (
+      <h4 className="font-semibold text-foreground mb-4 flex items-center gap-2">
+        <CheckCircle className="w-5 h-5 text-primary" aria-hidden="true" />
+        {title}
+      </h4>
+    )}
+    <ul className="space-y-2">
+      {items.map((item, index) => (
+        <li key={index} className="flex items-start gap-3">
+          {item.included !== false ? (
+            <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" aria-hidden="true" />
+          ) : (
+            <Circle className="w-5 h-5 text-muted-foreground mt-0.5 flex-shrink-0" aria-hidden="true" />
+          )}
+          <span className="text-foreground">{item.text}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+);

@@ -2,7 +2,7 @@ import BlogPostTemplate, {
   IntroText,
   SectionHeading,
   IconBulletList,
-  ChecklistBox,
+  InfoListBox,
   CalloutBox,
   TwoColumnGrid,
   MidArticleCTA,
@@ -213,17 +213,17 @@ const LuxuryTransportGuide = () => {
         Proper preparation ensures your valuable vehicle receives optimal protection during transport:
       </p>
 
-      <ChecklistBox
+      <InfoListBox
         title="Owner Preparation Checklist"
         items={[
-          { text: "Remove all personal items", checked: true },
-          { text: "Secure loose trim or modifications", checked: true },
-          { text: "Disable alarm systems", checked: true },
-          { text: "Check fluid levels", checked: true },
-          { text: "Document existing condition", checked: true },
-          { text: "Provide spare key if possible", checked: true },
-          { text: "Note any special vehicle features", checked: true },
-          { text: "Specify handling instructions", checked: true }
+          { text: "Remove all personal items", included: true },
+          { text: "Secure loose trim or modifications", included: true },
+          { text: "Disable alarm systems", included: true },
+          { text: "Check fluid levels", included: true },
+          { text: "Document existing condition", included: true },
+          { text: "Provide spare key if possible", included: true },
+          { text: "Note any special vehicle features", included: true },
+          { text: "Specify handling instructions", included: true }
         ]}
       />
 

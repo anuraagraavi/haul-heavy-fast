@@ -2,7 +2,7 @@ import BlogPostTemplate, {
   IntroText,
   SectionHeading,
   IconBulletList,
-  ChecklistBox,
+  InfoListBox,
   CalloutBox,
   ComparisonTable,
   StepProcess,
@@ -133,15 +133,15 @@ const CaliforniaPrivatePropertyTowing = () => {
         Private property towing is permitted in specific situations. The most common include:
       </p>
 
-      <ChecklistBox
+      <InfoListBox
         title="Common Tow-Eligible Situations"
         items={[
-          { text: "Vehicle parked in a clearly marked tow-away zone", checked: true },
-          { text: "Vehicle blocking access to property or driveways", checked: true },
-          { text: "Vehicle parked in fire lane or emergency access area", checked: true },
-          { text: "Vehicle parked in handicap spot without proper placard", checked: true },
-          { text: "Vehicle parked in reserved/assigned spot without authorization", checked: true },
-          { text: "Abandoned vehicle (additional procedures may apply)", checked: true }
+          { text: "Vehicle parked in a clearly marked tow-away zone", included: true },
+          { text: "Vehicle blocking access to property or driveways", included: true },
+          { text: "Vehicle parked in fire lane or emergency access area", included: true },
+          { text: "Vehicle parked in handicap spot without proper placard", included: true },
+          { text: "Vehicle parked in reserved/assigned spot without authorization", included: true },
+          { text: "Abandoned vehicle (additional procedures may apply)", included: true }
         ]}
       />
 
@@ -161,14 +161,14 @@ const CaliforniaPrivatePropertyTowing = () => {
         Proper signage is the foundation of compliant private property towing. CVC 22658 specifies what your tow-away zone signs must include:
       </p>
 
-      <ChecklistBox
+      <InfoListBox
         title="Required Sign Elements"
         items={[
-          { text: "Clear statement that unauthorized vehicles will be towed at owner's expense", checked: true },
-          { text: "Name and phone number of tow company", checked: true },
-          { text: "Address where towed vehicles are stored", checked: true },
-          { text: "Minimum letter height requirements (typically 1 inch for important text)", checked: true },
-          { text: "Sign must be clearly visible at each entrance to the property", checked: true }
+          { text: "Clear statement that unauthorized vehicles will be towed at owner's expense", included: true },
+          { text: "Name and phone number of tow company", included: true },
+          { text: "Address where towed vehicles are stored", included: true },
+          { text: "Minimum letter height requirements (typically 1 inch for important text)", included: true },
+          { text: "Sign must be clearly visible at each entrance to the property", included: true }
         ]}
       />
 
@@ -233,14 +233,14 @@ const CaliforniaPrivatePropertyTowing = () => {
         Good documentation protects you from disputes and potential lawsuits. Here's what to maintain:
       </p>
 
-      <ChecklistBox
+      <InfoListBox
         title="Documentation Checklist"
         items={[
-          { text: "Timestamped photos of violation and posted signage", checked: true },
-          { text: "Signed authorization form with date, time, authorizer name", checked: true },
-          { text: "Copy of tow company receipt or work order", checked: true },
-          { text: "Record of law enforcement notification confirmation", checked: true },
-          { text: "Any correspondence with vehicle owner", checked: true }
+          { text: "Timestamped photos of violation and posted signage", included: true },
+          { text: "Signed authorization form with date, time, authorizer name", included: true },
+          { text: "Copy of tow company receipt or work order", included: true },
+          { text: "Record of law enforcement notification confirmation", included: true },
+          { text: "Any correspondence with vehicle owner", included: true }
         ]}
       />
 

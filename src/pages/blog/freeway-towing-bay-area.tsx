@@ -1,7 +1,7 @@
 import BlogPostTemplate, {
   SectionHeading,
   IconBulletList,
-  ChecklistBox,
+  InfoListBox,
   CalloutBox,
   TwoColumnGrid,
   StepProcess,
@@ -133,11 +133,11 @@ const FreewayTowingBayArea = () => {
       <p>
         We prioritize freeway calls because of the inherent danger. Our average response times by area:
       </p>
-      <ChecklistBox title="Average Response Times" items={[
-        { text: 'San Francisco freeways: 20-35 minutes', checked: true },
-        { text: 'Oakland/I-880 corridor: 15-25 minutes', checked: true },
-        { text: 'Peninsula/I-280: 25-35 minutes', checked: true },
-        { text: 'South Bay highways: 20-30 minutes', checked: true }
+      <InfoListBox title="Average Response Times" items={[
+        { text: 'San Francisco freeways: 20-35 minutes', included: true },
+        { text: 'Oakland/I-880 corridor: 15-25 minutes', included: true },
+        { text: 'Peninsula/I-280: 25-35 minutes', included: true },
+        { text: 'South Bay highways: 20-30 minutes', included: true }
       ]} />
 
       <SectionHeading id="freeway-vs-street">Freeway vs Street Towing</SectionHeading>

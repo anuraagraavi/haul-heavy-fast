@@ -2,7 +2,7 @@ import BlogPostTemplate, {
   SectionHeading,
   IntroText,
   IconBulletList,
-  ChecklistBox,
+  InfoListBox,
   CalloutBox,
   TwoColumnGrid,
   StepProcess,
@@ -200,15 +200,15 @@ const TowingTechnologyGPSFleetManagement = () => {
         towing services as simple as ordering a ride.
       </p>
 
-      <ChecklistBox 
+      <InfoListBox 
         title="Mobile App Features"
         items={[
-          { text: 'One-touch service request with automatic location detection', checked: true },
-          { text: 'Real-time driver tracking with live map updates', checked: true },
-          { text: 'Service history and digital receipts', checked: true },
-          { text: 'Secure payment processing', checked: true },
-          { text: 'Direct communication with drivers', checked: true },
-          { text: 'Push notifications for service updates', checked: true }
+          { text: 'One-touch service request with automatic location detection', included: true },
+          { text: 'Real-time driver tracking with live map updates', included: true },
+          { text: 'Service history and digital receipts', included: true },
+          { text: 'Secure payment processing', included: true },
+          { text: 'Direct communication with drivers', included: true },
+          { text: 'Push notifications for service updates', included: true }
         ]}
       />
 

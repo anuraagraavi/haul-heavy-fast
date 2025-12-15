@@ -2,7 +2,7 @@ import BlogPostTemplate, {
   IntroText,
   SectionHeading,
   IconBulletList,
-  ChecklistBox,
+  InfoListBox,
   CalloutBox,
   TwoColumnGrid,
   StepProcess,
@@ -212,13 +212,13 @@ const VehicleStorageSolutions = () => {
         Professional vehicle storage includes comprehensive insurance coverage to protect stored vehicles against damage, theft, or loss. Understanding coverage levels helps vehicle owners make informed decisions.
       </p>
 
-      <ChecklistBox
+      <InfoListBox
         title="Insurance Protection Features"
         items={[
-          { text: "Comprehensive coverage for theft and vandalism", checked: true },
-          { text: "Weather damage protection", checked: true },
-          { text: "Fire and natural disaster coverage", checked: true },
-          { text: "Professional liability protection", checked: true }
+          { text: "Comprehensive coverage for theft and vandalism", included: true },
+          { text: "Weather damage protection", included: true },
+          { text: "Fire and natural disaster coverage", included: true },
+          { text: "Professional liability protection", included: true }
         ]}
       />
 

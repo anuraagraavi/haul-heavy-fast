@@ -2,7 +2,7 @@ import BlogPostTemplate, {
   IntroText,
   SectionHeading,
   IconBulletList,
-  ChecklistBox,
+  InfoListBox,
   CalloutBox,
   StepProcess,
   TwoColumnGrid,
@@ -160,14 +160,14 @@ const SfTowFeeDiscount = () => {
 
       <SectionHeading id="proof-and-application">What Proof to Bring and Where to Apply</SectionHeading>
 
-      <ChecklistBox
+      <InfoListBox
         title="Documents for Fee Reduction Application"
         items={[
-          { text: "Valid government-issued photo ID", checked: true },
-          { text: "Proof of program enrollment (Medi-Cal card, CalFresh card, Lifeline pass)", checked: true },
-          { text: "Current vehicle registration", checked: true },
-          { text: "Proof of insurance", checked: true },
-          { text: "Income documentation (if not enrolled in qualifying program)", checked: false }
+          { text: "Valid government-issued photo ID", included: true },
+          { text: "Proof of program enrollment (Medi-Cal card, CalFresh card, Lifeline pass)", included: true },
+          { text: "Current vehicle registration", included: true },
+          { text: "Proof of insurance", included: true },
+          { text: "Income documentation (if not enrolled in qualifying program)", included: false }
         ]}
       />
 

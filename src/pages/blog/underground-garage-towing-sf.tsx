@@ -2,7 +2,7 @@ import BlogPostTemplate, {
   IntroText,
   SectionHeading,
   StepProcess,
-  ChecklistBox,
+  InfoListBox,
   CalloutBox,
   TwoColumnGrid,
   MidArticleCTA,
@@ -71,11 +71,11 @@ const UndergroundGarageTowingSF = () => {
         { title: 'Low-Profile Equipment', content: '5\'6" - 6\'2"' },
         { title: 'Ramp Grade', content: '10% - 15% slope' }
       ]} />
-      <ChecklistBox title="Common Garage Obstacles" items={[
-        { text: 'Low ceiling heights (under 7 feet)', checked: true },
-        { text: 'Tight spiral ramps with sharp turns', checked: true },
-        { text: 'Narrow parking lanes and pillars', checked: true },
-        { text: 'Speed bumps and drainage channels', checked: true }
+      <InfoListBox title="Common Garage Obstacles" items={[
+        { text: 'Low ceiling heights (under 7 feet)', included: true },
+        { text: 'Tight spiral ramps with sharp turns', included: true },
+        { text: 'Narrow parking lanes and pillars', included: true },
+        { text: 'Speed bumps and drainage channels', included: true }
       ]} />
 
       <MidArticleCTA />

@@ -2,7 +2,7 @@ import BlogPostTemplate, {
   IntroText,
   SectionHeading,
   IconBulletList,
-  ChecklistBox,
+  InfoListBox,
   CalloutBox,
   TwoColumnGrid,
   StepProcess,
@@ -203,13 +203,13 @@ const ConstructionEquipmentHauling = () => {
         Oversize load transport requires comprehensive safety protocols including escort vehicles, warning systems, and emergency response planning. These measures protect both the transported equipment and other road users during transit.
       </p>
 
-      <ChecklistBox
+      <InfoListBox
         title="Escort Requirements by Load Size"
         items={[
-          { text: "Single Rear Escort: Loads 10-12 feet wide or 100-125 feet long", checked: true },
-          { text: "Front and Rear Escorts: Loads over 12 feet wide or 125 feet long", checked: true },
-          { text: "Police Escort: Loads over 150,000 pounds or blocking traffic", checked: true },
-          { text: "Utility Coordination: Height exceeding 15 feet 6 inches", checked: true }
+          { text: "Single Rear Escort: Loads 10-12 feet wide or 100-125 feet long", included: true },
+          { text: "Front and Rear Escorts: Loads over 12 feet wide or 125 feet long", included: true },
+          { text: "Police Escort: Loads over 150,000 pounds or blocking traffic", included: true },
+          { text: "Utility Coordination: Height exceeding 15 feet 6 inches", included: true }
         ]}
       />
 

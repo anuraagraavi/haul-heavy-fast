@@ -1,7 +1,7 @@
 import BlogPostTemplate, {
   SectionHeading,
   IconBulletList,
-  ChecklistBox,
+  InfoListBox,
   CalloutBox,
   TwoColumnGrid,
   StepProcess,
@@ -119,12 +119,12 @@ const CHPTowingCalifornia = () => {
       <p>
         CHP-contracted towing companies follow regulated fee schedules, but costs add up quickly:
       </p>
-      <ChecklistBox title="Typical CHP Towing Fees" items={[
-        { text: 'Basic tow: $250-350 (varies by vehicle size)', checked: true },
-        { text: 'Daily storage: $50-75 per day', checked: true },
-        { text: 'After-hours release fee: $50-100', checked: true },
-        { text: 'Administrative fee: $50-75', checked: true },
-        { text: 'Dolly/equipment fees: $25-75', checked: false }
+      <InfoListBox title="Typical CHP Towing Fees" items={[
+        { text: 'Basic tow: $250-350 (varies by vehicle size)', included: true },
+        { text: 'Daily storage: $50-75 per day', included: true },
+        { text: 'After-hours release fee: $50-100', included: true },
+        { text: 'Administrative fee: $50-75', included: true },
+        { text: 'Dolly/equipment fees: $25-75 (if needed)', included: false }
       ]} />
 
       <CalloutBox type="legal" title="Regulated Rates">
