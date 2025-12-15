@@ -2,7 +2,7 @@ import BlogPostTemplate, {
   IntroText,
   SectionHeading,
   IconBulletList,
-  ChecklistBox,
+  InfoListBox,
   CalloutBox,
   StepProcess,
   MidArticleCTA,
@@ -156,24 +156,24 @@ const CarTowedSanFrancisco = () => {
         All vehicles towed by SFMTA and most SFPD tows go to the AutoReturn facility. Here's what you need to know:
       </p>
 
-      <ChecklistBox
+      <InfoListBox
         title="SF Impound Lot Details"
         items={[
-          { text: "Location: 450 7th Street, San Francisco, CA 94103", checked: true },
-          { text: "Hours: Open 24 hours, 7 days a week", checked: true },
-          { text: "Phone: 415-865-8200", checked: true },
-          { text: "Payment: Credit, debit, cash accepted", checked: true }
+          { text: "Location: 450 7th Street, San Francisco, CA 94103", included: true },
+          { text: "Hours: Open 24 hours, 7 days a week", included: true },
+          { text: "Phone: 415-865-8200", included: true },
+          { text: "Payment: Credit, debit, cash accepted", included: true }
         ]}
       />
 
-      <ChecklistBox
+      <InfoListBox
         title="Documents to Bring"
         items={[
-          { text: "Valid government-issued photo ID", checked: true },
-          { text: "Current vehicle registration", checked: true },
-          { text: "Proof of insurance", checked: true },
-          { text: "Payment method for all fees", checked: true },
-          { text: "Authorization letter (if picking up for someone else)", checked: false }
+          { text: "Valid government-issued photo ID", included: true },
+          { text: "Current vehicle registration", included: true },
+          { text: "Proof of insurance", included: true },
+          { text: "Payment method for all fees", included: true },
+          { text: "Authorization letter (if picking up for someone else)", included: false }
         ]}
       />
 
@@ -262,15 +262,15 @@ const CarTowedSanFrancisco = () => {
         San Francisco has some of the strictest parking enforcement in California. Here's how to protect yourself:
       </p>
 
-      <ChecklistBox
+      <InfoListBox
         title="SF Parking Survival Checklist"
         items={[
-          { text: "Check ALL signs at your parking spot - look up and down the block", checked: true },
-          { text: "Set phone reminders for street sweeping days", checked: true },
-          { text: "Use the SFMTA parking app to track meter time", checked: true },
-          { text: "Never park in permit zones without the proper permit", checked: true },
-          { text: "Avoid blocking driveways, fire hydrants, or bike lanes", checked: true },
-          { text: "Move your car before posted construction or event restrictions", checked: true }
+          { text: "Check ALL signs at your parking spot - look up and down the block", included: true },
+          { text: "Set phone reminders for street sweeping days", included: true },
+          { text: "Use the SFMTA parking app to track meter time", included: true },
+          { text: "Never park in permit zones without the proper permit", included: true },
+          { text: "Avoid blocking driveways, fire hydrants, or bike lanes", included: true },
+          { text: "Move your car before posted construction or event restrictions", included: true }
         ]}
       />
 

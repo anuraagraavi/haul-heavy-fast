@@ -2,7 +2,7 @@ import BlogPostTemplate, {
   IntroText,
   SectionHeading,
   StepProcess,
-  ChecklistBox,
+  InfoListBox,
   CalloutBox,
   TwoColumnGrid,
   MidArticleCTA,
@@ -79,11 +79,11 @@ const BoxTruckTowingSanFrancisco = () => {
 
       <SectionHeading id="towing-equipment-needed">Towing Equipment Needed</SectionHeading>
       <p>Box trucks require <Link to="/medium-duty" className="text-primary hover:underline">medium-duty towing equipment</Link>.</p>
-      <ChecklistBox title="Medium-Duty Towing Equipment" items={[
-        { text: 'Medium-duty wrecker (25,000+ lb capacity)', checked: true },
-        { text: 'Flatbed carrier for non-running vehicles', checked: true },
-        { text: 'Wheel-lift system for short-distance tows', checked: true },
-        { text: 'Air brake equipment for air-braked trucks', checked: true }
+      <InfoListBox title="Medium-Duty Towing Equipment" items={[
+        { text: 'Medium-duty wrecker (25,000+ lb capacity)', included: true },
+        { text: 'Flatbed carrier for non-running vehicles', included: true },
+        { text: 'Wheel-lift system for short-distance tows', included: true },
+        { text: 'Air brake equipment for air-braked trucks', included: true }
       ]} />
       <BlogFigure image={{ src: midImage, alt: 'Medium duty tow truck for box truck recovery', caption: 'Medium-duty wreckers are designed for commercial vehicle recovery' }} />
 

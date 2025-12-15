@@ -84,7 +84,7 @@ export const MidArticleCTA = ({ className }: MidArticleCTAProps) => (
         </p>
         <Button 
           variant="default" 
-          className="bg-primary hover:bg-primary/90"
+          className="bg-primary hover:bg-primary/90 text-primary-foreground"
           asChild
         >
           <a href="tel:650-881-2400">

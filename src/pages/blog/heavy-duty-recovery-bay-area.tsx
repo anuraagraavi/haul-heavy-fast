@@ -1,7 +1,7 @@
 import BlogPostTemplate, {
   SectionHeading,
   IconBulletList,
-  ChecklistBox,
+  InfoListBox,
   CalloutBox,
   TwoColumnGrid,
   StepProcess,

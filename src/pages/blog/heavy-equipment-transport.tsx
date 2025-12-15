@@ -2,7 +2,7 @@ import BlogPostTemplate, {
   IntroText,
   SectionHeading,
   IconBulletList,
-  ChecklistBox,
+  InfoListBox,
   CalloutBox,
   TwoColumnGrid,
   MidArticleCTA,
@@ -213,17 +213,17 @@ const HeavyEquipmentTransport = () => {
         Proper preparation ensures safe transport and prevents damage to your valuable equipment:
       </p>
 
-      <ChecklistBox
+      <InfoListBox
         title="Owner Preparation Checklist"
         items={[
-          { text: "Clean equipment of debris and fluids", checked: true },
-          { text: "Secure loose parts and attachments", checked: true },
-          { text: "Document existing damage with photos", checked: true },
-          { text: "Provide operation manuals if needed", checked: true },
-          { text: "Drain fluids if required", checked: true },
-          { text: "Remove or secure glass and mirrors", checked: true },
-          { text: "Verify equipment dimensions and weight", checked: true },
-          { text: "Coordinate access at pickup/delivery", checked: true }
+          { text: "Clean equipment of debris and fluids", included: true },
+          { text: "Secure loose parts and attachments", included: true },
+          { text: "Document existing damage with photos", included: true },
+          { text: "Provide operation manuals if needed", included: true },
+          { text: "Drain fluids if required", included: true },
+          { text: "Remove or secure glass and mirrors", included: true },
+          { text: "Verify equipment dimensions and weight", included: true },
+          { text: "Coordinate access at pickup/delivery", included: true }
         ]}
       />
 

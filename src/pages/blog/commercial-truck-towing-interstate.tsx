@@ -2,7 +2,7 @@ import BlogPostTemplate, {
   SectionHeading,
   IntroText,
   IconBulletList,
-  ChecklistBox,
+  InfoListBox,
   CalloutBox,
   TwoColumnGrid,
   StepProcess,
@@ -99,14 +99,14 @@ const CommercialTruckTowingInterstate = () => {
         public safety and maintain traffic flow on critical transportation corridors.
       </p>
 
-      <ChecklistBox 
+      <InfoListBox 
         title="Essential DOT Requirements for Commercial Towing"
         items={[
-          { text: 'Valid commercial driver\'s license (CDL) for operators', checked: true },
-          { text: 'Proper insurance coverage ($1M+ liability minimum)', checked: true },
-          { text: 'Equipment safety inspections and certifications', checked: true },
-          { text: 'Traffic management and safety protocol training', checked: true },
-          { text: 'Hazardous materials handling certification when applicable', checked: true }
+          { text: 'Valid commercial driver\'s license (CDL) for operators', included: true },
+          { text: 'Proper insurance coverage ($1M+ liability minimum)', included: true },
+          { text: 'Equipment safety inspections and certifications', included: true },
+          { text: 'Traffic management and safety protocol training', included: true },
+          { text: 'Hazardous materials handling certification when applicable', included: true }
         ]}
       />
 
@@ -201,15 +201,15 @@ const CommercialTruckTowingInterstate = () => {
         priority service, and dedicated account management.
       </p>
 
-      <ChecklistBox 
+      <InfoListBox 
         title="Fleet Partnership Benefits"
         items={[
-          { text: '24/7 priority emergency response', checked: true },
-          { text: 'Dedicated commercial dispatch line', checked: true },
-          { text: 'Volume pricing discounts', checked: true },
-          { text: 'Direct insurance billing', checked: true },
-          { text: 'Dedicated account manager', checked: true },
-          { text: 'Monthly reporting and analytics', checked: true }
+          { text: '24/7 priority emergency response', included: true },
+          { text: 'Dedicated commercial dispatch line', included: true },
+          { text: 'Volume pricing discounts', included: true },
+          { text: 'Direct insurance billing', included: true },
+          { text: 'Dedicated account manager', included: true },
+          { text: 'Monthly reporting and analytics', included: true }
         ]}
       />
 

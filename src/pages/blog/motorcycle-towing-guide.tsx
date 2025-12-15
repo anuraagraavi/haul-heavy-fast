@@ -2,7 +2,7 @@ import BlogPostTemplate, {
   IntroText,
   SectionHeading,
   IconBulletList,
-  ChecklistBox,
+  InfoListBox,
   CalloutBox,
   TwoColumnGrid,
   MidArticleCTA,
@@ -198,17 +198,17 @@ const MotorcycleTowingGuide = () => {
         Not all towing services are equipped for motorcycle transport. Choosing the right provider ensures professional handling and prevents costly damage to your bike.
       </p>
 
-      <ChecklistBox
+      <InfoListBox
         title="Essential Service Qualifications"
         items={[
-          { text: "Specialized motorcycle equipment", checked: true },
-          { text: "Experienced motorcycle handlers", checked: true },
-          { text: "Proper insurance coverage", checked: true },
-          { text: "24/7 emergency availability", checked: true },
-          { text: "Transparent pricing policies", checked: true },
-          { text: "Local Bay Area knowledge", checked: true },
-          { text: "Professional certifications", checked: true },
-          { text: "Customer service excellence", checked: true }
+          { text: "Specialized motorcycle equipment", included: true },
+          { text: "Experienced motorcycle handlers", included: true },
+          { text: "Proper insurance coverage", included: true },
+          { text: "24/7 emergency availability", included: true },
+          { text: "Transparent pricing policies", included: true },
+          { text: "Local Bay Area knowledge", included: true },
+          { text: "Professional certifications", included: true },
+          { text: "Customer service excellence", included: true }
         ]}
       />
 
