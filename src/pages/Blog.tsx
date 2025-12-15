@@ -29,6 +29,7 @@ import towingTechnologyImage from "@/assets/blog-towing-technology.jpg";
 
 const BlogNew = () => {
   const [email, setEmail] = useState("");
+  const [activeCategory, setActiveCategory] = useState("All Articles");
   const { toast } = useToast();
 
   const categories = [
@@ -372,7 +373,16 @@ const BlogNew = () => {
               </p>
               <div className="flex flex-wrap justify-center gap-2 mb-8">
                 {categories.map((category) => (
-                  <Badge key={category} variant="secondary" className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors">
+                  <Badge 
+                    key={category} 
+                    variant={activeCategory === category ? "default" : "secondary"} 
+                    className={`cursor-pointer transition-colors ${
+                      activeCategory === category 
+                        ? "bg-primary text-primary-foreground" 
+                        : "hover:bg-primary hover:text-primary-foreground"
+                    }`}
+                    onClick={() => setActiveCategory(category)}
+                  >
                     {category}
                   </Badge>
                 ))}
@@ -384,9 +394,20 @@ const BlogNew = () => {
         {/* Latest Articles */}
         <section className="py-16 bg-background">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">Latest Articles</h2>
+            <div className="flex items-center justify-between mb-12">
+              <h2 className="text-3xl font-bold">
+                {activeCategory === "All Articles" ? "Latest Articles" : activeCategory}
+              </h2>
+              {activeCategory !== "All Articles" && (
+                <span className="text-muted-foreground">
+                  {articles.filter(a => a.category === activeCategory).length} article{articles.filter(a => a.category === activeCategory).length !== 1 ? 's' : ''}
+                </span>
+              )}
+            </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {articles.map((article) => (
+              {articles
+                .filter(article => activeCategory === "All Articles" || article.category === activeCategory)
+                .map((article) => (
                 <Link key={article.id} to={`/blog/${article.id}`} className="block">
                   <Card className="group hover:shadow-elevated transition-all duration-300 animate-fade-in">
                     <div className="relative overflow-hidden">
