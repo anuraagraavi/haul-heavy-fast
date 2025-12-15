@@ -10,9 +10,9 @@ import BlogFAQSection from './BlogFAQSection';
 import { 
   RelatedServicesBlock, 
   ServiceAreasBlock, 
-  RelatedArticlesGrid,
-  getRelatedPosts 
+  RelatedArticlesGrid
 } from './BlogRelatedContent';
+import { getRelatedPostsForTemplate } from '@/data/blogRegistry';
 import { StickyMobileCTA, EndArticleCTA } from './BlogCTABlocks';
 import type { BlogPostData } from '@/types/blog';
 
@@ -22,7 +22,7 @@ interface BlogPostTemplateProps {
 }
 
 const BlogPostTemplate = ({ data, children }: BlogPostTemplateProps) => {
-  const relatedPosts = getRelatedPosts(data.slug, data.category, 3);
+  const relatedPosts = getRelatedPostsForTemplate(data.slug, data.category, 3);
 
   return (
     <div className="min-h-screen bg-background">

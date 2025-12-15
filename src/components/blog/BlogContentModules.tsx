@@ -285,17 +285,23 @@ export const StepProcess = ({ steps, className }: StepProcessProps) => (
     {steps.map((step, index) => (
       <div 
         key={step.step}
-        className={cn(
-          "relative pl-12 pb-8",
-          index !== steps.length - 1 && "border-l-2 border-primary/30 ml-4"
-        )}
+        className="relative flex gap-4 pb-8 last:pb-0"
       >
+        {/* Vertical line connecting steps (hidden on last item) */}
+        {index !== steps.length - 1 && (
+          <div 
+            className="absolute left-4 top-10 bottom-0 w-0.5 bg-primary/30" 
+            aria-hidden="true"
+          />
+        )}
+        
         {/* Step number circle */}
-        <div className="absolute left-0 top-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm -translate-x-1/2">
+        <div className="relative z-10 flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">
           {step.step}
         </div>
         
-        <div className="pt-0.5">
+        {/* Content */}
+        <div className="flex-1 pt-0.5 min-w-0">
           <h4 className="font-semibold text-foreground mb-1">{step.title}</h4>
           <p className="text-sm text-muted-foreground">{step.description}</p>
         </div>
