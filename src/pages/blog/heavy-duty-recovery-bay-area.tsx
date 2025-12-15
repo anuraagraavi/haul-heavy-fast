@@ -106,13 +106,13 @@ const HeavyDutyRecoveryBayArea = () => {
       />
 
       <SectionHeading id="common-scenarios">Common Recovery Scenarios</SectionHeading>
-      <ChecklistBox title="Recovery Types We Handle" items={[
-        { text: 'Jackknifed tractor-trailers on highways', checked: true },
-        { text: 'Overturned semi-trucks and buses', checked: true },
-        { text: 'Vehicles in ditches, embankments, or water', checked: true },
-        { text: 'Bridge and overpass incidents', checked: true },
-        { text: 'Multi-vehicle commercial accidents', checked: true },
-        { text: 'Construction equipment breakdowns', checked: true }
+      <InfoListBox title="Recovery Types We Handle" items={[
+        { text: 'Jackknifed tractor-trailers on highways', included: true },
+        { text: 'Overturned semi-trucks and buses', included: true },
+        { text: 'Vehicles in ditches, embankments, or water', included: true },
+        { text: 'Bridge and overpass incidents', included: true },
+        { text: 'Multi-vehicle commercial accidents', included: true },
+        { text: 'Construction equipment breakdowns', included: true }
       ]} />
 
       <MidArticleCTA />

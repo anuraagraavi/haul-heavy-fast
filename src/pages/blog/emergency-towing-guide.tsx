@@ -167,17 +167,17 @@ const EmergencyTowingGuide = () => {
         When you call for emergency towing, having the right information ready speeds up the response process:
       </p>
 
-      <ChecklistBox
+      <InfoListBox
         title="Essential Information Checklist"
         items={[
-          { text: "Exact location or nearest cross street", checked: true },
-          { text: "Vehicle make, model, year, color", checked: true },
-          { text: "Nature of the problem", checked: true },
-          { text: "Preferred destination", checked: true },
-          { text: "Number of passengers", checked: true },
-          { text: "Special circumstances", checked: true },
-          { text: "Contact phone number", checked: true },
-          { text: "Insurance information", checked: true }
+          { text: "Exact location or nearest cross street", included: true },
+          { text: "Vehicle make, model, year, color", included: true },
+          { text: "Nature of the problem", included: true },
+          { text: "Preferred destination", included: true },
+          { text: "Number of passengers", included: true },
+          { text: "Special circumstances", included: true },
+          { text: "Contact phone number", included: true },
+          { text: "Insurance information", included: true }
         ]}
       />
 
