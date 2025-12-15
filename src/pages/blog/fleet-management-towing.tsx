@@ -214,17 +214,17 @@ const FleetManagementTowing = () => {
         Establishing clear emergency protocols ensures consistent responses when fleet vehicles require towing services:
       </p>
 
-      <ChecklistBox
+      <InfoListBox
         title="Fleet Emergency Response Checklist"
         items={[
-          { text: "Driver safety assessment", checked: true },
-          { text: "Fleet management notification", checked: true },
-          { text: "Towing service contact using corporate account", checked: true },
-          { text: "Customer communication if delivery affected", checked: true },
-          { text: "Vehicle and cargo documentation", checked: true },
-          { text: "Alternative transportation arrangement", checked: true },
-          { text: "Incident documentation and reporting", checked: true },
-          { text: "Follow-up repair scheduling", checked: true }
+          { text: "Driver safety assessment", included: true },
+          { text: "Fleet management notification", included: true },
+          { text: "Towing service contact using corporate account", included: true },
+          { text: "Customer communication if delivery affected", included: true },
+          { text: "Vehicle and cargo documentation", included: true },
+          { text: "Alternative transportation arrangement", included: true },
+          { text: "Incident documentation and reporting", included: true },
+          { text: "Follow-up repair scheduling", included: true }
         ]}
       />
 

@@ -191,23 +191,23 @@ const CommercialVehicleUrbanRecovery = () => {
         Commercial vehicle recovery in tight urban spaces requires specialized equipment designed to operate efficiently while minimizing space requirements and traffic disruption.
       </p>
 
-      <ChecklistBox
+      <InfoListBox
         title="Heavy-Duty Recovery Equipment"
         items={[
-          { text: "Rotator tow trucks for complex positioning", checked: true },
-          { text: "Heavy-duty wreckers (25-75 ton capacity)", checked: true },
-          { text: "Lowboy trailers for transport", checked: true },
-          { text: "Hydraulic equipment for vehicle uprighting", checked: true }
+          { text: "Rotator tow trucks for complex positioning", included: true },
+          { text: "Heavy-duty wreckers (25-75 ton capacity)", included: true },
+          { text: "Lowboy trailers for transport", included: true },
+          { text: "Hydraulic equipment for vehicle uprighting", included: true }
         ]}
       />
 
-      <ChecklistBox
+      <InfoListBox
         title="Traffic Management Equipment"
         items={[
-          { text: "Arrow boards and message signs", checked: true },
-          { text: "Traffic cones and portable barriers", checked: true },
-          { text: "High-visibility lighting systems", checked: true },
-          { text: "Communication and coordination systems", checked: true }
+          { text: "Arrow boards and message signs", included: true },
+          { text: "Traffic cones and portable barriers", included: true },
+          { text: "High-visibility lighting systems", included: true },
+          { text: "Communication and coordination systems", included: true }
         ]}
       />
 

@@ -141,17 +141,17 @@ const WinterTowingPreparedness = () => {
         Even with proper preparation, unexpected situations can arise. Having an emergency kit specifically designed for Bay Area conditions can make the difference between a minor delay and a major problem.
       </p>
 
-      <ChecklistBox
+      <InfoListBox
         title="Emergency Kit Essentials"
         items={[
-          { text: "Jumper cables or portable jump starter", checked: true },
-          { text: "Waterproof flashlight with extra batteries", checked: true },
-          { text: "Emergency blankets and warm clothing", checked: true },
-          { text: "Non-perishable snacks and water", checked: true },
-          { text: "Multi-tool or basic toolkit", checked: true },
-          { text: "Rain gear and towels", checked: true },
-          { text: "Reflective triangles or flares", checked: true },
-          { text: "Portable phone charger", checked: true }
+          { text: "Jumper cables or portable jump starter", included: true },
+          { text: "Waterproof flashlight with extra batteries", included: true },
+          { text: "Emergency blankets and warm clothing", included: true },
+          { text: "Non-perishable snacks and water", included: true },
+          { text: "Multi-tool or basic toolkit", included: true },
+          { text: "Rain gear and towels", included: true },
+          { text: "Reflective triangles or flares", included: true },
+          { text: "Portable phone charger", included: true }
         ]}
       />
 
