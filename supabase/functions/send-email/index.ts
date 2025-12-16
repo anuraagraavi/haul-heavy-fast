@@ -86,11 +86,16 @@ function validateAttachmentPath(path: string): boolean {
   return path.startsWith(ALLOWED_STORAGE_PATH_PREFIX);
 }
 
-// Extract path from Supabase storage URL
-function extractStoragePath(url: string): string | null {
-  const pattern = /\/storage\/v1\/object\/(?:public|sign)\/media\/(.+?)(?:\?|$)/;
-  const match = url.match(pattern);
-  return match ? match[1] : null;
+// Extract path from Supabase storage URL or return direct path
+function extractStoragePath(urlOrPath: string): string | null {
+  // Check if it's a URL
+  if (urlOrPath.startsWith('http')) {
+    const pattern = /\/storage\/v1\/object\/(?:public|sign)\/media\/(.+?)(?:\?|$)/;
+    const match = urlOrPath.match(pattern);
+    return match ? match[1] : null;
+  }
+  // It's already a direct path
+  return urlOrPath;
 }
 
 const handler = async (req: Request): Promise<Response> => {

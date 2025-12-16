@@ -33,3 +33,6 @@ enable_signup = true
 
 [functions.send-email]
 verify_jwt = false
+
+[functions.upload-file]
+verify_jwt = false

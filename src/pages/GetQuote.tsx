@@ -42,27 +42,52 @@ const GetQuote = () => {
     
     if (files.length === 0) return;
 
+    // Client-side validation before upload
+    const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
+    const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'application/pdf'];
+    
+    for (const file of files) {
+      if (file.size > MAX_FILE_SIZE) {
+        toast({
+          title: "File Too Large",
+          description: `${file.name} exceeds 10MB limit.`,
+          variant: "destructive",
+        });
+        return;
+      }
+      if (!ALLOWED_TYPES.includes(file.type)) {
+        toast({
+          title: "Invalid File Type",
+          description: `${file.name} is not an allowed file type. Only images and PDFs are accepted.`,
+          variant: "destructive",
+        });
+        return;
+      }
+    }
+
     try {
       const uploadPromises = files.map(async (file) => {
-        const fileExt = file.name.split('.').pop();
-        const fileName = `${Date.now()}-${Math.random().toString(36).substring(2)}.${fileExt}`;
-        const filePath = `quote-attachments/${fileName}`;
+        const formData = new FormData();
+        formData.append('file', file);
 
-        const { error } = await supabase.storage
-          .from('media')
-          .upload(filePath, file);
+        const response = await supabase.functions.invoke('upload-file', {
+          body: formData,
+        });
 
-        if (error) throw error;
+        if (response.error) {
+          throw new Error(response.error.message || 'Upload failed');
+        }
 
-        const { data } = supabase.storage
-          .from('media')
-          .getPublicUrl(filePath);
+        if (!response.data?.path) {
+          throw new Error('No file path returned');
+        }
 
-        return data.publicUrl;
+        // Return the storage path (not URL) - send-email will handle access
+        return response.data.path;
       });
 
-      const urls = await Promise.all(uploadPromises);
-      setFileUrls(urls);
+      const paths = await Promise.all(uploadPromises);
+      setFileUrls(paths);
     } catch (error) {
       console.error('Error uploading files:', error);
       toast({
