@@ -81,8 +81,16 @@ function validateRecipients(to: string | string[]): boolean {
   return recipients.every(email => ALLOWED_RECIPIENTS.includes(email));
 }
 
-function validateAttachmentUrl(url: string): boolean {
-  return url.startsWith(ALLOWED_STORAGE_URL);
+// SECURITY: Validate attachment path is from allowed folder
+function validateAttachmentPath(path: string): boolean {
+  return path.startsWith(ALLOWED_STORAGE_PATH_PREFIX);
+}
+
+// Extract path from Supabase storage URL
+function extractStoragePath(url: string): string | null {
+  const pattern = /\/storage\/v1\/object\/(?:public|sign)\/media\/(.+?)(?:\?|$)/;
+  const match = url.match(pattern);
+  return match ? match[1] : null;
 }
 
 const handler = async (req: Request): Promise<Response> => {
@@ -243,7 +251,7 @@ Sent from Heavy Haulers website newsletter signup
         break;
     }
 
-    // SECURITY: Process attachments with strict URL validation
+    // SECURITY: Process attachments using Supabase storage (private bucket)
     const attachments = [];
     if (emailData.attachments && emailData.attachments.length > 0) {
       // SECURITY: Limit attachment count
@@ -253,45 +261,60 @@ Sent from Heavy Haulers website newsletter signup
       console.log("Processing attachments:", attachmentsToProcess.length);
       
       for (const url of attachmentsToProcess) {
-        // SECURITY: Validate attachment URL is from Supabase storage only
-        if (!validateAttachmentUrl(url)) {
-          console.error("Blocked unauthorized attachment URL:", url);
-          continue; // Skip invalid URLs instead of failing entire request
+        // Extract path from URL
+        const storagePath = extractStoragePath(url);
+        if (!storagePath) {
+          console.error("Could not extract storage path from URL:", url);
+          continue;
+        }
+        
+        // SECURITY: Validate attachment path is in allowed folder
+        if (!validateAttachmentPath(storagePath)) {
+          console.error("Blocked unauthorized attachment path:", storagePath);
+          continue;
         }
         
         try {
-          console.log("Fetching attachment from validated URL");
-          const response = await fetch(url, {
-            signal: AbortSignal.timeout(10000) // 10 second timeout
-          });
+          console.log("Downloading attachment from storage:", storagePath);
           
-          if (response.ok) {
-            const contentType = response.headers.get('content-type');
-            const allowedTypes = ['image/', 'application/pdf'];
-            
-            // SECURITY: Validate content type
-            if (!allowedTypes.some(type => contentType?.startsWith(type))) {
-              console.error('Invalid content type for attachment:', contentType);
-              continue;
-            }
-            
-            const buffer = await response.arrayBuffer();
-            
-            // SECURITY: Enforce size limit (10MB per attachment)
-            if (buffer.byteLength > 10 * 1024 * 1024) {
-              console.error('Attachment too large:', buffer.byteLength);
-              continue;
-            }
-            
-            const filename = url.split('/').pop()?.split('?')[0] || 'attachment';
-            console.log("Successfully processed attachment:", filename, "Size:", buffer.byteLength);
-            attachments.push({
-              filename,
-              content: new Uint8Array(buffer),
-            });
-          } else {
-            console.error('Failed to fetch attachment:', response.status, response.statusText);
+          // Use Supabase client with service role to access private bucket
+          const { data, error } = await supabase.storage
+            .from('media')
+            .download(storagePath);
+          
+          if (error) {
+            console.error('Failed to download attachment:', error.message);
+            continue;
           }
+          
+          if (!data) {
+            console.error('No data returned for attachment');
+            continue;
+          }
+          
+          const contentType = data.type;
+          const allowedTypes = ['image/', 'application/pdf'];
+          
+          // SECURITY: Validate content type
+          if (!allowedTypes.some(type => contentType?.startsWith(type))) {
+            console.error('Invalid content type for attachment:', contentType);
+            continue;
+          }
+          
+          const buffer = await data.arrayBuffer();
+          
+          // SECURITY: Enforce size limit (10MB per attachment)
+          if (buffer.byteLength > 10 * 1024 * 1024) {
+            console.error('Attachment too large:', buffer.byteLength);
+            continue;
+          }
+          
+          const filename = storagePath.split('/').pop() || 'attachment';
+          console.log("Successfully processed attachment:", filename, "Size:", buffer.byteLength);
+          attachments.push({
+            filename,
+            content: new Uint8Array(buffer),
+          });
         } catch (attachmentError) {
           console.error('Error processing attachment:', attachmentError);
         }
