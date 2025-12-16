@@ -1,7 +1,13 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { Resend } from "npm:resend@2.0.0";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.55.0";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
+
+// Initialize Supabase client with service role for storage access
+const supabaseUrl = Deno.env.get("SUPABASE_URL") ?? "";
+const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "";
+const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -15,8 +21,8 @@ const ALLOWED_RECIPIENTS = [
   'heavyhaulers.ca@gmail.com'
 ];
 
-// SECURITY: Supabase storage URL for attachment validation
-const ALLOWED_STORAGE_URL = 'https://tkesqtvmbtcxrekmflkr.supabase.co/storage/v1/object/public/media/';
+// SECURITY: Allowed storage path prefix for attachment validation
+const ALLOWED_STORAGE_PATH_PREFIX = 'quote-attachments/';
 
 // SECURITY: Simple in-memory rate limiting (resets on function restart)
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
