@@ -44,6 +44,7 @@ import FreewayTowingBayArea from "./pages/blog/freeway-towing-bay-area";
 import CHPTowingCalifornia from "./pages/blog/chp-towing-california";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
+ import LandingLightMedium from "./pages/LandingLightMedium";
 
 
 const queryClient = new QueryClient();
@@ -91,6 +92,7 @@ const App = () => (
           <Route path="/blog/heavy-duty-recovery-bay-area" element={<HeavyDutyRecoveryBayArea />} />
           <Route path="/blog/freeway-towing-bay-area" element={<FreewayTowingBayArea />} />
           <Route path="/blog/chp-towing-california" element={<CHPTowingCalifornia />} />
+           <Route path="/towing-services" element={<LandingLightMedium />} />
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/privacy-policy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
