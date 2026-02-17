@@ -12,6 +12,25 @@ import { useToast } from "@/hooks/use-toast";
 import { submitContactForm } from "@/lib/formSubmission";
 import { useNavigate } from "react-router-dom";
 
+const dispatchAreas = [
+  {
+    area: "Peninsula / San Mateo / Brisbane",
+    phone: "650-881-2400",
+  },
+  {
+    area: "East Bay (San Leandro / Hayward)",
+    phone: "510-800-3800",
+  },
+  {
+    area: "South Bay (San Jose)",
+    phone: "408-800-3800",
+  },
+  {
+    area: "Central Valley (Stockton)",
+    phone: "916-701-2200",
+  },
+];
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -53,14 +72,6 @@ const Contact = () => {
 
   const contactMethods = [
     {
-      icon: Phone,
-      title: "Emergency Dispatch",
-      description: "24/7 emergency towing and recovery",
-      action: "tel:650-881-2400",
-      label: "650-881-2400",
-      urgent: true
-    },
-    {
       icon: MessageCircle,
       title: "Contact Form",
       description: "Quick responses for non-emergency inquiries",
@@ -88,22 +99,22 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Contact Heavy Haulers - 24/7 Emergency Towing San Francisco Bay Area | Call (650) 881-2400</title>
-        <meta name="description" content="Contact Heavy Haulers San Francisco for immediate 24/7 emergency towing, commercial fleet services, and professional vehicle recovery throughout San Francisco, San Mateo, Alameda, and Santa Clara counties. Call (650) 881-2400 for fastest response." />
-        <meta name="keywords" content="contact emergency towing San Francisco, 24/7 towing dispatch Bay Area, Heavy Haulers contact information, professional towing company San Francisco, fleet towing contracts, emergency roadside assistance contact" />
+        <title>Contact Heavy Tow Pro - 24/7 Emergency Towing San Francisco Bay Area | Call (650) 881-2400</title>
+        <meta name="description" content="Contact Heavy Tow Pro for immediate 24/7 emergency towing, commercial fleet services, and professional vehicle recovery throughout San Francisco, San Mateo, Alameda, Santa Clara, and San Joaquin counties." />
+        <meta name="keywords" content="contact emergency towing San Francisco, 24/7 towing dispatch Bay Area, Heavy Tow Pro contact information, professional towing company San Francisco, fleet towing contracts, emergency roadside assistance contact" />
         <link rel="canonical" href="https://heavytowpro.com/contact" />
         
         {/* Open Graph tags */}
-        <meta property="og:title" content="Contact Heavy Haulers - 24/7 Towing Services San Francisco" />
-        <meta property="og:description" content="Contact Heavy Haulers for professional towing services in San Francisco Bay Area. 24/7 emergency dispatch, fleet contracts, and transparent pricing." />
+        <meta property="og:title" content="Contact Heavy Tow Pro - 24/7 Towing Services San Francisco" />
+        <meta property="og:description" content="Contact Heavy Tow Pro for professional towing services in San Francisco Bay Area. 24/7 emergency dispatch, fleet contracts, and transparent pricing." />
         <meta property="og:url" content="https://heavytowpro.com/contact" />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="en_US" />
         
         {/* Twitter Card tags */}
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="Contact Heavy Haulers - 24/7 Towing Services San Francisco" />
-        <meta name="twitter:description" content="Contact Heavy Haulers for professional towing services in San Francisco Bay Area. 24/7 emergency dispatch available." />
+        <meta name="twitter:title" content="Contact Heavy Tow Pro - 24/7 Towing Services San Francisco" />
+        <meta name="twitter:description" content="Contact Heavy Tow Pro for professional towing services in San Francisco Bay Area. 24/7 emergency dispatch available." />
         
         {/* Local business geo-targeting */}
         <meta name="geo.region" content="US-CA" />
@@ -111,46 +122,37 @@ const Contact = () => {
         <meta name="geo.position" content="37.7749;-122.4194" />
         <meta name="ICBM" content="37.7749, -122.4194" />
         
-        {/* Enhanced Schema.org JSON-LD for Contact Page with Multiple Types */}
+        {/* Enhanced Schema.org JSON-LD */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ContactPage",
             "mainEntity": {
               "@type": "LocalBusiness",
-              "name": "Heavy Haulers San Francisco",
+              "name": "Heavy Tow Pro",
               "description": "Professional 24/7 emergency towing and recovery services in San Francisco Bay Area",
               "url": "https://heavytowpro.com",
               "telephone": "+1-650-881-2400",
               "email": "dispatch@heavytowpro.com",
               "address": {
                 "@type": "PostalAddress",
-                "addressLocality": "San Francisco",
+                "streetAddress": "351 Industrial Way",
+                "addressLocality": "Brisbane",
                 "addressRegion": "CA",
+                "postalCode": "94005",
                 "addressCountry": "US"
               },
               "geo": {
                 "@type": "GeoCoordinates",
-                "latitude": "37.7749",
-                "longitude": "-122.4194"
+                "latitude": "37.6879",
+                "longitude": "-122.3999"
               },
               "areaServed": [
-                {
-                  "@type": "Place",
-                  "name": "San Francisco County, CA"
-                },
-                {
-                  "@type": "Place", 
-                  "name": "San Mateo County, CA"
-                },
-                {
-                  "@type": "Place",
-                  "name": "Alameda County, CA" 
-                },
-                {
-                  "@type": "Place",
-                  "name": "Santa Clara County, CA"
-                }
+                { "@type": "Place", "name": "San Francisco County, CA" },
+                { "@type": "Place", "name": "San Mateo County, CA" },
+                { "@type": "Place", "name": "Alameda County, CA" },
+                { "@type": "Place", "name": "Santa Clara County, CA" },
+                { "@type": "Place", "name": "San Joaquin County, CA" }
               ],
               "serviceType": ["Emergency Towing", "Heavy Duty Towing", "Light Duty Towing", "Medium Duty Towing", "Fleet Services", "Vehicle Recovery"],
               "openingHours": "Mo-Su 00:00-24:00",
@@ -160,10 +162,7 @@ const Contact = () => {
                 "@type": "AggregateRating",
                 "ratingValue": "4.8",
                 "reviewCount": "150"
-              },
-              "sameAs": [
-                "https://heavytowpro.com"
-              ]
+              }
             }
           })}
         </script>
@@ -179,7 +178,7 @@ const Contact = () => {
                 "position": 1,
                 "item": {
                   "@id": "https://heavytowpro.com",
-                  "name": "Heavy Haulers San Francisco"
+                  "name": "Heavy Tow Pro"
                 }
               },
               {
@@ -204,11 +203,11 @@ const Contact = () => {
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
                 Contact
                 <span className="bg-gradient-primary bg-clip-text text-transparent ml-2">
-                  Heavy Haulers
+                  Heavy Tow Pro
                 </span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-                Need immediate help? Call our 24/7 emergency dispatch. For general inquiries, 
+                Need immediate help? Call your area's 24/7 emergency dispatch. For general inquiries, 
                 fleet contracts, or to schedule non-emergency services, we're here to help.
               </p>
               <div className="inline-flex items-center space-x-2 bg-card/20 backdrop-blur-sm border border-primary/30 rounded-full px-4 py-2">
@@ -219,52 +218,57 @@ const Contact = () => {
           </div>
         </section>
 
-        {/* Contact Methods */}
+        {/* Emergency Dispatch Area Cards */}
         <section className="py-20">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-16 animate-fade-in-down">
+            <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Get In Touch
+                Emergency Dispatch – Select Your Area
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Choose the best way to reach us based on your needs. For emergencies, 
-                always call our dispatch line for the fastest response.
+                Call the dispatch line closest to you for the fastest response.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 animate-scale-in">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+              {dispatchAreas.map((dispatch) => (
+                <div key={dispatch.phone + dispatch.area} className="bg-card border border-primary/30 bg-primary/5 rounded-2xl p-6 text-center hover:shadow-elevated hover:scale-105 transition-all duration-300">
+                  <div className="w-14 h-14 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <Phone className="w-7 h-7 text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">{dispatch.area}</h3>
+                  <p className="text-sm text-muted-foreground mb-1">24/7 Emergency Dispatch</p>
+                  <p className="text-xl font-bold text-primary mb-4">{dispatch.phone}</p>
+                  <Button variant="hero" className="w-full" asChild>
+                    <a href={`tel:${dispatch.phone}`}>
+                      <Phone className="w-4 h-4 mr-2" />
+                      Call Now
+                    </a>
+                  </Button>
+                </div>
+              ))}
+            </div>
+
+            {/* Other contact methods */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
               {contactMethods.map((method, index) => {
                 const IconComponent = method.icon;
                 return (
-                  <div key={index} className={`bg-card border rounded-2xl p-8 text-center hover:shadow-elevated hover:scale-105 transition-all duration-300 ${method.urgent ? 'border-primary bg-primary/5' : 'border-border'}`}>
-                    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 ${method.urgent ? 'bg-gradient-primary' : 'bg-secondary'}`}>
+                  <div key={index} className="bg-card border border-border rounded-2xl p-8 text-center hover:shadow-elevated hover:scale-105 transition-all duration-300">
+                    <div className="w-16 h-16 bg-secondary rounded-2xl flex items-center justify-center mx-auto mb-6">
                       <IconComponent className="w-8 h-8 text-white" />
                     </div>
                     <h3 className="text-xl font-semibold text-foreground mb-3">{method.title}</h3>
                     <p className="text-muted-foreground mb-6">{method.description}</p>
-                    <Button variant={method.urgent ? "hero" : "outline"} className="w-full" asChild>
+                    <Button variant="outline" className="w-full" asChild>
                       <a href={method.action}>
-                      {method.label}
+                        {method.label}
                       </a>
                     </Button>
                   </div>
                 );
               })}
             </div>
-
-            {/* Quick Emergency Banner */}
-            {/* <div className="bg-gradient-primary rounded-2xl p-8 text-center text-white mb-16 animate-glow">
-              <h3 className="text-2xl font-bold mb-4">Emergency Towing Right Now?</h3>
-              <p className="text-white/90 mb-6">
-                Don't wait - if you're stranded or in an emergency situation, call immediately for priority dispatch.
-              </p>
-              <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-gray-100" asChild>
-                <a href='tel:650-881-2400'>
-                  <Phone className="w-5 h-5 mr-2" />
-                  Call 650-881-2400
-                </a>
-              </Button>
-            </div> */}
           </div>
         </section>
 
@@ -277,7 +281,7 @@ const Contact = () => {
                 <h2 className="text-3xl font-bold text-foreground mb-6">Send Us a Message</h2>
                 <p className="text-muted-foreground mb-8">
                   Use this form for general inquiries, fleet contracts, or to schedule non-emergency services. 
-                  For immediate assistance, please call our dispatch line.
+                  For immediate assistance, please call your area's dispatch line.
                 </p>
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -299,7 +303,7 @@ const Contact = () => {
                         type="tel"
                         value={formData.phone}
                         onChange={(e) => handleInputChange("phone", e.target.value)}
-                        placeholder="650-881-2400"
+                        placeholder="Your phone number"
                         required
                       />
                     </div>
@@ -386,9 +390,9 @@ const Contact = () => {
                     <div className="flex items-start space-x-3 mb-4">
                       <MapPin className="w-5 h-5 text-primary mt-1" />
                       <div>
-                        <h4 className="font-semibold text-foreground mb-2">San Francisco Bay Area</h4>
+                        <h4 className="font-semibold text-foreground mb-2">Bay Area & Central Valley</h4>
                         <p className="text-muted-foreground text-sm">
-                          Serving all of San Francisco, San Mateo, Alameda, and Santa Clara counties
+                          Serving San Francisco, San Mateo, Alameda, Santa Clara, and San Joaquin counties
                         </p>
                       </div>
                     </div>
@@ -397,6 +401,7 @@ const Contact = () => {
                       <p>• San Mateo County - Peninsula communities</p>
                       <p>• Alameda County - East Bay areas</p>
                       <p>• Santa Clara County - Silicon Valley & South Bay</p>
+                      <p>• San Joaquin County - Stockton & surrounding areas</p>
                     </div>
                   </div>
                 </div>

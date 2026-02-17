@@ -1,9 +1,60 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Phone, MessageCircle, MapPin, Clock, Star, CheckCircle } from "lucide-react";
+import { Phone, MessageCircle, MapPin, Clock, Star, CheckCircle, Building2 } from "lucide-react";
 import { Helmet } from "react-helmet";
 import { getMediaUrl } from "@/lib/utils";
+
+const dispatchHubs = [
+  {
+    city: "Brisbane",
+    address: "351 Industrial Way",
+    cityState: "Brisbane, CA 94005",
+    phone: "650-881-2400",
+    hours: "Mon–Fri 8AM–5PM",
+    emergency: "24/7",
+  },
+  {
+    city: "San Leandro",
+    address: "1405 Washington Ave",
+    cityState: "San Leandro, CA 94578",
+    phone: "510-800-3800",
+    hours: "Mon–Fri 8AM–5PM",
+    emergency: "24/7",
+  },
+  {
+    city: "Hayward",
+    address: "2454 Whipple Rd",
+    cityState: "Hayward, CA 94544",
+    phone: "510-800-3800",
+    hours: "Mon–Fri 8AM–5PM",
+    emergency: "24/7",
+  },
+  {
+    city: "San Jose",
+    address: "50 N Sunset Ave",
+    cityState: "San Jose, CA 95116",
+    phone: "408-800-3800",
+    hours: "Mon–Fri 8AM–5PM",
+    emergency: "24/7",
+  },
+  {
+    city: "San Mateo",
+    address: "403 1st Avenue",
+    cityState: "San Mateo, CA 94401",
+    phone: "650-881-2400",
+    hours: "Mon–Fri 8AM–5PM",
+    emergency: "24/7",
+  },
+  {
+    city: "Stockton",
+    address: "3990 N Wilson Way",
+    cityState: "Stockton, CA 95205",
+    phone: "916-701-2200",
+    hours: "Mon–Fri 8AM–5PM",
+    emergency: "24/7",
+  },
+];
 
 const Locations = () => {
   const counties = [
@@ -42,7 +93,7 @@ const Locations = () => {
     {
       id: "alameda",
       name: "Alameda County", 
-      phone: "650-881-2400",
+      phone: "510-800-3800",
       description: "Fast response across Alameda County including Oakland, Berkeley, and all East Bay communities.",
       districts: [
         "Oakland", "Hayward", "Berkeley", "Fremont", "San Leandro",
@@ -57,7 +108,7 @@ const Locations = () => {
     {
       id: "santa-clara",
       name: "Santa Clara County",
-      phone: "650-881-2400", 
+      phone: "408-800-3800", 
       description: "Serving Silicon Valley and South Bay with 24/7 dispatch and specialized tech industry vehicle handling.",
       districts: [
         "San Jose", "Santa Clara", "Sunnyvale", "Mountain View", "Palo Alto",
@@ -72,17 +123,56 @@ const Locations = () => {
   ];
 
   const stats = [
-    { value: "4", label: "Counties Served" },
+    { value: "5", label: "Counties Served" },
     { value: "15min", label: "Avg Response Time" },
     { value: "24/7", label: "Emergency Dispatch" },
-    { value: "50+", label: "Cities & Districts" }
+    { value: "60+", label: "Cities & Districts" }
   ];
+
+  const hubSchemas = dispatchHubs.map(hub => ({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": `Heavy Tow Pro – ${hub.city}`,
+    "telephone": `+1-${hub.phone}`,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": hub.address,
+      "addressLocality": hub.city,
+      "addressRegion": "CA",
+      "addressCountry": "US"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "17:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday", "Sunday"],
+        "opens": "00:00",
+        "closes": "23:59",
+        "description": "Emergency services only"
+      }
+    ],
+    "areaServed": {
+      "@type": "Place",
+      "name": `${hub.city}, CA`
+    },
+    "serviceType": ["Emergency Towing", "Heavy Duty Towing", "Light Duty Towing", "Medium Duty Towing"]
+  }));
 
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Bay Area Towing Coverage - Heavy Haulers | 4 Counties Served</title>
-        <meta name="description" content="Professional towing services across San Francisco, San Mateo, Alameda, and Santa Clara counties. 24/7 emergency dispatch with 15-minute average response time." />
+        <title>Bay Area & Central Valley Towing Coverage - Heavy Tow Pro | 5 Counties Served</title>
+        <meta name="description" content="Professional towing services across San Francisco, San Mateo, Alameda, Santa Clara, and San Joaquin counties. 6 dispatch hubs with 24/7 emergency service." />
+        {hubSchemas.map((schema, i) => (
+          <script key={i} type="application/ld+json">
+            {JSON.stringify(schema)}
+          </script>
+        ))}
       </Helmet>
       <Header />
       <main>
@@ -99,8 +189,8 @@ const Locations = () => {
                     </span>
                   </h1>
                   <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-                    Professional towing and recovery services across all major Bay Area counties. 
-                    Local dispatch, rapid response, and comprehensive coverage from San Francisco to Silicon Valley.
+                    Professional towing and recovery services across all major Bay Area counties and the Central Valley. 
+                    Local dispatch, rapid response, and comprehensive coverage from San Francisco to Stockton.
                   </p>
                   
                   {/* Quick Stats */}
@@ -128,12 +218,72 @@ const Locations = () => {
 
                 <div className="bg-card border border-border rounded-2xl overflow-hidden">
                   <img 
-                    src={getMediaUrl("media", "Locations Page.jpg")} 
-                    alt="Bay Area coverage map showing all service areas"
+                    src="/lovable-uploads/a43ad238-af3b-47a8-962f-32c9da2fc727.png" 
+                    alt="Heavy Tow Pro Bay Area coverage - professional towing fleet"
                     className="w-full h-96 object-cover"
                   />
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Official Dispatch Hubs */}
+        <section className="py-20 bg-muted/20">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Official Dispatch Hubs
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                Heavy Tow Pro operates from dedicated dispatch hubs across the Bay Area and Central Valley. Each location routes directly to a local dispatch team for faster response.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {dispatchHubs.map((hub) => (
+                <div key={hub.city} className="bg-card border border-border rounded-2xl p-6 hover:shadow-elevated transition-all duration-300">
+                  <div className="flex items-center space-x-3 mb-4">
+                    <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center">
+                      <Building2 className="w-5 h-5 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold text-foreground">{hub.city}</h3>
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-start space-x-2">
+                      <MapPin className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <div className="text-sm text-muted-foreground">
+                        <p>{hub.address}</p>
+                        <p>{hub.cityState}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Phone className="w-4 h-4 text-primary flex-shrink-0" />
+                      <a href={`tel:${hub.phone}`} className="text-sm text-foreground font-medium hover:text-primary transition-colors">
+                        {hub.phone}
+                      </a>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Clock className="w-4 h-4 text-primary flex-shrink-0" />
+                      <span className="text-sm text-muted-foreground">{hub.hours}</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <span className="w-4 h-4 flex items-center justify-center flex-shrink-0">
+                        <span className="w-2 h-2 bg-success rounded-full animate-pulse" />
+                      </span>
+                      <span className="text-sm text-success font-medium">Emergency: {hub.emergency}</span>
+                    </div>
+                  </div>
+
+                  <Button variant="hero" className="w-full" asChild>
+                    <a href={`tel:${hub.phone}`}>
+                      <Phone className="w-4 h-4 mr-2" />
+                      Call {hub.city} Dispatch
+                    </a>
+                  </Button>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -204,6 +354,35 @@ const Locations = () => {
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* Central Valley Coverage */}
+            <div className="mt-16 scroll-mt-24" id="central-valley">
+              <div className="bg-card border border-border rounded-2xl p-8 md:p-12">
+                <div className="flex items-center space-x-4 mb-6">
+                  <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center">
+                    <MapPin className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl md:text-3xl font-bold text-foreground">Central Valley Coverage</h3>
+                    <p className="text-primary font-medium">916-701-2200</p>
+                  </div>
+                </div>
+                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                  Now serving Stockton and surrounding San Joaquin County with dedicated dispatch and heavy-duty equipment.
+                </p>
+                <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                  <Button variant="hero" asChild>
+                    <a href="tel:916-701-2200">
+                      <Phone className="w-4 h-4 mr-2" />
+                      Call Stockton Dispatch
+                    </a>
+                  </Button>
+                  <Button variant="outline" asChild>
+                    <a href="/get-a-quote">Get Quote for Stockton</a>
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -285,7 +464,7 @@ const Locations = () => {
                 Not Sure If We Cover Your Area?
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Heavy Haulers serves over 50 cities and districts across the Bay Area. 
+                Heavy Tow Pro serves over 60 cities and districts across the Bay Area and Central Valley. 
                 If you're unsure about coverage in your specific location, just give us a call.
               </p>
               <div className="bg-card border border-border rounded-xl p-8">
