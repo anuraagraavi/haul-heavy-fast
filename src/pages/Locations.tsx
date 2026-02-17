@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, MapPin, Clock, Star, CheckCircle, Building2 } from "lucide-react";
 import { Helmet } from "react-helmet";
-import { getMediaUrl } from "@/lib/utils";
+import bayAreaCoverageImg from "@/assets/bay-area-coverage.jpg";
 
 const dispatchHubs = [
   {
@@ -218,8 +218,8 @@ const Locations = () => {
 
                 <div className="bg-card border border-border rounded-2xl overflow-hidden">
                   <img 
-                    src="/lovable-uploads/a43ad238-af3b-47a8-962f-32c9da2fc727.png" 
-                    alt="Heavy Tow Pro Bay Area coverage - professional towing fleet"
+                    src={bayAreaCoverageImg} 
+                    alt="Aerial view of San Francisco Bay Area at sunset showing city skyline and bay bridge"
                     className="w-full h-96 object-cover"
                   />
                 </div>
