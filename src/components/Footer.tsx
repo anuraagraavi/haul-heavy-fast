@@ -74,6 +74,9 @@ const Footer = () => {
                 <Phone className="w-3 h-3 text-primary" />
                 <span className="text-muted-foreground text-sm"><a href='tel:650-881-2400'>650-881-2400</a></span>
               </div>
+              <a href="/contact" className="text-xs text-primary hover:underline transition-colors">
+                Other Dispatch Lines Available
+              </a>
               <div className="flex items-center space-x-2">
                 <Clock className="w-3 h-3 text-primary" />
                 <span className="text-muted-foreground text-sm">24/7 Dispatch</span>
