@@ -4,19 +4,26 @@ import Footer from "@/components/Footer";
 import SEOBreadcrumbs from "@/components/SEOBreadcrumbs";
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, Truck, Building2, Caravan, CheckCircle, Clock, Shield, Wrench } from "lucide-react";
-import { getMediaUrl } from "@/lib/utils";
+import mediumDutyServiceImage from "@/assets/medium-duty-service.jpeg";
+import mediumDutyCommercial from "@/assets/medium-duty-commercial.jpeg";
+import mediumDutyRv from "@/assets/medium-duty-rv.jpeg";
+import mediumDutyRecovery from "@/assets/medium-duty-recovery.jpeg";
+
 const MediumDuty = () => {
   const vehicleTypes = [
     {
       category: "Commercial Vehicles",
+      image: mediumDutyCommercial,
       vehicles: ["Box trucks (up to 26,000 lbs)", "Delivery vans", "Work trucks", "Cargo vans", "Food trucks"]
     },
     {
-      category: "Recreational Vehicles", 
+      category: "Recreational Vehicles",
+      image: mediumDutyRv,
       vehicles: ["Small RVs & motorhomes", "Travel trailers", "Camper vans", "Toy haulers"]
     },
     {
       category: "Specialty Vehicles",
+      image: mediumDutyRecovery,
       vehicles: ["Emergency vehicles", "Municipal trucks", "Utility vehicles", "Medium construction equipment"]
     }
   ];
@@ -180,7 +187,15 @@ const MediumDuty = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {vehicleTypes.map((type, index) => (
-                <div key={index} className="bg-card border border-border rounded-xl p-6">
+                <div key={index} className="bg-card border border-border rounded-xl overflow-hidden">
+                  <img
+                    src={type.image}
+                    alt={type.category}
+                    className="w-full h-48 object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div className="p-6">
                   <h3 className="text-xl font-semibold text-foreground mb-4">{type.category}</h3>
                   <ul className="space-y-2">
                     {type.vehicles.map((vehicle, vehicleIndex) => (
@@ -190,6 +205,7 @@ const MediumDuty = () => {
                       </li>
                     ))}
                   </ul>
+                  </div>
                 </div>
               ))}
             </div>
@@ -274,9 +290,11 @@ const MediumDuty = () => {
                 </div>
                 <div className="bg-card border border-border rounded-2xl overflow-hidden">
                   <img 
-                    src={getMediaUrl("media", "Medium duty tow.jpg")}
+                    src={mediumDutyServiceImage}
                     alt="Medium-duty towing process"
                     className="w-full h-80 object-cover"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
               </div>

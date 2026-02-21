@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { getMediaUrl } from "@/lib/utils";
 import { MapPin, Phone } from "lucide-react";
+import bayAreaCoverageImage from "@/assets/bay-area-coverage.jpg";
 const ServiceAreas = () => {
   const counties = [{
     name: "San Francisco County",
@@ -13,11 +13,11 @@ const ServiceAreas = () => {
   }, {
     name: "Alameda County",
     areas: ["Oakland", "Hayward", "Berkeley", "Fremont", "San Leandro"],
-    phone: "650-881-2400"
+    phone: "510-800-3800"
   }, {
     name: "Santa Clara County",
     areas: ["San Jose", "Santa Clara", "Sunnyvale", "Mountain View", "Palo Alto"],
-    phone: "650-881-2400"
+    phone: "408-800-3800"
   }];
   return <section className="py-20 bg-gradient-subtle">
       <div className="container mx-auto px-4">
@@ -37,9 +37,11 @@ const ServiceAreas = () => {
           {/* Banner Image */}
           <div className="relative mb-16 rounded-2xl overflow-hidden shadow-elevated">
             <img
-              src={getMediaUrl("media", "Home _ Service Areas.jpg")}
+              src={bayAreaCoverageImage}
               alt='Heavy Haulers towing service coverage map San Francisco Bay Area counties including SF, San Mateo, Alameda, Santa Clara'
               className='w-full h-64 md:h-[38rem] object-cover'
+              loading="lazy"
+              decoding="async"
             />
             <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
               

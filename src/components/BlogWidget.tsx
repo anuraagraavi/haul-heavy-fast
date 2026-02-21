@@ -153,6 +153,8 @@ export default function BlogWidget() {
                           src={post.image} 
                           alt={post.title}
                           className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
+                          loading="lazy"
+                          decoding="async"
                         />
                         <Badge className="absolute top-3 left-3 bg-primary/90 text-primary-foreground backdrop-blur-sm text-xs">
                           {post.category}

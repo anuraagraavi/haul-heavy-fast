@@ -15,6 +15,8 @@ const Footer = () => {
               src="/lovable-uploads/a43ad238-af3b-47a8-962f-32c9da2fc727.png" 
               alt="Heavy Haulers San Francisco Bay Area towing company logo" 
               className="h-12 w-auto"
+              loading="lazy"
+              decoding="async"
             />
             <p className="text-muted-foreground">
               Professional towing and recovery services across the San Francisco Bay Area. 

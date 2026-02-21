@@ -86,6 +86,8 @@
                  src={images[selectedImage].src}
                  alt={images[selectedImage].alt}
                  className="w-full h-auto rounded-lg"
+                 loading="lazy"
+                 decoding="async"
                />
                <p className="text-white text-center mt-4">{images[selectedImage].caption}</p>
              </div>

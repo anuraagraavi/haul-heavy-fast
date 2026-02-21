@@ -183,7 +183,7 @@ const Services = () => {
             "@type": "HowTo",
             "name": "How to Get Emergency Towing in San Francisco",
             "description": "Step-by-step guide to getting professional towing services when stranded in San Francisco Bay Area",
-            "image": "https://heavytowpro.com/src/assets/hero-tow-truck.jpg",
+            "image": "https://heavytowpro.com/lovable-uploads/a43ad238-af3b-47a8-962f-32c9da2fc727.png",
             "totalTime": "PT30M",
             "estimatedCost": {
               "@type": "MonetaryAmount",

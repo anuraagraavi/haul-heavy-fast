@@ -4,14 +4,18 @@ import Footer from "@/components/Footer";
 import SEOBreadcrumbs from "@/components/SEOBreadcrumbs";
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, Car, Bike, Crown, Building, CheckCircle, Clock, Shield, Star } from "lucide-react";
-import { getMediaUrl } from "@/lib/utils";
 import InternalLinkOptimizer from "@/components/InternalLinkOptimizer";
+import lightDutyFlatbed from "@/assets/light-duty-flatbed.png";
+import lightDutyMotorcycle from "@/assets/light-duty-motorcycle.png";
+import lightDutyLuxury from "@/assets/light-duty-luxury.jpeg";
+import lightDutyPrivateProperty from "@/assets/light-duty-private-property.jpeg";
+
 const LightDuty = () => {
   const services = [
     {
       id: "flatbed",
       icon: Car,
-      image: getMediaUrl("media", "Light Duty -Flatbed.jpg"),
+      image: lightDutyFlatbed,
       title: "Flatbed Tow Service",
       description: "Secure flatbed transport for vehicles that can't be towed traditionally or need extra protection during transport.",
       benefits: ["No wheel lift damage", "Secure tie-down points", "Weather protection", "Safe for low-clearance vehicles"]
@@ -19,7 +23,7 @@ const LightDuty = () => {
     {
       id: "motorcycle", 
       icon: Bike,
-      image: getMediaUrl("media", "Light Duty - Motorcycle tow.jpg"),
+      image: lightDutyMotorcycle,
       title: "Motorcycle Towing",
       description: "Specialized motorcycle transport with proper tie-down equipment and experienced operators who understand bike handling.",
       benefits: ["Specialized bike restraints", "Experienced operators", "No scratches or damage", "Quick pickup times"]
@@ -27,7 +31,7 @@ const LightDuty = () => {
     {
       id: "exotic",
       icon: Crown,
-      image: getMediaUrl("media", "Light Duty - Exotic Cars.jpg"),
+      image: lightDutyLuxury,
       title: "Luxury & Exotic Car Transport",
       description: "Premium handling for high-value vehicles with soft-tie systems and specialized equipment for low-clearance supercars.",
       benefits: ["Soft-tie protection", "Low-clearance expertise", "Premium insurance", "White-glove service"]
@@ -35,7 +39,7 @@ const LightDuty = () => {
     {
       id: "private-property",
       icon: Building,
-      image: getMediaUrl("media", "Light Duty - Private Property tow.jpg"),
+      image: lightDutyPrivateProperty,
       title: "Private Property Vehicle Removal", 
       description: "Professional removal services for property managers, HOAs, and business owners dealing with unauthorized parking.",
       benefits: ["Legal compliance", "Property manager contracts", "Quick response", "Professional documentation"]
@@ -216,6 +220,8 @@ const LightDuty = () => {
                             src={service.image} 
                             alt={service.title}
                             className="w-full h-64 object-cover"
+                            loading="lazy"
+                            decoding="async"
                           />
                         </div>
                       </div>

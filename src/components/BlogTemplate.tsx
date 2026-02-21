@@ -17,6 +17,7 @@ interface BlogTemplateProps {
   publishDate: string;
   readTime: string;
   author?: string;
+  /** Path only (e.g. /assets/... or /lovable-uploads/...); base URL is prepended for og:image and schema */
   image: string;
   imageAlt: string;
   category?: string;

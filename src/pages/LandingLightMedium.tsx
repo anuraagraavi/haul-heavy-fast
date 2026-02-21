@@ -21,9 +21,9 @@
      "@graph": [
        {
          "@type": "LocalBusiness",
-         "@id": "https://haul-heavy-fast.lovable.app/#organization",
+         "@id": "https://heavytowpro.com/#organization",
          "name": "Heavy Haulers SF",
-         "image": "https://haul-heavy-fast.lovable.app/lovable-uploads/a43ad238-af3b-47a8-962f-32c9da2fc727.png",
+         "image": "https://heavytowpro.com/lovable-uploads/a43ad238-af3b-47a8-962f-32c9da2fc727.png",
          "telephone": "+1-650-881-2400",
          "email": "info@heavyhaulerssf.com",
          "address": {
@@ -37,7 +37,7 @@
            "latitude": "37.7749",
            "longitude": "-122.4194"
          },
-         "url": "https://haul-heavy-fast.lovable.app",
+         "url": "https://heavytowpro.com",
          "priceRange": "$$",
          "openingHoursSpecification": {
            "@type": "OpeningHoursSpecification",

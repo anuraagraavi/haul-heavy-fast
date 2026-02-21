@@ -3,16 +3,16 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, TruckIcon, Settings, Building, Users, CheckCircle, Clock, Shield, Award, Wrench } from "lucide-react";
-import { getMediaUrl } from "@/lib/utils";
+import heavyDutyEquipment from "@/assets/heavy-duty-equipment.jpeg";
+import heavyDutyRecovery from "@/assets/heavy-duty-recovery.jpeg";
+import heavyDutyFleet from "@/assets/heavy-duty-fleet.jpeg";
+
 const HeavyDuty = () => {
   const services = [
     {
       id: "equipment",
       icon: Settings,
-      image: getMediaUrl(
-        "media",
-        "Heavy - Equipment & Machinery Transport.jpg"
-      ),
+      image: heavyDutyEquipment,
       title: "Equipment & Machinery Transport",
       description: "Professional transport of construction equipment, forklifts, industrial machinery, and other heavy equipment that requires specialized handling.",
       capabilities: ["Construction equipment", "Forklifts & warehouse equipment", "Industrial machinery", "Agricultural equipment", "Generator sets"]
@@ -20,7 +20,7 @@ const HeavyDuty = () => {
     {
       id: "recovery",
       icon: Wrench,
-      image: getMediaUrl("media", "Heavy Recovery Operations.jpg"),
+      image: heavyDutyRecovery,
       title: "Heavy Recovery Operations", 
       description: "Complex recovery situations including rollovers, off-road extraction, and accident recovery using rotators and specialized heavy-duty equipment.",
       capabilities: ["Rollover recovery", "Winch-out operations", "Off-road extraction", "Accident scene recovery", "Multi-axle vehicle recovery"]
@@ -28,7 +28,7 @@ const HeavyDuty = () => {
     {
       id: "fleet",
       icon: Building,
-      image: getMediaUrl("media", "Heavy - Fleet & Commercial Accounts.jpg"),
+      image: heavyDutyFleet,
       title: "Fleet & Commercial Accounts",
       description: "Comprehensive B2B towing programs with service level agreements, priority dispatch, and volume pricing for commercial fleets and logistics companies.",
       capabilities: ["Corporate contracts", "Priority SLA agreements", "Volume pricing", "Fleet management support", "Interstate hauling"]
@@ -235,6 +235,8 @@ const HeavyDuty = () => {
                             src={service.image} 
                             alt={service.title}
                             className="w-full h-80 object-cover"
+                            loading="lazy"
+                            decoding="async"
                           />
                         </div>
                       </div>

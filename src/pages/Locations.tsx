@@ -16,7 +16,7 @@ const dispatchHubs = [
   },
   {
     city: "San Leandro",
-    address: "1405 Washington Ave",
+    address: "14305 Washington Ave",
     cityState: "San Leandro, CA 94578",
     phone: "510-800-3800",
     hours: "Mon–Fri 8AM–5PM",
@@ -221,6 +221,8 @@ const Locations = () => {
                     src={bayAreaCoverageImg} 
                     alt="Aerial view of San Francisco Bay Area at sunset showing city skyline and bay bridge"
                     className="w-full h-96 object-cover"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
               </div>

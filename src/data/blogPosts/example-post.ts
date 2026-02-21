@@ -1,5 +1,7 @@
 import type { BlogPostData } from '@/types/blog';
 import exampleHeroImage from '@/assets/blog-emergency-guide.jpg';
+import bayAreaCoverageImage from '@/assets/bay-area-coverage.jpg';
+import heavyDutyServiceImage from '@/assets/heavy-duty-service.jpg';
 
 export const exampleBlogPost: BlogPostData = {
   // SEO Fields
@@ -34,13 +36,13 @@ export const exampleBlogPost: BlogPostData = {
   },
   images: [
     {
-      src: '/src/assets/bay-area-coverage.jpg',
+      src: bayAreaCoverageImage,
       alt: 'Heavy Haulers Bay Area service coverage map',
       caption: 'We cover all major highways and cities across the Bay Area',
       placement: 'after-intro'
     },
     {
-      src: '/src/assets/heavy-duty-service.jpg',
+      src: heavyDutyServiceImage,
       alt: 'Heavy duty tow truck with winch and recovery equipment',
       caption: 'Our fleet includes specialized equipment for any situation',
       placement: 'equipment'

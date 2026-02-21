@@ -204,6 +204,8 @@ const RelatedPosts = ({ currentPostId, category }: RelatedPostsProps): JSX.Eleme
                   src={post.image} 
                   alt={post.title}
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute top-4 left-4">
                   <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-medium">
