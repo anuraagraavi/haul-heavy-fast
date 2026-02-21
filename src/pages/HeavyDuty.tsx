@@ -231,10 +231,12 @@ const HeavyDuty = () => {
                       </div>
                       <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
                         <div className="bg-card border border-border rounded-2xl overflow-hidden">
-                          <img 
-                            src={service.image} 
+                          <img
+                            src={service.image}
                             alt={service.title}
                             className="w-full h-80 object-cover"
+                            width={800}
+                            height={450}
                             loading="lazy"
                             decoding="async"
                           />

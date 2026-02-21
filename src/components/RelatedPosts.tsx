@@ -200,10 +200,12 @@ const RelatedPosts = ({ currentPostId, category }: RelatedPostsProps): JSX.Eleme
           {relatedPosts.map((post) => (
             <div key={post.id} className="bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
               <div className="relative overflow-hidden group">
-                <img 
-                  src={post.image} 
+                <img
+                  src={post.image}
                   alt={post.title}
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  width={400}
+                  height={225}
                   loading="lazy"
                   decoding="async"
                 />

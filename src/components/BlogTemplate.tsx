@@ -115,6 +115,8 @@ const BlogTemplate = ({
                 className="w-full h-64 md:h-80 object-cover rounded-xl mb-8"
                 priority
                 fetchPriority="high"
+                width={1200}
+                height={630}
               />
             </div>
           </div>

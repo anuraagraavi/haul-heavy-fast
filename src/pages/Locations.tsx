@@ -217,10 +217,12 @@ const Locations = () => {
                 </div>
 
                 <div className="bg-card border border-border rounded-2xl overflow-hidden">
-                  <img 
-                    src={bayAreaCoverageImg} 
+                  <img
+                    src={bayAreaCoverageImg}
                     alt="Aerial view of San Francisco Bay Area at sunset showing city skyline and bay bridge"
                     className="w-full h-96 object-cover"
+                    width={800}
+                    height={450}
                     loading="lazy"
                     decoding="async"
                   />

@@ -15,10 +15,12 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <Link to="/" title="Heavy Haulers Transport Co." aria-label="Heavy Haulers San Francisco homepage">
-              <img 
-                src="/lovable-uploads/a43ad238-af3b-47a8-962f-32c9da2fc727.png" 
-                alt="Heavy Haulers San Francisco professional towing company logo" 
-                className="h-10 w-auto" 
+              <img
+                src="/lovable-uploads/a43ad238-af3b-47a8-962f-32c9da2fc727.png"
+                alt="Heavy Haulers San Francisco professional towing company logo"
+                className="h-10 w-auto"
+                width={160}
+                height={40}
                 loading="eager"
                 fetchPriority="high"
               />
@@ -256,7 +258,7 @@ const Header = () => {
             <SheetContent side="left" className="w-80 p-0">
               <SheetHeader className="p-6 border-b border-border">
                 <SheetTitle className="flex items-center space-x-3">
-                  <img src="/lovable-uploads/a43ad238-af3b-47a8-962f-32c9da2fc727.png" alt="Heavy Haulers Transport Co." className="h-8 w-auto" />
+                  <img src="/lovable-uploads/a43ad238-af3b-47a8-962f-32c9da2fc727.png" alt="Heavy Haulers Transport Co." className="h-8 w-auto" width={128} height={32} />
                   
                 </SheetTitle>
               </SheetHeader>

@@ -40,6 +40,8 @@ const ServiceAreas = () => {
               src={bayAreaCoverageImage}
               alt='Heavy Haulers towing service coverage map San Francisco Bay Area counties including SF, San Mateo, Alameda, Santa Clara'
               className='w-full h-64 md:h-[38rem] object-cover'
+              width={800}
+              height={450}
               loading="lazy"
               decoding="async"
             />

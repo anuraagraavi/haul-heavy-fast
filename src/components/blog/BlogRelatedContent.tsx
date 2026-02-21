@@ -142,6 +142,8 @@ export const RelatedArticlesGrid = ({ posts, className }: RelatedArticlesProps) 
                   src={post.image}
                   alt={post.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  width={400}
+                  height={225}
                 />
                 <span className="absolute top-3 left-3 px-2 py-1 bg-primary/90 text-primary-foreground text-xs font-medium rounded">
                   {post.category}

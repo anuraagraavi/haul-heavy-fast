@@ -192,6 +192,8 @@ const MediumDuty = () => {
                     src={type.image}
                     alt={type.category}
                     className="w-full h-48 object-cover"
+                    width={400}
+                    height={225}
                     loading="lazy"
                     decoding="async"
                   />
@@ -289,10 +291,12 @@ const MediumDuty = () => {
                   </div>
                 </div>
                 <div className="bg-card border border-border rounded-2xl overflow-hidden">
-                  <img 
+                  <img
                     src={mediumDutyServiceImage}
                     alt="Medium-duty towing process"
                     className="w-full h-80 object-cover"
+                    width={800}
+                    height={450}
                     loading="lazy"
                     decoding="async"
                   />

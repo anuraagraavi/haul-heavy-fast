@@ -1,18 +1,24 @@
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, FileText, Clock, Shield, Truck } from "lucide-react";
-import heroImage from "@/assets/hero-tow-truck.jpg";
+import heroWebp from "@/assets/hero-tow-truck.jpg?w=1920&format=webp";
+import heroJpg from "@/assets/hero-tow-truck.jpg?w=1920";
 const Hero = () => {
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay - Optimized for LCP */}
+      {/* Background Image with Overlay - Optimized for LCP (WebP + dimensions for CLS) */}
       <div className="absolute inset-0">
-        <img 
-          src={heroImage} 
-          alt="Heavy Haulers professional towing service San Francisco Bay Area - 24/7 emergency response" 
-          className="w-full h-full object-cover" 
-          loading="eager"
-          fetchPriority="high"
-          decoding="sync"
-        />
+        <picture>
+          <source type="image/webp" srcSet={heroWebp} />
+          <img
+            src={heroJpg}
+            alt="Heavy Haulers professional towing service San Francisco Bay Area - 24/7 emergency response"
+            className="w-full h-full object-cover"
+            width={1920}
+            height={1080}
+            loading="eager"
+            fetchPriority="high"
+            decoding="sync"
+          />
+        </picture>
         <div className="absolute inset-0 bg-black/70"></div>
       </div>
 

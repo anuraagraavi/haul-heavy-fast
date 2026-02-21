@@ -116,10 +116,12 @@ const Blog = () => {
                 {featuredPosts.map((post, index) => (
                   <Card key={index} className="bg-card hover:shadow-orange transition-all duration-300 group cursor-pointer">
                     <div className="aspect-video bg-muted rounded-t-lg mb-4 overflow-hidden">
-                      <img 
-                        src={post.image} 
+                      <img
+                        src={post.image}
                         alt={post.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        width={400}
+                        height={225}
                         loading="lazy"
                         decoding="async"
                       />

@@ -149,10 +149,12 @@ export default function BlogWidget() {
                   <Link to={`/blog/${post.id}`} className="block">
                     <Card className="group hover:shadow-elevated transition-all duration-300 animate-fade-in bg-card/95 backdrop-blur-sm border-border/50 h-full">
                       <div className="relative overflow-hidden">
-                        <img 
-                          src={post.image} 
+                        <img
+                          src={post.image}
                           alt={post.title}
                           className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
+                          width={400}
+                          height={225}
                           loading="lazy"
                           decoding="async"
                         />

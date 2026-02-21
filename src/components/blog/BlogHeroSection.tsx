@@ -121,6 +121,8 @@ const BlogHeroSection = ({ data, wordCount }: BlogHeroSectionProps) => {
               className="w-full h-64 md:h-80 lg:h-96 object-cover rounded-xl"
               priority
               fetchPriority="high"
+              width={1200}
+              height={630}
             />
             {(data.heroImage.caption || data.heroImage.credit) && (
               <figcaption className="mt-3 text-sm text-muted-foreground">

@@ -11,10 +11,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Company Info */}
           <div className="space-y-4 lg:col-span-2">
-            <img 
-              src="/lovable-uploads/a43ad238-af3b-47a8-962f-32c9da2fc727.png" 
-              alt="Heavy Haulers San Francisco Bay Area towing company logo" 
+            <img
+              src="/lovable-uploads/a43ad238-af3b-47a8-962f-32c9da2fc727.png"
+              alt="Heavy Haulers San Francisco Bay Area towing company logo"
               className="h-12 w-auto"
+              width={160}
+              height={48}
               loading="lazy"
               decoding="async"
             />

@@ -182,11 +182,14 @@ const BlogNew = () => {
                     <Link key={article.id} to={`/blog/${article.slug}`} className="block">
                       <Card className="group hover:shadow-elevated transition-all duration-300 animate-fade-in h-full">
                         <div className="relative overflow-hidden">
-                          <img 
-                            src={article.image} 
+                          <img
+                            src={article.image}
                             alt={article.title}
                             className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                            width={400}
+                            height={225}
                             loading="lazy"
+                            decoding="async"
                           />
                           <Badge className="absolute top-4 left-4 bg-primary text-primary-foreground">
                             {article.category}

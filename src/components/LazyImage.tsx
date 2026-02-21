@@ -10,17 +10,21 @@ interface LazyImageProps {
   webp?: string;
   avif?: string;
   fetchPriority?: 'high' | 'low' | 'auto';
+  width?: number;
+  height?: number;
 }
 
-const LazyImage = ({ 
-  src, 
-  alt, 
-  className = '', 
+const LazyImage = ({
+  src,
+  alt,
+  className = '',
   priority = false,
   sizes,
   webp,
   avif,
-  fetchPriority = 'auto'
+  fetchPriority = 'auto',
+  width,
+  height
 }: LazyImageProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -49,6 +53,8 @@ const LazyImage = ({
           alt={alt}
           className={className}
           sizes={sizes}
+          width={width}
+          height={height}
           fetchPriority={fetchPriority}
           onLoad={handleLoad}
           onError={handleError}
@@ -76,6 +82,8 @@ const LazyImage = ({
               isLoaded ? 'opacity-100' : 'opacity-0'
             } ${className}`}
             sizes={sizes}
+            width={width}
+            height={height}
             fetchPriority={fetchPriority}
             onLoad={handleLoad}
             onError={handleError}

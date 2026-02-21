@@ -24,6 +24,8 @@ export const BlogFigure = ({
         alt={image.alt}
         className="w-full h-auto rounded-xl object-cover"
         priority={priority}
+        width={800}
+        height={450}
       />
       {(image.caption || image.credit) && (
         <figcaption className="mt-3 text-sm text-muted-foreground text-center">
@@ -53,6 +55,8 @@ export const BlogHeroImage = ({ image, className }: HeroImageProps) => (
       className="w-full h-48 md:h-64 lg:h-80 object-cover"
       priority
       fetchPriority="high"
+      width={1200}
+      height={630}
     />
     {(image.caption || image.credit) && (
       <figcaption className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-background/90 to-transparent text-sm text-foreground">
