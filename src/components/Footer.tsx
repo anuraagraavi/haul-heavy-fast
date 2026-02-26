@@ -21,8 +21,10 @@ const Footer = () => {
               decoding="async"
             />
             <p className="text-muted-foreground">
-              Professional towing and recovery services across the San Francisco Bay Area. 
-              Available 24/7 for all your hauling needs.
+              Flatbed towing specialists. 5 Bay Area counties. Real dispatch. 24/7.
+            </p>
+            <p className="text-sm text-muted-foreground">
+              <a href="/services/heavy-duty#fleet" className="hover:text-primary transition-colors">Fleet and commercial accounts</a> — call for contract rates.
             </p>
             <div className="flex space-x-4">
               <Button 
@@ -59,6 +61,7 @@ const Footer = () => {
               <li><a href="/locations#san-mateo" className="hover:text-primary transition-colors">San Mateo County</a></li>
               <li><a href="/locations#alameda" className="hover:text-primary transition-colors">Alameda County</a></li>
               <li><a href="/locations#santa-clara" className="hover:text-primary transition-colors">Santa Clara County</a></li>
+              <li><a href="/locations#contra-costa" className="hover:text-primary transition-colors">Contra Costa County</a></li>
             </ul>
           </div>
 
@@ -76,29 +79,17 @@ const Footer = () => {
             <div className="space-y-2">
               <div className="flex items-center space-x-2">
                 <Phone className="w-3 h-3 text-primary" />
-                <span className="text-muted-foreground text-sm"><a href='tel:650-881-2400'>650-881-2400</a></span>
+                <span className="text-muted-foreground text-sm"><a href="tel:+16508812400" className="hover:text-primary transition-colors">650-881-2400</a></span>
               </div>
-              <a href="/contact" className="text-xs text-primary hover:underline transition-colors">
-                Other Dispatch Lines Available
-              </a>
+              <p className="text-xs text-muted-foreground">
+                Oakland: <a href="tel:+15108003800" className="text-primary hover:underline">510-800-3800</a> · San Jose: <a href="tel:+14088003800" className="text-primary hover:underline">408-800-3800</a>
+              </p>
               <div className="flex items-center space-x-2">
                 <Clock className="w-3 h-3 text-primary" />
                 <span className="text-muted-foreground text-sm">24/7 Dispatch</span>
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Emergency CTA Bar */}
-        <div className="mt-12 bg-gradient-primary rounded-xl p-6 text-center">
-          <h3 className="text-xl font-bold text-white mb-2">Need Emergency Towing Right Now?</h3>
-          <p className="text-white/90 mb-4">Don't wait - our dispatch team is standing by 24/7</p>
-          <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-gray-100" asChild>
-            <a href='tel:650-881-2400'>
-              <Phone className="w-5 h-5 mr-2" />
-              Call 650-881-2400
-            </a>
-          </Button>
         </div>
       </div>
 

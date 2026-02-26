@@ -4,57 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, MapPin, Clock, Star, CheckCircle, Building2 } from "lucide-react";
 import { Helmet } from "react-helmet";
 import bayAreaCoverageImg from "@/assets/bay-area-coverage.jpg";
-
-const dispatchHubs = [
-  {
-    city: "Brisbane",
-    address: "351 Industrial Way",
-    cityState: "Brisbane, CA 94005",
-    phone: "650-881-2400",
-    hours: "Mon–Fri 8AM–5PM",
-    emergency: "24/7",
-  },
-  {
-    city: "San Leandro",
-    address: "14305 Washington Ave",
-    cityState: "San Leandro, CA 94578",
-    phone: "510-800-3800",
-    hours: "Mon–Fri 8AM–5PM",
-    emergency: "24/7",
-  },
-  {
-    city: "Hayward",
-    address: "2454 Whipple Rd",
-    cityState: "Hayward, CA 94544",
-    phone: "510-800-3800",
-    hours: "Mon–Fri 8AM–5PM",
-    emergency: "24/7",
-  },
-  {
-    city: "San Jose",
-    address: "50 N Sunset Ave",
-    cityState: "San Jose, CA 95116",
-    phone: "408-800-3800",
-    hours: "Mon–Fri 8AM–5PM",
-    emergency: "24/7",
-  },
-  {
-    city: "San Mateo",
-    address: "403 1st Avenue",
-    cityState: "San Mateo, CA 94401",
-    phone: "650-881-2400",
-    hours: "Mon–Fri 8AM–5PM",
-    emergency: "24/7",
-  },
-  {
-    city: "Stockton",
-    address: "3990 N Wilson Way",
-    cityState: "Stockton, CA 95205",
-    phone: "916-701-2200",
-    hours: "Mon–Fri 8AM–5PM",
-    emergency: "24/7",
-  },
-];
+import { DISPATCH_HUBS } from "@/data/coverage";
 
 const Locations = () => {
   const counties = [
@@ -119,6 +69,21 @@ const Locations = () => {
         text: "Excellent service for our company fleet vehicles. They understand business urgency and respond accordingly.",
         author: "Lisa Park, Fleet Manager, Tech Company"
       }
+    },
+    {
+      id: "contra-costa",
+      name: "Contra Costa County",
+      phone: "650-881-2400",
+      description: "Full coverage across Contra Costa County from Walnut Creek to Antioch with dedicated East Bay dispatch.",
+      districts: [
+        "Walnut Creek", "Concord", "Richmond", "Antioch", "Brentwood",
+        "Pittsburg", "San Ramon", "Pleasant Hill", "Martinez", "Lafayette",
+        "Orinda", "Danville", "Alamo", "El Cerrito", "Hercules"
+      ],
+      testimonial: {
+        text: "Broke down on 680 near Walnut Creek. Heavy Haulers had a flatbed out in under 20 minutes. Highly recommend.",
+        author: "David Kim, Bay Area Commuter"
+      }
     }
   ];
 
@@ -167,7 +132,7 @@ const Locations = () => {
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>Bay Area & Central Valley Towing Coverage - Heavy Tow Pro | 5 Counties Served</title>
-        <meta name="description" content="Professional towing services across San Francisco, San Mateo, Alameda, Santa Clara, and San Joaquin counties. 6 dispatch hubs with 24/7 emergency service." />
+        <meta name="description" content="Professional towing services across San Francisco, San Mateo, Alameda, Santa Clara, and Contra Costa counties plus Central Valley (Stockton). 6 dispatch hubs with 24/7 emergency service." />
         {hubSchemas.map((schema, i) => (
           <script key={i} type="application/ld+json">
             {JSON.stringify(schema)}
@@ -245,7 +210,7 @@ const Locations = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {dispatchHubs.map((hub) => (
+              {DISPATCH_HUBS.map((hub) => (
                 <div key={hub.city} className="bg-card border border-border rounded-2xl p-6 hover:shadow-elevated transition-all duration-300">
                   <div className="flex items-center space-x-3 mb-4">
                     <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center">

@@ -96,6 +96,11 @@ const Index = () => {
                 "@type": "AdministrativeArea",
                 "name": "Santa Clara County", 
                 "addressRegion": "CA"
+              },
+              {
+                "@type": "AdministrativeArea",
+                "name": "Contra Costa County",
+                "addressRegion": "CA"
               }
             ],
             "hasOfferCatalog": {
@@ -174,7 +179,7 @@ const Index = () => {
                 "name": "Which areas do you serve?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "We serve all of San Francisco, San Mateo, Alameda, and Santa Clara counties. This includes major cities like San Francisco, Oakland, San Jose, and hundreds of smaller communities throughout the Bay Area."
+                  "text": "We serve all five Bay Area counties: San Francisco, San Mateo, Alameda, Santa Clara, and Contra Costa. This includes major cities like San Francisco, Oakland, San Jose, Walnut Creek, and hundreds of smaller communities throughout the Bay Area."
                 }
               },
               {

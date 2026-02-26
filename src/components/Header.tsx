@@ -9,6 +9,8 @@ const Header = () => {
   const [isLocationsOpen, setIsLocationsOpen] = useState(false);
   const businessPhone = "650-881-2400";
   const businessAddress = "308 Industrial Way Brisbane, CA 94005";
+  const servicesHover = useHoverDelay(() => setIsServicesOpen(true), () => setIsServicesOpen(false), { leaveDelay: 200 });
+  const locationsHover = useHoverDelay(() => setIsLocationsOpen(true), () => setIsLocationsOpen(false), { leaveDelay: 300 });
   return <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
@@ -22,7 +24,7 @@ const Header = () => {
                 width={160}
                 height={40}
                 loading="eager"
-                fetchPriority="high"
+                fetchpriority="high"
               />
             </Link>
           </div>
@@ -37,11 +39,7 @@ const Header = () => {
             </Link>
 
             {/* Services Mega Menu */}
-            <div className="relative group" {...useHoverDelay(
-              () => setIsServicesOpen(true),
-              () => setIsServicesOpen(false),
-              { leaveDelay: 200 }
-            )}>
+            <div className="relative group" onMouseEnter={servicesHover.onMouseEnter} onMouseLeave={servicesHover.onMouseLeave}>
               <Link to="/services" className="flex items-center text-foreground hover:text-primary transition-colors">
                 Services
                 <ChevronDown className="ml-1 h-4 w-4" />
@@ -128,18 +126,14 @@ const Header = () => {
             </div>
 
             {/* Locations Mega Menu */}
-            <div className="relative group" {...useHoverDelay(
-              () => setIsLocationsOpen(true),
-              () => setIsLocationsOpen(false),
-              { leaveDelay: 300 }
-            )}>
+            <div className="relative group" onMouseEnter={locationsHover.onMouseEnter} onMouseLeave={locationsHover.onMouseLeave}>
               <button 
                 className="flex items-center text-foreground hover:text-primary transition-colors"
-                aria-label="View service locations"
+                aria-label="Bay Area service locations"
                 aria-expanded={isLocationsOpen}
                 aria-haspopup="true"
               >
-                Locations
+                Bay Area Locations
                 <ChevronDown className="ml-1 h-4 w-4" aria-hidden="true" />
               </button>
               {isLocationsOpen && (
@@ -291,7 +285,7 @@ const Header = () => {
 
                   <div className="space-y-2">
                     <Link to="/locations" className="block text-foreground hover:text-primary transition-colors font-medium py-2">
-                      Locations
+                      Bay Area Locations
                     </Link>
                     <div className="ml-4 space-y-2 pl-4 border-l border-border">
                       <a href="/locations#san-francisco" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-1">
@@ -305,6 +299,9 @@ const Header = () => {
                       </a>
                       <a href="/locations#santa-clara" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-1">
                         Santa Clara County
+                      </a>
+                      <a href="/locations#contra-costa" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-1">
+                        Contra Costa County
                       </a>
                     </div>
                   </div>

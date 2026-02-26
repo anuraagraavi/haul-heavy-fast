@@ -22,7 +22,7 @@ const FAQ = () => {
     },
     {
       question: "Which areas do you serve?",
-      answer: "We serve all of San Francisco, San Mateo, Alameda, and Santa Clara counties. This includes major cities like San Francisco, Oakland, San Jose, and hundreds of smaller communities throughout the Bay Area."
+      answer: "We serve all five Bay Area counties: San Francisco, San Mateo, Alameda, Santa Clara, and Contra Costa. This includes major cities like San Francisco, Oakland, San Jose, Walnut Creek, and hundreds of smaller communities throughout the Bay Area."
     },
     {
       question: "Do you offer fleet services for businesses?",

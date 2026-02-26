@@ -1,125 +1,96 @@
- import { Star, Quote, Phone } from "lucide-react";
- import { Button } from "@/components/ui/button";
- import {
-   Carousel,
-   CarouselContent,
-   CarouselItem,
-   CarouselNext,
-   CarouselPrevious,
- } from "@/components/ui/carousel";
- 
- const TestimonialCarousel = () => {
-   const testimonials = [
-     {
-       name: "Sarah M.",
-       location: "San Francisco",
-       service: "Car Towing",
-       rating: 5,
-       text: "My car broke down on the Bay Bridge during rush hour. Heavy Haulers arrived in under 20 minutes and got me to safety. The driver was professional and kept me informed the whole time. Highly recommend!",
-     },
-     {
-       name: "Marcus T.",
-       location: "Oakland",
-       service: "Box Truck Towing",
-       rating: 5,
-       text: "As a business owner, downtime costs money. When our delivery truck broke down, Heavy Haulers got us back on the road faster than I expected. Fair pricing and excellent communication throughout.",
-     },
-     {
-       name: "Jennifer L.",
-       location: "San Mateo",
-       service: "Motorcycle Towing",
-       rating: 5,
-       text: "They used a specialized motorcycle trailer and treated my bike like it was their own. Not many towing companies know how to properly handle motorcycles, but these guys are pros.",
-     },
-     {
-       name: "David K.",
-       location: "Palo Alto",
-       service: "Luxury Car Transport",
-       rating: 5,
-       text: "Had my Tesla Model S towed after a flat battery. They knew exactly how to handle an EV and used a flatbed to prevent any damage. Worth every penny for the peace of mind.",
-     },
-     {
-       name: "Lisa R.",
-       location: "San Jose",
-       service: "RV Towing",
-       rating: 5,
-       text: "Our RV broke down on the way to a camping trip. Heavy Haulers sent a truck that could handle our 28-foot motorhome. The driver was patient and made sure it was secured properly.",
-     },
-   ];
- 
-   return (
-     <section className="py-12 md:py-16 bg-background">
-       <div className="container mx-auto px-4">
-         <div className="text-center mb-10">
-           <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-3">
-             Why Bay Area Drivers Trust Us
-           </h2>
-           <p className="text-muted-foreground max-w-2xl mx-auto">
-             Real stories from real customers across the Bay Area
-           </p>
-         </div>
- 
-         <Carousel
-           opts={{
-             align: "start",
-             loop: true,
-           }}
-           className="w-full max-w-5xl mx-auto"
-         >
-           <CarouselContent className="-ml-4">
-             {testimonials.map((testimonial, index) => (
-               <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                 <div className="h-full bg-muted/30 rounded-2xl p-6 border border-border hover:border-primary/30 transition-colors flex flex-col">
-                   {/* Quote Icon */}
-                   <Quote className="w-8 h-8 text-primary/30 mb-4" />
-                   
-                   {/* Rating */}
-                   <div className="flex gap-1 mb-3">
-                     {[...Array(testimonial.rating)].map((_, i) => (
-                       <Star key={i} className="w-4 h-4 fill-yellow-500 text-yellow-500" />
-                     ))}
-                   </div>
-                   
-                   {/* Text */}
-                   <p className="text-foreground text-sm mb-4 flex-1">"{testimonial.text}"</p>
-                   
-                   {/* Author */}
-                   <div className="border-t border-border pt-4">
-                     <p className="font-semibold text-foreground">{testimonial.name}</p>
-                     <p className="text-xs text-muted-foreground">{testimonial.location} • {testimonial.service}</p>
-                   </div>
-                 </div>
-               </CarouselItem>
-             ))}
-           </CarouselContent>
-           <CarouselPrevious className="hidden md:flex -left-12" />
-           <CarouselNext className="hidden md:flex -right-12" />
-         </Carousel>
- 
-         {/* Review Platform Badges */}
-         <div className="flex flex-wrap justify-center gap-4 mt-8 mb-8">
-           <div className="flex items-center gap-2 px-4 py-2 bg-muted/50 rounded-full">
-             <Star className="w-4 h-4 fill-yellow-500 text-yellow-500" />
-             <span className="text-sm font-medium text-foreground">4.9 on Google</span>
-           </div>
-           <div className="flex items-center gap-2 px-4 py-2 bg-muted/50 rounded-full">
-             <Star className="w-4 h-4 fill-red-500 text-red-500" />
-             <span className="text-sm font-medium text-foreground">5.0 on Yelp</span>
-           </div>
-         </div>
- 
-         {/* CTA */}
-         <div className="text-center">
-           <a href="tel:650-881-2400">
-             <Button size="lg" className="h-14 px-8 text-lg font-semibold">
-               <Phone className="w-5 h-5 mr-2" />
-               Join 50,000+ Satisfied Customers
-             </Button>
-           </a>
-         </div>
-       </div>
-     </section>
-   );
- };
- 
- export default TestimonialCarousel;
+import { Star } from "lucide-react";
+
+const C1_TESTIMONIALS = [
+  {
+    name: "Jennifer W.",
+    location: "San Francisco",
+    service: "Sedan Tow",
+    rating: 5,
+    text: "I was stranded on the Bay Bridge at 2am — completely terrified. They answered immediately, gave me a 20-minute ETA, and showed up in 18. The driver was calm, professional, and got my car home safely. I cannot thank them enough.",
+  },
+  {
+    name: "Marcus T.",
+    location: "Oakland",
+    service: "Motorcycle Tow",
+    rating: 5,
+    text: "My motorcycle went down and I was panicking about damage during transport. The driver showed me the chock system before loading, explained every strap, and delivered it to the shop without a scratch. That level of care is rare.",
+  },
+  {
+    name: "Lisa K.",
+    location: "Palo Alto",
+    service: "EV Flatbed Tow",
+    rating: 5,
+    text: "I drive a Tesla Model S. Most towing companies get nervous when they see it. These guys loaded it onto a flatbed without me having to explain anything. Perfect tow, no warning lights afterward.",
+  },
+  {
+    name: "Daniel R.",
+    location: "San Jose",
+    service: "Box Truck Tow",
+    rating: 5,
+    text: "Our delivery box truck died in the middle of a route. Dispatch picked up on the first ring, had a medium-duty truck on scene fast, and still got us to the dock before close. They understood it was our business on the line.",
+  },
+  {
+    name: "Priya S.",
+    location: "Redwood City",
+    service: "Family SUV Tow",
+    rating: 5,
+    text: "Minivan broke down with two kids in the car. Driver showed up exactly when the dispatcher said, helped me move car seats, and made sure we all got home safely. Calm, kind, and professional the whole time.",
+  },
+  {
+    name: "Alex G.",
+    location: "Berkeley",
+    service: "Long-Distance Flatbed",
+    rating: 5,
+    text: "Needed my project car moved from Berkeley to a shop down the Peninsula. The driver treated it like his own, walked me through the tie-down points, and the invoice matched the quote exactly. No surprises.",
+  },
+];
+
+const TestimonialCarousel = () => {
+  return (
+    <section className="py-12 md:py-16 bg-muted/30">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-10">
+          <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-3">
+            Trusted by Bay Area Drivers — Here&apos;s What They Say
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Over 50,000 tows. Real customers, real experiences.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          {C1_TESTIMONIALS.map((testimonial, index) => (
+            <div
+              key={index}
+              className="bg-background rounded-xl p-6 border border-border border-t-4 border-t-primary shadow-md"
+            >
+              <div className="flex gap-1 mb-3">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-primary text-primary" />
+                ))}
+              </div>
+              <p className="text-muted-foreground text-sm italic mb-4">&quot;{testimonial.text}&quot;</p>
+              <p className="font-bold text-foreground">{testimonial.name}</p>
+              <p className="text-sm text-muted-foreground">{testimonial.location} | {testimonial.service}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center">
+          <div className="inline-flex flex-wrap items-center justify-center gap-3 p-4 rounded-xl bg-background border-2 border-primary/30">
+            <span className="flex gap-0.5" aria-hidden>
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+              ))}
+            </span>
+            <span className="text-muted-foreground text-sm">
+              Trusted by hundreds of Bay Area drivers for emergency and planned tows.
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default TestimonialCarousel;

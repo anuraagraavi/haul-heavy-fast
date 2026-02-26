@@ -1,71 +1,55 @@
- import {
-   Accordion,
-   AccordionContent,
-   AccordionItem,
-   AccordionTrigger,
- } from "@/components/ui/accordion";
- 
- const LandingFAQ = () => {
-   const faqs = [
-     {
-       question: "How much does towing cost in San Francisco?",
-       answer: "Towing costs vary based on vehicle size, distance, and time of day. Light duty towing (cars, SUVs) typically starts at competitive local rates, while medium duty (box trucks, RVs) requires custom quotes. We always provide an upfront quote before any work begins—no hidden fees, guaranteed.",
-     },
-     {
-       question: "How fast can you get to me?",
-       answer: "Our average response time is 15-30 minutes across the Bay Area. In San Francisco proper, we typically arrive within 15-25 minutes. We have strategically positioned trucks throughout the region to ensure the fastest possible response to your location.",
-     },
-     {
-       question: "Will my car be damaged during towing?",
-       answer: "Absolutely not. Our operators are trained professionals who use proper equipment and techniques for each vehicle type. We use flatbed tow trucks for most vehicles, which eliminates any risk of drivetrain damage. Plus, we're fully insured for your peace of mind.",
-     },
-     {
-       question: "Do you tow luxury and exotic cars?",
-       answer: "Yes! We specialize in luxury and exotic vehicle transport. We use enclosed trailers and flatbed trucks with soft straps and wheel lifts designed specifically for high-value vehicles. Your Ferrari, Porsche, or Tesla will be treated with white-glove care.",
-     },
-     {
-       question: "What forms of payment do you accept?",
-       answer: "We accept all major credit cards, debit cards, cash, and most fleet accounts. For commercial customers, we also offer invoicing and account-based billing. Payment is collected after the job is complete.",
-     },
-     {
-       question: "Are you available right now?",
-       answer: "Yes! We operate 24 hours a day, 7 days a week, 365 days a year—including holidays. Our dispatchers are standing by right now to take your call. No matter when you need us, we're here.",
-     },
-   ];
- 
-   return (
-     <section className="py-12 md:py-16 bg-background">
-       <div className="container mx-auto px-4">
-         <div className="text-center mb-10">
-           <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-3">
-             Questions? We've Got Answers
-           </h2>
-           <p className="text-muted-foreground max-w-2xl mx-auto">
-             Everything you need to know about our towing services
-           </p>
-         </div>
- 
-         <div className="max-w-3xl mx-auto">
-           <Accordion type="single" collapsible className="space-y-3">
-             {faqs.map((faq, index) => (
-               <AccordionItem 
-                 key={index} 
-                 value={`item-${index}`}
-                 className="bg-muted/30 rounded-xl border border-border px-6 data-[state=open]:border-primary/30"
-               >
-                 <AccordionTrigger className="text-left font-semibold text-foreground hover:no-underline py-4">
-                   {faq.question}
-                 </AccordionTrigger>
-                 <AccordionContent className="text-muted-foreground pb-4">
-                   {faq.answer}
-                 </AccordionContent>
-               </AccordionItem>
-             ))}
-           </Accordion>
-         </div>
-       </div>
-     </section>
-   );
- };
- 
- export default LandingFAQ;
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+const C1_FAQS = [
+  { q: "How fast can you get to me?", a: "Our average response time is 15 minutes across the Bay Area. We'll give you a confirmed ETA within 60 seconds of your call. If we ever run late, your dispatcher calls you proactively — you're never left wondering." },
+  { q: "Do you cover my area?", a: "We cover 5 Bay Area counties: San Francisco, San Mateo, Alameda, Santa Clara, and Contra Costa — 60+ cities total. If you're on a highway, bridge, or anywhere in the greater Bay Area, we can almost certainly reach you. Call and we'll confirm in 30 seconds." },
+  { q: "Will you damage my car?", a: "No. We use the right equipment for every vehicle type. AWD and luxury cars get flatbed-only treatment. Motorcycles go on dedicated chock rigs with soft tie-downs. EVs are transported per manufacturer protocol. We've completed 50,000+ tows with a near-zero damage claim rate." },
+  { q: "Do you do jump-starts, lockouts, or tire changes?", a: "No — we are a dedicated towing and recovery company only. We don't offer roadside assistance services. This is intentional: being specialists in towing means we're exceptional at it, with the right equipment for every scenario." },
+  { q: "Can you tow my Tesla / electric vehicle?", a: "Yes, absolutely. All EVs must be transported on flatbeds — we never wheel-lift electric vehicles. Our drivers are trained on EV-specific protocols: transport in neutral/tow mode, battery access procedures, and manufacturer guidelines for Tesla, Rivian, Lucid, and other EVs." },
+  { q: "How do I pay?", a: "Credit card or cash on delivery. No payment is required to dispatch — we collect at the drop-off location. You'll know the total before anything is loaded." },
+  { q: "What if I need towing at 3am or on a holiday?", a: "We answer 24/7, 365 days a year. Live dispatcher. Real truck. Real driver. No extra charge for after-hours or holiday calls — ever. Breakdowns don't keep business hours, and neither do we." },
+  { q: "Are you licensed and insured?", a: "Yes. CTTA (California Tow Truck Association) certified, ITRA (International Towing & Recovery Association) member, DOT compliant, OSHA-trained operators, and fully insured with cargo liability coverage. We carry the certifications required for professional towing — not just a truck and a hook." },
+];
+
+const LandingFAQ = () => {
+  return (
+    <section className="py-12 md:py-16 bg-muted/30">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-10">
+          <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-3">
+            Got Questions? We&apos;ve Got Answers.
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Answers to the questions every Bay Area driver asks before calling.
+          </p>
+        </div>
+
+        <div className="max-w-3xl mx-auto">
+          <Accordion type="multiple" collapsible defaultValue={["item-0", "item-1", "item-2"]} className="space-y-3">
+            {C1_FAQS.map((faq, index) => (
+              <AccordionItem
+                key={index}
+                value={`item-${index}`}
+                className="bg-background rounded-xl border border-border px-6 data-[state=open]:border-primary/30"
+              >
+                <AccordionTrigger className="text-left font-semibold text-foreground hover:no-underline py-4">
+                  {faq.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground pb-4">
+                  {faq.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default LandingFAQ;

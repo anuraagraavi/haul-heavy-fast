@@ -83,7 +83,7 @@ const About = () => {
                     require real expertise, specialized equipment, and trained professionals.
                   </p>
                   <p>
-                    Today, we serve four counties across the Bay Area with one of the fastest response times 
+                    Today, we serve five counties across the Bay Area with one of the fastest response times 
                     in the industry, handling everything from luxury car transport to heavy industrial equipment recovery.
                   </p>
                 </div>

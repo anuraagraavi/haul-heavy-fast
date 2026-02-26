@@ -105,6 +105,7 @@ const App = () => (
             <Route path="/blog/freeway-towing-bay-area" element={<FreewayTowingBayArea />} />
             <Route path="/blog/chp-towing-california" element={<CHPTowingCalifornia />} />
             <Route path="/towing-services" element={<LandingLightMedium />} />
+            <Route path="/towing/bay-area-flatbed-emergency-towing-24-7" element={<LandingLightMedium />} />
             <Route path="/thank-you" element={<ThankYou />} />
             <Route path="/privacy-policy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />

@@ -1,24 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone } from "lucide-react";
 import bayAreaCoverageImage from "@/assets/bay-area-coverage.jpg";
+import { BAY_AREA_COUNTIES } from "@/data/coverage";
+
 const ServiceAreas = () => {
-  const counties = [{
-    name: "San Francisco County",
-    areas: ["Mission", "SOMA", "Financial District", "Richmond", "Pacific Heights", "Sunset"],
-    phone: "650-881-2400"
-  }, {
-    name: "San Mateo County",
-    areas: ["San Mateo", "Redwood City", "Daly City", "South San Francisco", "Menlo Park"],
-    phone: "650-881-2400"
-  }, {
-    name: "Alameda County",
-    areas: ["Oakland", "Hayward", "Berkeley", "Fremont", "San Leandro"],
-    phone: "510-800-3800"
-  }, {
-    name: "Santa Clara County",
-    areas: ["San Jose", "Santa Clara", "Sunnyvale", "Mountain View", "Palo Alto"],
-    phone: "408-800-3800"
-  }];
   return <section className="py-20 bg-gradient-subtle">
       <div className="container mx-auto px-4">
         {/* Header */}
@@ -52,8 +37,8 @@ const ServiceAreas = () => {
         </div>
 
         {/* Counties Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {counties.map((county, index) => <div key={index} className="bg-card border border-border rounded-lg p-6 hover:shadow-elevated transition-all duration-300 group flex flex-col h-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-12">
+          {BAY_AREA_COUNTIES.map((county, index) => <div key={index} className="bg-card border border-border rounded-lg p-6 hover:shadow-elevated transition-all duration-300 group flex flex-col h-full">
               <div className="flex items-center space-x-2 mb-4">
                 <MapPin className="w-5 h-5 text-primary" />
                 <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">
@@ -62,7 +47,7 @@ const ServiceAreas = () => {
               </div>
               
               <div className="space-y-2 mb-4 flex-grow">
-                {county.areas.map((area, areaIndex) => <span key={areaIndex} className="inline-block text-sm text-muted-foreground bg-muted rounded-full px-3 py-1 mr-2 mb-1">
+                {county.areas.map((area: string, areaIndex: number) => <span key={areaIndex} className="inline-block text-sm text-muted-foreground bg-muted rounded-full px-3 py-1 mr-2 mb-1">
                     {area}
                   </span>)}
               </div>
