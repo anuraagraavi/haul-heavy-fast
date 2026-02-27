@@ -13,6 +13,7 @@ const Services = lazy(() => import("./pages/Services"));
 const LightDuty = lazy(() => import("./pages/LightDuty"));
 const MediumDuty = lazy(() => import("./pages/MediumDuty"));
 const HeavyDuty = lazy(() => import("./pages/HeavyDuty"));
+const LandingHeavyDuty = lazy(() => import("./pages/LandingHeavyDuty"));
 const Locations = lazy(() => import("./pages/Locations"));
 const GetQuote = lazy(() => import("./pages/GetQuote"));
 const Contact = lazy(() => import("./pages/Contact"));
@@ -106,6 +107,7 @@ const App = () => (
             <Route path="/blog/chp-towing-california" element={<CHPTowingCalifornia />} />
             <Route path="/towing-services" element={<LandingLightMedium />} />
             <Route path="/towing/bay-area-flatbed-emergency-towing-24-7" element={<LandingLightMedium />} />
+            <Route path="/towing/heavy-duty-towing-bay-area" element={<LandingHeavyDuty />} />
             <Route path="/thank-you" element={<ThankYou />} />
             <Route path="/privacy-policy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
