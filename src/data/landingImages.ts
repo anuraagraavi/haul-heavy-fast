@@ -1,3 +1,11 @@
+import heavyCatDSeriesDesert from "../../Work Images/Heavy Duty/WebP/heavy-haulers-towing-cat-d-series-bulldozer-golden-hour-desert-heavy-haul.webp";
+import heavyCatDozerGoldenHour from "../../Work Images/Heavy Duty/WebP/heavy-haulers-towing-cat-dozer-flatbed-golden-hour-heavy-haul.webp";
+import heavySemiBoxTrailer from "../../Work Images/Heavy Duty/WebP/heavy-haulers-towing-semi-truck-box-trailer-heavy-wrecker-18-wheeler.webp";
+import heavySemiReefer from "../../Work Images/Heavy Duty/WebP/heavy-haulers-towing-semi-truck-reefer-trailer-commercial-heavy-duty.webp";
+import heavyWheelLoader from "../../Work Images/Heavy Duty/WebP/heavy-haulers-towing-cat-wheel-loader-heavy-haul-flatbed-transport.webp";
+import heavyOversizeSunset from "../../Work Images/Heavy Duty/WebP/heavy-haulers-towing-oversized-cargo-flatbed-sunset-heavy-haul.webp";
+import heavyOversizePeterbiltCat from "../../Work Images/Heavy Duty/WebP/heavy-haulers-towing-oversize-peterbilt-cat-equipment-lowboy-heavy-duty.webp";
+
 export type LandingImageId =
   | "light_luxury_flatbed"
   | "light_accident_recovery"
@@ -12,7 +20,14 @@ export type LandingImageId =
   | "medium_recology_street"
   | "medium_recology_yard"
   | "medium_commercial_truck_recovery"
-  | "medium_refuse_detail";
+  | "medium_refuse_detail"
+  | "heavy_cat_d_series_desert"
+  | "heavy_cat_dozer_golden_hour"
+  | "heavy_semi_box_trailer"
+  | "heavy_semi_reefer"
+  | "heavy_wheel_loader"
+  | "heavy_oversize_sunset"
+  | "heavy_oversize_peterbilt_cat";
 
 export interface LandingImageMeta {
   id: LandingImageId;
@@ -138,6 +153,62 @@ export const landingImages: LandingImageMeta[] = [
     seoTitle: "Refuse & Garbage Truck Transport – H&H Towing Co. Bay Area",
     seoDescription:
       "H&H Towing Co. provides specialist refuse and garbage truck transport and recovery for Bay Area waste management fleets. Call for a commercial rate.",
+  },
+  {
+    id: "heavy_cat_d_series_desert",
+    src: heavyCatDSeriesDesert,
+    alt: "Heavy Haulers lowboy trailer transporting a massive CAT D-series bulldozer at golden hour in the California desert",
+    seoTitle: "CAT D-Series Bulldozer Transport – Heavy Haulers Heavy Haul California",
+    seoDescription:
+      "Heavy Haulers hauls California's heaviest loads. Our fleet of lowboy trailers handle CAT D-series bulldozers and the largest heavy equipment jobs. Call us.",
+  },
+  {
+    id: "heavy_cat_dozer_golden_hour",
+    src: heavyCatDozerGoldenHour,
+    alt: "Heavy Haulers flatbed truck transporting a CAT bulldozer at golden hour in California",
+    seoTitle: "CAT Bulldozer Transport at Golden Hour – Heavy Haulers California",
+    seoDescription:
+      "Heavy Haulers hauls CAT bulldozers and heavy equipment to job sites across California. Experienced, permitted, and reliable — day or night.",
+  },
+  {
+    id: "heavy_semi_box_trailer",
+    src: heavySemiBoxTrailer,
+    alt: "H&H Towing heavy wrecker recovering a full semi truck and box trailer in the Bay Area",
+    seoTitle: "Semi Truck & 18-Wheeler Recovery – H&H Towing Co. Bay Area",
+    seoDescription:
+      "H&H Towing Co. operates heavy duty wreckers capable of recovering and towing full semi trucks and 18-wheelers across the San Francisco Bay Area. 24/7 response.",
+  },
+  {
+    id: "heavy_semi_reefer",
+    src: heavySemiReefer,
+    alt: "Heavy Haulers Peterbilt semi truck pulling a refrigerated reefer trailer on the highway",
+    seoTitle: "Commercial Semi Truck & Reefer Trailer Towing – Heavy Haulers",
+    seoDescription:
+      "Heavy Haulers provides commercial towing for semi trucks and refrigerated (reefer) trailers. We support freight carriers and logistics fleets across California.",
+  },
+  {
+    id: "heavy_wheel_loader",
+    src: heavyWheelLoader,
+    alt: "Heavy Haulers white Peterbilt lowboy hauling a CAT 982M wheel loader under a clear California sky",
+    seoTitle: "CAT Wheel Loader Transport & Heavy Haul – Heavy Haulers California",
+    seoDescription:
+      "Heavy Haulers hauls CAT, Komatsu, and other large wheel loaders on lowboy trailers. Serving mining, quarry, and construction sites across California.",
+  },
+  {
+    id: "heavy_oversize_sunset",
+    src: heavyOversizeSunset,
+    alt: "Heavy Haulers flatbed truck transporting oversized tarp-covered cargo at sunset",
+    seoTitle: "Oversized Load & Heavy Haul Transport – Heavy Haulers California",
+    seoDescription:
+      "Heavy Haulers is California's trusted oversized load transporter. Permitted, insured, and experienced in moving wide, tall, and heavy freight statewide.",
+  },
+  {
+    id: "heavy_oversize_peterbilt_cat",
+    src: heavyOversizePeterbiltCat,
+    alt: "Heavy Haulers oversize Peterbilt truck hauling CAT equipment on lowboy — dramatic low-angle shot",
+    seoTitle: "Oversize Heavy Haul Transport – Heavy Haulers California Towing",
+    seoDescription:
+      "Heavy Haulers is California's oversize load specialist. We move the loads others won't. Licensed, permitted, and ready for your most demanding hauls.",
   },
 ];
 
