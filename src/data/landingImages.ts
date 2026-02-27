@@ -1,11 +1,3 @@
-import heavyCatDSeriesDesert from "../../Work Images/Heavy Duty/WebP/heavy-haulers-towing-cat-d-series-bulldozer-golden-hour-desert-heavy-haul.webp";
-import heavyCatDozerGoldenHour from "../../Work Images/Heavy Duty/WebP/heavy-haulers-towing-cat-dozer-flatbed-golden-hour-heavy-haul.webp";
-import heavySemiBoxTrailer from "../../Work Images/Heavy Duty/WebP/heavy-haulers-towing-semi-truck-box-trailer-heavy-wrecker-18-wheeler.webp";
-import heavySemiReefer from "../../Work Images/Heavy Duty/WebP/heavy-haulers-towing-semi-truck-reefer-trailer-commercial-heavy-duty.webp";
-import heavyWheelLoader from "../../Work Images/Heavy Duty/WebP/heavy-haulers-towing-cat-wheel-loader-heavy-haul-flatbed-transport.webp";
-import heavyOversizeSunset from "../../Work Images/Heavy Duty/WebP/heavy-haulers-towing-oversized-cargo-flatbed-sunset-heavy-haul.webp";
-import heavyOversizePeterbiltCat from "../../Work Images/Heavy Duty/WebP/heavy-haulers-towing-oversize-peterbilt-cat-equipment-lowboy-heavy-duty.webp";
-
 export type LandingImageId =
   | "light_luxury_flatbed"
   | "light_accident_recovery"
@@ -156,7 +148,7 @@ export const landingImages: LandingImageMeta[] = [
   },
   {
     id: "heavy_cat_d_series_desert",
-    src: heavyCatDSeriesDesert,
+    src: "/work-images/heavy-duty/heavy-haulers-towing-cat-d-series-bulldozer-golden-hour-desert-heavy-haul.webp",
     alt: "Heavy Haulers lowboy trailer transporting a massive CAT D-series bulldozer at golden hour in the California desert",
     seoTitle: "CAT D-Series Bulldozer Transport – Heavy Haulers Heavy Haul California",
     seoDescription:
@@ -164,7 +156,7 @@ export const landingImages: LandingImageMeta[] = [
   },
   {
     id: "heavy_cat_dozer_golden_hour",
-    src: heavyCatDozerGoldenHour,
+    src: "/work-images/heavy-duty/heavy-haulers-towing-cat-dozer-flatbed-golden-hour-heavy-haul.webp",
     alt: "Heavy Haulers flatbed truck transporting a CAT bulldozer at golden hour in California",
     seoTitle: "CAT Bulldozer Transport at Golden Hour – Heavy Haulers California",
     seoDescription:
@@ -172,7 +164,7 @@ export const landingImages: LandingImageMeta[] = [
   },
   {
     id: "heavy_semi_box_trailer",
-    src: heavySemiBoxTrailer,
+    src: "/work-images/heavy-duty/heavy-haulers-towing-semi-truck-box-trailer-heavy-wrecker-18-wheeler.webp",
     alt: "H&H Towing heavy wrecker recovering a full semi truck and box trailer in the Bay Area",
     seoTitle: "Semi Truck & 18-Wheeler Recovery – H&H Towing Co. Bay Area",
     seoDescription:
@@ -180,7 +172,7 @@ export const landingImages: LandingImageMeta[] = [
   },
   {
     id: "heavy_semi_reefer",
-    src: heavySemiReefer,
+    src: "/work-images/heavy-duty/heavy-haulers-towing-semi-truck-reefer-trailer-commercial-heavy-duty.webp",
     alt: "Heavy Haulers Peterbilt semi truck pulling a refrigerated reefer trailer on the highway",
     seoTitle: "Commercial Semi Truck & Reefer Trailer Towing – Heavy Haulers",
     seoDescription:
@@ -188,7 +180,7 @@ export const landingImages: LandingImageMeta[] = [
   },
   {
     id: "heavy_wheel_loader",
-    src: heavyWheelLoader,
+    src: "/work-images/heavy-duty/heavy-haulers-towing-cat-wheel-loader-heavy-haul-flatbed-transport.webp",
     alt: "Heavy Haulers white Peterbilt lowboy hauling a CAT 982M wheel loader under a clear California sky",
     seoTitle: "CAT Wheel Loader Transport & Heavy Haul – Heavy Haulers California",
     seoDescription:
@@ -196,7 +188,7 @@ export const landingImages: LandingImageMeta[] = [
   },
   {
     id: "heavy_oversize_sunset",
-    src: heavyOversizeSunset,
+    src: "/work-images/heavy-duty/heavy-haulers-towing-oversized-cargo-flatbed-sunset-heavy-haul.webp",
     alt: "Heavy Haulers flatbed truck transporting oversized tarp-covered cargo at sunset",
     seoTitle: "Oversized Load & Heavy Haul Transport – Heavy Haulers California",
     seoDescription:
@@ -204,7 +196,7 @@ export const landingImages: LandingImageMeta[] = [
   },
   {
     id: "heavy_oversize_peterbilt_cat",
-    src: heavyOversizePeterbiltCat,
+    src: "/work-images/heavy-duty/heavy-haulers-towing-oversize-peterbilt-cat-equipment-lowboy-heavy-duty.webp",
     alt: "Heavy Haulers oversize Peterbilt truck hauling CAT equipment on lowboy — dramatic low-angle shot",
     seoTitle: "Oversize Heavy Haul Transport – Heavy Haulers California Towing",
     seoDescription:

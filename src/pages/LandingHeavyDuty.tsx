@@ -10,7 +10,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Phone, MapPin } from "lucide-react";
 
-const BASE_URL = "https://www.heavytowpro.com";
+const BASE_URL = "https://heavytowpro.com";
 const HERO_IMAGE_PATH = landingImagesById.heavy_cat_d_series_desert.src;
 const HERO_IMAGE_URL = `${BASE_URL}${HERO_IMAGE_PATH}`;
 
