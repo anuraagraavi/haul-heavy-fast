@@ -683,7 +683,6 @@ const HeavyFAQSection = () => {
         <div className="max-w-3xl mx-auto">
           <Accordion
             type="multiple"
-            collapsible
             defaultValue={["item-0", "item-1", "item-2"]}
             className="space-y-3"
           >

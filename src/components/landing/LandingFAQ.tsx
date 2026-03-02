@@ -30,7 +30,7 @@ const LandingFAQ = () => {
         </div>
 
         <div className="max-w-3xl mx-auto">
-          <Accordion type="multiple" collapsible defaultValue={["item-0", "item-1", "item-2"]} className="space-y-3">
+          <Accordion type="multiple" defaultValue={["item-0", "item-1", "item-2"]} className="space-y-3">
             {C1_FAQS.map((faq, index) => (
               <AccordionItem
                 key={index}

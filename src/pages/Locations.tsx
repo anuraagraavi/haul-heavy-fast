@@ -94,7 +94,7 @@ const Locations = () => {
     { value: "60+", label: "Cities & Districts" }
   ];
 
-  const hubSchemas = dispatchHubs.map(hub => ({
+  const hubSchemas = DISPATCH_HUBS.map(hub => ({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": `Heavy Tow Pro – ${hub.city}`,

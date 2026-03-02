@@ -35,7 +35,7 @@ const CoverageMap = () => {
             {BAY_AREA_COUNTIES_LP.map((county, index) => (
               <div key={index} className="bg-background rounded-xl p-4 border border-border">
                 <h3 className="font-bold text-foreground mb-2">
-                  {county.name} {county.star && "★ #1 Market"}
+                  {county.name} {'star' in county && county.star && "★ #1 Market"}
                 </h3>
                 <p className="text-sm text-muted-foreground">{county.cities}</p>
               </div>
