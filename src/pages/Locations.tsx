@@ -133,6 +133,7 @@ const Locations = () => {
       <Helmet>
         <title>Bay Area & Central Valley Towing Coverage - Heavy Tow Pro | 5 Counties Served</title>
         <meta name="description" content="Professional towing services across San Francisco, San Mateo, Alameda, Santa Clara, and Contra Costa counties plus Central Valley (Stockton). 6 dispatch hubs with 24/7 emergency service." />
+        <link rel="canonical" href="https://heavytowpro.com/locations" />
         {hubSchemas.map((schema, i) => (
           <script key={i} type="application/ld+json">
             {JSON.stringify(schema)}

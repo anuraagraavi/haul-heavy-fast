@@ -12,6 +12,9 @@
   <url><loc>https://heavytowpro.com/services/light-duty</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://heavytowpro.com/services/medium-duty</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://heavytowpro.com/services/heavy-duty</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://heavytowpro.com/towing-services</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://heavytowpro.com/towing/bay-area-flatbed-emergency-towing-24-7</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://heavytowpro.com/towing/heavy-duty-towing-bay-area</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 
   <!-- Service Areas -->
   <url><loc>https://heavytowpro.com/locations</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -54,5 +57,6 @@
   <url><loc>https://heavytowpro.com/privacy-policy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://heavytowpro.com/terms</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://heavytowpro.com/sitemap</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://heavytowpro.com/thank-you</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
 
 </urlset>

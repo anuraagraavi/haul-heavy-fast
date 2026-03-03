@@ -9,6 +9,7 @@ import { landingImagesById } from "@/data/landingImages";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Phone, MapPin } from "lucide-react";
+import QuickQuoteForm from "@/components/landing/QuickQuoteForm";
 
 const BASE_URL = "https://heavytowpro.com";
 const HERO_IMAGE_PATH = landingImagesById.heavy_cat_d_series_desert.src;
@@ -111,6 +112,7 @@ const LandingHeavyDuty = () => {
         geo: { "@type": "GeoCoordinates", latitude: "37.6810", longitude: "-122.4007" },
         url: canonicalUrl,
         priceRange: "$$",
+        aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "500" },
         openingHoursSpecification: {
           "@type": "OpeningHoursSpecification",
           dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
@@ -184,6 +186,31 @@ const LandingHeavyDuty = () => {
       <Header />
       <main className="min-h-screen pt-16">
         <HeavyLandingHero />
+        <section id="heavy-quick-quote" className="py-10 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch max-w-5xl mx-auto">
+              <div className="bg-card border border-border rounded-2xl p-5 md:p-6 h-full flex flex-col justify-between max-w-md mx-auto lg:mx-0 text-center lg:text-left space-y-3">
+                <div className="space-y-3">
+                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">
+                    Fleet & Heavy-Duty Quick Quote
+                  </h2>
+                  <p className="text-sm md:text-base text-muted-foreground max-w-md mx-auto lg:mx-0">
+                    Tell us where your truck or equipment is and we&apos;ll confirm the right unit,
+                    pricing, and ETA. Built for fleet managers and logistics teams.
+                  </p>
+                  <ul className="space-y-2 text-sm text-muted-foreground max-w-md mx-auto lg:mx-0">
+                    <li>• Priority dispatch for commercial incidents</li>
+                    <li>• Rotators, heavy wreckers, and lowboys available 24/7</li>
+                    <li>• Pricing and SLA options for repeat fleet work</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="flex justify-center lg:justify-end items-stretch">
+                <QuickQuoteForm campaign="C2" redirectTo="/thank-you?type=quick-quote-c2" />
+              </div>
+            </div>
+          </div>
+        </section>
         <HeavyCapabilityBar />
         <HeavyServiceCapabilitiesSection />
         <HeavyProcessSection />
@@ -370,7 +397,7 @@ const FleetContractsSection = () => {
             </ul>
             <div className="mt-6 space-y-2">
               <Button asChild className="w-full sm:w-auto">
-                <a href="/get-a-quote">Request Fleet Contract Quote</a>
+                <a href="#heavy-quick-quote">Request Fleet Contract Quote</a>
               </Button>
               <p className="text-sm text-muted-foreground">
                 Prefer email? Contact{" "}
@@ -746,7 +773,7 @@ const HeavyDualConversionSection = () => {
             </div>
             <div className="space-y-3">
               <Button asChild size="lg" variant="secondary" className="w-full sm:w-auto">
-                <a href="/get-a-quote">Request Fleet Quote</a>
+                <a href="#heavy-quick-quote">Request Fleet Quote</a>
               </Button>
               <p className="text-xs text-muted-foreground">
                 Or email{" "}
@@ -833,7 +860,7 @@ const FinalHeavyCTASection = () => {
               </Button>
             </a>
             <Button variant="outline" size="lg" asChild>
-              <a href="/get-a-quote">Request Fleet Quote</a>
+              <a href="#heavy-quick-quote">Request Fleet Quote</a>
             </Button>
           </div>
         </div>

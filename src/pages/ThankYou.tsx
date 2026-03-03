@@ -7,11 +7,14 @@ import { Link, useSearchParams } from "react-router-dom";
 
 const ThankYou = () => {
   const [searchParams] = useSearchParams();
-  const type = searchParams.get('type') || 'contact';
+  const type = searchParams.get("type") || "contact";
 
   const getContent = () => {
     switch (type) {
-      case 'quote':
+      case "quote":
+      case "quick-quote":
+      case "quick-quote-c1":
+      case "quick-quote-c2":
         return {
           title: "Quote Request Received",
           message: "Thank you for your quote request! Our team is reviewing your information and will provide a detailed estimate within 15 minutes during business hours.",
@@ -19,10 +22,10 @@ const ThankYou = () => {
             "Our dispatch team is reviewing your request",
             "You'll receive a detailed quote via phone or email",
             "Average response time: 15 minutes",
-            "For urgent needs, call us directly"
-          ]
+            "For urgent needs, call us directly",
+          ],
         };
-      case 'newsletter':
+      case "newsletter":
         return {
           title: "Successfully Subscribed",
           message: "Welcome to Heavy Haulers updates! You'll now receive our latest news, tips, and special offers directly in your inbox.",
@@ -30,8 +33,8 @@ const ThankYou = () => {
             "Check your email for a confirmation message",
             "Follow us on social media for daily updates",
             "Visit our blog for towing tips and guides",
-            "Contact us anytime for towing services"
-          ]
+            "Contact us anytime for towing services",
+          ],
         };
       default: // contact
         return {
@@ -41,8 +44,8 @@ const ThankYou = () => {
             "Our team will review your message",
             "Expect a response within 24 hours",
             "For emergencies, call us directly",
-            "We'll follow up via your preferred method"
-          ]
+            "We'll follow up via your preferred method",
+          ],
         };
     }
   };

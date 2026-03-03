@@ -20,7 +20,7 @@ const Privacy = () => {
             <div className="max-w-4xl mx-auto">
               <h1 className="text-4xl font-bold mb-6">Privacy Policy</h1>
               <p className="text-muted-foreground mb-8">
-                Last updated: {new Date().toLocaleDateString()}
+                Last updated: March 3, 2026
               </p>
 
               <div className="space-y-8">
@@ -156,7 +156,7 @@ const Privacy = () => {
                       <p>Heavy Haulers San Francisco</p>
                       <p>Email: dispatch@heavytowpro.com</p>
                       <p>Phone: 650-881-2400</p>
-                      <p>Address: 308 Industrial Way, Brisbane, CA 94005</p>
+                      <p>Address: 351 Industrial Way, Brisbane, CA 94005</p>
                     </div>
                   </CardContent>
                 </Card>

@@ -60,13 +60,21 @@ const LandingHero = () => {
              <span className="bg-gradient-primary bg-clip-text text-transparent">Call Now.</span>
            </h1>
 
-           {/* Dominant phone number */}
-           <a
-             href="tel:+16508812400"
-             className="inline-block text-white font-bold text-3xl md:text-4xl lg:text-[2.5rem] mb-4 hover:underline focus:underline"
-           >
-             650-881-2400
-           </a>
+          {/* Dominant phone number */}
+          <a
+            href="tel:+16508812400"
+            className="inline-block text-white font-bold text-3xl md:text-4xl lg:text-[2.5rem] mb-4 hover:underline focus:underline"
+            onClick={() => {
+              if (typeof window !== "undefined" && (window as any).gtag) {
+                (window as any).gtag("event", "phone_click", {
+                  campaign: "C1",
+                  source: "landing_page",
+                });
+              }
+            }}
+          >
+            650-881-2400
+          </a>
            
            {/* Key Benefits row (Truck, Shield, Clock) */}
            <div className="flex flex-wrap justify-center gap-4 mb-6 max-w-2xl mx-auto">
@@ -92,7 +100,17 @@ const LandingHero = () => {
            {/* CTA Buttons: variant hero + secondary */}
            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
              <Button variant="hero" size="lg" asChild className="w-full sm:w-auto h-16 md:h-14 text-lg md:text-xl px-8">
-               <a href="tel:+16508812400">
+               <a
+                 href="tel:+16508812400"
+                 onClick={() => {
+                   if (typeof window !== "undefined" && (window as any).gtag) {
+                     (window as any).gtag("event", "phone_click", {
+                       campaign: "C1",
+                       source: "landing_page",
+                     });
+                   }
+                 }}
+               >
                  <Phone className="w-6 h-6 mr-3" />
                  CALL NOW
                </a>

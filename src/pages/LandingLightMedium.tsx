@@ -16,8 +16,9 @@ import LandingFAQ from "@/components/landing/LandingFAQ";
 import FinalCTA from "@/components/landing/FinalCTA";
 import StickyMobileCTA from "@/components/landing/StickyMobileCTA";
 import { landingImagesById } from "@/data/landingImages";
+import QuickQuoteForm from "@/components/landing/QuickQuoteForm";
 
-const BASE_URL = "https://www.heavytowpro.com";
+const BASE_URL = "https://heavytowpro.com";
 const HERO_IMAGE_PATH = landingImagesById.light_suv_tree_lined.src;
 const HERO_IMAGE_URL = `${BASE_URL}${HERO_IMAGE_PATH}`;
 
@@ -125,6 +126,31 @@ const LandingLightMedium = () => {
       <Header />
       <main className="min-h-screen pt-16">
         <LandingHero />
+        <section id="light-quick-quote" className="py-10 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch max-w-5xl mx-auto">
+              <div className="bg-card border border-border rounded-2xl p-5 md:p-6 h-full flex flex-col justify-between max-w-md mx-auto lg:mx-0 text-center lg:text-left space-y-3">
+                <div className="space-y-3">
+                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">
+                    Fast, Transparent Tow Quotes
+                  </h2>
+                  <p className="text-sm md:text-base text-muted-foreground max-w-md mx-auto lg:mx-0">
+                    Share a few details and our dispatcher will confirm pricing and ETA. No
+                    obligation and no hidden fees.
+                  </p>
+                  <ul className="space-y-2 text-sm text-muted-foreground max-w-md mx-auto lg:mx-0">
+                    <li>• 24/7 live Bay Area dispatch</li>
+                    <li>• Upfront pricing before we load your vehicle</li>
+                    <li>• Flatbed-only for AWD, EVs, and luxury vehicles</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="flex justify-center lg:justify-end items-stretch">
+                <QuickQuoteForm campaign="C1" redirectTo="/thank-you?type=quick-quote-c1" />
+              </div>
+            </div>
+          </div>
+        </section>
         <ProcessSteps />
         <CoverageMap />
         <TrustBar />

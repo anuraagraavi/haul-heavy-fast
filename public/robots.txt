@@ -20,3 +20,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://heavytowpro.com/sitemap.xml
+
+# AI crawler documentation (llms.txt)
+# https://heavytowpro.com/llms.txt

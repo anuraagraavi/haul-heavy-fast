@@ -60,6 +60,36 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
+## SEO & indexability checklist
+
+Use this quick checklist whenever you add or significantly change a page:
+
+- **1. Route & sitemap**
+  - Add or update the route in `src/App.tsx`.
+  - Add the full URL to `public/sitemap.xml` (keep structure and priorities consistent).
+
+- **2. Page-level SEO**
+  - Ensure the page component under `src/pages` uses `Helmet` with:
+    - Descriptive `<title>`
+    - Clear `<meta name="description">`
+    - Correct `<link rel="canonical">` that matches the sitemap URL/path
+  - For important pages, optionally add Open Graph / Twitter meta tags and JSON-LD schema.
+
+- **3. Build & prerender**
+  - Run `npm run build` to generate the production build.
+  - Confirm `public/robots.txt` and `public/sitemap.xml` are present in the built output (under `dist`).
+  - For high-priority routes (including the Google Ads landing pages), ensure they are listed in the `vite-plugin-prerender-esm-fix` `routes` array in `vite.config.ts` so static HTML is generated.
+
+- **4. Post-deploy verification (via browser tools)**
+  - In Google Search Console, use URL Inspection for:
+    - The homepage (`/`)
+    - The new/updated page
+    - A representative blog or landing page
+  - Confirm:
+    - The URL is indexable (not blocked by robots or noindex).
+    - The rendered HTML contains the expected content and meta tags.
+    - The updated sitemap has been submitted and processed.
+
 ## Production & ads status
 
 This site is currently **ready for paid ads traffic** to the heavy-duty landing page at:

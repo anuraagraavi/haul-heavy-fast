@@ -51,57 +51,40 @@ const Index = () => {
         <meta name="geo.position" content="37.7749;-122.4194" />
         <meta name="ICBM" content="37.7749, -122.4194" />
         
-        {/* Comprehensive Schema.org JSON-LD */}
+        {/* Comprehensive Schema.org JSON-LD – aligned with Locations & Contact (6 hubs, 5 counties + Central Valley) */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             "name": "Heavy Haulers San Francisco",
-            "description": "Professional towing and recovery services in San Francisco Bay Area",
+            "description": "Professional towing and recovery services in San Francisco Bay Area and Central Valley (Stockton). 6 dispatch hubs, 24/7 emergency response.",
             "url": "https://heavytowpro.com",
             "logo": "https://heavytowpro.com/favicon.png",
             "telephone": "+1-650-881-2400",
             "email": "dispatch@heavytowpro.com",
             "address": {
               "@type": "PostalAddress",
-              "addressLocality": "San Francisco",
+              "streetAddress": "351 Industrial Way",
+              "addressLocality": "Brisbane",
               "addressRegion": "CA",
+              "postalCode": "94005",
               "addressCountry": "US"
             },
             "geo": {
               "@type": "GeoCoordinates",
-              "latitude": "37.7749",
-              "longitude": "-122.4194"
+              "latitude": "37.6810",
+              "longitude": "-122.4007"
             },
-            "openingHours": ["Mo-Su 00:00-23:59"],
+            "openingHours": "Mo-Su 00:00-23:59",
             "priceRange": "$$",
-            "paymentAccepted": ["Cash", "Credit Card", "Insurance"],
+            "paymentAccepted": ["Cash", "Credit Card", "Insurance", "Fleet Contract"],
             "areaServed": [
-              {
-                "@type": "City",
-                "name": "San Francisco",
-                "addressRegion": "CA"
-              },
-              {
-                "@type": "AdministrativeArea",
-                "name": "San Mateo County",
-                "addressRegion": "CA"
-              },
-              {
-                "@type": "AdministrativeArea", 
-                "name": "Alameda County",
-                "addressRegion": "CA"
-              },
-              {
-                "@type": "AdministrativeArea",
-                "name": "Santa Clara County", 
-                "addressRegion": "CA"
-              },
-              {
-                "@type": "AdministrativeArea",
-                "name": "Contra Costa County",
-                "addressRegion": "CA"
-              }
+              { "@type": "AdministrativeArea", "name": "San Francisco County", "addressRegion": "CA" },
+              { "@type": "AdministrativeArea", "name": "San Mateo County", "addressRegion": "CA" },
+              { "@type": "AdministrativeArea", "name": "Alameda County", "addressRegion": "CA" },
+              { "@type": "AdministrativeArea", "name": "Santa Clara County", "addressRegion": "CA" },
+              { "@type": "AdministrativeArea", "name": "Contra Costa County", "addressRegion": "CA" },
+              { "@type": "AdministrativeArea", "name": "San Joaquin County", "addressRegion": "CA", "description": "Central Valley (Stockton)" }
             ],
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
@@ -179,7 +162,7 @@ const Index = () => {
                 "name": "Which areas do you serve?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "We serve all five Bay Area counties: San Francisco, San Mateo, Alameda, Santa Clara, and Contra Costa. This includes major cities like San Francisco, Oakland, San Jose, Walnut Creek, and hundreds of smaller communities throughout the Bay Area."
+                  "text": "We serve five Bay Area counties (San Francisco, San Mateo, Alameda, Santa Clara, Contra Costa) and the Central Valley (Stockton). We operate 6 dispatch hubs in Brisbane (HQ), San Leandro, Hayward, San Jose, San Mateo, and Stockton, covering 60+ cities and districts. Call 650-881-2400 for Peninsula/San Mateo/Brisbane, 510-800-3800 for East Bay, 408-800-3800 for South Bay, 916-701-2200 for Central Valley."
                 }
               },
               {

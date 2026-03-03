@@ -36,7 +36,17 @@ const FinalCTA = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Button variant="hero" size="lg" asChild className="w-full sm:w-auto h-16 md:h-14 text-lg md:text-xl px-10">
-              <a href="tel:+16508812400">
+              <a
+                href="tel:+16508812400"
+                onClick={() => {
+                  if (typeof window !== "undefined" && (window as any).gtag) {
+                    (window as any).gtag("event", "phone_click", {
+                      campaign: "C1",
+                      source: "landing_page",
+                    });
+                  }
+                }}
+              >
                 <Phone className="w-6 h-6 mr-3" />
                 CALL NOW — 650-881-2400
               </a>

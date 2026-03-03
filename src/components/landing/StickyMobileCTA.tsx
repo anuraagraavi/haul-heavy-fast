@@ -5,7 +5,11 @@ import { Phone } from "lucide-react";
 const PHONE_LINK = "tel:+16508812400";
 const PHONE_DISPLAY = "650-881-2400";
 
-const LANDING_PATHS = ["/towing/bay-area-flatbed-emergency-towing-24-7", "/towing-services"];
+const LANDING_PATHS = [
+  "/towing/bay-area-flatbed-emergency-towing-24-7",
+  "/towing-services",
+  "/towing/heavy-duty-towing-bay-area",
+];
 
 const StickyMobileCTA = () => {
   const { pathname } = useLocation();

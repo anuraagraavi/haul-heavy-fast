@@ -76,6 +76,14 @@ const HeavyLandingHero = () => {
           <a
             href="tel:+16508812400"
             className="inline-block text-white font-bold text-3xl md:text-4xl lg:text-[2.5rem] mb-4 hover:underline focus:underline"
+            onClick={() => {
+              if (typeof window !== "undefined" && (window as any).gtag) {
+                (window as any).gtag("event", "phone_click", {
+                  campaign: "C2",
+                  source: "landing_page",
+                });
+              }
+            }}
           >
             650-881-2400
           </a>
@@ -110,7 +118,17 @@ const HeavyLandingHero = () => {
               asChild
               className="w-full sm:w-auto h-16 md:h-14 text-lg md:text-xl px-8"
             >
-              <a href="tel:+16508812400">
+              <a
+                href="tel:+16508812400"
+                onClick={() => {
+                  if (typeof window !== "undefined" && (window as any).gtag) {
+                    (window as any).gtag("event", "phone_click", {
+                      campaign: "C2",
+                      source: "landing_page",
+                    });
+                  }
+                }}
+              >
                 <Phone className="w-6 h-6 mr-3" />
                 CALL NOW
               </a>
@@ -121,7 +139,7 @@ const HeavyLandingHero = () => {
               asChild
               className="w-full sm:w-auto h-12 text-base px-6"
             >
-              <Link to="/get-a-quote">Request a Fleet Quote</Link>
+              <a href="#heavy-quick-quote">Request a Fleet Quote</a>
             </Button>
           </div>
 

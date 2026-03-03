@@ -1,0 +1,40 @@
+# Heavy Haulers / Heavy Tow Pro – San Francisco Bay Area Towing
+
+> 24/7 professional towing and recovery across the San Francisco Bay Area and Central Valley (Stockton). Light, medium, and heavy-duty service with 6 dispatch hubs, ~15 min average response, transparent pricing. Primary phone: (650) 881-2400.
+
+## Main
+
+- [Home](https://heavytowpro.com/): Homepage, services overview, and contact CTAs
+- [About Us](https://heavytowpro.com/about): Company mission, values, and story
+- [Get a Quote](https://heavytowpro.com/get-a-quote): Free towing quote form
+- [Contact Us](https://heavytowpro.com/contact): Contact form, dispatch numbers by area, office hours, and Brisbane HQ address (351 Industrial Way, Brisbane, CA 94005)
+
+## Services
+
+- [All Services](https://heavytowpro.com/services): Light-, medium-, and heavy-duty towing overview
+- [Light-Duty Towing](https://heavytowpro.com/services/light-duty): Cars, motorcycles, flatbed, luxury, private-property removal
+- [Medium-Duty Towing](https://heavytowpro.com/services/medium-duty): Vans, box trucks, RVs, work trucks
+- [Heavy-Duty Towing](https://heavytowpro.com/services/heavy-duty): Semis, buses, equipment, fleet contracts, rotator recovery
+- [Car & Truck Towing Landing](https://heavytowpro.com/towing-services): Bay Area car and truck towing landing page
+- [Bay Area Flatbed Emergency Towing 24/7](https://heavytowpro.com/towing/bay-area-flatbed-emergency-towing-24-7): Flatbed emergency towing landing
+- [Heavy Duty Towing Bay Area](https://heavytowpro.com/towing/heavy-duty-towing-bay-area): Heavy-duty and commercial landing
+
+## Locations & Contact
+
+- [Locations / Coverage](https://heavytowpro.com/locations): Bay Area and Central Valley coverage; 5 counties (San Francisco, San Mateo, Alameda, Santa Clara, Contra Costa) plus Central Valley (Stockton). 6 dispatch hubs: Brisbane (HQ), San Leandro, Hayward, San Jose, San Mateo, Stockton. ~60+ cities and districts.
+- [Contact Us](https://heavytowpro.com/contact): Dispatch by area – Peninsula / San Mateo / Brisbane: 650-881-2400; East Bay (San Leandro / Hayward): 510-800-3800; South Bay (San Jose): 408-800-3800; Central Valley (Stockton): 916-701-2200. Email: dispatch@heavytowpro.com. Office hours: Mon–Fri 7AM–7PM, Sat 8AM–6PM, Sun 9AM–5PM; emergency dispatch 24/7.
+
+## Resources
+
+- [Blog & Guides](https://heavytowpro.com/blog): Towing tips, emergency guides, fleet and EV towing, Bay Area–specific articles
+
+## Legal
+
+- [Privacy Policy](https://heavytowpro.com/privacy-policy): Privacy policy
+- [Terms of Service](https://heavytowpro.com/terms): Terms of service
+- [HTML Sitemap](https://heavytowpro.com/sitemap): Full list of pages
+
+## Optional
+
+- [Thank You](https://heavytowpro.com/thank-you): Post-submission thank you page
+- [XML Sitemap](https://heavytowpro.com/sitemap.xml): Machine-readable sitemap for crawlers

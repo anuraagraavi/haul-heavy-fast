@@ -8,7 +8,7 @@ const Header = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isLocationsOpen, setIsLocationsOpen] = useState(false);
   const businessPhone = "650-881-2400";
-  const businessAddress = "308 Industrial Way Brisbane, CA 94005";
+  const businessAddress = "351 Industrial Way, Brisbane, CA 94005";
   const servicesHover = useHoverDelay(() => setIsServicesOpen(true), () => setIsServicesOpen(false), { leaveDelay: 200 });
   const locationsHover = useHoverDelay(() => setIsLocationsOpen(true), () => setIsLocationsOpen(false), { leaveDelay: 300 });
   return <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">

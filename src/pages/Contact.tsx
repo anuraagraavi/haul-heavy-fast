@@ -152,7 +152,8 @@ const Contact = () => {
                 { "@type": "Place", "name": "San Mateo County, CA" },
                 { "@type": "Place", "name": "Alameda County, CA" },
                 { "@type": "Place", "name": "Santa Clara County, CA" },
-                { "@type": "Place", "name": "San Joaquin County, CA" }
+                { "@type": "Place", "name": "Contra Costa County, CA" },
+                { "@type": "Place", "name": "San Joaquin County, CA (Central Valley / Stockton)" }
               ],
               "serviceType": ["Emergency Towing", "Heavy Duty Towing", "Light Duty Towing", "Medium Duty Towing", "Fleet Services", "Vehicle Recovery"],
               "openingHours": "Mo-Su 00:00-24:00",
