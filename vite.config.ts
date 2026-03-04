@@ -16,7 +16,11 @@ export default defineConfig(({ mode }) => ({
     react(),
     imagetools(),
     mode === "development" && componentTagger(),
+    // NOTE: Prerendering is disabled by default to avoid build/publish failures
+    // in Lovable's headless prerender environment. To re-enable it for a
+    // curated set of routes, set ENABLE_PRERENDER=\"true\" in the build env.
     mode === "production" &&
+      process.env.ENABLE_PRERENDER === "true" &&
       vitePrerender({
         staticDir: path.join(__dirname, "dist"),
         routes: [
