@@ -1,64 +1,80 @@
-# Welcome to your Lovable project
+## Heavy Tow Pro – Leadgen Marketing Site
 
-## Project info
+This repo contains the React/Vite marketing site and lead-generation funnels for **Heavy Tow Pro / Heavy Haulers** in the San Francisco Bay Area and Central Valley.
 
-**URL**: https://lovable.dev/projects/0d3fbbbd-fefd-4fdf-9270-7744fc64065d
+- Light/medium-duty leadgen landings at:
+  - `/towing-services`
+  - `/towing/bay-area-flatbed-emergency-towing-24-7`
+- Heavy-duty / fleet leadgen landing at:
+  - `/towing/heavy-duty-towing-bay-area`
+- Supporting pages: services, locations/coverage, contact, quote, privacy, terms, HTML sitemap, and a full blog.
 
-## How can I edit this code?
+The landing pages are designed for **paid search & fleet leadgen** with:
 
-There are several ways of editing your application.
+- Clear above-the-fold phone CTAs (`650-881-2400`) and sticky mobile tap-to-call.
+- 60-second quote forms wired to Supabase edge email functions.
+- JSON-LD for LocalBusiness, Service, and FAQPage on key pages.
+- Vite prerendering for all main pages, landings, and blog articles.
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/0d3fbbbd-fefd-4fdf-9270-7744fc64065d) and start prompting.
+## Tech stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- Vite (React + SWC)
+- TypeScript
+- React Router
+- Tailwind CSS + tailwind-animate
+- shadcn/ui + Radix primitives
+- @tanstack/react-query
+- Supabase (edge function for email lead delivery)
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Local development
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Requirements:
 
-Follow these steps:
+- Node.js 18+ and npm
+
+Setup:
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+git clone https://github.com/anuraagraavi/haul-heavy-fast.git
+cd haul-heavy-fast
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The app runs on `http://localhost:5173` by default (or whatever Vite prints).
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+## Leadgen & forms
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- **Quick quote forms**
+  - `src/components/landing/QuickQuoteForm.tsx`
+  - Used by:
+    - `src/pages/LandingLightMedium.tsx` (campaign C1 – light/medium)
+    - `src/pages/LandingHeavyDuty.tsx` (campaign C2 – heavy/fleet)
+  - Submits to `submitQuoteForm` in `src/lib/formSubmission.ts`, which invokes the Supabase `send-email` edge function and sends to:
+    - `anuraagraavi@gmail.com`
+    - `heavyhaulers.ca@gmail.com`
+    - `dispatch@heavytowpro.com`
+  - On success, redirects to `/thank-you?type=quick-quote-c1` or `/thank-you?type=quick-quote-c2`.
 
-## What technologies are used for this project?
+- **Contact form**
+  - `src/pages/Contact.tsx` uses `submitContactForm` from `src/lib/formSubmission.ts`.
+  - On success, redirects to `/thank-you?type=contact`.
 
-This project is built with:
+- **Thank-you page**
+  - `src/pages/ThankYou.tsx` reads `type` from the query string and renders tailored copy for:
+    - `contact`
+    - `quote` / `quick-quote` / `quick-quote-c1` / `quick-quote-c2`
+    - `newsletter`
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Analytics hooks (`window.gtag`) are guarded so they fail safe when GA is not present.
+
+---
 
 ## SEO & indexability checklist
 
@@ -72,28 +88,32 @@ Use this quick checklist whenever you add or significantly change a page:
   - Ensure the page component under `src/pages` uses `Helmet` with:
     - Descriptive `<title>`
     - Clear `<meta name="description">`
-    - Correct `<link rel="canonical">` that matches the sitemap URL/path
+    - Correct `<link rel="canonical">` that matches the sitemap URL/path.
   - For important pages, optionally add Open Graph / Twitter meta tags and JSON-LD schema.
 
 - **3. Build & prerender**
   - Run `npm run build` to generate the production build.
   - Confirm `public/robots.txt` and `public/sitemap.xml` are present in the built output (under `dist`).
-  - For high-priority routes (including the Google Ads landing pages), ensure they are listed in the `vite-plugin-prerender-esm-fix` `routes` array in `vite.config.ts` so static HTML is generated.
+  - For high-priority routes (including the Google Ads landing pages and blog articles), ensure they are listed in the `vite-plugin-prerender-esm-fix` `routes` array in `vite.config.ts` so static HTML is generated.
 
-- **4. Post-deploy verification (via browser tools)**
+- **4. Post-deploy verification**
   - In Google Search Console, use URL Inspection for:
     - The homepage (`/`)
     - The new/updated page
     - A representative blog or landing page
   - Confirm:
-    - The URL is indexable (not blocked by robots or noindex).
+    - The URL is indexable (not blocked by robots or `noindex`).
     - The rendered HTML contains the expected content and meta tags.
     - The updated sitemap has been submitted and processed.
 
+---
+
 ## Production & ads status
 
-This site is currently **ready for paid ads traffic** to the heavy-duty landing page at:
+This site is currently **ready for paid ads traffic** to:
 
-- `https://heavytowpro.com/towing/heavy-duty-towing-bay-area`
+- Light/medium landing: `https://heavytowpro.com/towing-services`
+- Emergency flatbed landing: `https://heavytowpro.com/towing/bay-area-flatbed-emergency-towing-24-7`
+- Heavy/fleet landing: `https://heavytowpro.com/towing/heavy-duty-towing-bay-area`
 
-The hero imagery, tracking, and routing have been verified in a production build.
+The hero imagery, tracking guards, routing, leadgen forms, and prerendering have been verified in a production build.
