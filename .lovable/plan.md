@@ -1,47 +1,80 @@
 
-## Two Build Failures — Root Cause Analysis
+## Complete Google Tag Audit — All Pages Including Landing Pages
 
-### Failure 1 — Edge Function: `npm:resend@2.0.0` not found
+### What I found across all files
 
-**File:** `supabase/functions/send-email/index.ts` line 2
+**Files with phone_click events (tracking EXISTS):**
+- `LandingHero.tsx` — 2 events (phone number link + CALL NOW button) — C1, no `send_to`
+- `HeavyLandingHero.tsx` — 2 events (phone number link + CALL NOW button) — C2, no `send_to`
+- `FinalCTA.tsx` — 1 event (CALL NOW button) — C1, no `send_to`
 
-```
-import { Resend } from "npm:resend@2.0.0";
-```
+**Files with phone links but NO tracking:**
+- `LandingHeavyDuty.tsx` — 2 untracked `tel:` links (Emergency Dispatch card + Final CTA)
+- `StickyMobileCTA.tsx` — sticky mobile TAP TO CALL button, no tracking
+- `PricingSection.tsx` — phone link, no tracking
+- `ProcessSteps.tsx` — 2 phone links, no tracking
+- `CoverageMap.tsx` — phone link, no tracking
+- `Contact.tsx` — multiple phone links (4 dispatch areas), no tracking
 
-Deno Edge Functions require a `deno.json` (or `import_map.json`) file in the function directory to declare npm dependencies. Without it, the `npm:` specifier cannot be resolved during the Supabase deploy step, causing:
+**Form submissions with NO gtag:**
+- `Contact.tsx` (`handleSubmit`) — navigates to `/thank-you?type=contact`, no event fired
+- `GetQuote.tsx` (`handleSubmit`) — navigates to `/thank-you?type=quote`, no event fired
+- `QuickQuoteForm.tsx` — fires `quote_submit` but missing `send_to`
 
-> Could not find a matching package for 'npm:resend@2.0.0'
+**ThankYou.tsx** — zero gtag calls; this is the conversion confirmation page — must fire a conversion event on mount
 
-**Fix:** Add a `supabase/functions/send-email/deno.json` file that declares the import map for resend, OR switch to the ESM CDN import which requires no manifest:
+---
 
+## Complete Fix Plan (Expanded to All Landing Pages)
+
+### Files to change — 9 total
+
+**1. `src/pages/ThankYou.tsx`** (HIGHEST PRIORITY)
+Add `useEffect` on mount that fires:
+- `gtag('event', 'conversion', { send_to: 'AW-17927335103', value: 1.0, currency: 'USD' })` — this is what Google Ads actually counts
+- A descriptive event based on `type` query param (`quote_submit` or `contact_submit`) for GA4 reporting
+- Phone click tracking on the "Call 650-881-2400" button
+
+**2. `src/pages/Contact.tsx`**
+Add gtag call in `handleSubmit` before `navigate()`:
 ```ts
-// Replace line 2:
-import { Resend } from "npm:resend@2.0.0";
-// With:
-import { Resend } from "https://esm.sh/resend@2.0.0";
+gtag('event', 'contact_submit', { send_to: 'AW-17927335103', source: 'contact_page' })
+```
+Also add `phone_click` tracking to all 4 dispatch area phone links.
+
+**3. `src/pages/GetQuote.tsx`**
+Add gtag call in `handleSubmit` before `navigate()`:
+```ts
+gtag('event', 'quote_submit', { send_to: 'AW-17927335103', source: 'get_quote_page' })
 ```
 
-The ESM CDN approach (`esm.sh`) is already used for the Supabase client on line 3 and is the standard pattern for Supabase Edge Functions — no deno.json needed.
+**4. `src/components/landing/QuickQuoteForm.tsx`**
+Add `send_to: 'AW-17927335103'` to the existing `quote_submit` event.
+
+**5. `src/components/landing/LandingHero.tsx`**
+Add `send_to: 'AW-17927335103'` to both existing `phone_click` events.
+
+**6. `src/components/landing/HeavyLandingHero.tsx`**
+Add `send_to: 'AW-17927335103'` to both existing `phone_click` events.
+
+**7. `src/components/landing/FinalCTA.tsx`**
+Add `send_to: 'AW-17927335103'` to the existing `phone_click` event.
+
+**8. `src/pages/LandingHeavyDuty.tsx`** (the `/towing/heavy-duty-towing-bay-area` page)
+Add `phone_click` tracking to both untracked `tel:` links:
+- Emergency Dispatch card phone button (line 753)
+- `FinalHeavyCTASection` call button (line 856)
+Both will use `campaign: "C2", send_to: 'AW-17927335103'`.
+
+**9. `src/components/landing/StickyMobileCTA.tsx`** (shown on BOTH landing pages)
+Add `onClick` gtag `phone_click` event — this sticky bar appears on `/towing/heavy-duty-towing-bay-area` and `/towing/bay-area-flatbed-emergency-towing-24-7`. Use dynamic campaign based on pathname (C1 for light/medium, C2 for heavy).
 
 ---
 
-### Failure 2 — Vite Build: `dispatchHubs is not defined`
-
-**File:** `src/pages/Locations.tsx`
-
-The page imports `DISPATCH_HUBS` from `@/data/coverage` (confirmed present in that file), but somewhere in the JSX the old lowercase name `dispatchHubs` is still referenced — visible in the runtime stack trace pointing to `Locations-Dayk4crq.js:1:3342`. This means the compiled bundle still contains the old name from a stale edit.
-
-**Fix:** Audit the full `Locations.tsx` to ensure every reference uses `DISPATCH_HUBS` (all-caps), with no remaining `dispatchHubs` references anywhere in the file.
+### Tracking gaps left intentionally untouched
+`PricingSection.tsx`, `ProcessSteps.tsx`, `CoverageMap.tsx` — internal section links on the landing page; the hero and sticky CTA already cover phone call attribution on these pages, and adding tracking to every internal section link risks event spam/duplicates in the ads dashboard.
 
 ---
 
-## Plan
-
-### Files to change:
-
-1. **`supabase/functions/send-email/index.ts`** — Replace `npm:resend@2.0.0` with `https://esm.sh/resend@2.0.0` to match the existing ESM CDN pattern already used for supabase-js.
-
-2. **`src/pages/Locations.tsx`** — Do a full audit and replace any remaining `dispatchHubs` (lowercase) with `DISPATCH_HUBS`. This is a simple find-and-replace with no logic changes.
-
-No other files need to change. No UI modifications. No redesign.
+### Important note on conversion label
+The plan will add `send_to: 'AW-17927335103'` (account ID only) and a clear `// TODO: Add your conversion label` comment on the ThankYou page conversion event. The full `send_to` for conversions should be `AW-17927335103/YOUR_CONVERSION_LABEL`. The label is found in Google Ads → Goals → Conversions. Without it, Google Ads can't attribute a dollar value but it will still record the event.
