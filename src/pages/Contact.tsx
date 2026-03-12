@@ -54,6 +54,12 @@ const Contact = () => {
 
     try {
       await submitContactForm(formData);
+      if (typeof window !== "undefined" && (window as any).gtag) {
+        (window as any).gtag("event", "contact_submit", {
+          send_to: "AW-17927335103",
+          source: "contact_page",
+        });
+      }
       toast({
         title: "Message Sent!",
         description: "We'll get back to you as soon as possible. Check your email for confirmation.",
