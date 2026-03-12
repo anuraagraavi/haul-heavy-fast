@@ -104,6 +104,12 @@ const GetQuote = () => {
 
     try {
       await submitQuoteForm({ ...formData, attachments: fileUrls });
+      if (typeof window !== "undefined" && (window as any).gtag) {
+        (window as any).gtag("event", "quote_submit", {
+          send_to: "AW-17927335103",
+          source: "get_quote_page",
+        });
+      }
       toast({
         title: "Quote Request Submitted!",
         description: "We'll get back to you within 15 minutes. Check your email for confirmation.",

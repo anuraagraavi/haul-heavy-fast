@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -5,9 +6,40 @@ import { Helmet } from "react-helmet";
 import { CheckCircle, Phone, Home, Clock, ArrowRight } from "lucide-react";
 import { Link, useSearchParams } from "react-router-dom";
 
+const GTAG_ID = "AW-17927335103";
+// TODO: Replace YOUR_CONVERSION_LABEL with your actual label from Google Ads → Goals → Conversions
+// It looks like: AW-17927335103/AbCdEfGhIjKlMnOp
+const CONVERSION_LABEL = ""; // e.g. "AbCdEfGhIjKlMnOp"
+
+const fireGtag = (...args: unknown[]) => {
+  if (typeof window !== "undefined" && (window as any).gtag) {
+    (window as any).gtag(...args);
+  }
+};
+
 const ThankYou = () => {
   const [searchParams] = useSearchParams();
   const type = searchParams.get("type") || "contact";
+
+  useEffect(() => {
+    // Primary Google Ads conversion event — fires on every thank-you page load
+    const sendTo = CONVERSION_LABEL
+      ? `${GTAG_ID}/${CONVERSION_LABEL}`
+      : GTAG_ID;
+    fireGtag("event", "conversion", {
+      send_to: sendTo,
+      value: 1.0,
+      currency: "USD",
+    });
+
+    // Descriptive GA4 event based on form type
+    const isQuote = ["quote", "quick-quote", "quick-quote-c1", "quick-quote-c2"].includes(type);
+    fireGtag("event", isQuote ? "quote_submit" : "contact_submit", {
+      send_to: GTAG_ID,
+      source: "thank_you_page",
+      form_type: type,
+    });
+  }, [type]);
 
   const getContent = () => {
     switch (type) {
@@ -100,7 +132,13 @@ const ThankYou = () => {
                   </Link>
                 </Button>
                 <Button variant="outline" size="lg" asChild>
-                  <a href="tel:650-881-2400">
+                  <a
+                    href="tel:+16508812400"
+                    onClick={() => fireGtag("event", "phone_click", {
+                      send_to: GTAG_ID,
+                      source: "thank_you_page",
+                    })}
+                  >
                     <Phone className="w-5 h-5 mr-2" />
                     Call 650-881-2400
                   </a>
@@ -124,7 +162,13 @@ const ThankYou = () => {
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
                 <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-gray-100" asChild>
-                  <a href="tel:650-881-2400">
+                  <a
+                    href="tel:+16508812400"
+                    onClick={() => fireGtag("event", "phone_click", {
+                      send_to: GTAG_ID,
+                      source: "thank_you_emergency_cta",
+                    })}
+                  >
                     <Phone className="w-5 h-5 mr-2" />
                     Emergency Dispatch
                   </a>

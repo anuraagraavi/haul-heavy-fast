@@ -41,6 +41,7 @@ const FinalCTA = () => {
                 onClick={() => {
                   if (typeof window !== "undefined" && (window as any).gtag) {
                     (window as any).gtag("event", "phone_click", {
+                      send_to: "AW-17927335103",
                       campaign: "C1",
                       source: "landing_page",
                     });
