@@ -103,17 +103,18 @@ const LandingHero = () => {
              <Button variant="hero" size="lg" asChild className="w-full sm:w-auto h-16 md:h-14 text-lg md:text-xl px-8">
                <a
                  href="tel:+16508812400"
-                 onClick={() => {
-                   if (typeof window !== "undefined" && (window as any).gtag) {
-                     (window as any).gtag("event", "phone_click", {
-                       campaign: "C1",
-                       source: "landing_page",
-                     });
-                   }
-                 }}
-               >
-                 <Phone className="w-6 h-6 mr-3" />
-                 CALL NOW
+                  onClick={() => {
+                    if (typeof window !== "undefined" && (window as any).gtag) {
+                      (window as any).gtag("event", "phone_click", {
+                        send_to: "AW-17927335103",
+                        campaign: "C1",
+                        source: "landing_page",
+                      });
+                    }
+                  }}
+                >
+                  <Phone className="w-6 h-6 mr-3" />
+                  CALL NOW
                </a>
              </Button>
              <Button variant="secondary" size="lg" asChild className="w-full sm:w-auto h-12 text-base px-6">

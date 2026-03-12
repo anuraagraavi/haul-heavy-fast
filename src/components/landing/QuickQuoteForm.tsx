@@ -62,6 +62,7 @@ export const QuickQuoteForm = ({
 
       if (typeof window !== "undefined" && (window as any).gtag) {
         (window as any).gtag("event", "quote_submit", {
+          send_to: "AW-17927335103",
           campaign,
           source: "landing_page",
         });

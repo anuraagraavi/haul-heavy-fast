@@ -864,7 +864,18 @@ const FinalHeavyCTASection = () => {
             for the next year, Heavy Haulers is ready to be your heavy-duty partner.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href="tel:+16508812400">
+            <a
+              href="tel:+16508812400"
+              onClick={() => {
+                if (typeof window !== "undefined" && (window as any).gtag) {
+                  (window as any).gtag("event", "phone_click", {
+                    send_to: "AW-17927335103",
+                    campaign: "C2",
+                    source: "final_heavy_cta",
+                  });
+                }
+              }}
+            >
               <Button variant="hero" size="lg">
                 <Phone className="w-5 h-5 mr-2" />
                 Call 650-881-2400

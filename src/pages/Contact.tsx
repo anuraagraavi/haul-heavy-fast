@@ -246,12 +246,23 @@ const Contact = () => {
                   <h3 className="text-lg font-semibold text-foreground mb-2">{dispatch.area}</h3>
                   <p className="text-sm text-muted-foreground mb-1">24/7 Emergency Dispatch</p>
                   <p className="text-xl font-bold text-primary mb-4">{dispatch.phone}</p>
-                  <Button variant="hero" className="w-full" asChild>
-                    <a href={`tel:${dispatch.phone}`}>
-                      <Phone className="w-4 h-4 mr-2" />
-                      Call Now
-                    </a>
-                  </Button>
+                   <Button variant="hero" className="w-full" asChild>
+                     <a
+                       href={`tel:${dispatch.phone}`}
+                       onClick={() => {
+                         if (typeof window !== "undefined" && (window as any).gtag) {
+                           (window as any).gtag("event", "phone_click", {
+                             send_to: "AW-17927335103",
+                             source: "contact_page",
+                             dispatch_area: dispatch.area,
+                           });
+                         }
+                       }}
+                     >
+                       <Phone className="w-4 h-4 mr-2" />
+                       Call Now
+                     </a>
+                   </Button>
                 </div>
               ))}
             </div>

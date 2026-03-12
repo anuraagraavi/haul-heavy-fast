@@ -48,6 +48,15 @@ const StickyMobileCTA = () => {
         href={PHONE_LINK}
         className="flex items-center justify-center gap-3 w-full py-4 px-4 bg-gradient-primary text-white font-bold text-lg shadow-2xl hover:opacity-95 active:opacity-90 transition-all"
         aria-label={`Tap to call ${PHONE_DISPLAY}`}
+        onClick={() => {
+          if (typeof window !== "undefined" && (window as any).gtag) {
+            (window as any).gtag("event", "phone_click", {
+              send_to: GTAG_ID,
+              campaign: pathname === HEAVY_PATH ? "C2" : "C1",
+              source: "sticky_mobile_cta",
+            });
+          }
+        }}
       >
         <Phone className="w-5 h-5 shrink-0" />
         <span>TAP TO CALL — {PHONE_DISPLAY}</span>

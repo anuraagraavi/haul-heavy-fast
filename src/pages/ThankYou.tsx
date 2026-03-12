@@ -162,7 +162,13 @@ const ThankYou = () => {
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
                 <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-gray-100" asChild>
-                  <a href="tel:650-881-2400">
+                  <a
+                    href="tel:+16508812400"
+                    onClick={() => fireGtag("event", "phone_click", {
+                      send_to: GTAG_ID,
+                      source: "thank_you_emergency_cta",
+                    })}
+                  >
                     <Phone className="w-5 h-5 mr-2" />
                     Emergency Dispatch
                   </a>
