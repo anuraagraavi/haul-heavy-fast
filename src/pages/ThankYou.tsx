@@ -132,7 +132,13 @@ const ThankYou = () => {
                   </Link>
                 </Button>
                 <Button variant="outline" size="lg" asChild>
-                  <a href="tel:650-881-2400">
+                  <a
+                    href="tel:+16508812400"
+                    onClick={() => fireGtag("event", "phone_click", {
+                      send_to: GTAG_ID,
+                      source: "thank_you_page",
+                    })}
+                  >
                     <Phone className="w-5 h-5 mr-2" />
                     Call 650-881-2400
                   </a>
