@@ -7,9 +7,7 @@ import { CheckCircle, Phone, Home, Clock, ArrowRight } from "lucide-react";
 import { Link, useSearchParams } from "react-router-dom";
 
 const GTAG_ID = "AW-17927335103";
-// TODO: Replace YOUR_CONVERSION_LABEL with your actual label from Google Ads → Goals → Conversions
-// It looks like: AW-17927335103/AbCdEfGhIjKlMnOp
-const CONVERSION_LABEL = ""; // e.g. "AbCdEfGhIjKlMnOp"
+const CONVERSION_LABEL = "moPiCPOh-_kbEL_ZteRC";
 
 const fireGtag = (...args: unknown[]) => {
   if (typeof window !== "undefined" && (window as any).gtag) {
