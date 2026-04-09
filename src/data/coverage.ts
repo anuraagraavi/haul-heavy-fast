@@ -7,20 +7,22 @@
 export const BAY_AREA_COUNTY_COUNT = 5;
 
 export const BAY_AREA_COUNTIES = [
-  { id: "san-francisco", name: "San Francisco County", phone: "650-881-2400", areas: ["Mission", "SOMA", "Financial District", "Richmond", "Pacific Heights", "Sunset"] },
+  { id: "san-francisco", name: "San Francisco County", phone: "415-800-3800", areas: ["Mission", "SOMA", "Financial District", "Richmond", "Pacific Heights", "Sunset"] },
   { id: "san-mateo", name: "San Mateo County", phone: "650-881-2400", areas: ["San Mateo", "Redwood City", "Daly City", "South San Francisco", "Menlo Park"] },
   { id: "alameda", name: "Alameda County", phone: "510-800-3800", areas: ["Oakland", "Hayward", "Berkeley", "Fremont", "San Leandro"] },
   { id: "santa-clara", name: "Santa Clara County", phone: "408-800-3800", areas: ["San Jose", "Santa Clara", "Sunnyvale", "Mountain View", "Palo Alto"] },
-  { id: "contra-costa", name: "Contra Costa County", phone: "650-881-2400", areas: ["Walnut Creek", "Concord", "Richmond", "Antioch", "Brentwood", "Pittsburg", "San Ramon"] },
+  { id: "contra-costa", name: "Contra Costa County", phone: "925-888-2400", areas: ["Walnut Creek", "Concord", "Richmond", "Antioch", "Brentwood", "Pittsburg", "San Ramon"] },
 ] as const;
 
 /** Dispatch hubs with full addresses. Used by Locations page and LP CoverageMap. */
 export const DISPATCH_HUBS = [
-  { city: "Brisbane", address: "351 Industrial Way", cityState: "Brisbane, CA 94005", phone: "650-881-2400", hours: "Mon–Fri 8AM–5PM", emergency: "24/7" },
+  { city: "Brisbane", address: "308 Industrial Way", cityState: "Brisbane, CA 94005", phone: "415-800-3800", hours: "Mon–Fri 8AM–5PM", emergency: "24/7" },
+  { city: "Redwood City", address: "1320 Marshall St", cityState: "Redwood City, CA", phone: "650-881-2400", hours: "Mon–Fri 8AM–5PM", emergency: "24/7" },
+  { city: "San Mateo", address: "403 1st Avenue", cityState: "San Mateo, CA 94401", phone: "650-881-2400", hours: "Mon–Fri 8AM–5PM", emergency: "24/7" },
   { city: "San Leandro", address: "14305 Washington Ave", cityState: "San Leandro, CA 94578", phone: "510-800-3800", hours: "Mon–Fri 8AM–5PM", emergency: "24/7" },
   { city: "Hayward", address: "2454 Whipple Rd", cityState: "Hayward, CA 94544", phone: "510-800-3800", hours: "Mon–Fri 8AM–5PM", emergency: "24/7" },
   { city: "San Jose", address: "50 N Sunset Ave", cityState: "San Jose, CA 95116", phone: "408-800-3800", hours: "Mon–Fri 8AM–5PM", emergency: "24/7" },
-  { city: "San Mateo", address: "403 1st Avenue", cityState: "San Mateo, CA 94401", phone: "650-881-2400", hours: "Mon–Fri 8AM–5PM", emergency: "24/7" },
+  { city: "Concord", address: "4075 Folsom Ct", cityState: "Concord, CA", phone: "925-888-2400", hours: "Mon–Fri 8AM–5PM", emergency: "24/7" },
   { city: "Stockton", address: "3990 N Wilson Way", cityState: "Stockton, CA 95205", phone: "916-701-2200", hours: "Mon–Fri 8AM–5PM", emergency: "24/7" },
 ] as const;
 
