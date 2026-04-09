@@ -84,6 +84,9 @@ const Footer = () => {
               <p className="text-xs text-muted-foreground">
                 Oakland: <a href="tel:+15108003800" className="text-primary hover:underline">510-800-3800</a> · San Jose: <a href="tel:+14088003800" className="text-primary hover:underline">408-800-3800</a>
               </p>
+              <p className="text-xs">
+                <a href="/contact" className="text-muted-foreground hover:text-primary transition-colors underline">Other Dispatch Lines Available</a>
+              </p>
               <div className="flex items-center space-x-2">
                 <Clock className="w-3 h-3 text-primary" />
                 <span className="text-muted-foreground text-sm">24/7 Dispatch</span>

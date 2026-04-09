@@ -8,7 +8,7 @@ const Header = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isLocationsOpen, setIsLocationsOpen] = useState(false);
   const businessPhone = "650-881-2400";
-  const businessAddress = "351 Industrial Way, Brisbane, CA 94005";
+  const businessAddress = "308 Industrial Way, Brisbane, CA 94005";
   const servicesHover = useHoverDelay(() => setIsServicesOpen(true), () => setIsServicesOpen(false), { leaveDelay: 200 });
   const locationsHover = useHoverDelay(() => setIsLocationsOpen(true), () => setIsLocationsOpen(false), { leaveDelay: 300 });
   return <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
@@ -175,7 +175,7 @@ const Header = () => {
                         </div>
                       </div>
   
-                      {/* Third Column - Alameda County */}
+                      {/* Third Column - Alameda & Contra Costa */}
                       <div className="col-span-3 space-y-4">
                         <h3 className="text-lg font-semibold text-foreground mb-4">Alameda County</h3>
                         <div className="space-y-2">
@@ -187,6 +187,12 @@ const Header = () => {
                           </a>
                           <a href="/locations#hayward" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
                             Hayward
+                          </a>
+                        </div>
+                        <h3 className="text-lg font-semibold text-foreground mb-2 mt-4">Contra Costa County</h3>
+                        <div className="space-y-2">
+                          <a href="/locations#contra-costa" className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:bg-accent/50 px-2 rounded">
+                            Concord / Walnut Creek
                           </a>
                         </div>
                       </div>

@@ -11,8 +11,8 @@ const Locations = () => {
     {
       id: "san-francisco",
       name: "San Francisco County",
-      phone: "650-881-2400",
-      description: "Serving all San Francisco districts with priority dispatch from our main hub.",
+      phone: "415-800-3800",
+      description: "Serving all San Francisco districts with priority dispatch from our Brisbane hub.",
       districts: [
         "Mission District", "SOMA (South of Market)", "Financial District", "North Beach",
         "Richmond District", "Tenderloin", "Pacific Heights", "Nob Hill", 
@@ -73,8 +73,8 @@ const Locations = () => {
     {
       id: "contra-costa",
       name: "Contra Costa County",
-      phone: "650-881-2400",
-      description: "Full coverage across Contra Costa County from Walnut Creek to Antioch with dedicated East Bay dispatch.",
+      phone: "925-888-2400",
+      description: "Full coverage across Contra Costa County from Walnut Creek to Antioch with dedicated Concord dispatch.",
       districts: [
         "Walnut Creek", "Concord", "Richmond", "Antioch", "Brentwood",
         "Pittsburg", "San Ramon", "Pleasant Hill", "Martinez", "Lafayette",
@@ -89,7 +89,7 @@ const Locations = () => {
 
   const stats = [
     { value: "5", label: "Counties Served" },
-    { value: "15min", label: "Avg Response Time" },
+    { value: "8", label: "Dispatch Hubs" },
     { value: "24/7", label: "Emergency Dispatch" },
     { value: "60+", label: "Cities & Districts" }
   ];
@@ -132,7 +132,7 @@ const Locations = () => {
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>Bay Area & Central Valley Towing Coverage - Heavy Tow Pro | 5 Counties Served</title>
-        <meta name="description" content="Professional towing services across San Francisco, San Mateo, Alameda, Santa Clara, and Contra Costa counties plus Central Valley (Stockton). 6 dispatch hubs with 24/7 emergency service." />
+        <meta name="description" content="Professional towing services across San Francisco, San Mateo, Alameda, Santa Clara, and Contra Costa counties plus Central Valley (Stockton). 8 dispatch hubs with 24/7 emergency service." />
         <link rel="canonical" href="https://heavytowpro.com/locations" />
         {hubSchemas.map((schema, i) => (
           <script key={i} type="application/ld+json">

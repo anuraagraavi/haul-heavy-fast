@@ -14,7 +14,11 @@ import { useNavigate } from "react-router-dom";
 
 const dispatchAreas = [
   {
-    area: "Peninsula / San Mateo / Brisbane",
+    area: "San Francisco / Brisbane",
+    phone: "415-800-3800",
+  },
+  {
+    area: "Peninsula (San Mateo / Redwood City)",
     phone: "650-881-2400",
   },
   {
@@ -24,6 +28,10 @@ const dispatchAreas = [
   {
     area: "South Bay (San Jose)",
     phone: "408-800-3800",
+  },
+  {
+    area: "Contra Costa (Concord)",
+    phone: "925-888-2400",
   },
   {
     area: "Central Valley (Stockton)",
@@ -142,7 +150,7 @@ const Contact = () => {
               "email": "dispatch@heavytowpro.com",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "351 Industrial Way",
+                "streetAddress": "308 Industrial Way",
                 "addressLocality": "Brisbane",
                 "addressRegion": "CA",
                 "postalCode": "94005",
@@ -237,7 +245,7 @@ const Contact = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
               {dispatchAreas.map((dispatch) => (
                 <div key={dispatch.phone + dispatch.area} className="bg-card border border-primary/30 bg-primary/5 rounded-2xl p-6 text-center hover:shadow-elevated hover:scale-105 transition-all duration-300">
                   <div className="w-14 h-14 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -419,6 +427,7 @@ const Contact = () => {
                       <p>• San Mateo County - Peninsula communities</p>
                       <p>• Alameda County - East Bay areas</p>
                       <p>• Santa Clara County - Silicon Valley & South Bay</p>
+                      <p>• Contra Costa County - Walnut Creek, Concord & East County</p>
                       <p>• San Joaquin County - Stockton & surrounding areas</p>
                     </div>
                   </div>
