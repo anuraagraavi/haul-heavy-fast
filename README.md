@@ -117,3 +117,13 @@ This site is currently **ready for paid ads traffic** to:
 - Heavy/fleet landing: `https://heavytowpro.com/towing/heavy-duty-towing-bay-area`
 
 The hero imagery, tracking guards, routing, leadgen forms, and prerendering have been verified in a production build.
+
+---
+
+## Latest changes (Apr 2026)
+
+- Added a new batch of March 2026 blog articles under `src/pages/blog`.
+- Added the March blog post data source in `src/data/march2026BlogPosts.ts` and wired it into the blog registry.
+- Updated routing in `src/App.tsx` so the new article pages are reachable.
+- Updated `public/sitemap.xml` with the new blog URLs for crawl/index coverage.
+- Updated blog CTA blocks and article rendering support in `src/components/blog/BlogCTABlocks.tsx` and `src/components/blog/MarchBlogPostPage.tsx`.

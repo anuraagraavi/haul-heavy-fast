@@ -40,9 +40,23 @@ export const StickyMobileCTA = () => {
 // Mid-article CTA card
 interface MidArticleCTAProps {
   className?: string;
+  title?: string;
+  description?: string;
+  primaryAction?: {
+    text: string;
+    href: string;
+  };
+  secondaryAction?: {
+    text: string;
+    href: string;
+  };
 }
 export const MidArticleCTA = ({
-  className
+  className,
+  title = "Need Help Right Now?",
+  description = "Our dispatchers are standing by 24/7. Get a truck on the way in minutes.",
+  primaryAction = { text: "Call 650-881-2400", href: "tel:650-881-2400" },
+  secondaryAction
 }: MidArticleCTAProps) => <aside className={cn("bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 rounded-xl p-6 my-8", className)} role="complementary" aria-label="Get immediate help">
     <div className="flex items-start gap-4">
       <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
@@ -50,17 +64,27 @@ export const MidArticleCTA = ({
       </div>
       <div className="flex-1">
         <h3 className="text-lg font-semibold text-foreground mb-1">
-          Need Help Right Now?
+          {title}
         </h3>
         <p className="text-sm text-muted-foreground mb-4">
-          Our dispatchers are standing by 24/7. Get a truck on the way in minutes.
+          {description}
         </p>
-        <Button variant="default" className="bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
-          <a href="tel:650-881-2400" className="bg-muted text-primary">
-            <Phone className="w-4 h-4 mr-2" aria-hidden="true" />
-            Call 650-881-2400
-          </a>
-        </Button>
+        <div className="flex flex-col sm:flex-row gap-3">
+          <Button variant="default" className="bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
+            <a href={primaryAction.href} className="bg-muted text-primary">
+              <Phone className="w-4 h-4 mr-2" aria-hidden="true" />
+              {primaryAction.text}
+            </a>
+          </Button>
+          {secondaryAction && (
+            <Button variant="outline" className="border-primary text-primary hover:bg-primary/10" asChild>
+              <Link to={secondaryAction.href}>
+                <FileText className="w-4 h-4 mr-2" aria-hidden="true" />
+                {secondaryAction.text}
+              </Link>
+            </Button>
+          )}
+        </div>
       </div>
     </div>
   </aside>;

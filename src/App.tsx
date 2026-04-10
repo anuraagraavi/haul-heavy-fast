@@ -50,6 +50,21 @@ const UndergroundGarageTowingSF = lazy(() => import("./pages/blog/underground-ga
 const HeavyDutyRecoveryBayArea = lazy(() => import("./pages/blog/heavy-duty-recovery-bay-area"));
 const FreewayTowingBayArea = lazy(() => import("./pages/blog/freeway-towing-bay-area"));
 const CHPTowingCalifornia = lazy(() => import("./pages/blog/chp-towing-california"));
+const DoesInsuranceCoverTowingCalifornia = lazy(() => import("./pages/blog/does-insurance-cover-towing-california"));
+const PredatoryTowingCaliforniaRights = lazy(() => import("./pages/blog/predatory-towing-california-rights"));
+const DuiImpoundCalifornia = lazy(() => import("./pages/blog/dui-impound-california"));
+const ApartmentHoaTowingRightsCalifornia = lazy(() => import("./pages/blog/apartment-hoa-towing-rights-california"));
+const WhatToDoAfterCarAccidentBayArea = lazy(() => import("./pages/blog/what-to-do-after-car-accident-bay-area"));
+const GetCarOutOfImpoundBayArea = lazy(() => import("./pages/blog/get-car-out-of-impound-bay-area"));
+const I880BayAreaInterstateAccidentRecovery = lazy(() => import("./pages/blog/i-880-bay-area-interstate-accident-recovery"));
+const FlatbedVsWheelLiftTowing = lazy(() => import("./pages/blog/flatbed-vs-wheel-lift-towing"));
+const Awd4wdTowingGuideFlatbed = lazy(() => import("./pages/blog/awd-4wd-towing-guide-flatbed"));
+const TeslaTowingBayAreaGuide = lazy(() => import("./pages/blog/tesla-towing-bay-area-guide"));
+const HowToChooseTowingCompany = lazy(() => import("./pages/blog/how-to-choose-towing-company"));
+const LongDistanceTowingCostCalifornia = lazy(() => import("./pages/blog/long-distance-towing-cost-california"));
+const SemiTruckBreakdownHighwayGuide = lazy(() => import("./pages/blog/semi-truck-breakdown-highway-guide"));
+const SpringDrivingBayAreaBreakdownPrevention = lazy(() => import("./pages/blog/spring-driving-bay-area-breakdown-prevention"));
+const TowingLoweredModifiedCarGuide = lazy(() => import("./pages/blog/towing-lowered-modified-car-guide"));
 
 function RouteFallback() {
   return (
@@ -105,6 +120,21 @@ const App = () => (
             <Route path="/blog/heavy-duty-recovery-bay-area" element={<HeavyDutyRecoveryBayArea />} />
             <Route path="/blog/freeway-towing-bay-area" element={<FreewayTowingBayArea />} />
             <Route path="/blog/chp-towing-california" element={<CHPTowingCalifornia />} />
+            <Route path="/blog/does-insurance-cover-towing-california" element={<DoesInsuranceCoverTowingCalifornia />} />
+            <Route path="/blog/predatory-towing-california-rights" element={<PredatoryTowingCaliforniaRights />} />
+            <Route path="/blog/dui-impound-california" element={<DuiImpoundCalifornia />} />
+            <Route path="/blog/apartment-hoa-towing-rights-california" element={<ApartmentHoaTowingRightsCalifornia />} />
+            <Route path="/blog/what-to-do-after-car-accident-bay-area" element={<WhatToDoAfterCarAccidentBayArea />} />
+            <Route path="/blog/get-car-out-of-impound-bay-area" element={<GetCarOutOfImpoundBayArea />} />
+            <Route path="/blog/i-880-bay-area-interstate-accident-recovery" element={<I880BayAreaInterstateAccidentRecovery />} />
+            <Route path="/blog/flatbed-vs-wheel-lift-towing" element={<FlatbedVsWheelLiftTowing />} />
+            <Route path="/blog/awd-4wd-towing-guide-flatbed" element={<Awd4wdTowingGuideFlatbed />} />
+            <Route path="/blog/tesla-towing-bay-area-guide" element={<TeslaTowingBayAreaGuide />} />
+            <Route path="/blog/how-to-choose-towing-company" element={<HowToChooseTowingCompany />} />
+            <Route path="/blog/long-distance-towing-cost-california" element={<LongDistanceTowingCostCalifornia />} />
+            <Route path="/blog/semi-truck-breakdown-highway-guide" element={<SemiTruckBreakdownHighwayGuide />} />
+            <Route path="/blog/spring-driving-bay-area-breakdown-prevention" element={<SpringDrivingBayAreaBreakdownPrevention />} />
+            <Route path="/blog/towing-lowered-modified-car-guide" element={<TowingLoweredModifiedCarGuide />} />
             <Route path="/towing-services" element={<LandingLightMedium />} />
             <Route path="/towing/bay-area-flatbed-emergency-towing-24-7" element={<LandingLightMedium />} />
             <Route path="/towing/heavy-duty-towing-bay-area" element={<LandingHeavyDuty />} />

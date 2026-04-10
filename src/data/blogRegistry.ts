@@ -52,6 +52,188 @@ export interface BlogPost {
 
 // All blog posts sorted by date (newest first)
 export const blogPosts: BlogPost[] = [
+  // March 2026 Posts
+  {
+    id: "towing-lowered-modified-car-guide",
+    slug: "towing-lowered-modified-car-guide",
+    title: "Towing a Lowered or Modified Car Without Damage: The Enthusiast's Guide",
+    excerpt: "Enthusiast-focused towing guide for low-clearance and modified vehicles with damage prevention priorities.",
+    image: luxuryTransportImage,
+    author: "Heavy Haulers Team",
+    publishDate: "2026-03-29",
+    displayDate: "March 29, 2026",
+    readTime: "8 min read",
+    category: "Specialized Services"
+  },
+  {
+    id: "i-880-bay-area-interstate-accident-recovery",
+    slug: "i-880-bay-area-interstate-accident-recovery",
+    title: "I-880 and Bay Area Interstate Accident Recovery: What Happens After a Highway Crash",
+    excerpt: "Corridor-focused guide to freeway crash response and recovery operations on the Bay Area's busiest interstate routes.",
+    image: bayAreaCoverageImage,
+    author: "Heavy Haulers Team",
+    publishDate: "2026-03-27",
+    displayDate: "March 27, 2026",
+    readTime: "9 min read",
+    category: "Emergency Response"
+  },
+  {
+    id: "apartment-hoa-towing-rights-california",
+    slug: "apartment-hoa-towing-rights-california",
+    title: "Apartment and HOA Parking Towing in California: A Tenant's Complete Guide",
+    excerpt: "Tenant-first guide to apartment and HOA towing rights in California, including legal requirements and dispute tactics.",
+    image: heroTowTruckImage,
+    author: "Heavy Haulers Team",
+    publishDate: "2026-03-25",
+    displayDate: "March 25, 2026",
+    readTime: "9 min read",
+    category: "Regulations & Compliance"
+  },
+  {
+    id: "spring-driving-bay-area-breakdown-prevention",
+    slug: "spring-driving-bay-area-breakdown-prevention",
+    title: "Spring Driving in the Bay Area: Rainy Season Breakdown Prevention Guide",
+    excerpt: "March-focused maintenance and driving checklist for safer Bay Area roads during spring rain shifts.",
+    image: emergencyGuideImage,
+    author: "Heavy Haulers Team",
+    publishDate: "2026-03-23",
+    displayDate: "March 23, 2026",
+    readTime: "7 min read",
+    category: "Safety Tips"
+  },
+  {
+    id: "long-distance-towing-cost-california",
+    slug: "long-distance-towing-cost-california",
+    title: "Long-Distance Towing Costs in California: Bay Area to Sacramento, LA, and Beyond",
+    excerpt: "Cost framework for long-distance towing in California with practical route ranges and decision guidance.",
+    image: fleetManagementImage,
+    author: "Heavy Haulers Team",
+    publishDate: "2026-03-21",
+    displayDate: "March 21, 2026",
+    readTime: "9 min read",
+    category: "Commercial Services"
+  },
+  {
+    id: "dui-impound-california",
+    slug: "dui-impound-california",
+    title: "Vehicle Impound After a DUI in California: Fees, Timelines, and Getting Your Car Back",
+    excerpt: "Understand California DUI impound timelines, release requirements, and costs so you can recover your vehicle with fewer surprises.",
+    image: vehicleStorageImage,
+    author: "Heavy Haulers Team",
+    publishDate: "2026-03-19",
+    displayDate: "March 19, 2026",
+    readTime: "8 min read",
+    category: "Regulations & Compliance"
+  },
+  {
+    id: "how-to-choose-towing-company",
+    slug: "how-to-choose-towing-company",
+    title: "How to Choose a Reliable Towing Company: 10 Red Flags and Must-Haves",
+    excerpt: "Use this practical checklist to avoid unreliable tow operators and choose a provider you can trust.",
+    image: roadsideVsTowingImage,
+    author: "Heavy Haulers Team",
+    publishDate: "2026-03-17",
+    displayDate: "March 17, 2026",
+    readTime: "8 min read",
+    category: "Safety Tips"
+  },
+  {
+    id: "semi-truck-breakdown-highway-guide",
+    slug: "semi-truck-breakdown-highway-guide",
+    title: "Semi-Truck Breakdown on the Highway: A Driver's Step-by-Step Survival Guide",
+    excerpt: "A practical highway breakdown checklist for commercial drivers and fleet dispatch teams.",
+    image: commercialTruckImage,
+    author: "Heavy Haulers Team",
+    publishDate: "2026-03-15",
+    displayDate: "March 15, 2026",
+    readTime: "9 min read",
+    category: "Commercial Services"
+  },
+  {
+    id: "predatory-towing-california-rights",
+    slug: "predatory-towing-california-rights",
+    title: "Predatory Towing in California: Know Your Rights and Fight Back",
+    excerpt: "A practical driver-focused guide to identifying predatory towing tactics and challenging illegal fees in California.",
+    image: sfChallengesImage,
+    author: "Heavy Haulers Team",
+    publishDate: "2026-03-13",
+    displayDate: "March 13, 2026",
+    readTime: "9 min read",
+    category: "Regulations & Compliance"
+  },
+  {
+    id: "awd-4wd-towing-guide-flatbed",
+    slug: "awd-4wd-towing-guide-flatbed",
+    title: "Towing an AWD or 4WD Vehicle: Why Your Subaru, Audi, or BMW Needs a Flatbed",
+    excerpt: "AWD and 4WD towing essentials to avoid drivetrain damage and expensive repairs.",
+    image: heavyDutyServiceImage,
+    author: "Heavy Haulers Team",
+    publishDate: "2026-03-11",
+    displayDate: "March 11, 2026",
+    readTime: "8 min read",
+    category: "Safety Tips"
+  },
+  {
+    id: "get-car-out-of-impound-bay-area",
+    slug: "get-car-out-of-impound-bay-area",
+    title: "How to Get Your Car Out of Impound in the Bay Area: Complete Guide",
+    excerpt: "County-by-county Bay Area impound release guidance with documents, costs, and transport options after release.",
+    image: heavyEquipmentImage,
+    author: "Heavy Haulers Team",
+    publishDate: "2026-03-09",
+    displayDate: "March 9, 2026",
+    readTime: "9 min read",
+    category: "SF Local Services"
+  },
+  {
+    id: "tesla-towing-bay-area-guide",
+    slug: "tesla-towing-bay-area-guide",
+    title: "Tesla Towing in the Bay Area: What Every Owner Must Know Before Calling a Tow Truck",
+    excerpt: "Tesla-specific towing guidance for Bay Area drivers, including Tow Mode and safe transport setup.",
+    image: evTowingImage,
+    author: "Heavy Haulers Team",
+    publishDate: "2026-03-07",
+    displayDate: "March 7, 2026",
+    readTime: "9 min read",
+    category: "Specialized Services"
+  },
+  {
+    id: "does-insurance-cover-towing-california",
+    slug: "does-insurance-cover-towing-california",
+    title: "Does Car Insurance Cover Towing in California? Complete 2026 Guide",
+    excerpt: "Clear California guide to towing coverage, exclusions, and reimbursement steps after a breakdown or accident.",
+    image: towingTechnologyImage,
+    author: "Heavy Haulers Team",
+    publishDate: "2026-03-05",
+    displayDate: "March 5, 2026",
+    readTime: "9 min read",
+    category: "Regulations & Compliance"
+  },
+  {
+    id: "flatbed-vs-wheel-lift-towing",
+    slug: "flatbed-vs-wheel-lift-towing",
+    title: "Flatbed vs Wheel-Lift Towing: Which Method Is Right for Your Vehicle?",
+    excerpt: "A practical comparison of flatbed and wheel-lift towing for cost, safety, and the right use case.",
+    image: emergencyGuideImage,
+    author: "Heavy Haulers Team",
+    publishDate: "2026-03-03",
+    displayDate: "March 3, 2026",
+    readTime: "8 min read",
+    category: "Safety Tips"
+  },
+  {
+    id: "what-to-do-after-car-accident-bay-area",
+    slug: "what-to-do-after-car-accident-bay-area",
+    title: "What to Do After a Car Accident in the Bay Area: A Step-by-Step Guide",
+    excerpt: "Practical Bay Area accident checklist covering safety, documentation, legal deadlines, and secure towing decisions.",
+    image: accidentSceneImage,
+    author: "Heavy Haulers Team",
+    publishDate: "2026-03-01",
+    displayDate: "March 1, 2026",
+    readTime: "10 min read",
+    category: "Emergency Response"
+  },
+
   // October 2025 Posts
   {
     id: "chp-towing-california",
