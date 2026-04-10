@@ -20,13 +20,13 @@ export const StickyMobileCTA = () => {
   return <div className={cn("fixed bottom-0 left-0 right-0 z-40 lg:hidden", "bg-background/95 backdrop-blur-md border-t border-border", "transform transition-transform duration-300", isVisible ? "translate-y-0" : "translate-y-full")} role="complementary" aria-label="Quick contact options">
       <div className="container mx-auto px-4 py-3">
         <div className="flex gap-3">
-          <Button variant="default" className="flex-1 bg-primary hover:bg-primary/90" asChild>
+          <Button variant="default" className="flex-1 font-semibold" asChild>
             <a href="tel:650-881-2400" aria-label="Call for emergency towing">
               <Phone className="w-4 h-4 mr-2" aria-hidden="true" />
               Call Now
             </a>
           </Button>
-          <Button variant="outline" className="flex-1 border-primary text-primary hover:bg-primary/10" asChild>
+          <Button variant="outline" className="flex-1 font-semibold" asChild>
             <Link to="/get-a-quote" aria-label="Request a quote online">
               <FileText className="w-4 h-4 mr-2" aria-hidden="true" />
               Get Quote
@@ -57,7 +57,7 @@ export const MidArticleCTA = ({
   description = "Our dispatchers are standing by 24/7. Get a truck on the way in minutes.",
   primaryAction = { text: "Call 650-881-2400", href: "tel:650-881-2400" },
   secondaryAction
-}: MidArticleCTAProps) => <aside className={cn("bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 rounded-xl p-6 my-8", className)} role="complementary" aria-label="Get immediate help">
+}: MidArticleCTAProps) => <aside className={cn("not-prose bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 rounded-xl p-6 my-8", className)} role="complementary" aria-label="Get immediate help">
     <div className="flex items-start gap-4">
       <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
         <Phone className="w-6 h-6 text-primary" aria-hidden="true" />
@@ -70,14 +70,14 @@ export const MidArticleCTA = ({
           {description}
         </p>
         <div className="flex flex-col sm:flex-row gap-3">
-          <Button variant="default" className="bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
-            <a href={primaryAction.href} className="bg-muted text-primary">
+          <Button variant="default" className="font-semibold" asChild>
+            <a href={primaryAction.href}>
               <Phone className="w-4 h-4 mr-2" aria-hidden="true" />
               {primaryAction.text}
             </a>
           </Button>
           {secondaryAction && (
-            <Button variant="outline" className="border-primary text-primary hover:bg-primary/10" asChild>
+            <Button variant="outline" className="font-semibold" asChild>
               <Link to={secondaryAction.href}>
                 <FileText className="w-4 h-4 mr-2" aria-hidden="true" />
                 {secondaryAction.text}
@@ -123,13 +123,13 @@ export const EndArticleCTA = ({
       
       {/* CTA buttons */}
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
-        <Button variant="default" size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
+        <Button variant="default" size="lg" className="font-semibold" asChild>
           <a href="tel:650-881-2400" aria-label="Call for immediate assistance">
             <Phone className="w-5 h-5 mr-2" aria-hidden="true" />
             Call Now: 650-881-2400
           </a>
         </Button>
-        <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary/10" asChild>
+        <Button variant="outline" size="lg" className="font-semibold" asChild>
           <Link to="/get-a-quote" aria-label="Get a free quote online">
             <FileText className="w-5 h-5 mr-2" aria-hidden="true" />
             Get Free Quote

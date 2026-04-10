@@ -87,7 +87,7 @@ const BlogHeroSection = ({ data, wordCount }: BlogHeroSectionProps) => {
             <Button 
               variant="default" 
               size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground"
+              className="font-semibold"
               asChild
             >
               <a href="tel:650-881-2400" aria-label="Call Heavy Haulers now">
@@ -98,7 +98,7 @@ const BlogHeroSection = ({ data, wordCount }: BlogHeroSectionProps) => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-primary text-primary hover:bg-primary/10"
+              className="font-semibold"
               asChild
             >
               <Link to="/get-a-quote" aria-label="Get a free towing quote">
