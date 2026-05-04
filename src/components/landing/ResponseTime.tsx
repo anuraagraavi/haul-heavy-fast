@@ -1,7 +1,8 @@
- import { MapPin, Clock, Phone, Navigation } from "lucide-react";
- import { Button } from "@/components/ui/button";
- 
- const ResponseTime = () => {
+import { MapPin, Clock, Phone, Navigation } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { PRIMARY_DISPATCH_PHONE_DISPLAY, PRIMARY_DISPATCH_TEL_HREF } from "@/data/screenshotDispatchHubs";
+
+const ResponseTime = () => {
    const counties = [
      { name: "San Francisco", time: "15-25 min", highlight: true },
      { name: "San Mateo County", time: "15-30 min", highlight: false },
@@ -72,13 +73,13 @@
  
          {/* CTA */}
          <div className="text-center">
-           <a href="tel:650-881-2400">
+           <a href={PRIMARY_DISPATCH_TEL_HREF}>
              <Button 
                size="lg" 
                className="h-16 px-10 text-xl font-bold bg-accent hover:bg-accent/90 text-accent-foreground shadow-2xl"
              >
                <Phone className="w-6 h-6 mr-3" />
-               Dispatch Now: 650-881-2400
+               Dispatch Now: {PRIMARY_DISPATCH_PHONE_DISPLAY}
              </Button>
            </a>
          </div>

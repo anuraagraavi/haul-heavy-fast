@@ -12,6 +12,7 @@ import { useToast } from "@/hooks/use-toast";
 import { submitQuoteForm } from "@/lib/formSubmission";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
+import { PRIMARY_DISPATCH_E164, PRIMARY_DISPATCH_PHONE_DISPLAY, PRIMARY_DISPATCH_TEL_HREF } from "@/data/screenshotDispatchHubs";
 
 const GetQuote = () => {
   const [formData, setFormData] = useState({
@@ -104,8 +105,8 @@ const GetQuote = () => {
 
     try {
       await submitQuoteForm({ ...formData, attachments: fileUrls });
-      if (typeof window !== "undefined" && (window as any).gtag) {
-        (window as any).gtag("event", "quote_submit", {
+      if (typeof window !== "undefined") {
+        window.gtag?.("event", "quote_submit", {
           send_to: "AW-17927335103",
           source: "get_quote_page",
         });
@@ -118,7 +119,7 @@ const GetQuote = () => {
     } catch (error) {
       toast({
         title: "Submission Failed",
-        description: "Please try again or call us directly at 650-881-2400.",
+        description: `Please try again or call us directly at ${PRIMARY_DISPATCH_PHONE_DISPLAY}.`,
         variant: "destructive",
       });
     } finally {
@@ -178,7 +179,7 @@ const GetQuote = () => {
             "provider": {
               "@type": "LocalBusiness",
               "name": "Heavy Haulers San Francisco",
-              "telephone": "+1-650-881-2400",
+              "telephone": PRIMARY_DISPATCH_E164,
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "San Francisco",
@@ -262,7 +263,7 @@ const GetQuote = () => {
                           type="tel"
                           value={formData.phone}
                           onChange={(e) => handleInputChange("phone", e.target.value)}
-                          placeholder="(415) 555-0123"
+                          placeholder="(650) 881-2400"
                           required
                         />
                       </div>
@@ -429,7 +430,7 @@ const GetQuote = () => {
                         {isSubmitting ? "Submitting..." : "Get My Quote"}
                       </Button>
                       <Button type="button" variant="outline" size="lg" asChild>
-                        <a href='tel:650-881-2400'>
+                        <a href={PRIMARY_DISPATCH_TEL_HREF}>
                           <Phone className="w-5 h-5 mr-2" />
                           Call Instead
                         </a>
@@ -449,9 +450,9 @@ const GetQuote = () => {
                   </p>
                   <div className="space-y-3">
                     <Button variant="outline" className="w-full bg-white text-primary border-white hover:bg-gray-100 min-h-[40px]" asChild>
-                      <a href='tel:650-881-2400'>
+                      <a href={PRIMARY_DISPATCH_TEL_HREF}>
                         <Phone className='w-4 h-4 mr-2' />
-                        650-881-2400
+                        {PRIMARY_DISPATCH_PHONE_DISPLAY}
                       </a>
                     </Button>
                     <Button variant="secondary" className="w-full" asChild>

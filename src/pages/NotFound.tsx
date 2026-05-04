@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Home, Phone, MessageCircle, Search } from "lucide-react";
+import { PRIMARY_DISPATCH_PHONE_DISPLAY, PRIMARY_DISPATCH_TEL_HREF } from "@/data/screenshotDispatchHubs";
 
 const NotFound = () => {
   const location = useLocation();
@@ -56,14 +57,16 @@ const NotFound = () => {
                     Our dispatch team is standing by.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Button 
-                      size="lg" 
-                      variant="hero" 
+                    <Button
+                      size="lg"
+                      variant="hero"
                       className="text-lg px-8"
-                      onClick={() => window.location.href = 'tel:650-881-2400'}
+                      onClick={() => {
+                        window.location.href = PRIMARY_DISPATCH_TEL_HREF;
+                      }}
                     >
                       <Phone className="mr-2 h-5 w-5" />
-                      Call 650-881-2400
+                      Call {PRIMARY_DISPATCH_PHONE_DISPLAY}
                     </Button>
                   </div>
                 </CardContent>

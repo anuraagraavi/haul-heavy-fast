@@ -1,5 +1,10 @@
 import { useEffect } from 'react';
 
+type LayoutShiftEntry = PerformanceEntry & {
+  value: number;
+  hadRecentInput: boolean;
+};
+
 interface PerformanceMetrics {
   fcp?: number;
   lcp?: number;
@@ -18,8 +23,10 @@ export const usePerformanceMonitor = () => {
       try {
         const lcpObserver = new PerformanceObserver((entryList) => {
           const entries = entryList.getEntries();
-          const lastEntry = entries[entries.length - 1] as any;
-          metrics.lcp = lastEntry.startTime;
+          const lastEntry = entries[entries.length - 1];
+          if (lastEntry) {
+            metrics.lcp = lastEntry.startTime;
+          }
           
           // Send to analytics if needed
           if (process.env.NODE_ENV === 'production') {
@@ -35,8 +42,9 @@ export const usePerformanceMonitor = () => {
       try {
         const fidObserver = new PerformanceObserver((entryList) => {
           const entries = entryList.getEntries();
-          entries.forEach((entry: any) => {
-            metrics.fid = entry.processingStart - entry.startTime;
+          entries.forEach((entry) => {
+            const fid = entry as PerformanceEventTiming;
+            metrics.fid = fid.processingStart - fid.startTime;
             
             if (process.env.NODE_ENV === 'production') {
               console.log('FID:', metrics.fid);
@@ -53,9 +61,10 @@ export const usePerformanceMonitor = () => {
         let clsValue = 0;
         const clsObserver = new PerformanceObserver((entryList) => {
           const entries = entryList.getEntries();
-          entries.forEach((entry: any) => {
-            if (!entry.hadRecentInput) {
-              clsValue += entry.value;
+          entries.forEach((entry) => {
+            const ls = entry as LayoutShiftEntry;
+            if (!ls.hadRecentInput) {
+              clsValue += ls.value;
             }
           });
           metrics.cls = clsValue;

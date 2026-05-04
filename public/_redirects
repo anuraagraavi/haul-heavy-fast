@@ -1,0 +1,6 @@
+/locations#san-francisco /towing-san-francisco 301
+/locations#san-mateo /locations/san-mateo-county 301
+/locations#alameda /locations/alameda-county 301
+/locations#santa-clara /locations/santa-clara-county 301
+/locations#contra-costa /locations/contra-costa-county 301
+/locations#central-valley /towing-stockton 301

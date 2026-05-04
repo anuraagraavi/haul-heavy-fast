@@ -5,13 +5,20 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { submitQuoteForm } from "@/lib/formSubmission";
 import { useToast } from "@/hooks/use-toast";
+import { PRIMARY_DISPATCH_PHONE_DISPLAY } from "@/data/screenshotDispatchHubs";
+import { cn } from "@/lib/utils";
 
-type QuickQuoteCampaign = "C1" | "C2";
+type QuickQuoteCampaign = "C1" | "C2" | `LOC-${string}`;
 
 interface QuickQuoteFormProps {
   campaign: QuickQuoteCampaign;
   variant?: "hero" | "section";
   redirectTo?: string;
+  defaultLocation?: string;
+  /** Use full column width (e.g. location page two-column grid). */
+  wideLayout?: boolean;
+  /** Merged onto the outer section (e.g. flex-1 for equal-height columns). */
+  className?: string;
 }
 
 const initialState = {
@@ -25,8 +32,14 @@ export const QuickQuoteForm = ({
   campaign,
   variant = "section",
   redirectTo = "/thank-you?type=quick-quote",
+  defaultLocation = "",
+  wideLayout = false,
+  className,
 }: QuickQuoteFormProps) => {
-  const [form, setForm] = useState(initialState);
+  const [form, setForm] = useState({
+    ...initialState,
+    location: defaultLocation,
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
   const navigate = useNavigate();
@@ -60,8 +73,8 @@ export const QuickQuoteForm = ({
         urgency: "",
       });
 
-      if (typeof window !== "undefined" && (window as any).gtag) {
-        (window as any).gtag("event", "quote_submit", {
+      if (typeof window !== "undefined") {
+        window.gtag?.("event", "quote_submit", {
           send_to: "AW-17927335103",
           campaign,
           source: "landing_page",
@@ -72,7 +85,10 @@ export const QuickQuoteForm = ({
         title: "Request received",
         description: "We will contact you shortly with a quick quote.",
       });
-      setForm(initialState);
+      setForm({
+        ...initialState,
+        location: defaultLocation,
+      });
 
       // Slight delay to give analytics a moment before navigation
       setTimeout(() => {
@@ -81,7 +97,7 @@ export const QuickQuoteForm = ({
     } catch (error) {
       toast({
         title: "Submission failed",
-        description: "Please try again or call 650-881-2400.",
+        description: `Please try again or call ${PRIMARY_DISPATCH_PHONE_DISPLAY}.`,
         variant: "destructive",
       });
     } finally {
@@ -89,26 +105,29 @@ export const QuickQuoteForm = ({
     }
   };
 
+  const campaignKey = campaign.replace(/[^a-zA-Z0-9_-]/g, "-");
+
+  const narrow = variant === "hero" ? "max-w-md" : wideLayout ? "max-w-none" : "max-w-md";
   const wrapperClasses =
     variant === "hero"
-      ? "bg-card/95 border border-border rounded-2xl p-6 md:p-7 shadow-lg backdrop-blur max-w-md w-full mx-auto"
-      : "bg-card border border-border rounded-2xl p-5 md:p-6 shadow-sm max-w-md w-full mx-auto";
+      ? `bg-card/95 border border-border rounded-2xl p-6 md:p-7 shadow-lg backdrop-blur ${narrow} w-full mx-auto`
+      : `bg-card border border-border rounded-2xl p-5 md:p-6 shadow-sm ${narrow} w-full mx-auto`;
 
   return (
-    <section aria-label="Quick quote form" className="w-full">
+    <section aria-label="Quick quote form" className={cn("w-full", className)}>
       <div className={wrapperClasses}>
         <h2 className="text-xl md:text-2xl font-bold text-foreground mb-2">
           {campaign === "C2" ? "Fleet & Heavy-Duty Quick Quote" : "60-Second Quick Tow Quote"}
         </h2>
         <p className="text-sm text-muted-foreground mb-4">
-          Share a few details and we will call or email you back with pricing. No obligation.
+          Share a few details and we will call or email you back with next steps and scope. No obligation.
         </p>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-3">
             <div>
-              <Label htmlFor={`qq-name-${campaign}`}>Name *</Label>
+              <Label htmlFor={`qq-name-${campaignKey}`}>Name *</Label>
               <Input
-                id={`qq-name-${campaign}`}
+                id={`qq-name-${campaignKey}`}
                 value={form.name}
                 onChange={(e) => handleChange("name", e.target.value)}
                 placeholder="Your name"
@@ -117,9 +136,9 @@ export const QuickQuoteForm = ({
               />
             </div>
             <div>
-              <Label htmlFor={`qq-phone-${campaign}`}>Phone Number *</Label>
+              <Label htmlFor={`qq-phone-${campaignKey}`}>Phone Number *</Label>
               <Input
-                id={`qq-phone-${campaign}`}
+                id={`qq-phone-${campaignKey}`}
                 type="tel"
                 value={form.phone}
                 onChange={(e) => handleChange("phone", e.target.value)}
@@ -129,9 +148,9 @@ export const QuickQuoteForm = ({
               />
             </div>
             <div>
-              <Label htmlFor={`qq-email-${campaign}`}>Email *</Label>
+              <Label htmlFor={`qq-email-${campaignKey}`}>Email *</Label>
               <Input
-                id={`qq-email-${campaign}`}
+                id={`qq-email-${campaignKey}`}
                 type="email"
                 value={form.email}
                 onChange={(e) => handleChange("email", e.target.value)}
@@ -141,9 +160,9 @@ export const QuickQuoteForm = ({
               />
             </div>
             <div>
-              <Label htmlFor={`qq-location-${campaign}`}>Location *</Label>
+              <Label htmlFor={`qq-location-${campaignKey}`}>Location *</Label>
               <Input
-                id={`qq-location-${campaign}`}
+                id={`qq-location-${campaignKey}`}
                 value={form.location}
                 onChange={(e) => handleChange("location", e.target.value)}
                 placeholder="City or city + ZIP"

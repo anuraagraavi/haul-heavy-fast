@@ -1,6 +1,7 @@
 import { Phone, Star, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { PRIMARY_DISPATCH_PHONE_DISPLAY, PRIMARY_DISPATCH_TEL_HREF } from "@/data/screenshotDispatchHubs";
 
 const REASSURANCE = [
   "No obligation — we quote before we load",
@@ -9,7 +10,24 @@ const REASSURANCE = [
   "Serving the Bay Area 24/7",
 ];
 
-const FinalCTA = () => {
+const DEFAULT_PHONE_DISPLAY = PRIMARY_DISPATCH_PHONE_DISPLAY;
+const DEFAULT_PHONE_HREF = PRIMARY_DISPATCH_TEL_HREF;
+const DEFAULT_GTAG_CAMPAIGN = "C1";
+const DEFAULT_GTAG_SOURCE = "landing_page";
+
+export interface FinalCTAProps {
+  phoneDisplay?: string;
+  phoneHref?: string;
+  phoneGtagCampaign?: string;
+  phoneGtagSource?: string;
+}
+
+const FinalCTA = ({
+  phoneDisplay = DEFAULT_PHONE_DISPLAY,
+  phoneHref = DEFAULT_PHONE_HREF,
+  phoneGtagCampaign = DEFAULT_GTAG_CAMPAIGN,
+  phoneGtagSource = DEFAULT_GTAG_SOURCE,
+}: FinalCTAProps) => {
   return (
     <section className="py-16 md:py-20 bg-gradient-primary text-primary-foreground relative overflow-hidden">
       <div className="absolute inset-0">
@@ -37,19 +55,19 @@ const FinalCTA = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Button variant="hero" size="lg" asChild className="w-full sm:w-auto h-16 md:h-14 text-lg md:text-xl px-10">
               <a
-                href="tel:+16508812400"
+                href={phoneHref}
                 onClick={() => {
-                  if (typeof window !== "undefined" && (window as any).gtag) {
-                    (window as any).gtag("event", "phone_click", {
+                  if (typeof window !== "undefined") {
+                    window.gtag?.("event", "phone_click", {
                       send_to: "AW-17927335103",
-                      campaign: "C1",
-                      source: "landing_page",
+                      campaign: phoneGtagCampaign,
+                      source: phoneGtagSource,
                     });
                   }
                 }}
               >
                 <Phone className="w-6 h-6 mr-3" />
-                CALL NOW — 650-881-2400
+                CALL NOW — {phoneDisplay}
               </a>
             </Button>
             <Button variant="secondary" size="lg" asChild className="w-full sm:w-auto h-14 text-lg px-8">

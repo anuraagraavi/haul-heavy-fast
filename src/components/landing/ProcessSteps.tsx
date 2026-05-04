@@ -2,6 +2,20 @@ import { Phone, Truck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
+import { PRIMARY_DISPATCH_PHONE_DISPLAY, PRIMARY_DISPATCH_TEL_HREF } from "@/data/screenshotDispatchHubs";
+
+const DEFAULT_PHONE_DISPLAY = PRIMARY_DISPATCH_PHONE_DISPLAY;
+const DEFAULT_PHONE_HREF = PRIMARY_DISPATCH_TEL_HREF;
+const DEFAULT_GTAG_CAMPAIGN = "C1";
+const DEFAULT_GTAG_SOURCE = "process_steps_phone";
+
+export interface ProcessStepsProps {
+  phoneDisplay?: string;
+  phoneHref?: string;
+  phoneGtagCampaign?: string;
+  phoneGtagSource?: string;
+}
+
 const C1_STEPS = [
   {
     step: 1,
@@ -17,12 +31,27 @@ const C1_STEPS = [
   {
     step: 3,
     title: "Expert Driver Arrives",
-    desc: "Experienced, uniformed driver on the right rig for your vehicle. Secure loading, walkthrough on arrival, transparent pricing before anything moves. No surprises.",
+    desc: "Experienced, uniformed driver on the right rig for your vehicle. Secure loading, walkthrough on arrival, and a clear scope before anything moves — no surprises.",
     icon: Truck,
   },
 ];
 
-const ProcessSteps = () => {
+const ProcessSteps = ({
+  phoneDisplay = DEFAULT_PHONE_DISPLAY,
+  phoneHref = DEFAULT_PHONE_HREF,
+  phoneGtagCampaign = DEFAULT_GTAG_CAMPAIGN,
+  phoneGtagSource = DEFAULT_GTAG_SOURCE,
+}: ProcessStepsProps) => {
+  const firePhoneClick = () => {
+    if (typeof window !== "undefined") {
+      window.gtag?.("event", "phone_click", {
+        send_to: "AW-17927335103",
+        campaign: phoneGtagCampaign,
+        source: phoneGtagSource,
+      });
+    }
+  };
+
   return (
     <section className="py-12 md:py-16 bg-background">
       <div className="container mx-auto px-4">
@@ -53,8 +82,12 @@ const ProcessSteps = () => {
                 <h3 className="font-bold text-foreground text-lg md:text-xl mb-1 md:mb-2">{item.title}</h3>
                 <p className="text-sm text-muted-foreground md:max-w-xs md:mx-auto">{item.desc}</p>
                 {item.phone && (
-                  <a href="tel:+16508812400" className="mt-2 inline-block text-primary font-semibold hover:underline">
-                    650-881-2400
+                  <a
+                    href={phoneHref}
+                    className="mt-2 inline-block text-primary font-semibold hover:underline"
+                    onClick={firePhoneClick}
+                  >
+                    {phoneDisplay}
                   </a>
                 )}
               </div>
@@ -66,7 +99,7 @@ const ProcessSteps = () => {
           <p className="text-foreground font-semibold text-lg mb-4">Ready to get started?</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button variant="hero" size="lg" asChild>
-              <a href="tel:+16508812400">
+              <a href={phoneHref} onClick={firePhoneClick}>
                 <Phone className="w-4 h-4 mr-2" />
                 CALL NOW
               </a>

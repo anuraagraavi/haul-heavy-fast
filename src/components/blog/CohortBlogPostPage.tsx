@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import BlogPostTemplate, {
   IntroText,
   SectionHeading,
@@ -9,13 +10,41 @@ import BlogPostTemplate, {
   BlogFigure,
 } from "@/components/blog/BlogPostTemplate";
 import { Link } from "react-router-dom";
-import type { MarchBlogPostConfig } from "@/data/march2026BlogPosts";
+import type { CohortBlogPostConfig, CohortParagraph, ParagraphSegment } from "@/types/cohortBlog";
+import {
+  DISPATCH_HUB_LINES_MARKETING,
+  PRIMARY_DISPATCH_PHONE_DISPLAY,
+  PRIMARY_DISPATCH_TEL_HREF,
+} from "@/data/screenshotDispatchHubs";
 
-interface MarchBlogPostPageProps {
-  post: MarchBlogPostConfig;
+interface CohortBlogPostPageProps {
+  post: CohortBlogPostConfig;
 }
 
-const MarchBlogPostPage = ({ post }: MarchBlogPostPageProps) => {
+function renderSegments(segments: ParagraphSegment[]): ReactNode {
+  return segments.map((seg, i) =>
+    seg.type === "link" ? (
+      <Link key={i} to={seg.href} className="text-primary hover:underline">
+        {seg.text}
+      </Link>
+    ) : (
+      <span key={i}>{seg.text}</span>
+    ),
+  );
+}
+
+function renderIntro(intro: string | ParagraphSegment[]): ReactNode {
+  return typeof intro === "string" ? intro : renderSegments(intro);
+}
+
+function renderParagraph(block: CohortParagraph, key: string): ReactNode {
+  if (typeof block === "string") {
+    return <p key={key}>{block}</p>;
+  }
+  return <p key={key}>{renderSegments(block)}</p>;
+}
+
+const CohortBlogPostPage = ({ post }: CohortBlogPostPageProps) => {
   const fallbackLinks = [
     ...(post.data.relatedServices?.slice(0, 1).map((service) => ({
       text: service.title,
@@ -29,14 +58,14 @@ const MarchBlogPostPage = ({ post }: MarchBlogPostPageProps) => {
 
   return (
     <BlogPostTemplate data={post.data}>
-      <IntroText>{post.content.intro}</IntroText>
+      <IntroText>{renderIntro(post.content.intro)}</IntroText>
 
       {post.content.sections.map((section, sectionIndex) => (
         <div key={section.id}>
           <SectionHeading id={section.id}>{section.title}</SectionHeading>
-          {section.paragraphs.map((paragraph, paragraphIndex) => (
-            <p key={`${section.id}-p-${paragraphIndex}`}>{paragraph}</p>
-          ))}
+          {section.paragraphs.map((paragraph, paragraphIndex) =>
+            renderParagraph(paragraph, `${section.id}-p-${paragraphIndex}`),
+          )}
 
           {section.image && (
             <BlogFigure
@@ -97,18 +126,18 @@ const MarchBlogPostPage = ({ post }: MarchBlogPostPageProps) => {
         title={post.content.midCtaTitle}
         description={post.content.midCtaBody}
         primaryAction={{
-          text: post.content.midCtaPrimaryText ?? "Call 650-881-2400",
-          href: post.content.midCtaPrimaryHref ?? "tel:650-881-2400",
+          text: post.content.midCtaPrimaryText ?? `Call ${PRIMARY_DISPATCH_PHONE_DISPLAY}`,
+          href: post.content.midCtaPrimaryHref ?? PRIMARY_DISPATCH_TEL_HREF,
         }}
         secondaryAction={{ text: "Get a Free Quote", href: "/get-a-quote" }}
       />
 
       <CalloutBox type="info" title="Need immediate towing support?">
         {post.content.endCallout ??
-          "Heavy Haulers dispatch is available 24/7 across Bay Area counties and Stockton support corridors. Peninsula/SF 650-881-2400, East Bay 510-800-3800, South Bay 408-800-3800, Contra Costa 925-888-2400, Stockton 916-701-2200."}
+          `Heavy Haulers dispatch is available 24/7 across Bay Area counties and Stockton support corridors. ${DISPATCH_HUB_LINES_MARKETING}`}
       </CalloutBox>
     </BlogPostTemplate>
   );
 };
 
-export default MarchBlogPostPage;
+export default CohortBlogPostPage;

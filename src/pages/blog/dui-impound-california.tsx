@@ -1,8 +1,8 @@
-import MarchBlogPostPage from "@/components/blog/MarchBlogPostPage";
+import CohortBlogPostPage from "@/components/blog/CohortBlogPostPage";
 import { getMarch2026BlogPost } from "@/data/march2026BlogPosts";
 
 const DuiImpoundCalifornia = () => {
-  return <MarchBlogPostPage post={getMarch2026BlogPost("dui-impound-california")} />;
+  return <CohortBlogPostPage post={getMarch2026BlogPost("dui-impound-california")} />;
 };
 
 export default DuiImpoundCalifornia;

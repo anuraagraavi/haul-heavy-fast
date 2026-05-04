@@ -1,6 +1,8 @@
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BAY_AREA_COUNTIES_LP, DISPATCH_HUBS_LP } from "@/data/coverage";
+import { PRIMARY_DISPATCH_PHONE_DISPLAY, PRIMARY_DISPATCH_TEL_HREF } from "@/data/screenshotDispatchHubs";
+import { telHrefFromNational } from "@/lib/phone";
 import bayAreaCoverageImg from "@/assets/bay-area-coverage.jpg";
 
 const CoverageMap = () => {
@@ -12,8 +14,8 @@ const CoverageMap = () => {
             We Cover the Entire Bay Area — 5 Counties, 60+ Cities
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            6 dispatch hubs so no Bay Area location is more than 15 minutes away. Local dispatch = faster response. Our Stockton hub supports
-            extended corridor routes — if you&apos;re not sure which number to call, use 650-881-2400 and we&apos;ll route you.
+            Eight official dispatch hubs across the Bay Area. Local dispatch means faster routing. If you&apos;re not sure which number to
+            call, use {PRIMARY_DISPATCH_PHONE_DISPLAY} (main Bay Area line) and we&apos;ll connect you.
           </p>
         </div>
 
@@ -51,14 +53,18 @@ const CoverageMap = () => {
                   <p className="text-sm text-muted-foreground">{hub.address}</p>
                 </div>
                 {hub.phone && (
-                  <a href={`tel:+1${hub.phone.replace(/-/g, "")}`} className="text-primary font-semibold whitespace-nowrap hover:underline">
+                  <a
+                    href={telHrefFromNational(hub.phone)}
+                    className="text-primary font-semibold whitespace-nowrap hover:underline"
+                  >
                     {hub.phone}
                   </a>
                 )}
               </div>
             ))}
             <p className="text-xs text-muted-foreground">
-              Each hub uses a local dispatch number, but if you&apos;re ever unsure which to call, dial 650-881-2400 and we&apos;ll connect you.
+              Each hub uses its own dispatch number; if you&apos;re ever unsure which to call, dial {PRIMARY_DISPATCH_PHONE_DISPLAY} and
+              we&apos;ll connect you.
             </p>
           </div>
         </div>
@@ -66,9 +72,9 @@ const CoverageMap = () => {
         <div className="mt-8 p-4 rounded-xl bg-primary/10 border border-primary/20 text-center">
           <p className="text-foreground font-medium mb-4">Not sure if we cover your area? Call us and we&apos;ll confirm in 30 seconds.</p>
           <Button variant="hero" size="lg" asChild>
-            <a href="tel:+16508812400">
+            <a href={PRIMARY_DISPATCH_TEL_HREF}>
               <Phone className="w-4 h-4 mr-2" />
-              650-881-2400
+              {PRIMARY_DISPATCH_PHONE_DISPLAY}
             </a>
           </Button>
         </div>

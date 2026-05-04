@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, FileText, Clock, Shield, Truck } from "lucide-react";
 import heroImg from "@/assets/hero-tow-truck.jpg";
+import { PRIMARY_DISPATCH_PHONE_DISPLAY, PRIMARY_DISPATCH_TEL_HREF } from "@/data/screenshotDispatchHubs";
+
 const Hero = () => {
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -64,9 +66,9 @@ const Hero = () => {
               size="xl"
               asChild
             >
-              <a href='tel:650-881-2400'>
+              <a href={PRIMARY_DISPATCH_TEL_HREF}>
                 <Phone className="w-5 h-5 mr-2" />
-                Call 650-881-2400
+                Call {PRIMARY_DISPATCH_PHONE_DISPLAY}
               </a>
             </Button>
             <Button 

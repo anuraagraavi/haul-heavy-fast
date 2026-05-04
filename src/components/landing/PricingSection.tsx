@@ -1,5 +1,6 @@
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { PRIMARY_DISPATCH_PHONE_DISPLAY, PRIMARY_DISPATCH_TEL_HREF } from "@/data/screenshotDispatchHubs";
 
 const C1_PRICING_ROWS = [
   {
@@ -83,10 +84,10 @@ const PricingSection = () => {
 
         <div className="mt-6 text-center">
           <p className="text-muted-foreground mb-4">Get an instant quote — we&apos;ll quote your specific tow in under 60 seconds. No obligation.</p>
-          <a href="tel:+16508812400">
+          <a href={PRIMARY_DISPATCH_TEL_HREF}>
             <Button size="lg" className="bg-primary hover:bg-primary/90">
               <Phone className="w-4 h-4 mr-2" />
-              Call 650-881-2400
+              Call {PRIMARY_DISPATCH_PHONE_DISPLAY}
             </Button>
           </a>
         </div>

@@ -3,6 +3,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Building, Clock, DollarSign, Shield, Users, Truck, Phone, Mail } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import corporateFleetBanner from "@/assets/corporate-fleet-banner.jpg";
+import { PRIMARY_DISPATCH_PHONE_DISPLAY, PRIMARY_DISPATCH_TEL_HREF } from "@/data/screenshotDispatchHubs";
+
 const CorporateFleet = () => {
   const {
     ref: sectionRef,
@@ -132,10 +134,10 @@ const CorporateFleet = () => {
           </div>
 
           <div className='flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6'>
-            <Button variant='hero' size='lg' asChild>
-              <a href='tel:650-881-2400'>
-                <Phone className='w-5 h-5 mr-2' />
-                Call 650-881-2400
+            <Button variant="hero" size="lg" asChild>
+              <a href={PRIMARY_DISPATCH_TEL_HREF}>
+                <Phone className="w-5 h-5 mr-2" />
+                Call {PRIMARY_DISPATCH_PHONE_DISPLAY}
               </a>
             </Button>
             <Button variant='outline' size='lg' asChild>

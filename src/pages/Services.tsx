@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet";
+import { PRIMARY_DISPATCH_E164, PRIMARY_DISPATCH_PHONE_DISPLAY, PRIMARY_DISPATCH_TEL_HREF } from "@/data/screenshotDispatchHubs";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOBreadcrumbs from "@/components/SEOBreadcrumbs";
@@ -47,7 +48,7 @@ const Services = () => {
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>Professional Towing Services San Francisco - Light, Medium & Heavy-Duty | Bay Area</title>
-        <meta name="description" content="Complete towing services in San Francisco Bay Area: light-duty car towing, medium-duty truck recovery, heavy-duty equipment transport. Professional fleet with 24/7 availability. Call 650-881-2400." />
+        <meta name="description" content={`Complete towing services in San Francisco Bay Area: light-duty car towing, medium-duty truck recovery, heavy-duty equipment transport. Professional fleet with 24/7 availability. Call ${PRIMARY_DISPATCH_PHONE_DISPLAY}.`} />
         <meta name="keywords" content="towing services San Francisco, light duty towing, medium duty towing, heavy duty towing, car towing Bay Area, commercial towing services, emergency towing SF" />
         <link rel="canonical" href="https://heavytowpro.com/services" />
         
@@ -67,7 +68,7 @@ const Services = () => {
             "provider": {
               "@type": "LocalBusiness",
               "name": "Heavy Haulers San Francisco",
-              "telephone": "+1-650-881-2400",
+              "telephone": PRIMARY_DISPATCH_E164,
               "url": "https://heavytowpro.com",
               "address": {
                 "@type": "PostalAddress",
@@ -107,7 +108,7 @@ const Services = () => {
             ],
             "availableChannel": {
               "@type": "ServiceChannel",
-              "servicePhone": "+1-650-881-2400",
+              "servicePhone": PRIMARY_DISPATCH_E164,
               "serviceUrl": "https://heavytowpro.com/get-quote",
               "availableLanguage": "English"
             },
@@ -204,8 +205,8 @@ const Services = () => {
               {
                 "@type": "HowToStep",
                 "name": "Call Emergency Dispatch",
-                "text": "Call 650-881-2400 for immediate dispatch of nearest available tow truck",
-                "url": "tel:650-881-2400"
+                "text": `Call ${PRIMARY_DISPATCH_PHONE_DISPLAY} for immediate dispatch of nearest available tow truck`,
+                "url": PRIMARY_DISPATCH_TEL_HREF
               },
               {
                 "@type": "HowToStep",
@@ -244,7 +245,7 @@ const Services = () => {
                 expertise and equipment to handle your towing and recovery needs safely and efficiently.
               </p>
               <Button variant="hero" size="lg" asChild>
-                <a href='tel:650-881-2400'>
+                <a href={PRIMARY_DISPATCH_TEL_HREF}>
                   <Phone className="w-5 h-5 mr-2" />
                   Get Emergency Help Now
                 </a>
@@ -340,9 +341,9 @@ const Services = () => {
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
                 <Button variant="hero" size="lg" asChild>
-                  <a href='tel:650-881-2400'>
+                  <a href={PRIMARY_DISPATCH_TEL_HREF}>
                     <Phone className="w-5 h-5 mr-2" />
-                    Call 650-881-2400
+                    Call {PRIMARY_DISPATCH_PHONE_DISPLAY}
                   </a>
                 </Button>
                 <Button variant="outline" size="lg" asChild>

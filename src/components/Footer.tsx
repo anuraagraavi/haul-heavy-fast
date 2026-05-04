@@ -1,7 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
+import { Phone, MapPin, Clock } from "lucide-react";
+import { useLocation } from "react-router-dom";
+import { resolveShellDispatchFromPathname } from "@/lib/shellDispatchPhone";
 
 const Footer = () => {
+  const { pathname } = useLocation();
+  const { phoneDisplay, phoneHref, addressLine } = resolveShellDispatchFromPathname(pathname);
   const currentYear = new Date().getFullYear();
 
   return (
@@ -23,6 +27,10 @@ const Footer = () => {
             <p className="text-muted-foreground">
               Flatbed towing specialists. 5 Bay Area counties. Real dispatch. 24/7.
             </p>
+            <p className="text-sm text-muted-foreground flex items-start gap-2">
+              <MapPin className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+              <span>{addressLine}</span>
+            </p>
             <p className="text-sm text-muted-foreground">
               <a href="/services/heavy-duty#fleet" className="hover:text-primary transition-colors">Fleet and commercial accounts</a> — call for contract rates.
             </p>
@@ -32,7 +40,7 @@ const Footer = () => {
                 size="sm"
                 asChild
               >
-                <a href='tel:650-881-2400'>
+                <a href={phoneHref}>
                   <Phone className="w-4 h-4 mr-2" />
                   Call Now
                 </a>
@@ -57,11 +65,11 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-foreground mb-4">Service Areas</h3>
             <ul className="space-y-2 text-muted-foreground">
-              <li><a href="/locations#san-francisco" className="hover:text-primary transition-colors">San Francisco County</a></li>
-              <li><a href="/locations#san-mateo" className="hover:text-primary transition-colors">San Mateo County</a></li>
-              <li><a href="/locations#alameda" className="hover:text-primary transition-colors">Alameda County</a></li>
-              <li><a href="/locations#santa-clara" className="hover:text-primary transition-colors">Santa Clara County</a></li>
-              <li><a href="/locations#contra-costa" className="hover:text-primary transition-colors">Contra Costa County</a></li>
+              <li><a href="/locations/san-mateo-county" className="hover:text-primary transition-colors">San Mateo County Hub</a></li>
+              <li><a href="/locations/alameda-county" className="hover:text-primary transition-colors">Alameda County Hub</a></li>
+              <li><a href="/locations/santa-clara-county" className="hover:text-primary transition-colors">Santa Clara County Hub</a></li>
+              <li><a href="/locations/contra-costa-county" className="hover:text-primary transition-colors">Contra Costa County Hub</a></li>
+              <li><a href="/locations" className="hover:text-primary transition-colors">All Locations Index</a></li>
             </ul>
           </div>
 
@@ -69,6 +77,10 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-foreground mb-4">Resources</h3>
             <ul className="space-y-2 text-muted-foreground mb-6">
+              <li><a href="/towing-oakland" className="hover:text-primary transition-colors">Oakland Towing</a></li>
+              <li><a href="/towing-san-jose" className="hover:text-primary transition-colors">San Jose Towing</a></li>
+              <li><a href="/towing-san-francisco" className="hover:text-primary transition-colors">San Francisco Towing</a></li>
+              <li><a href="/towing-stockton" className="hover:text-primary transition-colors">Stockton Towing</a></li>
               <li><a href="/about" className="hover:text-primary transition-colors">About Us</a></li>
               <li><a href="/blog" className="hover:text-primary transition-colors">Blog & Guides</a></li>
               <li><a href="/get-a-quote" className="hover:text-primary transition-colors">Get a Quote</a></li>
@@ -79,13 +91,16 @@ const Footer = () => {
             <div className="space-y-2">
               <div className="flex items-center space-x-2">
                 <Phone className="w-3 h-3 text-primary" />
-                <span className="text-muted-foreground text-sm"><a href="tel:+16508812400" className="hover:text-primary transition-colors">650-881-2400</a></span>
+                <span className="text-muted-foreground text-sm">
+                  <a href={phoneHref} className="hover:text-primary transition-colors">
+                    {phoneDisplay}
+                  </a>
+                </span>
               </div>
-              <p className="text-xs text-muted-foreground">
-                Oakland: <a href="tel:+15108003800" className="text-primary hover:underline">510-800-3800</a> · San Jose: <a href="tel:+14088003800" className="text-primary hover:underline">408-800-3800</a>
-              </p>
               <p className="text-xs">
-                <a href="/contact" className="text-muted-foreground hover:text-primary transition-colors underline">Other Dispatch Lines Available</a>
+                <a href="/locations" className="text-muted-foreground hover:text-primary transition-colors underline">
+                  All dispatch hub numbers
+                </a>
               </p>
               <div className="flex items-center space-x-2">
                 <Clock className="w-3 h-3 text-primary" />

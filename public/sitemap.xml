@@ -17,10 +17,57 @@
   <url><loc>https://heavytowpro.com/towing/heavy-duty-towing-bay-area</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 
   <!-- Service Areas -->
-  <url><loc>https://heavytowpro.com/locations</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://heavytowpro.com/locations</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://heavytowpro.com/locations/san-mateo-county</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://heavytowpro.com/locations/alameda-county</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://heavytowpro.com/locations/santa-clara-county</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://heavytowpro.com/locations/contra-costa-county</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://heavytowpro.com/towing-oakland</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://heavytowpro.com/towing-san-jose</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://heavytowpro.com/towing-san-francisco</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://heavytowpro.com/towing-hayward</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://heavytowpro.com/towing-fremont</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://heavytowpro.com/towing-berkeley</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://heavytowpro.com/towing-san-mateo</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://heavytowpro.com/towing-redwood-city</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://heavytowpro.com/towing-palo-alto</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://heavytowpro.com/towing-sunnyvale</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://heavytowpro.com/towing-mountain-view</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://heavytowpro.com/towing-daly-city</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://heavytowpro.com/towing-concord</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://heavytowpro.com/towing-walnut-creek</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://heavytowpro.com/towing-santa-clara</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://heavytowpro.com/towing-stockton</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://heavytowpro.com/towing-san-leandro</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://heavytowpro.com/towing-pleasanton</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://heavytowpro.com/towing-livermore</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://heavytowpro.com/towing-burlingame</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://heavytowpro.com/towing-south-san-francisco</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://heavytowpro.com/towing-menlo-park</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://heavytowpro.com/towing-cupertino</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://heavytowpro.com/towing-milpitas</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://heavytowpro.com/towing-richmond</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://heavytowpro.com/towing-antioch</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- Blog Index -->
   <url><loc>https://heavytowpro.com/blog</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+
+  <!-- Blog Posts - April 2026 -->
+  <url><loc>https://heavytowpro.com/blog/construction-dump-truck-roll-off-recovery-bay-area</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-04-30</lastmod></url>
+  <url><loc>https://heavytowpro.com/blog/dealer-auction-vehicle-transport-bay-area</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://heavytowpro.com/blog/commercial-tire-blowout-highway-bay-area</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-04-26</lastmod></url>
+  <url><loc>https://heavytowpro.com/blog/catalytic-converter-theft-car-immobilized-towing</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-04-24</lastmod></url>
+  <url><loc>https://heavytowpro.com/blog/north-bay-golden-gate-corridor-towing</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-04-22</lastmod></url>
+  <url><loc>https://heavytowpro.com/blog/ev-dead-12v-battery-towing-flatbed-guide</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-04-20</lastmod></url>
+  <url><loc>https://heavytowpro.com/blog/shuttle-bus-transit-minibus-breakdown-towing</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-04-18</lastmod></url>
+  <url><loc>https://heavytowpro.com/blog/travel-trailer-sway-blowout-towing-recovery</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-04-16</lastmod></url>
+  <url><loc>https://heavytowpro.com/blog/classic-exotic-car-towing-bay-area</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-04-14</lastmod></url>
+  <url><loc>https://heavytowpro.com/blog/dot-out-of-service-weight-station-bay-area</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-04-12</lastmod></url>
+  <url><loc>https://heavytowpro.com/blog/rideshare-driver-breakdown-towing-bay-area</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-04-10</lastmod></url>
+  <url><loc>https://heavytowpro.com/blog/winch-out-mudslide-rain-bay-area</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-04-08</lastmod></url>
+  <url><loc>https://heavytowpro.com/blog/bay-area-bridge-stall-towing-guide</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-04-06</lastmod></url>
+  <url><loc>https://heavytowpro.com/blog/us-101-peninsula-freeway-breakdown-guide</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-04-04</lastmod></url>
+  <url><loc>https://heavytowpro.com/blog/food-truck-towing-bay-area</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-04-02</lastmod></url>
 
   <!-- Blog Posts - March 2026 -->
   <url><loc>https://heavytowpro.com/blog/towing-lowered-modified-car-guide</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-03-29</lastmod></url>

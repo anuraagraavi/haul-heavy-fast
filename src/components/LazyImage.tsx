@@ -28,7 +28,10 @@ const LazyImage = ({
 }: LazyImageProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
-  const { ref, isVisible } = useScrollAnimation({ triggerOnce: true, threshold: 0.1 });
+  const { ref, isVisible } = useScrollAnimation<HTMLDivElement>({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
   const imgRef = useRef<HTMLImageElement>(null);
 
   const shouldLoad = priority || isVisible;
@@ -65,7 +68,7 @@ const LazyImage = ({
   }
 
   return (
-    <div ref={ref as any} className={`relative ${className}`}>
+    <div ref={ref} className={`relative ${className}`}>
       {!shouldLoad && (
         <div className="w-full h-full bg-muted animate-pulse rounded" />
       )}

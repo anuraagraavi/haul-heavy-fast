@@ -17,6 +17,7 @@ import FinalCTA from "@/components/landing/FinalCTA";
 import StickyMobileCTA from "@/components/landing/StickyMobileCTA";
 import { landingImagesById } from "@/data/landingImages";
 import QuickQuoteForm from "@/components/landing/QuickQuoteForm";
+import { PRIMARY_DISPATCH_E164, PRIMARY_DISPATCH_PHONE_DISPLAY } from "@/data/screenshotDispatchHubs";
 
 const BASE_URL = "https://heavytowpro.com";
 const HERO_IMAGE_PATH = landingImagesById.light_suv_tree_lined.src;
@@ -51,17 +52,17 @@ const LandingLightMedium = () => {
         "@id": `${BASE_URL}/#organization`,
         name: "Heavy Haulers",
         image: `${BASE_URL}/lovable-uploads/a43ad238-af3b-47a8-962f-32c9da2fc727.png`,
-        telephone: "+1-650-881-2400",
+        telephone: PRIMARY_DISPATCH_E164,
         email: "dispatch@heavytowpro.com",
         address: {
           "@type": "PostalAddress",
-          streetAddress: "351 Industrial Way",
-          addressLocality: "Brisbane",
+          streetAddress: "1234 Broadway",
+          addressLocality: "Oakland",
           addressRegion: "CA",
-          postalCode: "94005",
+          postalCode: "94612",
           addressCountry: "US",
         },
-        geo: { "@type": "GeoCoordinates", latitude: "37.6810", longitude: "-122.4007" },
+        geo: { "@type": "GeoCoordinates", latitude: "37.8044", longitude: "-122.2712" },
         url: canonicalUrl,
         priceRange: "$$",
         openingHoursSpecification: {
@@ -100,8 +101,7 @@ const LandingLightMedium = () => {
   const title = isC1KeywordUrl
     ? "Bay Area Towing in 15 Minutes | Flatbed Emergency 24/7 | Heavy Haulers"
     : "Car & Truck Towing San Francisco | 24/7 Emergency Service | Heavy Haulers";
-  const description =
-    "Professional flatbed towing for cars, motorcycles, luxury vehicles & RVs across 5 Bay Area counties. 24/7 live dispatch. 4.9 stars. Call 650-881-2400.";
+  const description = `Professional flatbed towing for cars, motorcycles, luxury vehicles & RVs across 5 Bay Area counties. 24/7 live dispatch. 4.9 stars. Call ${PRIMARY_DISPATCH_PHONE_DISPLAY}.`;
 
   return (
     <>

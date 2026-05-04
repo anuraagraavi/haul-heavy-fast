@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Shield, Users, Award, Truck, Clock, Phone } from "lucide-react";
+import { PRIMARY_DISPATCH_TEL_HREF } from "@/data/screenshotDispatchHubs";
 
 const About = () => {
   const values = [
@@ -177,7 +178,7 @@ const About = () => {
                 </div>
 
                 <Button variant="hero" size="lg" asChild>
-                  <a href='tel:650-881-2400'>
+                  <a href={PRIMARY_DISPATCH_TEL_HREF}>
                     <Phone className="w-5 h-5 mr-2" />
                     See What We Can Do For You
                   </a>

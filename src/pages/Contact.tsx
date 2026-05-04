@@ -11,31 +11,21 @@ import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { submitContactForm } from "@/lib/formSubmission";
 import { useNavigate } from "react-router-dom";
+import {
+  PRIMARY_DISPATCH_E164,
+  PRIMARY_DISPATCH_PHONE_DISPLAY,
+  SCREENSHOT_DISPATCH_HUBS,
+  SITE_WIDE_FALLBACK_PHONE_DISPLAY,
+} from "@/data/screenshotDispatchHubs";
 
 const dispatchAreas = [
+  ...SCREENSHOT_DISPATCH_HUBS.map((h) => ({
+    area: `${h.city} hub`,
+    phone: h.phoneDisplay,
+  })),
   {
-    area: "San Francisco / Brisbane",
-    phone: "415-800-3800",
-  },
-  {
-    area: "Peninsula (San Mateo / Redwood City)",
-    phone: "650-881-2400",
-  },
-  {
-    area: "East Bay (San Leandro / Hayward)",
-    phone: "510-800-3800",
-  },
-  {
-    area: "South Bay (San Jose)",
-    phone: "408-800-3800",
-  },
-  {
-    area: "Contra Costa (Concord)",
-    phone: "925-888-2400",
-  },
-  {
-    area: "Central Valley (Stockton)",
-    phone: "916-701-2200",
+    area: "Central Valley (Stockton), Contra Costa & unlisted areas — main Bay Area dispatch",
+    phone: SITE_WIDE_FALLBACK_PHONE_DISPLAY,
   },
 ];
 
@@ -62,8 +52,8 @@ const Contact = () => {
 
     try {
       await submitContactForm(formData);
-      if (typeof window !== "undefined" && (window as any).gtag) {
-        (window as any).gtag("event", "contact_submit", {
+      if (typeof window !== "undefined") {
+        window.gtag?.("event", "contact_submit", {
           send_to: "AW-17927335103",
           source: "contact_page",
         });
@@ -76,7 +66,7 @@ const Contact = () => {
     } catch (error) {
       toast({
         title: "Submission Failed",
-        description: "Please try again or call us directly at 650-881-2400.",
+        description: `Please try again or call us directly at ${PRIMARY_DISPATCH_PHONE_DISPLAY}.`,
         variant: "destructive",
       });
     } finally {
@@ -146,7 +136,7 @@ const Contact = () => {
               "name": "Heavy Tow Pro",
               "description": "Professional 24/7 emergency towing and recovery services in San Francisco Bay Area",
               "url": "https://heavytowpro.com",
-              "telephone": "+1-650-881-2400",
+              "telephone": PRIMARY_DISPATCH_E164,
               "email": "dispatch@heavytowpro.com",
               "address": {
                 "@type": "PostalAddress",
@@ -258,8 +248,8 @@ const Contact = () => {
                      <a
                        href={`tel:${dispatch.phone}`}
                        onClick={() => {
-                         if (typeof window !== "undefined" && (window as any).gtag) {
-                           (window as any).gtag("event", "phone_click", {
+                         if (typeof window !== "undefined") {
+                           window.gtag?.("event", "phone_click", {
                              send_to: "AW-17927335103",
                              source: "contact_page",
                              dispatch_area: dispatch.area,

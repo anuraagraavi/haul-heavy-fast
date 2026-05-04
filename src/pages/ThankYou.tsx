@@ -5,13 +5,14 @@ import { Button } from "@/components/ui/button";
 import { Helmet } from "react-helmet";
 import { CheckCircle, Phone, Home, Clock, ArrowRight } from "lucide-react";
 import { Link, useSearchParams } from "react-router-dom";
+import { PRIMARY_DISPATCH_PHONE_DISPLAY, PRIMARY_DISPATCH_TEL_HREF } from "@/data/screenshotDispatchHubs";
 
 const GTAG_ID = "AW-17927335103";
 const CONVERSION_LABEL = "moPiCPOh-_kbEL_ZteRC";
 
 const fireGtag = (...args: unknown[]) => {
-  if (typeof window !== "undefined" && (window as any).gtag) {
-    (window as any).gtag(...args);
+  if (typeof window !== "undefined") {
+    window.gtag?.(...args);
   }
 };
 
@@ -40,6 +41,21 @@ const ThankYou = () => {
   }, [type]);
 
   const getContent = () => {
+    if (type.startsWith("location-")) {
+      const locationSlug = type.replace("location-", "").replace(/-/g, " ");
+      const locationName = locationSlug.replace(/\b\w/g, (s) => s.toUpperCase());
+      return {
+        title: `${locationName} Request Received`,
+        message: `Thank you for contacting Heavy Tow Pro for ${locationName}. Your request is in our queue and a dispatcher will follow up with service details shortly.`,
+        nextSteps: [
+          `Dispatch is reviewing your ${locationName} request details`,
+          "You will receive call-back routing and quote details",
+          "For urgent service, tap call to reach dispatch now",
+          "No hidden-fee loading policy is confirmed before dispatch",
+        ],
+      };
+    }
+
     switch (type) {
       case "quote":
       case "quick-quote":
@@ -131,14 +147,14 @@ const ThankYou = () => {
                 </Button>
                 <Button variant="outline" size="lg" asChild>
                   <a
-                    href="tel:+16508812400"
+                    href={PRIMARY_DISPATCH_TEL_HREF}
                     onClick={() => fireGtag("event", "phone_click", {
                       send_to: GTAG_ID,
                       source: "thank_you_page",
                     })}
                   >
                     <Phone className="w-5 h-5 mr-2" />
-                    Call 650-881-2400
+                    Call {PRIMARY_DISPATCH_PHONE_DISPLAY}
                   </a>
                 </Button>
               </div>
@@ -161,7 +177,7 @@ const ThankYou = () => {
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
                 <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-gray-100" asChild>
                   <a
-                    href="tel:+16508812400"
+                    href={PRIMARY_DISPATCH_TEL_HREF}
                     onClick={() => fireGtag("event", "phone_click", {
                       send_to: GTAG_ID,
                       source: "thank_you_emergency_cta",

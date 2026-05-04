@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { PRIMARY_DISPATCH_PHONE_DISPLAY } from "@/data/screenshotDispatchHubs";
 
 const Terms = () => {
   return (
@@ -204,7 +205,7 @@ const Terms = () => {
                     <div className="space-y-2 text-muted-foreground">
                       <p>Heavy Haulers San Francisco</p>
                       <p>Email: dispatch@heavytowpro.com</p>
-                      <p>Phone: 650-881-2400</p>
+                      <p>Phone: {PRIMARY_DISPATCH_PHONE_DISPLAY}</p>
                       <p>Address: 400 Tunnel Ave, Brisbane, CA 94005</p>
                     </div>
                   </CardContent>

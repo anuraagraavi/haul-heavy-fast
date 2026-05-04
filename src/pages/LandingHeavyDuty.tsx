@@ -10,6 +10,12 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Phone, MapPin } from "lucide-react";
 import QuickQuoteForm from "@/components/landing/QuickQuoteForm";
+import {
+  PRIMARY_DISPATCH_E164,
+  PRIMARY_DISPATCH_PHONE_DISPLAY,
+  PRIMARY_DISPATCH_TEL_HREF,
+  SCREENSHOT_DISPATCH_HUBS,
+} from "@/data/screenshotDispatchHubs";
 
 const BASE_URL = "https://heavytowpro.com";
 const HERO_IMAGE_PATH = landingImagesById.heavy_cat_d_series_desert.src;
@@ -99,17 +105,17 @@ const LandingHeavyDuty = () => {
         "@id": `${BASE_URL}/#organization`,
         name: "Heavy Haulers",
         image: `${BASE_URL}/lovable-uploads/a43ad238-af3b-47a8-962f-32c9da2fc727.png`,
-        telephone: "+1-650-881-2400",
+        telephone: PRIMARY_DISPATCH_E164,
         email: "dispatch@heavytowpro.com",
         address: {
           "@type": "PostalAddress",
-          streetAddress: "351 Industrial Way",
-          addressLocality: "Brisbane",
+          streetAddress: "1234 Broadway",
+          addressLocality: "Oakland",
           addressRegion: "CA",
-          postalCode: "94005",
+          postalCode: "94612",
           addressCountry: "US",
         },
-        geo: { "@type": "GeoCoordinates", latitude: "37.6810", longitude: "-122.4007" },
+        geo: { "@type": "GeoCoordinates", latitude: "37.8044", longitude: "-122.2712" },
         url: canonicalUrl,
         priceRange: "$$",
         aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "500" },
@@ -157,8 +163,7 @@ const LandingHeavyDuty = () => {
 
   const title =
     "Heavy Duty Towing Bay Area | Semi Truck & Fleet Recovery | Heavy Haulers";
-  const description =
-    "75+ ton heavy duty towing and commercial recovery for semi trucks, fleets, and construction equipment across the Bay Area. Rotator service, SLA fleet contracts, and 24/7 commercial dispatch. Call 650-881-2400.";
+  const description = `75+ ton heavy duty towing and commercial recovery for semi trucks, fleets, and construction equipment across the Bay Area. Rotator service, SLA fleet contracts, and 24/7 commercial dispatch. Call ${PRIMARY_DISPATCH_PHONE_DISPLAY}.`;
 
   return (
     <>
@@ -630,25 +635,15 @@ const HeavyCoverageSection = () => {
                 </span>
               </div>
               <ul className="space-y-2 text-muted-foreground text-sm md:text-base">
+                {SCREENSHOT_DISPATCH_HUBS.map((h) => (
+                  <li key={h.slug}>
+                    <span className="font-semibold text-foreground">{h.city} Hub</span> — {h.addressLine} ·{" "}
+                    <span className="font-semibold">{h.phoneDisplay}</span>
+                  </li>
+                ))}
                 <li>
-                  <span className="font-semibold text-foreground">Brisbane (HQ)</span> — 351
-                  Industrial Way, Brisbane, CA ·{" "}
-                  <span className="font-semibold">650-881-2400</span>
-                </li>
-                <li>
-                  <span className="font-semibold text-foreground">Oakland Hub</span> — Port of
-                  Oakland / I-880 · <span className="font-semibold">510-800-3800</span>
-                </li>
-                <li>
-                  <span className="font-semibold text-foreground">San Jose Hub</span> — Santa
-                  Clara County industrial corridor ·{" "}
-                  <span className="font-semibold">408-800-3800</span>
-                </li>
-                <li>
-                  <span className="font-semibold text-foreground">
-                    Fremont, Daly City, Concord
-                  </span>{" "}
-                  — hubs available via HQ dispatch for I-880, SFO corridor, and I-680/780.
+                  <span className="font-semibold text-foreground">Central Valley (Stockton) &amp; Contra Costa</span> —{" "}
+                  main Bay Area dispatch · <span className="font-semibold">{PRIMARY_DISPATCH_PHONE_DISPLAY}</span>
                 </li>
               </ul>
             </div>
@@ -751,10 +746,10 @@ const HeavyDualConversionSection = () => {
             </div>
             <div className="space-y-3">
               <a
-                href="tel:+16508812400"
+                href={PRIMARY_DISPATCH_TEL_HREF}
                 onClick={() => {
-                  if (typeof window !== "undefined" && (window as any).gtag) {
-                    (window as any).gtag("event", "phone_click", {
+                  if (typeof window !== "undefined") {
+                    window.gtag?.("event", "phone_click", {
                       send_to: "AW-17927335103",
                       campaign: "C2",
                       source: "emergency_dispatch_card",
@@ -764,7 +759,7 @@ const HeavyDualConversionSection = () => {
               >
                 <Button size="lg" className="w-full sm:w-auto">
                   <Phone className="w-4 h-4 mr-2" />
-                  Call 650-881-2400
+                  Call {PRIMARY_DISPATCH_PHONE_DISPLAY}
                 </Button>
               </a>
               <p className="text-xs text-muted-foreground">
@@ -865,10 +860,10 @@ const FinalHeavyCTASection = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
-              href="tel:+16508812400"
+              href={PRIMARY_DISPATCH_TEL_HREF}
               onClick={() => {
-                if (typeof window !== "undefined" && (window as any).gtag) {
-                  (window as any).gtag("event", "phone_click", {
+                if (typeof window !== "undefined") {
+                  window.gtag?.("event", "phone_click", {
                     send_to: "AW-17927335103",
                     campaign: "C2",
                     source: "final_heavy_cta",
@@ -878,7 +873,7 @@ const FinalHeavyCTASection = () => {
             >
               <Button variant="hero" size="lg">
                 <Phone className="w-5 h-5 mr-2" />
-                Call 650-881-2400
+                Call {PRIMARY_DISPATCH_PHONE_DISPLAY}
               </Button>
             </a>
             <Button variant="outline" size="lg" asChild>

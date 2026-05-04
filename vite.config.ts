@@ -5,6 +5,7 @@ import { componentTagger } from "lovable-tagger";
 import { imagetools } from "vite-imagetools";
 // Use ESM-safe fork for static prerendering of key routes (ads/SEO)
 import vitePrerender from "vite-plugin-prerender-esm-fix";
+import { LOCATION_URLS } from "./src/data/locations";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -31,6 +32,7 @@ export default defineConfig(({ mode }) => ({
           "/services/medium-duty",
           "/services/heavy-duty",
           "/locations",
+          ...LOCATION_URLS,
           "/get-a-quote",
           "/contact",
           "/blog",

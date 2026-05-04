@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Phone, MessageCircle, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import { PRIMARY_DISPATCH_TEL_HREF } from "@/data/screenshotDispatchHubs";
 
 export default function MobileOptimizedCTA() {
   const [isVisible, setIsVisible] = useState(false);
@@ -63,7 +64,7 @@ export default function MobileOptimizedCTA() {
             className="bg-gradient-primary hover:opacity-90 text-primary-foreground shadow-orange"
             asChild
           >
-            <a href="tel:650-881-2400" className="flex items-center justify-center">
+            <a href={PRIMARY_DISPATCH_TEL_HREF} className="flex items-center justify-center">
               <Phone className="w-4 h-4 mr-2" />
               Call Now
             </a>

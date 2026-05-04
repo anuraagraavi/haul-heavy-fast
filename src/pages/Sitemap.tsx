@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { ExternalLink } from "lucide-react";
+import { PRIMARY_DISPATCH_PHONE_DISPLAY, PRIMARY_DISPATCH_TEL_HREF } from "@/data/screenshotDispatchHubs";
 
 const Sitemap = () => {
   const sitePages = [
@@ -28,11 +29,21 @@ const Sitemap = () => {
     {
       category: "Service Areas",
       pages: [
-        { name: "All Locations", url: "/locations", description: "Service coverage across 4 California counties" },
-        { name: "San Francisco County", url: "/locations#san-francisco", description: "Towing services in San Francisco" },
-        { name: "San Mateo County", url: "/locations#san-mateo", description: "Towing services in San Mateo County" },
-        { name: "Alameda County", url: "/locations#alameda", description: "Towing services in Alameda County" },
-        { name: "Santa Clara County", url: "/locations#santa-clara", description: "Towing services in Santa Clara County" }
+        { name: "All Locations", url: "/locations", description: "Service coverage index across county hubs and city pages" },
+        { name: "San Mateo County Hub", url: "/locations/san-mateo-county", description: "County-level dispatch and city links" },
+        { name: "Alameda County Hub", url: "/locations/alameda-county", description: "County-level dispatch and city links" },
+        { name: "Santa Clara County Hub", url: "/locations/santa-clara-county", description: "County-level dispatch and city links" },
+        { name: "Contra Costa County Hub", url: "/locations/contra-costa-county", description: "County-level dispatch and city links" }
+      ]
+    },
+    {
+      category: "City Towing Pages",
+      pages: [
+        { name: "Oakland Towing", url: "/towing-oakland", description: "Dedicated Oakland towing coverage page" },
+        { name: "San Jose Towing", url: "/towing-san-jose", description: "Dedicated San Jose towing coverage page" },
+        { name: "San Francisco Towing", url: "/towing-san-francisco", description: "Dedicated San Francisco towing coverage page" },
+        { name: "Stockton Towing", url: "/towing-stockton", description: "Dedicated Stockton towing coverage page" },
+        { name: "Browse all city pages", url: "/locations", description: "View full city list by county" }
       ]
     },
     {
@@ -133,8 +144,8 @@ const Sitemap = () => {
                       <div className="text-sm text-muted-foreground">Total Pages</div>
                     </div>
                     <div>
-                      <div className="text-3xl font-bold text-success mb-2">4</div>
-                      <div className="text-sm text-muted-foreground">Service Counties</div>
+                      <div className="text-3xl font-bold text-success mb-2">30</div>
+                      <div className="text-sm text-muted-foreground">Location Pages</div>
                     </div>
                     <div>
                       <div className="text-3xl font-bold text-primary mb-2">24/7</div>
@@ -162,10 +173,10 @@ const Sitemap = () => {
                     Contact Us
                   </Link>
                   <a 
-                    href='tel:650-881-2400'
+                    href={PRIMARY_DISPATCH_TEL_HREF}
                     className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors"
                   >
-                    Call 650-881-2400
+                    Call {PRIMARY_DISPATCH_PHONE_DISPLAY}
                   </a>
                 </div>
               </div>

@@ -1,88 +1,117 @@
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
+import { PRIMARY_DISPATCH_E164 } from "@/data/screenshotDispatchHubs";
 
-interface StructuredDataProps {
-  type: 'article' | 'business' | 'faq' | 'service';
-  data: any;
-}
+type StructuredDataArticle = {
+  headline: string;
+  description: string;
+  image?: string;
+  author: string;
+  datePublished: string;
+  dateModified: string;
+  url: string;
+};
+
+type StructuredDataBusiness = {
+  address: Record<string, unknown>;
+  geo: Record<string, unknown>;
+  areaServed: unknown;
+  services: unknown;
+};
+
+type StructuredDataFaq = {
+  questions: unknown;
+};
+
+type StructuredDataService = {
+  name: string;
+  description: string;
+  serviceType: string;
+  areaServed: unknown;
+};
+
+type StructuredDataProps =
+  | { type: "article"; data: StructuredDataArticle }
+  | { type: "business"; data: StructuredDataBusiness }
+  | { type: "faq"; data: StructuredDataFaq }
+  | { type: "service"; data: StructuredDataService };
 
 const StructuredData = ({ type, data }: StructuredDataProps) => {
   const generateSchema = () => {
     switch (type) {
-      case 'article':
+      case "article":
         return {
           "@context": "https://schema.org",
           "@type": "Article",
-          "headline": data.headline,
-          "description": data.description,
-          "image": data.image,
-          "author": {
+          headline: data.headline,
+          description: data.description,
+          image: data.image,
+          author: {
             "@type": "Organization",
-            "name": data.author
+            name: data.author,
           },
-          "publisher": {
+          publisher: {
             "@type": "Organization",
-            "name": "Heavy Haulers San Francisco",
-            "url": "https://heavytowpro.com"
+            name: "Heavy Haulers San Francisco",
+            url: "https://heavytowpro.com",
           },
-          "datePublished": data.datePublished,
-          "dateModified": data.dateModified,
-          "mainEntityOfPage": {
+          datePublished: data.datePublished,
+          dateModified: data.dateModified,
+          mainEntityOfPage: {
             "@type": "WebPage",
-            "@id": data.url
-          }
+            "@id": data.url,
+          },
         };
-      
-      case 'business':
+
+      case "business":
         return {
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
-          "name": "Heavy Haulers San Francisco",
-          "description": "Professional towing and recovery services in San Francisco Bay Area",
-          "url": "https://heavytowpro.com",
-          "telephone": "+1-650-881-2400",
-          "address": data.address,
-          "geo": data.geo,
-          "openingHours": ["Mo-Su 00:00-23:59"],
-          "priceRange": "$$",
-          "areaServed": data.areaServed,
-          "hasOfferCatalog": data.services
+          name: "Heavy Haulers San Francisco",
+          description:
+            "Professional towing and recovery services in San Francisco Bay Area",
+          url: "https://heavytowpro.com",
+          telephone: PRIMARY_DISPATCH_E164,
+          address: data.address,
+          geo: data.geo,
+          openingHours: ["Mo-Su 00:00-23:59"],
+          priceRange: "$$",
+          areaServed: data.areaServed,
+          hasOfferCatalog: data.services,
         };
-      
-      case 'faq':
+
+      case "faq":
         return {
           "@context": "https://schema.org",
           "@type": "FAQPage",
-          "mainEntity": data.questions
+          mainEntity: data.questions,
         };
-      
-      case 'service':
+
+      case "service":
         return {
           "@context": "https://schema.org",
           "@type": "Service",
-          "name": data.name,
-          "description": data.description,
-          "provider": {
+          name: data.name,
+          description: data.description,
+          provider: {
             "@type": "Organization",
-            "name": "Heavy Haulers San Francisco"
+            name: "Heavy Haulers San Francisco",
           },
-          "serviceType": data.serviceType,
-          "areaServed": data.areaServed
+          serviceType: data.serviceType,
+          areaServed: data.areaServed,
         };
-      
+
       default:
         return null;
     }
   };
 
   const schema = generateSchema();
-  
+
   if (!schema) return null;
 
   return (
     <Helmet>
-      <script type="application/ld+json">
-        {JSON.stringify(schema)}
-      </script>
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
     </Helmet>
   );
 };

@@ -331,7 +331,15 @@ Sent from Heavy Haulers website newsletter signup
     try {
       console.log("Sending email via Resend API");
       
-      const emailPayload: any = {
+      type ResendEmailPayload = {
+        from: string;
+        to: string | string[];
+        subject: string;
+        html: string;
+        text: string;
+        attachments?: Array<{ filename: string; content: Uint8Array }>;
+      };
+      const emailPayload: ResendEmailPayload = {
         from: "Heavy Haulers <noreply@updates.heavytowpro.com>",
         to: emailData.to,
         subject: emailSubject,
@@ -426,11 +434,12 @@ Sent from Heavy Haulers website newsletter signup
         }
       );
 
-    } catch (emailError: any) {
+    } catch (emailError: unknown) {
       // SECURITY: Log detailed error server-side only
+      const err = emailError instanceof Error ? emailError : new Error(String(emailError));
       console.error("Email sending error:", {
-        error: emailError.message,
-        stack: emailError.stack,
+        error: err.message,
+        stack: err.stack,
         timestamp: new Date().toISOString()
       });
       // SECURITY: Return generic error to client
@@ -443,11 +452,12 @@ Sent from Heavy Haulers website newsletter signup
       );
     }
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     // SECURITY: Log detailed error server-side only
+    const err = error instanceof Error ? error : new Error(String(error));
     console.error("Handler error:", {
-      error: error.message,
-      stack: error.stack,
+      error: err.message,
+      stack: err.stack,
       timestamp: new Date().toISOString()
     });
     // SECURITY: Return generic error to client

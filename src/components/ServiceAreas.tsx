@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { MapPin, Phone } from "lucide-react";
 import bayAreaCoverageImage from "@/assets/bay-area-coverage.jpg";
 import { BAY_AREA_COUNTIES } from "@/data/coverage";
+import { PRIMARY_DISPATCH_PHONE_DISPLAY, PRIMARY_DISPATCH_TEL_HREF } from "@/data/screenshotDispatchHubs";
+import { telHrefFromNational } from "@/lib/phone";
 
 const ServiceAreas = () => {
   return <section className="py-20 bg-gradient-subtle">
@@ -52,7 +54,12 @@ const ServiceAreas = () => {
                   </span>)}
               </div>
 
-              <Button variant="outline" size="sm" className="w-full mt-auto" onClick={() => window.location.href = `tel:${county.phone}`}>
+              <Button
+                variant="outline"
+                size="sm"
+                className="w-full mt-auto"
+                onClick={() => (window.location.href = telHrefFromNational(county.phone))}
+              >
                 <Phone className="w-4 h-4 mr-2" />
                 {county.phone}
               </Button>
@@ -68,10 +75,10 @@ const ServiceAreas = () => {
             We're constantly expanding our coverage. Give us a call and we'll let you know if we can help.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <Button variant='hero' size='lg' asChild>
-              <a href='tel:650-881-2400'>
-                <Phone className='w-5 h-5 mr-2' />
-                Call 650-881-2400
+            <Button variant="hero" size="lg" asChild>
+              <a href={PRIMARY_DISPATCH_TEL_HREF}>
+                <Phone className="w-5 h-5 mr-2" />
+                Call {PRIMARY_DISPATCH_PHONE_DISPLAY}
               </a>
             </Button>
             <Button variant="outline" size="lg" onClick={() => window.location.href = '/locations'}>

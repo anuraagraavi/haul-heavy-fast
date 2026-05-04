@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet';
 import type { BlogPostData } from '@/types/blog';
-import { generateFAQSchema } from './BlogFAQSection';
+import { generateFAQSchema } from '@/lib/generateFAQSchema';
 
 interface BlogSchemasProps {
   data: BlogPostData;

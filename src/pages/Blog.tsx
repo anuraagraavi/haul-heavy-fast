@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { blogPosts, BLOG_CATEGORIES, type BlogCategory } from "@/data/blogRegistry";
+import { PRIMARY_DISPATCH_PHONE_DISPLAY, PRIMARY_DISPATCH_TEL_HREF } from "@/data/screenshotDispatchHubs";
 
 const POSTS_PER_PAGE = 9;
 
@@ -281,9 +282,9 @@ const BlogNew = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" variant="secondary" asChild>
-                  <a href="tel:650-881-2400" className="inline-flex items-center gap-2">
+                  <a href={PRIMARY_DISPATCH_TEL_HREF} className="inline-flex items-center gap-2">
                     <Phone className="h-5 w-5" />
-                    Call 650-881-2400
+                    Call {PRIMARY_DISPATCH_PHONE_DISPLAY}
                   </a>
                 </Button>
                 <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" asChild>

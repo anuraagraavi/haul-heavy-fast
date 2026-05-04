@@ -3,6 +3,7 @@ import { Phone, Clock, Truck, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { landingImagesById } from "@/data/landingImages";
+import { PRIMARY_DISPATCH_PHONE_DISPLAY, PRIMARY_DISPATCH_TEL_HREF } from "@/data/screenshotDispatchHubs";
 
 const HERO_SLIDES = [
   landingImagesById.light_suv_tree_lined,
@@ -62,11 +63,11 @@ const LandingHero = () => {
 
           {/* Dominant phone number */}
           <a
-            href="tel:+16508812400"
+            href={PRIMARY_DISPATCH_TEL_HREF}
             className="inline-block text-white font-bold text-3xl md:text-4xl lg:text-[2.5rem] mb-4 hover:underline focus:underline"
             onClick={() => {
-              if (typeof window !== "undefined" && (window as any).gtag) {
-                (window as any).gtag("event", "phone_click", {
+              if (typeof window !== "undefined") {
+                window.gtag?.("event", "phone_click", {
                   send_to: "AW-17927335103",
                   campaign: "C1",
                   source: "landing_page",
@@ -74,7 +75,7 @@ const LandingHero = () => {
               }
             }}
           >
-            650-881-2400
+            {PRIMARY_DISPATCH_PHONE_DISPLAY}
           </a>
            
            {/* Key Benefits row (Truck, Shield, Clock) */}
@@ -102,10 +103,10 @@ const LandingHero = () => {
            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
              <Button variant="hero" size="lg" asChild className="w-full sm:w-auto h-16 md:h-14 text-lg md:text-xl px-8">
                <a
-                 href="tel:+16508812400"
+                 href={PRIMARY_DISPATCH_TEL_HREF}
                   onClick={() => {
-                    if (typeof window !== "undefined" && (window as any).gtag) {
-                      (window as any).gtag("event", "phone_click", {
+                    if (typeof window !== "undefined") {
+                      window.gtag?.("event", "phone_click", {
                         send_to: "AW-17927335103",
                         campaign: "C1",
                         source: "landing_page",

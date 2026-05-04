@@ -8,6 +8,9 @@ import MobileOptimizedCTA from "@/components/MobileOptimizedCTA";
 import Footer from "@/components/Footer";
 import { useCustomerServicePopup } from "@/hooks/useCustomerServicePopup";
 import usePerformanceMonitor from "@/hooks/usePerformanceMonitor";
+import { PRIMARY_DISPATCH_E164, PRIMARY_DISPATCH_PHONE_DISPLAY, SCREENSHOT_DISPATCH_HUBS } from "@/data/screenshotDispatchHubs";
+
+const DISPATCH_HUBS_FAQ_LINE = SCREENSHOT_DISPATCH_HUBS.map((h) => `${h.city} ${h.phoneDisplay}`).join("; ");
 
 // Lazy load non-critical components
 const WhyChooseUs = lazy(() => import("@/components/WhyChooseUs"));
@@ -28,7 +31,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>Heavy Haulers San Francisco - Professional Towing & Recovery Services | Bay Area 24/7</title>
-        <meta name="description" content="Professional towing services in San Francisco Bay Area. 24/7 emergency light, medium & heavy-duty towing, flatbed service, motorcycle transport. Fast response, transparent pricing. Call 650-881-2400." />
+        <meta name="description" content={`Professional towing services in San Francisco Bay Area. 24/7 emergency light, medium & heavy-duty towing, flatbed service, motorcycle transport. Fast response, transparent pricing. Call ${PRIMARY_DISPATCH_PHONE_DISPLAY}.`} />
         <meta name="keywords" content="towing services San Francisco Bay Area, emergency towing SF, professional towing company, heavy duty towing, light duty towing, 24/7 towing San Francisco, transparent towing pricing" />
         <link rel="canonical" href="https://heavytowpro.com/" />
         
@@ -51,29 +54,27 @@ const Index = () => {
         <meta name="geo.position" content="37.7749;-122.4194" />
         <meta name="ICBM" content="37.7749, -122.4194" />
         
-        {/* Comprehensive Schema.org JSON-LD – aligned with Locations & Contact (6 hubs, 5 counties + Central Valley) */}
+        {/* Comprehensive Schema.org JSON-LD – aligned with Locations (eight dispatch hubs, 5 counties + Central Valley) */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             "name": "Heavy Haulers San Francisco",
-            "description": "Professional towing and recovery services in San Francisco Bay Area and Central Valley (Stockton). 6 dispatch hubs, 24/7 emergency response.",
+            "description": "Professional towing and recovery services in the San Francisco Bay Area and Central Valley (Stockton). Eight official dispatch hubs, 24/7 emergency response.",
             "url": "https://heavytowpro.com",
             "logo": "https://heavytowpro.com/favicon.png",
-            "telephone": "+1-650-881-2400",
+            "telephone": PRIMARY_DISPATCH_E164,
             "email": "dispatch@heavytowpro.com",
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "351 Industrial Way",
-              "addressLocality": "Brisbane",
+              "addressLocality": "San Francisco Bay Area",
               "addressRegion": "CA",
-              "postalCode": "94005",
               "addressCountry": "US"
             },
             "geo": {
               "@type": "GeoCoordinates",
-              "latitude": "37.6810",
-              "longitude": "-122.4007"
+              "latitude": "37.7749",
+              "longitude": "-122.4194"
             },
             "openingHours": "Mo-Su 00:00-23:59",
             "priceRange": "$$",
@@ -162,7 +163,7 @@ const Index = () => {
                 "name": "Which areas do you serve?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "We serve five Bay Area counties (San Francisco, San Mateo, Alameda, Santa Clara, Contra Costa) and the Central Valley (Stockton). We operate 6 dispatch hubs in Brisbane (HQ), San Leandro, Hayward, San Jose, San Mateo, and Stockton, covering 60+ cities and districts. Call 650-881-2400 for Peninsula/San Mateo/Brisbane, 510-800-3800 for East Bay, 408-800-3800 for South Bay, 916-701-2200 for Central Valley."
+                  "text": `We serve five Bay Area counties (San Francisco, San Mateo, Alameda, Santa Clara, Contra Costa) and the Central Valley (Stockton). We operate eight official dispatch hubs with direct lines: ${DISPATCH_HUBS_FAQ_LINE}. Main Bay Area line (fallback when unsure): ${PRIMARY_DISPATCH_PHONE_DISPLAY}. See https://heavytowpro.com/locations for hub addresses and city pages.`
                 }
               },
               {

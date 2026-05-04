@@ -171,6 +171,3 @@ export const RelatedArticlesGrid = ({ posts, className }: RelatedArticlesProps) 
     </section>
   );
 };
-
-// Re-export the helper from centralized registry for backward compatibility
-export { getRelatedPostsForTemplate as getRelatedPosts } from '@/data/blogRegistry';

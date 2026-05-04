@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import { X, Phone, FileText, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import { PRIMARY_DISPATCH_TEL_HREF } from "@/data/screenshotDispatchHubs";
 
 interface CustomerServicePopupProps {
   onClose: () => void;
@@ -82,7 +83,7 @@ export default function CustomerServicePopup({ onClose }: CustomerServicePopupPr
               size="lg"
               className="w-full border-primary/30 text-primary hover:bg-primary/10 hover:border-primary transition-all duration-300"
             >
-              <a href="tel:650-881-2400" onClick={handleClose}>
+              <a href={PRIMARY_DISPATCH_TEL_HREF} onClick={handleClose}>
                 <Phone className="mr-2 h-4 w-4" />
                 Call Us Now: (650) 881-2400
               </a>

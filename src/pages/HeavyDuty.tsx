@@ -6,6 +6,7 @@ import { Phone, MessageCircle, TruckIcon, Settings, Building, Users, CheckCircle
 import heavyDutyEquipment from "@/assets/heavy-duty-equipment.jpeg";
 import heavyDutyRecovery from "@/assets/heavy-duty-recovery.jpeg";
 import heavyDutyFleet from "@/assets/heavy-duty-fleet.jpeg";
+import { PRIMARY_DISPATCH_E164, PRIMARY_DISPATCH_PHONE_DISPLAY, PRIMARY_DISPATCH_TEL_HREF } from "@/data/screenshotDispatchHubs";
 
 const HeavyDuty = () => {
   const services = [
@@ -122,7 +123,7 @@ const HeavyDuty = () => {
             "provider": {
               "@type": "LocalBusiness",
               "name": "Heavy Haulers San Francisco",
-              "telephone": "+1-650-881-2400",
+              "telephone": PRIMARY_DISPATCH_E164,
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "San Francisco",
@@ -139,7 +140,7 @@ const HeavyDuty = () => {
             ],
             "availableChannel": {
               "@type": "ServiceChannel",
-              "servicePhone": "+1-650-881-2400",
+              "servicePhone": PRIMARY_DISPATCH_E164,
               "availableLanguage": "English"
             },
             "hoursAvailable": {
@@ -170,9 +171,9 @@ const HeavyDuty = () => {
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
                 <Button variant="hero" size="lg" asChild>
-                  <a href='tel:650-881-2400'>
+                  <a href={PRIMARY_DISPATCH_TEL_HREF}>
                     <Phone className="w-5 h-5 mr-2" />
-                    Call 650-881-2400
+                    Call {PRIMARY_DISPATCH_PHONE_DISPLAY}
                   </a>
                 </Button>
                 <Button variant="secondary" size="lg" asChild>
@@ -379,9 +380,9 @@ const HeavyDuty = () => {
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
                 <Button variant="hero" size="xl" asChild>
-                  <a href='tel:650-881-2400'>
+                  <a href={PRIMARY_DISPATCH_TEL_HREF}>
                     <Phone className="w-5 h-5 mr-2" />
-                    Call 650-881-2400
+                    Call {PRIMARY_DISPATCH_PHONE_DISPLAY}
                   </a>
                 </Button>
                 <Button variant="outline" size="xl" asChild>

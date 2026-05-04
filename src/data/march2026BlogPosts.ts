@@ -1,4 +1,10 @@
 import type { BlogPostData } from "@/types/blog";
+import type { CohortBlogPostConfig } from "@/types/cohortBlog";
+import {
+  DISPATCH_HUB_LINES_MARKETING,
+  PRIMARY_DISPATCH_PHONE_DISPLAY,
+  PRIMARY_DISPATCH_TEL_HREF,
+} from "@/data/screenshotDispatchHubs";
 import sfChallengesImage from "@/assets/blog-sf-challenges.jpg";
 import luxuryTransportImage from "@/assets/blog-luxury-transport.jpg";
 import evTowingImage from "@/assets/blog-ev-towing.jpg";
@@ -15,36 +21,8 @@ import roadsideVsTowingImage from "@/assets/blog-roadside-vs-towing.jpg";
 import heavyDutyServiceImage from "@/assets/heavy-duty-service.jpg";
 import heroTowTruckImage from "@/assets/hero-tow-truck.jpg";
 
-export interface MarchBlogContent {
-  intro: string;
-  sections: Array<{
-    id: string;
-    title: string;
-    paragraphs: string[];
-    bullets?: Array<string | { text: string; icon: "check" | "warning" | "info" | "tip" }>;
-    image?: { src: string; alt: string; caption?: string };
-    relatedLinks?: Array<{ text: string; href: string }>;
-    callout?: { type: "tip" | "warning" | "legal" | "info"; title: string; body: string };
-    steps?: Array<{ step: number; title: string; description: string }>;
-    twoColumn?: {
-      leftTitle: string;
-      leftItems: string[];
-      rightTitle: string;
-      rightItems: string[];
-    };
-  }>;
-  midCtaTitle: string;
-  midCtaBody: string;
-  midCtaPrimaryText?: string;
-  midCtaPrimaryHref?: string;
-  regionalPhones?: string;
-  endCallout?: string;
-}
-
-export interface MarchBlogPostConfig {
-  data: BlogPostData;
-  content: MarchBlogContent;
-}
+/** @deprecated use CohortBlogPostConfig from @/types/cohortBlog */
+export type MarchBlogPostConfig = CohortBlogPostConfig;
 
 const sharedServices = [
   { title: "24/7 Dispatch", href: "/contact", description: "Live dispatch and immediate support" },
@@ -62,7 +40,7 @@ const sharedAreas = [
   { name: "Stockton / San Joaquin", href: "/locations" },
 ];
 
-export const march2026BlogPosts: Record<string, MarchBlogPostConfig> = {
+export const march2026BlogPosts: Record<string, CohortBlogPostConfig> = {
   "does-insurance-cover-towing-california": {
     data: {
       slug: "does-insurance-cover-towing-california",
@@ -546,8 +524,7 @@ export const march2026BlogPosts: Record<string, MarchBlogPostConfig> = {
       ],
       midCtaTitle: "Need pickup from impound today?",
       midCtaBody: "Call 650-881-2400 for reliable post-release transport anywhere in our coverage area.",
-      regionalPhones:
-        "Peninsula/SF 650-881-2400, East Bay 510-800-3800, South Bay 408-800-3800, Contra Costa 925-888-2400, Stockton 916-701-2200",
+      regionalPhones: DISPATCH_HUB_LINES_MARKETING,
     },
   },
   "i-880-bay-area-interstate-accident-recovery": {
@@ -555,7 +532,7 @@ export const march2026BlogPosts: Record<string, MarchBlogPostConfig> = {
       slug: "i-880-bay-area-interstate-accident-recovery",
       title: "I-880 and Bay Area Interstate Accident Recovery: What Happens After a Highway Crash",
       metaTitle: "I-880 Bay Area Accident Recovery Guide",
-      metaDescription: "Understand I-880 freeway accident recovery steps, lane safety, and towing workflows. Call East Bay dispatch 510-800-3800 now.",
+      metaDescription: `Understand I-880 freeway accident recovery steps, lane safety, and towing workflows. Call ${PRIMARY_DISPATCH_PHONE_DISPLAY} now.`,
       canonicalUrl: "https://heavytowpro.com/blog/i-880-bay-area-interstate-accident-recovery",
       primaryKeyword: "I-880 accident towing",
       secondaryKeywords: ["Bay Area highway accident recovery", "I-80 towing Bay Area", "CHP tow rotation Bay Area", "freeway crash towing"],
@@ -628,10 +605,9 @@ export const march2026BlogPosts: Record<string, MarchBlogPostConfig> = {
       ],
       midCtaTitle: "Freeway emergency and need dispatch?",
       midCtaBody: "Call 650-881-2400 for immediate Bay Area coverage and route-aware recovery support.",
-      midCtaPrimaryText: "Call East Bay Dispatch 510-800-3800",
-      midCtaPrimaryHref: "tel:510-800-3800",
-      regionalPhones:
-        "East Bay 510-800-3800, South Bay 408-800-3800, Peninsula/SF 650-881-2400, Contra Costa 925-888-2400, Stockton 916-701-2200",
+      midCtaPrimaryText: `Call ${PRIMARY_DISPATCH_PHONE_DISPLAY}`,
+      midCtaPrimaryHref: PRIMARY_DISPATCH_TEL_HREF,
+      regionalPhones: DISPATCH_HUB_LINES_MARKETING,
     },
   },
   "flatbed-vs-wheel-lift-towing": {
@@ -1032,8 +1008,7 @@ export const march2026BlogPosts: Record<string, MarchBlogPostConfig> = {
       ],
       midCtaTitle: "Need a route-specific long-distance quote?",
       midCtaBody: "Call 650-881-2400 and we will provide transparent pricing based on your exact route and vehicle.",
-      regionalPhones:
-        "Peninsula/SF 650-881-2400, East Bay 510-800-3800, South Bay 408-800-3800, Contra Costa 925-888-2400, Stockton 916-701-2200",
+      regionalPhones: DISPATCH_HUB_LINES_MARKETING,
     },
   },
   "semi-truck-breakdown-highway-guide": {
@@ -1114,10 +1089,9 @@ export const march2026BlogPosts: Record<string, MarchBlogPostConfig> = {
       ],
       midCtaTitle: "Commercial breakdown and need heavy support?",
       midCtaBody: "Call 650-881-2400 for 24/7 heavy-duty dispatch across Bay Area corridors.",
-      midCtaPrimaryText: "Call Commercial Dispatch 916-701-2200",
-      midCtaPrimaryHref: "tel:916-701-2200",
-      regionalPhones:
-        "Stockton 916-701-2200, East Bay 510-800-3800, South Bay 408-800-3800, Peninsula/SF 650-881-2400, Contra Costa 925-888-2400",
+      midCtaPrimaryText: `Call ${PRIMARY_DISPATCH_PHONE_DISPLAY}`,
+      midCtaPrimaryHref: PRIMARY_DISPATCH_TEL_HREF,
+      regionalPhones: DISPATCH_HUB_LINES_MARKETING,
     },
   },
   "spring-driving-bay-area-breakdown-prevention": {
@@ -1198,8 +1172,7 @@ export const march2026BlogPosts: Record<string, MarchBlogPostConfig> = {
       ],
       midCtaTitle: "Caught in spring rain and need help?",
       midCtaBody: "Call 650-881-2400 for Bay Area dispatch support, day or night.",
-      regionalPhones:
-        "Peninsula/SF 650-881-2400, East Bay 510-800-3800, South Bay 408-800-3800, Contra Costa 925-888-2400",
+      regionalPhones: DISPATCH_HUB_LINES_MARKETING,
     },
   },
   "towing-lowered-modified-car-guide": {
@@ -1311,7 +1284,7 @@ const categoryCalloutType: Record<string, "tip" | "warning" | "legal" | "info"> 
   "SF Local Services": "info",
 };
 
-function enrichMarchPostConfig(post: MarchBlogPostConfig): MarchBlogPostConfig {
+function enrichMarchPostConfig(post: CohortBlogPostConfig): CohortBlogPostConfig {
   const image = sectionImageBySlug[post.data.slug];
   const calloutType = categoryCalloutType[post.data.category] ?? "info";
   const firstRelatedBlog = post.data.relatedPosts?.[0];
@@ -1374,12 +1347,12 @@ function enrichMarchPostConfig(post: MarchBlogPostConfig): MarchBlogPostConfig {
       sections,
       endCallout:
         post.content.endCallout ??
-        "Heavy Haulers dispatch is available 24/7 across Bay Area counties and Stockton. Peninsula/SF 650-881-2400, East Bay 510-800-3800, South Bay 408-800-3800, Contra Costa 925-888-2400, Stockton 916-701-2200.",
+        `Heavy Haulers dispatch is available 24/7 across Bay Area counties and Stockton. ${DISPATCH_HUB_LINES_MARKETING}`,
     },
   };
 }
 
-export function getMarch2026BlogPost(slug: string): MarchBlogPostConfig {
+export function getMarch2026BlogPost(slug: string): CohortBlogPostConfig {
   const post = march2026BlogPosts[slug];
   if (!post) {
     throw new Error(`Unknown March 2026 blog slug: ${slug}`);

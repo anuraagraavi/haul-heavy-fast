@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components -- barrel re-exports for blog post modules */
 import { ReactNode } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';

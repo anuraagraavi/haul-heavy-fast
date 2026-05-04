@@ -1,36 +1,42 @@
 /**
  * Shared coverage data: Bay Area counties and dispatch hubs.
  * Used by Locations page, LP CoverageMap, ServiceAreas, and schema.
- * Single source of truth for "5 Bay Area counties" and hub list.
+ * Dispatch hub list matches the Bay Area Coverage screenshot (eight hubs).
  */
+
+import { SCREENSHOT_DISPATCH_BY_SLUG, SCREENSHOT_DISPATCH_HUBS, SITE_WIDE_FALLBACK_PHONE_DISPLAY } from "./screenshotDispatchHubs";
+
+const H = SCREENSHOT_DISPATCH_BY_SLUG;
 
 export const BAY_AREA_COUNTY_COUNT = 5;
 
+/** County list: representative line per county (Contra Costa uses site-wide fallback per coverage map). */
 export const BAY_AREA_COUNTIES = [
-  { id: "san-francisco", name: "San Francisco County", phone: "415-800-3800", areas: ["Mission", "SOMA", "Financial District", "Richmond", "Pacific Heights", "Sunset"] },
-  { id: "san-mateo", name: "San Mateo County", phone: "650-881-2400", areas: ["San Mateo", "Redwood City", "Daly City", "South San Francisco", "Menlo Park"] },
-  { id: "alameda", name: "Alameda County", phone: "510-800-3800", areas: ["Oakland", "Hayward", "Berkeley", "Fremont", "San Leandro"] },
-  { id: "santa-clara", name: "Santa Clara County", phone: "408-800-3800", areas: ["San Jose", "Santa Clara", "Sunnyvale", "Mountain View", "Palo Alto"] },
-  { id: "contra-costa", name: "Contra Costa County", phone: "925-888-2400", areas: ["Walnut Creek", "Concord", "Richmond", "Antioch", "Brentwood", "Pittsburg", "San Ramon"] },
+  { id: "san-francisco", name: "San Francisco County", phone: H["san-francisco"]!.phoneDisplay, areas: ["Mission", "SOMA", "Financial District", "Richmond", "Pacific Heights", "Sunset"] },
+  { id: "san-mateo", name: "San Mateo County", phone: H["san-mateo"]!.phoneDisplay, areas: ["San Mateo", "Redwood City", "Daly City", "South San Francisco", "Menlo Park"] },
+  { id: "alameda", name: "Alameda County", phone: H["oakland"]!.phoneDisplay, areas: ["Oakland", "Hayward", "Berkeley", "Fremont", "San Leandro"] },
+  { id: "santa-clara", name: "Santa Clara County", phone: H["san-jose"]!.phoneDisplay, areas: ["San Jose", "Santa Clara", "Sunnyvale", "Mountain View", "Palo Alto"] },
+  { id: "contra-costa", name: "Contra Costa County", phone: SITE_WIDE_FALLBACK_PHONE_DISPLAY, areas: ["Walnut Creek", "Concord", "Richmond", "Antioch", "Brentwood", "Pittsburg", "San Ramon"] },
 ] as const;
 
-/** Dispatch hubs with full addresses. Used by Locations page and LP CoverageMap. */
-export const DISPATCH_HUBS = [
-  { city: "Brisbane", address: "308 Industrial Way", cityState: "Brisbane, CA 94005", phone: "415-800-3800", hours: "Mon–Fri 8AM–5PM", emergency: "24/7" },
-  { city: "Redwood City", address: "1320 Marshall St", cityState: "Redwood City, CA", phone: "650-881-2400", hours: "Mon–Fri 8AM–5PM", emergency: "24/7" },
-  { city: "San Mateo", address: "403 1st Avenue", cityState: "San Mateo, CA 94401", phone: "650-881-2400", hours: "Mon–Fri 8AM–5PM", emergency: "24/7" },
-  { city: "San Leandro", address: "14305 Washington Ave", cityState: "San Leandro, CA 94578", phone: "510-800-3800", hours: "Mon–Fri 8AM–5PM", emergency: "24/7" },
-  { city: "Hayward", address: "2454 Whipple Rd", cityState: "Hayward, CA 94544", phone: "510-800-3800", hours: "Mon–Fri 8AM–5PM", emergency: "24/7" },
-  { city: "San Jose", address: "50 N Sunset Ave", cityState: "San Jose, CA 95116", phone: "408-800-3800", hours: "Mon–Fri 8AM–5PM", emergency: "24/7" },
-  { city: "Concord", address: "4075 Folsom Ct", cityState: "Concord, CA", phone: "925-888-2400", hours: "Mon–Fri 8AM–5PM", emergency: "24/7" },
-  { city: "Stockton", address: "3990 N Wilson Way", cityState: "Stockton, CA 95205", phone: "916-701-2200", hours: "Mon–Fri 8AM–5PM", emergency: "24/7" },
-] as const;
+const hubHours = { hours: "Mon–Fri 8AM–5PM", emergency: "24/7" } as const;
+
+/** Dispatch hubs — screenshot canonical eight. Used by Locations page and LP CoverageMap. */
+export const DISPATCH_HUBS = SCREENSHOT_DISPATCH_HUBS.map((h) => ({
+  city: h.city,
+  address: h.addressLine,
+  cityState: "" as const,
+  phone: h.phoneDisplay,
+  url: h.path,
+  ...hubHours,
+}));
 
 /** For LP CoverageMap: hub display name and full address string */
 export const DISPATCH_HUBS_LP = DISPATCH_HUBS.map((hub, i) => ({
-  name: i === 0 ? `${hub.city} (HQ)` : `${hub.city} Hub`,
-  address: `${hub.address}, ${hub.cityState}`,
+  name: i === 0 ? `${hub.city} Hub` : `${hub.city} Hub`,
+  address: hub.cityState ? `${hub.address}, ${hub.cityState}` : hub.address,
   phone: hub.phone,
+  url: hub.url,
 }));
 
 /** LP county list with cities string (for CoverageMap) */

@@ -24,6 +24,36 @@ const Sitemap = lazy(() => import("./pages/Sitemap"));
 const ThankYou = lazy(() => import("./pages/ThankYou"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const LandingLightMedium = lazy(() => import("./pages/LandingLightMedium"));
+const SanMateoCountyPage = lazy(() => import("./pages/locations/san-mateo-county"));
+const AlamedaCountyPage = lazy(() => import("./pages/locations/alameda-county"));
+const SantaClaraCountyPage = lazy(() => import("./pages/locations/santa-clara-county"));
+const ContraCostaCountyPage = lazy(() => import("./pages/locations/contra-costa-county"));
+const OaklandPage = lazy(() => import("./pages/locations/oakland"));
+const SanJosePage = lazy(() => import("./pages/locations/san-jose"));
+const SanFranciscoPage = lazy(() => import("./pages/locations/san-francisco"));
+const HaywardPage = lazy(() => import("./pages/locations/hayward"));
+const FremontPage = lazy(() => import("./pages/locations/fremont"));
+const BerkeleyPage = lazy(() => import("./pages/locations/berkeley"));
+const SanMateoPage = lazy(() => import("./pages/locations/san-mateo"));
+const RedwoodCityPage = lazy(() => import("./pages/locations/redwood-city"));
+const PaloAltoPage = lazy(() => import("./pages/locations/palo-alto"));
+const SunnyvalePage = lazy(() => import("./pages/locations/sunnyvale"));
+const MountainViewPage = lazy(() => import("./pages/locations/mountain-view"));
+const DalyCityPage = lazy(() => import("./pages/locations/daly-city"));
+const ConcordPage = lazy(() => import("./pages/locations/concord"));
+const WalnutCreekPage = lazy(() => import("./pages/locations/walnut-creek"));
+const SantaClaraPage = lazy(() => import("./pages/locations/santa-clara"));
+const StocktonPage = lazy(() => import("./pages/locations/stockton"));
+const SanLeandroPage = lazy(() => import("./pages/locations/san-leandro"));
+const PleasantonPage = lazy(() => import("./pages/locations/pleasanton"));
+const LivermorePage = lazy(() => import("./pages/locations/livermore"));
+const BurlingamePage = lazy(() => import("./pages/locations/burlingame"));
+const SouthSanFranciscoPage = lazy(() => import("./pages/locations/south-san-francisco"));
+const MenloParkPage = lazy(() => import("./pages/locations/menlo-park"));
+const CupertinoPage = lazy(() => import("./pages/locations/cupertino"));
+const MilpitasPage = lazy(() => import("./pages/locations/milpitas"));
+const RichmondPage = lazy(() => import("./pages/locations/richmond"));
+const AntiochPage = lazy(() => import("./pages/locations/antioch"));
 
 const EmergencyTowingGuide = lazy(() => import("./pages/blog/emergency-towing-guide"));
 const HeavyEquipmentTransport = lazy(() => import("./pages/blog/heavy-equipment-transport"));
@@ -65,6 +95,21 @@ const LongDistanceTowingCostCalifornia = lazy(() => import("./pages/blog/long-di
 const SemiTruckBreakdownHighwayGuide = lazy(() => import("./pages/blog/semi-truck-breakdown-highway-guide"));
 const SpringDrivingBayAreaBreakdownPrevention = lazy(() => import("./pages/blog/spring-driving-bay-area-breakdown-prevention"));
 const TowingLoweredModifiedCarGuide = lazy(() => import("./pages/blog/towing-lowered-modified-car-guide"));
+const FoodTruckTowingBayArea = lazy(() => import("./pages/blog/food-truck-towing-bay-area"));
+const Us101PeninsulaFreewayBreakdownGuide = lazy(() => import("./pages/blog/us-101-peninsula-freeway-breakdown-guide"));
+const BayAreaBridgeStallTowingGuide = lazy(() => import("./pages/blog/bay-area-bridge-stall-towing-guide"));
+const WinchOutMudslideRainBayArea = lazy(() => import("./pages/blog/winch-out-mudslide-rain-bay-area"));
+const RideshareDriverBreakdownTowingBayArea = lazy(() => import("./pages/blog/rideshare-driver-breakdown-towing-bay-area"));
+const DotOutOfServiceWeightStationBayArea = lazy(() => import("./pages/blog/dot-out-of-service-weight-station-bay-area"));
+const ClassicExoticCarTowingBayArea = lazy(() => import("./pages/blog/classic-exotic-car-towing-bay-area"));
+const TravelTrailerSwayBlowoutTowingRecovery = lazy(() => import("./pages/blog/travel-trailer-sway-blowout-towing-recovery"));
+const ShuttleBusTransitMinibusBreakdownTowing = lazy(() => import("./pages/blog/shuttle-bus-transit-minibus-breakdown-towing"));
+const EvDead12vBatteryTowingFlatbedGuide = lazy(() => import("./pages/blog/ev-dead-12v-battery-towing-flatbed-guide"));
+const NorthBayGoldenGateCorridorTowing = lazy(() => import("./pages/blog/north-bay-golden-gate-corridor-towing"));
+const CatalyticConverterTheftCarImmobilizedTowing = lazy(() => import("./pages/blog/catalytic-converter-theft-car-immobilized-towing"));
+const CommercialTireBlowoutHighwayBayArea = lazy(() => import("./pages/blog/commercial-tire-blowout-highway-bay-area"));
+const DealerAuctionVehicleTransportBayArea = lazy(() => import("./pages/blog/dealer-auction-vehicle-transport-bay-area"));
+const ConstructionDumpTruckRollOffRecoveryBayArea = lazy(() => import("./pages/blog/construction-dump-truck-roll-off-recovery-bay-area"));
 
 function RouteFallback() {
   return (
@@ -92,6 +137,36 @@ const App = () => (
             <Route path="/services/medium-duty" element={<MediumDuty />} />
             <Route path="/services/heavy-duty" element={<HeavyDuty />} />
             <Route path="/locations" element={<Locations />} />
+            <Route path="/locations/san-mateo-county" element={<SanMateoCountyPage />} />
+            <Route path="/locations/alameda-county" element={<AlamedaCountyPage />} />
+            <Route path="/locations/santa-clara-county" element={<SantaClaraCountyPage />} />
+            <Route path="/locations/contra-costa-county" element={<ContraCostaCountyPage />} />
+            <Route path="/towing-oakland" element={<OaklandPage />} />
+            <Route path="/towing-san-jose" element={<SanJosePage />} />
+            <Route path="/towing-san-francisco" element={<SanFranciscoPage />} />
+            <Route path="/towing-hayward" element={<HaywardPage />} />
+            <Route path="/towing-fremont" element={<FremontPage />} />
+            <Route path="/towing-berkeley" element={<BerkeleyPage />} />
+            <Route path="/towing-san-mateo" element={<SanMateoPage />} />
+            <Route path="/towing-redwood-city" element={<RedwoodCityPage />} />
+            <Route path="/towing-palo-alto" element={<PaloAltoPage />} />
+            <Route path="/towing-sunnyvale" element={<SunnyvalePage />} />
+            <Route path="/towing-mountain-view" element={<MountainViewPage />} />
+            <Route path="/towing-daly-city" element={<DalyCityPage />} />
+            <Route path="/towing-concord" element={<ConcordPage />} />
+            <Route path="/towing-walnut-creek" element={<WalnutCreekPage />} />
+            <Route path="/towing-santa-clara" element={<SantaClaraPage />} />
+            <Route path="/towing-stockton" element={<StocktonPage />} />
+            <Route path="/towing-san-leandro" element={<SanLeandroPage />} />
+            <Route path="/towing-pleasanton" element={<PleasantonPage />} />
+            <Route path="/towing-livermore" element={<LivermorePage />} />
+            <Route path="/towing-burlingame" element={<BurlingamePage />} />
+            <Route path="/towing-south-san-francisco" element={<SouthSanFranciscoPage />} />
+            <Route path="/towing-menlo-park" element={<MenloParkPage />} />
+            <Route path="/towing-cupertino" element={<CupertinoPage />} />
+            <Route path="/towing-milpitas" element={<MilpitasPage />} />
+            <Route path="/towing-richmond" element={<RichmondPage />} />
+            <Route path="/towing-antioch" element={<AntiochPage />} />
             <Route path="/get-a-quote" element={<GetQuote />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
@@ -135,6 +210,21 @@ const App = () => (
             <Route path="/blog/semi-truck-breakdown-highway-guide" element={<SemiTruckBreakdownHighwayGuide />} />
             <Route path="/blog/spring-driving-bay-area-breakdown-prevention" element={<SpringDrivingBayAreaBreakdownPrevention />} />
             <Route path="/blog/towing-lowered-modified-car-guide" element={<TowingLoweredModifiedCarGuide />} />
+            <Route path="/blog/food-truck-towing-bay-area" element={<FoodTruckTowingBayArea />} />
+            <Route path="/blog/us-101-peninsula-freeway-breakdown-guide" element={<Us101PeninsulaFreewayBreakdownGuide />} />
+            <Route path="/blog/bay-area-bridge-stall-towing-guide" element={<BayAreaBridgeStallTowingGuide />} />
+            <Route path="/blog/winch-out-mudslide-rain-bay-area" element={<WinchOutMudslideRainBayArea />} />
+            <Route path="/blog/rideshare-driver-breakdown-towing-bay-area" element={<RideshareDriverBreakdownTowingBayArea />} />
+            <Route path="/blog/dot-out-of-service-weight-station-bay-area" element={<DotOutOfServiceWeightStationBayArea />} />
+            <Route path="/blog/classic-exotic-car-towing-bay-area" element={<ClassicExoticCarTowingBayArea />} />
+            <Route path="/blog/travel-trailer-sway-blowout-towing-recovery" element={<TravelTrailerSwayBlowoutTowingRecovery />} />
+            <Route path="/blog/shuttle-bus-transit-minibus-breakdown-towing" element={<ShuttleBusTransitMinibusBreakdownTowing />} />
+            <Route path="/blog/ev-dead-12v-battery-towing-flatbed-guide" element={<EvDead12vBatteryTowingFlatbedGuide />} />
+            <Route path="/blog/north-bay-golden-gate-corridor-towing" element={<NorthBayGoldenGateCorridorTowing />} />
+            <Route path="/blog/catalytic-converter-theft-car-immobilized-towing" element={<CatalyticConverterTheftCarImmobilizedTowing />} />
+            <Route path="/blog/commercial-tire-blowout-highway-bay-area" element={<CommercialTireBlowoutHighwayBayArea />} />
+            <Route path="/blog/dealer-auction-vehicle-transport-bay-area" element={<DealerAuctionVehicleTransportBayArea />} />
+            <Route path="/blog/construction-dump-truck-roll-off-recovery-bay-area" element={<ConstructionDumpTruckRollOffRecoveryBayArea />} />
             <Route path="/towing-services" element={<LandingLightMedium />} />
             <Route path="/towing/bay-area-flatbed-emergency-towing-24-7" element={<LandingLightMedium />} />
             <Route path="/towing/heavy-duty-towing-bay-area" element={<LandingHeavyDuty />} />

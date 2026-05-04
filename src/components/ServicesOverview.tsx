@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Car, Truck, TruckIcon, Phone, ArrowRight } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { PRIMARY_DISPATCH_PHONE_DISPLAY, PRIMARY_DISPATCH_TEL_HREF } from "@/data/screenshotDispatchHubs";
 
 const ServicesOverview = () => {
   const { ref: sectionRef, isVisible } = useScrollAnimation();
@@ -108,9 +109,9 @@ const ServicesOverview = () => {
             className="bg-white text-primary border-white hover:bg-gray-100"
             asChild
           >
-            <a href='tel:650-881-2400'>
-              <Phone className='w-5 h-5 mr-2' />
-              Call 650-881-2400
+            <a href={PRIMARY_DISPATCH_TEL_HREF}>
+              <Phone className="w-5 h-5 mr-2" />
+              Call {PRIMARY_DISPATCH_PHONE_DISPLAY}
             </a>
           </Button>
         </div>

@@ -17,10 +17,10 @@ const LazySection = ({
   fallback,
   minHeight = 'min-h-[200px]'
 }: LazySectionProps) => {
-  const { ref, isVisible } = useScrollAnimation({ 
-    threshold, 
+  const { ref, isVisible } = useScrollAnimation<HTMLDivElement>({
+    threshold,
     triggerOnce: true,
-    rootMargin: '50px'
+    rootMargin: '50px',
   });
 
   const defaultFallback = (
@@ -34,7 +34,7 @@ const LazySection = ({
   );
 
   return (
-    <div ref={ref as any} className={className}>
+    <div ref={ref} className={className}>
       {isVisible ? (
         <Suspense fallback={fallback || defaultFallback}>
           {children}
