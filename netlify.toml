@@ -1,0 +1,6 @@
+# Improves repeat visits and CDN efficiency. First-byte time for HTML still depends on origin;
+# pair with ENABLE_PRERENDER=true in production builds for static HTML per path.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

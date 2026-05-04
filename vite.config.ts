@@ -1,11 +1,45 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
+import { readdirSync } from "fs";
 import { componentTagger } from "lovable-tagger";
 import { imagetools } from "vite-imagetools";
 // Use ESM-safe fork for static prerendering of key routes (ads/SEO)
 import vitePrerender from "vite-plugin-prerender-esm-fix";
+import { visualizer } from "rollup-plugin-visualizer";
 import { LOCATION_URLS } from "./src/data/locations";
+
+/** Blog URLs derived from `src/pages/blog/*.tsx` so vite config does not import `@/assets` via blogRegistry. */
+function blogPrerenderPaths(): string[] {
+  const dir = path.join(__dirname, "src", "pages", "blog");
+  return readdirSync(dir, { withFileTypes: true })
+    .filter((e) => e.isFile() && e.name.endsWith(".tsx"))
+    .map((e) => `/blog/${e.name.replace(/\.tsx$/, "")}`);
+}
+
+const STATIC_MARKETING_PATHS = [
+  "/",
+  "/about",
+  "/services",
+  "/services/light-duty",
+  "/services/medium-duty",
+  "/services/heavy-duty",
+  "/locations",
+  "/get-a-quote",
+  "/contact",
+  "/blog",
+  "/towing-services",
+  "/towing/bay-area-flatbed-emergency-towing-24-7",
+  "/towing/heavy-duty-towing-bay-area",
+  "/privacy-policy",
+  "/terms",
+  "/sitemap",
+  "/thank-you",
+] as const;
+
+const PRERENDER_PATHS = Array.from(
+  new Set([...STATIC_MARKETING_PATHS, ...LOCATION_URLS, ...blogPrerenderPaths()]),
+);
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -17,61 +51,20 @@ export default defineConfig(({ mode }) => ({
     react(),
     imagetools(),
     mode === "development" && componentTagger(),
-    // NOTE: Prerendering is disabled by default to avoid build/publish failures
-    // in Lovable's headless prerender environment. To re-enable it for a
-    // curated set of routes, set ENABLE_PRERENDER=\"true\" in the build env.
+    // NOTE: Prerendering is opt-in (ENABLE_PRERENDER=true) to avoid failures in
+    // hosts without a headless browser. Routes include all LOCATION_URLs and blog slugs from the registry.
     mode === "production" &&
       process.env.ENABLE_PRERENDER === "true" &&
       vitePrerender({
         staticDir: path.join(__dirname, "dist"),
-        routes: [
-          "/",
-          "/about",
-          "/services",
-          "/services/light-duty",
-          "/services/medium-duty",
-          "/services/heavy-duty",
-          "/locations",
-          ...LOCATION_URLS,
-          "/get-a-quote",
-          "/contact",
-          "/blog",
-          // Blog articles
-          "/blog/emergency-towing-guide",
-          "/blog/heavy-equipment-transport",
-          "/blog/fleet-management-towing",
-          "/blog/sf-towing-challenges",
-          "/blog/luxury-transport-guide",
-          "/blog/winter-towing-preparedness",
-          "/blog/motorcycle-towing-guide",
-          "/blog/electric-vehicle-towing-guide",
-          "/blog/roadside-assistance-vs-towing",
-          "/blog/commercial-vehicle-urban-recovery",
-          "/blog/commercial-truck-towing-interstate",
-          "/blog/accident-scene-management",
-          "/blog/construction-equipment-hauling",
-          "/blog/vehicle-storage-solutions",
-          "/blog/towing-technology-gps-fleet-management",
-          "/blog/car-towed-san-francisco",
-          "/blog/sf-tow-fee-discount",
-          "/blog/california-private-property-towing",
-          "/blog/towing-cost-san-francisco",
-          "/blog/box-truck-towing-san-francisco",
-          "/blog/rv-towing-bay-area",
-          "/blog/underground-garage-towing-sf",
-          "/blog/heavy-duty-recovery-bay-area",
-          "/blog/freeway-towing-bay-area",
-          "/blog/chp-towing-california",
-          // Landing / campaign pages
-          "/towing-services",
-          "/towing/bay-area-flatbed-emergency-towing-24-7",
-          "/towing/heavy-duty-towing-bay-area",
-          // Utility / legal
-          "/privacy-policy",
-          "/terms",
-          "/sitemap",
-          "/thank-you",
-        ],
+        routes: PRERENDER_PATHS,
+      }),
+    process.env.ANALYZE === "true" &&
+      visualizer({
+        filename: path.join(__dirname, "dist", "stats.html"),
+        gzipSize: true,
+        brotliSize: true,
+        template: "treemap",
       }),
   ].filter(Boolean),
   resolve: {
@@ -82,14 +75,28 @@ export default defineConfig(({ mode }) => ({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom'],
-          router: ['react-router-dom'],
-          ui: ['@radix-ui/react-accordion', '@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu'],
-          icons: ['lucide-react'],
-          forms: ['react-hook-form', '@hookform/resolvers', 'zod']
-        }
-      }
+        manualChunks(id) {
+          if (id.includes("node_modules/react-dom/") || id.includes("node_modules/react/")) {
+            return "vendor";
+          }
+          if (id.includes("node_modules/react-router")) {
+            return "router";
+          }
+          if (id.includes("node_modules/@radix-ui/")) {
+            return "radix-ui";
+          }
+          if (id.includes("node_modules/lucide-react")) {
+            return "icons";
+          }
+          if (
+            id.includes("node_modules/react-hook-form") ||
+            id.includes("node_modules/@hookform/resolvers") ||
+            id.includes("node_modules/zod/")
+          ) {
+            return "forms";
+          }
+        },
+      },
     },
     cssCodeSplit: true,
     sourcemap: false

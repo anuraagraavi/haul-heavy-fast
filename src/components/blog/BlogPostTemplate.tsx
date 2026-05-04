@@ -1,7 +1,5 @@
 /* eslint-disable react-refresh/only-export-components -- barrel re-exports for blog post modules */
 import { ReactNode } from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import BlogSchemas from './BlogSchemas';
 import ReadingProgressBar from './ReadingProgressBar';
 import BlogHeroSection from './BlogHeroSection';
@@ -32,9 +30,6 @@ const BlogPostTemplate = ({ data, children }: BlogPostTemplateProps) => {
       
       {/* Reading Progress */}
       <ReadingProgressBar />
-      
-      {/* Header */}
-      <Header />
       
       <main>
         {/* Hero Section */}
@@ -104,9 +99,6 @@ const BlogPostTemplate = ({ data, children }: BlogPostTemplateProps) => {
       
       {/* Sticky Mobile CTA */}
       <StickyMobileCTA />
-      
-      {/* Footer */}
-      <Footer />
     </div>
   );
 };

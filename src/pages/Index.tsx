@@ -1,11 +1,9 @@
 import { Helmet } from "react-helmet";
 import { lazy, Suspense } from "react";
-import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import LazySection from "@/components/LazySection";
 import CustomerServicePopup from "@/components/CustomerServicePopup";
 import MobileOptimizedCTA from "@/components/MobileOptimizedCTA";
-import Footer from "@/components/Footer";
 import { useCustomerServicePopup } from "@/hooks/useCustomerServicePopup";
 import usePerformanceMonitor from "@/hooks/usePerformanceMonitor";
 import { PRIMARY_DISPATCH_E164, PRIMARY_DISPATCH_PHONE_DISPLAY, SCREENSHOT_DISPATCH_HUBS } from "@/data/screenshotDispatchHubs";
@@ -178,7 +176,6 @@ const Index = () => {
           })}
         </script>
       </Helmet>
-      <Header />
       <main>
         {/* Critical above-the-fold content - loaded immediately */}
         <div className="animate-fade-in">
@@ -228,8 +225,7 @@ const Index = () => {
           </Suspense>
         </LazySection>
       </main>
-      <Footer />
-      
+
       {/* Global Customer Service Popup */}
       {showPopup && <CustomerServicePopup onClose={closePopup} />}
       

@@ -1,7 +1,5 @@
 import { Helmet } from "react-helmet";
 import { useLocation } from "react-router-dom";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/landing/StickyMobileCTA";
 import HeavyLandingHero from "@/components/landing/HeavyLandingHero";
 import HeavyCapabilityBar from "@/components/landing/HeavyCapabilityBar";
@@ -188,7 +186,6 @@ const LandingHeavyDuty = () => {
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
 
-      <Header />
       <main className="min-h-screen pt-16">
         <HeavyLandingHero />
         <section id="heavy-quick-quote" className="py-10 bg-background">
@@ -230,7 +227,6 @@ const LandingHeavyDuty = () => {
         <FinalHeavyCTASection />
         <StickyMobileCTA />
       </main>
-      <Footer />
     </>
   );
 };

@@ -1,6 +1,4 @@
 import { Helmet } from "react-helmet";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, TruckIcon, Settings, Building, Users, CheckCircle, Clock, Shield, Award, Wrench } from "lucide-react";
 import heavyDutyEquipment from "@/assets/heavy-duty-equipment.jpeg";
@@ -152,7 +150,6 @@ const HeavyDuty = () => {
           })}
         </script>
       </Helmet>
-      <Header />
       <main>
         {/* Hero Section */}
         <section className="pt-24 pb-16 bg-gradient-subtle">
@@ -393,7 +390,6 @@ const HeavyDuty = () => {
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   );
 };

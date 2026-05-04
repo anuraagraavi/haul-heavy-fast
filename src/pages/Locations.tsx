@@ -1,7 +1,5 @@
 import { useEffect } from "react";
 import { useLocation, useNavigate, Link } from "react-router-dom";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Helmet } from "react-helmet";
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone } from "lucide-react";
@@ -42,7 +40,6 @@ const Locations = () => {
         />
         <link rel="canonical" href="https://heavytowpro.com/locations" />
       </Helmet>
-      <Header />
       <main className="pt-20">
         <section className="py-14 bg-gradient-subtle">
           <div className="container mx-auto px-4 max-w-5xl text-center">
@@ -118,7 +115,6 @@ const Locations = () => {
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   );
 };

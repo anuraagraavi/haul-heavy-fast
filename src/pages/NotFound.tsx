@@ -1,8 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { Helmet } from "react-helmet";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Home, Phone, MessageCircle, Search } from "lucide-react";
@@ -27,7 +25,6 @@ const NotFound = () => {
       </Helmet>
 
       <div className="min-h-screen bg-background text-foreground">
-        <Header />
         
         <main className="pt-20">
           <div className="container mx-auto px-4 py-16">
@@ -195,7 +192,6 @@ const NotFound = () => {
           </div>
         </main>
 
-        <Footer />
       </div>
     </>
   );

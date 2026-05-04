@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
+import AppShell from "@/components/layout/AppShell";
 
 // Route-level code splitting: lazy-load all pages for smaller initial bundle
 const Index = lazy(() => import("./pages/Index"));
@@ -23,6 +24,7 @@ const Terms = lazy(() => import("./pages/Terms"));
 const Sitemap = lazy(() => import("./pages/Sitemap"));
 const ThankYou = lazy(() => import("./pages/ThankYou"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const DGSEOReport = lazy(() => import("./pages/DGSEOReport"));
 const LandingLightMedium = lazy(() => import("./pages/LandingLightMedium"));
 const SanMateoCountyPage = lazy(() => import("./pages/locations/san-mateo-county"));
 const AlamedaCountyPage = lazy(() => import("./pages/locations/alameda-county"));
@@ -111,10 +113,14 @@ const CommercialTireBlowoutHighwayBayArea = lazy(() => import("./pages/blog/comm
 const DealerAuctionVehicleTransportBayArea = lazy(() => import("./pages/blog/dealer-auction-vehicle-transport-bay-area"));
 const ConstructionDumpTruckRollOffRecoveryBayArea = lazy(() => import("./pages/blog/construction-dump-truck-roll-off-recovery-bay-area"));
 
-function RouteFallback() {
+function DgReportFallback() {
   return (
-    <div className="min-h-[50vh] flex items-center justify-center" aria-hidden="true">
-      <div className="h-8 w-8 animate-spin rounded-full border-2 border-primary border-t-transparent" />
+    <div
+      className="min-h-screen flex items-center justify-center bg-[#04040c]"
+      aria-busy="true"
+      aria-label="Loading report"
+    >
+      <div className="h-8 w-8 animate-spin rounded-full border-2 border-violet-400 border-t-transparent" />
     </div>
   );
 }
@@ -128,9 +134,17 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
-        <Suspense fallback={<RouteFallback />}>
-          <Routes>
-            <Route path="/" element={<Index />} />
+        <Routes>
+          <Route
+            path="/dg-seo-report"
+            element={
+              <Suspense fallback={<DgReportFallback />}>
+                <DGSEOReport />
+              </Suspense>
+            }
+          />
+          <Route element={<AppShell />}>
+            <Route index element={<Index />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/services/light-duty" element={<LightDuty />} />
@@ -234,8 +248,8 @@ const App = () => (
             <Route path="/sitemap" element={<Sitemap />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
+          </Route>
+        </Routes>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

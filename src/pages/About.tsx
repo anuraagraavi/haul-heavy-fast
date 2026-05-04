@@ -1,6 +1,4 @@
 import { Helmet } from "react-helmet";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Shield, Users, Award, Truck, Clock, Phone } from "lucide-react";
 import { PRIMARY_DISPATCH_TEL_HREF } from "@/data/screenshotDispatchHubs";
@@ -48,7 +46,6 @@ const About = () => {
         <meta name="geo.placename" content="San Francisco, CA" />
         <meta name="geo.position" content="37.7749;-122.4194" />
       </Helmet>
-      <Header />
       <main>
         {/* Hero Section */}
         <section className="pt-24 pb-16 bg-gradient-subtle">
@@ -357,7 +354,6 @@ const About = () => {
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   );
 };

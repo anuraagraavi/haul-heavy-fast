@@ -1,7 +1,5 @@
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Phone, CheckCircle, MapPin, Route, ShieldCheck, Clock, Truck, BadgeCheck } from "lucide-react";
 import QuickQuoteForm from "@/components/landing/QuickQuoteForm";
@@ -93,7 +91,6 @@ const CountyTemplate = ({ data }: CountyTemplateProps) => {
         <meta name="twitter:image" content={ogImageUrl} />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
-      <Header />
       <main className="pt-16">
         <section className="relative min-h-[65vh] flex items-center">
           <img src={hero.src} alt={`${data.city} towing services`} className="absolute inset-0 w-full h-full object-cover" />
@@ -355,7 +352,6 @@ const CountyTemplate = ({ data }: CountyTemplateProps) => {
         />
         <StickyMobileCTA phoneDisplay={data.phone} phoneHref={phoneHref} gtagCampaign={locCampaign} />
       </main>
-      <Footer />
     </div>
   );
 };

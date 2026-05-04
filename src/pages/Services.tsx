@@ -1,7 +1,5 @@
 import { Helmet } from "react-helmet";
 import { PRIMARY_DISPATCH_E164, PRIMARY_DISPATCH_PHONE_DISPLAY, PRIMARY_DISPATCH_TEL_HREF } from "@/data/screenshotDispatchHubs";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import SEOBreadcrumbs from "@/components/SEOBreadcrumbs";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Car, Truck, TruckIcon, Phone } from "lucide-react";
@@ -227,7 +225,6 @@ const Services = () => {
           })}
         </script>
       </Helmet>
-      <Header />
       <SEOBreadcrumbs />
       <main>
         {/* Hero Section */}
@@ -357,7 +354,6 @@ const Services = () => {
         {/* Internal Link Optimization */}
         <InternalLinkOptimizer currentPage="/services" category="mixed" limit={4} />
       </main>
-      <Footer />
     </div>
   );
 };

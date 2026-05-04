@@ -1,7 +1,5 @@
 import { Helmet } from "react-helmet";
 import { useSearchParams } from "react-router-dom";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -118,7 +116,6 @@ const BlogNew = () => {
         </script>
       </Helmet>
       
-      <Header />
       
       <main>
         {/* Hero Section */}
@@ -298,7 +295,6 @@ const BlogNew = () => {
         </section>
       </main>
       
-      <Footer />
     </div>
   );
 };

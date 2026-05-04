@@ -1,6 +1,4 @@
 import { Helmet } from "react-helmet";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -81,7 +79,6 @@ const Blog = () => {
       </Helmet>
 
       <div className="min-h-screen bg-background text-foreground">
-        <Header />
         
         <main className="pt-20">
           {/* Hero Section */}
@@ -225,7 +222,6 @@ const Blog = () => {
           </section>
         </main>
 
-        <Footer />
       </div>
     </>
   );

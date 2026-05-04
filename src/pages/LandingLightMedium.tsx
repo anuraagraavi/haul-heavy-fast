@@ -1,7 +1,5 @@
 import { Helmet } from "react-helmet";
 import { useLocation } from "react-router-dom";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import LandingHero from "@/components/landing/LandingHero";
 import ProcessSteps from "@/components/landing/ProcessSteps";
 import CoverageMap from "@/components/landing/CoverageMap";
@@ -123,7 +121,6 @@ const LandingLightMedium = () => {
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
 
-      <Header />
       <main className="min-h-screen pt-16">
         <LandingHero />
         <section id="light-quick-quote" className="py-10 bg-background">
@@ -164,7 +161,6 @@ const LandingLightMedium = () => {
         <FinalCTA />
         <StickyMobileCTA />
       </main>
-      <Footer />
     </>
   );
 };

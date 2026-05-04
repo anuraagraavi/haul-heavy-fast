@@ -1,7 +1,5 @@
 import { ReactNode } from 'react';
 import { Helmet } from 'react-helmet';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import RelatedPosts from '@/components/RelatedPosts';
 import LazyImage from '@/components/LazyImage';
 import LazySection from '@/components/LazySection';
@@ -80,9 +78,7 @@ const BlogTemplate = ({
           })}
         </script>
       </Helmet>
-      
-      <Header />
-      
+
       <main>
         {/* Hero Section */}
         <section className="pt-24 pb-16 bg-gradient-subtle">
@@ -161,8 +157,6 @@ const BlogTemplate = ({
           </div>
         </LazySection>
       </main>
-      
-      <Footer />
     </div>
   );
 };

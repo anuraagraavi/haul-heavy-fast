@@ -1,6 +1,4 @@
 import { useEffect } from "react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Helmet } from "react-helmet";
 import { CheckCircle, Phone, Home, Clock, ArrowRight } from "lucide-react";
@@ -104,7 +102,6 @@ const ThankYou = () => {
         <title>Thank You - Heavy Haulers | Professional Towing Services</title>
         <meta name="description" content="Thank you for contacting Heavy Haulers. We've received your message and will respond promptly." />
       </Helmet>
-      <Header />
       <main>
         {/* Thank You Section */}
         <section className="py-20">
@@ -250,7 +247,6 @@ const ThankYou = () => {
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   );
 };
