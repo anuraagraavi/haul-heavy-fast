@@ -280,13 +280,13 @@ _This section records the **engineering milestone** of landing previously local-
 - **Helpers:** FAQ and location JSON-LD utilities and phone helpers under `src/lib/`.
 - **Sitewide:** Core pages, landings, layout and SEO components, UI primitives, lockfiles, and [`supabase/functions/send-email/index.ts`](../supabase/functions/send-email/index.ts) updated in step with the rollout.
 
-**Audit:** This file ships in the same `main` commit as the sync. After pull, run `git log -1 -- docs/CLIENT_SEO_CHANGELOG_FEB_APR_2026.md` for the handoff SHA, or `git log -1` on `main` if that commit is still tip.
+**Audit:** Handoff commit pushed to `origin/main` on **May 4, 2026:** **`7df147f`** (*feat(seo): locations, April blogs, redirects, cohort blog, client changelog*). If your clone is behind, run `git log -1 -- docs/CLIENT_SEO_CHANGELOG_FEB_APR_2026.md` after `git pull` to confirm the same file revision.
 
 ---
 
 ## Appendix — engineering audit trail
 
-Detailed **per-commit** history is available in **git** on request; this client document intentionally omits day-by-day commit listings. The **May 4, 2026** sync is the commit that adds this changelog path on `main` for the batch that was previously only in a dirty worktree (resolve SHA with `git log -1 -- docs/CLIENT_SEO_CHANGELOG_FEB_APR_2026.md`).
+Detailed **per-commit** history is available in **git** on request; this client document intentionally omits day-by-day commit listings. The **May 4, 2026** sync is commit **`7df147f`** on `main` for the batch that was previously only in a dirty worktree.
 
 ---
 
