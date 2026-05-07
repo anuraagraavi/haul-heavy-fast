@@ -201,24 +201,26 @@ function postProcess(renderedRoute) {
 }
 
 async function runPrerender() {
-  if (process.env.ENABLE_PRERENDER !== "true") {
-    console.log("[prerender] Skipped (ENABLE_PRERENDER is not true).");
+  if (process.env.DISABLE_PRERENDER === "true") {
+    console.log("[prerender] Skipped (DISABLE_PRERENDER=true).");
     return true;
   }
 
   const routes = resolvePrerenderPaths(sitemapRoutes());
-  const prerenderer = new Prerenderer({
-    staticDir: DIST_DIR,
-    outputDir: DIST_DIR,
-    routes,
-    postProcess,
-    renderer: createRenderer(),
-  });
-
-  console.log(`[prerender] Starting ${routes.length} route(s).`);
-  await prerenderer.initialize();
+  let prerenderer = null;
 
   try {
+    prerenderer = new Prerenderer({
+      staticDir: DIST_DIR,
+      outputDir: DIST_DIR,
+      routes,
+      postProcess,
+      renderer: createRenderer(),
+    });
+
+    console.log(`[prerender] Starting ${routes.length} route(s).`);
+    await prerenderer.initialize();
+
     const renderedRoutes = await prerenderer.renderRoutes(routes);
     const processed = renderedRoutes.map((r) => postProcess(r));
     await Promise.all(
@@ -230,15 +232,21 @@ async function runPrerender() {
     );
     console.log("[prerender] Completed.");
     return true;
+  } catch (err) {
+    const msg = err && typeof err === "object" && "message" in err ? err.message : String(err);
+    console.warn("[prerender] Failed, continuing without prerendered HTML:", msg);
+    return true;
   } finally {
-    await Promise.race([
-      Promise.resolve()
-        .then(() => prerenderer.destroy())
-        .catch((err) => {
-          console.warn("[prerender] destroy() warning:", err);
-        }),
-      new Promise((resolve) => setTimeout(resolve, 2000)),
-    ]);
+    if (prerenderer) {
+      await Promise.race([
+        Promise.resolve()
+          .then(() => prerenderer.destroy())
+          .catch((destroyErr) => {
+            console.warn("[prerender] destroy() warning:", destroyErr);
+          }),
+        new Promise((resolve) => setTimeout(resolve, 2000)),
+      ]);
+    }
   }
 }
 

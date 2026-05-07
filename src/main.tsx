@@ -28,3 +28,19 @@ createRoot(document.getElementById("root")!).render(
     <App />
   </HelmetProvider>
 );
+
+if (typeof window !== "undefined") {
+  const runWhenIdle = (cb: () => void, timeout: number) => {
+    const ric = window.requestIdleCallback;
+    if (typeof ric === "function") {
+      ric(cb, { timeout });
+    } else {
+      window.setTimeout(cb, Math.min(timeout, 2000));
+    }
+  };
+  runWhenIdle(() => {
+    void import("./pages/Services");
+    void import("./pages/Locations");
+    void import("./pages/GetQuote");
+  }, 4000);
+}

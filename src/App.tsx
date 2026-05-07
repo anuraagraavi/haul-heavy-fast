@@ -6,10 +6,11 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import AppShell from "@/components/layout/AppShell";
+import Index from "./pages/Index";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
-// Route-level code splitting: lazy-load all pages for smaller initial bundle
-const Index = lazy(() => import("./pages/Index"));
-const About = lazy(() => import("./pages/About"));
+// Route-level code splitting: lazy-load pages for smaller initial bundle (home / about / contact eager)
 const Services = lazy(() => import("./pages/Services"));
 const LightDuty = lazy(() => import("./pages/LightDuty"));
 const MediumDuty = lazy(() => import("./pages/MediumDuty"));
@@ -17,7 +18,6 @@ const HeavyDuty = lazy(() => import("./pages/HeavyDuty"));
 const LandingHeavyDuty = lazy(() => import("./pages/LandingHeavyDuty"));
 const Locations = lazy(() => import("./pages/Locations"));
 const GetQuote = lazy(() => import("./pages/GetQuote"));
-const Contact = lazy(() => import("./pages/Contact"));
 const Blog = lazy(() => import("./pages/Blog"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const Terms = lazy(() => import("./pages/Terms"));

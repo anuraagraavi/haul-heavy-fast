@@ -20,25 +20,23 @@ const LandingHero = () => {
     return () => clearInterval(t);
   }, []);
 
-  const heroImage = HERO_SLIDES[slideIndex];
-
   return (
     <section className="hero-reserved relative min-h-[90vh] md:min-h-[85vh] flex items-center overflow-hidden">
       {/* Background image carousel: tree-lined SUV + luxury Mercedes flatbed */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 bg-background">
         {HERO_SLIDES.map((slide, i) => (
           <img
             key={slide.id}
             src={slide.src}
             alt={i === slideIndex ? slide.alt : ""}
             aria-hidden={i !== slideIndex}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-              i === slideIndex ? "opacity-100 z-0" : "opacity-0 z-0"
+            className={`absolute inset-0 z-0 h-full w-full object-cover transition-opacity duration-1000 ${
+              i === slideIndex ? "opacity-100" : "opacity-0"
             }`}
             width={1920}
             height={1080}
-            loading={i === 0 ? "eager" : "lazy"}
-            fetchPriority={i === 0 ? "high" : undefined}
+            loading="eager"
+            fetchPriority={i === 0 ? "high" : "low"}
             decoding={i === 0 ? "sync" : "async"}
           />
         ))}

@@ -3,14 +3,13 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Phone, Menu, ChevronDown, ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useHoverDelay } from "@/hooks/useHoverDelay";
 import { resolveShellDispatchFromPathname } from "@/lib/shellDispatchPhone";
 import { LOCATION_NAV_MODEL } from "@/data/locations/navModel";
 import type { LocationData } from "@/data/locations/types";
-
-const cityLinkClass =
-  "block rounded px-2 py-1.5 text-sm text-muted-foreground outline-none transition-colors hover:bg-accent/50 hover:text-primary focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+import TransitionLink from "@/components/TransitionLink";
+import { prefetchBlog, prefetchGetQuote, prefetchLocations, prefetchServices } from "@/lib/routePrefetch";
 
 const locationsMegaCityLinkClass =
   "block rounded-md px-2 py-2 text-sm text-foreground/90 outline-none transition-colors hover:bg-accent/60 hover:text-primary focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-card";
@@ -114,7 +113,7 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center space-x-2">
-            <Link to="/" title="Heavy Haulers Transport Co." aria-label="Heavy Haulers San Francisco homepage">
+            <TransitionLink to="/" title="Heavy Haulers Transport Co." aria-label="Heavy Haulers San Francisco homepage">
               <img
                 src="/lovable-uploads/a43ad238-af3b-47a8-962f-32c9da2fc727.png"
                 alt="Heavy Haulers San Francisco professional towing company logo"
@@ -124,33 +123,38 @@ const Header = () => {
                 loading="eager"
                 fetchPriority="high"
               />
-            </Link>
+            </TransitionLink>
           </div>
 
           <nav className="hidden items-center space-x-6 lg:flex" aria-label="Primary">
-            <Link to="/" className="text-foreground transition-colors hover:text-primary">
+            <TransitionLink to="/" className="text-foreground transition-colors hover:text-primary">
               Home
-            </Link>
-            <Link to="/about" className="text-foreground transition-colors hover:text-primary">
+            </TransitionLink>
+            <TransitionLink to="/about" className="text-foreground transition-colors hover:text-primary">
               About Us
-            </Link>
+            </TransitionLink>
 
             <div
               className="relative"
-              onMouseEnter={servicesHover.onMouseEnter}
+              onMouseEnter={() => {
+                prefetchServices();
+                servicesHover.onMouseEnter();
+              }}
               onMouseLeave={servicesHover.onMouseLeave}
             >
-              <Link
+              <TransitionLink
                 to="/services"
                 className="flex items-center text-foreground transition-colors hover:text-primary"
                 aria-expanded={isServicesOpen}
                 aria-haspopup="true"
                 aria-controls="header-services-mega"
                 id="header-services-trigger"
+                onMouseEnter={prefetchServices}
+                onFocus={prefetchServices}
               >
                 Services
                 <ChevronDown className="ml-1 h-4 w-4" aria-hidden="true" />
-              </Link>
+              </TransitionLink>
               {isServicesOpen && (
                 <div className="absolute left-1/2 top-full z-50 mt-1 -translate-x-1/2 pt-1">
                   <div
@@ -163,7 +167,7 @@ const Header = () => {
                       <div className="col-span-4 space-y-4">
                         <h3 className="mb-4 text-lg font-semibold text-foreground">Service Categories</h3>
                         <div className="space-y-3">
-                          <Link
+                          <TransitionLink
                             to="/services/light-duty"
                             className="group flex items-start space-x-3 rounded-lg p-3 transition-colors hover:bg-accent"
                           >
@@ -172,8 +176,8 @@ const Header = () => {
                               <h4 className="font-medium text-foreground group-hover:text-primary">Light-Duty Towing</h4>
                               <p className="text-sm text-muted-foreground">Cars, motorcycles, luxury vehicles</p>
                             </div>
-                          </Link>
-                          <Link
+                          </TransitionLink>
+                          <TransitionLink
                             to="/services/medium-duty"
                             className="group flex items-start space-x-3 rounded-lg p-3 transition-colors hover:bg-accent"
                           >
@@ -182,8 +186,8 @@ const Header = () => {
                               <h4 className="font-medium text-foreground group-hover:text-primary">Medium-Duty Towing</h4>
                               <p className="text-sm text-muted-foreground">Vans, box trucks, small RVs</p>
                             </div>
-                          </Link>
-                          <Link
+                          </TransitionLink>
+                          <TransitionLink
                             to="/services/heavy-duty"
                             className="group flex items-start space-x-3 rounded-lg p-3 transition-colors hover:bg-accent"
                           >
@@ -192,7 +196,7 @@ const Header = () => {
                               <h4 className="font-medium text-foreground group-hover:text-primary">Heavy-Duty Hauling</h4>
                               <p className="text-sm text-muted-foreground">Commercial trucks, equipment, recovery</p>
                             </div>
-                          </Link>
+                          </TransitionLink>
                         </div>
                       </div>
 
@@ -253,7 +257,10 @@ const Header = () => {
 
             <div
               className="relative"
-              onMouseEnter={locationsHover.onMouseEnter}
+              onMouseEnter={() => {
+                prefetchLocations();
+                locationsHover.onMouseEnter();
+              }}
               onMouseLeave={locationsHover.onMouseLeave}
             >
               <button
@@ -264,6 +271,7 @@ const Header = () => {
                 aria-haspopup="true"
                 aria-controls="header-locations-mega"
                 id="header-locations-trigger"
+                onFocus={prefetchLocations}
               >
                 Bay Area Locations
                 <ChevronDown className="ml-1 h-4 w-4" aria-hidden="true" />
@@ -281,12 +289,14 @@ const Header = () => {
                         <p className="max-w-xl text-sm leading-relaxed text-muted-foreground">
                           County hubs and city pages — same dispatch network.
                         </p>
-                        <Link
+                        <TransitionLink
                           to="/locations"
                           className="inline-flex shrink-0 items-center rounded-full border border-primary/45 bg-primary/[0.08] px-4 py-2 text-sm font-semibold text-primary transition-colors hover:bg-primary/[0.14] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-card"
+                          onMouseEnter={prefetchLocations}
+                          onFocus={prefetchLocations}
                         >
                           View all locations
-                        </Link>
+                        </TransitionLink>
                       </div>
 
                       <div className="col-span-9 grid min-w-0 grid-cols-9 gap-0">
@@ -351,12 +361,12 @@ const Header = () => {
                                   {activeLocationsCounty.label}
                                 </h4>
                                 {activeLocationsCounty.hubUrl ? (
-                                  <Link
+                                  <TransitionLink
                                     to={activeLocationsCounty.hubUrl}
                                     className="mt-2 inline-flex text-sm font-medium text-primary underline-offset-4 hover:underline"
                                   >
                                     County overview
-                                  </Link>
+                                  </TransitionLink>
                                 ) : (
                                   <p className="mt-2 text-sm text-muted-foreground">City pages in this service area.</p>
                                 )}
@@ -366,9 +376,9 @@ const Header = () => {
                               </p>
                               <div className="grid grid-cols-2 gap-2 xl:grid-cols-3">
                                 {activeLocationsCounty.cities.map((city) => (
-                                  <Link key={city.slug} to={city.url} className={locationsMegaCityLinkClass}>
+                                  <TransitionLink key={city.slug} to={city.url} className={locationsMegaCityLinkClass}>
                                     {city.city}
-                                  </Link>
+                                  </TransitionLink>
                                 ))}
                               </div>
                             </>
@@ -390,15 +400,25 @@ const Header = () => {
               )}
             </div>
 
-            <Link to="/blog" className="text-foreground transition-colors hover:text-primary">
+            <TransitionLink
+              to="/blog"
+              className="text-foreground transition-colors hover:text-primary"
+              onMouseEnter={prefetchBlog}
+              onFocus={prefetchBlog}
+            >
               Blog
-            </Link>
-            <Link to="/get-a-quote" className="text-foreground transition-colors hover:text-primary">
+            </TransitionLink>
+            <TransitionLink
+              to="/get-a-quote"
+              className="text-foreground transition-colors hover:text-primary"
+              onMouseEnter={prefetchGetQuote}
+              onFocus={prefetchGetQuote}
+            >
               Get a Quote
-            </Link>
-            <Link to="/contact" className="text-foreground transition-colors hover:text-primary">
+            </TransitionLink>
+            <TransitionLink to="/contact" className="text-foreground transition-colors hover:text-primary">
               Contact
-            </Link>
+            </TransitionLink>
           </nav>
 
           <div className="hidden items-center space-x-4 lg:flex">
@@ -435,43 +455,53 @@ const Header = () => {
 
               <div className="flex min-h-0 flex-1 flex-col">
                 <nav className="min-h-0 flex-1 space-y-1 overflow-y-auto px-6 py-4" aria-label="Mobile primary">
-                  <Link to="/" className="block py-2 text-foreground transition-colors hover:text-primary">
+                  <TransitionLink to="/" className="block py-2 text-foreground transition-colors hover:text-primary">
                     Home
-                  </Link>
-                  <Link to="/about" className="block py-2 text-foreground transition-colors hover:text-primary">
+                  </TransitionLink>
+                  <TransitionLink to="/about" className="block py-2 text-foreground transition-colors hover:text-primary">
                     About Us
-                  </Link>
+                  </TransitionLink>
 
                   <div className="space-y-1 pt-1">
-                    <Link to="/services" className="block py-2 font-medium text-foreground transition-colors hover:text-primary">
+                    <TransitionLink
+                      to="/services"
+                      className="block py-2 font-medium text-foreground transition-colors hover:text-primary"
+                      onMouseEnter={prefetchServices}
+                      onFocus={prefetchServices}
+                    >
                       Services
-                    </Link>
+                    </TransitionLink>
                     <div className="ml-3 space-y-1 border-l border-border pl-4">
-                      <Link
+                      <TransitionLink
                         to="/services/light-duty"
                         className="block py-1 text-sm text-muted-foreground transition-colors hover:text-primary"
                       >
                         Light-Duty Towing
-                      </Link>
-                      <Link
+                      </TransitionLink>
+                      <TransitionLink
                         to="/services/medium-duty"
                         className="block py-1 text-sm text-muted-foreground transition-colors hover:text-primary"
                       >
                         Medium-Duty Towing
-                      </Link>
-                      <Link
+                      </TransitionLink>
+                      <TransitionLink
                         to="/services/heavy-duty"
                         className="block py-1 text-sm text-muted-foreground transition-colors hover:text-primary"
                       >
                         Heavy-Duty Hauling
-                      </Link>
+                      </TransitionLink>
                     </div>
                   </div>
 
                   <div className="space-y-1 border-t border-border/80 pt-3">
-                    <Link to="/locations" className="block py-2 font-medium text-foreground transition-colors hover:text-primary">
+                    <TransitionLink
+                      to="/locations"
+                      className="block py-2 font-medium text-foreground transition-colors hover:text-primary"
+                      onMouseEnter={prefetchLocations}
+                      onFocus={prefetchLocations}
+                    >
                       All locations index
-                    </Link>
+                    </TransitionLink>
                     <p className="pb-1 text-xs text-muted-foreground">Expand a county for hub + city pages.</p>
                     {LOCATION_NAV_MODEL.regions.map((region) => (
                       <Collapsible key={region.hub.slug} className="border-b border-border/60 last:border-b-0">
@@ -481,20 +511,20 @@ const Header = () => {
                         </CollapsibleTrigger>
                         <CollapsibleContent>
                           <div className="space-y-1 border-l border-border/80 pb-3 pl-3">
-                            <Link
+                            <TransitionLink
                               to={region.hub.url}
                               className="block py-1 text-sm font-medium text-primary transition-colors hover:underline"
                             >
                               County overview
-                            </Link>
+                            </TransitionLink>
                             {region.cities.map((city) => (
-                              <Link
+                              <TransitionLink
                                 key={city.slug}
                                 to={city.url}
                                 className="block py-1 text-sm text-muted-foreground transition-colors hover:text-primary"
                               >
                                 {city.city}
-                              </Link>
+                              </TransitionLink>
                             ))}
                           </div>
                         </CollapsibleContent>
@@ -509,13 +539,13 @@ const Header = () => {
                         <CollapsibleContent>
                           <div className="space-y-1 border-l border-border/80 pb-3 pl-3">
                             {group.cities.map((city) => (
-                              <Link
+                              <TransitionLink
                                 key={city.slug}
                                 to={city.url}
                                 className="block py-1 text-sm text-muted-foreground transition-colors hover:text-primary"
                               >
                                 {city.city}
-                              </Link>
+                              </TransitionLink>
                             ))}
                           </div>
                         </CollapsibleContent>
@@ -523,15 +553,25 @@ const Header = () => {
                     ))}
                   </div>
 
-                  <Link to="/blog" className="block py-2 text-foreground transition-colors hover:text-primary">
+                  <TransitionLink
+                    to="/blog"
+                    className="block py-2 text-foreground transition-colors hover:text-primary"
+                    onMouseEnter={prefetchBlog}
+                    onFocus={prefetchBlog}
+                  >
                     Blog
-                  </Link>
-                  <Link to="/get-a-quote" className="block py-2 text-foreground transition-colors hover:text-primary">
+                  </TransitionLink>
+                  <TransitionLink
+                    to="/get-a-quote"
+                    className="block py-2 text-foreground transition-colors hover:text-primary"
+                    onMouseEnter={prefetchGetQuote}
+                    onFocus={prefetchGetQuote}
+                  >
                     Get a Quote
-                  </Link>
-                  <Link to="/contact" className="block py-2 text-foreground transition-colors hover:text-primary">
+                  </TransitionLink>
+                  <TransitionLink to="/contact" className="block py-2 text-foreground transition-colors hover:text-primary">
                     Contact
-                  </Link>
+                  </TransitionLink>
                 </nav>
 
                 <div className="shrink-0 space-y-4 border-t border-border p-6">

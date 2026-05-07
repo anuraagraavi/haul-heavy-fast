@@ -10,9 +10,9 @@ const rootDir = path.dirname(fileURLToPath(import.meta.url));
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // Prerender runtime can run on older Chromium; transpile lower when enabled.
+  // Prerender runtime can run on older Chromium; transpile lower unless prerender is disabled.
   // This avoids parse-time crashes before React mounts.
-  ...(process.env.ENABLE_PRERENDER === "true" ? { esbuild: { target: "es2019" } } : {}),
+  ...(process.env.DISABLE_PRERENDER !== "true" ? { esbuild: { target: "es2019" } } : {}),
   server: {
     host: "::",
     port: 5173,
@@ -38,7 +38,7 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    target: process.env.ENABLE_PRERENDER === "true" ? "es2019" : "modules",
+    target: process.env.DISABLE_PRERENDER !== "true" ? "es2019" : "modules",
     rollupOptions: {
       output: {
         manualChunks(id) {

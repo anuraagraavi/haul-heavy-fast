@@ -743,7 +743,7 @@ export default function DGSEOReport() {
           </div>
           <div className="space-y-3">
             <CheckRow label="301 redirect hygiene" sub="public/_redirects — legacy hash URLs consolidated to canonical routes." />
-            <CheckRow label="Optional static prerender" sub="vite.config.ts — curated routes when ENABLE_PRERENDER=true." />
+            <CheckRow label="Optional static prerender" sub="Post-build prerender runs by default; set DISABLE_PRERENDER=true to skip." />
             <CheckRow label="Prerender expansion backlog" sub="New Q1 blog slugs listed for append when static HTML is required." />
             <CheckRow label="Route-level code splitting" sub="src/App.tsx — React.lazy for every page route." />
             <CheckRow label="Image pipeline + lazy media" sub="vite-imagetools + LazyImage / LazySection patterns." />

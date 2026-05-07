@@ -1,11 +1,10 @@
-# Improves repeat visits and CDN efficiency. First-byte time for HTML still depends on origin;
-# pair with ENABLE_PRERENDER=true in production builds for static HTML per path.
+# Improves repeat visits and CDN efficiency. Prerender runs by default after `vite build`
+# (Puppeteer + sitemap routes). Set DISABLE_PRERENDER=true to skip static HTML generation.
 [build]
   command = "npm run build"
   publish = "dist"
 
   [build.environment]
-    ENABLE_PRERENDER = "true"
     NODE_VERSION = "20"
 
 [[headers]]
