@@ -28,6 +28,34 @@ const initialState = {
   location: "",
 };
 
+const waitForAdsConversion = (metadata: Record<string, string>) =>
+  new Promise<void>((resolve) => {
+    if (typeof window === "undefined" || !window.gtag) {
+      resolve();
+      return;
+    }
+
+    let completed = false;
+    const done = () => {
+      if (!completed) {
+        completed = true;
+        resolve();
+      }
+    };
+
+    const timeout = window.setTimeout(done, 1500);
+    window.gtag("event", "conversion", {
+      send_to: "AW-17927335103/moPiCPOh-_kbEL_ZteRC",
+      value: 1.0,
+      currency: "USD",
+      event_callback: () => {
+        window.clearTimeout(timeout);
+        done();
+      },
+      ...metadata,
+    });
+  });
+
 export const QuickQuoteForm = ({
   campaign,
   variant = "section",
@@ -73,6 +101,7 @@ export const QuickQuoteForm = ({
         urgency: "",
       });
 
+      await waitForAdsConversion({ campaign, source: "landing_page" });
       if (typeof window !== "undefined") {
         window.gtag?.("event", "quote_submit", {
           send_to: "AW-17927335103",
@@ -90,10 +119,7 @@ export const QuickQuoteForm = ({
         location: defaultLocation,
       });
 
-      // Slight delay to give analytics a moment before navigation
-      setTimeout(() => {
-        navigate(redirectTo);
-      }, 200);
+      navigate(redirectTo);
     } catch (error) {
       toast({
         title: "Submission failed",

@@ -1,15 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, FileText, Clock, Shield, Truck } from "lucide-react";
-import heroImg from "@/assets/hero-tow-truck.jpg";
+import { landingImagesById } from "@/data/landingImages";
 import { PRIMARY_DISPATCH_PHONE_DISPLAY, PRIMARY_DISPATCH_TEL_HREF } from "@/data/screenshotDispatchHubs";
 
 const Hero = () => {
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  const heroImage = landingImagesById.light_suv_tree_lined;
+
+  return <section className="hero-reserved relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
-            src={heroImg}
-            alt="Heavy Haulers professional towing service San Francisco Bay Area - 24/7 emergency response"
+            src={heroImage.src}
+            alt={heroImage.alt}
             className="w-full h-full object-cover"
             width={1920}
             height={1080}

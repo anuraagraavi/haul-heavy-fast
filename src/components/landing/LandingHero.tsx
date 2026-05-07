@@ -23,7 +23,7 @@ const LandingHero = () => {
   const heroImage = HERO_SLIDES[slideIndex];
 
   return (
-    <section className="relative min-h-[90vh] md:min-h-[85vh] flex items-center overflow-hidden">
+    <section className="hero-reserved relative min-h-[90vh] md:min-h-[85vh] flex items-center overflow-hidden">
       {/* Background image carousel: tree-lined SUV + luxury Mercedes flatbed */}
       <div className="absolute inset-0">
         {HERO_SLIDES.map((slide, i) => (

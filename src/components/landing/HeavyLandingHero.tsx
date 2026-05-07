@@ -24,7 +24,7 @@ const HeavyLandingHero = () => {
   const heroImage = HERO_SLIDES[slideIndex];
 
   return (
-    <section className="relative min-h-[90vh] md:min-h-[85vh] flex items-center overflow-hidden">
+    <section className="hero-reserved relative min-h-[90vh] md:min-h-[85vh] flex items-center overflow-hidden">
       {/* Background image carousel with heavy-duty Work Images */}
       <div className="absolute inset-0">
         {HERO_SLIDES.map((slide, i) => (

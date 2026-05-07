@@ -27,6 +27,34 @@ const dispatchAreas = [
   },
 ];
 
+const waitForAdsConversion = (metadata: Record<string, string>) =>
+  new Promise<void>((resolve) => {
+    if (typeof window === "undefined" || !window.gtag) {
+      resolve();
+      return;
+    }
+
+    let completed = false;
+    const done = () => {
+      if (!completed) {
+        completed = true;
+        resolve();
+      }
+    };
+
+    const timeout = window.setTimeout(done, 1500);
+    window.gtag("event", "conversion", {
+      send_to: "AW-17927335103/moPiCPOh-_kbEL_ZteRC",
+      value: 1.0,
+      currency: "USD",
+      event_callback: () => {
+        window.clearTimeout(timeout);
+        done();
+      },
+      ...metadata,
+    });
+  });
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -50,6 +78,7 @@ const Contact = () => {
 
     try {
       await submitContactForm(formData);
+      await waitForAdsConversion({ source: "contact_page" });
       if (typeof window !== "undefined") {
         window.gtag?.("event", "contact_submit", {
           send_to: "AW-17927335103",

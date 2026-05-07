@@ -70,6 +70,7 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+      "react-helmet": "react-helmet-async",
     },
   },
   build: {

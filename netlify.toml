@@ -1,5 +1,13 @@
 # Improves repeat visits and CDN efficiency. First-byte time for HTML still depends on origin;
 # pair with ENABLE_PRERENDER=true in production builds for static HTML per path.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+  [build.environment]
+    ENABLE_PRERENDER = "true"
+    NODE_VERSION = "20"
+
 [[headers]]
   for = "/assets/*"
   [headers.values]
