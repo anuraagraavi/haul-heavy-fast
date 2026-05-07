@@ -182,15 +182,26 @@ function postProcess(renderedRoute) {
     `<meta property="og:type" content="website">`,
   );
 
+  // Strip external tracking scripts only. Do not use [\s\S]*? across tags — it can match
+  // from an inline <script> that contains a gtag URL string literal to the next </script>,
+  // deleting the Vite module bundle.
   html = html
     .replace(
-      /<script[\s\S]*?src\s*=\s*['"]https:\/\/googleads\.g\.doubleclick\.net\/pagead\/[\s\S]*?['"][\s\S]*?><\/script>/gi,
+      /<script\b[^>]*\bsrc\s*=\s*["']https:\/\/googleads\.g\.doubleclick\.net\/pagead\/[^"']*["'][^>]*><\/script>/gi,
       "",
     )
     .replace(
-      /<script[\s\S]*?src\s*=\s*['"]https:\/\/www\.googletagmanager\.com\/gtag\/js\?id=AW-[^'"]*['"][\s\S]*?><\/script>/gi,
+      /<script\b[^>]*\bsrc\s*=\s*["']https:\/\/www\.googletagmanager\.com\/gtag\/js\?id=AW-[^"']*["'][^>]*><\/script>/gi,
       "",
     );
+
+  if (
+    !/<script[^>]*type=["']module["'][^>]*src=["']\/assets\/[^"']+\.js["'][^>]*><\/script>/i.test(html)
+  ) {
+    throw new Error(
+      `[prerender] Module bundle <script> missing after post-process for route ${renderedRoute.originalRoute}`,
+    );
+  }
 
   if (html.includes('<div id="root"></div>')) {
     console.warn(`[prerender] Empty root capture for route: ${renderedRoute.originalRoute}`);
@@ -234,6 +245,10 @@ async function runPrerender() {
     return true;
   } catch (err) {
     const msg = err && typeof err === "object" && "message" in err ? err.message : String(err);
+    if (typeof msg === "string" && msg.includes("[prerender] Module bundle")) {
+      console.error("[prerender] Invalid post-process output:", err);
+      process.exit(1);
+    }
     console.warn("[prerender] Failed, continuing without prerendered HTML:", msg);
     return true;
   } finally {
