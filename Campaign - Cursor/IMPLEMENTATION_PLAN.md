@@ -8,12 +8,12 @@
 
 ## How to view locally
 
-- **Dev server port:** This project uses **port 8080** (configured in `vite.config.ts`), not 5173.
+- **Dev server port:** This project uses **port 5173** (configured in `vite.config.ts`), matching Vite’s default so Cursor’s browser and other tools auto-open the correct URL.
 - **Steps:** From the project root run `npm run dev`, then in your browser open:
-  - **Home:** http://localhost:8080
-  - **C1 landing page (Light & Medium):** http://localhost:8080/towing/bay-area-flatbed-emergency-towing-24-7
-  - **Legacy towing-services URL:** http://localhost:8080/towing-services
-- If you see 404 on port 8080, ensure no other app is using 8080 and that `npm run dev` is running in this project.
+  - **Home:** http://localhost:5173
+  - **C1 landing page (Light & Medium):** http://localhost:5173/towing/bay-area-flatbed-emergency-towing-24-7
+  - **Legacy towing-services URL:** http://localhost:5173/towing-services
+- If you see 404 on port 5173, ensure no other app is using 5173 and that `npm run dev` is running in this project.
 
 ---
 

@@ -2,7 +2,7 @@
 
 **Production domain:** [https://heavytowpro.com](https://heavytowpro.com)  
 **Document purpose:** Summarize **what categories of work** were delivered—keyword and topic coverage, on-page SEO, technical SEO, performance, content, local footprint, CRO, measurement, and backend reliability—for the **February through April 2026** program window. This version is **ordered by work type**, not by calendar day.  
-**Last updated:** May 4, 2026
+**Last updated:** May 8, 2026
 
 ---
 
@@ -11,7 +11,7 @@
 - **Thirty** new long-form blog URLs under `/blog/{slug}`, each targeting defined search intents (emergency, commercial, compliance, specialized vehicles, Bay Area corridors, seasonal risk, and fleet topics).
 - **Campaign landings** for light/medium and heavy-duty positioning, plus core service routes—documented under [Campaign landings and CRO](#campaign-landings-and-cro).
 - **Local footprint:** `/locations` index, four county hub URLs, and **twenty-six** city-style towing URLs—documented under [Information architecture and local SEO](#information-architecture-and-local-seo).
-- **Technical SEO:** XML sitemap, legacy **301** redirects, JSON-LD (site and blog), optional static prerender when enabled—plus a documented **prerender route gap** for the new blog slugs.
+- **Technical SEO:** XML sitemap, legacy **301** redirects, JSON-LD (site and blog), optional **post-build** static prerender when enabled—**sitemap-driven** route lists so new blog URLs in [`public/sitemap.xml`](../public/sitemap.xml) stay aligned with prerender output.
 - **Front-end performance:** Route-level code splitting, image tooling, vendor chunking, CLS-oriented fixes, lazy media patterns where used.
 - **On-page SEO:** Centralized blog meta, canonical, Open Graph, Twitter, Article and BreadcrumbList schema, FAQ schema when content includes FAQs; landing SEO alignment pass.
 - **Internal linking:** Category-aware related posts on each article.
@@ -109,44 +109,14 @@ Implemented in [`src/components/blog/BlogSchemas.tsx`](../src/components/blog/Bl
 
 ### Static prerender (optional build)
 
-- **Config:** [`vite.config.ts`](../vite.config.ts) — prerender runs in production only when `ENABLE_PRERENDER === "true"`.
-- **Curated routes:** Core marketing URLs, dynamic location URL list, `/blog`, a fixed set of older blog paths, campaign landings, legal/thank-you.
-- **Gap — newest 30 blog paths:** The following routes are **declared in the app and sitemap** but are **not** in the prerender array today. When you need full HTML at fetch time for bots or tools, append these paths to the prerender list (in addition to keeping routes and sitemap aligned):
+- **Runner:** [`scripts/prerender.cjs`](../scripts/prerender.cjs) — invoked after `vite build` from [`package.json`](../package.json). When **`ENABLE_PRERENDER` is not `"true"`**, the script logs a skip and exits (publish-friendly default).
+- **Route source:** Paths are read from [`public/sitemap.xml`](../public/sitemap.xml), so **the sitemap is the source of truth** for which URLs receive static HTML. Optional env tuning: `PRERENDER_ROUTE_LIMIT`, `PRERENDER_ROUTES`, `PRERENDER_WAIT_MODE`, `PRERENDER_SKIP_THIRD_PARTY`.
+- **Build compatibility:** [`vite.config.ts`](../vite.config.ts) lowers JS output to **ES2019** when `ENABLE_PRERENDER` is set so the Puppeteer/Chromium runtime used for prerender can parse the bundle.
+- **Head/metadata:** Post-processing preserves app-authored head content where present (e.g. Helmet); conditional fallbacks and ad/track script cleanup are implemented in the prerender script. Avoid conflicting static canonical/OG in [`index.html`](../index.html) for production parity with per-route meta.
 
-```
-/blog/what-to-do-after-car-accident-bay-area
-/blog/flatbed-vs-wheel-lift-towing
-/blog/does-insurance-cover-towing-california
-/blog/tesla-towing-bay-area-guide
-/blog/get-car-out-of-impound-bay-area
-/blog/awd-4wd-towing-guide-flatbed
-/blog/predatory-towing-california-rights
-/blog/semi-truck-breakdown-highway-guide
-/blog/how-to-choose-towing-company
-/blog/dui-impound-california
-/blog/long-distance-towing-cost-california
-/blog/spring-driving-bay-area-breakdown-prevention
-/blog/apartment-hoa-towing-rights-california
-/blog/i-880-bay-area-interstate-accident-recovery
-/blog/towing-lowered-modified-car-guide
-/blog/food-truck-towing-bay-area
-/blog/us-101-peninsula-freeway-breakdown-guide
-/blog/bay-area-bridge-stall-towing-guide
-/blog/winch-out-mudslide-rain-bay-area
-/blog/rideshare-driver-breakdown-towing-bay-area
-/blog/dot-out-of-service-weight-station-bay-area
-/blog/classic-exotic-car-towing-bay-area
-/blog/travel-trailer-sway-blowout-towing-recovery
-/blog/shuttle-bus-transit-minibus-breakdown-towing
-/blog/ev-dead-12v-battery-towing-flatbed-guide
-/blog/north-bay-golden-gate-corridor-towing
-/blog/catalytic-converter-theft-car-immobilized-towing
-/blog/commercial-tire-blowout-highway-bay-area
-/blog/dealer-auction-vehicle-transport-bay-area
-/blog/construction-dump-truck-roll-off-recovery-bay-area
-```
+**Historical note:** An older **hardcoded** prerender route list did not include every sitemap URL; the **sitemap-driven** runner closes that gap as long as [`public/sitemap.xml`](../public/sitemap.xml) stays aligned with routable pages.
 
-**Reliability note:** Prerender was temporarily relaxed in some hosting pipelines so **publish stability** took priority over static HTML generation; URLs remain reachable via normal client routing and sitemap discovery.
+**Reliability note:** Prerender can still be omitted in constrained pipelines by leaving `ENABLE_PRERENDER` unset; URLs remain reachable via client routing and sitemap discovery.
 
 ---
 
@@ -281,6 +251,14 @@ _This section records the **engineering milestone** of landing previously local-
 - **Sitewide:** Core pages, landings, layout and SEO components, UI primitives, lockfiles, and [`supabase/functions/send-email/index.ts`](../supabase/functions/send-email/index.ts) updated in step with the rollout.
 
 **Audit:** Handoff commit pushed to `origin/main` on **May 4, 2026:** **`7df147f`** (*feat(seo): locations, April blogs, redirects, cohort blog, client changelog*). If your clone is behind, run `git log -1 -- docs/CLIENT_SEO_CHANGELOG_FEB_APR_2026.md` after `git pull` to confirm the same file revision.
+
+### What landed (May 8, 2026)
+
+- **Static prerender:** Replaced the in-Vite prerender plugin path with a **post-build** runner — [`scripts/prerender.cjs`](../scripts/prerender.cjs) — fed by [`public/sitemap.xml`](../public/sitemap.xml), with `ENABLE_PRERENDER=true` gating and optional route subset env vars. [`package.json`](../package.json) `build` runs `vite build`, then prerender, then hero preload injection.
+- **Build / dev tooling:** [`vite.config.ts`](../vite.config.ts) uses an ESM-safe project root for the `@` alias; **dev server port is 5173** (Vite default) for preview/browser alignment; **`lovable-tagger`** is opt-in via `LOVABLE_TAGGER=true` to avoid dev transform conflicts with React SWC.
+- **HTML shell:** [`index.html`](../index.html) — removed redundant logo **`preload`** (same asset as favicon) to clear DevTools preload warnings when the header image loads after paint.
+- **Diagnostics:** [`src/main.tsx`](../src/main.tsx) can log runtime errors during prerender when `window.__PRERENDER_INJECTED.diagnostics` is set by the prerender runner.
+- **Internal docs:** Campaign implementation plan local URLs updated to port **5173**.
 
 ---
 

@@ -3,6 +3,25 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import App from './App.tsx'
 import './index.css'
 
+declare global {
+  interface Window {
+    __PRERENDER_INJECTED?: {
+      diagnostics?: boolean;
+    };
+  }
+}
+
+if (window.__PRERENDER_INJECTED?.diagnostics) {
+  window.addEventListener("error", (event) => {
+    console.error(
+      `[prerender-runtime] error: ${event.message} @ ${event.filename}:${event.lineno}:${event.colno}`,
+    );
+  });
+  window.addEventListener("unhandledrejection", (event) => {
+    console.error("[prerender-runtime] unhandledrejection:", event.reason);
+  });
+}
+
 createRoot(document.getElementById("root")!).render(
   <HelmetProvider>
     <Helmet prioritizeSeoTags />
