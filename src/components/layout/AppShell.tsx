@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PrerenderTrigger from "@/components/PrerenderTrigger";
 
 function MainFallback() {
   return (
@@ -24,6 +25,7 @@ export default function AppShell() {
     <>
       <Header />
       <Suspense fallback={<MainFallback />}>
+        <PrerenderTrigger />
         <Outlet />
       </Suspense>
       <Footer />
