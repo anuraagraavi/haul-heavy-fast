@@ -1,6 +1,6 @@
 # Heavy Haulers / Heavy Tow Pro – San Francisco Bay Area Towing
 
-> 24/7 professional towing and recovery across the San Francisco Bay Area and Central Valley (Stockton). Light, medium, and heavy-duty service with 6 dispatch hubs, ~15 min average response, transparent pricing. Primary phone: (650) 881-2400.
+> 24/7 professional towing and recovery across the San Francisco Bay Area and Central Valley (Stockton). Light, medium, and heavy-duty service with 6 dispatch hubs, ~15 min average response, transparent pricing. Primary phone: (650) 881-2400. The site includes county hub pages, city-level towing pages, and a long-form blog library for Bay Area and California towing topics.
 
 ## Main
 
@@ -19,14 +19,111 @@
 - [Bay Area Flatbed Emergency Towing 24/7](https://heavytowpro.com/towing/bay-area-flatbed-emergency-towing-24-7): Flatbed emergency towing landing
 - [Heavy Duty Towing Bay Area](https://heavytowpro.com/towing/heavy-duty-towing-bay-area): Heavy-duty and commercial landing
 
-## Locations & Contact
+## Locations & regional coverage
 
 - [Locations / Coverage](https://heavytowpro.com/locations): Bay Area and Central Valley coverage; 5 counties (San Francisco, San Mateo, Alameda, Santa Clara, Contra Costa) plus Central Valley (Stockton). 6 dispatch hubs: Brisbane (HQ), San Leandro, Hayward, San Jose, San Mateo, Stockton. ~60+ cities and districts.
-- [Contact Us](https://heavytowpro.com/contact): Dispatch by area – Peninsula / San Mateo / Brisbane: 650-881-2400; East Bay (San Leandro / Hayward): 510-800-3800; South Bay (San Jose): 408-800-3800; Central Valley (Stockton): 916-701-2200. Email: dispatch@heavytowpro.com. Office hours: Mon–Fri 7AM–7PM, Sat 8AM–6PM, Sun 9AM–5PM; emergency dispatch 24/7.
+
+### County hubs
+
+- [San Mateo County](https://heavytowpro.com/locations/san-mateo-county)
+- [Alameda County](https://heavytowpro.com/locations/alameda-county)
+- [Santa Clara County](https://heavytowpro.com/locations/santa-clara-county)
+- [Contra Costa County](https://heavytowpro.com/locations/contra-costa-county)
+
+### City / market pages
+
+- Antioch: https://heavytowpro.com/towing-antioch
+- Berkeley: https://heavytowpro.com/towing-berkeley
+- Burlingame: https://heavytowpro.com/towing-burlingame
+- Concord: https://heavytowpro.com/towing-concord
+- Cupertino: https://heavytowpro.com/towing-cupertino
+- Daly City: https://heavytowpro.com/towing-daly-city
+- Fremont: https://heavytowpro.com/towing-fremont
+- Hayward: https://heavytowpro.com/towing-hayward
+- Livermore: https://heavytowpro.com/towing-livermore
+- Menlo Park: https://heavytowpro.com/towing-menlo-park
+- Milpitas: https://heavytowpro.com/towing-milpitas
+- Mountain View: https://heavytowpro.com/towing-mountain-view
+- Oakland: https://heavytowpro.com/towing-oakland
+- Palo Alto: https://heavytowpro.com/towing-palo-alto
+- Pleasanton: https://heavytowpro.com/towing-pleasanton
+- Redwood City: https://heavytowpro.com/towing-redwood-city
+- Richmond: https://heavytowpro.com/towing-richmond
+- San Francisco: https://heavytowpro.com/towing-san-francisco
+- San Jose: https://heavytowpro.com/towing-san-jose
+- San Leandro: https://heavytowpro.com/towing-san-leandro
+- San Mateo: https://heavytowpro.com/towing-san-mateo
+- Santa Clara: https://heavytowpro.com/towing-santa-clara
+- South San Francisco: https://heavytowpro.com/towing-south-san-francisco
+- Stockton: https://heavytowpro.com/towing-stockton
+- Sunnyvale: https://heavytowpro.com/towing-sunnyvale
+- Walnut Creek: https://heavytowpro.com/towing-walnut-creek
+
+### Dispatch & hours (also on Contact)
+
+Peninsula / San Mateo / Brisbane: 650-881-2400; East Bay (San Leandro / Hayward): 510-800-3800; South Bay (San Jose): 408-800-3800; Central Valley (Stockton): 916-701-2200. Email: dispatch@heavytowpro.com. Office hours: Mon–Fri 7AM–7PM, Sat 8AM–6PM, Sun 9AM–5PM; emergency dispatch 24/7.
 
 ## Resources
 
-- [Blog & Guides](https://heavytowpro.com/blog): Towing tips, emergency guides, fleet and EV towing, Bay Area–specific articles
+- [Blog & Guides (index)](https://heavytowpro.com/blog): Hub for all articles (newest-first listing on site)
+
+### Blog articles (newest first)
+
+- [Construction Dump Trucks and Roll-Offs: Job Site Recovery in the Bay Area](https://heavytowpro.com/blog/construction-dump-truck-roll-off-recovery-bay-area)
+- [Dealer and Auction Vehicle Transport in the Bay Area: Keys, Gates, and Paperwork](https://heavytowpro.com/blog/dealer-auction-vehicle-transport-bay-area)
+- [Commercial Tire Blowouts on Bay Area Highways: Scene Control and Towing](https://heavytowpro.com/blog/commercial-tire-blowout-highway-bay-area)
+- [Catalytic Converter Theft: When Your Car Will Not Move and You Need a Tow](https://heavytowpro.com/blog/catalytic-converter-theft-car-immobilized-towing)
+- [North Bay and Golden Gate Corridor Towing: Approaches, Curves, and Dispatch](https://heavytowpro.com/blog/north-bay-golden-gate-corridor-towing)
+- [EV Dead 12V Battery: Why a Flatbed Tow Still Matters (Beyond Tesla)](https://heavytowpro.com/blog/ev-dead-12v-battery-towing-flatbed-guide)
+- [Shuttle Bus and Minibus Breakdowns: Passenger Safety and Tow Class](https://heavytowpro.com/blog/shuttle-bus-transit-minibus-breakdown-towing)
+- [Travel Trailer Sway and Blowouts: When Towing Is the Safer Exit](https://heavytowpro.com/blog/travel-trailer-sway-blowout-towing-recovery)
+- [Classic and Exotic Car Towing in the Bay Area: Clearance and Care](https://heavytowpro.com/blog/classic-exotic-car-towing-bay-area)
+- [DOT Out-of-Service at a California Weight Station: Fleet Towing Playbook](https://heavytowpro.com/blog/dot-out-of-service-weight-station-bay-area)
+- [Rideshare Driver Breakdowns in the Bay Area: Tow vs Roadside](https://heavytowpro.com/blog/rideshare-driver-breakdown-towing-bay-area)
+- [Winch-Outs, Mud, and Late-Season Rain on Bay Area Hills](https://heavytowpro.com/blog/winch-out-mudslide-rain-bay-area)
+- [Bay Area Bridge Stalls: Towing, Tunnels, and CHP Coordination](https://heavytowpro.com/blog/bay-area-bridge-stall-towing-guide)
+- [US-101 Peninsula Freeway Breakdowns: Safety, CHP, and Tow Dispatch](https://heavytowpro.com/blog/us-101-peninsula-freeway-breakdown-guide)
+- [Food Truck Towing in the Bay Area: Generators, Propane, and Safe Recovery](https://heavytowpro.com/blog/food-truck-towing-bay-area)
+- [Towing a Lowered or Modified Car Without Damage: The Enthusiast's Guide](https://heavytowpro.com/blog/towing-lowered-modified-car-guide)
+- [I-880 and Bay Area Interstate Accident Recovery: What Happens After a Highway Crash](https://heavytowpro.com/blog/i-880-bay-area-interstate-accident-recovery)
+- [Apartment and HOA Parking Towing in California: A Tenant's Complete Guide](https://heavytowpro.com/blog/apartment-hoa-towing-rights-california)
+- [Spring Driving in the Bay Area: Rainy Season Breakdown Prevention Guide](https://heavytowpro.com/blog/spring-driving-bay-area-breakdown-prevention)
+- [Long-Distance Towing Costs in California: Bay Area to Sacramento, LA, and Beyond](https://heavytowpro.com/blog/long-distance-towing-cost-california)
+- [Vehicle Impound After a DUI in California: Fees, Timelines, and Getting Your Car Back](https://heavytowpro.com/blog/dui-impound-california)
+- [How to Choose a Reliable Towing Company: 10 Red Flags and Must-Haves](https://heavytowpro.com/blog/how-to-choose-towing-company)
+- [Semi-Truck Breakdown on the Highway: A Driver's Step-by-Step Survival Guide](https://heavytowpro.com/blog/semi-truck-breakdown-highway-guide)
+- [Predatory Towing in California: Know Your Rights and Fight Back](https://heavytowpro.com/blog/predatory-towing-california-rights)
+- [Towing an AWD or 4WD Vehicle: Why Your Subaru, Audi, or BMW Needs a Flatbed](https://heavytowpro.com/blog/awd-4wd-towing-guide-flatbed)
+- [How to Get Your Car Out of Impound in the Bay Area: Complete Guide](https://heavytowpro.com/blog/get-car-out-of-impound-bay-area)
+- [Tesla Towing in the Bay Area: What Every Owner Must Know Before Calling a Tow Truck](https://heavytowpro.com/blog/tesla-towing-bay-area-guide)
+- [Does Car Insurance Cover Towing in California? Complete 2026 Guide](https://heavytowpro.com/blog/does-insurance-cover-towing-california)
+- [Flatbed vs Wheel-Lift Towing: Which Method Is Right for Your Vehicle?](https://heavytowpro.com/blog/flatbed-vs-wheel-lift-towing)
+- [What to Do After a Car Accident in the Bay Area: A Step-by-Step Guide](https://heavytowpro.com/blog/what-to-do-after-car-accident-bay-area)
+- [CHP Towing in California: What Happens When Highway Patrol Tows Your Vehicle](https://heavytowpro.com/blog/chp-towing-california)
+- [Freeway Towing Bay Area: Highway Recovery Services](https://heavytowpro.com/blog/freeway-towing-bay-area)
+- [Heavy Duty Recovery Bay Area: Commercial & Industrial Towing](https://heavytowpro.com/blog/heavy-duty-recovery-bay-area)
+- [Underground Garage Towing SF: Low Clearance Vehicle Recovery](https://heavytowpro.com/blog/underground-garage-towing-sf)
+- [RV Towing Bay Area: Recreational Vehicle Transport Guide](https://heavytowpro.com/blog/rv-towing-bay-area)
+- [Box Truck Towing San Francisco: Commercial Vehicle Recovery](https://heavytowpro.com/blog/box-truck-towing-san-francisco)
+- [Towing Cost San Francisco: Complete Price Guide 2025](https://heavytowpro.com/blog/towing-cost-san-francisco)
+- [California Private Property Towing: Laws and Your Rights](https://heavytowpro.com/blog/california-private-property-towing)
+- [SF Tow Fee Discount: Low-Income Towing Assistance Programs](https://heavytowpro.com/blog/sf-tow-fee-discount)
+- [My Car Was Towed in San Francisco: What to Do Next](https://heavytowpro.com/blog/car-towed-san-francisco)
+- [Towing Technology: GPS Tracking and Modern Fleet Management](https://heavytowpro.com/blog/towing-technology-gps-fleet-management)
+- [Luxury Vehicle Transport: Premium Care for Premium Cars](https://heavytowpro.com/blog/luxury-transport-guide)
+- [Vehicle Storage Solutions: Secure Towing and Long-Term Parking](https://heavytowpro.com/blog/vehicle-storage-solutions)
+- [San Francisco Towing Challenges: Urban Recovery Solutions](https://heavytowpro.com/blog/sf-towing-challenges)
+- [Commercial Vehicle Urban Recovery: City Towing Solutions](https://heavytowpro.com/blog/commercial-vehicle-urban-recovery)
+- [Roadside Assistance vs Towing: When to Call Who](https://heavytowpro.com/blog/roadside-assistance-vs-towing)
+- [Construction Equipment Hauling: Oversize Load Transportation](https://heavytowpro.com/blog/construction-equipment-hauling)
+- [Electric Vehicle Towing Guide: EV Transport Best Practices](https://heavytowpro.com/blog/electric-vehicle-towing-guide)
+- [Motorcycle Towing Guide: Safe Transport for Two-Wheelers](https://heavytowpro.com/blog/motorcycle-towing-guide)
+- [Winter Towing Preparedness: Bay Area Vehicle Safety](https://heavytowpro.com/blog/winter-towing-preparedness)
+- [Accident Scene Management: Professional Towing Response](https://heavytowpro.com/blog/accident-scene-management)
+- [Heavy Equipment Transport: Specialized Moving Solutions](https://heavytowpro.com/blog/heavy-equipment-transport)
+- [Fleet Management Towing: Business Vehicle Solutions](https://heavytowpro.com/blog/fleet-management-towing)
+- [Emergency Towing Guide: What to Do When Stranded](https://heavytowpro.com/blog/emergency-towing-guide)
+- [Commercial Truck Towing: Interstate Highway Recovery](https://heavytowpro.com/blog/commercial-truck-towing-interstate)
 
 ## Legal
 
