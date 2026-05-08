@@ -2,6 +2,7 @@ import { createRoot } from 'react-dom/client'
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import App from './App.tsx'
 import './index.css'
+import { installTelLinkConversionTracking } from "./lib/phoneConversionTracking";
 
 declare global {
   interface Window {
@@ -20,6 +21,10 @@ if (window.__PRERENDER_INJECTED?.diagnostics) {
   window.addEventListener("unhandledrejection", (event) => {
     console.error("[prerender-runtime] unhandledrejection:", event.reason);
   });
+}
+
+if (typeof window !== "undefined") {
+  installTelLinkConversionTracking();
 }
 
 createRoot(document.getElementById("root")!).render(
