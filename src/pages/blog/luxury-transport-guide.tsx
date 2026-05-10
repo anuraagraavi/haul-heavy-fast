@@ -89,12 +89,13 @@ const blogData: BlogPostData = {
   ],
   
   serviceAreas: [
-    { name: "San Francisco", href: "/locations/san-francisco" },
-    { name: "Oakland", href: "/locations/oakland" },
-    { name: "Palo Alto", href: "/locations/palo-alto" },
-    { name: "Atherton", href: "/locations/atherton" },
-    { name: "Los Altos", href: "/locations/los-altos" },
-    { name: "Hillsborough", href: "/locations/hillsborough" }
+    { name: "San Francisco", href: "/towing-san-francisco" },
+    { name: "Oakland", href: "/towing-oakland" },
+    { name: "Palo Alto", href: "/towing-palo-alto" },
+    // No Atherton / Los Altos / Hillsborough pages — nearest peninsula hubs
+    { name: "Atherton", href: "/towing-menlo-park" },
+    { name: "Los Altos", href: "/towing-mountain-view" },
+    { name: "Hillsborough", href: "/towing-burlingame" }
   ]
 };
 

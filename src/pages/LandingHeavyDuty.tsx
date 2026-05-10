@@ -12,6 +12,7 @@ import {
   PRIMARY_DISPATCH_E164,
   PRIMARY_DISPATCH_PHONE_DISPLAY,
   PRIMARY_DISPATCH_TEL_HREF,
+  REGISTERED_HQ,
   SCREENSHOT_DISPATCH_HUBS,
 } from "@/data/screenshotDispatchHubs";
 
@@ -107,13 +108,13 @@ const LandingHeavyDuty = () => {
         email: "dispatch@heavytowpro.com",
         address: {
           "@type": "PostalAddress",
-          streetAddress: "1234 Broadway",
-          addressLocality: "Oakland",
-          addressRegion: "CA",
-          postalCode: "94612",
-          addressCountry: "US",
+          streetAddress: REGISTERED_HQ.streetAddress,
+          addressLocality: REGISTERED_HQ.addressLocality,
+          addressRegion: REGISTERED_HQ.addressRegion,
+          postalCode: REGISTERED_HQ.postalCode,
+          addressCountry: REGISTERED_HQ.addressCountry,
         },
-        geo: { "@type": "GeoCoordinates", latitude: "37.8044", longitude: "-122.2712" },
+        geo: { "@type": "GeoCoordinates", latitude: REGISTERED_HQ.latitude, longitude: REGISTERED_HQ.longitude },
         url: canonicalUrl,
         priceRange: "$$",
         aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "500" },

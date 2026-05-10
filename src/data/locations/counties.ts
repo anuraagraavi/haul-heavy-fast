@@ -25,7 +25,7 @@ export const countyHubLocations: LocationData[] = [
     neighborhoodIntro:
       "San Mateo County stitches together dense Peninsula cities, the SFO corridor, and biotech-heavy South City. County-level dispatch means your call routes to the nearest hub with corridor-aware ETAs.",
     localIntro:
-      "Whether you are stuck on 101 near Millbrae Ave, dead in a Palo Alto garage, or managing a fleet van at Oyster Point, county-wide dispatch keeps language consistent: we capture vehicle class, clearance, and drivetrain once — then coordinate the right crew from Redwood City, San Mateo, or San Francisco hubs without making you repeat the story.",
+      "Whether you are stuck on 101 near Millbrae Ave, dead in a Palo Alto garage, or managing a fleet van at Oyster Point, county-wide dispatch keeps language consistent: we capture vehicle class, clearance, and drivetrain once — then coordinate the right crew from Brisbane (HQ), Redwood City, or San Mateo hubs without making you repeat the story.",
     primaryKeyword: "san mateo county towing",
     secondaryKeywords: ["tow truck san mateo county", "peninsula towing 24/7", "us-101 tow san mateo county", "flatbed peninsula"],
     longTailKeywords: ["sfo corridor tow truck", "ca-92 bridge towing", "daly city to palo alto tow", "peninsula fleet towing"],
@@ -34,7 +34,7 @@ export const countyHubLocations: LocationData[] = [
     freeways: ["US-101", "I-280", "CA-92", "I-380"],
     landmarks: ["SFO corridor", "San Mateo Bridge", "Crystal Springs reservoirs", "SFPUC watershed approaches", "Bay Trail segments", "Oracle Park approaches (via 101)"],
     confidencePoints: [
-      { title: "Multi-hub Peninsula routing", body: "Calls triage to the nearest screenshot-verified hub with live ETA updates." },
+      { title: "Multi-hub Peninsula routing", body: "Calls triage to the nearest H&H hub with live ETA updates." },
       { title: "SFO & 92 bridge literacy", body: "We understand bridge queues, airport loop traffic, and staging legality." },
       { title: "EV & luxury flatbed-first", body: "Peninsula commuter mix demands protective loading discipline." },
       { title: "Fleet & medium-duty capable", body: "Biotech vans and contractor trucks route to GVWR-matched wreckers." },
@@ -44,7 +44,7 @@ export const countyHubLocations: LocationData[] = [
     faqs: [
       { q: "Which Peninsula cities do you cover?", a: "San Mateo County includes San Mateo, Redwood City, Palo Alto, Burlingame, Daly City, South San Francisco, Menlo Park, and adjacent Peninsula communities — call with your pin for routing." },
       { q: "Do you dispatch flatbeds for EVs county-wide?", a: "Yes — flatbed-first is our default for EVs and many AWD vehicles unless neutral tow is verified safe." },
-      { q: "How do county hub phones work?", a: "Your call may route through Redwood City, San Mateo, or San Francisco screenshot hubs depending on coverage — dispatch stays on one line with you." },
+      { q: "How do county hub phones work?", a: "Your call may route through Brisbane (HQ), Redwood City, or San Mateo hubs depending on coverage — dispatch stays on one line with you." },
       { q: "Can you handle medium-duty on the Peninsula?", a: "Yes — describe height, weight, and cargo; we scale equipment accordingly." },
       { q: "What about SFO approaches?", a: "We coordinate legal staging and keep dispatch updated on airport traffic loops." },
       { q: "Are you available 24/7 county-wide?", a: "Yes — live dispatch monitors Peninsula incidents continuously." },
@@ -67,10 +67,10 @@ export const countyHubLocations: LocationData[] = [
       { icon: "Route", title: "Bridge math", body: "CA-92 queues change ETAs — we say so early." },
       { icon: "MapPin", title: "SFO loops", body: "Cargo vs passenger vs rideshare islands need different staging." },
       { icon: "Car", title: "EV mix", body: "Assume flatbed unless cleared." },
-      { icon: "ShieldCheck", title: "Hub accountability", body: "Screenshot-verified addresses and phones." },
+      { icon: "ShieldCheck", title: "Hub accountability", body: "Published H&H hub addresses and dispatch lines." },
     ],
     stats: [
-      { value: "3 hubs", label: "Redwood City, San Mateo, SF" },
+      { value: "3 hubs", label: "Brisbane, San Mateo, Redwood City" },
       { value: "24/7", label: "Live dispatch" },
       { value: "Peninsula", label: "County-wide routing" },
       { value: "Flatbed", label: "EV standard" },
@@ -104,7 +104,7 @@ export const countyHubLocations: LocationData[] = [
     metaDescription:
       "County-wide towing across Oakland, Hayward, Fremont, Berkeley, and Tri-Valley cities. I-880, I-580, port-aware routing, flatbed EVs, and medium/heavy depth.",
     h1: "Alameda County Towing & Recovery — East Bay Multi-Hub",
-    heroSubhead: "Oakland, Hayward, and Fremont hubs anchor 880, 580, and port logistics with live county-wide dispatch.",
+    heroSubhead: "Hayward and San Leandro hubs anchor 880, 580, and port logistics with live county-wide dispatch.",
     neighborhoodIntro:
       "Alameda County spans the Port of Oakland, dense 880 commuting, Tri-Valley growth, and hillside pockets. County dispatch triages to the closest hub with freight- and EV-aware routing.",
     localIntro:
@@ -121,13 +121,13 @@ export const countyHubLocations: LocationData[] = [
       { title: "Tri-Valley 680 honesty", body: "Dublin Grade surge updates — no ghost ETAs." },
       { title: "Flatbed-first for EV & AWD", body: "Bay Bridge commuter mix demands protective loading." },
       { title: "Hills & garage literacy", body: "Berkeley and Piedmont grades get chock and winch planning." },
-      { title: "Live multi-hub coordination", body: "Oakland, Hayward, Fremont screenshot hubs back each other up." },
+      { title: "Live multi-hub coordination", body: "Hayward and San Leandro H&H hubs back each other up across the East Bay." },
     ],
     commonScenarios: ["I-880 active-lane incidents", "Port gate fleet assists", "Dumbarton / 92 bridge approaches", "680 Tri-Valley overheating", "EV flatbed county-wide"],
     faqs: [
       { q: "Which cities are included in Alameda County coverage?", a: "Oakland, Hayward, Fremont, Berkeley, San Leandro, Pleasanton, Livermore, Union City, and surrounding East Bay communities — share your pin for routing." },
       { q: "Do you cover the Port of Oakland?", a: "Yes — with gate, dock, and GVWR details so we send the correct equipment class." },
-      { q: "How do multi-hub phones work?", a: "Calls may route through Oakland, Hayward, or Fremont hubs depending on coverage — one dispatcher owns your update stream." },
+      { q: "How do multi-hub phones work?", a: "Calls may route through Hayward or San Leandro hubs depending on coverage — one dispatcher owns your update stream." },
       { q: "Tri-Valley traffic on 680?", a: "We adjust ETAs when Dublin Grade stacks — transparency is standard." },
       { q: "EV towing county-wide?", a: "Flatbed-first default unless neutral tow is verified safe." },
       { q: "24/7?", a: "Live dispatch continuously." },
@@ -150,10 +150,10 @@ export const countyHubLocations: LocationData[] = [
       { icon: "Route", title: "Maze ripple", body: "Port incidents can change 880 northbound — we monitor live." },
       { icon: "Building2", title: "Yards", body: "Dock numbers and forklift assist questions first." },
       { icon: "MountainSnow", title: "Altamont wind", body: "Livermore approaches get wind-aware securement." },
-      { icon: "ShieldCheck", title: "Trust", body: "Multi-hub screenshot addresses." },
+      { icon: "ShieldCheck", title: "Trust", body: "Published H&H East Bay hub addresses." },
     ],
     stats: [
-      { value: "3 hubs", label: "Oakland, Hayward, Fremont" },
+      { value: "2 hubs", label: "Hayward & San Leandro" },
       { value: "24/7", label: "Live dispatch" },
       { value: "880", label: "Port & freeway fluency" },
       { value: "Flatbed", label: "EV standard" },
@@ -182,12 +182,12 @@ export const countyHubLocations: LocationData[] = [
     phone: countyHubInfo["santa-clara-county"].phone,
     nearestHub: countyHubInfo["santa-clara-county"].hub,
     geo: GEO["santa-clara-county"]!,
-    heroKicker: "San Jose & Palo Alto hubs — 101 / 87 / 280 South Bay mesh",
+    heroKicker: "San Jose hub — 101 / 87 / 280 South Bay mesh",
     metaTitle: "Santa Clara County Towing | South Bay Dispatch 24/7",
     metaDescription:
       "County-wide towing across San Jose, Sunnyvale, Mountain View, Cupertino, Milpitas, and Santa Clara. EV flatbed-first, stadium-aware routing, and fleet depth.",
     h1: "Santa Clara County Towing & Recovery — South Bay Hub",
-    heroSubhead: "San Jose and Palo Alto dispatch hubs coordinate 101, 87, 280, and 880/680 merge pressure with Silicon Valley EV density.",
+    heroSubhead: "San Jose dispatch coordinates 101, 87, 280, and 880/680 merge pressure with Silicon Valley EV density county-wide.",
     neighborhoodIntro:
       "Santa Clara County is the South Bay’s volume engine — SJC, Levi’s events, Shoreline concerts, and Apple-campus traffic. County dispatch triages with tech-corridor fluency.",
     localIntro:
@@ -233,10 +233,10 @@ export const countyHubLocations: LocationData[] = [
       { icon: "Route", title: "Event detours", body: "Shoreline and Levi’s reshape arterials — we watch live." },
       { icon: "Car", title: "EV mix", body: "Assume flatbed unless cleared." },
       { icon: "Building2", title: "Logistics", body: "North San Jose yards need dock numbers." },
-      { icon: "ShieldCheck", title: "Trust", body: "Screenshot-verified San Jose and Palo Alto hubs." },
+      { icon: "ShieldCheck", title: "Trust", body: "Published H&H San Jose hub with county-wide routing." },
     ],
     stats: [
-      { value: "2 hubs", label: "San Jose & Palo Alto" },
+      { value: "1 hub", label: "San Jose (county-wide)" },
       { value: "24/7", label: "Live dispatch" },
       { value: "EV-first", label: "County default" },
       { value: "101/87", label: "Silicon Valley spine" },
@@ -270,11 +270,11 @@ export const countyHubLocations: LocationData[] = [
     metaDescription:
       "County-wide towing across Concord, Walnut Creek, Richmond, Antioch, and San Ramon corridor. I-680, CA-4, I-80 approaches, flatbed EVs, and industrial fleet depth.",
     h1: "Contra Costa County Towing & Recovery — Central & East County",
-    heroSubhead: "Live dispatch for 680, 24 gateway, CA-4 delta commute, and I-80 refinery-row approaches — call our Bay Area line for routing.",
+    heroSubhead: "Live dispatch for 680, 24 gateway, CA-4 delta commute, and I-80 refinery-row approaches — Concord hub anchors county-wide routing.",
     neighborhoodIntro:
       "Contra Costa spans 680 commuter spine, CA-4 east county freight, and I-80 industrial approaches. County dispatch triages with wind-, bridge-, and yard-aware questions.",
     localIntro:
-      "County-wide means your CA-4 Antioch call and your Concord 680 call share one disciplined intake: we capture wind exposure on open fetch, bridge ripple from the San Rafael side, and GVWR class for industrial yards — then route crews with honest ETAs via our Bay Area dispatch line.",
+      "County-wide means your CA-4 Antioch call and your Concord 680 call share one disciplined intake: we capture wind exposure on open fetch, bridge ripple from the San Rafael side, and GVWR class for industrial yards — then route crews with honest ETAs from the Concord H&H hub.",
     primaryKeyword: "contra costa county towing",
     secondaryKeywords: ["tow truck contra costa county", "i-680 contra costa towing", "ca-4 tow contra costa", "walnut creek dispatch tow"],
     longTailKeywords: ["san rafael bridge approach tow", "broadway plaza walnut creek tow", "antioch ca-4 towing", "richmond i-80 tow county"],
@@ -294,7 +294,7 @@ export const countyHubLocations: LocationData[] = [
       { q: "Which cities are included in Contra Costa County coverage?", a: "Concord, Walnut Creek, Richmond, Antioch, San Ramon, Pleasant Hill, Martinez, Brentwood, Pittsburg, and surrounding communities — Stockton is served separately via San Joaquin routing." },
       { q: "Do you cover CA-4 toward Antioch?", a: "Yes — with wind-aware securement and freight-lane staging discipline." },
       { q: "What about bridge approaches from Richmond?", a: "Yes — we factor wind and high-profile loads into equipment choice." },
-      { q: "How does dispatch work in Contra Costa?", a: "Call our Bay Area dispatch line — we coordinate county-wide routing with live updates." },
+      { q: "How does dispatch work in Contra Costa?", a: "Call the Concord hub line — we coordinate county-wide routing with live updates." },
       { q: "EV towing county-wide?", a: "Flatbed-first standard unless neutral tow is verified safe." },
       { q: "24/7?", a: "Live dispatch continuously." },
     ],
@@ -316,10 +316,10 @@ export const countyHubLocations: LocationData[] = [
       { icon: "Route", title: "Caldecott ripple", body: "Orinda backups move 680 ETAs — we communicate." },
       { icon: "MountainSnow", title: "Delta wind", body: "CA-4 east county fetch — strap checks matter." },
       { icon: "Building2", title: "Industrial gates", body: "Richmond and Martinez yards need PPE clarity." },
-      { icon: "ShieldCheck", title: "Trust", body: "Bay Area dispatch — county-wide coordination." },
+      { icon: "ShieldCheck", title: "Trust", body: "Concord hub — county-wide coordination." },
     ],
     stats: [
-      { value: "(650) 881-2400", label: "Bay Area dispatch line" },
+      { value: "(925) 888-2400", label: "Concord hub line" },
       { value: "24/7", label: "Live dispatch" },
       { value: "680/4", label: "County spine" },
       { value: "Wind-smart", label: "Delta & bridge aware" },

@@ -12,18 +12,33 @@ import { useNavigate } from "react-router-dom";
 import {
   PRIMARY_DISPATCH_E164,
   PRIMARY_DISPATCH_PHONE_DISPLAY,
+  PRIMARY_DISPATCH_TEL_HREF,
+  REGISTERED_HQ,
   SCREENSHOT_DISPATCH_HUBS,
-  SITE_WIDE_FALLBACK_PHONE_DISPLAY,
 } from "@/data/screenshotDispatchHubs";
+import { telHrefFromNational } from "@/lib/phone";
 
-const dispatchAreas = [
+type DispatchCard = {
+  key: string;
+  area: string;
+  addressLine?: string;
+  phoneDisplay: string;
+  telHref: string;
+};
+
+const dispatchCards: DispatchCard[] = [
   ...SCREENSHOT_DISPATCH_HUBS.map((h) => ({
-    area: `${h.city} hub`,
-    phone: h.phoneDisplay,
+    key: h.slug,
+    area: h.city,
+    addressLine: h.addressLine,
+    phoneDisplay: h.phoneDisplay,
+    telHref: telHrefFromNational(h.phoneDisplay),
   })),
   {
-    area: "Central Valley (Stockton), Contra Costa & unlisted areas — main Bay Area dispatch",
-    phone: SITE_WIDE_FALLBACK_PHONE_DISPLAY,
+    key: "generic-bay-area",
+    area: "Bay Area dispatch — all counties & general inquiries",
+    phoneDisplay: PRIMARY_DISPATCH_PHONE_DISPLAY,
+    telHref: PRIMARY_DISPATCH_TEL_HREF,
   },
 ];
 
@@ -130,7 +145,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Contact Heavy Tow Pro - 24/7 Emergency Towing San Francisco Bay Area | Call (650) 881-2400</title>
+        <title>{`Contact Heavy Tow Pro - 24/7 Emergency Towing San Francisco Bay Area | Call ${PRIMARY_DISPATCH_PHONE_DISPLAY}`}</title>
         <meta name="description" content="Contact Heavy Tow Pro for immediate 24/7 emergency towing, commercial fleet services, and professional vehicle recovery throughout San Francisco, San Mateo, Alameda, Santa Clara, and San Joaquin counties." />
         <meta name="keywords" content="contact emergency towing San Francisco, 24/7 towing dispatch Bay Area, Heavy Tow Pro contact information, professional towing company San Francisco, fleet towing contracts, emergency roadside assistance contact" />
         <link rel="canonical" href="https://heavytowpro.com/contact" />
@@ -149,9 +164,9 @@ const Contact = () => {
         
         {/* Local business geo-targeting */}
         <meta name="geo.region" content="US-CA" />
-        <meta name="geo.placename" content="San Francisco, CA" />
-        <meta name="geo.position" content="37.7749;-122.4194" />
-        <meta name="ICBM" content="37.7749, -122.4194" />
+        <meta name="geo.placename" content="Brisbane, CA" />
+        <meta name="geo.position" content={`${REGISTERED_HQ.latitude};${REGISTERED_HQ.longitude}`} />
+        <meta name="ICBM" content={`${REGISTERED_HQ.latitude}, ${REGISTERED_HQ.longitude}`} />
         
         {/* Enhanced Schema.org JSON-LD */}
         <script type="application/ld+json">
@@ -167,16 +182,16 @@ const Contact = () => {
               "email": "dispatch@heavytowpro.com",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "308 Industrial Way",
-                "addressLocality": "Brisbane",
-                "addressRegion": "CA",
-                "postalCode": "94005",
-                "addressCountry": "US"
+                "streetAddress": REGISTERED_HQ.streetAddress,
+                "addressLocality": REGISTERED_HQ.addressLocality,
+                "addressRegion": REGISTERED_HQ.addressRegion,
+                "postalCode": REGISTERED_HQ.postalCode,
+                "addressCountry": REGISTERED_HQ.addressCountry
               },
               "geo": {
                 "@type": "GeoCoordinates",
-                "latitude": "37.6879",
-                "longitude": "-122.3999"
+                "latitude": REGISTERED_HQ.latitude,
+                "longitude": REGISTERED_HQ.longitude
               },
               "areaServed": [
                 { "@type": "Place", "name": "San Francisco County, CA" },
@@ -238,12 +253,20 @@ const Contact = () => {
                 </span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-                Need immediate help? Call your area's 24/7 emergency dispatch. For general inquiries, 
-                fleet contracts, or to schedule non-emergency services, we're here to help.
+                Need immediate help? Call our main Bay Area line or your nearest hub below. For general inquiries,
+                fleet contracts, or to schedule non-emergency services, we&apos;re here to help.
               </p>
-              <div className="inline-flex items-center space-x-2 bg-card/20 backdrop-blur-sm border border-primary/30 rounded-full px-4 py-2">
-                <Clock className="w-4 h-4 text-warning" />
-                <span className="text-sm font-medium text-foreground">24/7 Emergency Dispatch Available</span>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+                <Button variant="hero" size="lg" asChild>
+                  <a href={PRIMARY_DISPATCH_TEL_HREF}>
+                    <Phone className="w-5 h-5 mr-2" />
+                    Call {PRIMARY_DISPATCH_PHONE_DISPLAY}
+                  </a>
+                </Button>
+                <div className="inline-flex items-center space-x-2 bg-card/20 backdrop-blur-sm border border-primary/30 rounded-full px-4 py-2">
+                  <Clock className="w-4 h-4 text-warning" />
+                  <span className="text-sm font-medium text-foreground">24/7 Emergency Dispatch Available</span>
+                </div>
               </div>
             </div>
           </div>
@@ -262,31 +285,40 @@ const Contact = () => {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-              {dispatchAreas.map((dispatch) => (
-                <div key={dispatch.phone + dispatch.area} className="bg-card border border-primary/30 bg-primary/5 rounded-2xl p-6 text-center hover:shadow-elevated hover:scale-105 transition-all duration-300">
+              {dispatchCards.map((dispatch) => (
+                <div
+                  key={dispatch.key}
+                  className="bg-card border border-primary/30 bg-primary/5 rounded-2xl p-6 text-center hover:shadow-elevated hover:scale-105 transition-all duration-300"
+                >
                   <div className="w-14 h-14 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
                     <Phone className="w-7 h-7 text-white" />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground mb-2">{dispatch.area}</h3>
+                  {dispatch.addressLine ? (
+                    <p className="text-xs text-muted-foreground mb-2 flex items-start justify-center gap-1 text-left max-w-[280px] mx-auto">
+                      <MapPin className="w-3 h-3 mt-0.5 shrink-0" aria-hidden />
+                      {dispatch.addressLine}
+                    </p>
+                  ) : null}
                   <p className="text-sm text-muted-foreground mb-1">24/7 Emergency Dispatch</p>
-                  <p className="text-xl font-bold text-primary mb-4">{dispatch.phone}</p>
-                   <Button variant="hero" className="w-full" asChild>
-                     <a
-                       href={`tel:${dispatch.phone}`}
-                       onClick={() => {
-                         if (typeof window !== "undefined") {
-                           window.gtag?.("event", "phone_click", {
-                             send_to: "AW-17927335103",
-                             source: "contact_page",
-                             dispatch_area: dispatch.area,
-                           });
-                         }
-                       }}
-                     >
-                       <Phone className="w-4 h-4 mr-2" />
-                       Call Now
-                     </a>
-                   </Button>
+                  <p className="text-xl font-bold text-primary mb-4">{dispatch.phoneDisplay}</p>
+                  <Button variant="hero" className="w-full" asChild>
+                    <a
+                      href={dispatch.telHref}
+                      onClick={() => {
+                        if (typeof window !== "undefined") {
+                          window.gtag?.("event", "phone_click", {
+                            send_to: "AW-17927335103",
+                            source: "contact_page",
+                            dispatch_area: dispatch.area,
+                          });
+                        }
+                      }}
+                    >
+                      <Phone className="w-4 h-4 mr-2" />
+                      Call Now
+                    </a>
+                  </Button>
                 </div>
               ))}
             </div>

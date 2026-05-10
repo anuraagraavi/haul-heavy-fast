@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Phone, FileText, Clock, MapPin, Truck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { PRIMARY_DISPATCH_PHONE_DISPLAY, PRIMARY_DISPATCH_TEL_HREF } from '@/data/screenshotDispatchHubs';
 
 // Sticky mobile CTA bar
 export const StickyMobileCTA = () => {
@@ -21,7 +22,7 @@ export const StickyMobileCTA = () => {
       <div className="container mx-auto px-4 py-3">
         <div className="flex gap-3">
           <Button variant="default" className="flex-1 font-semibold" asChild>
-            <a href="tel:650-881-2400" aria-label="Call for emergency towing">
+            <a href={PRIMARY_DISPATCH_TEL_HREF} aria-label="Call for emergency towing">
               <Phone className="w-4 h-4 mr-2" aria-hidden="true" />
               Call Now
             </a>
@@ -55,7 +56,7 @@ export const MidArticleCTA = ({
   className,
   title = "Need Help Right Now?",
   description = "Our dispatchers are standing by 24/7. Get a truck on the way in minutes.",
-  primaryAction = { text: "Call 650-881-2400", href: "tel:650-881-2400" },
+  primaryAction = { text: `Call ${PRIMARY_DISPATCH_PHONE_DISPLAY}`, href: PRIMARY_DISPATCH_TEL_HREF },
   secondaryAction
 }: MidArticleCTAProps) => <aside className={cn("not-prose bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 rounded-xl p-6 my-8", className)} role="complementary" aria-label="Get immediate help">
     <div className="flex items-start gap-4">
@@ -124,9 +125,9 @@ export const EndArticleCTA = ({
       {/* CTA buttons */}
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
         <Button variant="default" size="lg" className="font-semibold" asChild>
-          <a href="tel:650-881-2400" aria-label="Call for immediate assistance">
+          <a href={PRIMARY_DISPATCH_TEL_HREF} aria-label="Call for immediate assistance">
             <Phone className="w-5 h-5 mr-2" aria-hidden="true" />
-            Call Now: 650-881-2400
+            Call Now: {PRIMARY_DISPATCH_PHONE_DISPLAY}
           </a>
         </Button>
         <Button variant="outline" size="lg" className="font-semibold" asChild>

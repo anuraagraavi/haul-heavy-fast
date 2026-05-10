@@ -1,27 +1,27 @@
 /**
  * Shared coverage data: Bay Area counties and dispatch hubs.
  * Used by Locations page, LP CoverageMap, ServiceAreas, and schema.
- * Dispatch hub list matches the Bay Area Coverage screenshot (eight hubs).
+ * Dispatch hub list — H&H Towing Co. roster (eight hubs).
  */
 
-import { SCREENSHOT_DISPATCH_BY_SLUG, SCREENSHOT_DISPATCH_HUBS, SITE_WIDE_FALLBACK_PHONE_DISPLAY } from "./screenshotDispatchHubs";
+import { SCREENSHOT_DISPATCH_BY_SLUG, SCREENSHOT_DISPATCH_HUBS } from "./screenshotDispatchHubs";
 
 const H = SCREENSHOT_DISPATCH_BY_SLUG;
 
 export const BAY_AREA_COUNTY_COUNT = 5;
 
-/** County list: representative line per county (Contra Costa uses site-wide fallback per coverage map). */
+/** County list: representative dispatch line per county (aligned to closest H&H hub). */
 export const BAY_AREA_COUNTIES = [
-  { id: "san-francisco", name: "San Francisco County", phone: H["san-francisco"]!.phoneDisplay, areas: ["Mission", "SOMA", "Financial District", "Richmond", "Pacific Heights", "Sunset"] },
+  { id: "san-francisco", name: "San Francisco County", phone: H["brisbane"]!.phoneDisplay, areas: ["Mission", "SOMA", "Financial District", "Richmond", "Pacific Heights", "Sunset"] },
   { id: "san-mateo", name: "San Mateo County", phone: H["san-mateo"]!.phoneDisplay, areas: ["San Mateo", "Redwood City", "Daly City", "South San Francisco", "Menlo Park"] },
-  { id: "alameda", name: "Alameda County", phone: H["oakland"]!.phoneDisplay, areas: ["Oakland", "Hayward", "Berkeley", "Fremont", "San Leandro"] },
+  { id: "alameda", name: "Alameda County", phone: H["hayward"]!.phoneDisplay, areas: ["Oakland", "Hayward", "Berkeley", "Fremont", "San Leandro"] },
   { id: "santa-clara", name: "Santa Clara County", phone: H["san-jose"]!.phoneDisplay, areas: ["San Jose", "Santa Clara", "Sunnyvale", "Mountain View", "Palo Alto"] },
-  { id: "contra-costa", name: "Contra Costa County", phone: SITE_WIDE_FALLBACK_PHONE_DISPLAY, areas: ["Walnut Creek", "Concord", "Richmond", "Antioch", "Brentwood", "Pittsburg", "San Ramon"] },
+  { id: "contra-costa", name: "Contra Costa County", phone: H["concord"]!.phoneDisplay, areas: ["Walnut Creek", "Concord", "Richmond", "Antioch", "Brentwood", "Pittsburg", "San Ramon"] },
 ] as const;
 
 const hubHours = { hours: "Mon–Fri 8AM–5PM", emergency: "24/7" } as const;
 
-/** Dispatch hubs — screenshot canonical eight. Used by Locations page and LP CoverageMap. */
+/** Dispatch hubs — H&H roster. Used by Locations page and LP CoverageMap. */
 export const DISPATCH_HUBS = SCREENSHOT_DISPATCH_HUBS.map((h) => ({
   city: h.city,
   address: h.addressLine,

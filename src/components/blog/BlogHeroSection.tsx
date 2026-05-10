@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import LazyImage from '@/components/LazyImage';
 import { estimateReadingTime } from '@/utils/readingTime';
 import type { BlogPostData } from '@/types/blog';
+import { PRIMARY_DISPATCH_PHONE_DISPLAY, PRIMARY_DISPATCH_TEL_HREF } from '@/data/screenshotDispatchHubs';
 
 interface BlogHeroSectionProps {
   data: BlogPostData;
@@ -90,9 +91,9 @@ const BlogHeroSection = ({ data, wordCount }: BlogHeroSectionProps) => {
               className="font-semibold"
               asChild
             >
-              <a href="tel:650-881-2400" aria-label="Call Heavy Haulers now">
+              <a href={PRIMARY_DISPATCH_TEL_HREF} aria-label="Call Heavy Haulers now">
                 <Phone className="w-5 h-5 mr-2" aria-hidden="true" />
-                Call Now: 650-881-2400
+                Call Now: {PRIMARY_DISPATCH_PHONE_DISPLAY}
               </a>
             </Button>
             <Button 

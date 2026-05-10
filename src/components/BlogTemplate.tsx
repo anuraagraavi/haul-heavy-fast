@@ -6,6 +6,7 @@ import LazySection from '@/components/LazySection';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { PRIMARY_DISPATCH_PHONE_DISPLAY, PRIMARY_DISPATCH_TEL_HREF } from '@/data/screenshotDispatchHubs';
 
 interface BlogTemplateProps {
   title: string;
@@ -144,8 +145,8 @@ const BlogTemplate = ({
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="hero" size="lg" asChild>
-                <a href="tel:650-881-2400" aria-label="Call Heavy Haulers emergency hotline">
-                  Call Now: 650-881-2400
+                <a href={PRIMARY_DISPATCH_TEL_HREF} aria-label="Call Heavy Haulers emergency hotline">
+                  Call Now: {PRIMARY_DISPATCH_PHONE_DISPLAY}
                 </a>
               </Button>
               <Button variant="outline" size="lg" asChild>

@@ -89,12 +89,14 @@ const blogData: BlogPostData = {
   ],
   
   serviceAreas: [
-    { name: "San Francisco", href: "/locations/san-francisco" },
-    { name: "Daly City", href: "/locations/daly-city" },
-    { name: "South San Francisco", href: "/locations/south-san-francisco" },
-    { name: "Brisbane", href: "/locations/brisbane" },
-    { name: "Pacifica", href: "/locations/pacifica" },
-    { name: "Colma", href: "/locations/colma" }
+    { name: "San Francisco", href: "/towing-san-francisco" },
+    { name: "Daly City", href: "/towing-daly-city" },
+    { name: "South San Francisco", href: "/towing-south-san-francisco" },
+    // No Brisbane city page — dispatch / HQ hub
+    { name: "Brisbane", href: "/contact" },
+    // No Pacifica/Colma pages — nearest published corridor hub
+    { name: "Pacifica", href: "/towing-daly-city" },
+    { name: "Colma", href: "/towing-daly-city" }
   ]
 };
 

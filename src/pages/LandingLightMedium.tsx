@@ -15,7 +15,7 @@ import FinalCTA from "@/components/landing/FinalCTA";
 import StickyMobileCTA from "@/components/landing/StickyMobileCTA";
 import { landingImagesById } from "@/data/landingImages";
 import QuickQuoteForm from "@/components/landing/QuickQuoteForm";
-import { PRIMARY_DISPATCH_E164, PRIMARY_DISPATCH_PHONE_DISPLAY } from "@/data/screenshotDispatchHubs";
+import { PRIMARY_DISPATCH_E164, PRIMARY_DISPATCH_PHONE_DISPLAY, REGISTERED_HQ } from "@/data/screenshotDispatchHubs";
 
 const BASE_URL = "https://heavytowpro.com";
 const HERO_IMAGE_PATH = landingImagesById.light_suv_tree_lined.src;
@@ -54,13 +54,13 @@ const LandingLightMedium = () => {
         email: "dispatch@heavytowpro.com",
         address: {
           "@type": "PostalAddress",
-          streetAddress: "1234 Broadway",
-          addressLocality: "Oakland",
-          addressRegion: "CA",
-          postalCode: "94612",
-          addressCountry: "US",
+          streetAddress: REGISTERED_HQ.streetAddress,
+          addressLocality: REGISTERED_HQ.addressLocality,
+          addressRegion: REGISTERED_HQ.addressRegion,
+          postalCode: REGISTERED_HQ.postalCode,
+          addressCountry: REGISTERED_HQ.addressCountry,
         },
-        geo: { "@type": "GeoCoordinates", latitude: "37.8044", longitude: "-122.2712" },
+        geo: { "@type": "GeoCoordinates", latitude: REGISTERED_HQ.latitude, longitude: REGISTERED_HQ.longitude },
         url: canonicalUrl,
         priceRange: "$$",
         openingHoursSpecification: {

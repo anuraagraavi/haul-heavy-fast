@@ -203,7 +203,7 @@ const Terms = () => {
                       <p>Heavy Haulers San Francisco</p>
                       <p>Email: dispatch@heavytowpro.com</p>
                       <p>Phone: {PRIMARY_DISPATCH_PHONE_DISPLAY}</p>
-                      <p>Address: 400 Tunnel Ave, Brisbane, CA 94005</p>
+                      <p>Address: 351 Industrial Way, Brisbane, CA 94005</p>
                     </div>
                   </CardContent>
                 </Card>

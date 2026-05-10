@@ -1,4 +1,4 @@
-import { SCREENSHOT_DISPATCH_BY_SLUG, SITE_WIDE_FALLBACK_PHONE_DISPLAY } from "../screenshotDispatchHubs";
+import { SCREENSHOT_DISPATCH_BY_SLUG } from "../screenshotDispatchHubs";
 import type { LocationData } from "./types";
 
 const H = SCREENSHOT_DISPATCH_BY_SLUG;
@@ -11,8 +11,8 @@ export const countyHubInfo = {
   },
   "alameda-county": {
     city: "Alameda County",
-    phone: H["oakland"]!.phoneDisplay,
-    hub: { city: H["oakland"]!.city, address: H["oakland"]!.addressLine, phone: H["oakland"]!.phoneDisplay },
+    phone: H["hayward"]!.phoneDisplay,
+    hub: { city: H["hayward"]!.city, address: H["hayward"]!.addressLine, phone: H["hayward"]!.phoneDisplay },
   },
   "santa-clara-county": {
     city: "Santa Clara County",
@@ -21,28 +21,19 @@ export const countyHubInfo = {
   },
   "contra-costa-county": {
     city: "Contra Costa County",
-    phone: SITE_WIDE_FALLBACK_PHONE_DISPLAY,
-    hub: {
-      city: "24/7 dispatch",
-      address: "Contra Costa County, CA",
-      phone: SITE_WIDE_FALLBACK_PHONE_DISPLAY,
-    },
+    phone: H["concord"]!.phoneDisplay,
+    hub: { city: H["concord"]!.city, address: H["concord"]!.addressLine, phone: H["concord"]!.phoneDisplay },
   },
-  /** Stockton / Central Valley — same fallback line as Contra Costa (no dedicated hub on coverage map). */
   "san-joaquin-county": {
     city: "San Joaquin County",
-    phone: SITE_WIDE_FALLBACK_PHONE_DISPLAY,
-    hub: {
-      city: "24/7 dispatch",
-      address: "Stockton & Central Valley corridor, CA",
-      phone: SITE_WIDE_FALLBACK_PHONE_DISPLAY,
-    },
+    phone: H["stockton"]!.phoneDisplay,
+    hub: { city: H["stockton"]!.city, address: H["stockton"]!.addressLine, phone: H["stockton"]!.phoneDisplay },
   },
 } as const;
 
 export type CountyHubKey = keyof typeof countyHubInfo;
 
-/** City pages inherit county hub phone + nearestHub unless overridden by screenshot hubs */
+/** City pages inherit county hub phone + nearestHub unless overridden by H&H hub slugs or NON_HUB_ROUTING */
 export const cityToCounty: Record<string, CountyHubKey> = {
   "san-francisco": "san-mateo-county",
   "san-mateo": "san-mateo-county",
@@ -132,14 +123,30 @@ export const GEO: Record<string, { lat: number; lng: number }> = {
   "alameda-county": { lat: 37.7249, lng: -122.1561 },
   "santa-clara-county": { lat: 37.3382, lng: -121.8863 },
   "contra-costa-county": { lat: 37.978, lng: -122.0311 },
+  "san-joaquin-county": { lat: 37.9577, lng: -121.2908 },
 };
 
-/** Cities routed to another hub’s line (not themselves listed as official eight hubs). */
+/** Cities routed to another H&H hub (slug keys must exist in SCREENSHOT_DISPATCH_BY_SLUG). */
 const NON_HUB_ROUTING: Partial<Record<string, keyof typeof SCREENSHOT_DISPATCH_BY_SLUG>> = {
-  "daly-city": "san-francisco",
-  "south-san-francisco": "san-francisco",
-  "mountain-view": "palo-alto",
-  cupertino: "palo-alto",
+  "san-francisco": "brisbane",
+  "daly-city": "brisbane",
+  "south-san-francisco": "brisbane",
+  burlingame: "san-mateo",
+  "menlo-park": "redwood-city",
+  "palo-alto": "redwood-city",
+  "mountain-view": "redwood-city",
+  sunnyvale: "san-jose",
+  "santa-clara": "san-jose",
+  cupertino: "san-jose",
+  milpitas: "san-jose",
+  oakland: "san-leandro",
+  berkeley: "san-leandro",
+  fremont: "hayward",
+  pleasanton: "hayward",
+  livermore: "hayward",
+  "walnut-creek": "concord",
+  richmond: "concord",
+  antioch: "concord",
 };
 
 export function applyScreenshotHubIfNeeded(data: LocationData): LocationData {

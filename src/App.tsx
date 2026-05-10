@@ -56,6 +56,7 @@ const CupertinoPage = lazy(() => import("./pages/locations/cupertino"));
 const MilpitasPage = lazy(() => import("./pages/locations/milpitas"));
 const RichmondPage = lazy(() => import("./pages/locations/richmond"));
 const AntiochPage = lazy(() => import("./pages/locations/antioch"));
+const LocationsSlugRedirect = lazy(() => import("./pages/LocationsSlugRedirect"));
 
 const EmergencyTowingGuide = lazy(() => import("./pages/blog/emergency-towing-guide"));
 const HeavyEquipmentTransport = lazy(() => import("./pages/blog/heavy-equipment-transport"));
@@ -155,6 +156,14 @@ const App = () => (
             <Route path="/locations/alameda-county" element={<AlamedaCountyPage />} />
             <Route path="/locations/santa-clara-county" element={<SantaClaraCountyPage />} />
             <Route path="/locations/contra-costa-county" element={<ContraCostaCountyPage />} />
+            <Route
+              path="/locations/:slug"
+              element={
+                <Suspense fallback={<DgReportFallback />}>
+                  <LocationsSlugRedirect />
+                </Suspense>
+              }
+            />
             <Route path="/towing-oakland" element={<OaklandPage />} />
             <Route path="/towing-san-jose" element={<SanJosePage />} />
             <Route path="/towing-san-francisco" element={<SanFranciscoPage />} />

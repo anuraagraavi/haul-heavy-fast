@@ -92,12 +92,12 @@ const blogData: BlogPostData = {
   ],
   
   serviceAreas: [
-    { name: "San Francisco", href: "/locations/san-francisco" },
-    { name: "Oakland", href: "/locations/oakland" },
-    { name: "San Jose", href: "/locations/san-jose" },
-    { name: "Daly City", href: "/locations/daly-city" },
-    { name: "Fremont", href: "/locations/fremont" },
-    { name: "South San Francisco", href: "/locations/south-san-francisco" }
+    { name: "San Francisco", href: "/towing-san-francisco" },
+    { name: "Oakland", href: "/towing-oakland" },
+    { name: "San Jose", href: "/towing-san-jose" },
+    { name: "Daly City", href: "/towing-daly-city" },
+    { name: "Fremont", href: "/towing-fremont" },
+    { name: "South San Francisco", href: "/towing-south-san-francisco" }
   ]
 };
 
