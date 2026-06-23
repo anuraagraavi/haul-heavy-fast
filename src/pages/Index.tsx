@@ -25,6 +25,128 @@ const Index = () => {
   // Monitor Core Web Vitals
   usePerformanceMonitor();
 
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Heavy Haulers San Francisco",
+    description:
+      "Professional towing and recovery services in the San Francisco Bay Area and Central Valley (Stockton). Eight official dispatch hubs, 24/7 emergency response.",
+    url: "https://heavytowpro.com",
+    logo: "https://heavytowpro.com/favicon.png",
+    telephone: PRIMARY_DISPATCH_E164,
+    email: "dispatch@heavytowpro.com",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "San Francisco Bay Area",
+      addressRegion: "CA",
+      addressCountry: "US",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: "37.7749",
+      longitude: "-122.4194",
+    },
+    openingHours: "Mo-Su 00:00-23:59",
+    priceRange: "$$",
+    paymentAccepted: ["Cash", "Credit Card", "Insurance", "Fleet Contract"],
+    areaServed: [
+      { "@type": "AdministrativeArea", name: "San Francisco County", addressRegion: "CA" },
+      { "@type": "AdministrativeArea", name: "San Mateo County", addressRegion: "CA" },
+      { "@type": "AdministrativeArea", name: "Alameda County", addressRegion: "CA" },
+      { "@type": "AdministrativeArea", name: "Santa Clara County", addressRegion: "CA" },
+      { "@type": "AdministrativeArea", name: "Contra Costa County", addressRegion: "CA" },
+      {
+        "@type": "AdministrativeArea",
+        name: "San Joaquin County",
+        addressRegion: "CA",
+        description: "Central Valley (Stockton)",
+      },
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Towing Services",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Light Duty Towing",
+            description: "Car towing, flatbed service, motorcycle transport",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Medium Duty Towing",
+            description: "Commercial vehicle towing, box trucks, RVs",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Heavy Duty Towing",
+            description: "Semi-truck towing, equipment transport, rotator services",
+          },
+        },
+      ],
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.8",
+      reviewCount: "150",
+    },
+    sameAs: ["https://heavytowpro.com"],
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "How quickly can you respond to emergency calls?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "We typically respond within 15-30 minutes in our primary service areas. Emergency situations receive priority dispatch, and our 24/7 dispatch team is always standing by to help.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What types of vehicles can you tow?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "We handle everything from motorcycles and cars to semi-trucks and heavy equipment. Our fleet includes light-duty, medium-duty, and heavy-duty tow trucks with rotator capabilities for complex recovery operations.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Do you provide transparent pricing?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Absolutely. We provide upfront, honest pricing with no hidden fees. You'll know the cost before we begin any work, and we stand behind our transparent pricing policy.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Which areas do you serve?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `We serve five Bay Area counties (San Francisco, San Mateo, Alameda, Santa Clara, Contra Costa) and the Central Valley (Stockton). We operate eight official dispatch hubs with direct lines: ${DISPATCH_HUBS_FAQ_LINE}. Main Bay Area line (fallback when unsure): ${PRIMARY_DISPATCH_PHONE_DISPLAY}. See https://heavytowpro.com/locations for hub addresses and city pages.`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Are you available 24/7?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, our emergency dispatch operates 24/7, 365 days a year. Whether it's 3 AM or a holiday, we're here when you need us most.",
+        },
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
@@ -51,131 +173,9 @@ const Index = () => {
         <meta name="geo.placename" content="San Francisco, CA" />
         <meta name="geo.position" content="37.7749;-122.4194" />
         <meta name="ICBM" content="37.7749, -122.4194" />
-        
-        {/* Comprehensive Schema.org JSON-LD – aligned with Locations (eight dispatch hubs, 5 counties + Central Valley) */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "Heavy Haulers San Francisco",
-            "description": "Professional towing and recovery services in the San Francisco Bay Area and Central Valley (Stockton). Eight official dispatch hubs, 24/7 emergency response.",
-            "url": "https://heavytowpro.com",
-            "logo": "https://heavytowpro.com/favicon.png",
-            "telephone": PRIMARY_DISPATCH_E164,
-            "email": "dispatch@heavytowpro.com",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "San Francisco Bay Area",
-              "addressRegion": "CA",
-              "addressCountry": "US"
-            },
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": "37.7749",
-              "longitude": "-122.4194"
-            },
-            "openingHours": "Mo-Su 00:00-23:59",
-            "priceRange": "$$",
-            "paymentAccepted": ["Cash", "Credit Card", "Insurance", "Fleet Contract"],
-            "areaServed": [
-              { "@type": "AdministrativeArea", "name": "San Francisco County", "addressRegion": "CA" },
-              { "@type": "AdministrativeArea", "name": "San Mateo County", "addressRegion": "CA" },
-              { "@type": "AdministrativeArea", "name": "Alameda County", "addressRegion": "CA" },
-              { "@type": "AdministrativeArea", "name": "Santa Clara County", "addressRegion": "CA" },
-              { "@type": "AdministrativeArea", "name": "Contra Costa County", "addressRegion": "CA" },
-              { "@type": "AdministrativeArea", "name": "San Joaquin County", "addressRegion": "CA", "description": "Central Valley (Stockton)" }
-            ],
-            "hasOfferCatalog": {
-              "@type": "OfferCatalog",
-              "name": "Towing Services",
-              "itemListElement": [
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Light Duty Towing",
-                    "description": "Car towing, flatbed service, motorcycle transport"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Medium Duty Towing",
-                    "description": "Commercial vehicle towing, box trucks, RVs"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Heavy Duty Towing",
-                    "description": "Semi-truck towing, equipment transport, rotator services"
-                  }
-                }
-              ]
-            },
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.8",
-              "reviewCount": "150"
-            },
-            "sameAs": [
-              "https://heavytowpro.com"
-            ]
-          })}
-        </script>
-        
-        {/* FAQ Schema for Homepage */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "How quickly can you respond to emergency calls?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "We typically respond within 15-30 minutes in our primary service areas. Emergency situations receive priority dispatch, and our 24/7 dispatch team is always standing by to help."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "What types of vehicles can you tow?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "We handle everything from motorcycles and cars to semi-trucks and heavy equipment. Our fleet includes light-duty, medium-duty, and heavy-duty tow trucks with rotator capabilities for complex recovery operations."
-                }
-              },
-              {
-                "@type": "Question", 
-                "name": "Do you provide transparent pricing?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Absolutely. We provide upfront, honest pricing with no hidden fees. You'll know the cost before we begin any work, and we stand behind our transparent pricing policy."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Which areas do you serve?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": `We serve five Bay Area counties (San Francisco, San Mateo, Alameda, Santa Clara, Contra Costa) and the Central Valley (Stockton). We operate eight official dispatch hubs with direct lines: ${DISPATCH_HUBS_FAQ_LINE}. Main Bay Area line (fallback when unsure): ${PRIMARY_DISPATCH_PHONE_DISPLAY}. See https://heavytowpro.com/locations for hub addresses and city pages.`
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Are you available 24/7?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Yes, our emergency dispatch operates 24/7, 365 days a year. Whether it's 3 AM or a holiday, we're here when you need us most."
-                }
-              }
-            ]
-          })}
-        </script>
       </Helmet>
+      <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
+      <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       <main>
         {/* Critical above-the-fold content - loaded immediately */}
         <div className="animate-fade-in">

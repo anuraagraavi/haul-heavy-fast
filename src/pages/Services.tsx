@@ -42,6 +42,149 @@ const Services = () => {
     { name: "Fleet & Commercial Accounts", link: "/services/heavy-duty#fleet" }
   ];
 
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Professional Towing Services San Francisco",
+    description:
+      "Complete towing services in San Francisco Bay Area: light-duty car towing, medium-duty truck recovery, heavy-duty equipment transport",
+    provider: {
+      "@type": "LocalBusiness",
+      name: "Heavy Haulers San Francisco",
+      telephone: PRIMARY_DISPATCH_E164,
+      url: "https://heavytowpro.com",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "San Francisco",
+        addressRegion: "CA",
+        addressCountry: "US",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: "37.7749",
+        longitude: "-122.4194",
+      },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.8",
+        reviewCount: "150",
+      },
+    },
+    serviceType: ["Light Duty Towing", "Medium Duty Towing", "Heavy Duty Towing", "Emergency Towing", "Flatbed Service"],
+    areaServed: [
+      { "@type": "Place", name: "San Francisco County, CA" },
+      { "@type": "Place", name: "San Mateo County, CA" },
+      { "@type": "Place", name: "Alameda County, CA" },
+      { "@type": "Place", name: "Santa Clara County, CA" },
+    ],
+    availableChannel: {
+      "@type": "ServiceChannel",
+      servicePhone: PRIMARY_DISPATCH_E164,
+      serviceUrl: "https://heavytowpro.com/get-quote",
+      availableLanguage: "English",
+    },
+    hoursAvailable: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      opens: "00:00",
+      closes: "23:59",
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Towing Services Catalog",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Light Duty Towing",
+            description: "Car towing, flatbed service, motorcycle transport, luxury vehicle handling",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Medium Duty Towing",
+            description: "Commercial vehicles, box trucks, RVs, delivery vehicles up to 26,000 lbs",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Heavy Duty Towing",
+            description: "Semi-trucks, heavy equipment, industrial machinery, rotator services",
+          },
+        },
+      ],
+    },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        item: {
+          "@id": "https://heavytowpro.com",
+          name: "Heavy Haulers San Francisco",
+        },
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        item: {
+          "@id": "https://heavytowpro.com/services",
+          name: "Towing Services",
+        },
+      },
+    ],
+  };
+
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "How to Get Emergency Towing in San Francisco",
+    description: "Step-by-step guide to getting professional towing services when stranded in San Francisco Bay Area",
+    image: "https://heavytowpro.com/lovable-uploads/a43ad238-af3b-47a8-962f-32c9da2fc727.png",
+    totalTime: "PT30M",
+    estimatedCost: {
+      "@type": "MonetaryAmount",
+      currency: "USD",
+      value: "150",
+    },
+    supply: [
+      { "@type": "HowToSupply", name: "Vehicle information (year, make, model)" },
+      { "@type": "HowToSupply", name: "Exact location or nearest cross street" },
+    ],
+    step: [
+      {
+        "@type": "HowToStep",
+        name: "Call Emergency Dispatch",
+        text: `Call ${PRIMARY_DISPATCH_PHONE_DISPLAY} for immediate dispatch of nearest available tow truck`,
+        url: PRIMARY_DISPATCH_TEL_HREF,
+      },
+      {
+        "@type": "HowToStep",
+        name: "Provide Vehicle Details",
+        text: "Give dispatcher your vehicle information, location, and description of the problem",
+      },
+      {
+        "@type": "HowToStep",
+        name: "Wait Safely",
+        text: "Stay in a safe location while our operator responds, typically within 15-30 minutes",
+      },
+      {
+        "@type": "HowToStep",
+        name: "Professional Service",
+        text: "Our certified operator will assess the situation and provide safe, professional towing service",
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
@@ -55,176 +198,10 @@ const Services = () => {
         <meta property="og:description" content="Complete towing services in San Francisco Bay Area. Professional fleet covering all vehicle types with 24/7 availability." />
         <meta property="og:url" content="https://heavytowpro.com/services" />
         <meta property="og:type" content="website" />
-        
-        {/* Enhanced Schema.org JSON-LD with Service Markup */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": "Professional Towing Services San Francisco",
-            "description": "Complete towing services in San Francisco Bay Area: light-duty car towing, medium-duty truck recovery, heavy-duty equipment transport",
-            "provider": {
-              "@type": "LocalBusiness",
-              "name": "Heavy Haulers San Francisco",
-              "telephone": PRIMARY_DISPATCH_E164,
-              "url": "https://heavytowpro.com",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "San Francisco",
-                "addressRegion": "CA",
-                "addressCountry": "US"
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": "37.7749",
-                "longitude": "-122.4194"
-              },
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.8",
-                "reviewCount": "150"
-              }
-            },
-            "serviceType": ["Light Duty Towing", "Medium Duty Towing", "Heavy Duty Towing", "Emergency Towing", "Flatbed Service"],
-            "areaServed": [
-              {
-                "@type": "Place",
-                "name": "San Francisco County, CA"
-              },
-              {
-                "@type": "Place", 
-                "name": "San Mateo County, CA"
-              },
-              {
-                "@type": "Place",
-                "name": "Alameda County, CA"
-              },
-              {
-                "@type": "Place",
-                "name": "Santa Clara County, CA"
-              }
-            ],
-            "availableChannel": {
-              "@type": "ServiceChannel",
-              "servicePhone": PRIMARY_DISPATCH_E164,
-              "serviceUrl": "https://heavytowpro.com/get-quote",
-              "availableLanguage": "English"
-            },
-            "hoursAvailable": {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-              "opens": "00:00",
-              "closes": "23:59"
-            },
-            "hasOfferCatalog": {
-              "@type": "OfferCatalog",
-              "name": "Towing Services Catalog",
-              "itemListElement": [
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Light Duty Towing",
-                    "description": "Car towing, flatbed service, motorcycle transport, luxury vehicle handling"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service", 
-                    "name": "Medium Duty Towing",
-                    "description": "Commercial vehicles, box trucks, RVs, delivery vehicles up to 26,000 lbs"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Heavy Duty Towing", 
-                    "description": "Semi-trucks, heavy equipment, industrial machinery, rotator services"
-                  }
-                }
-              ]
-            }
-          })}
-        </script>
-
-        {/* BreadcrumbList Schema */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "item": {
-                  "@id": "https://heavytowpro.com",
-                  "name": "Heavy Haulers San Francisco"
-                }
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "item": {
-                  "@id": "https://heavytowpro.com/services",
-                  "name": "Towing Services"
-                }
-              }
-            ]
-          })}
-        </script>
-
-        {/* HowTo Schema for Emergency Towing */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "HowTo",
-            "name": "How to Get Emergency Towing in San Francisco",
-            "description": "Step-by-step guide to getting professional towing services when stranded in San Francisco Bay Area",
-            "image": "https://heavytowpro.com/lovable-uploads/a43ad238-af3b-47a8-962f-32c9da2fc727.png",
-            "totalTime": "PT30M",
-            "estimatedCost": {
-              "@type": "MonetaryAmount",
-              "currency": "USD",
-              "value": "150"
-            },
-            "supply": [
-              {
-                "@type": "HowToSupply",
-                "name": "Vehicle information (year, make, model)"
-              },
-              {
-                "@type": "HowToSupply", 
-                "name": "Exact location or nearest cross street"
-              }
-            ],
-            "step": [
-              {
-                "@type": "HowToStep",
-                "name": "Call Emergency Dispatch",
-                "text": `Call ${PRIMARY_DISPATCH_PHONE_DISPLAY} for immediate dispatch of nearest available tow truck`,
-                "url": PRIMARY_DISPATCH_TEL_HREF
-              },
-              {
-                "@type": "HowToStep",
-                "name": "Provide Vehicle Details",
-                "text": "Give dispatcher your vehicle information, location, and description of the problem"
-              },
-              {
-                "@type": "HowToStep",
-                "name": "Wait Safely",
-                "text": "Stay in a safe location while our operator responds, typically within 15-30 minutes"
-              },
-              {
-                "@type": "HowToStep",
-                "name": "Professional Service",
-                "text": "Our certified operator will assess the situation and provide safe, professional towing service"
-              }
-            ]
-          })}
-        </script>
       </Helmet>
+      <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
+      <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+      <script type="application/ld+json">{JSON.stringify(howToSchema)}</script>
       <SEOBreadcrumbs />
       <main>
         {/* Hero Section */}

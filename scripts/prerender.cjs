@@ -7,11 +7,21 @@ const ROOT = path.resolve(__dirname, "..");
 const DIST_DIR = path.join(ROOT, "dist");
 const SITE_URL = "https://heavytowpro.com";
 
+// Must stay in sync with index.html shell defaults.
+const SHELL_TITLE = "Heavy Haulers San Francisco - 24/7 Towing & Recovery | Bay Area";
+const SHELL_DESCRIPTION =
+  "24/7 towing and recovery across the San Francisco Bay Area and Stockton. Eight dispatch hubs, flatbed-first where it matters, and light/medium/heavy-duty capability. Call (650) 881-2400.";
+
 const DEFAULT_META = {
-  title: "Heavy Haulers - Professional Towing Services | San Francisco Bay Area",
-  description:
-    "24/7 professional towing and recovery across San Francisco Bay Area and Central Valley (Stockton). 6 dispatch hubs, light to heavy-duty hauling, transparent pricing. Call (650) 881-2400.",
+  title: SHELL_TITLE,
+  description: SHELL_DESCRIPTION,
 };
+
+const HOMEPAGE_ONLY_TITLES = new Set([
+  SHELL_TITLE,
+  "Heavy Haulers - Professional Towing Services | San Francisco Bay Area",
+  "Heavy Haulers San Francisco - Professional Towing & Recovery Services | Bay Area 24/7",
+]);
 
 function toTitleFromSlug(slug) {
   return slug
@@ -51,6 +61,53 @@ function routeMeta(route) {
 
 function insertTagIfMissing(html, pattern, replacement) {
   return pattern.test(html) ? html : html.replace("</head>", `    ${replacement}\n  </head>`);
+}
+
+function decodeHtmlEntities(str) {
+  return str
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'");
+}
+
+function escapeHtmlAttr(str) {
+  return str.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
+}
+
+function extractMetaContent(html, attr, value) {
+  const pattern = new RegExp(
+    `<meta[^>]*${attr}=["']${value}["'][^>]*content=["']([^"']*)["'][^>]*>|<meta[^>]*content=["']([^"']*)["'][^>]*${attr}=["']${value}["'][^>]*>`,
+    "i",
+  );
+  const match = html.match(pattern);
+  return match ? decodeHtmlEntities((match[1] || match[2] || "").trim()) : "";
+}
+
+function replaceTitle(html, title) {
+  return html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${escapeHtmlAttr(title)}</title>`);
+}
+
+function replaceMetaDescription(html, description) {
+  const tag = `<meta name="description" content="${escapeHtmlAttr(description)}">`;
+  if (/<meta\s+name="description"[^>]*>/i.test(html)) {
+    return html.replace(/<meta\s+name="description"[^>]*>/i, tag);
+  }
+  return html.replace("</head>", `    ${tag}\n  </head>`);
+}
+
+function resolveEffectiveMeta(html, route) {
+  const fallback = routeMeta(route);
+  const ogTitle = extractMetaContent(html, "property", "og:title");
+  const ogDescription = extractMetaContent(html, "property", "og:description");
+
+  const title =
+    ogTitle && !HOMEPAGE_ONLY_TITLES.has(ogTitle) && ogTitle !== SHELL_TITLE ? ogTitle : fallback.title;
+  const description =
+    ogDescription && ogDescription !== SHELL_DESCRIPTION ? ogDescription : fallback.description;
+
+  return { ...fallback, title, description };
 }
 
 function sitemapRoutes() {
@@ -149,23 +206,25 @@ function createRenderer() {
 }
 
 function postProcess(renderedRoute) {
-  const meta = routeMeta(renderedRoute.originalRoute);
+  const route = renderedRoute.originalRoute;
+  const meta = resolveEffectiveMeta(renderedRoute.html, route);
   let html = renderedRoute.html;
 
   const titlePattern = /<title>([\s\S]*?)<\/title>/i;
-  const titleMatch = html.match(titlePattern);
-  const currentTitle = titleMatch?.[1]?.trim() ?? "";
-  if (!currentTitle) {
-    html = html.replace("</head>", `    <title>${meta.title}</title>\n  </head>`);
-  } else if (currentTitle === DEFAULT_META.title) {
-    html = html.replace(titlePattern, `<title>${meta.title}</title>`);
-  }
+  const currentTitle = decodeHtmlEntities(html.match(titlePattern)?.[1]?.trim() ?? "");
+  const currentDescription = extractMetaContent(html, "name", "description");
 
-  html = insertTagIfMissing(
-    html,
-    /<meta\s+name="description"[^>]*>/i,
-    `<meta name="description" content="${meta.description}">`,
-  );
+  if (route === "/") {
+    if (!currentTitle) {
+      html = replaceTitle(html, meta.title);
+    }
+    if (!currentDescription) {
+      html = replaceMetaDescription(html, meta.description);
+    }
+  } else {
+    html = replaceTitle(html, meta.title);
+    html = replaceMetaDescription(html, meta.description);
+  }
   html = insertTagIfMissing(
     html,
     /<link\s+rel="canonical"[^>]*>/i,
