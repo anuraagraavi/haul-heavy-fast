@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { ExternalLink } from "lucide-react";
 import { PRIMARY_DISPATCH_PHONE_DISPLAY, PRIMARY_DISPATCH_TEL_HREF } from "@/data/screenshotDispatchHubs";
+import { absoluteUrl } from "@/lib/seo";
 
 const Sitemap = () => {
   const sitePages = [
@@ -77,7 +78,7 @@ const Sitemap = () => {
       <Helmet>
         <title>HTML Sitemap | Heavy Haulers San Francisco</title>
         <meta name="description" content="Complete sitemap of Heavy Haulers website. Find all pages including services, locations, resources, and contact information." />
-        <link rel="canonical" href="/sitemap" />
+        <link rel="canonical" href={absoluteUrl("/sitemap")} />
       </Helmet>
 
       <div className="min-h-screen bg-background text-foreground">

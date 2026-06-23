@@ -79,12 +79,6 @@ const BlogSchemas = ({ data }: BlogSchemasProps) => {
       {
         "@type": "ListItem",
         "position": 3,
-        "name": data.category,
-        "item": `https://heavytowpro.com/blog?category=${encodeURIComponent(data.category)}`
-      },
-      {
-        "@type": "ListItem",
-        "position": 4,
         "name": data.title,
         "item": data.canonicalUrl
       }

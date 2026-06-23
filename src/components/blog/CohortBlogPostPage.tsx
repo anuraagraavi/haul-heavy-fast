@@ -21,15 +21,28 @@ interface CohortBlogPostPageProps {
   post: CohortBlogPostConfig;
 }
 
+function isExternalHref(href: string): boolean {
+  return href.startsWith("http://") || href.startsWith("https://");
+}
+
+function renderLink(href: string, text: string, key: number): ReactNode {
+  if (isExternalHref(href)) {
+    return (
+      <a key={key} href={href} className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
+        {text}
+      </a>
+    );
+  }
+  return (
+    <Link key={key} to={href} className="text-primary hover:underline">
+      {text}
+    </Link>
+  );
+}
+
 function renderSegments(segments: ParagraphSegment[]): ReactNode {
   return segments.map((seg, i) =>
-    seg.type === "link" ? (
-      <Link key={i} to={seg.href} className="text-primary hover:underline">
-        {seg.text}
-      </Link>
-    ) : (
-      <span key={i}>{seg.text}</span>
-    ),
+    seg.type === "link" ? renderLink(seg.href, seg.text, i) : <span key={i}>{seg.text}</span>,
   );
 }
 
@@ -107,7 +120,7 @@ const CohortBlogPostPage = ({ post }: CohortBlogPostPageProps) => {
               Related resources:{" "}
               {(section.relatedLinks ?? fallbackLinks).map((link, idx, arr) => (
                 <span key={`${section.id}-link-${idx}`}>
-                  <Link to={link.href}>{link.text}</Link>
+                  {renderLink(link.href, link.text, idx)}
                   {idx < arr.length - 1 ? " • " : ""}
                 </span>
               ))}
@@ -131,6 +144,25 @@ const CohortBlogPostPage = ({ post }: CohortBlogPostPageProps) => {
         }}
         secondaryAction={{ text: "Get a Free Quote", href: "/get-a-quote" }}
       />
+
+      {post.content.officialResources && post.content.officialResources.length > 0 && (
+        <CalloutBox type="info" title="Official resources">
+          <ul className="list-disc pl-5 space-y-1 mt-2">
+            {post.content.officialResources.map((resource) => (
+              <li key={resource.href}>
+                <a
+                  href={resource.href}
+                  className="text-primary hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {resource.text}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </CalloutBox>
+      )}
 
       <CalloutBox type="info" title="Need immediate towing support?">
         {post.content.endCallout ??

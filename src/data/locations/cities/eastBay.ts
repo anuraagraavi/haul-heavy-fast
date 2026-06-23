@@ -74,6 +74,11 @@ export const eastBayCityLocations: LocationData[] = [
       { slug: "richmond", anchorBlurb: "I-80 / refinery row toward Carquinez" },
       { slug: "san-francisco", anchorBlurb: "Bay Bridge toward SF" },
     ],
+    relatedGuides: [
+      { slug: "oakland-towed-vehicle-how-to-get-back", title: "Oakland towed vehicle release" },
+      { slug: "oakland-tow-hearing-request", title: "Oakland tow hearing request" },
+      { slug: "i-880-breakdown-hayward-guide", title: "I-880 breakdown guide" },
+    ],
     serviceHighlights: [
       { title: "880 & Maze corridor recovery", body: "Heat failures, collisions, and shoulder-less staging with CHP coordination.", imageId: "light_suv_highway", featured: true },
       { title: "Port-side commercial towing", body: "Work trucks and equipment moves with yard-aware dispatch.", imageId: "medium_commercial_truck_recovery" },
@@ -149,6 +154,10 @@ export const eastBayCityLocations: LocationData[] = [
       { slug: "pleasanton", anchorBlurb: "680 & Stoneridge" },
       { slug: "livermore", anchorBlurb: "580 & Altamont wind" },
     ],
+    relatedGuides: [
+      { slug: "i-880-breakdown-hayward-guide", title: "I-880 breakdown Hayward guide" },
+      { slug: "511-freeway-assist-vs-tow-truck-bay-area", title: "511 FSP vs tow truck" },
+    ],
     serviceHighlights: [
       { title: "880 / 92 merge rescue", body: "Cooling failures and fender-benders in high-stress merge zones.", imageId: "light_suv_highway", featured: true },
       { title: "EV commuter flatbed", body: "Flatbed-first for bridge commuters and rideshare EVs.", imageId: "light_rivian_ev" },
@@ -223,6 +232,10 @@ export const eastBayCityLocations: LocationData[] = [
       { slug: "san-leandro", anchorBlurb: "Marina & Davis St" },
       { slug: "pleasanton", anchorBlurb: "680 Tri-Valley spine" },
       { slug: "oakland", anchorBlurb: "East Bay hub" },
+    ],
+    relatedGuides: [
+      { slug: "fremont-bridge-corridor-breakdown-towing", title: "Fremont bridge corridor towing" },
+      { slug: "511-freeway-assist-vs-tow-truck-bay-area", title: "511 FSP vs tow truck" },
     ],
     serviceHighlights: [
       { title: "EV & Tesla corridor flatbed", body: "Protective loading where EV density is highest.", imageId: "light_rivian_ev", featured: true },

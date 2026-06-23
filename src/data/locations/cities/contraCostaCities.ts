@@ -72,6 +72,10 @@ export const contraCostaCityLocations: LocationData[] = [
       { slug: "oakland", anchorBlurb: "880 toward the Bay" },
       { slug: "san-francisco", anchorBlurb: "Peninsula & Bay Bridge" },
     ],
+    relatedGuides: [
+      { slug: "delivery-van-towing-concord-ca", title: "Delivery van towing Concord" },
+      { slug: "i-680-breakdown-walnut-creek-checklist", title: "I-680 breakdown checklist" },
+    ],
     serviceHighlights: [
       { title: "680 / CA-4 corridor rescue", body: "Commuter and freight lanes with CHP-aware staging.", imageId: "light_suv_highway", featured: true },
       { title: "Sunvalley retail flatbed", body: "EV shoppers and family SUVs with lot patience.", imageId: "light_rivian_ev" },
@@ -146,6 +150,10 @@ export const contraCostaCityLocations: LocationData[] = [
       { slug: "oakland", anchorBlurb: "24/13 toward the Bay" },
       { slug: "antioch", anchorBlurb: "CA-4 east" },
       { slug: "san-francisco", anchorBlurb: "Bay Bridge & Peninsula" },
+    ],
+    relatedGuides: [
+      { slug: "i-680-breakdown-walnut-creek-checklist", title: "I-680 breakdown checklist" },
+      { slug: "delivery-van-towing-concord-ca", title: "Delivery van towing Concord" },
     ],
     serviceHighlights: [
       { title: "680 / 24 gateway rescue", body: "Caldecott-aware ETAs and merge staging.", imageId: "light_suv_highway", featured: true },

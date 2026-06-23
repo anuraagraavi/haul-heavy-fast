@@ -37,12 +37,7 @@ const BlogHeroSection = ({ data, wordCount }: BlogHeroSectionProps) => {
               Blog
             </Link>
             <ChevronRight className="w-4 h-4" aria-hidden="true" />
-            <Link 
-              to={`/blog?category=${encodeURIComponent(data.category)}`} 
-              className="hover:text-primary transition-colors"
-            >
-              {data.category}
-            </Link>
+            <span className="text-muted-foreground">{data.category}</span>
             <ChevronRight className="w-4 h-4" aria-hidden="true" />
             <span className="text-foreground truncate max-w-[200px]" aria-current="page">
               {data.title}

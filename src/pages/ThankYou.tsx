@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 import { CheckCircle, Phone, Home, Clock, ArrowRight } from "lucide-react";
 import { Link, useSearchParams } from "react-router-dom";
 import { PRIMARY_DISPATCH_PHONE_DISPLAY, PRIMARY_DISPATCH_TEL_HREF } from "@/data/screenshotDispatchHubs";
+import { absoluteUrl } from "@/lib/seo";
 
 const GTAG_ID = "AW-17927335103";
 const CONVERSION_LABEL = "moPiCPOh-_kbEL_ZteRC";
@@ -101,6 +102,8 @@ const ThankYou = () => {
       <Helmet>
         <title>Thank You - Heavy Haulers | Professional Towing Services</title>
         <meta name="description" content="Thank you for contacting Heavy Haulers. We've received your message and will respond promptly." />
+        <link rel="canonical" href={absoluteUrl("/thank-you")} />
+        <meta name="robots" content="noindex, nofollow" />
       </Helmet>
       <main>
         {/* Thank You Section */}

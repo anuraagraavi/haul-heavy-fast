@@ -23,6 +23,7 @@ Allow: /
 Disallow: /dg-seo-report
 
 Sitemap: https://heavytowpro.com/sitemap.xml
+Sitemap: https://heavytowpro.com/sitemap-index.xml
 
 # AI crawler documentation (llms.txt)
 # https://heavytowpro.com/llms.txt

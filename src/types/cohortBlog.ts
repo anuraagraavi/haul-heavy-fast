@@ -25,6 +25,11 @@ export interface CohortBlogSection {
   };
 }
 
+export interface OfficialResourceLink {
+  text: string;
+  href: string;
+}
+
 export interface CohortBlogContent {
   intro: string | ParagraphSegment[];
   sections: CohortBlogSection[];
@@ -34,6 +39,8 @@ export interface CohortBlogContent {
   midCtaPrimaryHref?: string;
   regionalPhones?: string;
   endCallout?: string;
+  /** Authoritative outbound citations (E-E-A-T); rendered with rel="noopener noreferrer" */
+  officialResources?: OfficialResourceLink[];
 }
 
 export interface CohortBlogPostConfig {

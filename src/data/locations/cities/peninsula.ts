@@ -108,6 +108,11 @@ export const peninsulaCityLocations: LocationData[] = [
       { slug: "redwood-city", anchorBlurb: "Redwood City dispatch anchor for mid-Peninsula" },
       { slug: "palo-alto", anchorBlurb: "Stanford / El Camino flatbed specialists nearby" },
     ],
+    relatedGuides: [
+      { slug: "sfo-vehicle-towed-what-to-do", title: "SFO vehicle towed guide" },
+      { slug: "511-freeway-assist-vs-tow-truck-bay-area", title: "511 FSP vs tow truck" },
+      { slug: "car-towed-san-francisco", title: "Car towed San Francisco" },
+    ],
     serviceHighlights: [
       {
         title: "Hill-grade & tight-street flatbed recovery",
@@ -365,6 +370,12 @@ export const peninsulaCityLocations: LocationData[] = [
       { slug: "fremont", anchorBlurb: "East over Dumbarton / 880" },
       { slug: "daly-city", anchorBlurb: "North toward SF fog belt" },
     ],
+    relatedGuides: [
+      { slug: "san-mateo-county-vehicle-release", title: "San Mateo County vehicle release" },
+      { slug: "ca-92-breakdown-san-mateo-towing", title: "CA-92 breakdown towing" },
+      { slug: "flatbed-ev-towing-san-mateo-checklist", title: "Flatbed EV towing checklist" },
+      { slug: "san-mateo-caltrain-tow-truck-pickup", title: "Caltrain San Mateo tow pickup" },
+    ],
     serviceHighlights: [
       { title: "92 / 101 interchange recovery", body: "Heat and traffic jams cause cooling failures — we stage safely and load fast.", imageId: "light_suv_highway", featured: true },
       { title: "Retail corridor flatbed", body: "Hillsdale and Delaware Street pickups with tight parking awareness.", imageId: "light_luxury_flatbed" },
@@ -440,6 +451,10 @@ export const peninsulaCityLocations: LocationData[] = [
       { slug: "mountain-view", anchorBlurb: "South on 101 toward Shoreline" },
       { slug: "san-francisco", anchorBlurb: "North on 101 toward SF" },
     ],
+    relatedGuides: [
+      { slug: "commercial-towing-redwood-city-seaport", title: "Redwood City Seaport commercial towing" },
+      { slug: "san-mateo-county-vehicle-release", title: "San Mateo County vehicle release" },
+    ],
     serviceHighlights: [
       { title: "Seaport industrial recovery", body: "Pump skids, gensets, and work trucks — coordinated flatbed securement.", imageId: "medium_industrial_pump", featured: true },
       { title: "El Camino commuter flatbed", body: "Luxury and EV commuters protected with soft-strap patterns.", imageId: "light_luxury_flatbed" },
@@ -514,6 +529,10 @@ export const peninsulaCityLocations: LocationData[] = [
       { slug: "cupertino", anchorBlurb: "West on 280 toward Apple campus" },
       { slug: "san-jose", anchorBlurb: "South on 101 / 280 trunk" },
       { slug: "san-francisco", anchorBlurb: "North on 101 toward SF" },
+    ],
+    relatedGuides: [
+      { slug: "low-clearance-garage-towing-palo-alto", title: "Low clearance garage towing" },
+      { slug: "flatbed-ev-towing-san-mateo-checklist", title: "Flatbed EV towing checklist" },
     ],
     serviceHighlights: [
       { title: "Luxury & exotic flatbed", body: "Mercedes, Porsche, Ferrari-friendly ramp angles and strap routing.", imageId: "light_luxury_flatbed", featured: true },

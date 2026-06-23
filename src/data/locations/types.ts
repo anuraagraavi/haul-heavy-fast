@@ -20,6 +20,12 @@ export interface RelatedCityLink {
   anchorBlurb: string;
 }
 
+/** Inbound links to localized blog guides (SEO) */
+export interface RelatedGuideLink {
+  slug: string;
+  title: string;
+}
+
 export interface ServiceHighlight {
   title: string;
   body: string;
@@ -101,6 +107,8 @@ export interface LocationData {
     finalCta: LandingImageId;
   };
   relatedCities: RelatedCityLink[];
+  /** Optional localized blog guides for internal linking */
+  relatedGuides?: RelatedGuideLink[];
   serviceHighlights: ServiceHighlight[];
   localKnowledge: LocalKnowledgeItem[];
   stats: LocationStat[];

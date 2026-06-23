@@ -74,6 +74,12 @@ export const southBayCityLocations: LocationData[] = [
       { slug: "mountain-view", anchorBlurb: "Shoreline & 101" },
       { slug: "fremont", anchorBlurb: "Warm Springs & Auto Mall" },
     ],
+    relatedGuides: [
+      { slug: "sjc-towed-vehicle-release-form", title: "SJC towed vehicle release form" },
+      { slug: "ca-87-breakdown-san-jose-guide", title: "CA-87 breakdown guide" },
+      { slug: "san-jose-tow-hearing-request", title: "San Jose tow hearing request" },
+      { slug: "sjc-cell-phone-lot-towing-rules", title: "SJC cell phone lot rules" },
+    ],
     serviceHighlights: [
       { title: "SJC & downtown EV flatbed", body: "Airport loops and tower garages with height-aware ramps.", imageId: "light_rivian_ev", featured: true },
       { title: "101 / 87 commuter rescue", body: "Express lane and shoulder staging with CHP awareness.", imageId: "light_suv_highway" },
@@ -223,6 +229,10 @@ export const southBayCityLocations: LocationData[] = [
       { slug: "redwood-city", anchorBlurb: "101 toward Seaport" },
       { slug: "san-jose", anchorBlurb: "South on 101 / 87" },
       { slug: "cupertino", anchorBlurb: "280 toward Apple" },
+    ],
+    relatedGuides: [
+      { slug: "tow-truck-mountain-view-shoreline", title: "Shoreline Amphitheatre tow guide" },
+      { slug: "flatbed-ev-towing-san-mateo-checklist", title: "Flatbed EV towing checklist" },
     ],
     serviceHighlights: [
       { title: "Shoreline & campus EV flatbed", body: "Office loops and charging islands with height-aware ramps.", imageId: "light_rivian_ev", featured: true },

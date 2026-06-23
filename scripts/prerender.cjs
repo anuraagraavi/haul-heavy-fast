@@ -56,14 +56,17 @@ function insertTagIfMissing(html, pattern, replacement) {
 function sitemapRoutes() {
   const sitemapPath = path.join(ROOT, "public", "sitemap.xml");
   if (!fs.existsSync(sitemapPath)) {
-    return ["/"];
+    return ["/", "/thank-you"];
   }
   const xml = fs.readFileSync(sitemapPath, "utf8");
   const matches = [...xml.matchAll(/<loc>\s*https:\/\/heavytowpro\.com([^<]*)<\/loc>/gi)];
   const parsed = matches
     .map((m) => (m[1] && m[1].trim() ? m[1].trim() : "/"))
     .filter(Boolean);
-  return Array.from(new Set(parsed));
+  // Routes that should always ship as static HTML even if excluded from sitemap.
+  // Example: /thank-you should be noindex but must reliably include the noindex tag.
+  const always = ["/thank-you"];
+  return Array.from(new Set([...parsed, ...always]));
 }
 
 function resolvePrerenderPaths(allPaths) {
@@ -102,6 +105,13 @@ function createRenderer() {
   const renderAfterSelector = process.env.PRERENDER_RENDER_AFTER_SELECTOR || "#root > *";
   const injectProperty = "__PRERENDER_INJECTED";
   const inject = { diagnostics: true };
+  const launchOptions = {
+    headless: true,
+    args: ["--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu"],
+    ...(process.env.PUPPETEER_EXECUTABLE_PATH
+      ? { executablePath: process.env.PUPPETEER_EXECUTABLE_PATH }
+      : {}),
+  };
 
   if (waitMode === "event") {
     return new PuppeteerRenderer({
@@ -111,7 +121,7 @@ function createRenderer() {
       maxConcurrentRoutes: 4,
       skipThirdPartyRequests,
       consoleHandler: prerenderConsoleHandler,
-      headless: "new",
+      launchOptions,
     });
   }
 
@@ -123,7 +133,7 @@ function createRenderer() {
       maxConcurrentRoutes: 4,
       skipThirdPartyRequests,
       consoleHandler: prerenderConsoleHandler,
-      headless: "new",
+      launchOptions,
     });
   }
 
@@ -134,7 +144,7 @@ function createRenderer() {
     maxConcurrentRoutes: 4,
     skipThirdPartyRequests,
     consoleHandler: prerenderConsoleHandler,
-    headless: "new",
+    launchOptions,
   });
 }
 
@@ -217,6 +227,7 @@ async function runPrerender() {
     return true;
   }
 
+  const strict = process.env.PRERENDER_STRICT !== "false";
   const routes = resolvePrerenderPaths(sitemapRoutes());
   let prerenderer = null;
 
@@ -249,7 +260,11 @@ async function runPrerender() {
       console.error("[prerender] Invalid post-process output:", err);
       process.exit(1);
     }
-    console.warn("[prerender] Failed, continuing without prerendered HTML:", msg);
+    if (strict) {
+      console.error("[prerender] Failed (strict mode), aborting build:", msg);
+      process.exit(1);
+    }
+    console.warn("[prerender] Failed, continuing without prerendered HTML (PRERENDER_STRICT=false):", msg);
     return true;
   } finally {
     if (prerenderer) {

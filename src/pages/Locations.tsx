@@ -8,6 +8,8 @@ import { DISPATCH_HUBS } from "@/data/coverage";
 import { PRIMARY_DISPATCH_PHONE_DISPLAY, PRIMARY_DISPATCH_TEL_HREF } from "@/data/screenshotDispatchHubs";
 import { telHrefFromNational } from "@/lib/phone";
 
+const BASE_URL = "https://heavytowpro.com";
+
 const LEGACY_HASH_REDIRECTS: Record<string, string> = {
   "#san-francisco": "/towing-san-francisco",
   "#san-mateo": "/locations/san-mateo-county",
@@ -39,6 +41,24 @@ const Locations = () => {
           content="Explore Heavy Tow Pro county hubs and dedicated city towing pages across Bay Area and Stockton coverage."
         />
         <link rel="canonical" href="https://heavytowpro.com/locations" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "item": { "@id": `${BASE_URL}/`, "name": "Home" },
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "item": { "@id": `${BASE_URL}/locations`, "name": "Locations" },
+              },
+            ],
+          })}
+        </script>
       </Helmet>
       <main className="pt-20">
         <section className="py-14 bg-gradient-subtle">

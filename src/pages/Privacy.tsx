@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PRIMARY_DISPATCH_PHONE_DISPLAY } from "@/data/screenshotDispatchHubs";
+import { absoluteUrl } from "@/lib/seo";
 
 const Privacy = () => {
   return (
@@ -8,7 +9,7 @@ const Privacy = () => {
       <Helmet>
         <title>Privacy Policy | Heavy Haulers San Francisco</title>
         <meta name="description" content="Heavy Haulers' privacy policy outlines how we collect, use, and protect your personal information when using our towing services." />
-        <link rel="canonical" href="/privacy-policy" />
+        <link rel="canonical" href={absoluteUrl("/privacy-policy")} />
       </Helmet>
 
       <div className="min-h-screen bg-background text-foreground">

@@ -175,7 +175,7 @@ export const april2026BlogPosts: Record<string, CohortBlogPostConfig> = {
         { question: "How do mile markers work?", answer: "They usually increase northbound on US-101 in this corridor—share direction plus the marker you see on roadside signs." },
         { question: "Will any tow truck work?", answer: "For most passenger cars, yes with the right equipment. AWD/EV cases may need flatbed—see our flatbed vs wheel-lift guide." },
       ],
-      relatedPosts: ["freeway-towing-bay-area", "what-to-do-after-car-accident-bay-area", "how-to-choose-towing-company"],
+      relatedPosts: ["freeway-towing-bay-area", "ca-92-breakdown-san-mateo-towing", "what-to-do-after-car-accident-bay-area"],
       relatedServices: [
         { title: "Light-duty towing", href: "/services/light-duty", description: "Cars, EVs, and motorcycles" },
         { title: "Contact dispatch", href: "/contact", description: "24/7 live routing" },
@@ -284,7 +284,7 @@ export const april2026BlogPosts: Record<string, CohortBlogPostConfig> = {
         { question: "Will a regular tow truck reach me on a bridge?", answer: "Often yes, but access depends on lane closures and traffic. Heavy congestion may require CHP-managed rolling breaks." },
         { question: "Is towing different in tunnels?", answer: "Ventilation and narrow shoulders can change staging. Always report fuel odors immediately." },
       ],
-      relatedPosts: ["freeway-towing-bay-area", "chp-towing-california", "i-880-bay-area-interstate-accident-recovery"],
+      relatedPosts: ["freeway-towing-bay-area", "fremont-bridge-corridor-breakdown-towing", "i-880-bay-area-interstate-accident-recovery"],
       relatedServices: [
         { title: "Light-duty towing", href: "/services/light-duty", description: "Passenger vehicles and EVs" },
         { title: "Medium-duty towing", href: "/services/medium-duty", description: "Larger vans and small commercial" },
@@ -490,7 +490,7 @@ export const april2026BlogPosts: Record<string, CohortBlogPostConfig> = {
         { question: "Does the rideshare app pay for towing?", answer: "Policies change and differ by region. Treat app help as step one, but verify what is reimbursable before authorizing a hook." },
         { question: "Can I tow to my home?", answer: "Yes if the operator agrees to the destination and pricing. Storage yards are common if home access is tight." },
       ],
-      relatedPosts: ["roadside-assistance-vs-towing", "does-insurance-cover-towing-california", "how-to-choose-towing-company"],
+      relatedPosts: ["roadside-assistance-vs-towing", "sjc-cell-phone-lot-towing-rules", "how-to-choose-towing-company"],
       relatedServices: [
         { title: "Light-duty towing", href: "/services/light-duty", description: "Daily drivers and EVs" },
         { title: "Contact dispatch", href: "/contact", description: "Fast Bay Area routing" },
@@ -1004,7 +1004,7 @@ export const april2026BlogPosts: Record<string, CohortBlogPostConfig> = {
         { question: "Can you jump an EV 12V?", answer: "Sometimes, if the pack allows and you have correct procedures—but many owners prefer a flatbed to avoid cascading errors." },
         { question: "Is Tesla different?", answer: "Tesla has specific tow mode steps—our Tesla guide covers nuances, but operators still need accurate vehicle state." },
       ],
-      relatedPosts: ["electric-vehicle-towing-guide", "tesla-towing-bay-area-guide", "awd-4wd-towing-guide-flatbed"],
+      relatedPosts: ["electric-vehicle-towing-guide", "flatbed-ev-towing-san-mateo-checklist", "awd-4wd-towing-guide-flatbed"],
       relatedServices: [
         { title: "Light-duty towing", href: "/services/light-duty", description: "EV-aware flatbed dispatch" },
         { title: "Contact dispatch", href: "/contact", description: "24/7 EV routing" },

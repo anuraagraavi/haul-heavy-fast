@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PRIMARY_DISPATCH_PHONE_DISPLAY } from "@/data/screenshotDispatchHubs";
+import { absoluteUrl } from "@/lib/seo";
 
 const Terms = () => {
   return (
@@ -8,7 +9,7 @@ const Terms = () => {
       <Helmet>
         <title>Terms of Service | Heavy Haulers San Francisco</title>
         <meta name="description" content="Terms of service for Heavy Haulers towing company. Review our service agreements, policies, and customer obligations." />
-        <link rel="canonical" href="/terms" />
+        <link rel="canonical" href={absoluteUrl("/terms")} />
       </Helmet>
 
       <div className="min-h-screen bg-background text-foreground">

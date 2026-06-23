@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, User, ArrowRight } from "lucide-react";
+import { absoluteUrl } from "@/lib/seo";
 
 const Blog = () => {
   const categories = [
@@ -75,7 +76,7 @@ const Blog = () => {
         <title>Towing Blog & Guides | Heavy Haulers San Francisco</title>
         <meta name="description" content="Expert towing advice, emergency guides, and fleet management tips from Heavy Haulers. Stay informed with our professional insights and local knowledge." />
         <meta name="keywords" content="towing blog, emergency guides, vehicle care, fleet advice, San Francisco towing tips" />
-        <link rel="canonical" href="/blog" />
+        <link rel="canonical" href={absoluteUrl("/blog")} />
       </Helmet>
 
       <div className="min-h-screen bg-background text-foreground">

@@ -90,6 +90,29 @@ const CountyTemplate = ({ data }: CountyTemplateProps) => {
         <meta name="twitter:description" content={data.metaDescription} />
         <meta name="twitter:image" content={ogImageUrl} />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "item": { "@id": `${BASE_URL}/`, "name": "Home" },
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "item": { "@id": `${BASE_URL}/locations`, "name": "Locations" },
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "item": { "@id": canonicalUrl, "name": data.city },
+              },
+            ],
+          })}
+        </script>
       </Helmet>
       <main className="pt-16">
         <section className="relative min-h-[65vh] flex items-center">

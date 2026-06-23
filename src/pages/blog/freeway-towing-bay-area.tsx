@@ -55,7 +55,7 @@ const blogData: BlogPostData = {
     { question: 'What about Freeway Service Patrol?', answer: 'FSP provides free basic service during limited hours. We\'re available 24/7 and can tow to any location, not just the nearest exit.' },
     { question: 'Will you come if I\'m on the shoulder?', answer: 'Absolutely. Shoulder breakdowns are still dangerous. We\'ll respond quickly to get you to safety.' }
   ],
-  relatedPosts: ['emergency-towing-guide', 'roadside-assistance-vs-towing', 'accident-scene-management'],
+  relatedPosts: ['511-freeway-assist-vs-tow-truck-bay-area', 'ca-87-breakdown-san-jose-guide', 'emergency-towing-guide'],
   relatedServices: [
     { title: 'Light Duty Towing', href: '/light-duty', description: 'Cars and light trucks' },
     { title: 'Medium Duty Towing', href: '/medium-duty', description: 'Commercial vehicles' },

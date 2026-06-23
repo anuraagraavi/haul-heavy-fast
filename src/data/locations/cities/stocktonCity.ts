@@ -72,6 +72,9 @@ export const stocktonLocation: LocationData = {
     { slug: "fremont", anchorBlurb: "Dumbarton / 880 corridor" },
     { slug: "san-jose", anchorBlurb: "South Bay via 580/680" },
   ],
+  relatedGuides: [
+    { slug: "stockton-towing-dispatch-checklist", title: "Stockton towing dispatch checklist" },
+  ],
   serviceHighlights: [
     {
       title: "I-5 / 99 corridor rescue",
