@@ -1,5 +1,5 @@
 import type { BlogPostData } from "@/types/blog";
-import type { CohortBlogPostConfig } from "@/types/cohortBlog";
+import type { CohortBlogPostConfig, ParagraphSegment } from "@/types/cohortBlog";
 import {
   DISPATCH_HUB_LINES_MARKETING,
   PRIMARY_DISPATCH_PHONE_DISPLAY,
@@ -20,6 +20,10 @@ import fleetManagementImage from "@/assets/blog-fleet-management.jpg";
 import roadsideVsTowingImage from "@/assets/blog-roadside-vs-towing.jpg";
 import heavyDutyServiceImage from "@/assets/heavy-duty-service.jpg";
 import heroTowTruckImage from "@/assets/hero-tow-truck.jpg";
+
+const t = (text: string): ParagraphSegment => ({ type: "text", text });
+const L = (text: string, href: string): ParagraphSegment => ({ type: "link", text, href });
+const P = (...segments: ParagraphSegment[]) => segments;
 
 /** @deprecated use CohortBlogPostConfig from @/types/cohortBlog */
 export type MarchBlogPostConfig = CohortBlogPostConfig;
@@ -191,6 +195,13 @@ export const march2026BlogPosts: Record<string, CohortBlogPostConfig> = {
           paragraphs: [
             "Start with a written demand for records and corrections. Keep communication in writing whenever possible.",
             "If unresolved, escalate to local authorities, consumer protection channels, and small-claims options with your complete evidence packet.",
+            P(
+              t("If you plan to dispute fees, city hearing workflows differ—see our "),
+              L("Oakland tow hearing request guide", "/blog/oakland-tow-hearing-request"),
+              t(" and "),
+              L("San Jose tow hearing guide", "/blog/san-jose-tow-hearing-request"),
+              t(" for filing deadlines."),
+            ),
           ],
         },
         {
@@ -481,7 +492,7 @@ export const march2026BlogPosts: Record<string, CohortBlogPostConfig> = {
         { question: "What if I cannot legally drive it out?", answer: "Arrange licensed transport to your home or repair destination." },
         { question: "How do I reduce fees?", answer: "Act quickly, confirm documents before arrival, and avoid return trips or missed release windows." },
       ],
-      relatedPosts: ["car-towed-san-francisco", "sjc-towed-vehicle-release-form", "san-mateo-county-vehicle-release"],
+      relatedPosts: ["car-towed-san-francisco", "sjc-towed-vehicle-release-form", "san-mateo-county-vehicle-release", "san-jose-tow-hearing-request", "oakland-tow-hearing-request", "sjc-cell-phone-lot-towing-rules"],
       relatedServices: sharedServices,
       serviceAreas: sharedAreas,
     },
@@ -493,6 +504,28 @@ export const march2026BlogPosts: Record<string, CohortBlogPostConfig> = {
           title: "How to Locate Your Vehicle",
           paragraphs: [
             "Verify the correct lot before travel. City and county systems differ, and wrong-lot trips waste critical time.",
+            P(
+              t("In San Jose, call SJPD Vehicle Records at (408) 277-4156 with your plate number. Airport tows from SJC follow a dedicated release path—see our "),
+              L("SJC towed vehicle release guide", "/blog/sjc-towed-vehicle-release-form"),
+              t(" and "),
+              L("San Jose tow hearing guide", "/blog/san-jose-tow-hearing-request"),
+              t(" if you plan to dispute the impound."),
+            ),
+            P(
+              t("On the Peninsula, San Mateo County Sheriff impounds require a formal vehicle release before the tow yard hands over keys—see our "),
+              L("San Mateo County vehicle release guide", "/blog/san-mateo-county-vehicle-release"),
+              t(" for sheriff records contacts and after-hours email workflow."),
+            ),
+            P(
+              t("In Oakland, confirm tow status with OPD Records at (510) 238-3021 and obtain a release at 455 7th Street before visiting Auto Plus Towing—see our "),
+              L("Oakland towed vehicle release guide", "/blog/oakland-towed-vehicle-how-to-get-back"),
+              t(" for the full East Bay workflow."),
+            ),
+            P(
+              t("At San Francisco International Airport, airport property tows route through SFPD Airport Bureau at (650) 821-7111—not the city SFMTA impound line. See our "),
+              L("SFO vehicle towed guide", "/blog/sfo-vehicle-towed-what-to-do"),
+              t(" for garage, cell lot, and yard release steps."),
+            ),
             "Write down operator names, timestamps, and call references so your timeline is documented.",
           ],
         },
@@ -562,19 +595,42 @@ export const march2026BlogPosts: Record<string, CohortBlogPostConfig> = {
         { question: "Are heavy-duty resources always needed?", answer: "Not always. Heavy units are used when load weight, rollover risk, or severe blocking requires it." },
         { question: "Can I request destination shop after a crash?", answer: "In many cases yes, once scene safety and authority requirements are satisfied." },
       ],
-      relatedPosts: ["freeway-towing-bay-area", "i-880-breakdown-hayward-guide", "accident-scene-management"],
+      relatedPosts: ["freeway-towing-bay-area", "i-880-breakdown-hayward-guide", "fremont-bridge-corridor-breakdown-towing", "i-680-breakdown-walnut-creek-checklist", "511-freeway-assist-vs-tow-truck-bay-area"],
       relatedServices: sharedServices,
       serviceAreas: sharedAreas,
     },
     content: {
-      intro: "Bay Area interstate crashes are unique because volume, speed, and commercial traffic can turn small incidents into major delays. Knowing the recovery flow reduces confusion.",
+      intro: P(
+        t("Bay Area interstate crashes are unique because volume, speed, and commercial traffic can turn small incidents into major delays. Knowing the recovery flow reduces confusion. For mechanical breakdowns on I-880 through Hayward—not collisions—see our "),
+        L("I-880 breakdown Hayward guide", "/blog/i-880-breakdown-hayward-guide"),
+        t("."),
+      ),
       sections: [
         {
           id: "high-risk-corridors",
           title: "Bay Area High-Risk Corridors",
           paragraphs: [
             "I-880 and I-80 carry dense passenger and freight traffic. Interchanges and peak-hour stop-and-go patterns raise incident complexity.",
-            "US-101, I-280, I-580, and I-680 also present corridor-specific risks tied to merges, grades, and congestion patterns.",
+            P(
+              t("Contra Costa commuters on I-680 use our "),
+              L("I-680 Walnut Creek breakdown checklist", "/blog/i-680-breakdown-walnut-creek-checklist"),
+              t(" for Ygnacio Valley and Monument corridor dispatch."),
+            ),
+            P(
+              t("When CHP calls 511 FSP first, drivers still need private tow for shop drops—see our "),
+              L("511 Freeway Assist vs tow truck guide", "/blog/511-freeway-assist-vs-tow-truck-bay-area"),
+              t("."),
+            ),
+            P(
+              t("Mechanical stalls on the Hayward segment of I-880 follow a different workflow than crash recovery—see our "),
+              L("I-880 breakdown Hayward guide", "/blog/i-880-breakdown-hayward-guide"),
+              t(" for Whipple Road and Industrial Parkway dispatch."),
+            ),
+            P(
+              t("Bridge approach breakdowns near Fremont use our "),
+              L("Fremont bridge corridor towing guide", "/blog/fremont-bridge-corridor-breakdown-towing"),
+              t(" for Dumbarton and CA-84 staging."),
+            ),
           ],
         },
         {
@@ -1046,7 +1102,7 @@ export const march2026BlogPosts: Record<string, CohortBlogPostConfig> = {
         { question: "What details help heavy dispatch most?", answer: "Exact location, trailer/load info, lane status, and whether rollover or jackknife risk is present." },
         { question: "Can you coordinate with fleet teams?", answer: "Yes. We support direct communication with fleet dispatch and operations teams." },
       ],
-      relatedPosts: ["commercial-truck-towing-interstate", "fleet-management-towing", "i-880-bay-area-interstate-accident-recovery"],
+      relatedPosts: ["commercial-truck-towing-interstate", "fleet-management-towing", "i-880-bay-area-interstate-accident-recovery", "stockton-towing-dispatch-checklist"],
       relatedServices: sharedServices,
       serviceAreas: sharedAreas,
     },
@@ -1076,6 +1132,11 @@ export const march2026BlogPosts: Record<string, CohortBlogPostConfig> = {
           paragraphs: [
             "Share exact route markers, lane impact, truck/trailer details, and cargo conditions in your first call.",
             "Document timeline and communications for insurance, operations review, and compliance support.",
+            P(
+              t("Central Valley freight lanes through Stockton use a corridor-first script—see our "),
+              L("Stockton towing dispatch checklist", "/blog/stockton-towing-dispatch-checklist"),
+              t(" for I-5 and CA-99 mile-marker details."),
+            ),
           ],
         },
         {

@@ -56,7 +56,7 @@ const BlogPostTemplate = ({ data, children }: BlogPostTemplateProps) => {
                 <div className="blog-content prose prose-lg prose-invert max-w-none 
                   prose-headings:text-foreground prose-headings:font-bold
                   prose-p:text-muted-foreground prose-p:leading-relaxed
-                  prose-a:text-primary prose-a:no-underline hover:prose-a:underline
+                  prose-p:a:text-primary prose-li:a:text-primary prose-p:a:no-underline prose-li:a:no-underline hover:prose-p:a:underline hover:prose-li:a:underline
                   prose-strong:text-foreground
                   prose-ul:text-muted-foreground prose-ol:text-muted-foreground
                   prose-li:marker:text-primary

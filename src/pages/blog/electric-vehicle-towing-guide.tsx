@@ -133,7 +133,11 @@ const ElectricVehicleTowingGuide = () => {
       
       <p>
         Different EV manufacturers have specific requirements and procedures for safe towing. Professional towing 
-        services must be familiar with these brand-specific protocols.
+        services must be familiar with these brand-specific protocols. San Mateo and Peninsula commuters can use our{' '}
+        <a href="/blog/flatbed-ev-towing-san-mateo-checklist" className="text-primary hover:underline">
+          flatbed EV towing San Mateo checklist
+        </a>{' '}
+        for local garage clearance and dispatch phrasing before calling.
       </p>
 
       <TwoColumnGrid items={[

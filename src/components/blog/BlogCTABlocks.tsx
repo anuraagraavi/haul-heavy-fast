@@ -5,6 +5,11 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { PRIMARY_DISPATCH_PHONE_DISPLAY, PRIMARY_DISPATCH_TEL_HREF } from '@/data/screenshotDispatchHubs';
 
+const ctaPrimaryBtn =
+  "bg-primary text-white hover:bg-primary/90 hover:text-white [&_svg]:text-white";
+const ctaSecondaryBtn =
+  "border-primary text-white hover:bg-primary/10 hover:text-white [&_svg]:text-white";
+
 // Sticky mobile CTA bar
 export const StickyMobileCTA = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -64,21 +69,21 @@ export const MidArticleCTA = ({
         <Phone className="w-6 h-6 text-primary" aria-hidden="true" />
       </div>
       <div className="flex-1">
-        <h3 className="text-lg font-semibold text-foreground mb-1">
+        <h3 className="text-lg font-semibold text-white mb-1">
           {title}
         </h3>
-        <p className="text-sm text-muted-foreground mb-4">
+        <p className="text-sm text-white/90 mb-4">
           {description}
         </p>
         <div className="flex flex-col sm:flex-row gap-3">
-          <Button variant="default" className="font-semibold" asChild>
+          <Button variant="default" className={cn("font-semibold", ctaPrimaryBtn)} asChild>
             <a href={primaryAction.href}>
               <Phone className="w-4 h-4 mr-2" aria-hidden="true" />
               {primaryAction.text}
             </a>
           </Button>
           {secondaryAction && (
-            <Button variant="outline" className="font-semibold" asChild>
+            <Button variant="outline" className={cn("font-semibold", ctaSecondaryBtn)} asChild>
               <Link to={secondaryAction.href}>
                 <FileText className="w-4 h-4 mr-2" aria-hidden="true" />
                 {secondaryAction.text}
@@ -98,10 +103,10 @@ export const EndArticleCTA = ({
   className
 }: EndArticleCTAProps) => <section className={cn("bg-card border border-border rounded-2xl p-8 md:p-12 text-center", className)} aria-labelledby="end-cta-heading">
     <div className="max-w-2xl mx-auto">
-      <h2 id="end-cta-heading" className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+      <h2 id="end-cta-heading" className="text-2xl md:text-3xl font-bold text-white mb-4">
         Need Professional Towing Services?
       </h2>
-      <p className="text-lg text-muted-foreground mb-6">
+      <p className="text-lg text-white/90 mb-6">
         Don't wait for an emergency. Get expert towing services when you need them most. 
         Our professional team is standing by 24/7 across the entire Bay Area.
       </p>
@@ -124,13 +129,13 @@ export const EndArticleCTA = ({
       
       {/* CTA buttons */}
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
-        <Button variant="default" size="lg" className="font-semibold" asChild>
+        <Button variant="default" size="lg" className={cn("font-semibold", ctaPrimaryBtn)} asChild>
           <a href={PRIMARY_DISPATCH_TEL_HREF} aria-label="Call for immediate assistance">
             <Phone className="w-5 h-5 mr-2" aria-hidden="true" />
             Call Now: {PRIMARY_DISPATCH_PHONE_DISPLAY}
           </a>
         </Button>
-        <Button variant="outline" size="lg" className="font-semibold" asChild>
+        <Button variant="outline" size="lg" className={cn("font-semibold", ctaSecondaryBtn)} asChild>
           <Link to="/get-a-quote" aria-label="Get a free quote online">
             <FileText className="w-5 h-5 mr-2" aria-hidden="true" />
             Get Free Quote
@@ -139,7 +144,7 @@ export const EndArticleCTA = ({
       </div>
       
       {/* Reassurance line */}
-      <p className="text-sm text-muted-foreground mt-6">
+      <p className="text-sm text-white/80 mt-6">
         No obligation • Fast response • Competitive pricing
       </p>
     </div>

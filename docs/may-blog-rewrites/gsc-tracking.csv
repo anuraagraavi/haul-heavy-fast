@@ -1,0 +1,21 @@
+slug,deploy_date,index_requested,week1_impressions,day30_impressions,day30_clicks,day30_position,gsc_target,day30_imp_target,day30_click_target,notes
+san-jose-tow-hearing-request,2026-06-24,pending_post_deploy,0,,,,towing san jose (city),5,0,Phase 1 rewrite ~1554 words
+sjc-towed-vehicle-release-form,2026-06-24,pending_post_deploy,0,,,,sjc towed vehicle,5,0,Phase 1 rewrite ~1402 words
+sjc-cell-phone-lot-towing-rules,2026-06-24,pending_post_deploy,0,,,,sjc cell phone lot,5,0,Phase 2 rewrite ~978 words
+ca-87-breakdown-san-jose-guide,2026-06-24,pending_post_deploy,0,,,,towing in san jose,10,0,Phase 2 rewrite ~971 words
+san-mateo-county-vehicle-release,2026-06-24,pending_post_deploy,0,,,,san mateo tow,10,1,Phase 3 rewrite ~1226 words
+ca-92-breakdown-san-mateo-towing,2026-06-24,pending_post_deploy,0,,,,san mateo towing,8,0,Phase 3 rewrite ~806 words
+san-mateo-caltrain-tow-truck-pickup,2026-06-24,pending_post_deploy,0,,,,san mateo caltrain tow,5,0,Phase 4 rewrite ~979 words
+flatbed-ev-towing-san-mateo-checklist,2026-06-24,pending_post_deploy,0,,,,electric vehicle towing,15,0,Phase 4 rewrite ~1090 words
+oakland-towed-vehicle-how-to-get-back,2026-06-24,pending_post_deploy,0,,,,oakland towed vehicle,8,0,Phase 5 rewrite ~872 words
+oakland-tow-hearing-request,2026-06-24,pending_post_deploy,0,,,,oakland tow hearing,5,0,Phase 5 rewrite ~805 words
+sfo-vehicle-towed-what-to-do,2026-06-24,pending_post_deploy,0,,,,sfo vehicle towed,8,0,Phase 6 rewrite ~944 words
+511-freeway-assist-vs-tow-truck-bay-area,2026-06-24,pending_post_deploy,0,,,,towing near me,20,1,Phase 6 rewrite ~949 words
+i-880-breakdown-hayward-guide,2026-06-24,pending_post_deploy,0,,,,hayward towing,10,0,Phase 7 — ship first (hayward GSC cluster 28+ imp)
+fremont-bridge-corridor-breakdown-towing,2026-06-24,pending_post_deploy,0,,,,fremont towing,8,0,Phase 7 rewrite ~881 words
+delivery-van-towing-concord-ca,2026-06-24,pending_post_deploy,0,,,,towing concord,15,1,Phase 8 — ship first (concord GSC cluster 33+ imp)
+i-680-breakdown-walnut-creek-checklist,2026-06-24,pending_post_deploy,0,,,,walnut creek towing,8,0,Phase 8 rewrite
+low-clearance-garage-towing-palo-alto,2026-06-24,pending_post_deploy,0,,,,palo alto towing,10,0,Phase 9 — ship first (palo alto towing 11 imp)
+tow-truck-mountain-view-shoreline,2026-06-24,pending_post_deploy,0,,,,tow truck mountain view,5,0,Phase 9 rewrite
+stockton-towing-dispatch-checklist,2026-06-24,pending_post_deploy,0,,,,towing stockton,25,1,Phase 10 — ship first (towing stockton 104+ imp cluster)
+commercial-towing-redwood-city-seaport,2026-06-24,pending_post_deploy,0,,,,towing redwood city,10,1,Phase 10 (towing redwood city 33 imp pos 1.5)

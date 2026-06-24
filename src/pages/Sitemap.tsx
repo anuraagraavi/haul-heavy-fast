@@ -4,6 +4,20 @@ import { Link } from "react-router-dom";
 import { ExternalLink } from "lucide-react";
 import { PRIMARY_DISPATCH_PHONE_DISPLAY, PRIMARY_DISPATCH_TEL_HREF } from "@/data/screenshotDispatchHubs";
 import { absoluteUrl } from "@/lib/seo";
+import { BLOG_CATEGORIES, blogPosts } from "@/data/blogRegistry";
+
+const blogGuideSections = BLOG_CATEGORIES.filter((c) => c !== "All Articles")
+  .map((category) => ({
+    category: `Blog: ${category}`,
+    pages: blogPosts
+      .filter((post) => post.category === category)
+      .map((post) => ({
+        name: post.title,
+        url: `/blog/${post.slug}`,
+        description: post.excerpt,
+      })),
+  }))
+  .filter((section) => section.pages.length > 0);
 
 const Sitemap = () => {
   const sitePages = [
@@ -60,9 +74,11 @@ const Sitemap = () => {
     {
       category: "Resources",
       pages: [
-        { name: "Blog & Guides", url: "/blog", description: "Towing tips, emergency guides, and industry insights" }
+        { name: "Blog & Guides Index", url: "/blog", description: "All towing tips, emergency guides, and industry insights" },
+        { name: "XML Sitemap Index", url: "/sitemap-index.xml", description: "Machine-readable sitemap index for search engines" },
       ]
     },
+    ...blogGuideSections,
     {
       category: "Legal",
       pages: [
@@ -142,8 +158,8 @@ const Sitemap = () => {
                       <div className="text-sm text-muted-foreground">Total Pages</div>
                     </div>
                     <div>
-                      <div className="text-3xl font-bold text-success mb-2">30</div>
-                      <div className="text-sm text-muted-foreground">Location Pages</div>
+                      <div className="text-3xl font-bold text-success mb-2">{blogPosts.length}</div>
+                      <div className="text-sm text-muted-foreground">Blog Guides</div>
                     </div>
                     <div>
                       <div className="text-3xl font-bold text-primary mb-2">24/7</div>

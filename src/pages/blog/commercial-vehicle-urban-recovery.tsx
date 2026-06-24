@@ -82,7 +82,7 @@ const blogData: BlogPostData = {
     }
   ],
   
-  relatedPosts: ["fleet-management-towing", "heavy-equipment-transport", "accident-scene-management"],
+  relatedPosts: ["fleet-management-towing", "heavy-equipment-transport", "accident-scene-management", "delivery-van-towing-concord-ca"],
   
   relatedServices: [
     { title: "Heavy-Duty Towing", href: "/services/heavy-duty", description: "Professional heavy-duty towing for commercial vehicles" },

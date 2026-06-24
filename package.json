@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/generate-segmented-sitemaps.cjs && vite build && node scripts/prerender.cjs && node scripts/inject-hero-preload.cjs",
+    "audit:may-blogs": "node scripts/audit-may-blog-words.cjs",
+    "build": "node scripts/audit-may-blog-words.cjs && node scripts/generate-segmented-sitemaps.cjs && vite build && node scripts/prerender.cjs && node scripts/inject-hero-preload.cjs",
     "build:analyze": "cross-env ANALYZE=true vite build && node scripts/prerender.cjs && node scripts/inject-hero-preload.cjs",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",

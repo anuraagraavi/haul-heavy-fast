@@ -140,6 +140,14 @@ const CarTowedSanFrancisco = () => {
         ]}
       />
 
+      <p className="mb-4 text-muted-foreground">
+        Towed from San Francisco International Airport property—not a city street? Airport releases go through SFPD Airport Bureau at (650) 821-7111. See our{" "}
+        <a href="/blog/sfo-vehicle-towed-what-to-do" className="text-primary underline">
+          SFO vehicle towed guide
+        </a>{" "}
+        for garage, cell lot, and yard steps.
+      </p>
+
       <MidArticleCTA />
 
       <BlogFigure 

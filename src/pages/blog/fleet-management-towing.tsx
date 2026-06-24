@@ -81,7 +81,7 @@ const blogData: BlogPostData = {
     }
   ],
   
-  relatedPosts: ["commercial-vehicle-urban-recovery", "towing-technology-gps-fleet-management", "accident-scene-management"],
+  relatedPosts: ["commercial-vehicle-urban-recovery", "towing-technology-gps-fleet-management", "accident-scene-management", "delivery-van-towing-concord-ca"],
   
   relatedServices: [
     { title: "Heavy-Duty Towing", href: "/services/heavy-duty", description: "Commercial truck recovery" },
@@ -110,7 +110,11 @@ const FleetManagementTowing = () => {
       <SectionHeading id="understanding-fleet-needs">Understanding Fleet Towing Needs</SectionHeading>
       
       <p>
-        Fleet vehicles face unique challenges compared to personal vehicles. They typically accumulate higher mileage, operate under more demanding conditions, and serve critical business functions that can't afford extended downtime.
+        Fleet vehicles face unique challenges compared to personal vehicles. They typically accumulate higher mileage, operate under more demanding conditions, and serve critical business functions that can't afford extended downtime. Last-mile vans in Contra Costa need GVWR-matched dispatch—see our{" "}
+        <a href="/blog/delivery-van-towing-concord-ca" className="text-primary underline">
+          delivery van towing Concord guide
+        </a>{" "}
+        for medium-duty sizing on I-680 corridors.
       </p>
 
       <TwoColumnGrid

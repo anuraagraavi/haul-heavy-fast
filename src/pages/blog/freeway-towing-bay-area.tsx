@@ -99,7 +99,7 @@ const FreewayTowingBayArea = () => {
         { step: 1, title: 'Pull Over Safely', description: 'Get as far right as possible. If you can reach an exit, do so.' },
         { step: 2, title: 'Hazards On', description: 'Turn on hazard lights immediately to alert other drivers.' },
         { step: 3, title: 'Stay Inside', description: 'Keep your seatbelt on. The vehicle provides protection from passing traffic.' },
-        { step: 4, title: 'Call for Help', description: 'Call us or 511 for Freeway Service Patrol during daytime hours.' },
+        { step: 4, title: 'Call for Help', description: 'Call 911 for lane-blocking hazards. For non-emergency shoulder breakdowns during FSP hours, dial 511 and say Freeway Assist—or call us 24/7. See our 511 FSP vs private tow guide for scope limits.' },
         { step: 5, title: 'Note Your Location', description: 'Look for mile markers, exit numbers, or landmarks to share with dispatch.' }
       ]} />
       <BlogFigure image={{ src: midImage, alt: 'Safe freeway breakdown positioning', caption: 'Pull as far right as possible and stay in your vehicle' }} />
@@ -120,9 +120,26 @@ const FreewayTowingBayArea = () => {
         { title: 'I-880', content: 'Oakland to San Jose corridor' },
         { title: 'I-280', content: 'San Francisco to San Jose via Peninsula' },
         { title: 'US-101', content: 'San Francisco through South Bay' },
+        { title: 'CA-87', content: 'Guadalupe Parkway through downtown San Jose to SJC' },
         { title: 'CA-1', content: 'Pacific Coast Highway through Bay Area' },
         { title: 'CA-17', content: 'San Jose to Santa Cruz mountain route' }
       ]} />
+      <p className="text-muted-foreground text-sm">
+        Stalled on SR-87? See our{" "}
+        <a href="/blog/ca-87-breakdown-san-jose-guide" className="text-primary underline">
+          CA-87 breakdown San Jose guide
+        </a>{" "}
+        for postmile dispatch and express-lane safety steps. For 511 FSP scope vs private tow, read our{" "}
+        <a href="/blog/511-freeway-assist-vs-tow-truck-bay-area" className="text-primary underline">
+          511 Freeway Assist vs tow truck guide
+        </a>. Contra Costa breakdowns on I-680: see our{" "}
+        <a href="/blog/i-680-breakdown-walnut-creek-checklist" className="text-primary underline">
+          I-680 Walnut Creek checklist
+        </a>. Central Valley freight lanes:{" "}
+        <a href="/blog/stockton-towing-dispatch-checklist" className="text-primary underline">
+          Stockton towing dispatch checklist
+        </a>.
+      </p>
 
       <CapabilitiesBox
         canDo={['Respond to any Bay Area freeway 24/7', 'Tow to any location you choose', 'Handle all vehicle types', 'Coordinate with CHP for traffic control', 'Provide immediate roadside assistance']}

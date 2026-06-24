@@ -45,7 +45,7 @@ const blogData: BlogPostData = {
     { question: 'How long does underground garage towing take?', answer: 'Typically 30-60 minutes depending on access complexity and parking level.' },
     { question: 'Is underground garage towing more expensive?', answer: 'Yes, garage recovery typically costs 20-40% more due to specialized equipment and added complexity.' }
   ],
-  relatedPosts: ['sf-towing-challenges', 'emergency-towing-guide', 'luxury-transport-guide'],
+  relatedPosts: ['sf-towing-challenges', 'emergency-towing-guide', 'luxury-transport-guide', 'low-clearance-garage-towing-palo-alto'],
   relatedServices: [
     { title: 'Light Duty Towing', href: '/light-duty', description: 'Standard vehicle recovery' },
     { title: 'Medium Duty Towing', href: '/medium-duty', description: 'For larger vehicles' }

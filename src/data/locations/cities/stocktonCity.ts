@@ -74,6 +74,7 @@ export const stocktonLocation: LocationData = {
   ],
   relatedGuides: [
     { slug: "stockton-towing-dispatch-checklist", title: "Stockton towing dispatch checklist" },
+    { slug: "semi-truck-breakdown-highway-guide", title: "Semi truck highway breakdown guide" },
   ],
   serviceHighlights: [
     {

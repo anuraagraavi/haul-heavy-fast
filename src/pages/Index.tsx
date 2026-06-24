@@ -151,8 +151,8 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>Heavy Haulers San Francisco - Professional Towing & Recovery Services | Bay Area 24/7</title>
-        <meta name="description" content={`Professional towing services in San Francisco Bay Area. 24/7 emergency light, medium & heavy-duty towing, flatbed service, motorcycle transport. Fast response, transparent pricing. Call ${PRIMARY_DISPATCH_PHONE_DISPLAY}.`} />
-        <meta name="keywords" content="towing services San Francisco Bay Area, emergency towing SF, professional towing company, heavy duty towing, light duty towing, 24/7 towing San Francisco, transparent towing pricing" />
+        <meta name="description" content={`Professional towing across the San Francisco Bay Area—San Francisco, San Jose, Oakland, and Peninsula corridors. 24/7 light, medium & heavy-duty towing, flatbed EV transport, motorcycle recovery. Call ${PRIMARY_DISPATCH_PHONE_DISPLAY}.`} />
+        <meta name="keywords" content="towing San Jose, towing services San Francisco Bay Area, emergency towing SF, professional towing company, heavy duty towing, light duty towing, 24/7 towing San Francisco, transparent towing pricing" />
         <link rel="canonical" href="https://heavytowpro.com/" />
         
         {/* Enhanced Open Graph tags */}

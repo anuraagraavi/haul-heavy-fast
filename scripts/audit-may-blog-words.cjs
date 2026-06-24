@@ -1,11 +1,15 @@
 /**
  * Audit May 2026 blog word counts after expansion merge.
- * Run: node scripts/audit-may-blog-words.cjs
+ * Fails (exit 1) if any slug is below MIN_WORDS.
+ *
+ * Run: npm run audit:may-blogs
  */
 const fs = require("fs");
 const path = require("path");
 
-// Dynamic import via ts not available — parse expansions + base file heuristically
+const MIN_WORDS = 800;
+const HIGH_WORDS = 950;
+
 const baseFile = fs.readFileSync(path.join(__dirname, "../src/data/may2026BlogPosts.ts"), "utf8");
 const expFile = fs.readFileSync(path.join(__dirname, "../src/data/may2026BlogExpansions.ts"), "utf8");
 
@@ -17,8 +21,12 @@ function countWords(text) {
 }
 
 function extractStrings(block) {
-  return [...block.matchAll(/"([^"\\]{12,})"/g)].map((m) => m[1]).filter((s) => !s.includes("http") && !s.startsWith("/") && !s.includes("@"));
+  return [...block.matchAll(/"([^"\\]{12,})"/g)]
+    .map((m) => m[1])
+    .filter((s) => !s.includes("http") && !s.startsWith("/") && !s.includes("@"));
 }
+
+let failed = false;
 
 for (const slug of uniqueSlugs) {
   const baseStart = baseFile.indexOf(`"${slug}": {`);
@@ -34,9 +42,18 @@ for (const slug of uniqueSlugs) {
   const baseBlock = baseFile.slice(baseStart, i + 1);
   const expStart = expFile.indexOf(`"${slug}": {`);
   const expEnd = expFile.indexOf("\n  },", expStart);
-  const expBlock = expFile.slice(expStart, expEnd);
+  const expBlock = expStart >= 0 ? expFile.slice(expStart, expEnd) : "";
 
   const words = countWords([...extractStrings(baseBlock), ...extractStrings(expBlock)].join(" "));
-  const ok = words >= 600 && words <= 950 ? "OK" : words < 600 ? "LOW" : "HIGH";
+  const ok =
+    words < MIN_WORDS ? "FAIL" : words > HIGH_WORDS ? "HIGH" : "OK";
+  if (words < MIN_WORDS) failed = true;
   console.log(`${ok.padEnd(4)} ${String(words).padStart(4)}  ${slug}`);
 }
+
+if (failed) {
+  console.error(`\n[audit:may-blogs] One or more slugs below ${MIN_WORDS} words.`);
+  process.exit(1);
+}
+
+console.log(`\n[audit:may-blogs] All ${uniqueSlugs.length} May posts meet ≥${MIN_WORDS} words.`);

@@ -81,7 +81,7 @@ const blogData: BlogPostData = {
     }
   ],
   
-  relatedPosts: ["emergency-towing-guide", "winter-towing-preparedness", "sf-towing-challenges"],
+  relatedPosts: ["emergency-towing-guide", "winter-towing-preparedness", "511-freeway-assist-vs-tow-truck-bay-area", "sf-towing-challenges"],
   
   relatedServices: [
     { title: "24/7 Emergency Towing", href: "/services", description: "Round-the-clock emergency response" },
@@ -218,6 +218,13 @@ const RoadsideAssistanceVsTowing = () => {
       />
 
       <SectionHeading id="bay-area-considerations">Bay Area Specific Considerations</SectionHeading>
+      <p>
+        On Bay Area freeways, CHP may dispatch 511 Freeway Service Patrol for minor assists before a private tow—our{" "}
+        <a href="/blog/511-freeway-assist-vs-tow-truck-bay-area" className="text-primary underline">
+          511 FSP vs tow truck guide
+        </a>{" "}
+        explains when FSP ends and you still need a hook to your shop.
+      </p>
       
       <p>
         The San Francisco Bay Area presents unique challenges that affect both roadside assistance and towing services. Understanding these factors helps set realistic expectations.
@@ -231,6 +238,14 @@ const RoadsideAssistanceVsTowing = () => {
           { icon: "Cloud", text: "Weather-related service surges during rainy season" }
         ]}
       />
+
+      <p>
+        On Bay Area freeways, 511 Freeway Service Patrol offers free jump-starts, tire changes, and short relocations during published hours—but not towing to your home or shop. See our{" "}
+        <a href="/blog/511-freeway-assist-vs-tow-truck-bay-area" className="text-primary underline">
+          511 Freeway Assist vs tow truck guide
+        </a>{" "}
+        for when to switch from FSP to a private operator.
+      </p>
 
       <CalloutBox type="tip" title="Making the Right Choice">
         When in doubt, call a professional towing service. They can assess your situation and recommend the most appropriate solution, whether that's a simple roadside fix or transport to a repair facility.

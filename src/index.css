@@ -181,7 +181,7 @@
     @apply border-l-4 border-primary pl-6 py-2 my-6 italic bg-muted/30 rounded-r-lg;
   }
 
-  .blog-content a {
+  .blog-content :where(p, li, blockquote, td, th) a {
     @apply text-primary hover:underline transition-colors;
   }
 

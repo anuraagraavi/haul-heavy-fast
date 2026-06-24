@@ -25,9 +25,9 @@ export const southBayCityLocations: LocationData[] = [
   {
     ...baseCity("san-jose", "San Jose"),
     heroKicker: "Capital of Silicon Valley — 101 / 87 / 280 mesh",
-    metaTitle: "San Jose Towing | 101, 87 & EV Flatbed Downtown",
+    metaTitle: "Towing San Jose CA | 24/7 101, 87 & EV Flatbed",
     metaDescription:
-      "San Jose tow trucks for US-101, I-880, CA-87, and I-280. Live dispatch, flatbed-first EV transport, and fleet routing near SJC and downtown towers.",
+      "Towing San Jose CA for US-101, I-880, CA-87, and I-280. Live 24/7 dispatch, flatbed-first EV transport, and fleet routing near SJC and downtown towers.",
     h1: "San Jose Towing Across 101, 87, and the Downtown Tower Canyons",
     heroSubhead: "From Santana Row to North San Jose logistics parks, dispatch routes South Bay crews who understand SJC traffic and EV-dense arterials.",
     neighborhoodIntro:

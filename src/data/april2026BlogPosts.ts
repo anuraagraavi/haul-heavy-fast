@@ -175,7 +175,7 @@ export const april2026BlogPosts: Record<string, CohortBlogPostConfig> = {
         { question: "How do mile markers work?", answer: "They usually increase northbound on US-101 in this corridor—share direction plus the marker you see on roadside signs." },
         { question: "Will any tow truck work?", answer: "For most passenger cars, yes with the right equipment. AWD/EV cases may need flatbed—see our flatbed vs wheel-lift guide." },
       ],
-      relatedPosts: ["freeway-towing-bay-area", "ca-92-breakdown-san-mateo-towing", "what-to-do-after-car-accident-bay-area"],
+      relatedPosts: ["freeway-towing-bay-area", "ca-92-breakdown-san-mateo-towing", "what-to-do-after-car-accident-bay-area", "low-clearance-garage-towing-palo-alto", "tow-truck-mountain-view-shoreline"],
       relatedServices: [
         { title: "Light-duty towing", href: "/services/light-duty", description: "Cars, EVs, and motorcycles" },
         { title: "Contact dispatch", href: "/contact", description: "24/7 live routing" },
@@ -211,7 +211,16 @@ export const april2026BlogPosts: Record<string, CohortBlogPostConfig> = {
               L("freeway towing Bay Area overview", "/blog/freeway-towing-bay-area"),
               t(" explains how operators stage around merge pockets."),
             ),
-            "Mention if you are in a construction zone—lane shifts change how wreckers approach.",
+            P(
+              t("Event traffic near Shoreline Amphitheatre stacks pickups on Amphitheatre Parkway—see our "),
+              L("Mountain View Shoreline tow guide", "/blog/tow-truck-mountain-view-shoreline"),
+              t(" for lot staging during concerts."),
+            ),
+            P(
+              t("Downtown Palo Alto garage extractions need height measurements first—our "),
+              L("low-clearance garage towing Palo Alto guide", "/blog/low-clearance-garage-towing-palo-alto"),
+              t(" covers spiral ramp clearances."),
+            ),
           ],
         },
         {
@@ -306,7 +315,11 @@ export const april2026BlogPosts: Record<string, CohortBlogPostConfig> = {
             P(
               t("Operators may need to stage downstream because reversing on a bridge is unsafe. Compare that with standard "),
               L("freeway recovery expectations", "/blog/freeway-towing-bay-area"),
-              t(" on long straightaways."),
+              t(" on long straightaways. For the San Mateo-Hayward Bridge on CA-92, see our "),
+              L("CA-92 breakdown San Mateo guide", "/blog/ca-92-breakdown-san-mateo-towing"),
+              t(". For Dumbarton Bridge CA-84 near Fremont, see our "),
+              L("Fremont bridge corridor towing guide", "/blog/fremont-bridge-corridor-breakdown-towing"),
+              t("."),
             ),
             "If smoke appears, prioritize life safety and follow 911 instructions before worrying about vehicle damage.",
           ],
@@ -490,7 +503,7 @@ export const april2026BlogPosts: Record<string, CohortBlogPostConfig> = {
         { question: "Does the rideshare app pay for towing?", answer: "Policies change and differ by region. Treat app help as step one, but verify what is reimbursable before authorizing a hook." },
         { question: "Can I tow to my home?", answer: "Yes if the operator agrees to the destination and pricing. Storage yards are common if home access is tight." },
       ],
-      relatedPosts: ["roadside-assistance-vs-towing", "sjc-cell-phone-lot-towing-rules", "how-to-choose-towing-company"],
+      relatedPosts: ["roadside-assistance-vs-towing", "sjc-cell-phone-lot-towing-rules", "how-to-choose-towing-company", "san-mateo-caltrain-tow-truck-pickup"],
       relatedServices: [
         { title: "Light-duty towing", href: "/services/light-duty", description: "Daily drivers and EVs" },
         { title: "Contact dispatch", href: "/contact", description: "Fast Bay Area routing" },
@@ -545,6 +558,16 @@ export const april2026BlogPosts: Record<string, CohortBlogPostConfig> = {
           title: "Night Economy and Urban Pickups",
           paragraphs: [
             "Urban cores have tight staging—meet operators at the safest corner, not mid-intersection.",
+            P(
+              t("Airport pickups at SJC have stricter rules than street corners: the public cell phone lot at 2470 Airport Boulevard allows only 30 minutes and requires you to stay with the vehicle. Read our "),
+              L("SJC cell phone lot towing rules", "/blog/sjc-cell-phone-lot-towing-rules"),
+              t(" before you stage for a late arrival."),
+            ),
+            P(
+              t("Caltrain station pickups in San Mateo need platform-side coordination—see our "),
+              L("San Mateo Caltrain tow truck pickup guide", "/blog/san-mateo-caltrain-tow-truck-pickup"),
+              t(" before you stage at the station."),
+            ),
             "Save dispatch photos of cross streets to speed up repeat breakdown locations.",
           ],
         },
@@ -1055,6 +1078,11 @@ export const april2026BlogPosts: Record<string, CohortBlogPostConfig> = {
               L("insurance towing coverage", "/blog/does-insurance-cover-towing-california"),
               t("."),
             ),
+            P(
+              t("Peninsula fleet EV operators should pair this with our "),
+              L("flatbed EV towing San Mateo checklist", "/blog/flatbed-ev-towing-san-mateo-checklist"),
+              t(" for pre-trip tow-mode verification."),
+            ),
             "Send a photo of the dash if any warnings remain lit—operators plan around fault codes.",
           ],
         },
@@ -1534,7 +1562,7 @@ export const april2026BlogPosts: Record<string, CohortBlogPostConfig> = {
         { question: "Can a medium wrecker handle a dump truck?", answer: "Sometimes on single-axle units, but loaded tri-axles often require heavy-class equipment." },
         { question: "Do you move construction equipment too?", answer: "Yes—see our equipment hauling guides for oversize moves beyond simple disabled tows." },
       ],
-      relatedPosts: ["construction-equipment-hauling", "heavy-equipment-transport", "winch-out-mudslide-rain-bay-area"],
+      relatedPosts: ["construction-equipment-hauling", "heavy-equipment-transport", "winch-out-mudslide-rain-bay-area", "commercial-towing-redwood-city-seaport"],
       relatedServices: [
         { title: "Heavy-duty towing", href: "/services/heavy-duty", description: "Construction and industrial recovery" },
         { title: "Medium-duty towing", href: "/services/medium-duty", description: "Medium commercial on tight sites" },
@@ -1569,6 +1597,11 @@ export const april2026BlogPosts: Record<string, CohortBlogPostConfig> = {
               t("Loaded dumps change anchor math. When GCWR pushes heavy, book "),
               L("heavy-duty services", "/services/heavy-duty"),
               t(" up front."),
+            ),
+            P(
+              t("Port-adjacent roll-offs at Redwood City Seaport need gate clearance—see our "),
+              L("Redwood City Seaport commercial towing guide", "/blog/commercial-towing-redwood-city-seaport"),
+              t(" for TWIC and escort staging."),
             ),
             "If the bed is raised, treat it as an overhead hazard until hydraulics are verified.",
           ],

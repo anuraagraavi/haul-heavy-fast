@@ -30,888 +30,1078 @@ export interface MayBlogExpansion {
 
 export const may2026BlogExpansions: Record<string, MayBlogExpansion> = {
   "sjc-towed-vehicle-release-form": {
-    metaDescription: "SJC towed vehicle release guide: IDs, impound paperwork, airport vs city yards, and when to call South Bay dispatch after Mineta San Jose pickup.",
+    metaDescription:
+      "SJC towed vehicle release: SJPD Auto Desk steps, IDs, airport vs city yards, and post-release transport—official sources cited, step-by-step 2026 guide.",
     heroAlt: "Airport parking and ground transportation area near Mineta San Jose International Airport",
     heroCaption: "Confirm which SJC lot or curb zone your vehicle was towed from before driving to a storage yard.",
     atAGlance: {
-      bestUseCase: "Drivers retrieving a vehicle towed from SJC terminal curbs, economy lots, or cell phone waiting areas.",
-      responseWorkflow: "Read tow notice → confirm yard and hours → gather ID/registration → schedule transport if vehicle will not roll.",
-      safetyNote: "Do not leave baggage unattended at the terminal while searching for impound information.",
-      dispatchNeeds: "Yard address, release window, rolling status, drivetrain type, and whether keys are available.",
+      bestUseCase:
+        "Drivers retrieving a vehicle towed from SJC terminal curbs, economy lots, cell phone waiting areas, or adjacent city streets.",
+      responseWorkflow:
+        "Call SJPD Auto Desk → confirm yard and SJPD release requirement → gather ID/registration → pay city + tow fees → schedule transport if needed.",
+      safetyNote:
+        "Fly San Jose parking rules cite reclaim via SJPD at (408) 277-4156—do not leave baggage unattended at the terminal while you research impound status.",
+      dispatchNeeds:
+        "Yard address, SJPD release confirmation, rolling status, drivetrain type (AWD/EV), and scheduled release window.",
       relatedServiceLink: { text: "placeholder", href: "/" },
     },
     fifthSection: {
       id: "release-day-checklist",
       title: "Release Day Checklist",
       paragraphs: [
-        "Screenshot the Fly San Jose parking page for the lot type you used and bring it if the yard asks which zone originated the tow.",
-        "If the notice lists a private contractor, call that number first—city impound desks may redirect you and waste a trip.",
-        "Walk around the vehicle at pickup and photograph any new damage before you sign release paperwork.",
+        "Morning-of: call the tow yard and SJPD Auto Desk to confirm both are open and that your release cleared—holiday staffing compresses windows at airport-area yards.",
+        "Screenshot the Fly San Jose parking page for the lot type you used if the yard asks which zone originated the tow.",
+        "Bring two payment methods: SJPD city release fee (per published fee list) plus tow-company storage—yards and the city may not accept the same card types.",
+        "Walk around the vehicle before signing release paperwork and photograph any damage that was not present when the car was towed.",
       ],
       bullets: [
+        "Plate, VIN, or case number for SJPD lookup",
         "Government photo ID and current registration",
-        "Tow notice or citation number",
-        "Payment method confirmed by phone",
+        "SJPD release before yard pickup (most cases)",
         "Flatbed plan if AWD, EV, or no-start",
       ],
     },
     sectionExtras: {
-        "what-release-covers": {
-          bullets: [
-            "Terminal curbs vs economy lots use different enforcement",
-            "Cell phone lot tows may route to off-airport yards",
-          ],
-        },
-        "documents-to-bring": {
-          paragraphs: [
-            "Lien holders and finance companies sometimes require their authorization before release—check your loan paperwork if the yard mentions a hold.",
-          ],
-        },
+      "what-release-covers": {
+        paragraphs: [
+          "SJPD lobby hours at 201 W. Mission St run Monday–Friday 8 AM–5 PM; public Auto Desk counter is 8 AM–4 PM per the July 2025 schedule posted on sjpd.org.",
+        ],
+        bullets: [
+          "Terminal curbs vs economy lots use different enforcement partners",
+          "Cell phone lot tows may route to off-airport yards",
+          "Online SJPD release available outside counter hours",
+        ],
       },
+      "documents-to-bring": {
+        paragraphs: [
+          "To obtain personal property still inside the vehicle, contact the tow company directly—SJPD states this department does not issue property-only releases.",
+        ],
+      },
+      "when-to-call-tow": {
+        bullets: [
+          "Dead 12V on EV—plan flatbed even without crash damage",
+          "Rental fleet may require their vendor to authorize payment",
+          "Dispute? File SJPD hearing within 10 days of notice date",
+        ],
+      },
+    },
     officialResources: [
+      { text: "SJPD recover towed vehicle", href: "https://www.sjpd.org/i-want-to/contact-us/recover-towed-vehicle" },
       { text: "Fly San Jose parking & ground transport", href: "https://www.flysanjose.com/parking-transportation" },
-      { text: "San Jose Police Department", href: "https://www.sjpd.org" },
     ],
     enrich: {
-      "callout": {
-            type: "legal",
-            "title": "Before you drive to the yard",
-            "body": "Call the number on your tow notice to confirm hours, payment types, and whether an appointment is required—airport-area yards often compress staffing on holidays."
+      callout: {
+        type: "legal",
+        title: "Before you drive to the yard",
+        body: "Call (408) 277-4263 for 24-hour Auto Desk assistance (except daily 12–2 PM) and confirm whether SJPD must issue a release before the tow company will hand over the vehicle.",
       },
-      "steps": [
-            {
-                  "step": 1,
-                  "title": "Identify tow origin",
-                  "description": "Match your parking location (terminal, economy, cell lot, or city street) to the agency on the notice."
-            },
-            {
-                  "step": 2,
-                  "title": "Assemble documents",
-                  "description": "ID, registration, authorization letter if needed, and payment method confirmed by phone."
-            },
-            {
-                  "step": 3,
-                  "title": "Plan transport out",
-                  "description": "If the car will not roll, book flatbed pickup timed to your release window."
-            }
+      steps: [
+        {
+          step: 1,
+          title: "Confirm tow origin",
+          description: "Match terminal, economy, cell lot, or city street to the agency and yard on your notice.",
+        },
+        {
+          step: 2,
+          title: "Obtain SJPD release",
+          description: "Auto Desk at 201 W. Mission St, online form after hours, or call (408) 277-4156 with plate/VIN.",
+        },
+        {
+          step: 3,
+          title: "Pay city + tow fees",
+          description: "SJPD release fee to City of San Jose; separate storage/tow bill to the tow company—confirm methods by phone.",
+        },
+        {
+          step: 4,
+          title: "Plan transport out",
+          description: "If the car will not roll or is AWD/EV, book flatbed pickup timed to your release window.",
+        },
       ],
-      "twoColumn": {
-            "leftTitle": "Bring to release",
-            "leftItems": [
-                  "Valid ID and registration",
-                  "Tow notice photo",
-                  "Confirmed payment method",
-                  "Flatbed plan if no-start"
-            ],
-            "rightTitle": "Skip these mistakes",
-            "rightItems": [
-                  "Driving to wrong yard",
-                  "Arriving after close without calling",
-                  "Assuming wheel-lift for AWD/EV"
-            ]
-      }
-},
+      twoColumn: {
+        leftTitle: "Bring to release",
+        leftItems: [
+          "Valid ID and DMV registration",
+          "Licensed driver if needed",
+          "SJPD release confirmation",
+          "Payment for city and yard fees",
+        ],
+        rightTitle: "Skip these mistakes",
+        rightItems: [
+          "Driving to wrong yard without calling",
+          "Arriving during 12–2 PM phone gap unprepared",
+          "Assuming wheel-lift for AWD/EV",
+        ],
+      },
+    },
   },
   "san-jose-tow-hearing-request": {
-    metaDescription: "San Jose tow hearing request steps: SJPD deadlines, evidence photos, filing channels, and what to expect at an administrative review—not legal advice.",
-    heroAlt: "Vehicle storage yard administrative office for tow hearings",
-    heroCaption: "Hearing deadlines printed on your tow notice are strict—file before storage fees compound.",
+    metaDescription:
+      "San Jose tow hearing request: 10-day SJPD deadline, CVC 22852 review, evidence checklist, and DOT vs police paths—step-by-step, not legal advice.",
+    heroAlt: "San Jose Police Department Auto Desk area for tow hearings and vehicle releases",
+    heroCaption: "SJPD tow hearing requests must be filed within 10 days of the date on your Police Department notice.",
     atAGlance: {
-      bestUseCase: "San Jose drivers disputing a city or private-property tow who need to file an administrative hearing request.",
-      responseWorkflow: "Read notice deadline → gather timestamped photos → file through SJPD channel → keep copies of all submissions.",
-      safetyNote: "Storage fees often continue during the hearing process—confirm accrual rules with the yard immediately.",
-      dispatchNeeds: "Yard address if you still need the vehicle moved after a decision; release paperwork ready before calling.",
+      bestUseCase:
+        "Registered owners disputing a San Jose Police Department or DOT tow who need to file an impound hearing under CVC §22852.",
+      responseWorkflow:
+        "Read notice → identify authority (SJPD vs DOT vs private) → file within 10 days → gather timestamped evidence → attend informal hearing.",
+      safetyNote:
+        "Storage and tow-yard fees often continue during the hearing—confirm accrual rules with the yard the same day you file.",
+      dispatchNeeds:
+        "Yard address, release paperwork if you need the vehicle moved after a decision, and whether the car rolls or needs flatbed.",
       relatedServiceLink: { text: "placeholder", href: "/" },
     },
     fifthSection: {
       id: "sjpd-resources",
-      title: "SJPD and Notice Details",
+      title: "SJPD Contacts and Online Filing",
       paragraphs: [
-        "Search sjpd.org for current tow hearing or vehicle release publications—the city updates forms and submission channels periodically.",
-        "Your tow slip should list a reason code; match your evidence to that code rather than arguing unrelated issues at the hearing.",
-        "If the tow involved police hold or evidence, standard consumer hearing paths may not apply—ask the agency before filing.",
+        "Vehicle status and recorded release information: SJPD Vehicle Records at (408) 277-4156—have your license plate, VIN, or case number ready.",
+        "24-hour Auto Desk assistance (except daily 12–2 PM break): (408) 277-4263. Public counter at 201 W. Mission St is open Monday through Friday, 8 AM to 4 PM per SJPD's July 2025 schedule update.",
+        "Vehicle releases can also be obtained online outside regular counter hours through SJPD's published online release form—screenshot your confirmation if you file digitally before a hearing.",
+        "When contacting the Tow Hearing Unit, include whose authority ordered the tow, the stated reason, and the removal location. Incomplete requests delay the two-business-day informal hearing schedule.",
       ],
       bullets: [
-        "Reason code from tow notice",
-        "Timestamped wide-angle signage photos",
-        "Permit or placard documentation if applicable",
+        "Tow Hearing Unit: (408) 277-5429",
+        "DOT Tow Hearings: (408) 975-3718",
+        "10-day request window from notice date",
+        "Supervisor review available under CVC 22852(e)",
       ],
     },
     sectionExtras: {
-        "filing-steps": {
-          paragraphs: [
-            "Online portals may time-stamp submissions—screenshot the confirmation page and save the reference number.",
-          ],
-        },
+      "when-hearing-applies": {
+        paragraphs: [
+          "Orange courtesy warnings on San Jose streets are not required before every tow—absence of a warning does not invalidate enforcement under SJPD's published vehicle abatement FAQ.",
+        ],
       },
+      "filing-steps": {
+        paragraphs: [
+          "Online portals and email submissions should receive a time-stamped confirmation—save the reference number and a screenshot the same day you file.",
+        ],
+        bullets: [
+          "Include authority, reason, and tow location in request",
+          "Ask whether storage fees continue during review",
+        ],
+      },
+      "evidence-checklist": {
+        paragraphs: [
+          "If disputing a private-property tow, request the signed authorization or trespass notice the property owner filed—hearing officers compare it to CVC §22658 posting rules.",
+        ],
+      },
+    },
     officialResources: [
-      { text: "San Jose Police Department", href: "https://www.sjpd.org" },
+      { text: "SJPD recover towed vehicle & hearings", href: "https://www.sjpd.org/i-want-to/contact-us/recover-towed-vehicle" },
       { text: "California DMV vehicle registration", href: "https://www.dmv.ca.gov/portal/vehicle-registration/" },
     ],
     enrich: {
-      "callout": {
-            type: "legal",
-            "title": "Not legal advice",
-            "body": "This guide explains typical administrative hearing steps. Verify deadlines and forms on sjpd.org and consult an attorney for criminal impounds or lien disputes."
+      callout: {
+        type: "legal",
+        title: "Not legal advice",
+        body: "Verify deadlines and forms on sjpd.org. CVC §22852 exclusions apply to some abatement, investigation, and low-value abandoned vehicle removals—confirm your notice type before filing.",
       },
-      "steps": [
-            {
-                  "step": 1,
-                  "title": "Read the notice",
-                  "description": "Note storage facility, reason code, and hearing request deadline—missing it can forfeit your challenge."
-            },
-            {
-                  "step": 2,
-                  "title": "Build evidence",
-                  "description": "Photos of signage, permits, and parking angle; keep receipts and witness statements factual and dated."
-            },
-            {
-                  "step": 3,
-                  "title": "File and follow up",
-                  "description": "Submit through the channel on the notice; retain copies and ask whether storage fees continue during review."
-            }
+      steps: [
+        {
+          step: 1,
+          title: "Identify authority",
+          description: "Police (277-5429), DOT (975-3718), or private tow company—the channel on your notice controls where you file.",
+        },
+        {
+          step: 2,
+          title: "File within 10 days",
+          description: "Contact the Tow Hearing Unit in person, by mail, email, or phone. SJPD targets an informal hearing within two business days.",
+        },
+        {
+          step: 3,
+          title: "Prepare evidence",
+          description: "Wide-angle signage photos, permits, and reason-code-specific documents—timestamp everything.",
+        },
+        {
+          step: 4,
+          title: "Plan release transport",
+          description: "If you pay to remove the car before or after the hearing, book yard pickup with release paperwork ready.",
+        },
       ],
-      "twoColumn": {
-            "leftTitle": "Strong evidence",
-            "leftItems": [
-                  "Wide-angle signage shots",
-                  "Permit matching registration address",
-                  "Dated witness statements"
-            ],
-            "rightTitle": "Weak arguments",
-            "rightItems": [
-                  "Hearsay without documents",
-                  "Irrelevant complaints",
-                  "Missing filing deadline"
-            ]
-      }
-},
+      twoColumn: {
+        leftTitle: "Strong evidence",
+        leftItems: [
+          "Wide-angle signage from driver's view",
+          "Permit matching registration address",
+          "Dated witness or manager statements",
+          "Hearing filing confirmation screenshot",
+        ],
+        rightTitle: "Weak arguments",
+        rightItems: [
+          "Hearsay without documents",
+          "Issues unrelated to reason code",
+          "Missing 10-day filing deadline",
+          "Assuming storage fees pause automatically",
+        ],
+      },
+    },
   },
   "sjc-cell-phone-lot-towing-rules": {
-    metaDescription: "SJC cell phone lot towing rules: posted time limits, rideshare staging vs public waiting areas, enforcement triggers, and safe South Bay dispatch pickup.",
-    heroAlt: "Airport cell phone waiting lot with passenger vehicles near SJC",
-    heroCaption: "Courtesy lots are short-term only—watch posted limits and stay with your vehicle when possible.",
+    metaDescription:
+      "SJC cell phone lot rules: 30-minute limit at 2470 Airport Blvd, no commercial vehicles, curbside pickup law—plus what to do if towed. Step-by-step 2026 guide.",
+    heroAlt: "Cell phone waiting area near Mineta San Jose International Airport on Airport Boulevard",
+    heroCaption: "Free staging at 2470 Airport Blvd—but only for 30 minutes, and you must stay with the vehicle.",
     atAGlance: {
-      bestUseCase: "Drivers waiting at Mineta SJC cell phone or rideshare staging areas who want to avoid enforcement tows.",
-      responseWorkflow: "Confirm lot type on Fly San Jose → set timer for posted limit → stay with vehicle → call dispatch before tagging if breakdown occurs.",
-      safetyNote: "Do not block fire lanes or active pickup lanes while waiting—even with hazards on.",
-      dispatchNeeds: "Lot row or space number, terminal served, rolling status, and whether enforcement is on scene.",
+      bestUseCase:
+        "Drivers and rideshare operators waiting at Mineta SJC's cell phone lot or curbside pickup zones who need to avoid ticketing and towing.",
+      responseWorkflow:
+        "Stage at 2470 Airport Blvd → set 30-min timer → stay with vehicle → move to curbside only when passenger is ready → call dispatch if breakdown before tagging.",
+      safetyNote:
+        "Curbside terminals allow active loading only—unattended vehicles are prohibited for any reason, including baggage check.",
+      dispatchNeeds:
+        "Lot row or space at 2470 Airport Blvd, terminal (A or B), rolling status, EV/AWD flag, and whether enforcement is on scene.",
       relatedServiceLink: { text: "placeholder", href: "/" },
     },
     fifthSection: {
-      id: "airport-parking-map",
-      title: "Parking Map and Construction",
+      id: "curbside-vs-lot",
+      title: "Curbside Pickup vs Cell Lot",
       paragraphs: [
-        "Terminal construction can temporarily shift cell lot access—check Fly San Jose advisories before your pickup run.",
-        "TNC rideshare maps may direct drivers to a different staging area than the public cell phone lot; using the wrong zone is a common tow trigger.",
-        "If you receive a warning tag, move immediately and photograph the tag time—continued overstays escalate to tow quickly at airports.",
+        "Fly San Jose states that vehicles at terminal curbs must be actively loading or unloading—drivers cannot wait, park, or leave vehicles unattended curbside for any reason.",
+        "Unattended vehicles are not permitted at the curb even for baggage check. To check bags, park in a lot or garage first, then proceed inside.",
+        "Wheelchair or personal assistance at curbside requires advance airline coordination—do not block active lanes while waiting for support staff.",
       ],
       bullets: [
-        "Verify lot type on airport website",
-        "Set phone timer for posted limit",
-        "Stay with vehicle during breakdown",
+        "Cell lot: wait until passenger texts curbside-ready",
+        "Curbside: load and go—no queueing",
+        "International arrivals: separate curb past Terminal A",
+        "Tow inquiries: SJPD (408) 277-4156",
       ],
     },
-    
+    sectionExtras: {
+      "official-rules": {
+        paragraphs: [
+          "The cell phone area is at 2470 Airport Boulevard northeast of the terminals—verify signage if you have not used SJC since the lot relocated from older Airport Parkway references.",
+        ],
+      },
+      "rideshare-workflow": {
+        bullets: [
+          "Confirm TNC staging map before entering lot",
+          "No commercial vehicles in public cell lot",
+          "Platform coverage may not cover airport tows—save receipts",
+        ],
+      },
+    },
     officialResources: [
-      { text: "Fly San Jose parking", href: "https://www.flysanjose.com/parking-transportation" },
-      { text: "Fly San Jose ground transportation", href: "https://www.flysanjose.com/ground-transportation" },
+      { text: "SJC cell phone waiting area", href: "https://www.flysanjose.com/parking/cell-phone-waiting-area" },
+      { text: "SJC passenger pick-up & drop-off", href: "https://www.flysanjose.com/meet" },
     ],
     enrich: {
-      "callout": {
-            type: "tip",
-            "title": "Rideshare drivers",
-            "body": "Confirm whether your platform stages in the public cell lot or a separate TNC area—airport maps change with construction and terminal projects."
+      callout: {
+        type: "tip",
+        title: "Set a 25-minute timer",
+        body: "Airport enforcement measures from entry, not from when your passenger lands. Build in traffic time on Airport Boulevard so you are not moving to curbside after the 30-minute mark.",
       },
-      "steps": [
-            {
-                  "step": 1,
-                  "title": "Confirm lot rules",
-                  "description": "Read current Fly San Jose parking pages for time limits and active enforcement zones."
-            },
-            {
-                  "step": 2,
-                  "title": "Time your wait",
-                  "description": "Set a timer; move to curbside only when passengers are walking out to avoid re-parking penalties."
-            },
-            {
-                  "step": 3,
-                  "title": "Breakdown response",
-                  "description": "Call dispatch while you are still with the vehicle—abandoned-appearance cars get tagged faster in airport lots."
-            }
+      steps: [
+        {
+          step: 1,
+          title: "Enter the correct zone",
+          description: "Public cell lot at 2470 Airport Blvd for personal vehicles—confirm TNC map if you drive for a platform.",
+        },
+        {
+          step: 2,
+          title: "Stay with the vehicle",
+          description: "Unattended cars are ticketed and towed. No exceptions for quick restroom or terminal trips.",
+        },
+        {
+          step: 3,
+          title: "Move on passenger ready",
+          description: "Wait for curbside-ready text, then proceed to Terminal A or B arrivals—no waiting at the curb.",
+        },
+        {
+          step: 4,
+          title: "Breakdown or tow response",
+          description: "Call dispatch while with the vehicle; if towed, start SJPD release at (408) 277-4156.",
+        },
       ],
-      "twoColumn": {
-            "leftTitle": "Stay compliant",
-            "leftItems": [
-                  "Use correct staging zone",
-                  "Respect posted time limits",
-                  "Stay with vehicle if disabled"
-            ],
-            "rightTitle": "Common tow triggers",
-            "rightItems": [
-                  "Overstaying limits",
-                  "Fire lane parking",
-                  "Unattended no-start vehicle"
-            ]
-      }
-},
+      twoColumn: {
+        leftTitle: "Stay compliant",
+        leftItems: [
+          "30-minute maximum",
+          "Personal vehicles only in cell lot",
+          "Stay seated in or next to car",
+          "Curbside active loading only",
+        ],
+        rightTitle: "Fastest tow triggers",
+        rightItems: [
+          "Unattended vehicle",
+          "Over 30 minutes",
+          "Commercial vehicle in cell lot",
+          "No-start car left alone",
+        ],
+      },
+    },
   },
   "ca-87-breakdown-san-jose-guide": {
-    metaDescription: "CA-87 breakdown San Jose guide: Guadalupe Parkway shoulder safety, Julian St tunnel stops, mile markers for dispatch, and flatbed vs wheel-lift choices.",
-    heroAlt: "Guadalupe Parkway freeway corridor through downtown San Jose",
-    heroCaption: "Direction plus mile marker beats landmark guesses on CA-87—especially near the 101 interchange.",
+    metaDescription:
+      "CA-87 breakdown San Jose guide: Guadalupe Parkway mile markers, I-280/101 interchanges, CHP vs private tow, and dispatch checklist—step-by-step 2026.",
+    heroAlt: "Guadalupe Parkway SR-87 freeway corridor through downtown San Jose",
+    heroCaption: "Postmile and overhead sign text beat vague landmarks on SR-87—especially near Skyport and US-101.",
     atAGlance: {
-      bestUseCase: "Drivers stalled on CA-87 (Guadalupe Parkway) who need safe shoulder positioning and accurate tow dispatch.",
-      responseWorkflow: "Hazards on → exit away from lanes if safe → call 911 if blocking → share direction and mile marker with dispatch.",
-      safetyNote: "Tunnel and merge zones have narrow shoulders—follow CHP direction before attempting a tow hookup.",
-      dispatchNeeds: "Northbound or southbound, nearest overhead sign, mile marker, rolling status, EV/AWD/low clearance flag.",
+      bestUseCase:
+        "Drivers stalled on SR-87 between SR-85 and US-101 who need safe shoulder positioning and accurate tow dispatch in San Jose.",
+      responseWorkflow:
+        "Hazards on → pull right → 911 if blocking lanes → dial 511 for FSP when applicable → share direction and postmile with private dispatch.",
+      safetyNote:
+        "Julian Street tunnel and merge zones have narrow shoulders—follow CHP direction before hookup in live lanes.",
+      dispatchNeeds:
+        "Northbound or southbound, nearest overhead sign, postmile if visible, express vs local lane, EV/AWD/low clearance, destination shop or home.",
       relatedServiceLink: { text: "placeholder", href: "/" },
     },
     fifthSection: {
       id: "fsp-and-chp",
       title: "FSP and CHP on CA-87",
       paragraphs: [
-        "Freeway Service Patrol may assist during published hours on connected Bay Area corridors—quick fixes are free but FSP will not tow to your home.",
-        "Lane-blocking collisions require 911 first; towing happens after CHP clears the hazard.",
-        "Construction zones with shifted lanes make mile markers essential—overhead sign text helps dispatch when GPS drifts.",
+        "Freeway Service Patrol covers Bay Area congested corridors during published hours—dial 511 and say Freeway Assist for free minor repairs or a tow to a CHP drop site, not your home.",
+        "Lane-blocking collisions or injuries require 911 first. Private tow to your shop can run in parallel once CHP clears the hazard.",
+        "Caltrans District 4 maintains SR-87; Capitol Expressway interchange work can narrow shoulders—mention construction when postmile signs are missing.",
       ],
       bullets: [
-        "Exits near Julian St and Taylor St are high-incident zones",
-        "Express lanes share the corridor—state which side you are on",
-        "FSP hours vary—check 511.org",
+        "Taylor St SPUI ~ postmile 6.8",
+        "Skyport / airport ~ postmile 8.3",
+        "No I-880 interchange from SR-87",
+        "CHP Golden Gate Division patrol",
       ],
     },
-    
+    sectionExtras: {
+      "corridor-context": {
+        paragraphs: [
+          "Older locals still call SR-87 Guadalupe Parkway—dispatch understands both names, but overhead signs increasingly show SR-87 or Guadalupe Freeway.",
+        ],
+      },
+      "dispatch-details": {
+        bullets: [
+          "Airport-bound traffic stacks near Skyport",
+          "Downtown merges tighten at I-280",
+          "Express lane stalls need lane closure for rollback",
+        ],
+      },
+    },
     officialResources: [
       { text: "Caltrans District 4", href: "https://dot.ca.gov/caltrans-near-me/district-4" },
-      { text: "511 Bay Area", href: "https://511.org" },
+      { text: "511 Bay Area Freeway Assist", href: "https://511.org" },
+      { text: "CHP Golden Gate Division", href: "https://www.chp.ca.gov/find-an-office/golden-gate-division" },
     ],
     enrich: {
-      "callout": {
-            type: "warning",
-            "title": "Tunnel stops",
-            "body": "Breakdowns inside the Julian Street tunnel are high-risk. Stay in the vehicle with seatbelts on unless officers direct you out, and share exact location with dispatch."
+      callout: {
+        type: "warning",
+        title: "Tunnel stops",
+        body: "Julian Street tunnel breakdowns have minimal shoulder. Keep seatbelts on unless officers direct you out, and give dispatch tunnel + direction—not just downtown San Jose.",
       },
-      "steps": [
-            {
-                  "step": 1,
-                  "title": "Secure the scene",
-                  "description": "Pull right, hazards on, passengers exit away from traffic only when safe."
-            },
-            {
-                  "step": 2,
-                  "title": "Call the right resource",
-                  "description": "911 for blocking hazards; 511 FSP where available; private tow for shop or home destination."
-            },
-            {
-                  "step": 3,
-                  "title": "Brief dispatch",
-                  "description": "Direction, mile marker, construction zone flag, and drivetrain type before hookup."
-            }
+      steps: [
+        {
+          step: 1,
+          title: "Secure the scene",
+          description: "Pull right, hazards on, 911 if blocking; passengers exit away from lanes only when safe.",
+        },
+        {
+          step: 2,
+          title: "Choose the right help",
+          description: "511 FSP during hours for free minor aid; CHP for hazards; private tow for shop or home destination.",
+        },
+        {
+          step: 3,
+          title: "Brief dispatch precisely",
+          description: "NB/SB, express vs local, postmile or overhead sign, drivetrain type, callback number.",
+        },
+        {
+          step: 4,
+          title: "Confirm tow method",
+          description: "Flatbed for EV/AWD/low clearance; verify destination clearance before loading.",
+        },
       ],
-      "twoColumn": {
-            "leftTitle": "Tell dispatch",
-            "leftItems": [
-                  "NB or SB travel",
-                  "Last mile marker",
-                  "Wheels roll / steering turns",
-                  "EV or AWD flag"
-            ],
-            "rightTitle": "Avoid",
-            "rightItems": [
-                  "Standing between cars and traffic",
-                  "Accepting wheel-lift on AWD",
-                  "Moving before photos if collision"
-            ]
-      }
-},
+      twoColumn: {
+        leftTitle: "Tell dispatch",
+        leftItems: [
+          "Northbound or southbound",
+          "Express vs local lane",
+          "Postmile or overhead sign",
+          "EV / AWD / motorcycle flag",
+        ],
+        rightTitle: "Avoid",
+        rightItems: [
+          "Standing between car and traffic",
+          "Wheel-lift on AWD without clearance",
+          "Moving before photos if collision",
+          "Vague landmark only calls",
+        ],
+      },
+    },
   },
   "san-mateo-county-vehicle-release": {
-    metaDescription: "San Mateo County vehicle release guide: city vs sheriff vs CHP impounds, ID requirements, storage fee accrual, and Peninsula dispatch after yard pickup.",
+    metaDescription:
+      "San Mateo County vehicle release: SMC Sheriff ID requirements, sheriffs_recordsrequest@smcgov.org after-hours, city vs CHP paths, and Peninsula dispatch after yard pickup.",
     heroAlt: "Peninsula suburban street and parking enforcement context in San Mateo County",
     heroCaption: "County release paths differ by authorizing agency—confirm the holding yard before you leave home.",
     atAGlance: {
-      bestUseCase: "Peninsula drivers retrieving vehicles impounded in San Mateo County cities or unincorporated areas.",
-      responseWorkflow: "Read notice authorizing agency → call yard for hours and payment → gather ID/registration → plan flatbed if no-start.",
-      safetyNote: "Sheriff, city police, and CHP impounds use different release desks—match the agency on your notice.",
-      dispatchNeeds: "Yard city, gate hours, rolling status, and destination after release.",
-      relatedServiceLink: { text: "placeholder", href: "/" },
+      bestUseCase: "Peninsula drivers retrieving vehicles impounded by SMC Sheriff or navigating city/CHP holds in San Mateo County.",
+      responseWorkflow:
+        "Read notice authorizing agency → obtain SMC vehicle release if sheriff impound → call yard for fees/hours → gather ID → plan flatbed if no-start.",
+      safetyNote:
+        "Storage fees accrue daily at the tow yard even while release paperwork processes—call the yard the day you get notice.",
+      dispatchNeeds: "Yard city and address, gate hours, rolling status, EV/AWD flag, and destination after release.",
+      relatedServiceLink: { text: "San Mateo towing", href: "/towing-san-mateo" },
     },
     fifthSection: {
       id: "agency-paths",
       title: "Sheriff vs City vs CHP",
       paragraphs: [
-        "A tow from unincorporated county land may route through the San Mateo County Sheriff's Office, while downtown San Mateo or Redwood City street tows may use city parking enforcement partners.",
-        "CHP impounds from freeway shoulders follow state release procedures—the notice should name the storage operator and CHP case number if applicable.",
-        "Private property tows list the management company on the sign; release may require landlord authorization in addition to standard ID.",
+        "Unincorporated San Mateo County tows and sheriff-enforced impounds route through the SMC Sheriff Vehicle Release desk before the storage operator releases the vehicle.",
+        "Municipal tows in San Mateo, Redwood City, Daly City, and other cities may use city parking enforcement partners or private yards—the authorizing agency on your notice is the starting point.",
+        "CHP freeway impounds include a case number and state storage operator. Private property tows may require landlord authorization in addition to standard ID.",
+        "SMC Sheriff release fees vary by impound location—use the fee schedule matching where your vehicle was stored, payable in exact cash or credit card per current sheriff instructions.",
       ],
       bullets: [
         "Authorizing agency on tow notice",
+        "SMC Sheriff plate or case number",
         "CHP case number if freeway-related",
         "Landlord letter for some private lots",
       ],
     },
-    
+
     officialResources: [
-      { text: "San Mateo County Sheriff", href: "https://www.sheriff.smcgov.org/" },
+      { text: "SMC Sheriff vehicle releases", href: "https://www.smcsheriff.com/vehicle-releases-requirements" },
+      { text: "SMC Criminal Records Bureau", href: "https://www.smcsheriff.com/support-services/criminal-records-bureau" },
       { text: "City of San Mateo", href: "https://www.cityofsanmateo.org" },
     ],
     enrich: {
-      "callout": {
-            type: "legal",
-            "title": "Storage fees accrue daily",
-            "body": "Call the yard the same day you receive notice to confirm fee schedule and whether weekend release requires overtime staffing."
+      callout: {
+        type: "legal",
+        title: "After-hours release requires email",
+        body: "SMC Sheriff instructs owners requesting vehicle release outside normal counter hours, on weekends, or holidays to email sheriffs_recordsrequest@smcgov.org. Build that processing time into your yard pickup plan.",
       },
-      "steps": [
-            {
-                  "step": 1,
-                  "title": "Identify agency",
-                  "description": "Match sheriff, city, CHP, or private operator on your notice to the correct release desk."
-            },
-            {
-                  "step": 2,
-                  "title": "Confirm yard details",
-                  "description": "Hours, payment types, and appointment requirements by phone before driving."
-            },
-            {
-                  "step": 3,
-                  "title": "Retrieve and transport",
-                  "description": "Inspect vehicle at pickup; book flatbed if it will not roll safely."
-            }
+      steps: [
+        {
+          step: 1,
+          title: "Identify agency",
+          description:
+            "Match sheriff, city, CHP, or private operator on your notice to the correct release desk before you drive.",
+        },
+        {
+          step: 2,
+          title: "Obtain sheriff release",
+          description:
+            "If SMC Sheriff impound: registered owner, valid DL (or ID plus licensed driver), plate/case number, location-specific fee.",
+        },
+        {
+          step: 3,
+          title: "Confirm yard details",
+          description: "Hours, payment types, storage balance, and appointment requirements by phone before driving.",
+        },
+        {
+          step: 4,
+          title: "Retrieve and transport",
+          description: "Inspect vehicle at pickup; book flatbed if it will not roll safely—650-881-2400.",
+        },
       ],
-      "twoColumn": {
-            "leftTitle": "Documents",
-            "leftItems": [
-                  "ID and registration",
-                  "Tow notice",
-                  "Authorization if not owner",
-                  "Payment confirmed"
-            ],
-            "rightTitle": "Delays",
-            "rightItems": [
-                  "Wrong agency desk",
-                  "Arriving without calling",
-                  "Assuming hearing stops fees"
-            ]
-      }
-},
+      twoColumn: {
+        leftTitle: "Documents",
+        leftItems: [
+          "Government photo ID",
+          "Registration or ownership proof",
+          "Sheriff release receipt",
+          "Authorization if not owner",
+        ],
+        rightTitle: "Delays",
+        rightItems: [
+          "Wrong agency desk",
+          "Weekend without email request",
+          "Assuming hearing stops storage fees",
+        ],
+      },
+    },
   },
   "ca-92-breakdown-san-mateo-towing": {
-    metaDescription: "CA-92 breakdown San Mateo towing: bridge approach shoulders, heat-related stalls, CHP coordination, and Peninsula flatbed dispatch near the 101 interchange.",
-    heroAlt: "Highway 92 bridge approach corridor toward the San Mateo Bridge",
+    metaDescription:
+      "CA-92 breakdown San Mateo towing: San Mateo-Hayward Bridge stalls, 511 Freeway Assist, CHP coordination, and Peninsula flatbed dispatch near the 101 interchange.",
+    heroAlt: "Highway 92 bridge approach corridor toward the San Mateo-Hayward Bridge",
     heroCaption: "Bridge approaches leave little shoulder room—get fully onto the shoulder before calling dispatch.",
     atAGlance: {
-      bestUseCase: "Drivers broken down on CA-92 near San Mateo bridge approaches or the 101 interchange.",
-      responseWorkflow: "Fully onto shoulder → hazards → 911 if blocking → direction and mile marker to dispatch.",
-      safetyNote: "Bridge grades strain cooling systems—do not open the hood in live lanes if steam is present.",
-      dispatchNeeds: "Eastbound or westbound, mile marker, overheating vs mechanical fault, EV/AWD flag.",
-      relatedServiceLink: { text: "placeholder", href: "/" },
+      bestUseCase:
+        "Drivers broken down on CA-92 near San Mateo bridge approaches, the high-rise section, or the US-101 interchange.",
+      responseWorkflow:
+        "Fully onto shoulder → hazards → 911 if blocking → 511 Freeway Assist or commercial dispatch with direction and mile marker.",
+      safetyNote:
+        "Regional bridges route through Caltrans via 511—stay belted on the bridge deck until CHP confirms it is safe to exit.",
+      dispatchNeeds: "Eastbound or westbound, mile marker, overheating vs mechanical fault, EV/AWD flatbed flag.",
+      relatedServiceLink: { text: "San Mateo towing", href: "/towing-san-mateo" },
     },
     fifthSection: {
       id: "bridge-approaches",
       title: "Bridge Approach Staging",
       paragraphs: [
-        "Westbound climbs toward the high-rise bridge section leave minimal shoulder—use hazard lights and stay belted until CHP confirms it is safe to exit.",
-        "Poplar Avenue and 101 interchange merges are common overheat zones in summer; share whether coolant loss or electrical fault caused the stall.",
-        "If FSP reaches you first, remember they relocate to safe shoulders or lots—not your home shop.",
+        "Westbound climbs toward the J. Arthur Younger Bridge high-rise section leave minimal shoulder—use hazard lights and stay belted until CHP confirms it is safe to exit.",
+        "Eastbound grades from the 101 interchange through Foster City are common overheat zones in summer; share whether coolant loss or electrical fault caused the stall.",
+        "511 Freeway Assist routes bridge incidents through Caltrans. FSP relocates to CHP-approved safe spots during peak commute hours—not your home shop.",
+        "Commercial dispatch from a rotational drop lot requires your drop address, destination shop hours, and whether flatbed is needed for AWD/EV.",
+        "Motorcycles and high-profile vans feel bridge crosswinds more than sedans—mention vehicle type so dispatch sends appropriate equipment.",
+        "Weekend beach traffic can back up toll plazas; a stall in stop-and-go heat is different from a moving-lane failure. Describe whether traffic is flowing past you.",
+        "Rideshare and delivery drivers stopping on 92 should share app trip context only after scene safety is handled—dispatch needs location facts first, not passenger details.",
       ],
       bullets: [
         "State bridge direction (toward 101 or Hayward)",
         "Note steam or fluid under vehicle",
-        "CHP incident number if officer responded",
+        "CHP or Caltrans incident number if officer responded",
+        "FSP drop lot address if applicable",
       ],
     },
-    
+
     officialResources: [
-      { text: "511 Bay Area", href: "https://511.org" },
+      { text: "511 Freeway Assist", href: "https://511.org/511phone/assist" },
+      { text: "CHP Freeway Service Patrol", href: "https://www.chp.ca.gov/programs-services/services-information/freeway-service-patrol/" },
       { text: "CHP Golden Gate Division", href: "https://www.chp.ca.gov/find-an-office/golden-gate-division" },
     ],
     enrich: {
-      "callout": {
-            type: "warning",
-            "title": "Summer overheat cluster",
-            "body": "CA-92 eastbound grades see frequent cooling failures. Shut down the engine if temperature spikes and wait for shoulder clearance before opening the hood."
+      callout: {
+        type: "warning",
+        title: "Summer overheat cluster",
+        body: "CA-92 eastbound grades see frequent cooling failures. Shut down the engine if temperature spikes and wait for shoulder clearance before opening the hood.",
       },
-      "steps": [
-            {
-                  "step": 1,
-                  "title": "Maximize shoulder space",
-                  "description": "Pull as far right as possible; wheels turned away from traffic when parked."
-            },
-            {
-                  "step": 2,
-                  "title": "Coordinate with CHP",
-                  "description": "Lane-blocking stalls need 911; officer direction governs when tow trucks approach."
-            },
-            {
-                  "step": 3,
-                  "title": "Dispatch briefing",
-                  "description": "Direction, mile marker, fault type, and flatbed need for AWD/EV."
-            }
+      steps: [
+        {
+          step: 1,
+          title: "Maximize shoulder space",
+          description: "Pull as far right as possible; wheels turned away from traffic when parked.",
+        },
+        {
+          step: 2,
+          title: "Call 911 or 511",
+          description: "Blocking lanes → 911. Otherwise 511 Freeway Assist for bridge/tunnel coordination.",
+        },
+        {
+          step: 3,
+          title: "Coordinate with CHP",
+          description: "Officer direction governs when tow trucks approach the bridge deck.",
+        },
+        {
+          step: 4,
+          title: "Commercial dispatch briefing",
+          description: "Direction, mile marker, fault type, flatbed need, and destination shop hours—650-881-2400.",
+        },
       ],
-      "twoColumn": {
-            "leftTitle": "Dispatch facts",
-            "leftItems": [
-                  "EB or WB",
-                  "Mile marker",
-                  "Overheat vs collision",
-                  "Destination shop hours"
-            ],
-            "rightTitle": "Risky moves",
-            "rightItems": [
-                  "Partial lane block",
-                  "Wheel-lift on AWD",
-                  "Opening hood in traffic"
-            ]
-      }
-},
+      twoColumn: {
+        leftTitle: "Dispatch facts",
+        leftItems: [
+          "EB or WB toward 101/Hayward",
+          "Mile marker or high-rise landmark",
+          "Overheat vs collision",
+          "EV tow mode status",
+        ],
+        rightTitle: "Risky moves",
+        rightItems: [
+          "Partial lane block without 911",
+          "Wheel-lift on AWD",
+          "Opening hood in live lanes",
+        ],
+      },
+    },
   },
   "san-mateo-caltrain-tow-truck-pickup": {
-    metaDescription: "Caltrain San Mateo tow pickup guide: station curb rules, B Street parking enforcement, garage clearance for flatbeds, and Peninsula dispatch staging.",
+    metaDescription:
+      "Caltrain San Mateo tow pickup: 385 First Ave station, Transit Center garage, Laz Parking enforcement, kiss-and-ride rules, and Peninsula flatbed staging.",
     heroAlt: "Caltrain San Mateo station area with commuter parking and kiss-and-ride zones",
     heroCaption: "Station lots have one-way aisles—tell dispatch which corner and garage level you are on.",
     atAGlance: {
-      bestUseCase: "Breakdown or impound pickup near downtown San Mateo Caltrain station and kiss-and-ride zones.",
-      responseWorkflow: "Confirm curb legality → share cross streets → give garage height if underground → meet truck at safe visible point.",
-      safetyNote: "Pedestrian peaks every hour—do not block crosswalks or bus islands while staging a tow truck.",
-      dispatchNeeds: "North or south of station house, garage level, ceiling height, rolling status.",
-      relatedServiceLink: { text: "placeholder", href: "/" },
+      bestUseCase:
+        "Breakdown or impound pickup near downtown San Mateo Caltrain station, Transit Center garage, or kiss-and-ride zones.",
+      responseWorkflow:
+        "Confirm curb legality → share cross streets and lot name → give garage height if underground → meet truck at safe visible point.",
+      safetyNote:
+        "Pedestrian peaks every hour—do not block crosswalks, bus islands, or SamTrans stops while staging a tow truck.",
+      dispatchNeeds:
+        "North or south of station house, Transit Center vs 2nd Ave lot, garage P-level, ceiling height, rolling status.",
+      relatedServiceLink: { text: "San Mateo towing", href: "/towing-san-mateo" },
     },
     fifthSection: {
       id: "downtown-staging",
       title: "Downtown Staging Points",
       paragraphs: [
         "B Street and 2nd Avenue have different curb rules block by block—photograph the sign at your exact space if enforcement is a concern.",
+        "Transit Center underground aisles are one-way with tight turns—give P-level and stall number so the operator does not need to reverse out.",
         "Evening train arrivals pack sidewalks; choose a visible meeting point away from the busiest crosswalk when coordinating with dispatch.",
         "Private garages near the station may require manager escort—call building security before the truck enters.",
       ],
       bullets: [
-        "Cross streets north or south of station",
+        "Cross streets north or south of 385 First Ave",
+        "Transit Center vs 2nd Ave lot",
         "Garage P-level and clearance",
         "Permit zone signs if street parked",
       ],
     },
-    
+
     officialResources: [
-      { text: "Caltrain", href: "https://www.caltrain.com" },
-      { text: "City of San Mateo parking", href: "https://www.cityofsanmateo.org/departments/parking" },
+      { text: "Caltrain San Mateo station", href: "https://www.caltrain.com/station/70091" },
+      { text: "City of San Mateo parking", href: "https://www.cityofsanmateo.org/parking" },
+      { text: "Laz Parking enforcement", href: "https://www.cityofsanmateo.org/680/Traffic-Parking" },
     ],
     enrich: {
-      "callout": {
-            type: "info",
-            "title": "Commuter lot hours",
-            "body": "Many station-adjacent spaces are daytime commuter only—overnight parking triggers enforcement even if the vehicle is disabled."
+      callout: {
+        type: "info",
+        title: "Commuter lot payment hours",
+        body: "Transit Center paid parking runs 8 AM–6 PM on weekdays per Caltrain lot guidance—after 6 PM surface parking may be free while rules still apply to kiss-and-ride and metered streets.",
       },
-      "steps": [
-            {
-                  "step": 1,
-                  "title": "Pick legal staging",
-                  "description": "Identify a curb or lot corner that does not block buses, trains, or crosswalks."
-            },
-            {
-                  "step": 2,
-                  "title": "Brief dispatch",
-                  "description": "Cross streets, garage level, clearance, and whether pedestrians are heavy."
-            },
-            {
-                  "step": 3,
-                  "title": "Meet the operator",
-                  "description": "Stand visible and safe; share keys and drivetrain details before hookup."
-            }
+      steps: [
+        {
+          step: 1,
+          title: "Pick legal staging",
+          description:
+            "Identify a curb or lot corner that does not block buses, trains, SamTrans stops, or crosswalks.",
+        },
+        {
+          step: 2,
+          title: "Brief dispatch",
+          description:
+            "Lot name (Transit Center or 2nd Ave), cross streets, garage level, clearance, pedestrian volume.",
+        },
+        {
+          step: 3,
+          title: "Meet the operator",
+          description: "Stand visible and safe; share keys, AWD/EV flag, and drivetrain details before hookup.",
+        },
+        {
+          step: 4,
+          title: "Confirm method",
+          description: "Request flatbed for EV/AWD; share gate codes for underground pickup.",
+        },
       ],
-      "twoColumn": {
-            "leftTitle": "Share with dispatch",
-            "leftItems": [
-                  "Station side (NB/SB)",
-                  "Garage height",
-                  "AWD/EV flag",
-                  "Visible meet point"
-            ],
-            "rightTitle": "Avoid",
-            "rightItems": [
-                  "Blocking kiss-and-ride",
-                  "Staging in bus island",
-                  "Wheel-lift on tight curb"
-            ]
-      }
-},
+      twoColumn: {
+        leftTitle: "Share with dispatch",
+        leftItems: [
+          "Transit Center or 2nd Ave lot",
+          "Garage height and P-level",
+          "AWD/EV flatbed flag",
+          "Visible meet point",
+        ],
+        rightTitle: "Avoid",
+        rightItems: [
+          "Blocking kiss-and-ride",
+          "Staging in bus island",
+          "Wheel-lift on EV downtown",
+        ],
+      },
+    },
   },
   "flatbed-ev-towing-san-mateo-checklist": {
-    metaDescription: "Flatbed EV towing San Mateo checklist: tow mode, 12V battery status, garage clearance on the Peninsula, and dispatch details that protect your drivetrain.",
+    metaDescription:
+      "Flatbed EV towing San Mateo: 12V vs HV faults, Tesla/Rivian transport mode, Peninsula garage clearance, and flatbed dispatch script—electric vehicle towing checklist.",
     heroAlt: "Electric vehicle secured on flatbed tow truck in San Mateo County",
     heroCaption: "Confirm manufacturer tow mode or neutral procedure before the flatbed ramps deploy.",
     atAGlance: {
-      bestUseCase: "Peninsula EV and AWD owners who need flatbed transport in San Mateo city or county.",
-      responseWorkflow: "Check 12V → enable tow mode if possible → share garage height → request flatbed explicitly.",
-      safetyNote: "Never assume wheel-lift is safe for EVs—high-voltage and drivetrain damage risk is real.",
-      dispatchNeeds: "Make/model, tow mode status, garage clearance, destination shop specializing in EVs.",
-      relatedServiceLink: { text: "placeholder", href: "/" },
+      bestUseCase:
+        "Peninsula EV and AWD owners who need flatbed transport in San Mateo city, Hillsdale, or downtown garages.",
+      responseWorkflow:
+        "Check 12V → enable tow/transport mode if possible → share garage height → request flatbed explicitly on the call.",
+      safetyNote:
+        "Tesla and Rivian manuals require flatbed with all wheels off the ground—wheel-lift can damage motors and affect warranty claims.",
+      dispatchNeeds:
+        "Make/model, tow mode status, 12V alive or dead, garage clearance, EV-certified destination shop.",
+      relatedServiceLink: { text: "get a quote", href: "/get-a-quote" },
     },
     fifthSection: {
       id: "peninsula-garages",
       title: "Peninsula Garage Constraints",
       paragraphs: [
-        "Downtown San Mateo and Hillsdale area garages often post 6'8\"–7'0\" clearance—measure the lowest pipe, not just the entrance sign.",
-        "Air suspension vehicles may need transport mode to cross ramp transitions without scraping.",
+        "Downtown San Mateo Transit Center underground and Hillsdale garages often post 6'8\"–7'0\" clearance—measure the lowest pipe, not just the entrance sign.",
+        "Air suspension and Rivian Conserve/lowest ride height settings help cross ramp transitions without scraping.",
         "Charging stalls are not repair bays—move to a legal loading zone before hookup when possible.",
+        "Tell dispatch if the vehicle is near Caltrain kiss-and-ride—see our Caltrain San Mateo tow pickup guide for pedestrian staging.",
       ],
       bullets: [
         "Tow mode enabled or manual neutral confirmed",
-        "12V jump if accessories dead",
+        "12V jump attempted only if manual allows",
         "Ramp photo if clearance is tight",
+        "Flatbed requested on first call",
       ],
     },
-    
+
     officialResources: [
       { text: "Rivian towing support", href: "https://rivian.com/support/article/towing-your-rivian" },
-      { text: "Tesla roadside and towing", href: "https://www.tesla.com/support/roadside-assistance" },
+      { text: "Tesla roadside assistance", href: "https://www.tesla.com/support/roadside-assistance" },
+      { text: "Bay Area EV towing guide", href: "https://heavytowpro.com/blog/electric-vehicle-towing-guide" },
     ],
     enrich: {
-      "callout": {
-            type: "tip",
-            "title": "Flatbed-first on the Peninsula",
-            "body": "Dense garages and steep driveway lips make flatbed loading safer than wheel-lift for most EVs—even when the vehicle appears to roll."
+      callout: {
+        type: "tip",
+        title: "Say flatbed on the first call",
+        body: "Phrase it clearly: \"Electric vehicle, flatbed required, [make/model], tow mode [on/off].\" Peninsula dispatch routes EV-aware rollback trucks by default when you flag it upfront.",
       },
-      "steps": [
-            {
-                  "step": 1,
-                  "title": "Stabilize 12V",
-                  "description": "Many EVs will not shift or release parking brake with a dead 12V—address that before hookup."
-            },
-            {
-                  "step": 2,
-                  "title": "Enable tow mode",
-                  "description": "Follow manufacturer app or screen prompts; tell dispatch if tow mode fails."
-            },
-            {
-                  "step": 3,
-                  "title": "Confirm flatbed",
-                  "description": "State make/model and insist on flatbed if operator suggests wheel-lift."
-            }
+      steps: [
+        {
+          step: 1,
+          title: "Diagnose 12V vs pack",
+          description:
+            "Note whether accessories work, shifter responds, and tow mode menu is reachable—tell dispatch which system failed.",
+        },
+        {
+          step: 2,
+          title: "Enable tow mode",
+          description:
+            "Tesla Transport Mode, Rivian park brake release, or brand equivalent; say if menu is unreachable.",
+        },
+        {
+          step: 3,
+          title: "Share garage context",
+          description: "Ceiling height, P-level, steep driveway, or freeway shoulder mile marker.",
+        },
+        {
+          step: 4,
+          title: "Confirm flatbed hookup",
+          description: "Decline wheel-lift; photograph strap points and receipt for insurance.",
+        },
       ],
-      "twoColumn": {
-            "leftTitle": "Pre-tow checklist",
-            "leftItems": [
-                  "Tow mode on",
-                  "12V status known",
-                  "Garage height shared",
-                  "Flatbed requested"
-            ],
-            "rightTitle": "Do not",
-            "rightItems": [
-                  "Wheel-lift on AWD",
-                  "Dragging in Park",
-                  "Skipping ramp measurement"
-            ]
-      }
-},
+      twoColumn: {
+        leftTitle: "Pre-tow checklist",
+        leftItems: [
+          "Flatbed requested",
+          "Tow mode status known",
+          "12V vs HV clarified",
+          "Garage height shared",
+        ],
+        rightTitle: "Do not",
+        rightItems: [
+          "Wheel-lift on dual-motor EV",
+          "Flat-tow behind RV",
+          "Skip ramp measurement",
+        ],
+      },
+    },
   },
   "oakland-towed-vehicle-how-to-get-back": {
-    metaDescription: "Oakland towed vehicle release steps: read your notice, City of Oakland impound partners, ID requirements, yard hours, and East Bay dispatch transport after pickup.",
+    metaDescription:
+      "Oakland towed vehicle release: OPD Records 510-238-3021, Auto Plus Towing lookup, administrative release fee, and East Bay dispatch transport from industrial yards.",
     heroAlt: "East Bay urban street with Oakland parking enforcement context",
-    heroCaption: "Locate the correct Oakland-area yard listed on your notice before crossing the bridge.",
+    heroCaption: "Confirm tow status with OPD Records before driving to Auto Plus Towing.",
     atAGlance: {
-      bestUseCase: "East Bay drivers retrieving vehicles towed by Oakland city enforcement or private operators.",
-      responseWorkflow: "Photograph notice → call yard → gather ID/registration → plan BART/ride to yard if needed.",
-      safetyNote: "Industrial yards may be far from BART—plan ground transport while dispatch meets you at release.",
-      dispatchNeeds: "Yard address, bay number, rolling status, and post-release destination.",
-      relatedServiceLink: { text: "placeholder", href: "/" },
+      bestUseCase:
+        "East Bay drivers retrieving vehicles towed by Oakland Police, OakDOT, or city-contract Auto Plus storage.",
+      responseWorkflow:
+        "Auto Plus plate lookup → OPD Records release at Room 306 → pay yard fees → plan transport from industrial yard.",
+      safetyNote:
+        "Industrial yards may be far from BART—plan ground transport while dispatch meets you at release.",
+      dispatchNeeds:
+        "Yard address, bay number, rolling status, EV/AWD flag, and post-release destination.",
+      relatedServiceLink: { text: "Oakland towing", href: "/towing-oakland" },
     },
     fifthSection: {
       id: "oakland-yards",
       title: "Oakland Yard Logistics",
       paragraphs: [
-        "Search oaklandca.gov for current parking enforcement and impound partner information—the city may rotate contractors.",
-        "Monday mornings see heavy release traffic; arriving without calling can mean long waits even if you have paperwork ready.",
+        "Auto Plus Towing holds many city-contract impounds—use their public lookup before assuming a private lot address on an old blog post.",
+        "Monday mornings see heavy release traffic; call (510) 261-8199 for balance and hours before you leave home.",
         "If plates were stolen, bring police report numbers—the yard may require them before release.",
+        "Evidence holds need investigator clearance at OPD before Records can issue a standard release form.",
       ],
       bullets: [
-        "Notice photo with legible phone numbers",
+        "Auto Plus: (510) 261-8199",
+        "OPD Records: Room 306, 455 7th St",
         "Payment type confirmed by phone",
-        "Flatbed scheduled if no-start",
+        "Flatbed if no-start or EV/AWD",
       ],
     },
-    
+
     officialResources: [
-      { text: "City of Oakland parking enforcement", href: "https://www.oaklandca.gov/topics/parking-enforcement" },
-      { text: "City of Oakland", href: "https://www.oaklandca.gov" },
+      { text: "City of Oakland towed vehicles", href: "https://www.oaklandca.gov/Public-Safety-Streets/Parking-Vehicles/Towed-Vehicles" },
+      { text: "Oakland Abandoned Auto Unit", href: "https://www.oaklandca.gov/Government/Departments/Transportation-OakDOT/Abandoned-Auto-Unit" },
     ],
     enrich: {
-      "callout": {
-            type: "legal",
-            "title": "Not legal advice",
-            "body": "Oakland Municipal Code governs hearings and release eligibility. Verify current city publications before relying on third-party summaries."
+      callout: {
+        type: "legal",
+        title: "No payment plans for towed vehicles",
+        body: "City of Oakland states there are no payment plans for towed vehicles. Pay parking tickets and release fees to remove the car—then dispute via the Administrative Hearing Examiner if appropriate.",
       },
-      "steps": [
-            {
-                  "step": 1,
-                  "title": "Read notice immediately",
-                  "description": "Identify operator, reason code, and storage location—photograph before ink fades."
-            },
-            {
-                  "step": 2,
-                  "title": "Call the yard",
-                  "description": "Confirm hours, fees accrual, and payment methods before traveling."
-            },
-            {
-                  "step": 3,
-                  "title": "Release and transport",
-                  "description": "Inspect vehicle; book East Bay dispatch if it will not roll."
-            }
+      steps: [
+        {
+          step: 1,
+          title: "Confirm tow online",
+          description: "Auto Plus public lookup by plate/VIN or call OPD Records 510-238-3021.",
+        },
+        {
+          step: 2,
+          title: "Clear tickets if required",
+          description: "Pay Oakland parking tickets and any blocking out-of-city tickets before release.",
+        },
+        {
+          step: 3,
+          title: "OPD Records release",
+          description: "Room 306 with DL and ownership proof; pay administrative release fee.",
+        },
+        {
+          step: 4,
+          title: "Pay Auto Plus and transport",
+          description: "Towing/storage to yard; book East Bay dispatch 510-800-3800 if no-start.",
+        },
       ],
-      "twoColumn": {
-            "leftTitle": "Bring",
-            "leftItems": [
-                  "ID and registration",
-                  "Authorization if agent",
-                  "Payment confirmed",
-                  "Police report if plates stolen"
-            ],
-            "rightTitle": "Avoid",
-            "rightItems": [
-                  "Wrong yard trip",
-                  "Ignoring daily storage",
-                  "Night arrival without calling"
-            ]
-      }
-},
+      twoColumn: {
+        leftTitle: "Bring",
+        leftItems: [
+          "Valid driver's license",
+          "Ownership proof",
+          "Ticket payment receipts",
+          "OPD release form",
+        ],
+        rightTitle: "Avoid",
+        rightItems: [
+          "Wrong yard trip",
+          "Ignoring daily storage",
+          "Disputing without examiner call",
+        ],
+      },
+    },
   },
   "oakland-tow-hearing-request": {
-    metaDescription: "Oakland tow hearing request overview: City of Oakland filing steps, evidence photos, storage fee rules during review, and East Bay transport after a decision.",
+    metaDescription:
+      "Oakland tow hearing request: Administrative Hearing Examiner 510-238-4484, evidence photos, storage fee rules during review, and East Bay transport after a decision.",
     heroAlt: "Oakland urban parking and street enforcement near downtown",
-    heroCaption: "File Oakland hearing requests before the printed deadline on your tow notice.",
+    heroCaption: "Call the Administrative Hearing Examiner promptly if you believe your vehicle was towed in error.",
     atAGlance: {
-      bestUseCase: "Oakland drivers challenging a parking or private-property tow through city administrative hearing.",
-      responseWorkflow: "Note deadline → search oaklandca.gov → submit evidence → retain confirmation → plan vehicle removal.",
-      safetyNote: "Assume storage fees continue unless the city explicitly states otherwise—confirm with the yard.",
-      dispatchNeeds: "Post-decision yard pickup if vehicle still at storage; release paperwork in hand.",
-      relatedServiceLink: { text: "placeholder", href: "/" },
+      bestUseCase:
+        "Registered owners disputing an Oakland tow or seeking fee waiver when the city towed the vehicle in error.",
+      responseWorkflow:
+        "Read notice → call 510-238-4484 → gather evidence → request hearing → plan vehicle removal regardless of outcome.",
+      safetyNote:
+        "Storage at Auto Plus often continues during review—confirm accrual the day you file.",
+      dispatchNeeds:
+        "Post-decision yard pickup, release paperwork in hand, flatbed flag if needed.",
+      relatedServiceLink: { text: "Oakland towing", href: "/towing-oakland" },
     },
     fifthSection: {
       id: "oakland-filing",
-      title: "City of Oakland Filing Channels",
+      title: "Administrative Hearing Examiner",
       paragraphs: [
-        "Search oaklandca.gov for tow hearing or parking adjudication pages—submission options may include mail, online portal, or in-person drop-off.",
-        "Private property tows may follow different appeal paths than city street enforcement—read the notice category before filing.",
-        "Remote hearing attendance options change—verify current city instructions rather than assuming in-person only.",
+        "City of Oakland routes many tow disputes to the Administrative Hearing Examiner at (510) 238-4484—not a generic parking portal.",
+        "Separate from OPD Records release at Room 306: hearings challenge the tow; release forms authorize pickup after fees.",
+        "CVC §14602.6 thirty-day license holds may involve additional OPD tow review—ask the examiner which path applies.",
+        "Private property tows may not use the same examiner workflow—read the notice category.",
+        "Multilingual city assistance line (800) 500-6484 offers English, Spanish, Cantonese, and Mandarin for general tow questions.",
+        "If the examiner schedules an in-person review, bring two printed copies of every photo and receipt—one for the file and one for your records.",
       ],
       bullets: [
-        "Deadline date circled on notice",
-        "Violation code matching your evidence",
-        "Copy of everything filed",
+        "Examiner: (510) 238-4484",
+        "Plate, VIN, tow date ready",
+        "Wide signage photos",
+        "Photograph the vehicle at pickup if damage occurred during storage—note dents, missing parts, or interior tampering before signing release.",
+        "Copy of every call log with examiner, OPD Records, and Auto Plus",
       ],
     },
-    
+
     officialResources: [
-      { text: "City of Oakland parking", href: "https://www.oaklandca.gov/topics/parking" },
-      { text: "City of Oakland parking enforcement", href: "https://www.oaklandca.gov/topics/parking-enforcement" },
+      { text: "City of Oakland towed vehicles", href: "https://www.oaklandca.gov/Public-Safety-Streets/Parking-Vehicles/Towed-Vehicles" },
+      { text: "CVC §22659.5", href: "https://california.public.law/codes/vehicle_code_section_22659.5" },
     ],
     enrich: {
-      "callout": {
-            type: "legal",
-            "title": "Storage during review",
-            "body": "Many yards continue daily storage charges while a hearing is pending. Pay release fees to remove the vehicle if costs are compounding—hearings address tow validity, not always fee waivers."
+      callout: {
+        type: "legal",
+        title: "Storage during review",
+        body: "Daily storage at the tow company typically continues while a hearing is pending. Pay release fees to stop accrual if costs are compounding—the hearing addresses tow validity, not automatic fee freezes.",
       },
-      "steps": [
-            {
-                  "step": 1,
-                  "title": "Verify deadline",
-                  "description": "Missing the hearing window on your notice can end your right to challenge."
-            },
-            {
-                  "step": 2,
-                  "title": "Submit evidence",
-                  "description": "Signage photos, permits, and factual witness statements—avoid emotional narratives."
-            },
-            {
-                  "step": 3,
-                  "title": "Plan vehicle removal",
-                  "description": "Win or lose, you may still need a tow from the yard—have release paperwork ready."
-            }
+      steps: [
+        {
+          step: 1,
+          title: "Call examiner",
+          description: "510-238-4484 with plate, VIN, tow date, and reason you believe the tow was improper.",
+        },
+        {
+          step: 2,
+          title: "Submit evidence",
+          description: "Timestamped signage, permits, ticket payment proof—factual documents only.",
+        },
+        {
+          step: 3,
+          title: "Track storage",
+          description: "Call Auto Plus Towing same day to confirm daily balance while waiting.",
+        },
+        {
+          step: 4,
+          title: "Plan removal",
+          description: "After decision, OPD release plus yard fees plus dispatch 510-800-3800 if the vehicle will not roll from the lot.",
+        },
       ],
-      "twoColumn": {
-            "leftTitle": "Useful evidence",
-            "leftItems": [
-                  "Wide signage photos",
-                  "Permit documentation",
-                  "Dated manager letters"
-            ],
-            "rightTitle": "Weak filings",
-            "rightItems": [
-                  "After deadline",
-                  "Wrong appeal type",
-                  "No notice copy attached"
-            ]
-      }
-},
+      twoColumn: {
+        leftTitle: "Useful evidence",
+        leftItems: [
+          "Wide signage photos",
+          "Permit or lease proof",
+          "Ticket payment receipts",
+          "Oak311 contact records",
+        ],
+        rightTitle: "Weak filings",
+        rightItems: [
+          "Wrong owner disputing",
+          "Evidence hold without court order",
+          "No notice copy referenced",
+        ],
+      },
+    },
   },
   "sfo-vehicle-towed-what-to-do": {
-    metaDescription: "SFO vehicle towed what to do: FlySFO release desks, rental and rideshare routing, ID paperwork, and Peninsula flatbed dispatch from off-airport storage yards.",
+    metaDescription:
+      "SFO vehicle towed what to do: SFPD Airport Bureau 650-821-7111, cell lot 60-minute rules, garage impound release, and Peninsula flatbed dispatch from off-airport yards.",
     heroAlt: "San Francisco International Airport terminals and parking structures",
-    heroCaption: "Airport parking contacts on FlySFO beat guessing which storage operator holds your vehicle.",
+    heroCaption: "Airport property tows route through SFPD Airport Bureau—not the city SFMTA impound line.",
     atAGlance: {
-      bestUseCase: "Travelers whose vehicle was towed from SFO terminals, garages, or curbside zones.",
-      responseWorkflow: "Check FlySFO parking pages → identify lot/terminal → call release desk → schedule transport if no-start.",
+      bestUseCase: "Travelers whose vehicle was towed from SFO terminals, garages, cell phone lot, or airport roadways.",
+      responseWorkflow: "Confirm SFO vs city tow → 650-821-7111 → ID and payment → yard release → flatbed if no-start.",
       safetyNote: "Do not leave baggage unattended at curbside while locating impound information.",
-      dispatchNeeds: "Terminal, domestic vs international garage, yard address, drivetrain type.",
-      relatedServiceLink: { text: "placeholder", href: "/" },
+      dispatchNeeds: "Terminal, garage level, yard address, rental authorization, EV/AWD flag.",
+      relatedServiceLink: { text: "light-duty towing", href: "/services/light-duty" },
     },
     fifthSection: {
       id: "sfo-lots",
-      title: "SFO Lot Types",
+      title: "SFO Lot Types and Tow Triggers",
       paragraphs: [
-        "International garages, domestic terminals, and long-term economy lots may use different enforcement partners—your notice should name the contractor.",
-        "Rental vehicles should contact the rental company first—they may handle release fees and vendor selection.",
-        "Cell lot timers and curbside limits are strict—set phone alerts when picking up arriving passengers.",
+        "Domestic Garage, International Garages A and G, Long-Term Parking, and ParkFAST each post different height limits and occupancy rules on FlySFO—your tow notice should name which structure you used.",
+        "The free cell phone lot at North McDonnell Road and San Bruno Avenue caps waiting at 60 minutes, requires an attended vehicle, bans commercial vehicles, and closes 1:00 a.m. to 5:00 a.m.",
+        "SFO Rule 4.3 authorizes removal of disabled, abandoned, or improperly parked vehicles to official airport impound areas at owner expense.",
       ],
       bullets: [
-        "Terminal and garage level",
-        "Rental company authorization if applicable",
+        "SFPD Airport Bureau: (650) 821-7111",
+        "Cell lot: 60-minute attended maximum",
+        "Garage: park only marked stalls",
         "Flatbed for EV/AWD from yard",
       ],
     },
-    
+
     officialResources: [
       { text: "SFO parking information", href: "https://www.flysfo.com/parking" },
-      { text: "San Francisco International Airport", href: "https://www.flysfo.com" },
+      { text: "SFO cell phone waiting lot", href: "https://www.flysfo.com/passengers/ground-transportation/cell-phone-waiting-lot" },
+      { text: "SFPD Airport Bureau", href: "https://www.sanfranciscopolice.org/your-sfpd/explore-department/airport" },
     ],
     enrich: {
-      "callout": {
-            type: "info",
-            "title": "Compare with SJC",
-            "body": "Frequent South Bay travelers should bookmark both FlySFO and Fly San Jose parking pages—release desks and contractors differ completely."
+      callout: {
+        type: "warning",
+        title: "Not the city impound",
+        body: "SFO airport property tows are not handled by SFMTA AutoReturn at 415-865-8200 unless Airport Police confirms your vehicle was transferred there. Call 650-821-7111 first.",
       },
-      "steps": [
-            {
-                  "step": 1,
-                  "title": "Identify SFO zone",
-                  "description": "Terminal, garage, or economy lot—match to your parking receipt if available."
-            },
-            {
-                  "step": 2,
-                  "title": "Contact release desk",
-                  "description": "FlySFO parking pages list current impound contacts and customer service numbers."
-            },
-            {
-                  "step": 3,
-                  "title": "Arrange transport",
-                  "description": "Many yards are off-airport—book ride and flatbed timed to release."
-            }
+      steps: [
+        {
+          step: 1,
+          title: "Call Airport Police",
+          description: "650-821-7111 with plate, VIN, and parking location (garage, cell lot, or curb).",
+        },
+        {
+          step: 2,
+          title: "Confirm yard",
+          description: "Get storage contractor name, address, hours, and fee estimate before you travel.",
+        },
+        {
+          step: 3,
+          title: "Release and transport",
+          description: "ID, registration, payment at yard—then 650-881-2400 if the vehicle will not roll.",
+        },
       ],
-      "twoColumn": {
-            "leftTitle": "First steps",
-            "leftItems": [
-                  "FlySFO parking page",
-                  "Terminal identification",
-                  "ID and registration",
-                  "Rental company if applicable"
-            ],
-            "rightTitle": "Mistakes",
-            "rightItems": [
-                  "Guessing yard location",
-                  "Leaving bags at curb",
-                  "Wheel-lift on AWD"
-            ]
-      }
-},
+      twoColumn: {
+        leftTitle: "Bring to release",
+        leftItems: [
+          "Government photo ID",
+          "Registration or ownership proof",
+          "Rental authorization if applicable",
+          "Payment method yard accepts",
+        ],
+        rightTitle: "Common mistakes",
+        rightItems: [
+          "Driving to city impound first",
+          "Leaving bags at curbside",
+          "Wheel-lift on AWD from gravel yard",
+        ],
+      },
+    },
   },
   "511-freeway-assist-vs-tow-truck-bay-area": {
-    metaDescription: "511 Freeway Assist vs private tow truck in the Bay Area: FSP scope, free quick fixes, CHP hazards, when to call commercial flatbed dispatch after FSP stops.",
-    heroAlt: "Freeway Service Patrol and commercial tow truck on Bay Area highway shoulder",
-    heroCaption: "FSP handles quick fixes and shoulder moves—shop and home destinations need a full-service tow operator.",
+    metaDescription:
+      "511 Freeway Assist vs private tow truck in the Bay Area: FSP free services, weekday 5:30 a.m.–7:30 p.m. hours, CHP rotational tow off-hours, and commercial flatbed dispatch script.",
+    heroAlt: "Freeway Service Patrol truck and commercial tow truck on Bay Area highway shoulder",
+    heroCaption: "FSP handles quick fixes and CHP-approved relocations—home and shop destinations need a private operator.",
     atAGlance: {
-      bestUseCase: "Bay Area freeway drivers deciding between 511 FSP and a private tow after a breakdown.",
-      responseWorkflow: "911 if blocking → 511/FSP if eligible → private tow when FSP scope ends or fails.",
-      safetyNote: "Stay belted in the vehicle on narrow shoulders until CHP or FSP confirms safe exit.",
-      dispatchNeeds: "FSP case notes, mile marker, direction, what was already tried, destination address.",
-      relatedServiceLink: { text: "placeholder", href: "/" },
+      bestUseCase: "Bay Area freeway drivers deciding between 511 FSP and a private tow after a non-emergency breakdown.",
+      responseWorkflow: "911 if blocking → 511 Freeway Assist if eligible → private tow when FSP scope ends.",
+      safetyNote: "Stay belted on narrow shoulders until CHP or FSP confirms a safe exit.",
+      dispatchNeeds: "FSP notes, mile marker, direction, flatbed flag, destination address.",
+      relatedServiceLink: { text: "light-duty towing", href: "/services/light-duty" },
     },
     fifthSection: {
       id: "coverage-hours",
       title: "Coverage and Hours",
       paragraphs: [
-        "FSP operates on many Bay Area freeways during funded peak periods—not 24/7 on every corridor. Check 511.org and fsp-bayarea.org before assuming patrol is nearby.",
-        "Commercial trucks, RVs, and many EV high-voltage faults exceed FSP field limits immediately.",
-        "Insurance roadside programs may reimburse private tows after FSP—keep any case numbers FSP provides.",
+        "511.org lists FSP Monday through Friday 5:30 a.m. to 7:30 p.m. on many corridors—verify fsp-bayarea.org before you rely on patrol.",
       ],
       bullets: [
+        "Dial 511, say Freeway Assist",
         "FSP is not a tow to your home",
-        "EV HV faults usually need private flatbed",
-        "Check 511 for live corridor status",
+        "EV HV faults need private flatbed",
       ],
     },
-    
+
     officialResources: [
-      { text: "511 Bay Area", href: "https://511.org" },
-      { text: "FSP Bay Area program", href: "https://www.fsp-bayarea.org" },
+      { text: "511 Freeway Assist", href: "https://511.org/driving/assist" },
+      { text: "FSP Bay Area FAQ", href: "https://www.fsp-bayarea.org/faq" },
+      { text: "CHP Freeway Service Patrol", href: "https://www.chp.ca.gov/programs-services/services-information/freeway-service-patrol/" },
     ],
     enrich: {
-      "callout": {
-            type: "tip",
-            "title": "After FSP visits",
-            "body": "Tell private dispatch what FSP already tried—failed jump, no spare tire, or shoulder relocation to an FSP lot—so the right truck is sent the first time."
+      callout: {
+        type: "tip",
+        title: "After FSP visits",
+        body: "Tell private dispatch what FSP already tried—failed jump, no spare tire, or relocation to an FSP lot—so the right truck is sent the first time.",
       },
-      "steps": [
-            {
-                  "step": 1,
-                  "title": "Assess hazard",
-                  "description": "911 for injuries or lane blocking; FSP or private for non-blocking breakdowns where allowed."
-            },
-            {
-                  "step": 2,
-                  "title": "Know FSP limits",
-                  "description": "Quick fixes and short relocations only—not home or shop tows."
-            },
-            {
-                  "step": 3,
-                  "title": "Call private tow",
-                  "description": "Share mile marker, FSP notes, and flatbed need for EV/AWD."
-            }
+      steps: [
+        {
+          step: 1,
+          title: "Assess hazard",
+          description: "911 for blocking; 511 Freeway Assist for eligible shoulder breakdowns.",
+        },
+        {
+          step: 2,
+          title: "Call private tow",
+          description: "Share mile marker, FSP notes, and flatbed need when FSP cannot finish.",
+        },
       ],
-      "twoColumn": {
-            "leftTitle": "Call FSP/511 when",
-            "leftItems": [
-                  "Non-blocking breakdown",
-                  "Need jump/tire/fuel",
-                  "During published FSP hours"
-            ],
-            "rightTitle": "Call private tow when",
-            "rightItems": [
-                  "Transmission failure",
-                  "Collision damage",
-                  "Home or shop destination"
-            ]
-      }
-},
+      twoColumn: {
+        leftTitle: "Call FSP/511 when",
+        leftItems: [
+          "Non-blocking breakdown",
+          "Need jump, tire, or fuel",
+          "During published FSP hours",
+        ],
+        rightTitle: "Call private tow when",
+        rightItems: [
+          "Transmission or engine failure",
+          "Collision damage",
+          "Home or shop destination",
+        ],
+      },
+    },
   },
   "fremont-bridge-corridor-breakdown-towing": {
-    metaDescription: "Fremont bridge corridor breakdown towing: Dumbarton and San Mateo Bridge approaches, medium-duty options, CHP staging, and East Bay dispatch checklist.",
+    metaDescription:
+      "Fremont bridge corridor breakdown towing: Dumbarton Bridge CA-84 toll plaza, I-880/680 split, medium-duty dispatch, 511/Caltrans routing, and East Bay safety checklist.",
     heroAlt: "East Bay bridge approach highway corridor near Fremont",
     heroCaption: "Name the bridge and direction in your first dispatch sentence—Dumbarton and San Mateo Bridge differ.",
     atAGlance: {
-      bestUseCase: "Breakdowns on bridge approaches and toll plazas near Fremont and the Dumbarton corridor.",
+      bestUseCase: "Breakdowns on Dumbarton Bridge approaches, CA-84 toll plaza queues, and I-880/I-680 merge zones near Fremont.",
       responseWorkflow: "Fully clear travel lanes → 911 if blocking → bridge name and direction to dispatch.",
       safetyNote: "Toll plaza and bridge merges have minimal shoulder—follow CHP before exiting the vehicle.",
       dispatchNeeds: "Bridge name, EB/WB, mile marker, GVWR if commercial, EV tow mode status.",
-      relatedServiceLink: { text: "placeholder", href: "/" },
+      relatedServiceLink: { text: "medium-duty towing", href: "/services/medium-duty" },
     },
     fifthSection: {
       id: "bridge-names",
       title: "Dumbarton vs San Mateo Bridge",
       paragraphs: [
-        "Dumbarton Bridge (CA-84) connects Fremont to Menlo Park; San Mateo Bridge (CA-92) lies south—dispatch and CHP jurisdictions differ.",
-        "Toll plaza queues hide disabled vehicles—use hazards and call 911 if you are stopped in a live lane.",
-        "Medium-duty wreckers may be required for loaded vans and small box trucks on grade-heavy approaches.",
+        "Dumbarton Bridge (CA-84) connects Fremont/Newark to Menlo Park with westbound-only toll collection at the Fremont-side plaza per 511.org. San Mateo Bridge (SR-92) lies south through Hayward—different toll authority, approaches, and CHP staging.",
+        "MTC notes the Dumbarton is 1.6 miles with three lanes each direction and a bike/pedestrian path. Summer queues before the toll plaza hide disabled vehicles—hazards on and 911 if you are stopped in a live lane.",
+        "Medium-duty wreckers handle loaded vans and small box trucks on grade-heavy approaches better than undersized rollbacks. State GVWR before the truck leaves the yard.",
+        "511 routes regional bridges through Caltrans—not the same workflow as a standard freeway shoulder. Dial 511 and say Freeway Assist for non-emergency help; commercial dispatch handles shop and home destinations.",
       ],
       bullets: [
-        "State which bridge and direction",
-        "Commercial GVWR if applicable",
-        "CHP incident number if on scene",
+        "Dumbarton (CA-84) vs San Mateo (SR-92)—state which bridge",
+        "Westbound toll plaza on Fremont side only",
+        "GVWR and axle config for commercial units",
+        "CHP incident number if officers are on scene",
       ],
     },
-    
+
     officialResources: [
-      { text: "511 Bay Area", href: "https://511.org" },
+      { text: "511 Dumbarton Bridge", href: "https://511.org/driving/bridges/dumbarton-bridge" },
+      { text: "MTC Dumbarton Bridge", href: "https://mtc.ca.gov/operations/programs-projects/bridges/dumbarton-bridge" },
       { text: "Caltrans District 4", href: "https://dot.ca.gov/caltrans-near-me/district-4" },
     ],
     enrich: {
@@ -955,7 +1145,8 @@ export const may2026BlogExpansions: Record<string, MayBlogExpansion> = {
 },
   },
   "i-880-breakdown-hayward-guide": {
-    metaDescription: "I-880 breakdown Hayward guide: Nimitz Freeway shoulder safety, industrial corridor mile markers, CHP coordination, and East Bay light-duty tow dispatch.",
+    metaDescription:
+      "I-880 breakdown Hayward guide: Whipple Rd exits, industrial corridor mile markers, 511 FSP vs private tow, CHP Oakland coordination, and East Bay dispatch script.",
     heroAlt: "I-880 Nimitz Freeway through Hayward with commercial traffic",
     heroCaption: "I-880 mile markers and direction of travel are the first facts East Bay dispatch needs.",
     atAGlance: {
@@ -963,26 +1154,29 @@ export const may2026BlogExpansions: Record<string, MayBlogExpansion> = {
       responseWorkflow: "Shoulder fully → hazards → 911 if blocking → mile marker and direction to dispatch.",
       safetyNote: "Truck traffic is heavy—stay belted until officers clear you to exit on narrow shoulders.",
       dispatchNeeds: "NB/SB, mile marker, Hayward vs San Leandro segment, commercial GVWR if applicable.",
-      relatedServiceLink: { text: "placeholder", href: "/" },
+      relatedServiceLink: { text: "light-duty towing", href: "/services/light-duty" },
     },
     fifthSection: {
       id: "hayward-segments",
       title: "Hayward Corridor Segments",
       paragraphs: [
-        "Industrial exits near Whipple Road and Industrial Parkway see frequent commercial breakdowns—state GVWR early.",
-        "Merge turbulence near the 92 interchange causes rear-end collisions; photograph scene before moving if safe.",
-        "FSP may assist during published hours—private tow still required for shop destinations south of Hayward.",
+        "Exit 24 (mile ~23.9) serves Whipple Road, Industrial Parkway Southwest, and Dyer Street at the Union City–Hayward line per Caltrans exit numbering. Exit 25 is Industrial Parkway; Exit 26 connects to SR-92 and the San Mateo Bridge.",
+        "Alameda CTC's I-880 interchange improvement project is reconfiguring Whipple and Industrial Parkway ramps—expect shifting lane patterns and reduced shoulder space during construction.",
+        "Industrial exits near Whipple Road see frequent commercial overheating—state GVWR early for Sprinters and box trucks. Rear-end collisions at the SR-92 merge are common; photograph the scene before moving if safe.",
+        "FSP may assist during published weekday hours on eligible freeway segments—private tow still required for shop destinations. Share FSP case notes when you call commercial dispatch.",
       ],
       bullets: [
-        "Mile marker before calling",
-        "Box truck vs passenger car",
-        "CHP number if collision",
+        "Exit 24 Whipple / Exit 26 SR-92 bridge",
+        "Mile marker in the low-20s through Hayward",
+        "GVWR for box trucks and loaded vans",
+        "Flatbed flag for EV/AWD",
       ],
     },
-    
+
     officialResources: [
-      { text: "511 Bay Area", href: "https://511.org" },
-      { text: "CHP Oakland area office", href: "https://www.chp.ca.gov/find-an-office/golden-gate-division-oakland-area" },
+      { text: "511 Freeway Assist", href: "https://511.org/driving/assist" },
+      { text: "CHP Oakland Area Office", href: "https://www.chp.ca.gov/find-an-office/golden-gate-division-oakland-area" },
+      { text: "I-880 Whipple interchange project", href: "https://www.alamedactc.org/programs-projects/highway-improvement/880whippleindustrial" },
     ],
     enrich: {
       "callout": {
@@ -1025,34 +1219,38 @@ export const may2026BlogExpansions: Record<string, MayBlogExpansion> = {
 },
   },
   "i-680-breakdown-walnut-creek-checklist": {
-    metaDescription: "I-680 breakdown Walnut Creek checklist: Sunol grade cooling failures, Ygnacio Valley merges, Contra Costa dispatch details, and flatbed for AWD/EV.",
+    metaDescription:
+      "I-680 breakdown Walnut Creek checklist: Ygnacio Valley exits, Sunol grade overheating, 511 FSP vs private tow, Pleasant Hill merges, and Contra Costa dispatch script.",
     heroAlt: "I-680 freeway corridor through Contra Costa suburban hills",
     heroCaption: "Sunol grade segments need brake and cooling status in your first call—especially summer afternoons.",
     atAGlance: {
-      bestUseCase: "Drivers broken down on I-680 near Walnut Creek, Pleasant Hill merges, and Sunol grade.",
+      bestUseCase: "Drivers broken down on I-680 near Walnut Creek, Pleasant Hill merges, and Sunol grade approaches.",
       responseWorkflow: "Note grade location → hazards → cooling shutdown if overheating → mile marker to dispatch.",
       safetyNote: "Sunol grade runaway truck ramps are emergency-only—never enter unless brakes truly fail with CHP direction.",
       dispatchNeeds: "NB/SB, mile marker, Sunol grade yes/no, overheating vs mechanical, destination.",
-      relatedServiceLink: { text: "placeholder", href: "/" },
+      relatedServiceLink: { text: "light-duty towing", href: "/services/light-duty" },
     },
     fifthSection: {
       id: "sunol-grade",
       title: "Sunol Grade Considerations",
       paragraphs: [
-        "Northbound climbs toward Sunol see brake fade and cooling failures on hot days—share smoke, smell, or gauge readings with dispatch.",
-        "Ygnacio Valley Road merges add side friction; mile markers near Rudgear Road help Contra Costa crews route quickly.",
-        "Motorcycles need explicit mention—side-stand or tip-over changes tie-down requirements.",
+        "Mission Pass—Sunol Grade—is the I-680 climb through the Coast Ranges south of Pleasanton. Southbound drivers from Walnut Creek toward Fremont hit sustained grade where cooling systems and brakes work hardest on summer afternoons.",
+        "Share smoke, hot-brake smell, or gauge readings with dispatch. Ygnacio Valley Road merges (Exit 46B) and the SR-24 interchange (Exit 46A) are high-friction zones with narrow shoulders during commute peaks.",
+        "Northbound toward Pleasant Hill and Martinez, mile markers continue into the high 40s and 50s—useful for drivers searching towing near Pleasant Hill or Martinez on the same corridor.",
+        "Motorcycles need explicit mention—tip-over changes tie-down and flatbed requirements even without collision damage.",
       ],
       bullets: [
-        "Cooling vs brake failure symptoms",
-        "Sunol grade segment flag",
-        "Motorcycle on side vs upright",
+        "Exit 46A SR-24 vs Exit 46B Ygnacio Valley",
+        "Sunol grade flag if southbound climbing",
+        "Overheat shutdown before engine seizure",
+        "Flatbed for EV/AWD when in doubt",
       ],
     },
-    
+
     officialResources: [
-      { text: "511 Bay Area", href: "https://511.org" },
+      { text: "511 Freeway Assist", href: "https://511.org/driving/assist" },
       { text: "Caltrans District 4", href: "https://dot.ca.gov/caltrans-near-me/district-4" },
+      { text: "CHP Golden Gate Division", href: "https://www.chp.ca.gov/find-an-office/golden-gate-division" },
     ],
     enrich: {
       "callout": {
@@ -1095,34 +1293,38 @@ export const may2026BlogExpansions: Record<string, MayBlogExpansion> = {
 },
   },
   "delivery-van-towing-concord-ca": {
-    metaDescription: "Delivery van towing Concord CA: GVWR on the door sticker, cargo weight, medium-duty dispatch, and East Bay fleet routing for last-mile breakdowns.",
+    metaDescription:
+      "Delivery van towing Concord CA: Sprinter and Transit GVWR classes, medium-duty dispatch, Willow Pass fleet corridors, and Contra Costa towing near me script.",
     heroAlt: "Commercial delivery van on urban East Bay street in Concord",
     heroCaption: "GVWR on the door sticker picks the wrecker class—call it in before the truck rolls.",
     atAGlance: {
       bestUseCase: "Last-mile delivery vans and sprinter fleets broken down in Concord and central Contra Costa.",
-      responseWorkflow: "Read GVWR sticker → note loaded cargo → share company fleet ID → request medium-duty if Class 4+.",
+      responseWorkflow: "Read GVWR sticker → note loaded cargo → share company fleet ID → request medium-duty if Class 3+.",
       safetyNote: "Loaded vans shift weight aft—tell dispatch if cargo is secured and whether refrigeration is running.",
       dispatchNeeds: "GVWR, wheelbase, loaded status, dock or curb location, destination shop.",
-      relatedServiceLink: { text: "placeholder", href: "/" },
+      relatedServiceLink: { text: "medium-duty towing", href: "/services/medium-duty" },
     },
     fifthSection: {
       id: "concord-corridors",
       title: "Concord Industrial Corridors",
       paragraphs: [
-        "Willow Pass Road and Port Chicago Highway corridors see frequent sprinter and step-van breakdowns—share cross streets and business name.",
-        "Treat refrigerated bodies as height and weight factors—medium-duty flatbeds may be required.",
-        "Fleet accounts speed billing—have your company PO or fleet number ready for dispatch.",
+        "Willow Pass Road and Port Chicago Highway corridors see frequent Sprinter and step-van breakdowns at logistics gates—share business name and cross street for yard access.",
+        "Sunvalley Shopping Center aprons and Todos Santos Plaza curb stops need patient staging during peak retail hours. I-680 shoulders near Willow Pass and the SR-242 merge require CHP coordination before hookup.",
+        "Refrigerated bodies add height and weight—medium-duty flatbeds may be required for high-roof extended vans. Fleet PO numbers speed billing for Amazon, courier, and contractor accounts.",
+        "FHWA Class 3 begins at 10,001 lbs GVWR—many Transit T-250 and Sprinter 2500 configs sit at or above that threshold even when empty on the sticker.",
       ],
       bullets: [
         "GVWR from B-pillar sticker",
-        "Fleet or company name",
-        "Loaded vs empty cargo",
+        "Willow Pass or 680 mile marker",
+        "Fleet or company billing ID",
+        "Lift gate and reefer unit status",
       ],
     },
-    
+
     officialResources: [
+      { text: "FHWA vehicle weight classes", href: "https://afdc.energy.gov/vehicles/weight-classes" },
+      { text: "FMCSA CMV overview", href: "https://www.fmcsa.dot.gov/regulations/cmv/definition-commercial-motor-vehicle" },
       { text: "City of Concord", href: "https://www.cityofconcord.org" },
-      { text: "Caltrans District 4", href: "https://dot.ca.gov/caltrans-near-me/district-4" },
     ],
     enrich: {
       "callout": {
@@ -1165,7 +1367,8 @@ export const may2026BlogExpansions: Record<string, MayBlogExpansion> = {
 },
   },
   "low-clearance-garage-towing-palo-alto": {
-    metaDescription: "Low clearance garage towing Palo Alto: measure ramps and pipes, flatbed extraction downtown, Stanford area structures, and HOA escort rules before dispatch.",
+    metaDescription:
+      "Low clearance garage towing Palo Alto: measure ramps and pipes, 7 ft deck clearances, low-profile flatbed extraction, Stanford structures, and HOA escort rules.",
     heroAlt: "Low clearance underground parking garage entrance in Palo Alto",
     heroCaption: "Measure the tightest ramp point—not just the portal sign—before booking a flatbed.",
     atAGlance: {
@@ -1173,24 +1376,27 @@ export const may2026BlogExpansions: Record<string, MayBlogExpansion> = {
       responseWorkflow: "Measure lowest point → photo clearance sign → get HOA/security OK → dispatch low-profile flatbed.",
       safetyNote: "Spiral ramps magnify effective height—measure at the tightest bend, not the entrance.",
       dispatchNeeds: "Garage level, lowest clearance in feet/inches, gate code, air suspension or EV tow mode status.",
-      relatedServiceLink: { text: "placeholder", href: "/" },
+      relatedServiceLink: { text: "light-duty towing", href: "/services/light-duty" },
     },
     fifthSection: {
       id: "measurement-walkthrough",
       title: "Measurement Walkthrough",
       paragraphs: [
-        "Walk the exit ramp with a tape measure at the lowest hanging pipe and steepest transition—portal signs often overstate available height.",
-        "Air suspension vehicles may need transport mode before rolling onto a flatbed wedge in tight decks.",
-        "Stanford campus structures may require permit verification—share building name and lot letter with dispatch.",
+        "Walk the exit ramp with a tape measure at the lowest hanging pipe and steepest transition—portal signs often overstate available height by 2–4 inches.",
+        "Palo Alto municipal parking design standards target roughly 7.5 feet in stall areas, but spiral bends and ductwork frequently run lower—photograph both the sign and the tightest obstruction.",
+        "Air suspension and adaptive ride vehicles may need transport mode before rolling onto a flatbed wedge in tight decks.",
+        "Stanford campus and hospital structures may require permit verification—share building name, lot letter, and security escort requirement with dispatch.",
       ],
       bullets: [
-        "Photo of clearance sign and tightest point",
-        "P-level and stall number",
+        "Photo of clearance sign and tightest pipe",
+        "P-level and stall or pillar number",
         "HOA or security escort requirement",
+        "EV tow mode before hookup",
       ],
     },
-    
+
     officialResources: [
+      { text: "Palo Alto parking facility standards (Ch. 18.54)", href: "https://codelibrary.amlegal.com/codes/paloalto/latest/paloalto_ca/0-0-0-81120" },
       { text: "City of Palo Alto", href: "https://www.cityofpaloalto.org" },
       { text: "Stanford Transportation", href: "https://transportation.stanford.edu" },
     ],
@@ -1235,7 +1441,8 @@ export const may2026BlogExpansions: Record<string, MayBlogExpansion> = {
 },
   },
   "tow-truck-mountain-view-shoreline": {
-    metaDescription: "Mountain View Shoreline tow truck guide: Amphitheatre event traffic, Shoreline Park lots, 101 access, and South Bay dispatch staging on concert nights.",
+    metaDescription:
+      "Tow truck Mountain View Shoreline guide: Amphitheatre Parkway pickup zone, Lots A/C/D, post-concert egress, 101 shoulder dispatch, and EV flatbed staging.",
     heroAlt: "Shoreline Amphitheatre parking and event traffic in Mountain View",
     heroCaption: "Event nights need lot section and pedestrian gate details—traffic patterns change after shows.",
     atAGlance: {
@@ -1243,26 +1450,29 @@ export const may2026BlogExpansions: Record<string, MayBlogExpansion> = {
       responseWorkflow: "Share lot section → note event traffic → pick visible meet point → call South Bay dispatch.",
       safetyNote: "Post-event pedestrian surges make tight lots hazardous—stage away from main exit paths.",
       dispatchNeeds: "Lot letter/section, event yes/no, rolling status, EV/AWD flag.",
-      relatedServiceLink: { text: "placeholder", href: "/" },
+      relatedServiceLink: { text: "light-duty towing", href: "/services/light-duty" },
     },
     fifthSection: {
       id: "event-nights",
       title: "Concert Night Staging",
       paragraphs: [
-        "Shoreline Amphitheatre exits bottleneck after shows—tell dispatch if you are inside the venue lot vs public Shoreline Park roads.",
-        "Google campus-adjacent arterials gridlock on event nights; choose a meet point with line-of-sight to the tow operator.",
-        "Motorcycles and low-slung cars scrape on lot speed bumps—mention clearance when calling.",
+        "Shoreline Amphitheatre directs all rideshare and taxi pickup to Amphitheatre Parkway across from the main pedestrian path—tow operators should use the same approach when security allows.",
+        "Lots C and D serve accessible parking; Lot A may handle overflow accessible parking with a shuttle per venue FAQ. Name your lot letter when calling dispatch.",
+        "Post-show gridlock on major nights can delay truck entry 30–90 minutes—pick a meet point with line-of-sight and update your pin if you walk toward Shoreline Blvd.",
+        "Mountain View Police assist with oversized vehicle and bus staging on event nights—follow officer direction before a commercial truck enters a restricted lane.",
       ],
       bullets: [
-        "Lot section or row",
-        "Event night flag",
+        "Lot letter (A/C/D) and row",
+        "Event night yes/no",
         "Meet point away from exit crush",
+        "Security approval if inside venue lot",
       ],
     },
-    
+
     officialResources: [
+      { text: "Shoreline Amphitheatre — Know Before You Go", href: "https://www.shorelineamphitheatre.com/know-before-you-go" },
+      { text: "Shoreline Amphitheatre FAQ", href: "https://www.shorelineamphitheatre.com/faq" },
       { text: "City of Mountain View", href: "https://www.mountainview.gov" },
-      { text: "Shoreline Amphitheatre", href: "https://www.mountainview.gov/our-city/departments/community-services/shoreline-at-mountain-view" },
     ],
     enrich: {
       "callout": {
@@ -1313,7 +1523,7 @@ export const may2026BlogExpansions: Record<string, MayBlogExpansion> = {
       responseWorkflow: "Confirm gate access → state GVWR and cargo → share dock or yard number → medium-duty dispatch.",
       safetyNote: "Active port traffic mixes forklifts and trucks—stage cones and keep pedestrians clear.",
       dispatchNeeds: "GVWR, axle config, gate contact, TWIC requirement if applicable, destination yard.",
-      relatedServiceLink: { text: "placeholder", href: "/" },
+      relatedServiceLink: { text: "medium-duty towing", href: "/services/medium-duty" },
     },
     fifthSection: {
       id: "port-access",
@@ -1322,6 +1532,7 @@ export const may2026BlogExpansions: Record<string, MayBlogExpansion> = {
         "Some terminals require TWIC or escort for non-port vehicles—confirm whether your breakdown is inside a secured gate before dispatch sends a truck.",
         "Seaport Blvd connects marine industrial sites to 101—state cross streets and business names; mile markers are sparse on surface roads.",
         "Winch-out may precede tow on soft shoulders near marsh edges—describe surface conditions honestly.",
+        "After-hours tenant contacts matter—many maritime yards use on-call guards; get a name and direct line before dispatch leaves the yard.",
       ],
       bullets: [
         "Gate contact or guard phone",
@@ -1383,7 +1594,7 @@ export const may2026BlogExpansions: Record<string, MayBlogExpansion> = {
       responseWorkflow: "Corridor + mile marker → GVWR → loaded/hazmat flags → fleet account or PO → heavy-duty if Class 7–8.",
       safetyNote: "Agricultural harvest seasons spike truck volume—shoulder space on Hwy 99 can be minimal.",
       dispatchNeeds: "Freeway vs surface, mile marker, GVWR, axle config, hazmat placards, company fleet number.",
-      relatedServiceLink: { text: "placeholder", href: "/" },
+      relatedServiceLink: { text: "heavy-duty towing", href: "/services/heavy-duty" },
     },
     fifthSection: {
       id: "harvest-season",

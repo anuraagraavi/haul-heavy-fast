@@ -7,10 +7,12 @@ import { ChevronLeft, ChevronRight, Clock, Calendar, ArrowRight } from 'lucide-r
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 // Import blog images
-import winterTowingImage from '@/assets/blog-winter-towing.jpg';
 import motorcycleTowingImage from '@/assets/blog-motorcycle-towing.jpg';
 import evTowingImage from '@/assets/blog-ev-towing.jpg';
 import emergencyGuideImage from '@/assets/blog-emergency-guide.jpg';
+
+import heavyDutyServiceImage from '@/assets/heavy-duty-service.jpg';
+import bayAreaCoverage from '@/assets/bay-area-coverage.jpg';
 
 interface BlogPost {
   id: string;
@@ -24,13 +26,22 @@ interface BlogPost {
 
 const featuredBlogPosts: BlogPost[] = [
   {
-    id: "winter-towing-preparedness",
-    title: "Winter Towing Preparedness: Bay Area Weather Challenges",
-    excerpt: "Essential tips for safe winter driving and what to do when weather-related breakdowns occur in the Bay Area.",
-    image: winterTowingImage, 
-    readTime: "8 min read",
-    category: "Safety Tips",
-    publishDate: "2024-03-20"
+    id: "stockton-towing-dispatch-checklist",
+    title: "Stockton Towing Dispatch Checklist",
+    excerpt: "I-5, CA-99, and CA-4 corridor dispatch script—GVWR routing, fleet billing, and heavy-duty defaults for Central Valley freight.",
+    image: heavyDutyServiceImage,
+    readTime: "10 min read",
+    category: "Heavy Duty",
+    publishDate: "2026-05-29"
+  },
+  {
+    id: "511-freeway-assist-vs-tow-truck-bay-area",
+    title: "511 Freeway Assist vs Tow Truck: Bay Area Decision Guide",
+    excerpt: "When CHP dispatches FSP vs when you need a private tow to your shop—511 scope, limits, and dispatch script.",
+    image: bayAreaCoverage,
+    readTime: "9 min read",
+    category: "Emergency Response",
+    publishDate: "2026-05-22"
   },
   {
     id: "motorcycle-towing-guide", 
