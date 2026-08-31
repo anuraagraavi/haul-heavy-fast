@@ -1,4 +1,4 @@
-import type { CohortBlogPostConfig, ParagraphSegment } from "@/types/cohortBlog";
+import type { CohortBlogPostConfig, CohortParagraph, ParagraphSegment } from "@/types/cohortBlog";
 import sfChallengesImage from "@/assets/blog-sf-challenges.jpg";
 import luxuryTransportImage from "@/assets/blog-luxury-transport.jpg";
 import evTowingImage from "@/assets/blog-ev-towing.jpg";

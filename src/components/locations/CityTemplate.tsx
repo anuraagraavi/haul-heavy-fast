@@ -33,7 +33,7 @@ const CityTemplate = ({ data }: CityTemplateProps) => {
   const canonicalUrl = `${BASE_URL}${data.url}`;
   const ogImageUrl = `${BASE_URL}${hero.src}`;
   const phoneHref = telHrefFromNational(data.phone);
-  const locCampaign = `LOC-${data.slug.toUpperCase()}`;
+  const locCampaign = `LOC-${data.slug.toUpperCase()}` as `LOC-${string}`;
 
   const imageUrls = [
     `${BASE_URL}${hero.src}`,

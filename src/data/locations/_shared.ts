@@ -187,7 +187,7 @@ export function applyNonHubDispatchRouting(data: LocationData): LocationData {
 
   const prevPhone = data.phone;
   const metaDescription = data.metaDescription.includes(prevPhone)
-    ? data.metaDescription.replaceAll(prevPhone, hub.phoneDisplay)
+    ? data.metaDescription.split(prevPhone).join(hub.phoneDisplay)
     : data.metaDescription;
 
   return {

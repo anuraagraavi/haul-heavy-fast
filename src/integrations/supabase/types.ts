@@ -14,13 +14,30 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      db_keepalive: {
+        Row: {
+          id: number
+          pinged_at: string
+          source: string
+        }
+        Insert: {
+          id?: number
+          pinged_at?: string
+          source?: string
+        }
+        Update: {
+          id?: number
+          pinged_at?: string
+          source?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      keepalive_ping: { Args: never; Returns: undefined }
     }
     Enums: {
       [_ in never]: never

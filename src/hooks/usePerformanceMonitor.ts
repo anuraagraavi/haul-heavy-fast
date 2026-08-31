@@ -29,7 +29,7 @@ export const usePerformanceMonitor = () => {
           }
           
           // Send to analytics if needed
-          if (process.env.NODE_ENV === 'production') {
+          if (import.meta.env.PROD) {
             console.log('LCP:', metrics.lcp);
           }
         });
@@ -46,7 +46,7 @@ export const usePerformanceMonitor = () => {
             const fid = entry as PerformanceEventTiming;
             metrics.fid = fid.processingStart - fid.startTime;
             
-            if (process.env.NODE_ENV === 'production') {
+            if (import.meta.env.PROD) {
               console.log('FID:', metrics.fid);
             }
           });
@@ -69,7 +69,7 @@ export const usePerformanceMonitor = () => {
           });
           metrics.cls = clsValue;
           
-          if (process.env.NODE_ENV === 'production') {
+          if (import.meta.env.PROD) {
             console.log('CLS:', metrics.cls);
           }
         });
@@ -95,7 +95,7 @@ export const usePerformanceMonitor = () => {
     }
 
     // Performance budget alerts (development only)
-    if (process.env.NODE_ENV === 'development') {
+    if (import.meta.env.DEV) {
       setTimeout(() => {
         if (metrics.lcp && metrics.lcp > 2500) {
           console.warn(`⚠️ LCP is slow: ${metrics.lcp}ms (target: <2500ms)`);

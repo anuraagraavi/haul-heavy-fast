@@ -11,8 +11,8 @@ export const useHoverDelay = (
   options: UseHoverDelayOptions = {}
 ) => {
   const { enterDelay = 0, leaveDelay = 300 } = options;
-  const enterTimeoutRef = useRef<NodeJS.Timeout>();
-  const leaveTimeoutRef = useRef<NodeJS.Timeout>();
+  const enterTimeoutRef = useRef<ReturnType<typeof setTimeout>>();
+  const leaveTimeoutRef = useRef<ReturnType<typeof setTimeout>>();
 
   const handleMouseEnter = useCallback(() => {
     if (leaveTimeoutRef.current) {

@@ -1,8 +1,8 @@
-import type { ComponentType } from "react";
 import type { LocalKnowledgeIconName, LocalKnowledgeItem } from "@/data/locations";
+import type { LucideIcon } from "lucide-react";
 import { Building2, Car, Clock, MapPin, MountainSnow, Route, ShieldCheck, Truck } from "lucide-react";
 
-const ICONS: Record<LocalKnowledgeIconName, ComponentType<{ className?: string; "aria-hidden"?: boolean }>> = {
+const ICONS: Record<LocalKnowledgeIconName, LucideIcon> = {
   MapPin,
   Route,
   Clock,
