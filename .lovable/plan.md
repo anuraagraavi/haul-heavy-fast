@@ -1,41 +1,45 @@
+# Keep the Supabase database awake
 
+Supabase pauses free-tier projects after a week of inactivity. The fix is a tiny heartbeat that writes one row per day inside the database itself, so nothing depends on the website being visited or a browser being open.
 
-## Updated Plan: Dispatch Hub Changes (7 files)
+## What gets built
 
-The key change from the previous plan: **San Mateo hub stays**. Redwood City is added as a **new, independent hub** alongside it.
+1. A small `db_keepalive` table with one row per ping (a timestamp and a short note).
+2. A database function that inserts one heartbeat row and deletes rows older than 30 days, so the table never grows.
+3. A scheduled job that runs that function once every 24 hours (03:00 UTC), using Postgres' built-in scheduler (`pg_cron`) — entirely server-side, no external service, no edge function, no cost.
 
-### Data Changes (`src/data/coverage.ts`)
+That's it: one row a day, self-pruning, always-on activity signal.
 
-| Hub | Action | Address | Phone |
-|---|---|---|---|
-| Brisbane | UPDATE | 308 Industrial Way | 415-800-3800 |
-| San Mateo | KEEP | 403 1st Avenue | 650-881-2400 |
-| Redwood City | ADD | 1320 Marshall St | 650-881-2400 |
-| Concord | ADD | 4075 Folsom Ct | 925-888-2400 |
-| San Leandro | KEEP | unchanged | unchanged |
-| Hayward | KEEP | unchanged | unchanged |
-| San Jose | KEEP | unchanged | unchanged |
-| Stockton | KEEP | unchanged | unchanged |
+## Notes
 
-Total hubs: 6 → 8
+- Keeping the database "active" via writes prevents the inactivity pause; it does not affect billing or storage in any meaningful way (a few KB per year).
+- The table is locked down: only the server-side job and admin tooling can read or write it. Nothing is exposed to site visitors.
 
-### County Phone Routing Updates
-- San Francisco County: 650-881-2400 → **415-800-3800** (Brisbane hub)
-- Contra Costa County: 650-881-2400 → **925-888-2400** (Concord hub)
-- All others unchanged
+## Technical detail
 
-### Files to Change
+Single migration:
 
-1. **`src/data/coverage.ts`** — Update Brisbane address/phone, add Concord + Redwood City hubs, update SF and Contra Costa county phones
-2. **`src/pages/Locations.tsx`** — Update local county phone arrays for SF + Contra Costa, update schema markup Brisbane address
-3. **`src/pages/Contact.tsx`** — Update dispatch areas (Brisbane phone → 415-800-3800, add Contra Costa/Concord entry, add Redwood City entry), update schema address
-4. **`src/components/Header.tsx`** — Update businessAddress to 308 Industrial Way, add Contra Costa to mega menu + mobile menu
-5. **`src/components/Footer.tsx`** — Add "Other Dispatch Lines Available" link to Contact page
-6. **`src/components/StructuredData.tsx`** — Update Brisbane address if referenced
-7. **`src/components/landing/CoverageMap.tsx`** — No code changes (auto-derives from coverage.ts)
+```sql
+CREATE TABLE public.db_keepalive (
+  id bigserial PRIMARY KEY,
+  pinged_at timestamptz NOT NULL DEFAULT now(),
+  source text NOT NULL DEFAULT 'pg_cron'
+);
+GRANT ALL ON public.db_keepalive TO service_role;   -- no anon/authenticated grants
+ALTER TABLE public.db_keepalive ENABLE ROW LEVEL SECURITY;
+-- no policies: unreachable from the client API by design
 
-### Unchanged
-- Primary phone: 650-881-2400 (header, footer, hero CTAs)
-- All UI styling, dark theme, layout
-- San Mateo hub fully preserved
+CREATE EXTENSION IF NOT EXISTS pg_cron;
 
+CREATE FUNCTION public.keepalive_ping() ... SECURITY DEFINER
+  -- inserts one row, deletes rows older than 30 days
+
+SELECT cron.schedule('supabase-keepalive-daily', '0 3 * * *',
+  $$SELECT public.keepalive_ping()$$);
+```
+
+Verification after it runs: query `public.db_keepalive` and `cron.job_run_details` to confirm the daily entry.
+
+## Fallback if pg_cron is unavailable
+
+If the extension can't be enabled on this project, the alternative is an edge function (`keepalive`) doing the same insert, triggered daily by an external free scheduler (e.g. cron-job.org) hitting its URL. I'd only go this route if the migration shows pg_cron is blocked.
