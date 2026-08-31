@@ -1,0 +1,1 @@
+CREATE POLICY "No client access to keepalive" ON public.db_keepalive FOR ALL TO anon, authenticated USING (false) WITH CHECK (false);
