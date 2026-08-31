@@ -46,7 +46,7 @@ const CountyTemplate = ({ data }: CountyTemplateProps) => {
   const phoneHref = telHrefFromNational(data.phone);
   const countyDispatchHubs = getScreenshotHubsForCountyHubPage(data.slug);
   const multiCountyHubs = countyDispatchHubs.length > 1;
-  const locCampaign = `LOC-${data.slug.toUpperCase()}`;
+  const locCampaign = `LOC-${data.slug.toUpperCase()}` as `LOC-${string}`;
 
   const imageUrls = [
     `${BASE_URL}${hero.src}`,
