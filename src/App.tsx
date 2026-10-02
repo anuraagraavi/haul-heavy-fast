@@ -9,6 +9,10 @@ import AppShell from "@/components/layout/AppShell";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import SuspensionScreen from "./components/SuspensionScreen";
+
+// Set to false and republish to restore the complete website immediately.
+const SITE_SUSPENDED = true;
 
 // Route-level code splitting: lazy-load pages for smaller initial bundle (home / about / contact eager)
 const Services = lazy(() => import("./pages/Services"));
@@ -149,8 +153,13 @@ function DgReportFallback() {
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
+const App = () => {
+  if (SITE_SUSPENDED) {
+    return <SuspensionScreen />;
+  }
+
+  return (
+    <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
@@ -303,7 +312,8 @@ const App = () => (
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
-  </QueryClientProvider>
-);
+    </QueryClientProvider>
+  );
+};
 
 export default App;
