@@ -12,7 +12,7 @@ import Contact from "./pages/Contact";
 import SuspensionScreen from "./components/SuspensionScreen";
 
 // Set to false and republish to restore the complete website immediately.
-const SITE_SUSPENDED = true;
+const SITE_SUSPENDED = false;
 
 // Route-level code splitting: lazy-load pages for smaller initial bundle (home / about / contact eager)
 const Services = lazy(() => import("./pages/Services"));
