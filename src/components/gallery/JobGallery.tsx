@@ -5,7 +5,7 @@ import { GALLERY_CATEGORIES, GALLERY_IMAGES, type GalleryCategory } from "@/data
 import { PRIMARY_DISPATCH_PHONE_DISPLAY, PRIMARY_DISPATCH_TEL_HREF } from "@/data/screenshotDispatchHubs";
 import { cn } from "@/lib/utils";
 
-const PREVIEW_COUNT = 8;
+const PREVIEW_COUNT = 9; // featured 2x2 + 8 tiles = full rows at 2, 3 and 4 columns
 
 export default function JobGallery() {
   const [filter, setFilter] = useState<GalleryCategory | "all">("all");
@@ -72,12 +72,12 @@ export default function JobGallery() {
           })}
         </div>
 
-        <div className="max-w-6xl mx-auto columns-2 md:columns-3 lg:columns-4 gap-3 md:gap-4">
+        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 grid-flow-dense gap-3 md:gap-4">
           {visible.map((img, idx) => (
             <button
               key={img.id}
               onClick={() => setOpen(idx)}
-              className="group relative mb-3 md:mb-4 block w-full break-inside-avoid overflow-hidden rounded-xl border border-border bg-muted/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              className={cn("group relative block w-full aspect-[4/3] overflow-hidden rounded-xl border border-border bg-muted/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary", idx === 0 && filter === "all" && "col-span-2 row-span-2")}
               aria-label={`Open photo: ${img.caption}`}
             >
               <img
@@ -87,8 +87,12 @@ export default function JobGallery() {
                 height={img.h}
                 loading="lazy"
                 decoding="async"
-                className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                style={{ objectPosition: img.focus ?? "center" }}
               />
+              <span className="pointer-events-none absolute left-2 top-2 rounded-full bg-background/80 px-2 py-0.5 text-[10px] md:text-xs font-semibold uppercase tracking-wide text-primary backdrop-blur-sm">
+                {GALLERY_CATEGORIES.find((c) => c.id === img.category)?.label}
+              </span>
               <span className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/95 via-background/60 to-transparent p-3 pt-10 text-left text-xs md:text-sm font-medium text-foreground opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
                 {img.caption}
               </span>

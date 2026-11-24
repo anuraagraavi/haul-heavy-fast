@@ -50,6 +50,8 @@ export interface GalleryImage {
   lg: string;
   w: number;
   h: number;
+  /** CSS object-position used when cropping into the uniform grid tile. */
+  focus?: string;
 }
 
 export const GALLERY_CATEGORIES: { id: GalleryCategory | "all"; label: string }[] = [
