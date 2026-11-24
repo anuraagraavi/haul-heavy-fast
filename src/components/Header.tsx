@@ -242,20 +242,20 @@ const Header = () => {
                           <TransitionLink to="/semi-truck-towing" className="block rounded px-2 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent/50 hover:text-primary">
                             Semi Truck Towing
                           </TransitionLink>
+                          <TransitionLink to="/winch-out-recovery" className="block rounded px-2 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent/50 hover:text-primary">
+                            Winch Out and Recovery
+                          </TransitionLink>
                           <TransitionLink to="/box-truck-towing" className="block rounded px-2 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent/50 hover:text-primary">
                             Box Truck Towing
+                          </TransitionLink>
+                          <TransitionLink to="/commercial-towing" className="block rounded px-2 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent/50 hover:text-primary">
+                            Commercial Fleet Towing
                           </TransitionLink>
                           <TransitionLink to="/bus-towing" className="block rounded px-2 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent/50 hover:text-primary">
                             Bus Towing
                           </TransitionLink>
                           <TransitionLink to="/rv-towing" className="block rounded px-2 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent/50 hover:text-primary">
                             RV Towing
-                          </TransitionLink>
-                          <TransitionLink to="/winch-out-recovery" className="block rounded px-2 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent/50 hover:text-primary">
-                            Winch Out and Recovery
-                          </TransitionLink>
-                          <TransitionLink to="/commercial-towing" className="block rounded px-2 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent/50 hover:text-primary">
-                            Commercial Fleet Towing
                           </TransitionLink>
                         </div>
                       </div>
@@ -511,20 +511,20 @@ const Header = () => {
                       <TransitionLink to="/semi-truck-towing" className="block py-1 text-sm text-muted-foreground transition-colors hover:text-primary">
                         Semi Truck Towing
                       </TransitionLink>
+                      <TransitionLink to="/winch-out-recovery" className="block py-1 text-sm text-muted-foreground transition-colors hover:text-primary">
+                        Winch Out and Recovery
+                      </TransitionLink>
                       <TransitionLink to="/box-truck-towing" className="block py-1 text-sm text-muted-foreground transition-colors hover:text-primary">
                         Box Truck Towing
+                      </TransitionLink>
+                      <TransitionLink to="/commercial-towing" className="block py-1 text-sm text-muted-foreground transition-colors hover:text-primary">
+                        Commercial Fleet Towing
                       </TransitionLink>
                       <TransitionLink to="/bus-towing" className="block py-1 text-sm text-muted-foreground transition-colors hover:text-primary">
                         Bus Towing
                       </TransitionLink>
                       <TransitionLink to="/rv-towing" className="block py-1 text-sm text-muted-foreground transition-colors hover:text-primary">
                         RV Towing
-                      </TransitionLink>
-                      <TransitionLink to="/winch-out-recovery" className="block py-1 text-sm text-muted-foreground transition-colors hover:text-primary">
-                        Winch Out and Recovery
-                      </TransitionLink>
-                      <TransitionLink to="/commercial-towing" className="block py-1 text-sm text-muted-foreground transition-colors hover:text-primary">
-                        Commercial Fleet Towing
                       </TransitionLink>
                     </div>
                   </div>

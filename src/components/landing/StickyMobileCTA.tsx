@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { useLocation } from "react-router-dom";
 import { Phone } from "lucide-react";
 import { PRIMARY_DISPATCH_PHONE_DISPLAY, PRIMARY_DISPATCH_TEL_HREF } from "@/data/screenshotDispatchHubs";
@@ -54,7 +55,7 @@ const StickyMobileCTA = ({
 
   if (!isVisible) return null;
 
-  return (
+  return createPortal(
     <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden animate-in slide-in-from-bottom duration-300">
       <a
         href={phoneHref}
@@ -73,9 +74,10 @@ const StickyMobileCTA = ({
         }}
       >
         <Phone className="w-5 h-5 shrink-0" />
-        <span>TAP TO CALL — {phoneDisplay}</span>
+        <span>TAP TO CALL {phoneDisplay}</span>
       </a>
-    </div>
+    </div>,
+    document.body,
   );
 };
 

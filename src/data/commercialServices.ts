@@ -42,7 +42,7 @@ export const CORRIDORS = [
   { name: "Highway 4 and Interstate 5", note: "Antioch, the Delta and the Stockton freight yards" },
 ];
 
-export const COMMERCIAL_SERVICES: CommercialService[] = [
+const ALL_SERVICES: CommercialService[] = [
   {
     slug: "semi-truck-towing",
     path: "/semi-truck-towing",
@@ -364,4 +364,18 @@ export const COMMERCIAL_SERVICES: CommercialService[] = [
   },
 ];
 
-export const COMMERCIAL_BY_SLUG = Object.fromEntries(COMMERCIAL_SERVICES.map((s) => [s.slug, s]));
+export const COMMERCIAL_BY_SLUG = Object.fromEntries(ALL_SERVICES.map((s) => [s.slug, s]));
+
+/** Display order everywhere (menus, footer, city pages, related links). */
+export const COMMERCIAL_SERVICE_ORDER = [
+  "semi-truck-towing",
+  "winch-out-recovery",
+  "box-truck-towing",
+  "commercial-towing",
+  "bus-towing",
+  "rv-towing",
+];
+
+export const COMMERCIAL_SERVICES: CommercialService[] = COMMERCIAL_SERVICE_ORDER.map(
+  (slug) => ALL_SERVICES.find((s) => s.slug === slug)!,
+);

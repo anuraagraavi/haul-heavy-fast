@@ -1,6 +1,8 @@
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
-import { Phone, CheckCircle, MapPin } from "lucide-react";
+import { Phone, CheckCircle, MapPin, Clock, Building2, Camera } from "lucide-react";
+import StickyMobileCTA from "@/components/landing/StickyMobileCTA";
+import { SERVICE_EXTRAS } from "@/data/commercialServiceExtras";
 import { Button } from "@/components/ui/button";
 import { COMMERCIAL_SERVICES, CORRIDORS, type CommercialService } from "@/data/commercialServices";
 import { SCREENSHOT_DISPATCH_HUBS, PRIMARY_DISPATCH_PHONE_DISPLAY, PRIMARY_DISPATCH_TEL_HREF, PRIMARY_DISPATCH_E164 } from "@/data/screenshotDispatchHubs";
@@ -9,6 +11,8 @@ const SITE = "https://heavytowpro.com";
 
 export default function CommercialServicePage({ service: s }: { service: CommercialService }) {
   const url = `${SITE}${s.path}`;
+  const x = SERVICE_EXTRAS[s.slug];
+  const faqs = [...s.faqs, ...(x?.faqs ?? [])];
   const schema = [
     {
       "@context": "https://schema.org",
@@ -28,6 +32,11 @@ export default function CommercialServicePage({ service: s }: { service: Commerc
         { "@type": "ListItem", position: 2, name: "Services", item: `${SITE}/services` },
         { "@type": "ListItem", position: 3, name: s.navLabel, item: url },
       ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
     },
   ];
   const others = COMMERCIAL_SERVICES.filter((o) => o.slug !== s.slug);
@@ -64,6 +73,11 @@ export default function CommercialServicePage({ service: s }: { service: Commerc
             </Button>
             <Button variant="outline" size="xl" asChild><Link to="/get-a-quote">Get a Free Quote</Link></Button>
           </div>
+          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm text-foreground/90">
+            <li className="flex items-center gap-2"><Clock className="w-4 h-4 text-primary" />Dispatch answers 24/7</li>
+            <li className="flex items-center gap-2"><Building2 className="w-4 h-4 text-primary" />{SCREENSHOT_DISPATCH_HUBS.length} dispatch hubs, Brisbane to Stockton</li>
+            <li className="flex items-center gap-2"><Camera className="w-4 h-4 text-primary" />Photos on this site are our own jobs</li>
+          </ul>
         </div>
       </section>
 
@@ -114,6 +128,31 @@ export default function CommercialServicePage({ service: s }: { service: Commerc
         </div>
       </section>
 
+      {x && (
+        <section className="py-16">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <h2 className="text-3xl font-bold text-foreground mb-4 text-center">{x.assessTitle}</h2>
+            <p className="text-muted-foreground leading-relaxed text-center max-w-3xl mx-auto mb-10">{x.assessIntro}</p>
+            <div className="grid md:grid-cols-2 gap-6">
+              {x.assess.map((a) => (
+                <div key={a.title} className="border-l-2 border-primary pl-5">
+                  <h3 className="text-lg font-semibold text-foreground mb-2">{a.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{a.body}</p>
+                </div>
+              ))}
+            </div>
+            {x.photoPrompt && (
+              <div className="mt-10 rounded-2xl border border-border bg-card p-6 flex flex-col md:flex-row md:items-center gap-4 justify-between">
+                <div>
+                  <p className="font-semibold text-foreground">Easier to show than explain?</p>
+                  <p className="text-muted-foreground text-sm mt-1">Attach a few photos of how the truck is sitting to a quote request. It helps dispatch pick the right equipment.</p>
+                </div>
+                <Button variant="outline" asChild><Link to="/get-a-quote"><Camera className="w-4 h-4 mr-2" />Send us photos</Link></Button>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
       <section className="py-16 bg-muted/20">
         <div className="container mx-auto px-4 max-w-6xl grid lg:grid-cols-2 gap-12">
           <div>
@@ -142,6 +181,21 @@ export default function CommercialServicePage({ service: s }: { service: Commerc
         </div>
       </section>
 
+      {x && (
+        <section className="py-16">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <h2 className="text-3xl font-bold text-foreground mb-4 text-center">Where we run these calls most</h2>
+            <p className="text-muted-foreground leading-relaxed text-center max-w-3xl mx-auto mb-8">{x.citiesIntro}</p>
+            <div className="flex flex-wrap justify-center gap-3">
+              {x.cities.map((ct) => (
+                <Link key={ct.path} to={ct.path} className="rounded-full border border-border bg-card px-4 py-2 text-sm text-foreground hover:border-primary hover:text-primary transition-colors">
+                  {s.navLabel} in {ct.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
       <section className="py-16">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="rounded-2xl border border-primary/40 bg-card p-8">
@@ -157,7 +211,7 @@ export default function CommercialServicePage({ service: s }: { service: Commerc
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="text-3xl font-bold text-foreground mb-8 text-center">Common questions</h2>
           <div className="space-y-4">
-            {s.faqs.map((f) => (
+            {faqs.map((f) => (
               <article key={f.q} className="bg-card border border-border rounded-xl p-6">
                 <h3 className="text-lg font-semibold text-foreground mb-2">{f.q}</h3>
                 <p className="text-muted-foreground leading-relaxed">{f.a}</p>
@@ -179,6 +233,7 @@ export default function CommercialServicePage({ service: s }: { service: Commerc
           </div>
         </div>
       </section>
+      <StickyMobileCTA gtagCampaign="commercial" />
     </main>
   );
 }
