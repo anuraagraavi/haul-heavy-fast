@@ -15,6 +15,7 @@ const LightDuty = () => {
       id: "flatbed",
       icon: Car,
       image: lightDutyFlatbed,
+      alt: "Black H&H Towing rollback flatbed truck parked on a gravel lot",
       title: "Flatbed Tow Service",
       description: "Secure flatbed transport for vehicles that can't be towed traditionally or need extra protection during transport.",
       benefits: ["No wheel lift damage", "Secure tie-down points", "Weather protection", "Safe for low-clearance vehicles"]
@@ -23,6 +24,7 @@ const LightDuty = () => {
       id: "motorcycle", 
       icon: Bike,
       image: lightDutyMotorcycle,
+      alt: "Operator securing a sport touring motorcycle on an H&H Towing flatbed",
       title: "Motorcycle Towing",
       description: "Specialized motorcycle transport with proper tie-down equipment and experienced operators who understand bike handling.",
       benefits: ["Specialized bike restraints", "Experienced operators", "No scratches or damage", "Quick pickup times"]
@@ -31,6 +33,7 @@ const LightDuty = () => {
       id: "exotic",
       icon: Crown,
       image: lightDutyLuxury,
+      alt: "Black sports car strapped down on an H&H Towing flatbed",
       title: "Luxury & Exotic Car Transport",
       description: "Premium handling for high-value vehicles with soft-tie systems and specialized equipment for low-clearance supercars.",
       benefits: ["Soft-tie protection", "Low-clearance expertise", "Premium insurance", "White-glove service"]
@@ -39,6 +42,7 @@ const LightDuty = () => {
       id: "private-property",
       icon: Building,
       image: lightDutyPrivateProperty,
+      alt: "Silver sedan loaded on an H&H Towing flatbed in an apartment parking lot",
       title: "Private Property Vehicle Removal", 
       description: "Professional removal services for property managers, HOAs, and business owners dealing with unauthorized parking.",
       benefits: ["Legal compliance", "Property manager contracts", "Quick response", "Professional documentation"]
@@ -216,7 +220,7 @@ const LightDuty = () => {
                         <div className="bg-card border border-border rounded-2xl overflow-hidden">
                           <img
                             src={service.image}
-                            alt={service.title}
+                            alt={service.alt}
                             className="w-full h-64 object-cover"
                             width={800}
                             height={450}

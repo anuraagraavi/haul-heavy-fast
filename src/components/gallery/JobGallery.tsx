@@ -78,7 +78,7 @@ export default function JobGallery() {
               key={img.id}
               onClick={() => setOpen(idx)}
               className={cn("group relative block w-full aspect-[4/3] overflow-hidden rounded-xl border border-border bg-muted/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary", idx === 0 && filter === "all" && "col-span-2 row-span-2")}
-              aria-label={`Open photo: ${img.caption}`}
+              aria-label={`Open photo: ${img.alt}`}
             >
               <img
                 src={img.sm}
@@ -92,9 +92,6 @@ export default function JobGallery() {
               />
               <span className="pointer-events-none absolute left-3 top-2.5 text-[10px] md:text-[11px] font-medium uppercase tracking-[0.2em] text-foreground/40 drop-shadow-sm">
                 {GALLERY_CATEGORIES.find((c) => c.id === img.category)?.label}
-              </span>
-              <span className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/95 via-background/60 to-transparent p-3 pt-10 text-left text-xs md:text-sm font-medium text-foreground opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
-                {img.caption}
               </span>
             </button>
           ))}
@@ -124,7 +121,7 @@ export default function JobGallery() {
                 touchX.current = null;
               }}
             >
-              <DialogTitle className="sr-only">{current.caption}</DialogTitle>
+              <DialogTitle className="sr-only">{current.alt}</DialogTitle>
               <div className="relative flex items-center justify-center bg-black">
                 <img src={current.lg} alt={current.alt} className="max-h-[78vh] w-auto max-w-full object-contain" />
                 <button onClick={() => step(-1)} aria-label="Previous photo" className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-background/70 p-2 text-foreground hover:bg-primary hover:text-primary-foreground">
@@ -138,8 +135,8 @@ export default function JobGallery() {
                 </button>
               </div>
               <div className="flex flex-col sm:flex-row items-center justify-between gap-3 p-4">
-                <p className="text-sm text-foreground">
-                  {current.caption} <span className="text-muted-foreground ml-2">{(open ?? 0) + 1} / {filtered.length}</span>
+                <p className="text-sm text-muted-foreground">
+                  {(open ?? 0) + 1} / {filtered.length}
                 </p>
                 <a href={PRIMARY_DISPATCH_TEL_HREF} className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:opacity-90">
                   <Phone className="w-4 h-4" /> Call {PRIMARY_DISPATCH_PHONE_DISPLAY}

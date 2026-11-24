@@ -8,3 +8,4 @@
 - Commercial service pages (/semi-truck-towing etc.) render from `src/data/commercialServices.ts` through one `CommercialServicePage`; fleet articles from `src/data/fleetArticles.ts`. Why: copy lives in one place and pages stay consistent.
 - Visible copy avoids hyphens and dashes and only states facts the business confirmed. Why: client writing standard and EEAT.
 - Commercial service display order is set by `COMMERCIAL_SERVICE_ORDER` in `src/data/commercialServices.ts`; menus and footer follow it; extra page depth lives in `src/data/commercialServiceExtras.ts`. Why: one place to change order and content.
+- Service page and gallery photos show no visible captions; each photo gets an alt text that describes what is actually in it. Why: client found the visible captions inaccurate.

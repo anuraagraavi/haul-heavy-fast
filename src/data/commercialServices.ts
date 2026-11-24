@@ -26,7 +26,7 @@ export type CommercialService = {
   whatWeTow: { title: string; items: string[] };
   steps: { title: string; body: string }[];
   equipment: { title: string; body: string }[];
-  sideImage: { src: string; alt: string; caption: string };
+  sideImage: { src: string; alt: string };
   corridorsIntro: string;
   readyChecklist: string[];
   faqs: { q: string; a: string }[];
@@ -79,7 +79,7 @@ const ALL_SERVICES: CommercialService[] = [
       { title: "Rotators", body: "Boom trucks that lift and turn, used for rollovers, jackknifes and anything stuck below the road edge." },
       { title: "Lowboy trailers", body: "For tractors that cannot be towed safely on their own wheels, and for trailers that need to come off the scene in one piece." },
     ],
-    sideImage: { src: rotatorImg, alt: "Two rotators working together on a commercial truck recovery", caption: "Two rotators on a recovery. Some jobs need both." },
+    sideImage: { src: rotatorImg, alt: "Two H&H rotator tow trucks with booms raised, working together on a heavy lift" },
     corridorsIntro: "Most of our semi calls come from the same handful of freight roads. Our hubs sit close to each one.",
     readyChecklist: [
       "Truck make, model and whether the trailer is loaded",
@@ -136,7 +136,7 @@ const ALL_SERVICES: CommercialService[] = [
       { title: "Heavy wreckers", body: "For fully loaded 26 foot trucks or anything with a damaged front end." },
       { title: "Rollback carriers", body: "For smaller step vans and electric delivery vans that should not be towed on their drive wheels." },
     ],
-    sideImage: { src: rollbackImg, alt: "Rollback flatbed tow truck ready for a delivery van pickup", caption: "Rollbacks handle step vans and electric delivery vans." },
+    sideImage: { src: rollbackImg, alt: "Black H&H Towing rollback flatbed truck parked on a gravel lot" },
     corridorsIntro: "Delivery routes run everywhere, but most box truck calls we take come off these roads and the distribution parks next to them.",
     readyChecklist: [
       "Truck length and rough cargo weight",
@@ -189,7 +189,7 @@ const ALL_SERVICES: CommercialService[] = [
       { title: "Heavy wreckers with long reach underlifts", body: "Built to get under a coach bumper without crushing it." },
       { title: "Rotators", body: "For buses that slid off the road or need to be lifted before they can be towed." },
     ],
-    sideImage: { src: craneImg, alt: "Close view of a rotator crane boom during a lift", caption: "Rotator lifts help when a bus leaves the pavement." },
+    sideImage: { src: craneImg, alt: "H&H heavy wrecker with rigging lines attached to a red and white mobile crane" },
     corridorsIntro: "Shuttle and charter routes run up and down these roads every day, and those are where we see most bus calls.",
     readyChecklist: [
       "Bus length and make",
@@ -240,7 +240,7 @@ const ALL_SERVICES: CommercialService[] = [
       { title: "Rollbacks", body: "For camper vans and smaller Class C units." },
       { title: "Fifth wheel hitch service", body: "For trailers whose tow vehicle broke down, we can move the trailer itself." },
     ],
-    sideImage: { src: genImg, alt: "Step deck trailer loaded with large equipment for transport", caption: "Large loads, secured the same careful way." },
+    sideImage: { src: genImg, alt: "Peterbilt tractor pulling a step deck trailer loaded with industrial generators" },
     corridorsIntro: "RV calls follow the routes people take to the coast, the Delta and the Sierra.",
     readyChecklist: [
       "RV class, length and fuel type",
@@ -293,7 +293,7 @@ const ALL_SERVICES: CommercialService[] = [
       { title: "Lowboys and step decks", body: "For moving equipment between job sites, not just breakdowns." },
       { title: "Rotators", body: "For the rare bad day when a truck ends up on its side." },
     ],
-    sideImage: { src: semiImg, alt: "Heavy wrecker towing a commercial semi truck", caption: "From service vans to Class 8 tractors." },
+    sideImage: { src: semiImg, alt: "H&H heavy wrecker towing a semi truck hauling a shipping container" },
     corridorsIntro: "Our hubs sit along the roads your trucks drive every day.",
     readyChecklist: [
       "Company name and billing contact",
@@ -345,7 +345,7 @@ const ALL_SERVICES: CommercialService[] = [
       { title: "Rotators", body: "For heavy vehicles, rollovers and anything that needs to be lifted." },
       { title: "Rigging gear", body: "Recovery straps and snatch blocks rigged to protect the vehicle body." },
     ],
-    sideImage: { src: craneImg, alt: "Rotator crane boom lifting during a recovery", caption: "A rotator lift on a heavy recovery." },
+    sideImage: { src: craneImg, alt: "Rotator rigging lines attached to a mobile crane during a heavy lift" },
     corridorsIntro: "Recovery calls come from the hills and the soft shoulders along these routes.",
     readyChecklist: [
       "Vehicle type and whether it is upright",

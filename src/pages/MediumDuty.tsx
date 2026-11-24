@@ -13,16 +13,19 @@ const MediumDuty = () => {
     {
       category: "Commercial Vehicles",
       image: mediumDutyCommercial,
+      alt: "H&H wrecker towing a San Francisco police patrol car",
       vehicles: ["Box trucks (up to 26,000 lbs)", "Delivery vans", "Work trucks", "Cargo vans", "Food trucks"]
     },
     {
       category: "Recreational Vehicles",
       image: mediumDutyRv,
+      alt: "Travel trailer loaded on an H&H Towing flatbed at night",
       vehicles: ["Small RVs & motorhomes", "Travel trailers", "Camper vans", "Toy haulers"]
     },
     {
       category: "Specialty Vehicles",
       image: mediumDutyRecovery,
+      alt: "H&H wrecker towing a damaged box truck on a highway shoulder",
       vehicles: ["Emergency vehicles", "Municipal trucks", "Utility vehicles", "Medium construction equipment"]
     }
   ];
@@ -188,7 +191,7 @@ const MediumDuty = () => {
                 <div key={index} className="bg-card border border-border rounded-xl overflow-hidden">
                   <img
                     src={type.image}
-                    alt={type.category}
+                    alt={type.alt}
                     className="w-full h-48 object-cover"
                     width={400}
                     height={225}
@@ -291,7 +294,7 @@ const MediumDuty = () => {
                 <div className="bg-card border border-border rounded-2xl overflow-hidden">
                   <img
                     src={mediumDutyServiceImage}
-                    alt="Specialty equipment secured on a lowboy trailer by our medium and heavy-duty crew"
+                    alt="Peterbilt tractor hauling specialty equipment on a lowboy trailer"
                     className="w-full h-80 object-cover"
                     width={800}
                     height={450}

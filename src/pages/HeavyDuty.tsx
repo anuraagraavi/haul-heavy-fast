@@ -12,6 +12,7 @@ const HeavyDuty = () => {
       id: "equipment",
       icon: Settings,
       image: heavyDutyEquipment,
+      alt: "Peterbilt hauling a CAT excavator on a lowboy with oversize load banner",
       title: "Equipment & Machinery Transport",
       description: "Professional transport of construction equipment, forklifts, industrial machinery, and other heavy equipment that requires specialized handling.",
       capabilities: ["Construction equipment", "Forklifts & warehouse equipment", "Industrial machinery", "Agricultural equipment", "Generator sets"]
@@ -20,6 +21,7 @@ const HeavyDuty = () => {
       id: "recovery",
       icon: Wrench,
       image: heavyDutyRecovery,
+      alt: "H&H rotator rigging a Link Belt mobile crane onto a trailer",
       title: "Heavy Recovery Operations", 
       description: "Complex recovery situations including rollovers, off-road extraction, and accident recovery using rotators and specialized heavy-duty equipment.",
       capabilities: ["Rollover recovery", "Winch-out operations", "Off-road extraction", "Accident scene recovery", "Multi-axle vehicle recovery"]
@@ -28,6 +30,7 @@ const HeavyDuty = () => {
       id: "fleet",
       icon: Building,
       image: heavyDutyFleet,
+      alt: "H&H heavy wrecker towing a semi truck hauling a shipping container",
       title: "Fleet & Commercial Accounts",
       description: "Comprehensive B2B towing programs with service level agreements, priority dispatch, and volume pricing for commercial fleets and logistics companies.",
       capabilities: ["Corporate contracts", "Priority SLA agreements", "Volume pricing", "Fleet management support", "Interstate hauling"]
@@ -231,7 +234,7 @@ const HeavyDuty = () => {
                         <div className="bg-card border border-border rounded-2xl overflow-hidden">
                           <img
                             src={service.image}
-                            alt={service.title}
+                            alt={service.alt}
                             className="w-full h-80 object-cover"
                             width={800}
                             height={450}

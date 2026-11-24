@@ -92,10 +92,9 @@ export default function CommercialServicePage({ service: s }: { service: Commerc
               ))}
             </ul>
           </div>
-          <figure className="rounded-2xl overflow-hidden border border-border">
+          <div className="rounded-2xl overflow-hidden border border-border">
             <img src={s.sideImage.src} alt={s.sideImage.alt} width={1600} height={1200} loading="lazy" className="w-full aspect-[4/3] object-cover" />
-            <figcaption className="p-4 text-sm text-muted-foreground bg-card">{s.sideImage.caption}</figcaption>
-          </figure>
+          </div>
         </div>
       </section>
 
