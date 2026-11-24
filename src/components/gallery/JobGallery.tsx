@@ -90,7 +90,7 @@ export default function JobGallery() {
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 style={{ objectPosition: img.focus ?? "center" }}
               />
-              <span className="pointer-events-none absolute left-2 top-2 rounded-full bg-background/80 px-2 py-0.5 text-[10px] md:text-xs font-semibold uppercase tracking-wide text-primary backdrop-blur-sm">
+              <span className="pointer-events-none absolute left-3 top-2.5 text-[10px] md:text-[11px] font-medium uppercase tracking-[0.2em] text-foreground/40 drop-shadow-sm">
                 {GALLERY_CATEGORIES.find((c) => c.id === img.category)?.label}
               </span>
               <span className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/95 via-background/60 to-transparent p-3 pt-10 text-left text-xs md:text-sm font-medium text-foreground opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
