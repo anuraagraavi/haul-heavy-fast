@@ -268,26 +268,27 @@ const BlogNew = () => {
         </section>
 
         {/* Emergency CTA */}
-        <section className="py-16 bg-primary text-primary-foreground">
+        <section className="py-16">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Need Emergency Towing Services?
+            <div className="relative max-w-5xl mx-auto overflow-hidden rounded-2xl border border-border bg-card px-6 py-12 md:px-12 text-center shadow-lg">
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
+              <div className="pointer-events-none absolute -top-24 left-1/2 h-48 w-[60%] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
+              <p className="relative mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-primary">24/7 Dispatch</p>
+              <h2 className="relative text-3xl md:text-4xl font-bold mb-4 text-foreground">
+                Need Emergency <span className="text-primary">Towing Services?</span>
               </h2>
-              <p className="text-xl opacity-90 mb-8">
+              <p className="relative text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
                 Our team is available 24/7 for all your towing and recovery needs across the San Francisco Bay Area.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" variant="secondary" asChild>
+              <div className="relative flex flex-col sm:flex-row gap-4 justify-center">
+                <Button size="lg" asChild>
                   <a href={PRIMARY_DISPATCH_TEL_HREF} className="inline-flex items-center gap-2">
                     <Phone className="h-5 w-5" />
                     Call {PRIMARY_DISPATCH_PHONE_DISPLAY}
                   </a>
                 </Button>
-                <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" asChild>
-                  <Link to="/get-a-quote">
-                    Get a Free Quote
-                  </Link>
+                <Button size="lg" variant="outline" className="border-primary/60 text-foreground hover:bg-primary/10" asChild>
+                  <Link to="/get-a-quote">Get a Free Quote</Link>
                 </Button>
               </div>
             </div>
