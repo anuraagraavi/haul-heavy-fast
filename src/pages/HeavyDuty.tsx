@@ -1,9 +1,9 @@
 import { Helmet } from "react-helmet";
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, TruckIcon, Settings, Building, Users, CheckCircle, Clock, Shield, Award, Wrench } from "lucide-react";
-import heavyDutyEquipment from "@/assets/heavy-duty-equipment.jpeg";
-import heavyDutyRecovery from "@/assets/heavy-duty-recovery.jpeg";
-import heavyDutyFleet from "@/assets/heavy-duty-fleet.jpeg";
+import heavyDutyEquipment from "@/assets/gallery/cat-excavator-peterbilt-1600.webp";
+import heavyDutyRecovery from "@/assets/gallery/linkbelt-rotator-rigging-1600.webp";
+import heavyDutyFleet from "@/assets/gallery/heavy-wrecker-container-semi-1600.webp";
 import { PRIMARY_DISPATCH_E164, PRIMARY_DISPATCH_PHONE_DISPLAY, PRIMARY_DISPATCH_TEL_HREF } from "@/data/screenshotDispatchHubs";
 
 const HeavyDuty = () => {

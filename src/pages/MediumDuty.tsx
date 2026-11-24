@@ -2,8 +2,8 @@ import { Helmet } from "react-helmet";
 import SEOBreadcrumbs from "@/components/SEOBreadcrumbs";
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, Truck, Building2, Caravan, CheckCircle, Clock, Shield, Wrench } from "lucide-react";
-import mediumDutyServiceImage from "@/assets/medium-duty-service.jpeg";
-import mediumDutyCommercial from "@/assets/medium-duty-commercial.jpeg";
+import mediumDutyServiceImage from "@/assets/gallery/specialty-equipment-lowboy-1600.webp";
+import mediumDutyCommercial from "@/assets/gallery/sfpd-patrol-car-tow-1600.webp";
 import mediumDutyRv from "@/assets/medium-duty-rv.jpeg";
 import mediumDutyRecovery from "@/assets/medium-duty-recovery.jpeg";
 import { PRIMARY_DISPATCH_E164, PRIMARY_DISPATCH_PHONE_DISPLAY, PRIMARY_DISPATCH_TEL_HREF } from "@/data/screenshotDispatchHubs";
@@ -291,7 +291,7 @@ const MediumDuty = () => {
                 <div className="bg-card border border-border rounded-2xl overflow-hidden">
                   <img
                     src={mediumDutyServiceImage}
-                    alt="Medium-duty towing process"
+                    alt="Specialty equipment secured on a lowboy trailer by our medium and heavy-duty crew"
                     className="w-full h-80 object-cover"
                     width={800}
                     height={450}

@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import GlobalJobGallery from "@/components/gallery/GlobalJobGallery";
 import PrerenderTrigger from "@/components/PrerenderTrigger";
 
 /**
@@ -15,6 +16,7 @@ export default function AppShell() {
       <Suspense fallback={null}>
         <PrerenderTrigger />
         <Outlet />
+        <GlobalJobGallery />
       </Suspense>
       <Footer />
     </>

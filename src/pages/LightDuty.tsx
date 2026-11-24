@@ -3,7 +3,7 @@ import SEOBreadcrumbs from "@/components/SEOBreadcrumbs";
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, Car, Bike, Crown, Building, CheckCircle, Clock, Shield, Star } from "lucide-react";
 import InternalLinkOptimizer from "@/components/InternalLinkOptimizer";
-import lightDutyFlatbed from "@/assets/light-duty-flatbed.png";
+import lightDutyFlatbed from "@/assets/gallery/hh-rollback-flatbed-1600.webp";
 import lightDutyMotorcycle from "@/assets/light-duty-motorcycle.png";
 import lightDutyLuxury from "@/assets/light-duty-luxury.jpeg";
 import lightDutyPrivateProperty from "@/assets/light-duty-private-property.jpeg";

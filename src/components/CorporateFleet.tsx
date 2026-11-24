@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Building, Clock, DollarSign, Shield, Users, Truck, Phone, Mail } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import corporateFleetBanner from "@/assets/corporate-fleet-banner.jpg";
+import corporateFleetBanner from "@/assets/gallery/generator-fleet-stepdeck-1600.webp";
 import { PRIMARY_DISPATCH_PHONE_DISPLAY, PRIMARY_DISPATCH_TEL_HREF } from "@/data/screenshotDispatchHubs";
 
 const CorporateFleet = () => {
@@ -45,7 +45,7 @@ const CorporateFleet = () => {
 
         {/* Corporate Fleet Banner */}
         <div className={`relative mb-16 rounded-2xl overflow-hidden transition-all duration-1000 delay-300 ${isVisible ? 'animate-scale-in' : 'opacity-0'}`}>
-          <img src={corporateFleetBanner} alt="Corporate fleet towing services San Francisco - commercial vehicle contracts and priority dispatch" className="w-full h-64 md:h-80 object-cover" width={800} height={450} loading="lazy" decoding="async" />
+          <img src={corporateFleetBanner} alt="H&H Peterbilt hauling a fleet of commercial generators on a stepdeck trailer - corporate fleet towing and transport" className="w-full h-64 md:h-80 object-cover" width={800} height={450} loading="lazy" decoding="async" />
           <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
             <div className="text-center text-white">
               
