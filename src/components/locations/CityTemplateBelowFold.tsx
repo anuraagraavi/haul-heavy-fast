@@ -12,6 +12,7 @@ import OurServiceStandard from "@/components/locations/OurServiceStandard";
 import { landingImagesById } from "@/data/landingImages";
 import type { LocationData } from "@/data/locations";
 import { cn } from "@/lib/utils";
+import { COMMERCIAL_SERVICES } from "@/data/commercialServices";
 
 export type CityTemplateBelowFoldProps = {
   data: LocationData;
@@ -93,6 +94,29 @@ export default function CityTemplateBelowFold({
                 </article>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 border-y border-border">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-3 text-center">For fleets and truck drivers</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4 text-center">
+            Commercial and heavy duty towing in {data.city}
+          </h2>
+          <p className="text-muted-foreground leading-relaxed text-center max-w-3xl mx-auto mb-8">
+            Trucks that break down in {data.city} usually do it on the roads freight actually uses
+            {data.freeways.length > 0 ? `, like ${data.freeways.slice(0, 2).join(" and ")}` : ""}. We send heavy wreckers and
+            rotators for semi trucks, box trucks, buses and motorhomes, and we can recover vehicles that left the pavement.
+            Call {data.phone} and dispatch will route the closest heavy unit to you.
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+            {COMMERCIAL_SERVICES.map((c) => (
+              <Link key={c.slug} to={c.path} className="rounded-xl border border-border bg-card p-4 hover:border-primary transition-colors">
+                <span className="block font-semibold text-foreground">{c.navLabel} in {data.city}</span>
+                <span className="block text-xs text-muted-foreground mt-1">{c.navBlurb}</span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

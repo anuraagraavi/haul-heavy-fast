@@ -5,3 +5,5 @@
 
 - Job gallery uses a uniform 4:3 crop grid (featured 2x2 first tile on "All"), not masonry. Why: mixed photo shapes left ragged dark gaps.
 - Homepage renders the gallery inline above WhyChooseUs (`<GlobalJobGallery inline />`); AppShell copy skips "/". Why: client wanted it higher on home.
+- Commercial service pages (/semi-truck-towing etc.) render from `src/data/commercialServices.ts` through one `CommercialServicePage`; fleet articles from `src/data/fleetArticles.ts`. Why: copy lives in one place and pages stay consistent.
+- Visible copy avoids hyphens and dashes and only states facts the business confirmed. Why: client writing standard and EEAT.

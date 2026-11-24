@@ -15,6 +15,12 @@
   <url><loc>https://heavytowpro.com/towing-services</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://heavytowpro.com/towing/bay-area-flatbed-emergency-towing-24-7</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://heavytowpro.com/towing/heavy-duty-towing-bay-area</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://heavytowpro.com/semi-truck-towing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://heavytowpro.com/box-truck-towing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://heavytowpro.com/bus-towing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://heavytowpro.com/rv-towing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://heavytowpro.com/winch-out-recovery</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://heavytowpro.com/commercial-towing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Service Areas -->
   <url><loc>https://heavytowpro.com/locations</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -113,6 +119,9 @@
   <url><loc>https://heavytowpro.com/blog/heavy-duty-recovery-bay-area</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2025-10-21</lastmod></url>
   <url><loc>https://heavytowpro.com/blog/underground-garage-towing-sf</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2025-10-17</lastmod></url>
   <url><loc>https://heavytowpro.com/blog/rv-towing-bay-area</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2025-10-14</lastmod></url>
+  <url><loc>https://heavytowpro.com/blog/box-truck-breakdown-checklist-bay-area-fleets</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://heavytowpro.com/blog/california-oversize-permit-basics-equipment-moves</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://heavytowpro.com/blog/jackknifed-semi-interstate-880-what-to-do</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://heavytowpro.com/blog/box-truck-towing-san-francisco</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2025-10-10</lastmod></url>
   <url><loc>https://heavytowpro.com/blog/towing-cost-san-francisco</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2025-10-07</lastmod></url>
   <url><loc>https://heavytowpro.com/blog/california-private-property-towing</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2025-10-05</lastmod></url>

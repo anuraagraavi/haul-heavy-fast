@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Phone, MapPin, Clock } from "lucide-react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { resolveShellDispatchFromPathname } from "@/lib/shellDispatchPhone";
 
 const Footer = () => {
@@ -58,6 +58,12 @@ const Footer = () => {
               <li><a href="/services/light-duty#flatbed" className="hover:text-primary transition-colors">Flatbed Service</a></li>
               <li><a href="/services/light-duty#motorcycle" className="hover:text-primary transition-colors">Motorcycle Towing</a></li>
               <li><a href="/services/heavy-duty#fleet" className="hover:text-primary transition-colors">Fleet Contracts</a></li>
+              <li><Link to="/semi-truck-towing" className="hover:text-primary transition-colors">Semi Truck Towing</Link></li>
+              <li><Link to="/box-truck-towing" className="hover:text-primary transition-colors">Box Truck Towing</Link></li>
+              <li><Link to="/bus-towing" className="hover:text-primary transition-colors">Bus Towing</Link></li>
+              <li><Link to="/rv-towing" className="hover:text-primary transition-colors">RV Towing</Link></li>
+              <li><Link to="/winch-out-recovery" className="hover:text-primary transition-colors">Winch Out and Recovery</Link></li>
+              <li><Link to="/commercial-towing" className="hover:text-primary transition-colors">Commercial Fleet Towing</Link></li>
             </ul>
           </div>
 

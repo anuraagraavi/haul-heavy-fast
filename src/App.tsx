@@ -18,7 +18,14 @@ const SITE_SUSPENDED = false;
 const Services = lazy(() => import("./pages/Services"));
 const LightDuty = lazy(() => import("./pages/LightDuty"));
 const MediumDuty = lazy(() => import("./pages/MediumDuty"));
+const FleetArticleRoute = lazy(() => import("./pages/blog/FleetArticleRoute"));
 const HeavyDuty = lazy(() => import("./pages/HeavyDuty"));
+const SemiTruckTowingPage = lazy(() => import("./pages/services/SemiTruckTowing"));
+const BoxTruckTowingPage = lazy(() => import("./pages/services/BoxTruckTowing"));
+const BusTowingPage = lazy(() => import("./pages/services/BusTowing"));
+const RvTowingPage = lazy(() => import("./pages/services/RvTowing"));
+const CommercialTowingPage = lazy(() => import("./pages/services/CommercialTowing"));
+const WinchOutRecoveryPage = lazy(() => import("./pages/services/WinchOutRecovery"));
 const LandingHeavyDuty = lazy(() => import("./pages/LandingHeavyDuty"));
 const Locations = lazy(() => import("./pages/Locations"));
 const GetQuote = lazy(() => import("./pages/GetQuote"));
@@ -181,6 +188,12 @@ const App = () => {
             <Route path="/services/light-duty" element={<LightDuty />} />
             <Route path="/services/medium-duty" element={<MediumDuty />} />
             <Route path="/services/heavy-duty" element={<HeavyDuty />} />
+            <Route path="/semi-truck-towing" element={<SemiTruckTowingPage />} />
+            <Route path="/box-truck-towing" element={<BoxTruckTowingPage />} />
+            <Route path="/bus-towing" element={<BusTowingPage />} />
+            <Route path="/rv-towing" element={<RvTowingPage />} />
+            <Route path="/commercial-towing" element={<CommercialTowingPage />} />
+            <Route path="/winch-out-recovery" element={<WinchOutRecoveryPage />} />
             <Route path="/locations" element={<Locations />} />
             <Route path="/locations/san-mateo-county" element={<SanMateoCountyPage />} />
             <Route path="/locations/alameda-county" element={<AlamedaCountyPage />} />
@@ -244,6 +257,9 @@ const App = () => {
             <Route path="/blog/towing-cost-san-francisco" element={<TowingCostSanFrancisco />} />
             <Route path="/blog/box-truck-towing-san-francisco" element={<BoxTruckTowingSanFrancisco />} />
             <Route path="/blog/rv-towing-bay-area" element={<RVTowingBayArea />} />
+            <Route path="/blog/jackknifed-semi-interstate-880-what-to-do" element={<FleetArticleRoute slug="jackknifed-semi-interstate-880-what-to-do" />} />
+            <Route path="/blog/california-oversize-permit-basics-equipment-moves" element={<FleetArticleRoute slug="california-oversize-permit-basics-equipment-moves" />} />
+            <Route path="/blog/box-truck-breakdown-checklist-bay-area-fleets" element={<FleetArticleRoute slug="box-truck-breakdown-checklist-bay-area-fleets" />} />
             <Route path="/blog/underground-garage-towing-sf" element={<UndergroundGarageTowingSF />} />
             <Route path="/blog/heavy-duty-recovery-bay-area" element={<HeavyDutyRecoveryBayArea />} />
             <Route path="/blog/freeway-towing-bay-area" element={<FreewayTowingBayArea />} />

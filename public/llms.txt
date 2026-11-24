@@ -1,6 +1,6 @@
 # Heavy Haulers / Heavy Tow Pro – San Francisco Bay Area Towing
 
-> 24/7 professional towing and recovery across the San Francisco Bay Area and Central Valley (Stockton). Light, medium, and heavy-duty service with 6 dispatch hubs, ~15 min average response, transparent pricing. Primary phone: (650) 881-2400. The site includes county hub pages, city-level towing pages, and a long-form blog library for Bay Area and California towing topics.
+> 24/7 professional towing and recovery across the San Francisco Bay Area and Central Valley (Stockton). Light, medium, and heavy-duty service with 8 dispatch hubs, ~15 min average response, transparent pricing. Primary phone: (650) 881-2400. The site includes county hub pages, city-level towing pages, and a long-form blog library for Bay Area and California towing topics.
 
 ## Main
 
@@ -15,6 +15,12 @@
 - [Light-Duty Towing](https://heavytowpro.com/services/light-duty): Cars, motorcycles, flatbed, luxury, private-property removal
 - [Medium-Duty Towing](https://heavytowpro.com/services/medium-duty): Vans, box trucks, RVs, work trucks
 - [Heavy-Duty Towing](https://heavytowpro.com/services/heavy-duty): Semis, buses, equipment, fleet contracts, rotator recovery
+- [Semi Truck Towing](https://heavytowpro.com/semi-truck-towing): Tractors, trailers and 18 wheelers, loaded or empty
+- [Box Truck Towing](https://heavytowpro.com/box-truck-towing): Delivery trucks, step vans, rental moving trucks
+- [Bus Towing](https://heavytowpro.com/bus-towing): Motor coaches, shuttles, school buses
+- [RV Towing](https://heavytowpro.com/rv-towing): Class A, B and C motorhomes, fifth wheels, travel trailers
+- [Commercial Fleet Towing](https://heavytowpro.com/commercial-towing): Accounts for carriers, contractors and service fleets
+- [Winch Out and Recovery](https://heavytowpro.com/winch-out-recovery): Ditches, embankments, rollovers
 - [Car & Truck Towing Landing](https://heavytowpro.com/towing-services): Bay Area car and truck towing landing page
 - [Bay Area Flatbed Emergency Towing 24/7](https://heavytowpro.com/towing/bay-area-flatbed-emergency-towing-24-7): Flatbed emergency towing landing
 - [Heavy Duty Towing Bay Area](https://heavytowpro.com/towing/heavy-duty-towing-bay-area): Heavy-duty and commercial landing

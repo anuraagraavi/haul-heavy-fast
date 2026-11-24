@@ -52,6 +52,43 @@ export interface BlogPost {
 
 // All blog posts sorted by date (newest first)
 export const blogPosts: BlogPost[] = [
+  // November 2026 fleet articles
+  {
+    id: "jackknifed-semi-interstate-880-what-to-do",
+    slug: "jackknifed-semi-interstate-880-what-to-do",
+    title: "Jackknifed Semi on Interstate 880: What Drivers and Dispatchers Should Do",
+    excerpt: "The first thirty minutes after a jackknife decide how long the lanes stay closed. Here is what to do, in order.",
+    image: commercialRecoveryImage,
+    author: "Heavy Haulers Dispatch Team",
+    publishDate: "2026-11-24",
+    displayDate: "November 24, 2026",
+    readTime: "7 min",
+    category: "Heavy Duty",
+  },
+  {
+    id: "california-oversize-permit-basics-equipment-moves",
+    slug: "california-oversize-permit-basics-equipment-moves",
+    title: "California Oversize Load Permits: The Basics for Equipment Moves",
+    excerpt: "Most equipment moves that go wrong fail on paperwork, not trucks. Here is when you need a permit and who issues it.",
+    image: constructionEquipmentImage,
+    author: "Heavy Haulers Dispatch Team",
+    publishDate: "2026-11-24",
+    displayDate: "November 24, 2026",
+    readTime: "6 min",
+    category: "Heavy Duty",
+  },
+  {
+    id: "box-truck-breakdown-checklist-bay-area-fleets",
+    slug: "box-truck-breakdown-checklist-bay-area-fleets",
+    title: "Box Truck Breakdown Checklist for Bay Area Fleets",
+    excerpt: "Print this, tape it to the visor, and your drivers will never stand on a shoulder wondering who to call.",
+    image: commercialTruckImage,
+    author: "Heavy Haulers Dispatch Team",
+    publishDate: "2026-11-24",
+    displayDate: "November 24, 2026",
+    readTime: "5 min",
+    category: "Heavy Duty",
+  },
   // May 2026 Posts
   {
     id: "stockton-towing-dispatch-checklist",

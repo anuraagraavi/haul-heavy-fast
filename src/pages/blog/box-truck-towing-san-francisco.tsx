@@ -30,7 +30,7 @@ const blogData: BlogPostData = {
   dateModified: '2025-10-11',
   excerpt: 'Complete guide to box truck towing in San Francisco covering equipment requirements, costs, and tips for minimizing downtime.',
   heroImage: { src: heroImage, alt: 'Box truck being towed by medium duty tow truck', caption: 'Professional box truck towing requires specialized equipment' },
-  atAGlance: { bestUseCase: 'Box trucks, delivery vans, and medium commercial vehicles', responseWorkflow: 'Dispatch medium-duty wrecker with appropriate weight capacity', safetyNote: 'Secure all cargo before towing', dispatchNeeds: 'Truck GVWR, cargo status, and exact dimensions', relatedServiceLink: { text: 'Medium Duty Towing', href: '/medium-duty' } },
+  atAGlance: { bestUseCase: 'Box trucks, delivery vans, and medium commercial vehicles', responseWorkflow: 'Dispatch medium-duty wrecker with appropriate weight capacity', safetyNote: 'Secure all cargo before towing', dispatchNeeds: 'Truck GVWR, cargo status, and exact dimensions', relatedServiceLink: { text: 'Box Truck Towing', href: '/box-truck-towing' } },
   tableOfContents: [
     { id: 'what-counts-as-box-truck', title: 'What Counts as a Box Truck', level: 2 },
     { id: 'towing-equipment-needed', title: 'Towing Equipment Needed', level: 2 },

@@ -30,7 +30,7 @@ const blogData: BlogPostData = {
   dateModified: '2025-10-14',
   excerpt: 'Complete guide to RV towing in the Bay Area covering motorhomes, travel trailers, fifth wheels, and what to expect.',
   heroImage: { src: heroImage, alt: 'Large RV motorhome requiring towing assistance', caption: 'RV towing requires specialized equipment and experienced operators' },
-  atAGlance: { bestUseCase: 'Motorhomes, travel trailers, fifth wheels, and campers', responseWorkflow: 'Dispatch appropriately-sized equipment based on RV class', safetyNote: 'Disconnect propane and secure all slide-outs before towing', dispatchNeeds: 'RV type, length, weight, and whether towing another vehicle', relatedServiceLink: { text: 'Heavy Duty Towing', href: '/heavy-duty' } },
+  atAGlance: { bestUseCase: 'Motorhomes, travel trailers, fifth wheels, and campers', responseWorkflow: 'Dispatch appropriately-sized equipment based on RV class', safetyNote: 'Disconnect propane and secure all slide-outs before towing', dispatchNeeds: 'RV type, length, weight, and whether towing another vehicle', relatedServiceLink: { text: 'RV Towing', href: '/rv-towing' } },
   tableOfContents: [
     { id: 'rv-types-and-requirements', title: 'RV Types and Requirements', level: 2 },
     { id: 'towing-equipment-used', title: 'Towing Equipment Used', level: 2 },
