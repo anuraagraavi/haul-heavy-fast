@@ -48,7 +48,7 @@ const BlogPostTemplate = ({ data, children }: BlogPostTemplateProps) => {
               </aside>
               
               {/* Article Content */}
-              <article className="flex-1 max-w-3xl blog-article">
+              <article className="flex-1 min-w-0 max-w-3xl blog-article">
                 {/* Mobile TOC */}
                 <TableOfContentsMobile items={data.tableOfContents} />
                 
