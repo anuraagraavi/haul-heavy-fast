@@ -5,7 +5,7 @@ import { isGalleryExcluded } from "@/data/galleryImages";
 const JobGallery = lazy(() => import("./JobGallery"));
 
 /** Site-wide job gallery above the footer; code and images load only when scrolled near. */
-export default function GlobalJobGallery() {
+export default function GlobalJobGallery({ inline = false }: { inline?: boolean }) {
   const { pathname } = useLocation();
   const ref = useRef<HTMLDivElement>(null);
   const [near, setNear] = useState(false);
@@ -17,9 +17,10 @@ export default function GlobalJobGallery() {
     return () => io.disconnect();
   }, [near, pathname]);
 
-  if (isGalleryExcluded(pathname)) return null;
+  // Homepage shows the gallery inline (above "Why Choose"), not above the footer.
+  if (!inline && (pathname === "/" || isGalleryExcluded(pathname))) return null;
   return (
-    <div ref={ref} id="job-gallery" style={{ minHeight: near ? undefined : 1 }}>
+    <div ref={ref} id={inline ? "job-gallery-home" : "job-gallery"} style={{ minHeight: near ? undefined : 1 }}>
       {near && (
         <Suspense fallback={null}>
           <JobGallery />

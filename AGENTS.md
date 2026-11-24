@@ -4,3 +4,4 @@
 - Job photos are pre-optimized WebP in `src/assets/gallery/` (600px grid, 1600px viewer) generated from `public/lovable-uploads/` originals. Why: fast pages without build-time image transforms.
 
 - Job gallery uses a uniform 4:3 crop grid (featured 2x2 first tile on "All"), not masonry. Why: mixed photo shapes left ragged dark gaps.
+- Homepage renders the gallery inline above WhyChooseUs (`<GlobalJobGallery inline />`); AppShell copy skips "/". Why: client wanted it higher on home.

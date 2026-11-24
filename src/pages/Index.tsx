@@ -11,6 +11,7 @@ import { PRIMARY_DISPATCH_E164, PRIMARY_DISPATCH_PHONE_DISPLAY, SCREENSHOT_DISPA
 const DISPATCH_HUBS_FAQ_LINE = SCREENSHOT_DISPATCH_HUBS.map((h) => `${h.city} ${h.phoneDisplay}`).join("; ");
 
 // Lazy load non-critical components
+const GlobalJobGallery = lazy(() => import("@/components/gallery/GlobalJobGallery"));
 const WhyChooseUs = lazy(() => import("@/components/WhyChooseUs"));
 const ServicesOverview = lazy(() => import("@/components/ServicesOverview"));
 const ServiceAreas = lazy(() => import("@/components/ServiceAreas"));
@@ -189,6 +190,10 @@ const Index = () => {
           </Suspense>
         </LazySection>
         
+        <Suspense fallback={null}>
+          <GlobalJobGallery inline />
+        </Suspense>
+
         <LazySection className="animate-scale-in">
           <Suspense fallback={<div className="min-h-[400px] animate-pulse bg-muted" />}>
             <WhyChooseUs />
